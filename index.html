@@ -98,8 +98,8 @@
   .cat-group { margin-bottom: 3rem; }
   .cat-group-header { margin-bottom: 0.65rem; padding-bottom: 0.5rem; border-bottom: 1.5px solid #f0e8e0; padding-top: 1.5rem; border-top: 1px solid #f0e8e0; margin-top: -0.5rem; }
   .cat-group:first-child .cat-group-header { padding-top: 0; border-top: none; margin-top: 0; }
-  .cat-group-title { font-family: 'Sora', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--dark); text-transform: uppercase; letter-spacing: 0.06em; }
-  .cat-group-sub { font-size: 0.7rem; color: var(--warm-gray); }
+  .cat-group-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--orange); margin-bottom: 2px; letter-spacing: -0.01em; }
+  .cat-group-sub { font-size: 0.75rem; color: var(--warm-gray); }
   .cat-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; align-items: stretch; }
   @media (max-width: 640px) { .cat-cards-grid { grid-template-columns: 1fr; } }
   @media (min-width: 641px) and (max-width: 900px) { .cat-cards-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -146,26 +146,26 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo">MonAide<span>-VD</span></a>
     <ul class="nav-links">
-      <li><a href="javascript:void(0)" onclick="navVers('simulateur')">Simulateur</a></li>
+      <li><a href="#simulateur">Simulateur</a></li>
       <li class="nav-dropdown">
-        <a href="javascript:void(0)">Catalogue des aides</a>
+        <a href="#catalogue">Catalogue des aides</a>
         <div class="nav-dropdown-menu" style="min-width:260px;">
-          <a href="javascript:void(0)" onclick="navVers('groupe-sante')">Sant&#233; &amp; urgences sociales</a>
-          <a href="javascript:void(0)" onclick="navVers('groupe-revenus')">Revenus &amp; aides financi&#232;res</a>
-          <a href="javascript:void(0)" onclick="navVers('groupe-emploi')">Emploi &amp; formation</a>
-          <a href="javascript:void(0)" onclick="navVers('groupe-autonomie')">Sant&#233;, autonomie &amp; d&#233;pendance</a>
-          <a href="javascript:void(0)" onclick="navVers('groupe-logement')">Logement &amp; migration</a>
-          <a href="javascript:void(0)" onclick="navVers('groupe-culture')">Loisirs &amp; culture</a>
+          <a href="#groupe-sante">Sant&#233; &amp; urgences sociales</a>
+          <a href="#groupe-revenus">Revenus &amp; aides financi&#232;res</a>
+          <a href="#groupe-emploi">Emploi &amp; formation</a>
+          <a href="#groupe-autonomie">Sant&#233;, autonomie &amp; d&#233;pendance</a>
+          <a href="#groupe-logement">Logement &amp; migration</a>
+          <a href="#groupe-culture">Loisirs &amp; culture</a>
         </div>
       </li>
       <li class="nav-dropdown">
-        <a href="javascript:void(0)">Documentation</a>
+        <a href="#formulaires">Documentation</a>
         <div class="nav-dropdown-menu" style="min-width:240px;">
-          <a href="javascript:void(0)" onclick="navVersDoc('doc-ri')">Revenu d&#8217;insertion (RI)</a>
-          <a href="javascript:void(0)" onclick="navVersDoc('doc-lamal')">Subside LAMal</a>
-          <a href="javascript:void(0)" onclick="navVersDoc('doc-ai')">Assurance invalidit&#233; (AI)</a>
-          <a href="javascript:void(0)" onclick="navVersDoc('doc-bourse')">Bourses d&#8217;&#233;tudes</a>
-          <a href="javascript:void(0)" onclick="navVersDoc('doc-carte')">CarteCulture</a>
+          <a href="#formulaires" onclick="toggleAccordion('doc-ri')">Revenu d&#8217;insertion (RI)</a>
+          <a href="#formulaires" onclick="toggleAccordion('doc-lamal')">Subside LAMal</a>
+          <a href="#formulaires" onclick="toggleAccordion('doc-ai')">Assurance invalidit&#233; (AI)</a>
+          <a href="#formulaires" onclick="toggleAccordion('doc-bourse')">Bourses d&#8217;&#233;tudes</a>
+          <a href="#formulaires" onclick="toggleAccordion('doc-carte')">CarteCulture</a>
         </div>
       </li>
     </ul>
