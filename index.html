@@ -81,6 +81,7 @@
   .result-item:hover { border-color: var(--orange); }
   .result-badge { padding: 4px 12px; border-radius: 100px; font-size: 0.75rem; font-weight: 500; white-space: nowrap; flex-shrink: 0; }
   .badge-oui { background: #e8f5e9; color: #2e7d32; }
+  .badge-probable { background: #e8f0ff; color: #3949ab; }
   .badge-verifier { background: #fff8e1; color: #f57f17; }
   .result-content { flex: 1; }
   .result-name { font-weight: 600; font-size: 0.92rem; margin-bottom: 0.3rem; color: var(--dark); }
@@ -1024,132 +1025,285 @@
     var contactSocial= document.getElementById('contact_social').value || 'non';
 
     var res = [];
-    var revenuFaible = revenu === 'aucun' || revenu === 'moins1000' || revenu === '1000-2000';
-    var revenuModere = revenu === '2000-3500';
-    var retraite     = sitPro.includes('Retrait') || age === '65plus' || aides === 'AVS';
-    var etudiant     = sitPro.includes('tudiant') || formation !== 'non';
-    var enFormation  = formation === 'oui_apres_obligatoire';
-    var aEnfants     = enfants !== 'non' && enfants !== '';
-    var chomage      = sitPro.includes('mage') || aides === 'chomage';
-    var permiOK      = !permis.includes('Permis N') && !permis.includes('sans statut');
-    var permiRI      = permiOK && !permis.includes('Permis S');
-    var alreadyRI    = aides === 'RI';
-    var alreadyPC    = aides === 'PC';
-    var invalidite   = incapacite !== 'non' || sitPro.includes('incapacit') || sitPro.includes('invalidit') || aides === 'AI';
-    var age60plus    = age === '60-64' || age === '65plus';
-    var fortFaible   = fortune === 'moins4000';
-    var fortMoyenne  = fortune === '4000-50000';
 
+    // Variables de base
+    var revenuFaible  = revenu === 'aucun' || revenu === 'moins1000' || revenu === '1000-2000';
+    var revenuModere  = revenu === '2000-3500';
+    var retraite      = sitPro.includes('Retrait') || age === '65plus' || aides === 'AVS';
+    var etudiant      = sitPro.includes('tudiant') || formation !== 'non';
+    var enFormation   = formation === 'oui_apres_obligatoire';
+    var aEnfants      = enfants !== 'non' && enfants !== '';
+    var chomageNonIndem = sitPro.includes('non indemnit') || sitPro.includes('sans revenu');
+    var chomageIndem  = sitPro.includes('mage') && !sitPro.includes('non indemnit') || aides === 'chomage';
+    var chomage       = chomageIndem || chomageNonIndem;
+    var permiOK       = !permis.includes('Permis N') && !permis.includes('sans statut');
+    var permiRI       = permiOK && !permis.includes('Permis S');
+    var alreadyRI     = aides === 'RI';
+    var alreadyPC     = aides === 'PC';
+    var alreadyLAMal  = aides === 'lamal';
+    var alreadyBourse = aides === 'bourse';
+    var alreadyAI     = aides === 'AI';
+    var alreadyAVS    = aides === 'AVS';
+    var invalidite    = incapacite !== 'non' || sitPro.includes('incapacit') || sitPro.includes('invalidit') || alreadyAI;
+    var age60plus     = age === '60-64' || age === '65plus';
+    var fortFaible    = fortune === 'moins4000';
+    var fortMoyenne   = fortune === '4000-50000';
+
+    // badge: 'confirme' | 'probable' | 'verifier'
     function pill(label, url) { return '<a href="' + url + '" target="_blank">' + label + '</a>'; }
 
-    // 1. Subside LAMal
+    // ── 1. Subside LAMal ──────────────────────────────────────────────────
     if (!permis.includes('sans statut')) {
       if (alreadyRI || alreadyPC) {
-        res.push({ nom:'Subside LAMal', badge:'oui', desc:'En tant que bénéficiaire du RI ou des PC, tu as droit au subside LAMal automatiquement.', liens:true });
+        res.push({
+          nom: 'Subside LAMal — réduction de prime',
+          badge: 'confirme',
+          desc: 'Bénéficiaire du RI ou des PC : tu as droit au subside LAMal automatiquement, sans démarche supplémentaire.',
+          action: '✔ Vérifie que ton agence AAS t\'a bien attribué le subside. Si ce n\'est pas le cas, contacte-les directement.',
+          liens: true
+        });
       } else if (revenuFaible) {
-        res.push({ nom:'Subside LAMal', badge:'oui', desc:'Ton niveau de revenu suggère une forte probabilité d\'éligibilité au subside LAMal.', liens:true });
+        res.push({
+          nom: 'Subside LAMal — réduction de prime',
+          badge: 'probable',
+          desc: 'Avec ton niveau de revenus, tu remplis probablement les conditions. Le montant exact dépend de ton Revenu Déterminant Unifié (RDU), qui tient compte de tes revenus ET de ta fortune.',
+          action: '1. Utilise le simulateur officiel (lien ci-dessous) pour calculer ton éligibilité exacte.\n2. Si éligible, fais la demande en ligne ou auprès de ton agence AAS.',
+          liens: true
+        });
       } else if (revenuModere || revenu === 'inconnu') {
-        res.push({ nom:'Subside LAMal', badge:'verifier', desc:'Un subside partiel est peut-être possible selon ta fortune. À vérifier avec le simulateur officiel.', liens:true });
+        res.push({
+          nom: 'Subside LAMal — réduction de prime',
+          badge: 'verifier',
+          desc: 'Un subside partiel est possible selon ta fortune et ta situation exacte. On ne peut pas se prononcer sans le calcul officiel.',
+          action: 'Utilise le simulateur officiel — c\'est gratuit, anonyme et prend 5 minutes.',
+          liens: true
+        });
       }
     }
 
-    // 2. RI
+    // ── 2. RI ─────────────────────────────────────────────────────────────
     if (!alreadyRI && !etudiant && permiRI && !retraite) {
-      if (revenuFaible && (fortFaible || fortune === 'inconnu')) {
-        res.push({ nom:'Revenu d\'insertion (RI)', badge:'oui', desc:'Ta situation correspond aux critères de base du RI. Le CSR de ta commune examinera ton dossier individuellement.', lienRI:true });
+      if (revenuFaible && fortFaible) {
+        res.push({
+          nom: 'Revenu d\'insertion (RI)',
+          badge: 'probable',
+          desc: 'Tes revenus et ton épargne correspondent aux critères de base du RI. Attention : l\'éligibilité finale dépend d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',
+          action: '1. Contacte le Centre Social Régional (CSR) de ta commune — c\'est gratuit et sans engagement.\n2. Prépare : pièce d\'identité, relevés de compte (3 mois), bulletins de salaire, contrat de bail.\n3. Ne repousse pas — le droit commence à la date de la demande, pas avant.',
+          lienRI: true
+        });
       } else if (revenuFaible && fortune !== 'plus50000') {
-        res.push({ nom:'Revenu d\'insertion (RI)', badge:'verifier', desc:'Selon tes charges et ta fortune, une demande de RI pourrait être envisageable.', lienRI:true });
+        res.push({
+          nom: 'Revenu d\'insertion (RI)',
+          badge: 'verifier',
+          desc: 'Tes revenus sont faibles mais ta fortune pourrait impacter l\'éligibilité. Seul un·e assistant·e social·e peut se prononcer.',
+          action: 'Contacte le CSR de ta commune pour un entretien d\'évaluation gratuit et confidentiel.',
+          lienRI: true
+        });
       }
     }
 
-    // 3. PC
-    if ((retraite || invalidite) && !alreadyPC) {
-      res.push({ nom:'Prestations complémentaires AVS/AI (PC)', badge:(revenuFaible||revenu==='inconnu')?'oui':'verifier', desc:'Des PC peuvent compléter ta rente AVS ou AI si elle ne couvre pas tes besoins vitaux.', lienRI:true });
+    // ── 3. PC AVS/AI ──────────────────────────────────────────────────────
+    if ((retraite || alreadyAI) && !alreadyPC) {
+      res.push({
+        nom: 'Prestations complémentaires AVS/AI (PC)',
+        badge: revenuFaible ? 'probable' : 'verifier',
+        desc: 'Les PC complètent une rente AVS ou AI insuffisante. Elles dépendent de ta rente exacte, de tes charges et de ta fortune — on ne peut pas confirmer sans le calcul.',
+        action: '1. Contacte ton agence AVS (ou l\'AVASAD si tu es bénéficiaire AI).\n2. Demande un calcul d\'estimation — c\'est gratuit.\n3. Si éligible, la demande se fait auprès de la caisse AVS cantonale.',
+        lienRI: true
+      });
     }
 
-    // 4. Bourses
-    if (enFormation) {
-      res.push({ nom:'Bourses d\'études (OCBE)', badge:revenuFaible?'oui':'verifier', desc:'Tu es en formation post-obligatoire — une bourse est possible selon les ressources familiales.', liensBourse:true });
-    }
-
-    // 5. Allocations familiales
+    // ── 4. Allocations familiales ─────────────────────────────────────────
     if (aEnfants) {
-      res.push({ nom:'Allocations familiales', badge:'oui', desc:'Tu as des enfants à charge ? Tu as droit aux allocations familiales, versées dès le 1er enfant.', liensAF:true });
+      res.push({
+        nom: 'Allocations familiales',
+        badge: 'confirme',
+        desc: 'Tu as des enfants à charge : tu as droit aux allocations familiales. C\'est un droit automatique — il n\'y a pas de condition de revenus pour y avoir droit.',
+        action: '• Salarié·e : demande via ton employeur (il est obligé de les verser).\n• Sans emploi ou indépendant·e : contacte la CCVD directement.\n• Montants : 215 CHF/mois par enfant de moins de 16 ans, 268 CHF pour les 16-25 ans en formation.',
+        liensAF: true
+      });
     }
 
-    // 6. CarteCulture
-    if (alreadyRI || alreadyPC) {
-      res.push({ nom:'CarteCulture — Caritas', badge:'oui', desc:'En tant que bénéficiaire du RI ou des PC, tu es directement éligible à la CarteCulture.', liensCarte:true });
-    } else if (revenuFaible || enFormation) {
-      res.push({ nom:'CarteCulture — Caritas', badge:'verifier', desc:'Selon ta situation, tu pourrais être éligible à la CarteCulture.', liensCarte:true });
+    // ── 5. CarteCulture ───────────────────────────────────────────────────
+    var carteConfirmee = alreadyRI || alreadyPC || alreadyLAMal || alreadyBourse;
+    if (carteConfirmee) {
+      res.push({
+        nom: 'CarteCulture — Caritas',
+        badge: 'confirme',
+        desc: 'Bénéficiaire du RI, des PC, d\'un subside LAMal ou d\'une bourse : tu as automatiquement droit à la CarteCulture. Plus de 270 offres culturelles, sportives et de loisirs à prix réduit.',
+        action: '1. Demande ta carte sur carteculture.ch ou auprès de Caritas Vaud.\n2. Tu auras besoin d\'un justificatif de ta situation (attestation RI, PC, etc.) et d\'une photo d\'identité.\n3. La carte est entièrement gratuite.',
+        liensCarte: true
+      });
+    } else if (revenuFaible) {
+      res.push({
+        nom: 'CarteCulture — Caritas',
+        badge: 'probable',
+        desc: 'Avec tes revenus, tu pourrais être éligible à la CarteCulture (seuil : revenu inférieur au minimum vital).',
+        action: 'Contacte Caritas Vaud pour vérifier ton éligibilité — c\'est gratuit.',
+        liensCarte: true
+      });
     }
 
-    // 7. LACI
-    if (chomage) {
-      var dejaIndemnise = sitPro.includes('indemnit') && !sitPro.includes('non indemnit');
-      res.push({ nom:'Assurance chômage (LACI)', badge: dejaIndemnise ? 'oui' : 'verifier', desc: dejaIndemnise ? 'Tu es indemnisé·e — vérifie que tu utilises tous tes droits.' : 'Vérifie si tu remplis les conditions LACI (12 mois de cotisation AVS). Si oui, inscris-toi à l\'ORP sans attendre.', liensLACI:true });
+    // ── 6. LACI ───────────────────────────────────────────────────────────
+    if (chomageIndem) {
+      res.push({
+        nom: 'Assurance chômage (LACI)',
+        badge: 'confirme',
+        desc: 'Tu es déjà indemnisé·e — tu es dans ton droit. Assure-toi d\'utiliser toutes tes indemnités et de respecter tes obligations (recherches d\'emploi, disponibilité).',
+        action: '• Tu as droit à 400 indemnités journalières maximum (520 si tu as des enfants ou un handicap).\n• Si tu approches de la fin de tes droits et que tu as 60 ans ou plus, renseigne-toi sur la rente-pont AVS.',
+        liensLACI: true
+      });
+    } else if (chomageNonIndem) {
+      res.push({
+        nom: 'Assurance chômage (LACI)',
+        badge: 'probable',
+        desc: 'Tu pourrais avoir droit aux indemnités chômage si tu remplis les conditions : avoir cotisé à l\'AVS pendant au moins 12 mois dans les 2 dernières années, être domicilié·e en Suisse, être disponible pour un emploi à plein temps.',
+        action: '⚠ Attention : tu dois t\'inscrire à l\'ORP dans les 30 jours suivant la fin de ton contrat, sinon tu perds des jours d\'indemnité.\n1. Inscris-toi immédiatement à l\'ORP en ligne.\n2. Prépare : certificat de travail, attestation de l\'employeur, pièce d\'identité.\n3. Tu recevras 70% de ton salaire (80% si tu as des enfants ou un handicap).',
+        liensLACI: true
+      });
     }
 
-    // 8. Rente-pont
+    // ── 7. Rente-pont AVS ─────────────────────────────────────────────────
     if (age60plus && (chomage || sitPro.includes('sans revenu')) && (fortFaible || fortMoyenne)) {
-      res.push({ nom:'Rente-pont AVS', badge:'verifier', desc:'Tu as 60 ans ou plus et es en fin de droits chômage ? La rente-pont peut te verser entre 1\'260 et 2\'520 CHF/mois jusqu\'à l\'âge AVS. Très peu connue.', liensRentePont:true });
+      res.push({
+        nom: 'Rente-pont AVS — l\'aide la plus méconnue',
+        badge: 'probable',
+        desc: 'Tu as 60 ans ou plus et tu n\'as plus de revenu ? La rente-pont existe pour toi — presque personne ne la connaît. Elle peut te verser entre 1\'260 et 2\'520 CHF/mois jusqu\'à tes 65 ans.',
+        action: '1. Conditions : 400 indemnités chômage épuisées, 20 ans de cotisation AVS dont 5 après 50 ans, fortune < 50\'000 CHF.\n2. Fais la demande auprès de ta caisse AVS dès la fin de tes droits chômage.\n3. Ne pas attendre — la rente commence à la date de la demande.',
+        liensRentePont: true
+      });
     } else if (age === '50-59' && chomage) {
-      res.push({ nom:'Rente-pont AVS — à anticiper', badge:'verifier', desc:'La rente-pont n\'est pas encore accessible à ton âge, mais cotise à l\'AVS maintenant pour y avoir droit à 60 ans.', liensRentePont:true });
+      res.push({
+        nom: 'Rente-pont AVS — à anticiper',
+        badge: 'verifier',
+        desc: 'La rente-pont n\'est pas encore accessible à ton âge, mais pense à cotiser à l\'AVS maintenant pour y avoir droit à 60 ans si besoin.',
+        action: 'Renseigne-toi dès maintenant pour anticiper.',
+        liensRentePont: true
+      });
     }
 
-    // 9. AI
-    if (incapacite !== 'non' && aides !== 'AI') {
-      res.push({ nom:'Assurance invalidité (AI)', badge:incapacite==='totale'?'oui':'verifier', desc: incapacite==='totale' ? 'Dépose ta demande AI sans attendre — le droit commence à la date du dépôt, pas de rétroactivité.' : 'Selon ton taux d\'incapacité, tu pourrais avoir droit à une rente AI ou à des mesures de réadaptation.', liensAI:true });
+    // ── 8. Bourses d\'études ───────────────────────────────────────────────
+    if (enFormation && !alreadyBourse) {
+      res.push({
+        nom: 'Bourses d\'études — OCBE',
+        badge: revenuFaible ? 'probable' : 'verifier',
+        desc: 'Tu es en formation post-obligatoire (CFC, maturité, HES, université…). Une bourse est possible selon les ressources de ta famille — il n\'y a pas de critère de mérite, seulement financier.',
+        action: '1. Commence par le questionnaire d\'éligibilité OCBE (lien ci-dessous) — 10 minutes.\n2. Si éligible, fais la demande en ligne avec la déclaration d\'impôts de tes parents.\n3. En cas de doute, contacte l\'OCBE : ☏ 021 316 63 06 — ils sont là pour t\'aider.',
+        liensBourse: true
+      });
     }
 
-    // 10. Pro Infirmis
+    // ── 9. AI ─────────────────────────────────────────────────────────────
+    if (incapacite !== 'non' && !alreadyAI) {
+      res.push({
+        nom: 'Assurance invalidité (AI)',
+        badge: incapacite === 'totale' ? 'probable' : 'verifier',
+        desc: incapacite === 'totale'
+          ? 'Ton niveau d\'incapacité correspond probablement aux critères AI. L\'objectif premier de l\'AI est la réadaptation avant la rente — elle peut financer ta formation, tes aides techniques, ton retour au travail.'
+          : 'Selon ton taux d\'incapacité, tu pourrais avoir droit à des mesures de réadaptation ou à une rente partielle.',
+        action: '⚠ Important : le droit AI commence à la date du dépôt de la demande — pas de rétroactivité. Ne repousse pas.\n1. Télécharge le formulaire 001.303 sur aivd.ch.\n2. Dépose-le même incomplet — l\'AIVD te contactera pour compléter.\n3. ☏ Office AI Vaud : 021 342 91 11',
+        liensAI: true
+      });
+    }
+
+    // ── 10. Pro Infirmis ──────────────────────────────────────────────────
     if (invalidite && !retraite) {
-      res.push({ nom:'Pro Infirmis Vaud', badge:'verifier', desc:'Pro Infirmis peut t\'accompagner gratuitement dans toutes tes démarches. ☏ 021 321 02 00', liensProInfirmis:true });
+      res.push({
+        nom: 'Pro Infirmis Vaud — accompagnement gratuit',
+        badge: 'verifier',
+        desc: 'Tu as un handicap ou une maladie chronique ? Pro Infirmis peut t\'accompagner gratuitement dans toutes tes démarches : AI, logement, emploi, droits.',
+        action: '☏ 021 321 02 00 — permanences à Lausanne, Nyon, Yverdon et Vevey. Sans rendez-vous pour les urgences.',
+        liensProInfirmis: true
+      });
     }
 
-    // 11. Pro Senectute / CMS
+    // ── 11. Pro Senectute + CMS ───────────────────────────────────────────
     if (retraite || age === '65plus') {
-      res.push({ nom:'Pro Senectute Vaud', badge:'verifier', desc:'Pro Senectute propose du conseil social gratuit, de l\'aide administrative pour les 60+. ☏ 021 646 17 21', liensSenectute:true });
+      res.push({
+        nom: 'Pro Senectute Vaud — conseil gratuit pour les 60+',
+        badge: 'verifier',
+        desc: 'Aide administrative, déclaration d\'impôts, droits AVS et PC, accompagnement social — tout ça gratuitement.',
+        action: '☏ 021 646 17 21 — permanences dans tout le canton.',
+        liensSenectute: true
+      });
     }
     if (incapacite !== 'non' || retraite) {
-      res.push({ nom:'CMS — Soins et aide à domicile', badge:'verifier', desc:'Les CMS proposent soins infirmiers, aide quotidienne et téléalarme pour rester à domicile.', liensCMS:true });
+      res.push({
+        nom: 'CMS — Soins et aide à domicile',
+        badge: 'verifier',
+        desc: 'Tu veux rester chez toi mais tu as besoin d\'aide ? Les CMS envoient des professionnel·le·s pour les soins, l\'aide quotidienne, la téléalarme. Pris en charge partiellement par ta LAMal.',
+        action: '☏ AVASAD (réseau CMS Vaud) : 0800 820 830. Ou sur prescription de ton médecin.',
+        liensCMS: true
+      });
     }
 
-    // 12. Secours d'hiver
+    // ── 12. Secours d'hiver ───────────────────────────────────────────────
     if (revenuFaible && (permis.includes('suisse') || permis.includes('Permis C')) && !alreadyRI) {
-      res.push({ nom:'Secours d\'hiver Vaud', badge:'verifier', desc:'Aide ponctuelle pour payer une facture urgente. Par courrier postal uniquement, une fois par an.', liensSecours:true });
+      res.push({
+        nom: 'Secours d\'hiver Vaud',
+        badge: 'verifier',
+        desc: 'Aide ponctuelle pour payer une facture urgente, des vêtements ou de la nourriture. Financé par des dons, une seule fois par an.',
+        action: 'Courrier postal uniquement — écris à : Secours d\'hiver Vaud, Case postale, 1000 Lausanne. Décris ta situation et tes besoins.',
+        liensSecours: true
+      });
     }
 
-    // 13. Dettes
+    // ── 13. Dettes / expulsion ────────────────────────────────────────────
     if (dettes !== 'non') {
-      res.push({ nom:'Soutien financier & désendettement', badge:'verifier', desc: dettes==='loyer' ? 'Menace d\'expulsion — urgence ! Contacte immédiatement le CSR et l\'ASLOCA.' : 'Des conseils gratuits en gestion financière sont disponibles.', liensDettes:true });
+      if (dettes === 'loyer') {
+        res.push({
+          nom: 'Menace d\'expulsion — agis maintenant',
+          badge: 'verifier',
+          desc: 'C\'est une urgence. Tu as des droits et des délais légaux — mais ils sont courts.',
+          action: '1. Ne quitte JAMAIS ton logement sans décision de justice.\n2. Contacte immédiatement le CSR de ta commune.\n3. Contacte l\'ASLOCA Vaud : ☏ 021 617 16 17 — ils défendent les locataires.\n4. Délai légal de contestation : 30 jours.',
+          liensDettes: true
+        });
+      } else {
+        res.push({
+          nom: 'Soutien budget & désendettement',
+          badge: 'verifier',
+          desc: 'Des conseils gratuits existent pour t\'aider à gérer tes dettes et éviter que la situation s\'aggrave.',
+          action: '1. CSP Vaud : consultations gratuites, ☏ 021 560 60 60.\n2. Portail Parlons Cash (État de Vaud) : ressources et orientation.\n3. Plus tôt tu agis, plus les solutions sont nombreuses.',
+          liensDettes: true
+        });
+      }
     }
 
-    // 14. Santé mentale
-    if (revenuFaible || incapacite !== 'non') {
-      res.push({ nom:'Soutien psychologique gratuit', badge:'verifier', desc:'La Main Tendue (143, 24h/24) offre une écoute immédiate et confidentielle, gratuitement.', action:'☏ 143 — gratuit, 24h/24, anonyme', liensSanteMentale:true });
-    }
-
-    // 15. CSR
+    // ── 14. Orientation sociale ───────────────────────────────────────────
     if (contactSocial === 'non' && (revenuFaible || incapacite !== 'non' || dettes !== 'non')) {
-      res.push({ nom:'Centrale des solidarités — orientation sociale', badge:'oui', desc:'Tu n\'es pas encore en contact avec un service social. La Centrale peut t\'orienter gratuitement.', action:'☏ 0800 30 30 38 · Lu–ve 9h–17h30 · gratuit', liensCSR:true });
+      res.push({
+        nom: 'Centrale des solidarités — orientation gratuite',
+        badge: 'confirme',
+        desc: 'Tu n\'es pas encore en contact avec un service social. La Centrale peut t\'orienter vers les bonnes personnes, gratuitement et confidentiellement, pour tout le canton.',
+        action: '☏ 0800 30 30 38 — gratuit · Lu–ve 9h–17h30\nTu n\'as pas besoin de tout savoir avant d\'appeler. Explique ta situation et ils t\'orienteront.',
+        liensCSR: true
+      });
     }
 
     if (res.length === 0) {
-      res.push({ nom:'Aucune aide identifiée automatiquement', badge:'verifier', desc:'Ta situation ne correspond pas aux critères automatiquement détectés. Il peut tout de même exister des aides — consulte un assistant social.', action:'☏ 0800 30 30 38 · Centrale des solidarités' });
+      res.push({
+        nom: 'Aucune aide identifiée automatiquement',
+        badge: 'verifier',
+        desc: 'Ta situation ne correspond pas aux critères détectés automatiquement. Cela ne veut pas dire qu\'il n\'existe pas d\'aide pour toi.',
+        action: '☏ 0800 30 30 38 · Centrale des solidarités — gratuit, Lu–ve 9h–17h30.\nUn·e professionnel·le peut identifier des aides que ce simulateur ne couvre pas.'
+      });
     }
 
+    // ── Rendu des résultats ───────────────────────────────────────────────
     var list = document.getElementById('results-list');
     list.innerHTML = '';
     res.forEach(function(r) {
-      var bc = r.badge === 'oui' ? 'badge-oui' : 'badge-verifier';
-      var bt = r.badge === 'oui' ? '✓ Éligible' : '⚠ À vérifier';
+      var bc, bt;
+      if (r.badge === 'confirme') { bc = 'badge-oui'; bt = '✓ Confirmé'; }
+      else if (r.badge === 'probable') { bc = 'badge-probable'; bt = '~ Probablement éligible'; }
+      else { bc = 'badge-verifier'; bt = '⚠ À vérifier'; }
+
       var links = '';
       if (r.liens) links += pill('Simulateur officiel','https://prestations.vd.ch/pub/samoa/001489') + pill('Trouver une agence AAS','https://www.vd.ch/aides-financieres-et-soutien-social/trouver-une-agence-dassurance-sociale-aas/liste-des-agences-dassurances-sociales');
       if (r.lienRI) links += pill('Demander le RI','https://www.vd.ch/prestation/demander-le-revenu-dinsertion') + pill('Trouver ton CSR','https://www.vd.ch/prestation/contacter-un-centre-social-regional-csr');
       if (r.liensBourse) links += pill('Questionnaire OCBE','https://www.vd.ch/formation/aides-financieres-aux-etudes-et-a-la-formation-professionnelle-bourses-ou-prets/informations-principales') + pill('Faire une demande','https://www.vd.ch/prestation/demander-une-bourse-ou-un-pret-detudes-ou-dapprentissage');
       if (r.liensAF) links += pill('Allocations familiales','https://www.vd.ch/prestation/demander-les-allocations-familiales') + pill('CCVD','https://www.ccvd.ch');
-      if (r.liensCarte) links += pill('Demander la CarteCulture','https://www.carteculture.ch/suisse/demander-une-carteculture/demander-une-carteculture');
+      if (r.liensCarte) links += pill('Demander la CarteCulture','https://www.carteculture.ch/suisse/demander-une-carteculture/demander-une-carteculture') + pill('Caritas Vaud','https://caritas-regio.ch/fr/a-propos-de-caritas/vaud/trouver-de-laide');
       if (r.liensLACI) links += pill('S\'inscrire à l\'ORP','https://www.vd.ch/themes/economie/emploi/chomage') + pill('Infos LACI','https://www.ahv-iv.ch/fr/Assurances-sociales/Assurance-chomage-AC');
       if (r.liensRentePont) links += pill('Rente-pont AVS','https://www.ahv-iv.ch/fr/Assurances-sociales/Rente-pont/G%C3%A9n%C3%A9ralit%C3%A9s');
       if (r.liensAI) links += pill('Formulaires AI Vaud','https://aivd.ch/formulaires/') + pill('Site AIVD','https://aivd.ch/');
@@ -1157,11 +1311,21 @@
       if (r.liensSenectute) links += pill('Pro Senectute Vaud','https://www.prosenectute.ch/fr/regions/vaud.html');
       if (r.liensCMS) links += pill('AVASAD — CMS Vaud','https://www.avasad.ch');
       if (r.liensSecours) links += pill('Secours d\'hiver Vaud','https://vd.secours-d-hiver.ch/demander-de-laide/jai-besoin-de-laide');
-      if (r.liensDettes) links += pill('Parlons Cash','https://www.vd.ch/aides-financieres-et-soutien-social/2023-parlons-cash-dettes-et-surendettement') + pill('CSP Vaud','https://www.csp.ch/vaud/');
-      if (r.liensSanteMentale) links += pill('La Main Tendue — 143','https://www.143.ch');
+      if (r.liensDettes) links += pill('ASLOCA Vaud','https://vaud.asloca.ch/') + pill('CSP Vaud','https://csp.ch/vaud/') + pill('Parlons Cash','https://www.vd.ch/aides-financieres-et-soutien-social/2023-parlons-cash-dettes-et-surendettement');
       if (r.liensCSR) links += pill('Trouver ton CSR','https://www.vd.ch/prestation/contacter-un-centre-social-regional-csr');
-      list.innerHTML += '<div class="result-item"><span class="result-badge ' + bc + '">' + bt + '</span><div class="result-content"><div class="result-name">' + r.nom + '</div><div class="result-desc">' + r.desc + '</div>' + (r.action ? '<div class="result-action">' + r.action + '</div>' : '') + (links ? '<div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;">' + links + '</div>' : '') + '</div></div>';
+
+      var actionHtml = r.action ? '<div class="result-action" style="white-space:pre-line;margin-top:0.5rem;padding:0.6rem 0.75rem;background:#faf8f5;border-radius:8px;font-size:0.78rem;line-height:1.65;color:var(--dark);">' + r.action + '</div>' : '';
+
+      list.innerHTML += '<div class="result-item"><span class="result-badge ' + bc + '">' + bt + '</span><div class="result-content"><div class="result-name">' + r.nom + '</div><div class="result-desc">' + r.desc + '</div>' + actionHtml + (links ? '<div style="margin-top:0.6rem;display:flex;flex-wrap:wrap;">' + links + '</div>' : '') + '</div></div>';
     });
+
+    // ── Bannière catalogue en bas des résultats ───────────────────────────
+    list.innerHTML += '<div style="margin-top:1.5rem;background:linear-gradient(135deg,#f0f7f1 0%,#fdf5ef 100%);border:1.5px solid #d4e8d6;border-radius:14px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:0.85rem;">'
+      + '<span style="font-size:1.4rem;flex-shrink:0;">📋</span>'
+      + '<div><div style="font-size:0.85rem;font-weight:600;color:var(--sage-dark);margin-bottom:0.3rem;">Plus d\'aides potentielles dans le catalogue</div>'
+      + '<div style="font-size:0.78rem;color:var(--warm-gray);line-height:1.6;margin-bottom:0.6rem;">Ce simulateur couvre les aides principales mais pas toutes. Le catalogue complet recense les ressources vaudoises par thème — certaines te concernent peut-être.</div>'
+      + '<a href="#catalogue" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:var(--sage-dark);color:white;border-radius:9px;font-size:0.8rem;font-weight:600;text-decoration:none;">Voir le catalogue des aides &#8594;</a>'
+      + '</div></div>';
 
     var prompt = encodeURIComponent('Bonjour, je cherche les aides sociales auxquelles j\'ai droit dans le canton de Vaud. Situation : commune=' + commune + ', âge=' + age + ', séjour=' + permis + ', travail=' + sitPro + ', revenu=' + revenu + ', aides actuelles=' + aides + '. Quelles aides sont envisageables ?');
     var cl = document.getElementById('claude-link');
