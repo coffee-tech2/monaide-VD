@@ -161,11 +161,11 @@
       <li class="nav-dropdown">
         <a href="#formulaires">Documentation</a>
         <div class="nav-dropdown-menu" style="min-width:240px;">
-          <a href="#bloc-ri" onclick="setTimeout(function(){toggleAccordion('doc-ri')},400)">Revenu d&#8217;insertion (RI)</a>
-          <a href="#bloc-lamal" onclick="setTimeout(function(){toggleAccordion('doc-lamal')},400)">Subside LAMal</a>
-          <a href="#bloc-ai" onclick="setTimeout(function(){toggleAccordion('doc-ai')},400)">Assurance invalidit&#233; (AI)</a>
-          <a href="#bloc-bourse" onclick="setTimeout(function(){toggleAccordion('doc-bourse')},400)">Bourses d&#8217;&#233;tudes</a>
-          <a href="#bloc-carte" onclick="setTimeout(function(){toggleAccordion('doc-carte')},400)">CarteCulture</a>
+          <a href="#bloc-ri" onclick="setTimeout(function(){ouvrirAccordion('doc-ri')},400)">Revenu d&#8217;insertion (RI)</a>
+          <a href="#bloc-lamal" onclick="setTimeout(function(){ouvrirAccordion('doc-lamal')},400)">Subside LAMal</a>
+          <a href="#bloc-ai" onclick="setTimeout(function(){ouvrirAccordion('doc-ai')},400)">Assurance invalidit&#233; (AI)</a>
+          <a href="#bloc-bourse" onclick="setTimeout(function(){ouvrirAccordion('doc-bourse')},400)">Bourses d&#8217;&#233;tudes</a>
+          <a href="#bloc-carte" onclick="setTimeout(function(){ouvrirAccordion('doc-carte')},400)">CarteCulture</a>
         </div>
       </li>
     </ul>
@@ -676,7 +676,7 @@
 
       <div id="bloc-ri" style="border:1.5px solid var(--border);border-radius:14px;overflow:hidden;background:white;scroll-margin-top:80px;">
         <button onclick="toggleAccordion('doc-ri')" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:none;border:none;cursor:pointer;text-align:left;">
-          <div><div style="font-size:0.92rem;font-weight:600;color:var(--dark);">Revenu d&#8217;insertion (RI)</div><div style="font-size:0.75rem;color:var(--warm-gray);margin-top:2px;">Documents &#224; pr&#233;parer &#183; Contacts CSR &#183; Lien officiel</div></div>
+          <div><div style="font-size:0.92rem;font-weight:600;color:var(--dark);">Revenu d&#8217;insertion (RI)</div><div style="font-size:0.75rem;color:var(--warm-gray);margin-top:2px;">Conditions &#183; Documents &#224; pr&#233;parer &#183; Liens officiels</div></div>
           <span id="doc-ri-icon" style="color:var(--orange);font-size:1.1rem;transition:transform 0.2s;">&#8595;</span>
         </button>
         <div id="doc-ri" style="display:none;padding:0 1.25rem 1.25rem;">
@@ -699,7 +699,7 @@
 
       <div id="bloc-lamal" style="border:1.5px solid var(--border);border-radius:14px;overflow:hidden;background:white;scroll-margin-top:80px;">
         <button onclick="toggleAccordion('doc-lamal')" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:none;border:none;cursor:pointer;text-align:left;">
-          <div><div style="font-size:0.92rem;font-weight:600;color:var(--dark);">Subside LAMal</div><div style="font-size:0.75rem;color:var(--warm-gray);margin-top:2px;">Documents &#224; pr&#233;parer &#183; Simulateur &#183; Agences AAS</div></div>
+          <div><div style="font-size:0.92rem;font-weight:600;color:var(--dark);">Subside LAMal</div><div style="font-size:0.75rem;color:var(--warm-gray);margin-top:2px;">Conditions &#183; Documents &#224; pr&#233;parer &#183; Liens officiels</div></div>
           <span id="doc-lamal-icon" style="color:var(--orange);font-size:1.1rem;transition:transform 0.2s;">&#8595;</span>
         </button>
         <div id="doc-lamal" style="display:none;padding:0 1.25rem 1.25rem;">
@@ -716,7 +716,7 @@
 
       <div id="bloc-ai" style="border:1.5px solid var(--border);border-radius:14px;overflow:hidden;background:white;scroll-margin-top:80px;">
         <button onclick="toggleAccordion('doc-ai')" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:none;border:none;cursor:pointer;text-align:left;">
-          <div><div style="font-size:0.92rem;font-weight:600;color:var(--dark);">Assurance invalidit&#233; (AI)</div><div style="font-size:0.75rem;color:var(--warm-gray);margin-top:2px;">Conditions &#183; Documents &#183; Formulaire officiel</div></div>
+          <div><div style="font-size:0.92rem;font-weight:600;color:var(--dark);">Assurance invalidit&#233; (AI)</div><div style="font-size:0.75rem;color:var(--warm-gray);margin-top:2px;">Conditions &#183; Documents &#224; pr&#233;parer &#183; Liens officiels</div></div>
           <span id="doc-ai-icon" style="color:var(--orange);font-size:1.1rem;transition:transform 0.2s;">&#8595;</span>
         </button>
         <div id="doc-ai" style="display:none;padding:0 1.25rem 1.25rem;">
@@ -734,7 +734,7 @@
 
       <div id="bloc-bourse" style="border:1.5px solid var(--border);border-radius:14px;overflow:hidden;background:white;scroll-margin-top:80px;">
         <button onclick="toggleAccordion('doc-bourse')" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:none;border:none;cursor:pointer;text-align:left;">
-          <div><div style="font-size:0.92rem;font-weight:600;color:var(--dark);">Bourses d&#8217;&#233;tudes (OCBE)</div><div style="font-size:0.75rem;color:var(--warm-gray);margin-top:2px;">Documents &#183; Questionnaire &#183; Demande en ligne</div></div>
+          <div><div style="font-size:0.92rem;font-weight:600;color:var(--dark);">Bourses d&#8217;&#233;tudes (OCBE)</div><div style="font-size:0.75rem;color:var(--warm-gray);margin-top:2px;">Conditions &#183; Documents &#224; pr&#233;parer &#183; Liens officiels</div></div>
           <span id="doc-bourse-icon" style="color:var(--orange);font-size:1.1rem;transition:transform 0.2s;">&#8595;</span>
         </button>
         <div id="doc-bourse" style="display:none;padding:0 1.25rem 1.25rem;">
@@ -751,7 +751,7 @@
 
       <div id="bloc-carte" style="border:1.5px solid var(--border);border-radius:14px;overflow:hidden;background:white;scroll-margin-top:80px;">
         <button onclick="toggleAccordion('doc-carte')" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:none;border:none;cursor:pointer;text-align:left;">
-          <div><div style="font-size:0.92rem;font-weight:600;color:var(--dark);">CarteCulture &#8212; Caritas</div><div style="font-size:0.75rem;color:var(--warm-gray);margin-top:2px;">Conditions &#183; Documents &#183; Lien officiel</div></div>
+          <div><div style="font-size:0.92rem;font-weight:600;color:var(--dark);">CarteCulture &#8212; Caritas</div><div style="font-size:0.75rem;color:var(--warm-gray);margin-top:2px;">Conditions &#183; Documents &#224; pr&#233;parer &#183; Liens officiels</div></div>
           <span id="doc-carte-icon" style="color:var(--orange);font-size:1.1rem;transition:transform 0.2s;">&#8595;</span>
         </button>
         <div id="doc-carte" style="display:none;padding:0 1.25rem 1.25rem;">
@@ -940,6 +940,13 @@
     var open = el.style.display === 'block';
     el.style.display = open ? 'none' : 'block';
     if (icon) icon.style.transform = open ? '' : 'rotate(180deg)';
+  }
+
+  function ouvrirAccordion(id) {
+    var el = document.getElementById(id);
+    var icon = document.getElementById(id + '-icon');
+    if (el) el.style.display = 'block';
+    if (icon) icon.style.transform = 'rotate(180deg)';
   }
 
   // ─── Simulateur : navigation ─────────────────────────────────────────────
