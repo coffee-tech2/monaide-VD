@@ -836,7 +836,7 @@
   var currentStep = 1;
 
   // ─── CATALOGUE : ouvrir/fermer une carte ─────────────────────────────────
-  function toggleCatCard(card) {
+  window.toggleCatCard = function(card) {
     var body = card.querySelector('.cat-card-body');
     if (!body) return;
     var isOpen = card.classList.contains('open');
@@ -866,7 +866,7 @@
   }
 
   // ─── Filtres catalogue ───────────────────────────────────────────────────
-  function setCatFilter(cat, btn) {
+  window.setCatFilter = function(cat, btn) {
     document.querySelectorAll('.cat-filter').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
     document.getElementById('cat-search').value = '';
@@ -889,7 +889,7 @@
     document.getElementById('cat-no-result').style.display = count === 0 ? '' : 'none';
   }
 
-  function filtrerCatalogue() {
+  window.filtrerCatalogue = function() {
     var q = document.getElementById('cat-search').value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     document.querySelectorAll('.cat-filter').forEach(function(b) { b.classList.remove('active'); });
     document.querySelector('.cat-filter').classList.add('active');
@@ -908,12 +908,12 @@
   }
 
   // ─── Navigation ──────────────────────────────────────────────────────────
-  function navVers(id) {
+  window.navVers = function(id) {
     var el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function navVersDoc(id) {
+  window.navVersDoc = function(id) {
     ['doc-ri','doc-lamal','doc-ai','doc-bourse','doc-carte'].forEach(function(docId) {
       var e = document.getElementById(docId);
       var ic = document.getElementById(docId + '-icon');
@@ -934,7 +934,7 @@
   });
 
   // ─── Accordéons documentation ────────────────────────────────────────────
-  function toggleAccordion(id) {
+  window.toggleAccordion = function(id) {
     var el = document.getElementById(id);
     var icon = document.getElementById(id + '-icon');
     var open = el.style.display === 'block';
@@ -942,7 +942,7 @@
     if (icon) icon.style.transform = open ? '' : 'rotate(180deg)';
   }
 
-  function ouvrirAccordion(id) {
+  window.ouvrirAccordion = function(id) {
     var el = document.getElementById(id);
     var icon = document.getElementById(id + '-icon');
     if (el) el.style.display = 'block';
@@ -950,7 +950,7 @@
   }
 
   // ─── Simulateur : navigation ─────────────────────────────────────────────
-  function goToStep(step) {
+  window.goToStep = function(step) {
     for (var i = 1; i <= TOTAL_STEPS; i++) {
       var el = document.getElementById('step' + i);
       if (el) el.style.display = (i === step) ? 'block' : 'none';
@@ -965,7 +965,7 @@
     currentStep = step;
   }
 
-  function restart() {
+  window.restart = function() {
     document.getElementById('results').style.display = 'none';
     for (var i = 1; i <= TOTAL_STEPS; i++) {
       var el = document.getElementById('step' + i);
@@ -979,7 +979,7 @@
   }
 
   // ─── Simulateur : cerveau ────────────────────────────────────────────────
-  function analyserSituation() {
+  window.analyserSituation = function() {
     var commune      = document.getElementById('commune').value || 'non précisé';
     var age          = document.getElementById('age').value || '';
     var permis       = document.getElementById('statut_sejour').value || '';
@@ -1147,7 +1147,7 @@
   // ─── ADMIN ───────────────────────────────────────────────────────────────
   var ADMIN_PWD = 'monaideVD2026';
 
-  function ouvrirAdmin() {
+  window.ouvrirAdmin = function() {
     document.getElementById('admin-overlay').style.display = 'flex';
     document.getElementById('admin-login').style.display = 'block';
     document.getElementById('admin-panel').style.display = 'none';
@@ -1156,9 +1156,9 @@
     setTimeout(function(){ document.getElementById('admin-pwd').focus(); }, 100);
   }
 
-  function fermerAdmin() { document.getElementById('admin-overlay').style.display = 'none'; }
+  window.fermerAdmin = function() { document.getElementById('admin-overlay').style.display = 'none'; }
 
-  function verifierAdmin() {
+  window.verifierAdmin = function() {
     if (document.getElementById('admin-pwd').value === ADMIN_PWD) {
       document.getElementById('admin-login').style.display = 'none';
       document.getElementById('admin-panel').style.display = 'block';
@@ -1170,7 +1170,7 @@
     }
   }
 
-  function showAdminTab(tabId, btn) {
+  window.showAdminTab = function(tabId, btn) {
     ['tab-liens','tab-email','tab-guide'].forEach(function(id) {
       document.getElementById(id).style.display = id === tabId ? 'block' : 'none';
     });
@@ -1178,7 +1178,7 @@
     btn.classList.add('active');
   }
 
-  function chargerLiens() {
+  window.chargerLiens = function() {
     var container = document.getElementById('admin-links-list');
     container.innerHTML = '';
     document.querySelectorAll('.cat-card').forEach(function(carte) {
@@ -1209,7 +1209,7 @@
     });
   }
 
-  function sauvegarderLiens() {
+  window.sauvegarderLiens = function() {
     var updates = {};
     document.querySelectorAll('#admin-links-list input[type="url"]').forEach(function(input) {
       if (input.dataset.targetHref && input.value.trim()) updates[input.dataset.targetHref] = input.value.trim();
@@ -1223,7 +1223,7 @@
     chargerLiens();
   }
 
-  function sauvegarderEmail() {
+  window.sauvegarderEmail = function() {
     var newEmail = document.getElementById('admin-email-input').value.trim();
     if (!newEmail) return;
     document.querySelectorAll('a[href^="mailto:"]').forEach(function(a) {
@@ -1233,3 +1233,4 @@
     var msg = document.getElementById('admin-email-msg');
     msg.style.display = 'block';
     setTimeout
+    
