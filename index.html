@@ -26,10 +26,11 @@
   .nav-links a:hover { color: var(--orange-dark); background: var(--orange-light); }
   .nav-dropdown { position: relative; }
   .nav-dropdown > a::after { content: ''; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; opacity: 0.5; display: inline-block; margin-left: 4px; }
-  .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 8px 32px rgba(44,40,37,0.12); padding: 0.75rem 0.5rem 0.5rem; min-width: 220px; z-index: 200; }
+  .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 8px 32px rgba(44,40,37,0.12); padding: 0.5rem; min-width: 220px; z-index: 200; }
   .nav-dropdown-menu.open { display: block; }
   .nav-links li { position: relative; }
   .nav-links li:hover .nav-dropdown-menu { display: block; }
+  .nav-dropdown > a { padding-bottom: 1rem; margin-bottom: -0.55rem; }
   .nav-dropdown-menu a { display: block; padding: 0.45rem 0.75rem; border-radius: 8px; font-size: 0.82rem; color: var(--dark); text-decoration: none; font-weight: 400; transition: all 0.15s; white-space: nowrap; }
   .nav-dropdown-menu a:hover { background: var(--orange-light); color: var(--orange-dark); }
 
@@ -420,14 +421,11 @@
             <a href="https://www.vd.ch/prestation/contacter-un-centre-social-regional-csr" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:var(--sage-light);border:1px solid #c8deca;color:var(--sage-dark);border-radius:9px;font-size:0.8rem;font-weight:500;text-decoration:none;">Trouver mon CSR &#8594;</a>
           </div>
         </div>
-        <div style="margin-top:1rem;padding:1rem;background:var(--sage-light);border-radius:12px;">
-          <div style="font-size:0.82rem;font-weight:600;color:var(--sage-dark);margin-bottom:0.5rem;">Aller plus loin avec l&#8217;IA</div>
+        
           <p style="font-size:0.78rem;color:var(--warm-gray);margin-bottom:0.75rem;line-height:1.5;">Tu peux d&#233;crire ta situation &#224; une IA pour y voir plus clair et pr&#233;parer tes questions.</p>
           <a id="claude-link" href="#" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:var(--sage-dark);color:white;border-radius:9px;font-size:0.82rem;font-weight:500;text-decoration:none;">Analyser avec l&#8217;IA &#8594;</a>
         </div>
-        <div style="margin-top:1rem;padding:1rem;background:#fff8e8;border:1px solid #f0d080;border-radius:12px;font-size:0.78rem;color:var(--dark);line-height:1.6;">
-          <strong>&#128161; Centrale des solidarit&#233;s</strong> &#8212; gratuit, confidentiel, pour tout le canton. <strong>&#9743; 0800 30 30 38</strong> &#183; Lu&#8211;ve 9h&#8211;17h30
-        </div>
+        
         <button class="restart-btn" onclick="restart()">&#8635; Recommencer la simulation</button>
       </div>
     </div>
@@ -1290,6 +1288,10 @@
     }
 
     // ── Rendu des résultats ───────────────────────────────────────────────
+    // Trier : confirmé → probable → verifier
+    var ordre = { confirme: 0, probable: 1, verifier: 2 };
+    res.sort(function(a, b) { return (ordre[a.badge] || 2) - (ordre[b.badge] || 2); });
+
     var list = document.getElementById('results-list');
     list.innerHTML = '';
     res.forEach(function(r) {
@@ -1323,7 +1325,7 @@
     list.innerHTML += '<div style="margin-top:1.5rem;background:linear-gradient(135deg,#f0f7f1 0%,#fdf5ef 100%);border:1.5px solid #d4e8d6;border-radius:14px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:0.85rem;">'
       + '<span style="font-size:1.4rem;flex-shrink:0;">📋</span>'
       + '<div><div style="font-size:0.85rem;font-weight:600;color:var(--sage-dark);margin-bottom:0.3rem;">Plus d\'aides potentielles dans le catalogue</div>'
-      + '<div style="font-size:0.78rem;color:var(--warm-gray);line-height:1.6;margin-bottom:0.6rem;">Ce simulateur couvre les aides principales mais pas toutes. Le catalogue complet recense les ressources vaudoises par thème — certaines te concernent peut-être.</div>'
+      + '<div style="font-size:0.78rem;color:var(--warm-gray);line-height:1.6;margin-bottom:0.6rem;">Le simulateur ne couvre pas tout. Le catalogue recense d'autres ressources vaudoises — associations, services, aides spécifiques — qui pourraient te concerner.</div>'
       + '<a href="#catalogue" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:var(--sage-dark);color:white;border-radius:9px;font-size:0.8rem;font-weight:600;text-decoration:none;">Voir le catalogue des aides &#8594;</a>'
       + '</div></div>';
 
@@ -1427,6 +1429,11 @@
     var msg = document.getElementById('admin-email-msg');
     msg.style.display = 'block';
     setTimeout(function(){ msg.style.display = 'none'; }, 3000);
+  }
+
+</script>
+</body>
+</html>Plus de ressources dans le catalogue000);
   }
 
 </script>
