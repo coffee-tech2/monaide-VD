@@ -28,6 +28,8 @@
   .nav-dropdown > a::after { content: ''; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; opacity: 0.5; display: inline-block; margin-left: 4px; }
   .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 8px 32px rgba(44,40,37,0.12); padding: 0.75rem 0.5rem 0.5rem; min-width: 220px; z-index: 200; }
   .nav-dropdown-menu.open { display: block; }
+  .nav-links li { position: relative; }
+  .nav-links li:hover .nav-dropdown-menu { display: block; }
   .nav-dropdown-menu a { display: block; padding: 0.45rem 0.75rem; border-radius: 8px; font-size: 0.82rem; color: var(--dark); text-decoration: none; font-weight: 400; transition: all 0.15s; white-space: nowrap; }
   .nav-dropdown-menu a:hover { background: var(--orange-light); color: var(--orange-dark); }
 
@@ -145,9 +147,9 @@
     <a href="#" class="nav-logo">MonAide<span>-VD</span></a>
     <ul class="nav-links">
       <li><a href="javascript:void(0)" onclick="navVers('simulateur')">Simulateur</a></li>
-      <li>
-        <a href="javascript:void(0)" onclick="toggleDropdown('dd-catalogue')">Catalogue des aides &#9660;</a>
-        <div class="nav-dropdown-menu" id="dd-catalogue" style="min-width:260px;">
+      <li class="nav-dropdown">
+        <a href="javascript:void(0)">Catalogue des aides</a>
+        <div class="nav-dropdown-menu" style="min-width:260px;">
           <a href="javascript:void(0)" onclick="navVers('groupe-sante')">Sant&#233; &amp; urgences sociales</a>
           <a href="javascript:void(0)" onclick="navVers('groupe-revenus')">Revenus &amp; aides financi&#232;res</a>
           <a href="javascript:void(0)" onclick="navVers('groupe-emploi')">Emploi &amp; formation</a>
@@ -156,9 +158,9 @@
           <a href="javascript:void(0)" onclick="navVers('groupe-culture')">Loisirs &amp; culture</a>
         </div>
       </li>
-      <li>
-        <a href="javascript:void(0)" onclick="toggleDropdown('dd-doc')">Documentation &#9660;</a>
-        <div class="nav-dropdown-menu" id="dd-doc" style="min-width:240px;">
+      <li class="nav-dropdown">
+        <a href="javascript:void(0)">Documentation</a>
+        <div class="nav-dropdown-menu" style="min-width:240px;">
           <a href="javascript:void(0)" onclick="navVersDoc('doc-ri')">Revenu d&#8217;insertion (RI)</a>
           <a href="javascript:void(0)" onclick="navVersDoc('doc-lamal')">Subside LAMal</a>
           <a href="javascript:void(0)" onclick="navVersDoc('doc-ai')">Assurance invalidit&#233; (AI)</a>
@@ -175,14 +177,12 @@
   <div class="hero-blob"></div>
   <div class="hero-content" style="max-width:700px;">
     <h1>Tu as s&#251;rement des droits<br>que tu ne connais <em>pas encore</em></h1>
-    <p style="font-size:1.05rem;color:var(--dark);margin-bottom:2.5rem;font-weight:500;line-height:1.7;animation:fadeUp 0.6s ease 0.2s both;">Dans le canton de Vaud, des millions de francs d&#8217;aides sociales ne sont jamais r&#233;clam&#233;s chaque ann&#233;e &#8212; simplement parce que les gens ne savent pas qu&#8217;ils y ont droit.<br><span style="color:var(--warm-gray);font-weight:400;font-size:0.95rem;">MonAide-VD est l&#224; pour changer &#231;a. Gratuit, confidentiel, fait pour toi.</span></p>
+    <p style="font-size:1.05rem;color:var(--dark);margin-bottom:2.5rem;font-weight:500;line-height:1.7;animation:fadeUp 0.6s ease 0.2s both;">Dans le canton de Vaud, des millions de francs d&#8217;aides sociales ne sont jamais r&#233;clam&#233;s chaque ann&#233;e &#8212; simplement parce que les gens ne savent pas qu&#8217;ils y ont droit.<br><span style="color:var(--warm-gray);font-weight:400;font-size:0.95rem;">MonAide-VD est l&#224; pour changer &#231;a.</span></p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.6s ease 0.3s both;">
       <a href="#simulateur" class="btn-primary">D&#233;couvrir mes droits &#8594;</a>
       <a href="#catalogue" class="btn-secondary">Explorer les aides</a>
     </div>
-    <div style="display:flex;gap:2.5rem;margin-top:3rem;justify-content:center;animation:fadeUp 0.6s ease 0.4s both;">
-      <div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.8rem;font-weight:600;color:var(--sage-dark);">100%</div><div style="font-size:0.8rem;color:var(--warm-gray);">Gratuit &#183; Confidentiel &#183; Sans jugement</div></div>
-    </div>
+    
   </div>
 </section>
 
@@ -907,112 +907,31 @@
     document.getElementById('cat-no-result').style.display = count === 0 ? '' : 'none';
   }
 
-  // ─── Navigation menu ─────────────────────────────────────────────────────
-  function toggleDropdown(id) {
-    var menu = document.getElementById(id);
-    if (!menu) return;
-    var isOpen = menu.classList.contains('open');
-    // Fermer tous les dropdowns
-    document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
-    if (!isOpen) menu.classList.add('open');
-  }
-
+  // ─── Navigation ──────────────────────────────────────────────────────────
   function navVers(id) {
-    document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
     var el = document.getElementById(id);
-    if (!el) return;
-    var top = 0;
-    var obj = el;
-    while (obj) { top += obj.offsetTop; obj = obj.offsetParent; }
-    window.scrollTo({ top: top - 80, behavior: 'smooth' });
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function navVersDoc(id) {
-    document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
     ['doc-ri','doc-lamal','doc-ai','doc-bourse','doc-carte'].forEach(function(docId) {
-      var el = document.getElementById(docId);
-      var icon = document.getElementById(docId + '-icon');
-      if (el) el.style.display = 'none';
-      if (icon) icon.style.transform = '';
+      var e = document.getElementById(docId);
+      var ic = document.getElementById(docId + '-icon');
+      if (e) e.style.display = 'none';
+      if (ic) ic.style.transform = '';
     });
     var el = document.getElementById(id);
     var icon = document.getElementById(id + '-icon');
     if (el) el.style.display = 'block';
     if (icon) icon.style.transform = 'rotate(180deg)';
     var section = document.getElementById('formulaires');
-    if (section) {
-      var top = 0;
-      var obj = section;
-      while (obj) { top += obj.offsetTop; obj = obj.offsetParent; }
-      window.scrollTo({ top: top - 80, behavior: 'smooth' });
-    }
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  // Fermer dropdown si clic ailleurs
   document.addEventListener('click', function(e) {
-    var dansMenu = e.target.closest('.nav-dropdown-menu');
-    var surBouton = e.target.closest('li > a');
-    if (!dansMenu && !surBouton) {
-      document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
-    }
     var overlay = document.getElementById('admin-overlay');
     if (overlay && e.target === overlay) fermerAdmin();
   });
-
-  // ─── Navigation depuis le menu (compatible Wix iframe) ───────────────────
-  function scrollVers(id) {
-    var el = document.getElementById(id);
-    if (!el) return;
-    var top = el.getBoundingClientRect().top + window.pageYOffset - 80;
-    window.scrollTo({ top: top, behavior: 'smooth' });
-  }
-
-  function scrollVersDoc(id) {
-    // Fermer tous les accordéons
-    ['doc-ri','doc-lamal','doc-ai','doc-bourse','doc-carte'].forEach(function(docId) {
-      var el = document.getElementById(docId);
-      var icon = document.getElementById(docId + '-icon');
-      if (el) el.style.display = 'none';
-      if (icon) icon.style.transform = '';
-    });
-    // Ouvrir le bon
-    var el = document.getElementById(id);
-    var icon = document.getElementById(id + '-icon');
-    if (el) el.style.display = 'block';
-    if (icon) icon.style.transform = 'rotate(180deg)';
-    // Scroll vers le bouton parent (le bloc entier)
-    var btn = el ? el.previousElementSibling : null;
-    var cible = btn ? btn.parentElement : document.getElementById('formulaires');
-    if (cible) {
-      var top = cible.getBoundingClientRect().top + window.pageYOffset - 80;
-      window.scrollTo({ top: top, behavior: 'smooth' });
-    }
-  }
-
-  // ─── Ouvrir un accordéon documentation depuis le menu nav ───────────────
-  function ouvrirDoc(id) {
-    setTimeout(function() {
-      // Fermer tous les accordéons d'abord
-      ['doc-ri','doc-lamal','doc-ai','doc-bourse','doc-carte'].forEach(function(docId) {
-        var el = document.getElementById(docId);
-        var icon = document.getElementById(docId + '-icon');
-        if (el) el.style.display = 'none';
-        if (icon) icon.style.transform = '';
-      });
-      // Ouvrir celui demandé
-      var el = document.getElementById(id);
-      var icon = document.getElementById(id + '-icon');
-      if (el) el.style.display = 'block';
-      if (icon) icon.style.transform = 'rotate(180deg)';
-      // Scroll vers l'accordéon
-      setTimeout(function() {
-        if (el) {
-          var parent = el.parentElement;
-          if (parent) try { parent.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(e) {}
-        }
-      }, 100);
-    }, 200);
-  }
 
   // ─── Accordéons documentation ────────────────────────────────────────────
   function toggleAccordion(id) {
