@@ -918,40 +918,41 @@
   }
 
   function navVers(id) {
-    // Fermer tous les dropdowns
     document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
     var el = document.getElementById(id);
     if (!el) return;
-    var top = el.getBoundingClientRect().top + window.pageYOffset - 80;
-    window.scrollTo({ top: top, behavior: 'smooth' });
+    var top = 0;
+    var obj = el;
+    while (obj) { top += obj.offsetTop; obj = obj.offsetParent; }
+    window.scrollTo({ top: top - 80, behavior: 'smooth' });
   }
 
   function navVersDoc(id) {
-    // Fermer tous les dropdowns
     document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
-    // Fermer tous les accordéons
     ['doc-ri','doc-lamal','doc-ai','doc-bourse','doc-carte'].forEach(function(docId) {
       var el = document.getElementById(docId);
       var icon = document.getElementById(docId + '-icon');
       if (el) el.style.display = 'none';
       if (icon) icon.style.transform = '';
     });
-    // Ouvrir le bon
     var el = document.getElementById(id);
     var icon = document.getElementById(id + '-icon');
     if (el) el.style.display = 'block';
     if (icon) icon.style.transform = 'rotate(180deg)';
-    // Scroll vers la section formulaires
     var section = document.getElementById('formulaires');
     if (section) {
-      var top = section.getBoundingClientRect().top + window.pageYOffset - 80;
-      window.scrollTo({ top: top, behavior: 'smooth' });
+      var top = 0;
+      var obj = section;
+      while (obj) { top += obj.offsetTop; obj = obj.offsetParent; }
+      window.scrollTo({ top: top - 80, behavior: 'smooth' });
     }
   }
 
   // Fermer dropdown si clic ailleurs
   document.addEventListener('click', function(e) {
-    if (!e.target.closest('.nav-dropdown-menu') && !e.target.closest('li > a[onclick*="toggleDropdown"]')) {
+    var dansMenu = e.target.closest('.nav-dropdown-menu');
+    var surBouton = e.target.closest('li > a');
+    if (!dansMenu && !surBouton) {
       document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
     }
     var overlay = document.getElementById('admin-overlay');
