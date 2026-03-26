@@ -8,38 +8,40 @@
 <title>MonAide-VD — Trouvez vos aides sociales dans le canton de Vaud</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=Bricolage+Grotesque:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --orange: #e8693a; --orange-dark: #c04820; --orange-light: #fff3ee;
     --sage: #7a9e7e; --sage-light: #e8f0e9; --sage-dark: #2d5a32;
     --peach: #f0a07a; --peach-light: #fdf0e8;
-    --cream: #faf7f2; --warm-gray: #6b6560; --dark: #1e1c1a;
-    --white: #ffffff; --border: #e8ddd5;
+    --cream: #f4eee6; --warm-gray: #6b6560; --dark: #1e1c1a;
+    --white: #fdfaf6; --border: #e4d8cf;
     --shadow: 0 4px 24px rgba(44,40,37,0.08);
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Sora', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(180deg, #f3ede5 0%, #f6f0e8 100%); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+  .skip-link { position:absolute; left:1rem; top:-3rem; z-index:220; padding:0.75rem 1rem; border-radius:999px; background:var(--sage-dark); color:white; font-size:0.82rem; font-weight:700; text-decoration:none; box-shadow:0 14px 28px rgba(33,72,38,0.18); transition:top 0.18s ease, transform 0.18s ease; }
+  .skip-link:focus { top:0.9rem; transform:translateY(0); }
 
-  nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(250,247,242,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100; height: 68px; }
+  nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(244,238,230,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100; height: 68px; }
   .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
-  .nav-logo { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; font-weight: 400; color: var(--sage-dark); text-decoration: none; }
+  .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.43rem; font-weight: 800; letter-spacing:-0.045em; color: var(--sage-dark); text-decoration: none; }
   .nav-logo span { color: var(--orange); }
   .nav-mobile-actions { display:none; align-items:center; gap:0.5rem; }
   .nav-links { display: flex; gap: 0; list-style: none; align-items: center; }
   .nav-links a { text-decoration: none; color: var(--warm-gray); font-size: 0.88rem; font-weight: 500; padding: 0.45rem 0.9rem; border-radius: 8px; transition: all 0.15s; }
   .nav-links a:hover { color: var(--orange-dark); background: var(--orange-light); }
   .nav-search-wrap { display:flex; align-items:center; gap:0.55rem; margin-left:0.25rem; }
-  .nav-search-toggle { width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:999px; border:1.5px solid var(--border); background:white; color:var(--warm-gray); cursor:pointer; transition:all 0.15s; }
+  .nav-search-toggle { width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:999px; border:1.5px solid var(--border); background:rgba(253,250,246,0.96); color:var(--warm-gray); cursor:pointer; transition:all 0.15s; }
   .nav-search-toggle:hover { color:var(--orange-dark); border-color:#dfc9bb; background:var(--orange-light); }
   .nav-search-panel { display:flex; align-items:center; gap:0.45rem; width:0; opacity:0; overflow:hidden; transition:width 0.22s ease, opacity 0.18s ease; }
   .nav-search-panel.open { width:230px; opacity:1; }
-  .nav-search-input { width:100%; padding:8px 12px; border-radius:999px; border:1.5px solid #e2d8ce; background:white; color:var(--dark); font-family:'Sora',sans-serif; font-size:0.8rem; outline:none; }
+  .nav-search-input { width:100%; padding:8px 12px; border-radius:999px; border:1.5px solid #ded2c7; background:rgba(253,250,246,0.98); color:var(--dark); font-family:'Plus Jakarta Sans',sans-serif; font-size:0.8rem; outline:none; }
   .nav-search-input:focus { border-color:rgba(232,105,58,0.72); box-shadow:0 0 0 3px rgba(232,105,58,0.08); }
-  .nav-search-submit { padding:8px 12px; border:none; border-radius:999px; background:var(--sage-dark); color:white; font-family:'Sora',sans-serif; font-size:0.76rem; font-weight:600; cursor:pointer; }
+  .nav-search-submit { padding:8px 12px; border:none; border-radius:999px; background:var(--sage-dark); color:white; font-family:'Plus Jakarta Sans',sans-serif; font-size:0.76rem; font-weight:700; cursor:pointer; }
   .nav-dropdown { position: relative; }
   .nav-dropdown > a::after { content: ''; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; opacity: 0.5; display: inline-block; margin-left: 4px; }
-  .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 8px 32px rgba(44,40,37,0.12); padding: 0.5rem; min-width: 220px; z-index: 200; }
+  .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(252,248,243,0.98); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 8px 32px rgba(44,40,37,0.10); padding: 0.5rem; min-width: 220px; z-index: 200; }
   .nav-dropdown-menu.open { display: block; }
   .nav-links li { position: relative; }
   .nav-links li:hover .nav-dropdown-menu { display: block; }
@@ -59,30 +61,54 @@
   .catalog-note-close { position:absolute; top:10px; right:10px; width:28px; height:28px; border:none; background:rgba(255,255,255,0.78); color:var(--warm-gray); border-radius:999px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; font-size:1rem; line-height:1; transition:transform 0.18s, background 0.15s, color 0.15s, box-shadow 0.18s; box-shadow:0 4px 12px rgba(72,59,49,0.04); }
   .catalog-note.is-visible .catalog-note-close { animation: catalogNoteCloseReveal 0.42s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both; }
   .catalog-note-close:hover { background:white; color:var(--orange-dark); transform:translateY(-1px) scale(1.04); box-shadow:0 10px 18px rgba(72,59,49,0.08); }
-  .beta-banner { background:linear-gradient(135deg,#f3f7f1 0%,#fdf5ed 100%); border-bottom:1px solid #e6dbcf; margin-top:68px; padding:0.72rem 1rem; text-align:center; font-size:0.78rem; color:var(--warm-gray); line-height:1.6; }
+  .beta-banner { background:linear-gradient(135deg,#edf3ec 0%,#f8efe4 100%); border-bottom:1px solid #e2d7cb; margin-top:68px; padding:0.72rem 1rem; text-align:center; font-size:0.78rem; color:var(--warm-gray); line-height:1.6; }
   .beta-banner strong { color:var(--sage-dark); }
 
-  .hero { min-height: 54vh; display: flex; align-items: center; justify-content: center; padding: 96px 2rem 2.75rem; position: relative; overflow: hidden; background: linear-gradient(180deg, #f7f1e8 0%, #f4ede5 100%); }
+  .hero { min-height: 54vh; display: flex; align-items: center; justify-content: center; padding: 96px 2rem 2.75rem; position: relative; overflow: hidden; background:
+    radial-gradient(circle at top center, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0) 48%),
+    linear-gradient(180deg, #efe6da 0%, #ebe1d5 100%); }
   .hero-bg { position: absolute; inset: 0; background:
-    linear-gradient(90deg, rgba(45,90,50,0.04) 0, rgba(45,90,50,0.04) 1px, transparent 1px, transparent 72px),
-    linear-gradient(rgba(45,90,50,0.04) 0, rgba(45,90,50,0.04) 1px, transparent 1px, transparent 72px);
+    linear-gradient(90deg, rgba(45,90,50,0.025) 0, rgba(45,90,50,0.025) 1px, transparent 1px, transparent 72px),
+    linear-gradient(rgba(45,90,50,0.025) 0, rgba(45,90,50,0.025) 1px, transparent 1px, transparent 72px);
     mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.08));
     pointer-events: none; }
   .hero-blob { display: none; }
   .hero-shell { max-width: 1100px; width: 100%; margin: 0 auto; position: relative; z-index: 1; display: flex; justify-content: center; }
   .hero-content { max-width: 760px; position: relative; z-index: 1; text-align: center; }
-  .hero-kicker { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.2rem 0; border: none; background: transparent; color: var(--warm-gray); font-size: 0.76rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.2rem; animation: fadeUp 0.6s ease both; }
-  .hero-kicker strong { font-size: 0.82rem; line-height: 1; color: var(--orange-dark); }
-  .hero h1 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 400; line-height: 1.04; letter-spacing: -0.03em; margin: 0 auto 1.35rem; animation: fadeUp 0.6s ease 0.1s both; max-width: 18ch; text-wrap: balance; }
-  .hero-line { display:block; }
-  .hero-accent { display:inline-block; white-space:nowrap; font-style: normal; font-weight: 600; color: var(--dark); padding: 0 0.12em; border-radius: 0.3em; background: linear-gradient(180deg, transparent 0 54%, rgba(122,158,126,0.18) 54% 100%); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .hero-kicker { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.2rem 0; border: none; background: transparent; color: var(--warm-gray); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.2rem; animation: fadeUp 0.6s ease both; }
+  .hero-kicker strong { font-size: 0.88rem; line-height: 1; color: var(--orange-dark); }
+  .hero h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(3rem, 6vw, 5.2rem); font-weight: 800; line-height: 0.97; letter-spacing: -0.06em; margin: 0 auto 1.35rem; animation: fadeUp 0.44s ease 0.08s both; max-width: 16ch; text-wrap: balance; }
+  .hero-line { display:block; opacity:0; transform:translateY(18px); filter:blur(3px); animation: heroLineReveal 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .hero-line + .hero-line { animation-delay: 0.14s; }
+  .hero-accent { display:inline-block; white-space:nowrap; font-style: normal; font-weight: 600; color: var(--dark); padding: 0 0.12em; border-radius: 0.3em; background: linear-gradient(180deg, transparent 0 54%, rgba(122,158,126,0.18) 54% 100%); background-size:100% 100%; background-repeat:no-repeat; box-decoration-break: clone; -webkit-box-decoration-break: clone; animation: heroAccentReveal 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes heroLineReveal {
+    from { opacity: 0; transform: translateY(18px); filter: blur(3px); }
+    70% { opacity: 1; transform: translateY(-1px); filter: blur(0); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+  }
+  @keyframes heroAccentReveal {
+    from { opacity: 0.88; transform: translateY(6px); background-size: 0% 100%; }
+    to { opacity: 1; transform: translateY(0); background-size: 100% 100%; }
+  }
   .btn-primary { background: var(--sage-dark); color: white; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
   .btn-primary:hover { background: #1a3d1e; transform: translateY(-2px); }
-  .btn-secondary { background: transparent; color: var(--dark); padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 500; font-size: 0.95rem; border: 1.5px solid var(--border); transition: all 0.2s; cursor: pointer; }
+  .btn-secondary { background: rgba(253,250,246,0.72); color: var(--dark); padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 500; font-size: 0.95rem; border: 1.5px solid var(--border); transition: all 0.2s; cursor: pointer; }
   .btn-secondary:hover { border-color: var(--orange); color: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(72,59,49,0.06); }
-  .hero-lead { font-size: 1.02rem; color: var(--dark); margin:0 auto 1.9rem; font-weight: 500; line-height: 1.78; animation: fadeUp 0.6s ease 0.2s both; max-width: 44ch; }
-  .hero-lead span { display:block; margin-top:0.35rem; color: var(--warm-gray); font-weight: 400; font-size: 0.95rem; }
+  .btn-primary:active,
+  .btn-secondary:active,
+  .result-link-btn:active,
+  .results-export-btn:active,
+  .doc-action-link:active,
+  .feedback-link:active { transform: translateY(0) scale(0.985); box-shadow: none; }
+  .btn-primary .btn-arrow,
+  .btn-secondary .btn-arrow,
+  .feedback-link .btn-arrow { display:inline-flex; transition:transform 0.18s ease; }
+  .btn-primary:hover .btn-arrow,
+  .btn-secondary:hover .btn-arrow,
+  .feedback-link:hover .btn-arrow { transform:translateX(2px); }
+  .hero-lead { font-size: 1.03rem; color: var(--dark); margin:0 auto 1.9rem; font-weight: 500; line-height: 1.8; animation: fadeUp 0.6s ease 0.2s both; max-width: 44ch; }
+  .hero-lead span { display:block; margin-top:0.45rem; color: var(--warm-gray); font-weight: 400; font-size: 0.96rem; }
   .hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.6s ease 0.3s both; }
   .hero-panel { display: none; }
   .hero-panel::before { display: none; }
@@ -100,26 +126,27 @@
 
   .section { padding: 3rem 2rem; scroll-margin-top: 80px; }
   .section-inner { max-width: 900px; margin: 0 auto; }
-  .section-plain { background:white; }
-  .section-soft { background:#fcf8f2; }
+  .section-plain { background:#f9f4ed; }
+  .section-soft { background:#f7f1e9; }
   .section-cream { background:var(--cream); }
-  .section-simulateur { background:linear-gradient(180deg,#f6f1e9 0%,#f7f1ea 52%,#f3ede5 100%); }
+  .section-simulateur { background:linear-gradient(180deg,#f1e9df 0%,#f2ebe1 52%,#ede4d8 100%); }
   .section-inner.narrow { max-width:760px; }
   .section-inner.catalog-inner { max-width:680px; }
   .section-tag { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--orange); margin-bottom: 0.5rem; }
-  .section-title { font-family: 'Sora', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; line-height: 1.2; margin-bottom: 0.6rem; color: var(--sage-dark); }
+  .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.95rem, 3.6vw, 2.8rem); font-weight: 800; line-height: 1.08; letter-spacing:-0.05em; margin-bottom: 0.65rem; color: var(--sage-dark); }
   .section-subtitle { color: var(--warm-gray); font-size: 0.92rem; line-height:1.65; margin:0 0 2rem; max-width: 34rem; }
   .section-chip-wrap { margin-top:-1rem; margin-bottom:1.35rem; }
   .catalog-intro-note { font-size:0.78rem; color:#b0aba5; font-style:italic; }
-  .catalog-tools { margin-bottom:2rem; }
+  .catalog-tools { margin-bottom:1rem; }
   .catalog-search-bar { display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem; background:#faf8f5; border:1.5px solid #ede8e2; border-radius:10px; padding:0.6rem 1rem; }
-  .catalog-search-input { border:none; background:transparent; font-family:'Sora',sans-serif; font-size:0.88rem; color:var(--dark); outline:none; width:100%; }
+  .catalog-search-input { border:none; background:transparent; font-family:'Plus Jakarta Sans',sans-serif; font-size:0.88rem; color:var(--dark); outline:none; width:100%; }
   .catalog-search-input::placeholder { color:#9d938a; }
   .search-helper { margin:0.05rem 0 0.9rem; font-size:0.76rem; color:var(--warm-gray); line-height:1.55; }
   .search-suggestions { display:flex; flex-wrap:wrap; gap:0.45rem; margin:0.2rem 0 0.85rem; }
   .search-suggestion-chip { display:inline-flex; align-items:center; padding:7px 12px; border-radius:999px; border:1.5px solid #e6dbcf; background:white; color:var(--sage-dark); font:inherit; font-size:0.76rem; font-weight:600; cursor:pointer; transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease, color 0.18s ease; }
   .search-suggestion-chip:hover { transform:translateY(-1px); box-shadow:0 10px 20px rgba(72,59,49,0.06); border-color:#dcc5b4; background:#fffdfa; color:var(--orange-dark); }
   .search-suggestion-chip:focus-visible { outline:2px solid rgba(232,105,58,0.24); outline-offset:3px; }
+  .catalog-filter-sticky { position: sticky; top: 80px; z-index: 18; padding: 0.35rem 0 0.55rem; margin: -0.1rem 0 1.15rem; background: rgba(250,247,242,0.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(232,221,213,0.9); box-shadow: 0 10px 22px rgba(44,40,37,0.04); }
   .catalog-filter-row { display:flex; flex-wrap:wrap; gap:0.35rem; }
   .catalog-no-result { display:none; font-size:0.85rem; color:var(--warm-gray); font-style:italic; margin-bottom:1rem; }
   .catalog-no-result strong { color:var(--dark); font-style:normal; }
@@ -132,7 +159,7 @@
   #simulateur .section-subtitle { color: var(--warm-gray); max-width: 680px; }
   .simulator-card { background: linear-gradient(180deg, #fffdf9 0%, #fbf5ee 100%); border-radius: 30px; box-shadow: 0 28px 70px rgba(72,59,49,0.09); overflow: hidden; border: 1px solid #eadfd4; }
   .simulator-header { background: linear-gradient(180deg, #f7efe5 0%, #fbf5ee 100%); padding: 1.05rem 1.5rem 0.95rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #eee2d6; }
-  .simulator-header-title { font-family: 'Sora', sans-serif; color: var(--sage-dark); font-size: 0.9rem; font-weight: 600; opacity: 0.95; }
+  .simulator-header-title { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--sage-dark); font-size: 0.9rem; font-weight: 700; opacity: 0.95; }
   .progress-bar-container { display: flex; align-items: center; gap: 6px; }
   .progress-dot { width: 6px; height: 6px; border-radius: 50%; background: #d8cbbd; transition: all 0.3s; }
   .progress-dot.active { background: var(--orange); width: 22px; border-radius: 999px; }
@@ -145,7 +172,8 @@
   .step-subtitle { font-size: 0.81rem; color: var(--warm-gray); margin-bottom: 1rem; line-height: 1.6; max-width: 640px; }
   .form-group { margin-bottom: 1.05rem; }
   .form-label { display: block; font-size: 0.76rem; font-weight: 700; color: var(--sage-dark); margin-bottom: 0.42rem; text-transform: uppercase; letter-spacing: 0.085em; }
-  .form-select, .form-input { width: 100%; padding: 13px 16px; border: 1.5px solid #e8ddd2; border-radius: 16px; font-family: 'Sora', sans-serif; font-size: 0.9rem; color: var(--dark); background: rgba(255,255,255,0.82); transition: all 0.15s; appearance: none; cursor: pointer; }
+  .form-label.is-required::after { content: ' *'; color: var(--orange-dark); }
+  .form-select, .form-input { width: 100%; padding: 13px 16px; border: 1.5px solid #e8ddd2; border-radius: 16px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; color: var(--dark); background: rgba(255,255,255,0.82); transition: all 0.15s; appearance: none; cursor: pointer; }
   .form-select:focus, .form-input:focus { outline: none; border-color: rgba(232,105,58,0.72); background: white; box-shadow: 0 0 0 3px rgba(232,105,58,0.1); }
   .form-input::placeholder { color: #a2978d; }
   .select-wrapper { position: relative; }
@@ -168,9 +196,7 @@
   .form-help { margin-top: 0.4rem; font-size: 0.74rem; color: var(--warm-gray); line-height: 1.55; }
   .form-group-inline { margin-top: 0.8rem; }
   .form-error { margin-top: 0.45rem; font-size: 0.75rem; color: var(--orange-dark); line-height: 1.5; display: none; }
-  .form-group.invalid .form-label { color: var(--orange-dark); }
-  .form-group.invalid .form-input,
-  .form-group.invalid .choice-card { border-color: rgba(232,105,58,0.7); }
+  .form-group.invalid .form-input { border-color: rgba(232,105,58,0.7); }
   .conditional-block[hidden] { display: none !important; }
   .step-question-progress { margin: 0.15rem 0 0.9rem; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange); }
   .step-question-hint { margin: -0.25rem 0 1rem; font-size: 0.76rem; color: var(--warm-gray); line-height: 1.55; }
@@ -178,7 +204,7 @@
   .step-question-set.is-visible { display: block; animation: fadeUp 0.26s ease both; }
   .step-question-set .form-group { padding: 0.95rem 1rem 1rem; border: 1.5px solid #eee2d6; border-radius: 18px; background: #fffdf9; box-shadow: 0 10px 24px rgba(72,59,49,0.05); }
   .step-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #eee2d6; }
-  .btn-nav { padding: 10px 18px; border-radius: 13px; font-family: 'Sora', sans-serif; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.18s, border-color 0.18s, color 0.18s; border: none; }
+  .btn-nav { padding: 10px 18px; border-radius: 13px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.18s, border-color 0.18s, color 0.18s; border: none; }
   .btn-next { background: var(--sage-dark); color: white; }
   .btn-next:hover { background: #214826; transform: translateY(-1px); box-shadow: 0 10px 24px rgba(33,72,38,0.18); }
   .btn-prev { background: transparent; color: var(--warm-gray); border: 1.5px solid #e6dace !important; font-weight: 500; }
@@ -188,6 +214,14 @@
   .btn-nav:active { transform: translateY(0); box-shadow: none; }
 
   .results-note { background:#fff6ea;border:1px solid #f0d6bc;border-radius:16px;padding:0.95rem 1rem;margin-bottom:1.25rem;font-size:0.78rem;color:#8a5a34;line-height:1.6;max-width:68ch; }
+  .results-profile-summary { margin-bottom:1rem; padding:1rem 1.05rem; background:linear-gradient(135deg,#f7f2eb 0%,#fffaf4 100%); border:1.5px solid #eadfd4; border-radius:18px; }
+  .results-profile-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:0.98rem; font-weight:800; letter-spacing:-0.04em; color:var(--sage-dark); margin-bottom:0.2rem; }
+  .results-profile-text { font-size:0.79rem; color:var(--warm-gray); line-height:1.6; margin-bottom:0.75rem; max-width:58ch; }
+  .results-profile-actions { display:flex; flex-wrap:wrap; gap:0.55rem; margin-bottom:0.8rem; }
+  .results-profile-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0.55rem; }
+  .results-profile-item { background:rgba(255,255,255,0.8); border:1px solid #eadfd4; border-radius:14px; padding:0.7rem 0.8rem; min-width:0; }
+  .results-profile-label { display:block; font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange-dark); margin-bottom:0.18rem; }
+  .results-profile-value { display:block; font-size:0.82rem; font-weight:600; color:var(--dark); line-height:1.45; }
   .results-list { display: grid; gap: 0.9rem; width: 100%; box-sizing: border-box; }
   .result-item { border: 1.5px solid #e7dbcf; border-radius: 22px; padding: 1.1rem 1.15rem; display: grid; grid-template-columns: auto 1fr; gap: 0.95rem; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; background: #fffdf9; }
   .result-item:hover { border-color: #d8c1b0; box-shadow: 0 14px 34px rgba(72,59,49,0.07); transform: translateY(-2px); }
@@ -204,48 +238,51 @@
   .result-detail.is-today { background: #eef5ef; border-color: #d6e4d8; }
   .result-detail.is-action { background: #f9f4ee; border-color: #eee2d6; }
   .result-detail.is-docs { background: #fffaf2; border-color: #eee2d6; }
-  .result-detail summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; padding: 0.82rem 0.95rem; user-select: none; -webkit-user-select: none; }
+  .result-detail summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; padding: 0.82rem 2.6rem 0.82rem 0.95rem; user-select: none; -webkit-user-select: none; position: relative; }
   .result-detail summary::-webkit-details-marker { display: none; }
+  .result-detail summary::marker { content: ''; }
+  .result-detail summary::after { content: ''; position: absolute; right: 1rem; top: 50%; width: 0.42rem; height: 0.42rem; border-right: 2px solid var(--sage-dark); border-bottom: 2px solid var(--sage-dark); transform: translateY(-62%) rotate(45deg); transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s; }
   .result-detail-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sage-dark); font-weight: 700; }
-  .result-detail-arrow { color: var(--sage-dark); font-size: 0.9rem; transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), color 0.18s; }
-  .result-detail[open] .result-detail-arrow { transform: rotate(180deg); color: var(--orange-dark); }
+  .result-detail-arrow { display: none; }
+  .result-detail[open] summary::after { transform: translateY(-24%) rotate(-135deg); border-color: var(--orange-dark); }
   .result-detail-body { padding: 0 0.95rem 0.9rem; font-size: 0.79rem; color: var(--dark); line-height: 1.68; text-align: justify; text-justify: inter-word; hyphens: none; }
   .result-detail-body ul { margin: 0.2rem 0 0; padding-left: 1rem; }
   .result-detail-body li { margin-bottom: 0.2rem; }
   .result-more-shell { margin-top: 0.8rem; border-top: 1px solid #efe5db; padding-top: 0.75rem; }
   .result-more-shell summary { list-style: none; display: inline-flex; align-items: center; gap: 0.45rem; cursor: pointer; color: var(--sage-dark); font-size: 0.8rem; font-weight: 600; user-select: none; -webkit-user-select: none; }
   .result-more-shell summary::-webkit-details-marker { display: none; }
-  .result-more-shell summary::after { content: '⌄'; font-size: 0.9rem; color: var(--orange-dark); transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1); }
-  .result-more-shell[open] summary::after { transform: rotate(180deg); }
+  .result-more-shell summary::marker { content: ''; }
+  .result-more-shell summary::after { content: ''; width: 0.42rem; height: 0.42rem; border-right: 2px solid var(--orange-dark); border-bottom: 2px solid var(--orange-dark); transform: translateY(-1px) rotate(45deg); transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1); }
+  .result-more-shell[open] summary::after { transform: translateY(1px) rotate(-135deg); }
   .result-more-body { padding-top: 0.15rem; }
   .result-more-body .result-detail:first-child,
   .result-more-body .result-link-row:first-child { margin-top: 0.6rem; }
   .result-link-row { margin-top: 0.72rem; display: flex; flex-wrap: wrap; gap: 0.55rem; }
-  .result-link-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 14px; min-height: 40px; background: #faf6f0; border: 1.5px solid #decfbe; border-radius: 14px; font-size: 0.8rem; color: var(--sage-dark); font-weight: 600; text-decoration: none; font-family: 'Sora', sans-serif; cursor: pointer; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.2s; }
+  .result-link-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 14px; min-height: 40px; background: #faf6f0; border: 1.5px solid #decfbe; border-radius: 14px; font-size: 0.8rem; color: var(--sage-dark); font-weight: 700; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.2s; }
   .result-link-btn:hover { background: #fff3ea; border-color: #e2b79f; color: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 8px 18px rgba(72,59,49,0.07); }
   .result-link-btn:focus { outline: 2px solid rgba(232,105,58,0.18); outline-offset: 2px; }
-  .restart-btn { display: block; width: 100%; margin-top: 1rem; padding: 11px; background: transparent; border: 1.5px solid #e4d7cb; border-radius: 12px; font-family: 'Sora', sans-serif; font-size: 0.85rem; color: var(--warm-gray); cursor: pointer; transition: all 0.2s; }
+  .restart-btn { display: block; width: 100%; margin-top: 1rem; padding: 11px; background: transparent; border: 1.5px solid #e4d7cb; border-radius: 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; color: var(--warm-gray); cursor: pointer; transition: all 0.2s; }
   .restart-btn:hover { border-color: #d8bea9; color: var(--sage-dark); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(72,59,49,0.06); }
   .results-help-card { margin-top: 1.25rem; background:white; border:1.5px solid #e8ddd2; border-radius:18px; padding:1rem 1.1rem; }
-  .results-help-title { font-size:0.9rem; font-weight:700; color:var(--dark); margin-bottom:0.25rem; }
+  .results-help-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:1rem; font-weight:800; letter-spacing:-0.04em; color:var(--dark); margin-bottom:0.25rem; }
   .results-help-text { font-size:0.8rem; color:var(--warm-gray); line-height:1.6; margin-bottom:0.8rem; text-align: justify; text-justify: inter-word; hyphens: none; }
   .results-help-actions { display:flex; flex-wrap:wrap; gap:0.55rem; }
   .results-export-card { margin-top:1.1rem; background:#fffdf9; border:1.5px solid #e8ddd2; border-radius:18px; padding:0.95rem 1.05rem; }
-  .results-export-title { font-size:0.88rem; font-weight:700; color:var(--dark); margin-bottom:0.22rem; }
+  .results-export-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:0.98rem; font-weight:800; letter-spacing:-0.04em; color:var(--dark); margin-bottom:0.22rem; }
   .results-export-text { font-size:0.79rem; color:var(--warm-gray); line-height:1.6; margin-bottom:0.75rem; max-width:58ch; text-align: justify; text-justify: inter-word; hyphens: none; }
   .results-export-actions { display:flex; flex-wrap:wrap; gap:0.55rem; }
-  .results-export-btn { display:inline-flex; align-items:center; gap:6px; padding:8px 14px; min-height:40px; border-radius:14px; font-size:0.8rem; font-weight:600; text-decoration:none; cursor:pointer; border:1.5px solid #decfbe; background:#faf6f0; color:var(--sage-dark); font-family:'Sora', sans-serif; transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.18s, border-color 0.18s, color 0.18s; }
+  .results-export-btn { display:inline-flex; align-items:center; gap:6px; padding:8px 14px; min-height:40px; border-radius:14px; font-size:0.8rem; font-weight:700; text-decoration:none; cursor:pointer; border:1.5px solid #decfbe; background:#faf6f0; color:var(--sage-dark); font-family:'Plus Jakarta Sans', sans-serif; transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.18s, border-color 0.18s, color 0.18s; }
   .results-export-btn:hover { background:#fff2e8; border-color:#ddb89e; color:var(--orange-dark); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(72,59,49,0.08); }
   .results-export-btn.primary { background:var(--sage-dark); color:white; border-color:var(--sage-dark); }
   .results-export-btn.primary:hover { background:#214826; border-color:#214826; color:white; transform: translateY(-1px); box-shadow: 0 12px 24px rgba(33,72,38,0.18); }
   .results-footer-banner { margin-top:1.5rem;background:linear-gradient(135deg,#f1f7f2 0%,#fff7ef 100%);border:1.5px solid #e0ddd2;border-radius:18px;padding:1rem 1.15rem;color:var(--dark); }
-  .results-footer-banner-title { font-size:0.88rem; font-weight:700; color:var(--sage-dark); margin-bottom:0.35rem; }
+  .results-footer-banner-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:1rem; font-weight:800; letter-spacing:-0.04em; color:var(--sage-dark); margin-bottom:0.35rem; }
   .comprendre-note { margin:0 0 1rem; color:#746f69; font-size:0.92rem; line-height:1.65; text-align:justify; text-justify:inter-word; hyphens:none; }
   .orientation-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.25rem; }
   .orientation-card { background:#fffdf9; border:1.5px solid #eadfd4; border-radius:18px; padding:1rem 1.05rem; transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s, background 0.18s; }
   .orientation-card.is-link { cursor:pointer; }
   .orientation-card.is-link:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 14px 30px rgba(72,59,49,0.08); border-color:#dcc5b4; background:#fffdfa; }
-  .orientation-card h3 { font-size:0.96rem; color:var(--dark); margin-bottom:0.35rem; }
+  .orientation-card h3 { font-family:'Plus Jakarta Sans', sans-serif; font-size:1.08rem; letter-spacing:-0.04em; color:var(--dark); margin-bottom:0.35rem; font-weight:800; }
   .orientation-card p { font-size:0.8rem; line-height:1.62; color:var(--warm-gray); margin-bottom:0.6rem; text-align: justify; text-justify: inter-word; hyphens: none; }
   .orientation-card ul { margin:0; padding-left:1rem; font-size:0.79rem; line-height:1.65; color:var(--dark); }
   .orientation-card li { margin-bottom:0.22rem; }
@@ -253,13 +290,14 @@
   .glossary-strip { display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:0.75rem; margin:1rem 0 1.25rem; }
   .glossary-pill { background:white; border:1.5px solid #eadfd4; border-radius:16px; padding:0.8rem 0.9rem; display:block; width:100%; text-align:left; text-decoration:none; cursor:pointer; font:inherit; appearance:none; -webkit-appearance:none; transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s, background 0.18s; }
   .glossary-pill:hover { transform: translateY(-3px) scale(1.015); border-color:#dcc5b4; box-shadow:0 14px 30px rgba(72,59,49,0.08); background:#fffdfa; }
-  .glossary-pill strong { display:block; font-size:0.8rem; color:var(--dark); margin-bottom:0.18rem; }
+  .glossary-pill strong { display:block; font-family:'Plus Jakarta Sans', sans-serif; font-size:0.92rem; letter-spacing:-0.04em; color:var(--dark); margin-bottom:0.18rem; font-weight:800; }
   .glossary-pill span { display:block; font-size:0.75rem; line-height:1.55; color:var(--warm-gray); text-align: justify; text-justify: inter-word; hyphens: none; }
   .docs-shortcuts { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.75rem; }
   .docs-shortcut-card { display:block; padding:1rem 1rem 0.95rem; background:white; border:1.5px solid var(--border); border-radius:16px; text-decoration:none; transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
   .docs-shortcut-card:hover { transform:translateY(-2px); box-shadow:0 12px 24px rgba(72,59,49,0.07); border-color:#dcc5b4; background:#fffdfa; }
+  .docs-shortcut-card:focus-visible { outline:2px solid rgba(232,105,58,0.24); outline-offset:3px; }
   .docs-shortcut-kicker { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange); margin-bottom:0.35rem; }
-  .docs-shortcut-title { font-size:0.96rem; font-weight:600; color:var(--dark); margin-bottom:0.3rem; }
+  .docs-shortcut-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:1.04rem; font-weight:800; letter-spacing:-0.04em; color:var(--dark); margin-bottom:0.3rem; }
   .docs-link-text { font-size:0.79rem; line-height:1.55; color:var(--warm-gray); text-align:justify; text-justify:inter-word; hyphens:none; }
   .section-chip-link { display:inline-flex; align-items:center; gap:7px; padding:9px 14px; background:#eef5ef; border:1px solid #d7e6d9; color:var(--sage-dark); border-radius:999px; font-size:0.79rem; font-weight:600; text-decoration:none; transition:transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease; }
   .section-chip-link:hover { transform:translateY(-1px); background:#f4faf4; border-color:#c9ddcb; box-shadow:0 10px 20px rgba(72,59,49,0.06); }
@@ -276,11 +314,14 @@
   .doc-check-item { display:flex; align-items:flex-start; gap:10px; padding:0.6rem 0.75rem; background:#faf8f5; border-radius:8px; border:1px solid var(--border); }
   .doc-check-icon { color:var(--sage-dark); flex-shrink:0; }
   .doc-check-text { font-size:0.82rem; font-weight:500; color:var(--dark); }
-  .doc-accordion-shell { border:1.5px solid var(--border); border-radius:14px; overflow:hidden; background:white; scroll-margin-top:80px; }
+  .doc-accordion-shell { border:1.5px solid var(--border); border-radius:14px; overflow:hidden; background:white; scroll-margin-top:80px; transition:border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease; }
+  .doc-accordion-shell:hover { border-color:#dcc5b4; box-shadow:0 10px 18px rgba(72,59,49,0.04); }
   .doc-accordion-btn { width:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; background:none; border:none; cursor:pointer; text-align:left; transition:background 0.18s ease; }
   .doc-accordion-btn:hover { background:#fdf9f4; }
+  .doc-accordion-shell.is-open { border-color:#e3c7b2; box-shadow:0 12px 24px rgba(72,59,49,0.05); background:#fffdfa; }
+  .doc-accordion-shell.is-open .doc-accordion-btn { background:#fff7f1; }
   .doc-accordion-copy { min-width:0; }
-  .doc-accordion-title { font-size:0.92rem; font-weight:600; color:var(--dark); }
+  .doc-accordion-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:1rem; font-weight:800; letter-spacing:-0.04em; color:var(--dark); }
   .doc-accordion-subtitle { font-size:0.75rem; color:var(--warm-gray); margin-top:2px; }
   .doc-accordion-icon { color:var(--orange); font-size:1.1rem; transition:transform 0.2s ease, color 0.18s ease; flex-shrink:0; }
   .doc-accordion-btn:hover .doc-accordion-icon { color:var(--orange-dark); }
@@ -296,12 +337,12 @@
   .doc-action-arrow { color:var(--dark); transition:transform 0.18s ease; }
   .doc-action-link:hover .doc-action-arrow { transform:translateX(2px); }
   .feedback-text { font-size:0.85rem; color:var(--warm-gray); max-width:52ch; line-height:1.6; margin:0; text-align:justify; text-justify:inter-word; hyphens:none; }
-  .feedback-link { display:inline-flex; align-items:center; gap:8px; margin-top:0.25rem; padding:10px 20px; min-height:42px; background:white; border:1.5px solid #ede8e2; border-radius:100px; font-family:'Sora',sans-serif; font-size:0.82rem; font-weight:600; color:var(--sage-dark); text-decoration:none; transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
+  .feedback-link { display:inline-flex; align-items:center; gap:8px; margin-top:0.25rem; padding:10px 20px; min-height:42px; background:white; border:1.5px solid #ede8e2; border-radius:100px; font-family:'Plus Jakarta Sans',sans-serif; font-size:0.82rem; font-weight:700; color:var(--sage-dark); text-decoration:none; transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
   .feedback-link:hover { transform:translateY(-1px); box-shadow:0 12px 24px rgba(72,59,49,0.06); border-color:#dcc5b4; background:#fffdfa; }
   .community-section { background:#faf8f5; border-top:1px solid #ede8e2; padding:2.5rem 2rem; }
   .community-inner { max-width:900px; margin:0 auto; display:flex; flex-direction:column; align-items:center; text-align:center; gap:0.75rem; }
   .community-kicker { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--orange); }
-  .community-title { font-family:'Sora',sans-serif; font-size:1.1rem; font-weight:600; color:var(--sage-dark); margin:0; }
+  .community-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:1.28rem; font-weight:800; letter-spacing:-0.045em; color:var(--sage-dark); margin:0; }
   .community-pill-row { display:flex; flex-wrap:wrap; justify-content:center; gap:0.45rem; margin-top:0.1rem; }
   .community-pill { display:inline-flex; align-items:center; padding:6px 12px; border-radius:999px; border:1.5px solid #e8ddd2; background:white; font-size:0.74rem; font-weight:600; color:var(--warm-gray); }
   .footer-text { font-size:0.82rem; line-height:1.8; max-width:760px; margin:0 auto; }
@@ -313,25 +354,35 @@
     .hero-panel { max-width: 620px; }
     .orientation-grid { grid-template-columns: 1fr; }
     .glossary-strip { grid-template-columns: 1fr; }
+    .results-profile-grid { grid-template-columns:1fr; }
   }
 
-  .cat-filter { padding: 6px 13px; border-radius: 100px; border: 1.5px solid #e8e2db; background: white; font-family: 'Sora', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--warm-gray); cursor: pointer; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.15s, color 0.15s, box-shadow 0.2s, background 0.15s; white-space: nowrap; }
+  .cat-filter { padding: 6px 13px; border-radius: 100px; border: 1.5px solid #e8e2db; background: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--warm-gray); cursor: pointer; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.15s, color 0.15s, box-shadow 0.2s, background 0.15s; white-space: nowrap; position: relative; overflow: hidden; scroll-snap-align: start; }
+  .cat-filter::before { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(232,105,58,0.08), rgba(122,158,126,0.06)); opacity: 0; transition: opacity 0.18s ease; pointer-events: none; }
   .cat-filter:hover { border-color: var(--orange); color: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 8px 18px rgba(72,59,49,0.06); }
+  .cat-filter:hover::before { opacity: 1; }
   .cat-filter.active { background: var(--orange); border-color: var(--orange); color: white; font-weight: 600; box-shadow: 0 10px 22px rgba(232,105,58,0.18); }
 
-  .cat-group { margin-bottom: 3rem; scroll-margin-top: 80px; }
-  .cat-group-header { margin-bottom: 1.1rem; padding-bottom: 0.9rem; border-bottom: 1.5px solid #f0e8e0; padding-top: 2rem; border-top: 1px solid #f0e8e0; margin-top: 0.5rem; text-align: left; }
+  .cat-group { margin-bottom: 3rem; scroll-margin-top: 80px; position: relative; }
+  .cat-group-header { margin-bottom: 1.1rem; padding: 0.95rem 0 0.9rem; border-bottom: 1.5px solid #f0e8e0; border-top: 1px solid #f0e8e0; margin-top: 0.5rem; text-align: left; position: relative; }
   .cat-group:first-child .cat-group-header { padding-top: 0; border-top: none; margin-top: 0; }
-  .cat-group-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.14rem; font-weight: 650; color: var(--orange); margin-bottom: 3px; letter-spacing: -0.015em; }
+  .cat-group-header::after { content: ''; position: absolute; left: 0; bottom: -1.5px; width: 84px; height: 3px; border-radius: 999px; background: linear-gradient(90deg, var(--orange), rgba(232,105,58,0.12)); }
+  .cat-group-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.24rem; font-weight: 800; color: var(--orange); margin-bottom: 3px; letter-spacing: -0.04em; }
   .cat-group-sub { font-size: 0.79rem; color: var(--warm-gray); max-width: 48ch; }
   .cat-cards-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.15rem; padding: 0.2rem 0; align-items: stretch; }
-  .cat-card { display: flex; flex-direction: column; align-self: stretch; border: 1.5px solid #ede8e2; border-radius: 18px; background: white; cursor: pointer; transition: border-color 0.24s, box-shadow 0.24s, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1); overflow: hidden; box-sizing: border-box; width: 100%; max-width: none; margin: 0; box-shadow: 0 2px 8px rgba(44,40,37,0.05); -webkit-tap-highlight-color: transparent; }
-  .cat-card:hover { border-color: #e8c6ae; box-shadow: 0 10px 24px rgba(72,59,49,0.08); transform: translateY(-3px) scale(1.01); }
-  .cat-card.open { grid-column: 1 / -1; border-color: var(--orange); box-shadow: 0 12px 28px rgba(232,105,58,0.1); }
+  .cat-card { display: flex; flex-direction: column; align-self: stretch; border: 1.5px solid #ede8e2; border-radius: 18px; background: white; cursor: pointer; transition: border-color 0.24s, box-shadow 0.24s, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.24s ease; overflow: hidden; box-sizing: border-box; width: 100%; max-width: none; margin: 0; box-shadow: 0 2px 8px rgba(44,40,37,0.05); -webkit-tap-highlight-color: transparent; position: relative; isolation: isolate; }
+  .cat-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(232,105,58,0.10), transparent 38%), radial-gradient(circle at bottom left, rgba(122,158,126,0.10), transparent 34%); opacity: 0; transition: opacity 0.24s ease; pointer-events: none; z-index: 0; }
+  .cat-card::after { content: ''; position: absolute; left: 1rem; right: 1rem; top: 0; height: 2px; border-radius: 999px; background: linear-gradient(90deg, rgba(232,105,58,0.55), rgba(122,158,126,0.18), transparent); opacity: 0; transform: translateY(-6px); transition: opacity 0.24s ease, transform 0.24s ease; pointer-events: none; z-index: 0; }
+  .cat-card:hover { border-color: #e8c6ae; box-shadow: 0 14px 30px rgba(72,59,49,0.09); transform: translateY(-4px) scale(1.01); background: #fffdfa; }
+  .cat-card:hover::before, .cat-card:hover::after { opacity: 1; transform: translateY(0); }
+  .cat-card:focus-visible { outline: 2px solid rgba(232,105,58,0.26); outline-offset: 4px; border-color: #e1b79d; box-shadow: 0 0 0 4px rgba(232,105,58,0.08), 0 14px 30px rgba(72,59,49,0.08); }
+  .cat-card.open { grid-column: 1 / -1; border-color: var(--orange); box-shadow: 0 14px 32px rgba(232,105,58,0.11); background: #fffdf9; }
+  .cat-card.open::before, .cat-card.open::after { opacity: 1; transform: translateY(0); }
   .cat-cards-grid > .cat-card:not(.open) { grid-column: auto !important; }
-  .cat-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1rem 1.05rem; min-height: 156px; box-sizing: border-box; cursor: pointer; user-select: none; -webkit-user-select: none; }
+  .cat-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1rem 1.05rem; min-height: 156px; box-sizing: border-box; cursor: pointer; user-select: none; -webkit-user-select: none; position: relative; z-index: 1; }
   .cat-card-header > * { pointer-events: none; }
-  .cat-card-title { font-family: 'Sora', sans-serif; font-size: 0.92rem; font-weight: 650; color: var(--dark); line-height: 1.28; letter-spacing: -0.016em; }
+  .cat-card-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.04rem; font-weight: 800; color: var(--dark); line-height: 1.18; letter-spacing: -0.045em; transition: transform 0.24s ease, color 0.18s ease; }
+  .cat-card:hover .cat-card-title { transform: translateX(1px); color: #1f1c19; }
   .result-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.32rem; color: var(--dark); display: inline-flex; align-items: center; gap: 0.38rem; flex-wrap: wrap; }
   .inline-info { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 1.05rem; height: 1.05rem; border-radius: 999px; border: 1px solid #d9cdbf; background: #fffdfa; color: var(--sage-dark); padding: 0; font: inherit; font-size: 0.66rem; font-weight: 700; line-height: 1; cursor: help; flex-shrink: 0; box-shadow: 0 4px 12px rgba(72,59,49,0.04); }
   .inline-info:focus { outline: none; border-color: #c8b8a8; box-shadow: 0 0 0 3px rgba(232,105,58,0.12); }
@@ -342,12 +393,12 @@
   .inline-info:focus-visible .inline-info-bubble { opacity: 1; transform: translateX(-50%) translateY(0); }
   .cat-card-desc { font-size: 0.77rem; color: var(--warm-gray); line-height: 1.45; margin-top: 0.32rem; max-width: 34ch; }
   .cat-card-arrow { font-size: 1.1rem; color: var(--orange); flex-shrink: 0; transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), color 0.18s; font-weight: 300; margin-left: 0.75rem; margin-top: 0.3rem; }
-  .cat-card:hover .cat-card-arrow { color: var(--orange-dark); }
+  .cat-card:hover .cat-card-arrow { color: var(--orange-dark); transform: translateY(-1px) scale(1.08); }
   .cat-card.open .cat-card-arrow { transform: rotate(45deg); }
   .cat-quicklinks { display: none; }
   .cat-quicklinks a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; background: var(--sage-light); border: 1px solid #c8deca; border-radius: 100px; font-size: 0.7rem; color: var(--sage-dark); font-weight: 500; text-decoration: none; white-space: nowrap; transition: background 0.15s; }
   .cat-quicklinks a:hover { background: var(--sage); color: white; }
-  .cat-card-body { padding: 1.05rem 1.15rem 1.15rem; border-top: 1px solid #f5ede6; overflow: visible; box-sizing: border-box; transform-origin: top center; background: linear-gradient(180deg, rgba(250,247,242,0.72) 0%, rgba(255,255,255,1) 32%); }
+  .cat-card-body { padding: 1.05rem 1.15rem 1.15rem; border-top: 1px solid #f5ede6; overflow: visible; box-sizing: border-box; transform-origin: top center; background: linear-gradient(180deg, rgba(250,247,242,0.72) 0%, rgba(255,255,255,1) 32%); position: relative; z-index: 1; }
   .cat-card.open .cat-card-header { min-height: auto; }
   .cat-card.open .cat-card-body { animation: panelReveal 0.28s cubic-bezier(0.22, 1, 0.36, 1); }
   .cat-card-body p { font-size: 0.83rem; color: var(--warm-gray); line-height: 1.68; margin: 0 0 0.8rem; max-width: 68ch; text-align: justify; text-justify: inter-word; hyphens: none; }
@@ -358,12 +409,14 @@
   .expand-links a:hover { background: var(--sage); color: white; }
 
   footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 3rem 2rem; text-align: center; }
-  footer .footer-logo { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; color: white; margin-bottom: 0.75rem; }
+  footer .footer-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight:800; letter-spacing:-0.045em; color: white; margin-bottom: 0.75rem; }
   footer p { font-size: 0.82rem; line-height: 1.8; }
   footer a { color: var(--orange); text-decoration: none; }
   .btn-primary:focus-visible,
   .btn-secondary:focus-visible,
   .btn-nav:focus-visible,
+  .nav-search-toggle:focus-visible,
+  .hamburger:focus-visible,
   .result-link-btn:focus-visible,
   .results-export-btn:focus-visible,
   .restart-btn:focus-visible,
@@ -391,6 +444,8 @@
     .step,
     .hero-kicker,
     .hero h1,
+    .hero-line,
+    .hero-accent,
     .hero-lead,
     .hero-actions,
     .cat-card.open .cat-card-body { animation: none !important; opacity: 1 !important; transform: none !important; }
@@ -430,6 +485,9 @@
     .cat-card { max-width: 100%; }
     .cat-card.open { grid-column: auto; }
     .cat-card-header { min-height: 128px; }
+    .catalog-filter-sticky { top: 74px; overflow-x: auto; margin-right: -1rem; padding-right: 1rem; scrollbar-width: none; -ms-overflow-style: none; }
+    .catalog-filter-sticky::-webkit-scrollbar { display: none; }
+    .catalog-filter-row { flex-wrap: nowrap; width: max-content; padding-right: 0.35rem; scroll-snap-type: x proximity; }
     .cat-group-header { text-align: left; }
     .catalog-note-body { padding-right: 0; }
     .catalog-note-text { text-align: left; }
@@ -454,18 +512,19 @@
 </style>
 </head>
 <body id="top">
+<a href="#simulateur" class="skip-link">Aller au simulateur</a>
 
 <nav>
   <div class="nav-inner">
     <a href="#top" class="nav-logo">MonAide<span>-VD</span></a>
     <div class="nav-mobile-actions">
-      <button class="nav-search-toggle" type="button" onclick="toggleAidSearch()" aria-label="Rechercher une aide">
+      <button class="nav-search-toggle" type="button" onclick="toggleAidSearch()" aria-label="Rechercher une aide" aria-controls="nav-search-panel" aria-expanded="false">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="11" cy="11" r="7"></circle>
           <path d="m20 20-3.5-3.5"></path>
         </svg>
       </button>
-      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-controls="nav-links" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -496,7 +555,7 @@
       </li>
       <li>
         <div class="nav-search-wrap">
-          <button class="nav-search-toggle" type="button" onclick="toggleAidSearch()" aria-label="Rechercher une aide">
+          <button class="nav-search-toggle" type="button" onclick="toggleAidSearch()" aria-label="Rechercher une aide" aria-controls="nav-search-panel" aria-expanded="false">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="11" cy="11" r="7"></circle>
               <path d="m20 20-3.5-3.5"></path>
@@ -525,8 +584,8 @@
       <h1><span class="hero-line">Tu as s&#251;rement des droits</span><span class="hero-line">que tu ne connais <span class="hero-accent">pas encore</span></span></h1>
       <p class="hero-lead">Des aides existent, mais elles sont souvent difficiles &#224; rep&#233;rer ou &#224; comprendre.<span>MonAide-VD t&#8217;aide &#224; trouver une premi&#232;re piste claire, sans jargon et sans t&#8217;y perdre.</span></p>
       <div class="hero-actions">
-        <a href="#simulateur" class="btn-primary">D&#233;couvrir mes droits &#8594;</a>
-        <a href="#catalogue" class="btn-secondary">Explorer les aides</a>
+        <a href="#simulateur" class="btn-primary">D&#233;couvrir mes droits <span class="btn-arrow">&#8594;</span></a>
+        <a href="#catalogue" class="btn-secondary">Explorer les aides <span class="btn-arrow">&#8594;</span></a>
       </div>
     </div>
 
@@ -980,8 +1039,8 @@
 
         <div class="step" id="step4" style="display:none;">
           <div class="step-label">&#201;tape 4 sur 4</div>
-          <h3 class="step-title">Ta sant&#233; et ta situation sociale</h3>
-          <p class="step-subtitle">Sant&#233;, dettes et accompagnement social.</p>
+          <h3 class="step-title">Ta sant&#233; et ton budget</h3>
+          <p class="step-subtitle">Deux derni&#232;res questions utiles pour rep&#233;rer les aides li&#233;es &#224; la sant&#233; ou aux dettes.</p>
           <input type="hidden" id="urgence" value="non">
           <div class="form-group">
             <label class="form-label">As-tu une incapacit&#233; de travail ou un handicap&#160;?</label>
@@ -1013,35 +1072,12 @@
               <option value="surendette">Oui &#8212; situation de surendettement</option>
             </select>
           </div>
-          <div class="form-group">
-            <label class="form-label">T&#8217;occupes-tu d&#8217;un proche d&#233;pendant&#160;?</label>
-            <div class="choice-grid">
-              <label><input class="choice-input" type="radio" name="proche_aidant" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="proche_aidant" value="oui"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="proche_aidant" hidden>
-              <option value="non">Non</option>
-              <option value="oui">Oui</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Es-tu d&#233;j&#224; en contact avec un service social ou un CSR&#160;?</label>
-            <div class="choice-grid">
-              <label><input class="choice-input" type="radio" name="contact_social" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="contact_social" value="oui"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="contact_social" value="en_demarche"><span class="choice-card"><span class="choice-text"><span class="choice-title">Pas encore, mais j&#8217;essaie</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="contact_social" hidden>
-              <option value="non">Non</option>
-              <option value="oui">Oui</option>
-              <option value="en_demarche">Pas encore, mais je cherche &#224; le faire</option>
-            </select>
-          </div>
           <div class="step-actions"><button type="button" class="btn-nav btn-prev" onclick="goToStep(3)">&#8592; Retour</button><button type="button" class="btn-nav btn-next btn-analyze" onclick="goToResultsValidated()">Voir mes r&#233;sultats</button></div>
         </div>
       </div>
 
       <div class="simulator-body" id="results" style="display:none;">
+        <div id="results-profile-summary" class="results-profile-summary" style="display:none;"></div>
         <div class="results-note">
           <strong>&#192; savoir</strong><br>Ces r&#233;sultats donnent un premier rep&#232;re. Certaines aides d&#233;pendent encore d&#8217;un calcul officiel ou d&#8217;un examen du dossier.
         </div>
@@ -1096,7 +1132,7 @@
       </button>
     </div>
 
-    <p class="comprendre-note">Tu n’as pas besoin de connaître tous ces sigles. Le but, c’est juste de t’aider à trouver la bonne première porte.</p>
+    <p class="comprendre-note">Le but est de t’aider à trouver la bonne première porte.</p>
 
     <div class="orientation-grid">
       <div class="orientation-card is-link" id="orientation-csr" onclick="openInfoTarget('Centre social régional (CSR)')">
@@ -1154,25 +1190,28 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="text" id="cat-search" class="catalog-search-input" placeholder="Rechercher une aide..." oninput="filtrerCatalogue()">
       </div>
-      <div class="search-helper">Essaie aussi : caisse maladie, permis, loyer, emploi, habits pas chers.</div>
+      <div class="search-helper">Essaie aussi : caisse maladie, permis, loyer, emploi, dettes, habits pas chers.</div>
       <div class="search-suggestions" aria-label="Suggestions de recherche">
         <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('caisse maladie')">Caisse maladie</button>
         <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('permis')">Permis / séjour</button>
         <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('loyer')">Aide pour le loyer</button>
         <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('emploi')">Perte d’emploi</button>
+        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('parlons cash')">Dettes / budget</button>
         <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('habits pas chers')">Habits pas chers</button>
       </div>
+    </div>
+    <div class="catalog-filter-sticky">
       <div class="catalog-filter-row">
-        <button class="cat-filter active" onclick="setCatFilter('tous',this)">Tout</button>
-        <button class="cat-filter" onclick="setCatFilter('urgence',this)">Urgences</button>
-        <button class="cat-filter" onclick="setCatFilter('sante',this)">Sant&eacute;</button>
-        <button class="cat-filter" onclick="setCatFilter('financier',this)">Revenus</button>
-        <button class="cat-filter" onclick="setCatFilter('emploi',this)">Emploi</button>
-        <button class="cat-filter" onclick="setCatFilter('formation',this)">Formation</button>
-        <button class="cat-filter" onclick="setCatFilter('logement',this)">Logement</button>
-        <button class="cat-filter" onclick="setCatFilter('petitbudget',this)">Petit budget</button>
-        <button class="cat-filter" onclick="setCatFilter('migration',this)">Migration</button>
-        <button class="cat-filter" onclick="setCatFilter('culture',this)">Loisirs</button>
+        <button type="button" class="cat-filter active" aria-pressed="true" onclick="setCatFilter('tous',this)">Tout</button>
+        <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('urgence',this)">Urgences</button>
+        <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('sante',this)">Sant&eacute;</button>
+        <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('financier',this)">Revenus</button>
+        <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('emploi',this)">Emploi</button>
+        <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('formation',this)">Formation</button>
+        <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('logement',this)">Logement</button>
+        <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('petitbudget',this)">Petit budget</button>
+        <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('migration',this)">Migration</button>
+        <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('culture',this)">Loisirs</button>
       </div>
     </div>
 
@@ -1241,7 +1280,6 @@
             <div class="cat-quicklinks" onclick="event.stopPropagation()"><a href="https://www.unisante.ch/fr" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Unisanté</a><a href="https://www.unisante.ch/fr/soins/permanence-flon" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Permanence du Flon</a></div>
             <div class="cat-card-body" style="display:none;"><p>Unisanté (ex PMU) est le centre de r&eacute;f&eacute;rence en m&eacute;decine g&eacute;n&eacute;rale &agrave; Lausanne. Il accueille toute personne en consultation ou en urgence &mdash; y compris les personnes en situation pr&eacute;caire ou sans statut l&eacute;gal.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.5rem 0 0.75rem;"><div><div class="expand-subtitle">Prestations</div><ul class="expand-list"><li>M&eacute;decine g&eacute;n&eacute;rale et urgences</li><li>Consultations sans rendez-vous (Permanence du Flon)</li><li>Soins accessibles aux personnes vuln&eacute;rables</li><li>Urgences psychiatriques CHUV</li></ul></div><div><div class="expand-subtitle">Pratique</div><ul class="expand-list"><li>Permanence du Flon &mdash; 7j/7, 8h &agrave; 20h</li><li>Rue du Bugnon 44, 1011 Lausanne</li><li>&#9743; 021 314 60 60</li><li>LAMal requise &mdash; possibilit&eacute; d&rsquo;aide</li></ul></div></div><div class="expand-links"><a href="https://www.unisante.ch/fr" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Unisanté &mdash; site officiel</a><a href="https://www.unisante.ch/fr/soins/permanence-flon" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Permanence du Flon</a></div></div>
           </div>
-        </div>
           <div class="cat-card" data-cat="sante" onclick="toggleCatCard(this)">
             <div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">Le Point d&#8217;Eau &mdash; accueil &amp; hygi&egrave;ne</div><div class="cat-card-desc">Personnes en grande pr&eacute;carit&eacute; &middot; Sans condition &middot; Lausanne</div></div><span class="cat-card-arrow">+</span></div>
             <div class="cat-quicklinks" onclick="event.stopPropagation()"><a href="https://pointdeau-lausanne.ch/presentationpel/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Le Point d&#8217;Eau</a></div>
@@ -1249,7 +1287,7 @@
           </div>
         </div>
       <div class="cat-group" id="groupe-revenus">
-        <div class="cat-group-header"><div class="cat-group-title">Revenus &amp; aides financi&egrave;res</div><div class="cat-group-sub">RI, allocations familiales, APG</div></div>
+        <div class="cat-group-header"><div class="cat-group-title">Revenus &amp; aides financi&egrave;res</div><div class="cat-group-sub">RI, allocations familiales, dettes, APG</div></div>
         
           <div class="cat-cards-grid">
           <div class="cat-card" data-cat="financier" onclick="toggleCatCard(this)">
@@ -1261,6 +1299,11 @@
             <div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">Revenu d&#8217;insertion (RI)</div><div class="cat-card-desc">Adultes sans ressources suffisantes &middot; Aide de dernier recours</div></div><span class="cat-card-arrow">+</span></div>
             <div class="cat-quicklinks" onclick="event.stopPropagation()"><a href="https://www.vd.ch/prestation/demander-le-revenu-dinsertion" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Demander le RI</a><a href="https://www.vd.ch/aides-financieres-et-soutien-social/trouver-un-centre-social-regional-csr" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Trouver ton CSR</a></div>
             <div class="cat-card-body" style="display:none;"><p>Le RI veut dire <strong>Revenu d’insertion</strong>. C’est l’aide financière de dernier recours dans le canton de Vaud. Si tu n’as plus assez pour vivre, le RI peut garantir un revenu minimum. La demande passe par le CSR, qui examine ensuite le dossier.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.5rem 0 0.75rem;"><div><div class="expand-subtitle">Conditions</div><ul class="expand-list"><li>Majeur&middot;e, domicili&eacute;&middot;e dans le canton</li><li>Permis valide (pas permis N)</li><li>Revenus inf&eacute;rieurs au bar&egrave;me RI</li><li>Fortune &lt; 4&#160;000 CHF (8&#160;000 en couple)</li></ul></div><div><div class="expand-subtitle">D&eacute;marche</div><ul class="expand-list"><li>Contacter d’abord le CSR de ta commune</li><li>Rendez-vous d’&eacute;valuation avec un&#183;e assistant&#183;e social&#183;e</li><li>Dossier financier &agrave; constituer</li></ul></div></div><div class="expand-links"><a href="https://www.vd.ch/prestation/demander-le-revenu-dinsertion" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Demander le RI &mdash; &Eacute;tat de Vaud</a><a href="https://www.vd.ch/aides-financieres-et-soutien-social/trouver-un-centre-social-regional-csr" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Trouver ton CSR</a></div></div>
+          </div>
+          <div class="cat-card" data-cat="financier" onclick="toggleCatCard(this)">
+            <div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">Parlons Cash &mdash; dettes et surendettement</div><div class="cat-card-desc">Budget, poursuites, dettes &middot; Rep&egrave;res clairs et orientation</div></div><span class="cat-card-arrow">+</span></div>
+            <div class="cat-quicklinks" onclick="event.stopPropagation()"><a href="https://www.vd.ch/aides-financieres-et-soutien-social/2023-parlons-cash-dettes-et-surendettement" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Parlons Cash</a><a href="https://csp.ch/vaud/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>CSP Vaud</a></div>
+            <div class="cat-card-body" style="display:none;"><p>Si tu as des dettes, des poursuites ou que ton budget ne tient plus, Parlons Cash peut t’aider à y voir plus clair. C’est une bonne première porte pour comprendre la situation et savoir vers qui aller ensuite.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.5rem 0 0.75rem;"><div><div class="expand-subtitle">Ce que tu y trouves</div><ul class="expand-list"><li>Explications simples sur dettes et surendettement</li><li>Repères concrets pour agir sans attendre</li><li>Orientation vers les bons services dans le canton</li><li>Infos utiles aussi pour les proches</li></ul></div><div><div class="expand-subtitle">Quand l’utiliser</div><ul class="expand-list"><li>Factures qui s’accumulent</li><li>Poursuites ou rappels</li><li>Budget devenu trop serré</li><li>Besoin d’un premier repère avant d’appeler</li></ul></div></div><div style="background:#fff8e8;border:1px solid #f0d080;border-radius:10px;padding:0.6rem 0.85rem;font-size:0.78rem;color:var(--dark);margin-bottom:0.5rem;">N’hésite pas à appeler si tu as une question ou un doute. Ils sont aussi là pour ça.</div><div class="expand-links"><a href="https://www.vd.ch/aides-financieres-et-soutien-social/2023-parlons-cash-dettes-et-surendettement" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Voir Parlons Cash</a><a href="https://csp.ch/vaud/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Voir aussi le CSP Vaud</a></div></div>
           </div>
           <div class="cat-card" data-cat="financier" onclick="toggleCatCard(this)">
             <div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">Allocations familiales</div><div class="cat-card-desc">Parents avec enfants &agrave; charge &middot; D&egrave;s le 1er enfant</div></div><span class="cat-card-arrow">+</span></div>
@@ -1623,6 +1666,7 @@
     </div>
     <a href="mailto:monaide.vd@gmail.com?subject=Retour%20MonAide-VD" class="feedback-link">
       Signaler un souci ou proposer une am&#233;lioration
+      <span class="btn-arrow">&#8594;</span>
     </a>
   </div>
 </section>
@@ -1650,6 +1694,7 @@
       grid.querySelectorAll('.cat-card').forEach(function(other) {
         if (other !== card) {
           other.classList.remove('open');
+          other.setAttribute('aria-expanded', 'false');
           var b = other.querySelector('.cat-card-body');
           if (b) { b.style.display = 'none'; b.style.visibility = 'hidden'; }
         }
@@ -1657,10 +1702,12 @@
     }
     if (isOpen) {
       card.classList.remove('open');
+      card.setAttribute('aria-expanded', 'false');
       body.style.display = 'none';
       body.style.visibility = 'hidden';
     } else {
       card.classList.add('open');
+      card.setAttribute('aria-expanded', 'true');
       body.style.display = 'block';
       body.style.visibility = 'visible';
       setTimeout(function() {
@@ -1670,9 +1717,26 @@
   }
 
   // ─── Filtres catalogue ───────────────────────────────────────────────────
-  window.setCatFilter = function(cat, btn) {
-    document.querySelectorAll('.cat-filter').forEach(function(b) { b.classList.remove('active'); });
+  function scrollCatalogFilterIntoView(btn) {
+    if (!btn) return;
+    try {
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    } catch (e) {}
+  }
+
+  function setActiveCatalogFilterButton(btn) {
+    document.querySelectorAll('.cat-filter').forEach(function(filterBtn) {
+      filterBtn.classList.remove('active');
+      filterBtn.setAttribute('aria-pressed', 'false');
+    });
+    if (!btn) return;
     btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
+    scrollCatalogFilterIntoView(btn);
+  }
+
+  window.setCatFilter = function(cat, btn) {
+    setActiveCatalogFilterButton(btn);
     document.getElementById('cat-search').value = '';
     document.querySelectorAll('.cat-card.open').forEach(function(cc) {
       cc.classList.remove('open');
@@ -1701,8 +1765,7 @@
     var rawQuery = document.getElementById('cat-search').value || '';
     var q = normalizeAidText(rawQuery);
     var expandedQueries = expandSearchQueries(rawQuery);
-    document.querySelectorAll('.cat-filter').forEach(function(b) { b.classList.remove('active'); });
-    document.querySelector('.cat-filter').classList.add('active');
+    setActiveCatalogFilterButton(document.querySelector('.cat-filter'));
     var count = 0;
     document.querySelectorAll('.cat-card').forEach(function(item) {
       var text = normalizeAidText(item.innerText);
@@ -1756,19 +1819,28 @@
   window.toggleAidSearch = function() {
     var panel = document.getElementById('nav-search-panel');
     if (!panel) return;
+    function setNavSearchState(open) {
+      panel.classList.toggle('open', open);
+      document.querySelectorAll('.nav-search-toggle').forEach(function(btn) {
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
     if (window.innerWidth <= 600) {
       var nav = document.getElementById('nav-links');
       var btn = document.getElementById('hamburger');
       if (nav && !nav.classList.contains('open')) nav.classList.add('open');
       if (btn && !btn.classList.contains('open')) btn.classList.add('open');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      setNavSearchState(true);
       setTimeout(function() {
         var mobileInput = document.getElementById('nav-aid-search');
         if (mobileInput) mobileInput.focus();
       }, 80);
       return;
     }
-    panel.classList.toggle('open');
-    if (panel.classList.contains('open')) {
+    var open = !panel.classList.contains('open');
+    setNavSearchState(open);
+    if (open) {
       setTimeout(function() {
         var input = document.getElementById('nav-aid-search');
         if (input) input.focus();
@@ -1786,12 +1858,20 @@
     if (matchedCard) openCatalogForAid(query);
     else filtrerCatalogue();
     var panel = document.getElementById('nav-search-panel');
-    if (panel && window.innerWidth > 600) panel.classList.remove('open');
+    if (panel) {
+      panel.classList.remove('open');
+      document.querySelectorAll('.nav-search-toggle').forEach(function(btn) {
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    }
     if (window.innerWidth <= 600) {
       var nav = document.getElementById('nav-links');
       var btn = document.getElementById('hamburger');
       if (nav) nav.classList.remove('open');
-      if (btn) btn.classList.remove('open');
+      if (btn) {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
     }
   }
 
@@ -1816,6 +1896,72 @@
       .trim();
   }
 
+  function extractPhoneNumbersFromText(text) {
+    var raw = String(text || '').replace(/\u00a0/g, ' ');
+    var matches = raw.match(/(?:0\d{2}\s\d{3}\s\d{2}\s\d{2}|0800\s\d{2}\s\d{2}\s\d{2}|0\d{3}\s\d{3}\s\d{3}|079\s\d{3}\s\d{2}\s\d{2}|078\s\d{3}\s\d{2}\s\d{2}|077\s\d{3}\s\d{2}\s\d{2}|076\s\d{3}\s\d{2}\s\d{2}|\b143\b|\b147\b)/g);
+    return matches ? Array.from(new Set(matches)) : [];
+  }
+
+  function shouldHaveCatalogContactCallout(card) {
+    if (!card) return false;
+    var title = normalizeAidText(((card.querySelector('.cat-card-title') || {}).textContent || ''));
+    var eligibleTitles = [
+      'agence d assurances sociales aas',
+      'subside lamal reduction de prime',
+      'prestations complementaires avs ai pc',
+      'centre social regional csr',
+      'parlons cash dettes et surendettement',
+      'brapa avances sur pensions alimentaires',
+      'bourses d etudes ocbe'
+    ];
+    return eligibleTitles.indexOf(title) !== -1;
+  }
+
+  function isInlineYellowCallout(node) {
+    if (!node || node.nodeType !== 1) return false;
+    var style = (node.getAttribute('style') || '').replace(/\s+/g, '').toLowerCase();
+    return !!style && style.indexOf('background:#fff8e8') !== -1;
+  }
+
+  function getExistingCatalogCallout(body) {
+    if (!body) return null;
+    return Array.from(body.children).find(function(child) {
+      return child.classList.contains('catalog-callout') || isInlineYellowCallout(child);
+    }) || null;
+  }
+
+  function calloutAlreadyContainsContactPrompt(text) {
+    var normalized = String(text || '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+    return normalized.indexOf('n’hésite pas à appeler') !== -1 ||
+      normalized.indexOf("n'hesite pas a appeler") !== -1 ||
+      normalized.indexOf('n’hésite pas à contacter') !== -1 ||
+      normalized.indexOf("n'hesite pas a contacter") !== -1;
+  }
+
+  function getCatalogCalloutTip(card, callout) {
+    if (!card) return '';
+    var title = (card.querySelector('.cat-card-title') || {}).textContent || '';
+    var textPool = [
+      title,
+      card.textContent || '',
+      callout ? callout.textContent || '' : ''
+    ].join(' ');
+    var phoneMap = {
+      'Parlons Cash — dettes et surendettement': '021 560 60 60',
+      'BRAPA — avances sur pensions alimentaires': '021 316 52 21',
+      'Distributions alimentaires — canton de Vaud': '0800 30 30 38'
+    };
+    var numbers = extractPhoneNumbersFromText(textPool);
+    if (!numbers.length && phoneMap[title]) numbers = [phoneMap[title]];
+    if (numbers.length) {
+      return 'N’hésite pas à appeler si tu as une question ou un doute : ' + numbers[0] + '. Ils sont aussi là pour ça.';
+    }
+    return 'N’hésite pas à les contacter via les liens ci-dessous si tu as une question ou un doute.';
+  }
+
   function expandSearchQueries(query) {
     var normalizedQuery = normalizeAidText(query);
     if (!normalizedQuery) return [];
@@ -1836,7 +1982,10 @@
       'courses': ['epicerie caritas lausanne', 'distributions alimentaires canton de vaud'],
       'nourriture': ['epicerie caritas lausanne', 'distributions alimentaires canton de vaud'],
       'meubles': ['galetas du csp vaud meubles objets a petits prix', 'emmaus etagnieres brocante solidaire', 'armee du salut brocki lausanne'],
-      'dettes': ['soutien budget desendettement', 'menace d expulsion que faire'],
+      'dettes': ['parlons cash dettes et surendettement', 'menace d expulsion que faire'],
+      'budget': ['parlons cash dettes et surendettement'],
+      'surendettement': ['parlons cash dettes et surendettement'],
+      'parlons cash': ['parlons cash dettes et surendettement'],
       'violence': ['lavi aide aux victimes', 'malleyprairie violence conjugale familiale'],
       'handicap': ['assurance invalidite ai', 'pro infirmis vaud'],
       'sante mentale': ['cms soins et aide a domicile', 'pro infirmis vaud', 'addiction vaud informations orientation']
@@ -1880,6 +2029,10 @@
       'programme vaud pour vous': ['programme vaud pour vous'],
       'lavi aide aux victimes': ['lavi aide aux victimes'],
       'menace d expulsion que faire': ['menace d expulsion que faire'],
+      'parlons cash': ['parlons cash dettes et surendettement'],
+      'parlons cash dettes et surendettement': ['parlons cash dettes et surendettement'],
+      'surendettement': ['parlons cash dettes et surendettement'],
+      'dettes': ['parlons cash dettes et surendettement'],
       'csp vaud soutien social permanence juridique': ['csp vaud soutien social permanence juridique'],
       'croix rouge vaudoise accompagnement': ['croix rouge vaudoise aide et accompagnement'],
       'secours d hiver vaud': ['programme vaud pour vous', 'distributions alimentaires canton de vaud'],
@@ -1928,12 +2081,31 @@
     openCatalogForAid(target);
   }
 
+  function getCatalogStickyOffset() {
+    var nav = document.querySelector('nav');
+    var filterBar = document.querySelector('.catalog-filter-sticky');
+    var navHeight = nav ? nav.offsetHeight : 0;
+    var filterHeight = filterBar ? filterBar.offsetHeight : 0;
+    return navHeight + filterHeight + 14;
+  }
+
   window.openCatalogGroup = function(groupId) {
     var group = document.getElementById(groupId);
     if (!group) return;
-    document.querySelectorAll('.cat-filter').forEach(function(b) { b.classList.remove('active'); });
+    var filterMap = {
+      'groupe-urgences': 'urgence',
+      'groupe-sante': 'sante',
+      'groupe-revenus': 'financier',
+      'groupe-emploi': 'emploi',
+      'groupe-logement': 'logement',
+      'groupe-petit-budget': 'petitbudget',
+      'groupe-migration': 'migration',
+      'groupe-culture': 'culture'
+    };
+    var selectedFilter = document.querySelector('.cat-filter[onclick*="setCatFilter(\'' + (filterMap[groupId] || 'tous') + '\'"]');
     var firstFilter = document.querySelector('.cat-filter');
-    if (firstFilter) firstFilter.classList.add('active');
+    var activeFilter = selectedFilter || firstFilter;
+    setActiveCatalogFilterButton(activeFilter);
     var catInput = document.getElementById('cat-search');
     if (catInput) catInput.value = '';
     document.querySelectorAll('.cat-card').forEach(function(card) {
@@ -1952,7 +2124,12 @@
     });
     var noResult = document.getElementById('cat-no-result');
     if (noResult) noResult.style.display = 'none';
-    group.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    try {
+      var top = group.getBoundingClientRect().top + window.pageYOffset - getCatalogStickyOffset();
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    } catch(e) {
+      group.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   window.openCatalogForAid = function(query) {
@@ -1960,9 +2137,8 @@
     if (!catInput || !query) return;
     var matchedCard = findCatalogCardForAid(query);
     if (matchedCard) {
-      document.querySelectorAll('.cat-filter').forEach(function(b) { b.classList.remove('active'); });
       var firstFilter = document.querySelector('.cat-filter');
-      if (firstFilter) firstFilter.classList.add('active');
+      setActiveCatalogFilterButton(firstFilter);
       document.querySelectorAll('.cat-card').forEach(function(card) {
         card.style.display = card === matchedCard ? '' : 'none';
       });
@@ -1990,8 +2166,19 @@
   window.toggleMenu = function() {
     var nav = document.getElementById('nav-links');
     var btn = document.getElementById('hamburger');
-    nav.classList.toggle('open');
-    btn.classList.toggle('open');
+    var open = !nav.classList.contains('open');
+    nav.classList.toggle('open', open);
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  function closeMobileNavDropdowns() {
+    document.querySelectorAll('.nav-dropdown-menu.open').forEach(function(menu) {
+      menu.classList.remove('open');
+    });
+    document.querySelectorAll('.nav-dropdown > a[aria-expanded]').forEach(function(link) {
+      link.setAttribute('aria-expanded', 'false');
+    });
   }
 
   // Sur mobile, les dropdowns s'ouvrent au clic
@@ -2029,32 +2216,65 @@
         body.style.visibility = 'hidden';
       }
 
-      Array.from(body.children).forEach(function(child) {
-        var style = (child.getAttribute('style') || '').replace(/\s+/g, '').toLowerCase();
-        if (!style || style.indexOf('background:#fff8e8') === -1) return;
-        child.classList.add('catalog-callout');
-        if (child.querySelector('.catalog-callout-tip')) return;
-        var tip = document.createElement('div');
-        tip.className = 'catalog-callout-tip';
-        tip.textContent = 'N’hésite pas à appeler si tu as une question ou un doute. Ils sont aussi là pour ça.';
-        child.appendChild(tip);
-      });
+      var existingCallout = getExistingCatalogCallout(body);
+      if (existingCallout) existingCallout.classList.add('catalog-callout');
+
+      if (shouldHaveCatalogContactCallout(card)) {
+        var tipText = getCatalogCalloutTip(card, existingCallout);
+        if (existingCallout) {
+          if (calloutAlreadyContainsContactPrompt(existingCallout.textContent || '')) {
+            existingCallout.textContent = tipText;
+          } else {
+            var tip = existingCallout.querySelector('.catalog-callout-tip');
+            if (!tip) {
+              tip = document.createElement('div');
+              tip.className = 'catalog-callout-tip';
+              existingCallout.appendChild(tip);
+            }
+            tip.textContent = tipText;
+          }
+        } else {
+          var newCallout = document.createElement('div');
+          newCallout.className = 'catalog-callout';
+          newCallout.textContent = tipText;
+          var links = body.querySelector('.expand-links');
+          if (links) body.insertBefore(newCallout, links);
+          else body.appendChild(newCallout);
+        }
+      }
     });
 
     if (window.innerWidth <= 600) {
       document.querySelectorAll('.nav-dropdown > a').forEach(function(a) {
+        a.setAttribute('aria-haspopup', 'true');
+        a.setAttribute('aria-expanded', 'false');
         a.addEventListener('click', function(e) {
           e.preventDefault();
           var menu = this.nextElementSibling;
-          if (menu) menu.classList.toggle('open');
+          if (!menu) return;
+          var willOpen = !menu.classList.contains('open');
+          closeMobileNavDropdowns();
+          menu.classList.toggle('open', willOpen);
+          this.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
         });
       });
     }
     // Fermer le menu si on clique sur un lien
     document.querySelectorAll('.nav-links a[href]').forEach(function(a) {
       a.addEventListener('click', function() {
-        document.getElementById('nav-links').classList.remove('open');
-        document.getElementById('hamburger').classList.remove('open');
+        var nav = document.getElementById('nav-links');
+        var btn = document.getElementById('hamburger');
+        var panel = document.getElementById('nav-search-panel');
+        if (nav) nav.classList.remove('open');
+        if (btn) {
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+        if (panel) panel.classList.remove('open');
+        closeMobileNavDropdowns();
+        document.querySelectorAll('.nav-search-toggle').forEach(function(searchBtn) {
+          searchBtn.setAttribute('aria-expanded', 'false');
+        });
       });
     });
     var navSearchInput = document.getElementById('nav-aid-search');
@@ -2062,10 +2282,40 @@
       navSearchInput.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
           var panel = document.getElementById('nav-search-panel');
-          if (panel && window.innerWidth > 600) panel.classList.remove('open');
+          var nav = document.getElementById('nav-links');
+          var btn = document.getElementById('hamburger');
+          if (panel) panel.classList.remove('open');
+          document.querySelectorAll('.nav-search-toggle').forEach(function(searchBtn) {
+            searchBtn.setAttribute('aria-expanded', 'false');
+          });
+          if (window.innerWidth <= 600 && nav) nav.classList.remove('open');
+          closeMobileNavDropdowns();
+          if (btn) {
+            btn.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+          }
         }
       });
     }
+
+    document.addEventListener('click', function(e) {
+      var navLinks = document.getElementById('nav-links');
+      var hamburger = document.getElementById('hamburger');
+      var searchPanel = document.getElementById('nav-search-panel');
+      var clickedInNav = e.target && e.target.closest && e.target.closest('nav');
+      if (!clickedInNav) {
+        if (searchPanel) searchPanel.classList.remove('open');
+        document.querySelectorAll('.nav-search-toggle').forEach(function(searchBtn) {
+          searchBtn.setAttribute('aria-expanded', 'false');
+        });
+        closeMobileNavDropdowns();
+        if (window.innerWidth <= 600 && navLinks) navLinks.classList.remove('open');
+        if (hamburger) {
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
 
     // Synchroniser les boutons visuels avec les <select> cachés existants
     document.querySelectorAll('input.choice-input[type="radio"]').forEach(function(input) {
@@ -2287,28 +2537,38 @@
   }
 
   // ─── Accordéons documentation ────────────────────────────────────────────
-  window.toggleAccordion = function(id) {
+  function updateDocAccordionState(id, open) {
     var el = document.getElementById(id);
     var icon = document.getElementById(id + '-icon');
+    if (!el) return;
+    var shell = el.closest('.doc-accordion-shell');
+    var button = shell ? shell.querySelector('.doc-accordion-btn') : null;
+    el.style.display = open ? 'block' : 'none';
+    el.classList.toggle('is-open', open);
+    el.setAttribute('aria-hidden', open ? 'false' : 'true');
+    if (shell) shell.classList.toggle('is-open', open);
+    if (button) button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (icon) icon.style.transform = open ? 'rotate(180deg)' : '';
+  }
+
+  window.toggleAccordion = function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
     var open = el.style.display === 'block';
-    el.style.display = open ? 'none' : 'block';
-    if (icon) icon.style.transform = open ? '' : 'rotate(180deg)';
+    updateDocAccordionState(id, !open);
   }
 
   window.ouvrirAccordion = function(id) {
-    var el = document.getElementById(id);
-    var icon = document.getElementById(id + '-icon');
-    if (el) el.style.display = 'block';
-    if (icon) icon.style.transform = 'rotate(180deg)';
+    updateDocAccordionState(id, true);
   }
 
   // ─── Simulateur : navigation ─────────────────────────────────────────────
   var questionIndexByStep = { 1: 0, 2: 0, 3: 0, 4: 0 };
   var questionSetsByStep = {
-    1: [['commune', 'age', 'situation_familiale', 'statut_sejour']],
+    1: [['commune', 'age'], ['situation_familiale', 'statut_sejour']],
     2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
     3: [['revenu', 'fortune', 'prime_lamal'], ['aides_actuelles']],
-    4: [['incapacite', 'dettes', 'proche_aidant', 'contact_social']]
+    4: [['incapacite', 'dettes']]
   };
 
   function getStepElement(step) {
@@ -2359,10 +2619,30 @@
     return;
   }
 
+  function getRequiredFieldsForCurrentStep(step) {
+    if (step === 1) return ['age', 'situation_familiale', 'statut_sejour'];
+    if (step === 2) return ['situation_pro', 'logement'];
+    if (step === 3) return ['revenu', 'fortune', 'prime_lamal'];
+    return [];
+  }
+
+  function updateRequiredMarkers(step) {
+    var requiredFields = getRequiredFieldsForCurrentStep(step);
+    var stepEl = getStepElement(step);
+    if (!stepEl) return;
+    Array.from(stepEl.querySelectorAll('.form-group')).forEach(function(group) {
+      var label = group.querySelector('.form-label');
+      if (!label) return;
+      var fieldId = getGroupFieldId(group);
+      label.classList.toggle('is-required', requiredFields.indexOf(fieldId) !== -1);
+    });
+  }
+
   function renderStepQuestionMode(step) {
     var stepEl = getStepElement(step);
     if (!stepEl) return;
     ensureStepQuestionUi(step);
+    updateRequiredMarkers(step);
     var groups = getStepQuestionGroups(step);
     var sets = getVisibleStepQuestionSets(step);
     if (!groups.length || !sets.length) return;
@@ -2496,6 +2776,69 @@
     return selectedValue(fieldId, '');
   }
 
+  function getFieldDisplayValue(fieldId) {
+    if (fieldId === 'commune') return getFieldValue('commune') || '';
+
+    if (fieldId === 'aides_actuelles') {
+      var selectedAides = Array.from(document.querySelectorAll('input.choice-input[name="aides_actuelles_multi"]:checked')).map(function(input) {
+        var title = input.parentElement && input.parentElement.querySelector('.choice-title');
+        return title ? title.textContent.trim() : input.value;
+      });
+      return selectedAides.join(', ');
+    }
+
+    var select = document.getElementById(fieldId);
+    if (select && select.tagName === 'SELECT' && select.value) {
+      var option = select.options[select.selectedIndex];
+      if (option && option.textContent) return option.textContent.trim();
+    }
+
+    var checked = document.querySelector('input.choice-input[name="' + fieldId + '"]:checked');
+    if (checked) {
+      var checkedTitle = checked.parentElement && checked.parentElement.querySelector('.choice-title');
+      if (checkedTitle) return checkedTitle.textContent.trim();
+      return checked.value || '';
+    }
+
+    return getFieldValue(fieldId);
+  }
+
+  function renderResultsProfileSummary(data) {
+    var container = document.getElementById('results-profile-summary');
+    if (!container) return;
+    var communeValue = String(data.commune || '').trim();
+    if (!communeValue || communeValue.toLowerCase() === 'non précisé') communeValue = '';
+
+    var items = [
+      { label: 'Commune', value: communeValue },
+      { label: 'Âge', value: data.age || '' },
+      { label: 'Situation familiale', value: data.famille || '' },
+      { label: 'Statut en Suisse', value: data.statut || '' },
+      { label: 'Situation pro', value: data.travail || '' },
+      { label: 'Logement', value: data.logement || '' },
+      { label: 'Revenu', value: data.revenu || '' },
+      { label: 'Épargne', value: data.fortune || '' }
+    ].filter(function(item) {
+      return !!item.value;
+    });
+
+    if (!items.length) {
+      container.style.display = 'none';
+      container.innerHTML = '';
+      return;
+    }
+
+    container.innerHTML = '<div class="results-profile-title">Récap de ta situation</div>'
+      + '<div class="results-profile-text">Voici les réponses prises en compte pour lire les résultats juste en dessous.</div>'
+      + '<div class="results-profile-actions"><button type="button" class="result-link-btn" onclick="editSimulationAnswers()">Modifier mes réponses</button></div>'
+      + '<div class="results-profile-grid">'
+      + items.map(function(item) {
+          return '<div class="results-profile-item"><span class="results-profile-label">' + escapeHtml(item.label) + '</span><span class="results-profile-value">' + escapeHtml(item.value) + '</span></div>';
+        }).join('')
+      + '</div>';
+    container.style.display = 'block';
+  }
+
   function setFieldValidity(fieldId, valid) {
     var input = document.getElementById(fieldId);
     var group = input ? input.closest('.form-group') : null;
@@ -2522,6 +2865,13 @@
       return false;
     }
     return true;
+  }
+
+  window.editSimulationAnswers = function() {
+    var results = document.getElementById('results');
+    if (results) results.style.display = 'none';
+    questionIndexByStep[1] = 0;
+    goToStep(1, true);
   }
 
   window.goToStepValidated = function(step) {
@@ -2744,6 +3094,7 @@
 
   function getAidPurpose(name) {
     var n = (name || '').toLowerCase();
+    if (n.indexOf('centre social régional') !== -1 || n.indexOf('(csr)') !== -1) return 'Ce service sert à faire un premier point quand tu ne sais pas par où commencer ou quand la situation devient urgente. Le CSR peut expliquer les aides possibles, ouvrir la porte du RI et orienter vers le bon relais.';
     if (n.indexOf('evam') !== -1) return 'Ce service sert à t’orienter dans le dispositif asile ou protection temporaire. Il aide à clarifier quel relais suit déjà ton dossier et quelles démarches passent d’abord par ce cadre.';
     if (n.indexOf('fraternité') !== -1) return 'Ce service sert à comprendre les questions de permis, de séjour, de courrier officiel ou de procédure migration. Il aide surtout à savoir quoi faire et vers qui aller.';
     if (n.indexOf('questions sur ton permis') !== -1) return 'Cette orientation sert à traiter à part tout ce qui touche au permis, au renouvellement, à un courrier du SPOP ou à un risque sur le séjour. Ce n’est pas une aide financière en soi, mais un bon point d’entrée.';
@@ -2757,12 +3108,13 @@
     if (n.indexOf('bourse') !== -1 || n.indexOf('ocbe') !== -1) return 'Cette aide sert \u00e0 financer une formation quand les ressources du m\u00e9nage ne suffisent pas. Elle peut couvrir une partie des frais de vie, d\u2019\u00e9tudes ou de transport.';
     if (n.indexOf('allocations familiales') !== -1) return 'Cette aide sert \u00e0 soutenir financi\u00e8rement les parents qui ont des enfants \u00e0 charge. Elle est vers\u00e9e chaque mois et ne d\u00e9pend pas du revenu dans les cas ordinaires.';
     if (n.indexOf('assurance chômage') !== -1 || n.indexOf('laci') !== -1) return 'Cette aide sert \u00e0 remplacer une partie du salaire apr\u00e8s une perte d\u2019emploi. Elle s\u2019accompagne d\u2019obligations de recherche d\u2019emploi et de suivi ORP.';
-    if (n.indexOf('ai') !== -1 || n.indexOf('invalidit') !== -1) return 'Cette aide sert \u00e0 soutenir les personnes dont la sant\u00e9 limite durablement la capacit\u00e9 de travail. Elle peut ouvrir des mesures de r\u00e9adaptation, des aides techniques ou une rente.';
+    if (n.indexOf('assurance invalidité') !== -1 || n.indexOf('invalidit') !== -1 || n.indexOf('(ai)') !== -1) return 'Cette aide sert \u00e0 soutenir les personnes dont la sant\u00e9 limite durablement la capacit\u00e9 de travail. Elle peut ouvrir des mesures de r\u00e9adaptation, des aides techniques ou une rente.';
     if (n.indexOf('pro infirmis') !== -1) return 'Ce service sert \u00e0 accompagner les personnes en situation de handicap ou de maladie chronique dans les d\u00e9marches sociales, administratives, de logement ou d\u2019emploi.';
     if (n.indexOf('pro senectute') !== -1) return 'Ce service sert \u00e0 aider les personnes de 60 ans et plus dans les d\u00e9marches administratives, sociales et budg\u00e9taires du quotidien.';
     if (n.indexOf('cms') !== -1) return 'Ce service sert \u00e0 organiser des soins et de l\u2019aide \u00e0 domicile. Il peut soutenir le maintien \u00e0 la maison quand le quotidien devient plus difficile.';
     if (n.indexOf('centrale des solidarit') !== -1) return 'Ce service sert \u00e0 orienter rapidement vers les bonnes aides et les bons interlocuteurs dans le canton. C\u2019est une porte d\u2019entr\u00e9e utile quand on ne sait pas par o\u00f9 commencer.';
     if (n.indexOf('rente-pont') !== -1) return 'Cette aide sert \u00e0 soutenir financi\u00e8rement certaines personnes proches de l\u2019AVS arriv\u00e9es en fin de droits au ch\u00f4mage. Elle fait le lien jusqu\u2019\u00e0 l\u2019\u00e2ge de la retraite.';
+    if (n.indexOf('parlons cash') !== -1) return 'Ce service sert à mieux comprendre les dettes, les poursuites et le surendettement. Il aide à faire un premier tri, à agir plus tôt et à trouver le bon relais dans le canton.';
     if (n.indexOf('expulsion') !== -1 || n.indexOf('asloca') !== -1) return 'Cette orientation sert \u00e0 prot\u00e9ger le logement et \u00e0 agir vite en cas de retard de loyer, de r\u00e9siliation ou de pression du bailleur.';
     if (n.indexOf('dettes') !== -1 || n.indexOf('d\u00e9sendettement') !== -1) return 'Cette aide sert \u00e0 reprendre la main sur les dettes, les poursuites et le budget. Elle permet souvent d\u2019\u00e9viter que la situation s\u2019aggrave.';
     if (n.indexOf('orientation urgente') !== -1) return 'Cette orientation sert \u00e0 sortir rapidement d\u2019une situation critique et \u00e0 te mettre en lien avec un service humain adapt\u00e9.';
@@ -2776,11 +3128,13 @@
     if (
       n.indexOf('evam') !== -1 ||
       n.indexOf('fraternité') !== -1 ||
+      n.indexOf('centre social régional') !== -1 ||
       n.indexOf('questions sur ton permis') !== -1 ||
       n.indexOf('permis l') !== -1 ||
       n.indexOf('permis g') !== -1 ||
       n.indexOf('orientation urgente') !== -1 ||
       n.indexOf('aide d’urgence') !== -1 ||
+      n.indexOf('parlons cash') !== -1 ||
       n.indexOf('centrale des solidarités') !== -1 ||
       n.indexOf('pro infirmis') !== -1 ||
       n.indexOf('pro senectute') !== -1 ||
@@ -2806,7 +3160,7 @@
   function getResultPriority(name, context) {
     var n = (name || '').toLowerCase();
     var enEmploi = !!(context && context.enEmploi);
-    if (n.indexOf('orientation urgente') !== -1 || n.indexOf('menace d\'expulsion') !== -1) return 0;
+    if (n.indexOf('orientation urgente') !== -1 || n.indexOf('centre social régional') !== -1 || n.indexOf('menace d\'expulsion') !== -1) return 0;
     if (n.indexOf('questions sur ton permis') !== -1 || n.indexOf('aide d’urgence') !== -1 || n.indexOf('evam') !== -1 || n.indexOf('fraternité') !== -1 || n.indexOf('permis l') !== -1 || n.indexOf('permis g') !== -1) return 1;
     if (n.indexOf('revenu d\'insertion') !== -1 || n.indexOf('(ri)') !== -1) return enEmploi ? 12 : 2;
     if (n.indexOf('prestations compl') !== -1 || n.indexOf('(pc)') !== -1) return 3;
@@ -2816,6 +3170,7 @@
     if (n.indexOf('bourses') !== -1 || n.indexOf('ocbe') !== -1) return 7;
     if (n.indexOf('subside lamal') !== -1 || n.indexOf('prime') !== -1) return 8;
     if (n.indexOf('rente-pont') !== -1) return 9;
+    if (n.indexOf('parlons cash') !== -1) return 10;
     if (n.indexOf('cms') !== -1 || n.indexOf('pro infirmis') !== -1 || n.indexOf('pro senectute') !== -1) return 10;
     if (n.indexOf('aides logement communales') !== -1) return 11;
     if (n.indexOf('carteculture') !== -1) return 99;
@@ -2903,7 +3258,17 @@
     var urgence      = document.getElementById('urgence').value || 'non';
     var incapacite   = document.getElementById('incapacite').value || 'non';
     var dettes       = document.getElementById('dettes').value || 'non';
-    var contactSocial= document.getElementById('contact_social').value || 'non';
+
+    renderResultsProfileSummary({
+      commune: commune,
+      age: getFieldDisplayValue('age'),
+      famille: getFieldDisplayValue('situation_familiale'),
+      statut: getFieldDisplayValue('statut_sejour'),
+      travail: getFieldDisplayValue('situation_pro'),
+      logement: getFieldDisplayValue('logement'),
+      revenu: getFieldDisplayValue('revenu'),
+      fortune: getFieldDisplayValue('fortune')
+    });
 
     var res = [];
 
@@ -2951,31 +3316,39 @@
     function pill(label, url) { return '<a href="' + url + '" target="_blank" rel="noopener noreferrer" class="result-link-btn">' + label + '</a>'; }
     function buildResultDetail(title, body, className, openByDefault) {
       if (!body) return '';
-      return '<details class="result-detail ' + className + '"' + (openByDefault ? ' open' : '') + '><summary><span class="result-detail-title">' + title + '</span><span class="result-detail-arrow">⌄</span></summary><div class="result-detail-body">' + body + '</div></details>';
+      return '<details class="result-detail ' + className + '"' + (openByDefault ? ' open' : '') + '><summary><span class="result-detail-title">' + title + '</span></summary><div class="result-detail-body">' + body + '</div></details>';
     }
 
     if (urgenceActive) {
+      var urgenceNom = 'Centre social régional (CSR)';
+      var urgenceLiensCSR = true;
       var urgenceDesc = 'Ta situation demande une orientation rapide vers un service humain, en plus des aides ci-dessous.';
       var urgenceAction = 'Contacte rapidement le service le plus pertinent selon ta situation, puis regarde les ressources d’urgence du catalogue si besoin.';
       if (urgence === 'violence') {
+        urgenceNom = 'Centre LAVI Vaud';
+        urgenceLiensCSR = false;
         urgenceDesc = 'La priorité est ta sécurité. Il faut sortir du simple simulateur et contacter immédiatement un service spécialisé.';
         urgenceAction = 'En danger immédiat : 117. Sinon Centre LAVI Vaud : ☏ 021 631 03 00.';
       } else if (urgence === 'soins') {
+        urgenceNom = 'Unisanté / CMS';
+        urgenceLiensCSR = false;
         urgenceDesc = 'Renoncer à des soins ou à des médicaments peut vite aggraver la situation. Il faut un relais rapide.';
         urgenceAction = 'Appelle Unisanté ou un CMS, puis demande aussi une orientation sociale au 0800 30 30 38.';
       } else if (urgence === 'plus_revenu') {
+        urgenceDesc = 'Quand il n’y a plus assez pour vivre, le CSR est souvent la première porte à contacter pour faire le point et voir les aides possibles.';
         urgenceAction = 'Contacte rapidement ton CSR, puis regarde la rubrique urgences du catalogue si un relais complémentaire est nécessaire.';
       } else if (urgence === 'logement' || dettes === 'loyer' || logement.includes('Sans logement fixe')) {
+        urgenceDesc = 'Quand le logement ou le budget devient critique, le CSR peut faire un premier point rapidement et t’orienter vers les bons relais.';
         urgenceAction = 'Contacte immédiatement ton CSR, puis l’ASLOCA Vaud si un bail est en jeu : ☏ 021 617 16 17.';
       }
       res.push({
-        nom: 'Orientation urgente',
+        nom: urgenceNom,
         badge: 'confirme',
         desc: urgenceDesc,
         action: urgenceAction,
         today: 'Fais ce premier contact sans attendre un dossier complet.',
         docs: ['Pièce d’identité', 'Courriers reçus récemment', 'Contrat de bail ou factures concernées'],
-        liensCSR: true
+        liensCSR: urgenceLiensCSR
       });
     }
 
@@ -3373,27 +3746,27 @@
         });
       } else {
         res.push({
-          nom: 'Soutien budget & désendettement',
+          nom: 'Parlons Cash — dettes et surendettement',
           badge: 'verifier',
-          desc: 'Des conseils gratuits existent pour t\'aider à gérer tes dettes et éviter que la situation s\'aggrave.',
-          action: '1. CSP Vaud : consultations gratuites, ☏ 021 560 60 60.\n2. Portail Parlons Cash (État de Vaud) : ressources et orientation.\n3. Plus tôt tu agis, plus les solutions sont nombreuses.',
-          today: 'Commence par lister tes dettes et demande un premier rendez-vous.',
+          desc: 'Si les dettes, les poursuites ou les factures te dépassent, Parlons Cash peut te donner un premier repère simple et t’aider à agir plus tôt.',
+          action: '1. Regarde d’abord Parlons Cash pour comprendre quoi faire selon ta situation.\n2. Si besoin, contacte ensuite le CSP Vaud pour un appui plus direct.\n3. Plus tôt tu agis, plus les solutions sont nombreuses.',
+          today: 'Commence par lister tes dettes, puis ouvre Parlons Cash ou demande un premier rendez-vous.',
           docs: ['Liste des dettes ou poursuites', 'Factures impayées', 'Budget mensuel si tu l’as'],
-          liensDettes: true
+          liensParlonsCash: true
         });
       }
     }
 
     // ── 14. Orientation sociale ───────────────────────────────────────────
-    if (logement.includes('Locataire') && loyerBas && revenu !== '' && !alreadyRI && revenu !== 'plus5000' && revenu !== '3500-5000') {
+    if (logement.includes('Locataire') && !alreadyRI && (loyerEleve || dettes === 'loyer' || revenuFaible)) {
       res.push({
         nom: 'Aides logement communales ou parapubliques',
-        badge: grandeCommune ? 'probable' : 'verifier',
+        badge: (dettes === 'loyer' || loyerEleve) ? 'probable' : 'verifier',
         desc: grandeCommune
-          ? 'Dans les grandes communes vaudoises, il existe parfois des aides logement, loyers modérés ou soutiens ponctuels peu visibles.'
-          : 'Certaines communes ou fondations proposent des soutiens logement en plus des aides cantonales. C’est variable selon l’endroit.',
-        action: 'Regarde le site de ta commune et le catalogue ci-dessous pour les pistes logement.',
-        today: 'Fais une recherche par commune et regarde aussi les aides logement du catalogue.',
+          ? 'Dans certaines grandes communes vaudoises, il existe parfois des soutiens liés au loyer ou des aides ponctuelles quand le budget logement devient trop lourd.'
+          : 'Certaines communes ou fondations proposent des soutiens liés au loyer ou au maintien dans le logement. Cela dépend beaucoup de l’endroit et de la situation.',
+        action: 'Regarde d’abord le site de ta commune ou appelle ton CSR si le loyer devient difficile à assumer. Le catalogue peut ensuite te donner des pistes locales à vérifier.',
+        today: 'Garde cette piste si ton loyer pèse trop lourd ou si tu crains de ne plus réussir à le tenir.',
         liensDettes: false
       });
     }
@@ -3454,6 +3827,7 @@
       if (r.liensSenectute) links += pill('Pro Senectute Vaud','https://www.prosenectute.ch/fr/regions/vaud.html');
       if (r.liensCMS) links += pill('AVASAD — CMS Vaud','https://www.avasad.ch');
       if (r.liensDettes) links += pill('ASLOCA Vaud','https://vaud.asloca.ch/') + pill('CSP Vaud','https://csp.ch/vaud/') + pill('Parlons Cash','https://www.vd.ch/aides-financieres-et-soutien-social/2023-parlons-cash-dettes-et-surendettement');
+      if (r.liensParlonsCash) links += pill('Parlons Cash','https://www.vd.ch/aides-financieres-et-soutien-social/2023-parlons-cash-dettes-et-surendettement') + pill('CSP Vaud','https://csp.ch/vaud/');
       if (r.liensCSR) links += pill('Trouver ton CSR',CSR_FINDER_URL);
 
       if (!isSecondaryResult(r.nom || '') && topActions.length < 3 && r.action) {
@@ -3544,6 +3918,36 @@
     if (!link.rel || link.rel.indexOf('noopener') === -1) {
       link.rel = 'noopener noreferrer';
     }
+  });
+
+  document.querySelectorAll('.cat-card').forEach(function(card, index) {
+    var body = card.querySelector('.cat-card-body');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-expanded', card.classList.contains('open') ? 'true' : 'false');
+    if (body) {
+      if (!body.id) body.id = 'cat-card-body-' + (index + 1);
+      card.setAttribute('aria-controls', body.id);
+    }
+    card.addEventListener('keydown', function(e) {
+      if (e.target && e.target.closest('.cat-quicklinks')) return;
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleCatCard(card);
+      }
+    });
+  });
+
+  document.querySelectorAll('.doc-accordion-shell').forEach(function(shell) {
+    var button = shell.querySelector('.doc-accordion-btn');
+    var content = shell.querySelector('.doc-content');
+    if (!button || !content) return;
+    if (!content.id) return;
+    if (!button.id) button.id = content.id + '-button';
+    button.setAttribute('type', 'button');
+    button.setAttribute('aria-controls', content.id);
+    content.setAttribute('aria-labelledby', button.id);
+    updateDocAccordionState(content.id, content.style.display === 'block');
   });
 
   document.querySelectorAll('.cat-card-header').forEach(function(header) {
