@@ -203,23 +203,33 @@
   .step-question-set { display: none; }
   .step-question-set.is-visible { display: block; animation: fadeUp 0.26s ease both; }
   .step-question-set .form-group { padding: 0.95rem 1rem 1rem; border: 1.5px solid #eee2d6; border-radius: 18px; background: #fffdf9; box-shadow: 0 10px 24px rgba(72,59,49,0.05); }
-  .step-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #eee2d6; }
+  .step-actions { display: flex; justify-content: space-between; align-items: center; gap: 0.65rem; flex-wrap: wrap; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #eee2d6; }
   .btn-nav { padding: 10px 18px; border-radius: 13px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.18s, border-color 0.18s, color 0.18s; border: none; }
   .btn-next { background: var(--sage-dark); color: white; }
   .btn-next:hover { background: #214826; transform: translateY(-1px); box-shadow: 0 10px 24px rgba(33,72,38,0.18); }
   .btn-prev { background: transparent; color: var(--warm-gray); border: 1.5px solid #e6dace !important; font-weight: 500; }
   .btn-prev:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(72,59,49,0.08); }
+  .btn-quick-review { background:#fff7ef; color:var(--orange-dark); border:1.5px solid #efc9b0 !important; font-weight:600; }
+  .btn-quick-review:hover { background:#fff1e4; transform:translateY(-1px); box-shadow:0 8px 18px rgba(232,105,58,0.12); }
   .btn-analyze { background: var(--orange); color: white; }
   .btn-analyze:hover { background: #d75829; transform: translateY(-1px); box-shadow: 0 12px 26px rgba(215,88,41,0.2); }
   .btn-nav:active { transform: translateY(0); box-shadow: none; }
 
-  .results-note { background:#fff6ea;border:1px solid #f0d6bc;border-radius:16px;padding:0.95rem 1rem;margin-bottom:1.25rem;font-size:0.78rem;color:#8a5a34;line-height:1.6;max-width:68ch; }
-  .results-profile-summary { margin-bottom:1rem; padding:1rem 1.05rem; background:linear-gradient(135deg,#f7f2eb 0%,#fffaf4 100%); border:1.5px solid #eadfd4; border-radius:18px; }
+  .results-note { position:relative; background:#fff6ea;border:1px solid #f0d6bc;border-radius:16px;padding:0.95rem 3rem 0.95rem 1rem;margin-bottom:1.25rem;font-size:0.78rem;color:#8a5a34;line-height:1.6;max-width:70ch; max-height:220px; overflow:hidden; opacity:1; transform:translateY(0); transition:max-height 0.28s ease, opacity 0.22s ease, transform 0.22s ease, margin-bottom 0.22s ease, padding-top 0.22s ease, padding-bottom 0.22s ease, border-width 0.22s ease; }
+  .results-note.is-dismissed { max-height:0; opacity:0; transform:translateY(-8px); margin-bottom:0; padding-top:0; padding-bottom:0; border-width:0; pointer-events:none; }
+  .results-note strong { display:block; margin-bottom:0.18rem; font-size:0.82rem; color:#7e5130; }
+  .results-note-close { position:absolute; top:0.55rem; right:0.55rem; width:30px; height:30px; border:none; border-radius:999px; background:rgba(255,255,255,0.72); color:#9a6842; font:inherit; font-size:1rem; line-height:1; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; transition:transform 0.18s ease, background 0.18s ease, color 0.18s ease; }
+  .results-note-close:hover { background:white; color:var(--orange-dark); transform:translateY(-1px); }
+  .results-note-close:focus-visible { outline:2px solid rgba(232,105,58,0.24); outline-offset:2px; }
+  .results-profile-summary { margin-bottom:1rem; padding:1rem 1.05rem; background:linear-gradient(135deg,#f7f2eb 0%,#fffaf4 100%); border:1.5px solid #eadfd4; border-radius:18px; max-width:70ch; }
   .results-profile-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:0.98rem; font-weight:800; letter-spacing:-0.04em; color:var(--sage-dark); margin-bottom:0.2rem; }
   .results-profile-text { font-size:0.79rem; color:var(--warm-gray); line-height:1.6; margin-bottom:0.75rem; max-width:58ch; }
   .results-profile-actions { display:flex; flex-wrap:wrap; gap:0.55rem; margin-bottom:0.8rem; }
   .results-profile-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0.55rem; }
   .results-profile-item { background:rgba(255,255,255,0.8); border:1px solid #eadfd4; border-radius:14px; padding:0.7rem 0.8rem; min-width:0; }
+  .results-profile-item.is-editable { width:100%; text-align:left; cursor:pointer; font:inherit; appearance:none; -webkit-appearance:none; transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
+  .results-profile-item.is-editable:hover { transform:translateY(-1px); box-shadow:0 10px 18px rgba(72,59,49,0.05); border-color:#dcc5b4; background:#fffdfa; }
+  .results-profile-item.is-editable:focus-visible { outline:2px solid rgba(232,105,58,0.22); outline-offset:3px; }
   .results-profile-label { display:block; font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange-dark); margin-bottom:0.18rem; }
   .results-profile-value { display:block; font-size:0.82rem; font-weight:600; color:var(--dark); line-height:1.45; }
   .results-list { display: grid; gap: 0.9rem; width: 100%; box-sizing: border-box; }
@@ -248,6 +258,8 @@
   .result-detail-body { padding: 0 0.95rem 0.9rem; font-size: 0.79rem; color: var(--dark); line-height: 1.68; text-align: justify; text-justify: inter-word; hyphens: none; }
   .result-detail-body ul { margin: 0.2rem 0 0; padding-left: 1rem; }
   .result-detail-body li { margin-bottom: 0.2rem; }
+  .result-detail-body a { color: var(--orange-dark); font-weight: 700; text-decoration: none; }
+  .result-detail-body a:hover { text-decoration: underline; }
   .result-more-shell { margin-top: 0.8rem; border-top: 1px solid #efe5db; padding-top: 0.75rem; }
   .result-more-shell summary { list-style: none; display: inline-flex; align-items: center; gap: 0.45rem; cursor: pointer; color: var(--sage-dark); font-size: 0.8rem; font-weight: 600; user-select: none; -webkit-user-select: none; }
   .result-more-shell summary::-webkit-details-marker { display: none; }
@@ -261,13 +273,13 @@
   .result-link-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 8px 14px; min-height: 40px; background: #faf6f0; border: 1.5px solid #decfbe; border-radius: 14px; font-size: 0.8rem; color: var(--sage-dark); font-weight: 700; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.2s; }
   .result-link-btn:hover { background: #fff3ea; border-color: #e2b79f; color: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 8px 18px rgba(72,59,49,0.07); }
   .result-link-btn:focus { outline: 2px solid rgba(232,105,58,0.18); outline-offset: 2px; }
-  .restart-btn { display: block; width: 100%; margin-top: 1rem; padding: 11px; background: transparent; border: 1.5px solid #e4d7cb; border-radius: 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; color: var(--warm-gray); cursor: pointer; transition: all 0.2s; }
+  .restart-btn { display: inline-flex; align-items:center; justify-content:center; width: auto; min-width: 220px; margin-top: 1rem; padding: 11px 18px; background: transparent; border: 1.5px solid #e4d7cb; border-radius: 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; color: var(--warm-gray); cursor: pointer; transition: all 0.2s; }
   .restart-btn:hover { border-color: #d8bea9; color: var(--sage-dark); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(72,59,49,0.06); }
   .results-help-card { margin-top: 1.25rem; background:white; border:1.5px solid #e8ddd2; border-radius:18px; padding:1rem 1.1rem; }
   .results-help-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:1rem; font-weight:800; letter-spacing:-0.04em; color:var(--dark); margin-bottom:0.25rem; }
   .results-help-text { font-size:0.8rem; color:var(--warm-gray); line-height:1.6; margin-bottom:0.8rem; text-align: justify; text-justify: inter-word; hyphens: none; }
   .results-help-actions { display:flex; flex-wrap:wrap; gap:0.55rem; }
-  .results-export-card { margin-top:1.1rem; background:#fffdf9; border:1.5px solid #e8ddd2; border-radius:18px; padding:0.95rem 1.05rem; }
+  .results-export-card { margin-top:1.1rem; background:#fffdf9; border:1.5px solid #e8ddd2; border-radius:18px; padding:0.95rem 1.05rem; max-width:70ch; }
   .results-export-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:0.98rem; font-weight:800; letter-spacing:-0.04em; color:var(--dark); margin-bottom:0.22rem; }
   .results-export-text { font-size:0.79rem; color:var(--warm-gray); line-height:1.6; margin-bottom:0.75rem; max-width:58ch; text-align: justify; text-justify: inter-word; hyphens: none; }
   .results-export-actions { display:flex; flex-wrap:wrap; gap:0.55rem; }
@@ -310,6 +322,10 @@
   .doc-note { background:#fff8e8; border:1px solid #f0d080; border-radius:10px; padding:0.75rem 1rem; font-size:0.78rem; color:var(--dark); line-height:1.6; margin:0.75rem 0; text-align:justify; text-justify:inter-word; hyphens:none; }
   .catalog-callout { background:#fff8e8; border:1px solid #f0d080; border-radius:10px; padding:0.6rem 0.85rem; font-size:0.78rem; color:var(--dark); margin-bottom:0.5rem; }
   .catalog-callout-tip { margin-top:0.45rem; padding-top:0.45rem; border-top:1px solid rgba(240,208,128,0.8); color:#6f5b38; font-weight:500; }
+  .catalog-callout-tip a,
+  .catalog-callout a { color:var(--orange-dark); font-weight:700; text-decoration:none; }
+  .catalog-callout-tip a:hover,
+  .catalog-callout a:hover { text-decoration:underline; }
   .doc-checklist { display:flex; flex-direction:column; gap:0.35rem; margin:0.75rem 0 0.5rem; }
   .doc-check-item { display:flex; align-items:flex-start; gap:10px; padding:0.6rem 0.75rem; background:#faf8f5; border-radius:8px; border:1px solid var(--border); }
   .doc-check-icon { color:var(--sage-dark); flex-shrink:0; }
@@ -524,7 +540,7 @@
           <path d="m20 20-3.5-3.5"></path>
         </svg>
       </button>
-      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-controls="nav-links" aria-expanded="false">
+    <button type="button" class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-controls="nav-links" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -546,11 +562,11 @@
       <li class="nav-dropdown">
         <a href="#formulaires">Documentation</a>
         <div class="nav-dropdown-menu" style="min-width:240px;">
-          <a href="#bloc-ri" onclick="setTimeout(function(){ouvrirAccordion('doc-ri')},400)">Revenu d&#8217;insertion (RI)</a>
-          <a href="#bloc-lamal" onclick="setTimeout(function(){ouvrirAccordion('doc-lamal')},400)">Subside LAMal</a>
-          <a href="#bloc-ai" onclick="setTimeout(function(){ouvrirAccordion('doc-ai')},400)">Assurance invalidit&#233; (AI)</a>
-          <a href="#bloc-bourse" onclick="setTimeout(function(){ouvrirAccordion('doc-bourse')},400)">Bourses d&#8217;&#233;tudes</a>
-          <a href="#bloc-carte" onclick="setTimeout(function(){ouvrirAccordion('doc-carte')},400)">CarteCulture</a>
+          <a href="#bloc-ri" onclick="event.preventDefault();openDocumentationTarget('bloc-ri','doc-ri')">Revenu d&#8217;insertion (RI)</a>
+          <a href="#bloc-lamal" onclick="event.preventDefault();openDocumentationTarget('bloc-lamal','doc-lamal')">Subside LAMal</a>
+          <a href="#bloc-ai" onclick="event.preventDefault();openDocumentationTarget('bloc-ai','doc-ai')">Assurance invalidit&#233; (AI)</a>
+          <a href="#bloc-bourse" onclick="event.preventDefault();openDocumentationTarget('bloc-bourse','doc-bourse')">Bourses d&#8217;&#233;tudes</a>
+          <a href="#bloc-carte" onclick="event.preventDefault();openDocumentationTarget('bloc-carte','doc-carte')">CarteCulture</a>
         </div>
       </li>
       <li>
@@ -561,8 +577,8 @@
               <path d="m20 20-3.5-3.5"></path>
             </svg>
           </button>
-          <form class="nav-search-panel" id="nav-search-panel" onsubmit="event.preventDefault();submitAidSearch();">
-            <input class="nav-search-input" id="nav-aid-search" type="text" placeholder="Rechercher une aide">
+          <form class="nav-search-panel" id="nav-search-panel" role="search" onsubmit="event.preventDefault();submitAidSearch();">
+            <input class="nav-search-input" id="nav-aid-search" type="search" placeholder="Rechercher une aide" autocomplete="off" inputmode="search" enterkeyhint="search" aria-label="Rechercher une aide dans le site">
             <button class="nav-search-submit" type="submit">OK</button>
           </form>
         </div>
@@ -993,7 +1009,6 @@
             </select>
             <div class="form-error">Choisis ton niveau d&#8217;&#233;pargne ou `Je ne sais pas`.</div>
           </div>
-          <input type="hidden" id="lamal" value="oui">
           <div class="form-group" id="group-prime-lamal">
             <label class="form-label">Ta prime maladie par mois</label>
             <div class="choice-grid">
@@ -1041,7 +1056,6 @@
           <div class="step-label">&#201;tape 4 sur 4</div>
           <h3 class="step-title">Ta sant&#233; et ton budget</h3>
           <p class="step-subtitle">Deux derni&#232;res questions utiles pour rep&#233;rer les aides li&#233;es &#224; la sant&#233; ou aux dettes.</p>
-          <input type="hidden" id="urgence" value="non">
           <div class="form-group">
             <label class="form-label">As-tu une incapacit&#233; de travail ou un handicap&#160;?</label>
             <div class="choice-grid">
@@ -1076,12 +1090,13 @@
         </div>
       </div>
 
-      <div class="simulator-body" id="results" style="display:none;">
-        <div id="results-profile-summary" class="results-profile-summary" style="display:none;"></div>
-        <div class="results-note">
+      <div class="simulator-body" id="results" style="display:none;" role="region" aria-label="Résultats du simulateur" tabindex="-1">
+        <div class="results-note" id="results-note">
+          <button type="button" class="results-note-close" onclick="closeResultsNote()" aria-label="Fermer le bloc À savoir">&times;</button>
           <strong>&#192; savoir</strong><br>Ces r&#233;sultats donnent un premier rep&#232;re. Certaines aides d&#233;pendent encore d&#8217;un calcul officiel ou d&#8217;un examen du dossier.
         </div>
-        <div id="results-list" class="results-list"></div>
+        <div id="results-profile-summary" class="results-profile-summary" style="display:none;" aria-live="polite"></div>
+        <div id="results-list" class="results-list" aria-live="polite" aria-busy="false"></div>
         <div class="results-export-card">
           <div class="results-export-title">Garder mes r&#233;sultats</div>
           <p class="results-export-text">Tu peux t&#233;l&#233;charger une checklist courte ou ouvrir un r&#233;sum&#233; pr&#234;t &#224; enregistrer en PDF.</p>
@@ -1186,9 +1201,9 @@
     <p class="section-subtitle">Clique sur une aide pour voir les d&#233;tails, les conditions et les d&#233;marches. <span class="catalog-intro-note">Toutes les fiches se d&#233;plient &#8212; liste non exhaustive, mise &#224; jour r&#233;guli&#232;rement.</span></p>
 
     <div class="catalog-tools">
-      <div class="catalog-search-bar">
+      <div class="catalog-search-bar" role="search">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="cat-search" class="catalog-search-input" placeholder="Rechercher une aide..." oninput="filtrerCatalogue()">
+        <input type="search" id="cat-search" class="catalog-search-input" placeholder="Rechercher une aide..." autocomplete="off" inputmode="search" enterkeyhint="search" aria-label="Rechercher une aide dans le catalogue" oninput="filtrerCatalogue()">
       </div>
       <div class="search-helper">Essaie aussi : caisse maladie, permis, loyer, emploi, dettes, habits pas chers.</div>
       <div class="search-suggestions" aria-label="Suggestions de recherche">
@@ -1227,7 +1242,7 @@
     </div>
     <div id="cat-grid">
       <div class="cat-group" id="groupe-sante">
-        <div class="cat-group-header"><div class="cat-group-title">Sant&eacute; &amp; assurances</div><div class="cat-group-sub">LAMal, AI, PC, soins, accompagnement</div></div>
+        <div class="cat-group-header"><div class="cat-group-title">Sant&eacute; &amp; assurances</div><div class="cat-group-sub">LAMal, AI, PC, soins, accompagnement, sant&eacute; sexuelle</div></div>
         
           <div class="cat-cards-grid">
           <div class="cat-card" data-cat="sante" onclick="toggleCatCard(this)">
@@ -1284,6 +1299,21 @@
             <div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">Le Point d&#8217;Eau &mdash; accueil &amp; hygi&egrave;ne</div><div class="cat-card-desc">Personnes en grande pr&eacute;carit&eacute; &middot; Sans condition &middot; Lausanne</div></div><span class="cat-card-arrow">+</span></div>
             <div class="cat-quicklinks" onclick="event.stopPropagation()"><a href="https://pointdeau-lausanne.ch/presentationpel/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Le Point d&#8217;Eau</a></div>
             <div class="cat-card-body" style="display:none;"><p>Le Point d&#8217;Eau est une fondation lausannoise d&#8217;accueil bas seuil. Elle propose des prestations d&#8217;hygi&egrave;ne, de soins et d&#8217;orientation &mdash; sans inscription, sans condition, sans jugement.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.5rem 0 0.75rem;"><div><div class="expand-subtitle">Ce qu&#8217;on y trouve</div><ul class="expand-list"><li>Douches et sanitaires</li><li>Machines &agrave; laver gratuites</li><li>Vestiaires &mdash; v&ecirc;tements disponibles</li><li>Soins et orientation sociale</li></ul></div><div><div class="expand-subtitle">Pratique</div><ul class="expand-list"><li>Avenue d&#8217;Echallens 123, Lausanne</li><li>Sans rendez-vous &mdash; aucune inscription</li><li>Ouvert aux personnes en situation de pr&eacute;carit&eacute;, avec ou sans statut</li></ul></div></div><div class="expand-links"><a href="https://pointdeau-lausanne.ch/presentationpel/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Le Point d&#8217;Eau &mdash; site officiel</a><a href="https://pointdeau-lausanne.ch/contact/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Contact &amp; horaires</a></div></div>
+          </div>
+          <div class="cat-card" data-cat="sante" onclick="toggleCatCard(this)">
+            <div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">Sant&eacute; sexuelle &mdash; PROFA</div><div class="cat-card-desc">Contraception, d&eacute;pistage, grossesse impr&eacute;vue, questions intimes</div></div><span class="cat-card-arrow">+</span></div>
+            <div class="cat-quicklinks" onclick="event.stopPropagation()"><a href="https://www.profa.ch/sante-sexuelle/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Consultation PROFA</a><a href="https://www.profa.ch/centres/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Centres PROFA</a></div>
+            <div class="cat-card-body" style="display:none;"><p>Tu peux aller chez PROFA pour des questions de contraception, de d&eacute;pistage, de grossesse impr&eacute;vue, d&rsquo;orientation sexuelle, d&rsquo;identit&eacute; de genre ou simplement si tu as besoin d&rsquo;un lieu de parole sans jugement.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.5rem 0 0.75rem;"><div><div class="expand-subtitle">Pour quoi</div><ul class="expand-list"><li>D&eacute;pistage VIH / IST</li><li>Contraception et pilule d&rsquo;urgence</li><li>Grossesse impr&eacute;vue ou interruption de grossesse</li><li>Questions sur la vie affective ou sexuelle</li></ul></div><div><div class="expand-subtitle">Bon &agrave; savoir</div><ul class="expand-list"><li>Entretiens d&rsquo;information et de pr&eacute;vention gratuits</li><li>Tarifs adapt&eacute;s selon les situations</li><li>Centres dans plusieurs villes du canton</li><li>Tu peux y aller m&ecirc;me si tu ne sais pas encore par quoi commencer</li></ul></div></div><div style="background:#fff8e8;border:1px solid #f0d080;border-radius:10px;padding:0.6rem 0.85rem;font-size:0.78rem;color:var(--dark);margin-bottom:0.5rem;">Si tu as besoin de parler vite &agrave; quelqu&rsquo;un pour une grossesse impr&eacute;vue ou une question urgente, il vaut mieux contacter sans attendre un centre PROFA, ton/ta gyn&eacute;cologue ou une consultation de sant&eacute; sexuelle.</div><div class="expand-links"><a href="https://www.profa.ch/sante-sexuelle/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Consultation sant&eacute; sexuelle PROFA</a><a href="https://www.profa.ch/centres/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Trouver un centre PROFA</a><a href="https://www.vd.ch/sante-soins-et-handicap/prevention-et-maladies/promotion-de-la-sante-et-prevention/grossesse-imprevue-/-interruption-de-grossesse" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Infos Vaud &mdash; grossesse impr&eacute;vue / IG</a></div></div>
+          </div>
+          <div class="cat-card" data-cat="sante" onclick="toggleCatCard(this)">
+            <div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">L-Check &mdash; sant&eacute; sexuelle inclusive</div><div class="cat-card-desc">FSF, personnes trans et partenaires &middot; Espace safe &middot; Renens</div></div><span class="cat-card-arrow">+</span></div>
+            <div class="cat-quicklinks" onclick="event.stopPropagation()"><a href="https://www.profa.ch/l-check/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>L-Check</a><a href="https://www.profa.ch/centres/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Centres PROFA</a></div>
+            <div class="cat-card-body" style="display:none;"><p>L-Check est une consultation de sant&eacute; sexuelle port&eacute;e par PROFA &agrave; Renens. C&rsquo;est un espace plus cibl&eacute; pour les femmes* qui ont des relations sexuelles avec des femmes, les personnes trans et leurs partenaires, avec une approche safe et sans jugement.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.5rem 0 0.75rem;"><div><div class="expand-subtitle">Pour quoi</div><ul class="expand-list"><li>D&eacute;pistage et suivi en sant&eacute; sexuelle</li><li>Contr&ocirc;le gyn&eacute;cologique</li><li>Questions sur l&rsquo;identit&eacute; de genre ou l&rsquo;orientation sexuelle</li><li>Espace d&rsquo;&eacute;coute et de soutien</li></ul></div><div><div class="expand-subtitle">Bon &agrave; savoir</div><ul class="expand-list"><li>Consultations sur rendez-vous</li><li>Approche communautaire et inclusive</li><li>Lieu adapt&eacute; si tu ne te sens pas &agrave; l&rsquo;aise dans un suivi plus classique</li></ul></div></div><div style="background:#fff8e8;border:1px solid #f0d080;border-radius:10px;padding:0.6rem 0.85rem;font-size:0.78rem;color:var(--dark);margin-bottom:0.5rem;">Si tu cherches un lieu plus cibl&eacute; et plus rassurant pour parler de sant&eacute; sexuelle, L-Check peut &ecirc;tre un meilleur point d&rsquo;entr&eacute;e qu&rsquo;une consultation classique.</div><div class="expand-links"><a href="https://www.profa.ch/l-check/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Voir L-Check</a><a href="https://www.profa.ch/centres/" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Voir les autres centres PROFA</a></div></div>
+          </div>
+          <div class="cat-card" data-cat="sante" onclick="toggleCatCard(this)">
+            <div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">Voqueer &mdash; soutien LGBTQIA+</div><div class="cat-card-desc">Infos, soutien, groupes, ressources communautaires dans le canton</div></div><span class="cat-card-arrow">+</span></div>
+            <div class="cat-quicklinks" onclick="event.stopPropagation()"><a href="https://voqueer.ch" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Voqueer</a><a href="https://www.vd.ch/formation/sante-a-lecole/prestations/diversite/diversite-dorientation-affective-et-sexuelle-identite-de-genre" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ressources Vaud</a></div>
+            <div class="cat-card-body" style="display:none;"><p>Voqueer est une association vaudoise pour la diversit&eacute; sexuelle et de genre. Ce n&rsquo;est pas une consultation m&eacute;dicale, mais cela peut &ecirc;tre une vraie bonne porte d&rsquo;entr&eacute;e si tu cherches du soutien, des rep&egrave;res, des groupes ou des ressources LGBTQIA+ dans le canton.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:0.5rem 0 0.75rem;"><div><div class="expand-subtitle">Tu peux y trouver</div><ul class="expand-list"><li>Infos et orientation</li><li>Groupes, activit&eacute;s et espaces communautaires</li><li>Soutien pour les proches et les familles</li><li>Rep&egrave;res vers des ressources plus sp&eacute;cifiques si besoin</li></ul></div><div><div class="expand-subtitle">Quand c&rsquo;est utile</div><ul class="expand-list"><li>Si tu te poses des questions sur ton orientation ou ton identit&eacute;</li><li>Si tu cherches un cadre plus safe ou communautaire</li><li>Si tu veux rencontrer des ressources LGBTQIA+ vaudoises</li></ul></div></div><div style="background:#fff8e8;border:1px solid #f0d080;border-radius:10px;padding:0.6rem 0.85rem;font-size:0.78rem;color:var(--dark);margin-bottom:0.5rem;">Voqueer peut compl&eacute;ter PROFA ou L-Check si tu cherches aussi du soutien communautaire, pas seulement une consultation.</div><div class="expand-links"><a href="https://voqueer.ch" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Voir Voqueer</a><a href="https://www.vd.ch/formation/sante-a-lecole/prestations/diversite/diversite-dorientation-affective-et-sexuelle-identite-de-genre" target="_blank"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Liens et partenaires Vaud</a></div></div>
           </div>
         </div>
       <div class="cat-group" id="groupe-revenus">
@@ -1548,7 +1578,7 @@
       </div>
 
       <div id="bloc-ri" class="doc-accordion-shell">
-        <button onclick="toggleAccordion('doc-ri')" class="doc-accordion-btn">
+        <button type="button" onclick="toggleAccordion('doc-ri')" class="doc-accordion-btn">
           <div class="doc-accordion-copy"><div class="doc-accordion-title">Revenu d&#8217;insertion (RI)</div><div class="doc-accordion-subtitle">Demande &#183; Documents &#183; CSR</div></div>
           <span id="doc-ri-icon" class="doc-accordion-icon">&#8595;</span>
         </button>
@@ -1572,7 +1602,7 @@
       </div>
 
       <div id="bloc-lamal" class="doc-accordion-shell">
-        <button onclick="toggleAccordion('doc-lamal')" class="doc-accordion-btn">
+        <button type="button" onclick="toggleAccordion('doc-lamal')" class="doc-accordion-btn">
           <div class="doc-accordion-copy"><div class="doc-accordion-title">Subside LAMal</div><div class="doc-accordion-subtitle">Calcul &#183; Demande &#183; AAS</div></div>
           <span id="doc-lamal-icon" class="doc-accordion-icon">&#8595;</span>
         </button>
@@ -1595,7 +1625,7 @@
       </div>
 
       <div id="bloc-ai" class="doc-accordion-shell">
-        <button onclick="toggleAccordion('doc-ai')" class="doc-accordion-btn">
+        <button type="button" onclick="toggleAccordion('doc-ai')" class="doc-accordion-btn">
           <div class="doc-accordion-copy"><div class="doc-accordion-title">Assurance invalidit&#233; (AI)</div><div class="doc-accordion-subtitle">Formulaires &#183; Sant&#233; &#183; R&#233;adaptation</div></div>
           <span id="doc-ai-icon" class="doc-accordion-icon">&#8595;</span>
         </button>
@@ -1613,7 +1643,7 @@
       </div>
 
       <div id="bloc-bourse" class="doc-accordion-shell">
-        <button onclick="toggleAccordion('doc-bourse')" class="doc-accordion-btn">
+        <button type="button" onclick="toggleAccordion('doc-bourse')" class="doc-accordion-btn">
           <div class="doc-accordion-copy"><div class="doc-accordion-title">Bourses d&#8217;&#233;tudes (OCBE)</div><div class="doc-accordion-subtitle">Demande &#183; Formation &#183; Pi&#232;ces utiles</div></div>
           <span id="doc-bourse-icon" class="doc-accordion-icon">&#8595;</span>
         </button>
@@ -1632,7 +1662,7 @@
       </div>
 
       <div id="bloc-carte" class="doc-accordion-shell">
-        <button onclick="toggleAccordion('doc-carte')" class="doc-accordion-btn">
+        <button type="button" onclick="toggleAccordion('doc-carte')" class="doc-accordion-btn">
           <div class="doc-accordion-copy"><div class="doc-accordion-title">CarteCulture &#8212; Caritas</div><div class="doc-accordion-subtitle">Qui peut l&#8217;obtenir &#183; Justificatifs &#183; D&#233;marche</div></div>
           <span id="doc-carte-icon" class="doc-accordion-icon">&#8595;</span>
         </button>
@@ -1680,6 +1710,7 @@
 <script>
   var TOTAL_STEPS = 4;
   var currentStep = 1;
+  var quickReviewMode = false;
   var latestSimulation = null;
   var CSR_FINDER_URL = 'https://www.vd.ch/aides-financieres-et-soutien-social/trouver-un-centre-social-regional-csr';
 
@@ -1941,6 +1972,62 @@
       normalized.indexOf("n'hesite pas a contacter") !== -1;
   }
 
+  function buildPhoneLinkHtml(number) {
+    var raw = String(number || '').trim();
+    if (!raw) return '';
+    var tel = raw.replace(/[^\d+]/g, '');
+    return '<a href="tel:' + tel + '">' + escapeHtml(raw) + '</a>';
+  }
+
+  function linkifyPhoneNumbersInHtml(text) {
+    var escaped = escapeHtml(String(text || ''));
+    return escaped.replace(/(?:0\d{2}\s\d{3}\s\d{2}\s\d{2}|0800\s\d{2}\s\d{2}\s\d{2}|0\d{3}\s\d{3}\s\d{3}|079\s\d{3}\s\d{2}\s\d{2}|078\s\d{3}\s\d{2}\s\d{2}|077\s\d{3}\s\d{2}\s\d{2}|076\s\d{3}\s\d{2}\s\d{2}|\b143\b|\b147\b)/g, function(match) {
+      return buildPhoneLinkHtml(match);
+    });
+  }
+
+  function linkifyPhoneNumbersInElement(root) {
+    if (!root || !('createTreeWalker' in document)) return;
+    var phonePattern = /(?:0\d{2}\s\d{3}\s\d{2}\s\d{2}|0800\s\d{2}\s\d{2}\s\d{2}|0\d{3}\s\d{3}\s\d{3}|079\s\d{3}\s\d{2}\s\d{2}|078\s\d{3}\s\d{2}\s\d{2}|077\s\d{3}\s\d{2}\s\d{2}|076\s\d{3}\s\d{2}\s\d{2}|\b143\b|\b147\b)/g;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(node) {
+        if (!node || !node.parentNode) return NodeFilter.FILTER_REJECT;
+        var parent = node.parentNode;
+        phonePattern.lastIndex = 0;
+        if (!node.nodeValue || !phonePattern.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+        phonePattern.lastIndex = 0;
+        if (parent.closest && parent.closest('a, button, script, style, svg')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(node) {
+      var text = node.nodeValue || '';
+      phonePattern.lastIndex = 0;
+      var matches = text.match(phonePattern);
+      if (!matches || !matches.length) return;
+      var fragment = document.createDocumentFragment();
+      var lastIndex = 0;
+      text.replace(phonePattern, function(match, offset) {
+        if (offset > lastIndex) fragment.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
+        var wrapper = document.createElement('span');
+        wrapper.innerHTML = buildPhoneLinkHtml(match);
+        fragment.appendChild(wrapper.firstChild);
+        lastIndex = offset + match.length;
+        return match;
+      });
+      if (lastIndex < text.length) fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+      node.parentNode.replaceChild(fragment, node);
+    });
+  }
+
+  function enhanceStaticPhoneLinks() {
+    document.querySelectorAll('.cat-card-body, .doc-content, .results-note, .results-profile-summary').forEach(function(root) {
+      linkifyPhoneNumbersInElement(root);
+    });
+  }
+
   function getCatalogCalloutTip(card, callout) {
     if (!card) return '';
     var title = (card.querySelector('.cat-card-title') || {}).textContent || '';
@@ -1957,7 +2044,7 @@
     var numbers = extractPhoneNumbersFromText(textPool);
     if (!numbers.length && phoneMap[title]) numbers = [phoneMap[title]];
     if (numbers.length) {
-      return 'N’hésite pas à appeler si tu as une question ou un doute : ' + numbers[0] + '. Ils sont aussi là pour ça.';
+      return 'N’hésite pas à appeler si tu as une question ou un doute : ' + buildPhoneLinkHtml(numbers[0]) + '. Ils sont aussi là pour ça.';
     }
     return 'N’hésite pas à les contacter via les liens ci-dessous si tu as une question ou un doute.';
   }
@@ -1977,6 +2064,19 @@
       'permis': ['la fraternite csp vaud questions de migration', 'evam permis n f et s'],
       'sejour': ['la fraternite csp vaud questions de migration', 'evam permis n f et s'],
       'migration': ['la fraternite csp vaud questions de migration', 'evam permis n f et s'],
+      'sexualite': ['sante sexuelle profa'],
+      'sante sexuelle': ['sante sexuelle profa'],
+      'contraception': ['sante sexuelle profa'],
+      'depistage': ['sante sexuelle profa'],
+      'grossesse': ['sante sexuelle profa'],
+      'ivg': ['sante sexuelle profa'],
+      'l check': ['l check sante sexuelle inclusive'],
+      'l-check': ['l check sante sexuelle inclusive'],
+      'queer': ['voqueer soutien lgbtqia'],
+      'vaudqueer': ['voqueer soutien lgbtqia'],
+      'voqueer': ['voqueer soutien lgbtqia'],
+      'lgbt': ['voqueer soutien lgbtqia', 'l check sante sexuelle inclusive'],
+      'lgbtqia': ['voqueer soutien lgbtqia', 'l check sante sexuelle inclusive'],
       'habits pas chers': ['boutiques de vetements caritas lausanne', 'boutique csp vaud palud', 'armee du salut brocki lausanne'],
       'vetements': ['boutiques de vetements caritas lausanne', 'boutique csp vaud palud', 'armee du salut brocki lausanne'],
       'courses': ['epicerie caritas lausanne', 'distributions alimentaires canton de vaud'],
@@ -2223,7 +2323,7 @@
         var tipText = getCatalogCalloutTip(card, existingCallout);
         if (existingCallout) {
           if (calloutAlreadyContainsContactPrompt(existingCallout.textContent || '')) {
-            existingCallout.textContent = tipText;
+            existingCallout.innerHTML = tipText;
           } else {
             var tip = existingCallout.querySelector('.catalog-callout-tip');
             if (!tip) {
@@ -2231,18 +2331,20 @@
               tip.className = 'catalog-callout-tip';
               existingCallout.appendChild(tip);
             }
-            tip.textContent = tipText;
+            tip.innerHTML = tipText;
           }
         } else {
           var newCallout = document.createElement('div');
           newCallout.className = 'catalog-callout';
-          newCallout.textContent = tipText;
+          newCallout.innerHTML = tipText;
           var links = body.querySelector('.expand-links');
           if (links) body.insertBefore(newCallout, links);
           else body.appendChild(newCallout);
         }
       }
     });
+
+    enhanceStaticPhoneLinks();
 
     if (window.innerWidth <= 600) {
       document.querySelectorAll('.nav-dropdown > a').forEach(function(a) {
@@ -2562,6 +2664,15 @@
     updateDocAccordionState(id, true);
   }
 
+  window.openDocumentationTarget = function(anchorId, accordionId) {
+    var anchor = document.getElementById(anchorId);
+    updateDocAccordionState(accordionId, true);
+    if (!anchor) return;
+    window.requestAnimationFrame(function() {
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
   // ─── Simulateur : navigation ─────────────────────────────────────────────
   var questionIndexByStep = { 1: 0, 2: 0, 3: 0, 4: 0 };
   var questionSetsByStep = {
@@ -2638,11 +2749,32 @@
     });
   }
 
+  function ensureQuickReviewButton(stepEl) {
+    if (!stepEl) return null;
+    var actionBar = stepEl.querySelector('.step-actions');
+    if (!actionBar) return null;
+    var button = actionBar.querySelector('.btn-quick-review');
+    if (!button) {
+      button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'btn-nav btn-quick-review';
+      button.textContent = 'Réévaluer mes résultats';
+      button.onclick = function() {
+        reEvaluateSimulationFromEdit();
+      };
+      var nextBtn = actionBar.querySelector('.btn-next');
+      if (nextBtn) actionBar.insertBefore(button, nextBtn);
+      else actionBar.appendChild(button);
+    }
+    return button;
+  }
+
   function renderStepQuestionMode(step) {
     var stepEl = getStepElement(step);
     if (!stepEl) return;
     ensureStepQuestionUi(step);
     updateRequiredMarkers(step);
+    var quickReviewBtn = ensureQuickReviewButton(stepEl);
     var groups = getStepQuestionGroups(step);
     var sets = getVisibleStepQuestionSets(step);
     if (!groups.length || !sets.length) return;
@@ -2673,6 +2805,7 @@
     var prevBtn = stepEl.querySelector('.step-actions .btn-prev');
     var nextBtn = stepEl.querySelector('.step-actions .btn-next');
     if (prevBtn) prevBtn.style.visibility = (step === 1 && questionIndexByStep[step] === 0) ? 'hidden' : 'visible';
+    if (quickReviewBtn) quickReviewBtn.style.display = quickReviewMode ? 'inline-flex' : 'none';
     if (nextBtn) {
       if (step === TOTAL_STEPS && questionIndexByStep[step] === maxIndex) nextBtn.innerHTML = 'Voir mes r&#233;sultats';
       else if (questionIndexByStep[step] < maxIndex) nextBtn.innerHTML = 'Continuer &#8594;';
@@ -2803,6 +2936,25 @@
     return getFieldValue(fieldId);
   }
 
+  function getStepForField(fieldId) {
+    if (['commune', 'age', 'situation_familiale', 'statut_sejour'].indexOf(fieldId) !== -1) return 1;
+    if (['situation_pro', 'logement', 'enfants', 'loyer', 'en_formation'].indexOf(fieldId) !== -1) return 2;
+    if (['revenu', 'fortune', 'prime_lamal', 'aides_actuelles'].indexOf(fieldId) !== -1) return 3;
+    if (['incapacite', 'dettes'].indexOf(fieldId) !== -1) return 4;
+    return 1;
+  }
+
+  function getQuestionIndexForField(step, fieldId) {
+    updateConditionalQuestions();
+    var visibleSets = getVisibleStepQuestionSets(step);
+    var matchedIndex = visibleSets.findIndex(function(set) {
+      return set.some(function(group) {
+        return getGroupFieldId(group) === fieldId;
+      });
+    });
+    return matchedIndex >= 0 ? matchedIndex : 0;
+  }
+
   function renderResultsProfileSummary(data) {
     var container = document.getElementById('results-profile-summary');
     if (!container) return;
@@ -2810,14 +2962,14 @@
     if (!communeValue || communeValue.toLowerCase() === 'non précisé') communeValue = '';
 
     var items = [
-      { label: 'Commune', value: communeValue },
-      { label: 'Âge', value: data.age || '' },
-      { label: 'Situation familiale', value: data.famille || '' },
-      { label: 'Statut en Suisse', value: data.statut || '' },
-      { label: 'Situation pro', value: data.travail || '' },
-      { label: 'Logement', value: data.logement || '' },
-      { label: 'Revenu', value: data.revenu || '' },
-      { label: 'Épargne', value: data.fortune || '' }
+      { label: 'Commune', value: communeValue, field: 'commune' },
+      { label: 'Âge', value: data.age || '', field: 'age' },
+      { label: 'Situation familiale', value: data.famille || '', field: 'situation_familiale' },
+      { label: 'Statut en Suisse', value: data.statut || '', field: 'statut_sejour' },
+      { label: 'Situation pro', value: data.travail || '', field: 'situation_pro' },
+      { label: 'Logement', value: data.logement || '', field: 'logement' },
+      { label: 'Revenu', value: data.revenu || '', field: 'revenu' },
+      { label: 'Épargne', value: data.fortune || '', field: 'fortune' }
     ].filter(function(item) {
       return !!item.value;
     });
@@ -2833,10 +2985,38 @@
       + '<div class="results-profile-actions"><button type="button" class="result-link-btn" onclick="editSimulationAnswers()">Modifier mes réponses</button></div>'
       + '<div class="results-profile-grid">'
       + items.map(function(item) {
-          return '<div class="results-profile-item"><span class="results-profile-label">' + escapeHtml(item.label) + '</span><span class="results-profile-value">' + escapeHtml(item.value) + '</span></div>';
+          return '<button type="button" class="results-profile-item is-editable" onclick="editSimulationField(\'' + escapeHtml(item.field) + '\')"><span class="results-profile-label">' + escapeHtml(item.label) + '</span><span class="results-profile-value">' + escapeHtml(item.value) + '</span></button>';
         }).join('')
       + '</div>';
     container.style.display = 'block';
+  }
+
+  function resetResultsNote() {
+    var note = document.getElementById('results-note');
+    if (!note) return;
+    note.classList.remove('is-dismissed');
+    note.style.display = 'block';
+    note.setAttribute('aria-hidden', 'false');
+  }
+
+  window.closeResultsNote = function() {
+    var note = document.getElementById('results-note');
+    if (!note) return;
+    note.classList.add('is-dismissed');
+    note.setAttribute('aria-hidden', 'true');
+  }
+
+  function revealResultsPane() {
+    var results = document.getElementById('results');
+    var simulator = document.getElementById('simulateur');
+    var list = document.getElementById('results-list');
+    if (!results) return;
+    results.style.display = 'block';
+    if (simulator) simulator.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.requestAnimationFrame(function() {
+      results.focus({ preventScroll: true });
+      if (list) list.setAttribute('aria-busy', 'false');
+    });
   }
 
   function setFieldValidity(fieldId, valid) {
@@ -2867,11 +3047,50 @@
     return true;
   }
 
+  function getAllRequiredFieldIds() {
+    return ['age', 'situation_familiale', 'statut_sejour', 'situation_pro', 'logement', 'revenu', 'fortune', 'prime_lamal'];
+  }
+
+  function validateAllSimulationFields() {
+    updateConditionalQuestions();
+    var invalidFieldId = '';
+    getAllRequiredFieldIds().forEach(function(fieldId) {
+      var valid = !!getFieldValue(fieldId);
+      setFieldValidity(fieldId, valid);
+      if (!valid && !invalidFieldId) invalidFieldId = fieldId;
+    });
+    if (!invalidFieldId) return true;
+    var step = getStepForField(invalidFieldId);
+    questionIndexByStep[step] = getQuestionIndexForField(step, invalidFieldId);
+    goToStep(step, true);
+    var firstInvalid = document.getElementById(invalidFieldId);
+    if (firstInvalid) {
+      var group = firstInvalid.closest('.form-group');
+      if (group) group.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    return false;
+  }
+
   window.editSimulationAnswers = function() {
+    quickReviewMode = true;
     var results = document.getElementById('results');
     if (results) results.style.display = 'none';
     questionIndexByStep[1] = 0;
     goToStep(1, true);
+  }
+
+  window.editSimulationField = function(fieldId) {
+    var step = getStepForField(fieldId);
+    quickReviewMode = true;
+    var results = document.getElementById('results');
+    if (results) results.style.display = 'none';
+    questionIndexByStep[step] = getQuestionIndexForField(step, fieldId);
+    goToStep(step, true);
+  }
+
+  window.reEvaluateSimulationFromEdit = function() {
+    if (!validateAllSimulationFields()) return;
+    analyserSituation();
   }
 
   window.goToStepValidated = function(step) {
@@ -2892,6 +3111,7 @@
   }
 
   window.restart = function() {
+    quickReviewMode = false;
     document.querySelectorAll('input.choice-input[type="radio"]').forEach(function(input) {
       input.checked = input.hasAttribute('checked');
     });
@@ -3241,6 +3461,7 @@
 
   // ─── Simulateur : cerveau ────────────────────────────────────────────────
   window.analyserSituation = function() {
+    quickReviewMode = false;
     var commune      = document.getElementById('commune').value || 'non précisé';
     var communeNorm  = commune.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     var age          = document.getElementById('age').value || '';
@@ -3255,9 +3476,10 @@
     var primeLamal   = document.getElementById('prime_lamal').value || '';
     var aides        = document.getElementById('aides_actuelles').value || 'aucune';
     var aidesListe   = aides.split(',').map(function(item) { return item.trim(); }).filter(Boolean);
-    var urgence      = document.getElementById('urgence').value || 'non';
     var incapacite   = document.getElementById('incapacite').value || 'non';
     var dettes       = document.getElementById('dettes').value || 'non';
+
+    resetResultsNote();
 
     renderResultsProfileSummary({
       commune: commune,
@@ -3298,16 +3520,14 @@
     var alreadyLAMal  = aidesListe.includes('lamal');
     var alreadyBourse = aidesListe.includes('bourse');
     var alreadyAI     = aidesListe.includes('AI');
-    var alreadyAVS    = aidesListe.includes('AVS');
     var alreadyChomage= aidesListe.includes('chomage');
     var invalidite    = incapacite !== 'non' || sitPro.includes('incapacit') || sitPro.includes('invalidit') || alreadyAI;
     var age60plus     = age === '60-64' || age === '65plus';
     var fortFaible    = fortune === 'moins4000';
     var fortMoyenne   = fortune === '4000-50000';
     var loyerEleve    = loyer === '1200-1800' || loyer === 'plus1800';
-    var loyerBas      = loyer === 'moins700' || loyer === '700-1200';
     var primeElevee   = primeLamal === '250-400' || primeLamal === 'plus400';
-    var urgenceActive = urgence !== 'non' || dettes === 'loyer' || logement.includes('Sans logement fixe');
+    var urgenceActive = dettes === 'loyer' || logement.includes('Sans logement fixe');
     var grandeCommune = ['lausanne', 'renens', 'vevey', 'nyon', 'yverdon', 'montreux', 'morges'].some(function(v) { return communeNorm.includes(v); });
     var statutStableOrdinaire = permis.includes('suisse') || permisB || permisC;
     var statutAvecNuance = permisF || permisL || permisS;
@@ -3322,25 +3542,8 @@
     if (urgenceActive) {
       var urgenceNom = 'Centre social régional (CSR)';
       var urgenceLiensCSR = true;
-      var urgenceDesc = 'Ta situation demande une orientation rapide vers un service humain, en plus des aides ci-dessous.';
-      var urgenceAction = 'Contacte rapidement le service le plus pertinent selon ta situation, puis regarde les ressources d’urgence du catalogue si besoin.';
-      if (urgence === 'violence') {
-        urgenceNom = 'Centre LAVI Vaud';
-        urgenceLiensCSR = false;
-        urgenceDesc = 'La priorité est ta sécurité. Il faut sortir du simple simulateur et contacter immédiatement un service spécialisé.';
-        urgenceAction = 'En danger immédiat : 117. Sinon Centre LAVI Vaud : ☏ 021 631 03 00.';
-      } else if (urgence === 'soins') {
-        urgenceNom = 'Unisanté / CMS';
-        urgenceLiensCSR = false;
-        urgenceDesc = 'Renoncer à des soins ou à des médicaments peut vite aggraver la situation. Il faut un relais rapide.';
-        urgenceAction = 'Appelle Unisanté ou un CMS, puis demande aussi une orientation sociale au 0800 30 30 38.';
-      } else if (urgence === 'plus_revenu') {
-        urgenceDesc = 'Quand il n’y a plus assez pour vivre, le CSR est souvent la première porte à contacter pour faire le point et voir les aides possibles.';
-        urgenceAction = 'Contacte rapidement ton CSR, puis regarde la rubrique urgences du catalogue si un relais complémentaire est nécessaire.';
-      } else if (urgence === 'logement' || dettes === 'loyer' || logement.includes('Sans logement fixe')) {
-        urgenceDesc = 'Quand le logement ou le budget devient critique, le CSR peut faire un premier point rapidement et t’orienter vers les bons relais.';
-        urgenceAction = 'Contacte immédiatement ton CSR, puis l’ASLOCA Vaud si un bail est en jeu : ☏ 021 617 16 17.';
-      }
+      var urgenceDesc = 'Quand le logement ou le budget devient critique, le CSR peut faire un premier point rapidement et t’orienter vers les bons relais.';
+      var urgenceAction = 'Contacte immédiatement ton CSR, puis l’ASLOCA Vaud si un bail est en jeu : ☏ 021 617 16 17.';
       res.push({
         nom: urgenceNom,
         badge: 'confirme',
@@ -3400,18 +3603,6 @@
         action: 'Si ta situation est suivie par l’EVAM, commence par là. Pour le permis ou le séjour, ajoute si besoin le CSP Fraternité.',
         today: 'Utilise ce relais si tu hésites entre aide sociale et questions de séjour.',
         liensEVAM: true
-      });
-    }
-
-    if (permisB || permisC) {
-      res.push({
-        nom: 'Questions sur ton permis, tes droits ou ton séjour',
-        badge: 'verifier',
-        desc: 'Cette piste sert surtout pour un renouvellement, un courrier du SPOP, un regroupement familial ou une question de droit au séjour.',
-        action: 'La Fraternité CSP Vaud peut aider à clarifier la situation. Le SPOP reste l’autorité de référence pour le dossier.',
-        today: 'Utilise cette piste séparément des aides financières.',
-        docs: ['Permis de séjour', 'Courriers du SPOP ou autres autorités', 'Pièce d’identité', 'Questions notées à l’avance'],
-        liensCadreSejour: true
       });
     }
 
@@ -3503,7 +3694,7 @@
     }
 
     // ── 2. RI ─────────────────────────────────────────────────────────────
-    if (!alreadyRI && !alreadyPC && !etudiant && permiRI) {
+    if (!alreadyRI && !alreadyPC && !etudiant && permiRI && !enEmploi) {
       if (retraite && revenuFaible && fortFaible) {
         res.push({
           nom: 'Revenu d\'insertion (RI)',
@@ -3517,22 +3708,16 @@
       } else if (revenuFaible && fortFaible) {
         res.push({
           nom: 'Revenu d\'insertion (RI)',
-          badge: enEmploi ? 'verifier' : (permisF ? 'verifier' : (loyerEleve || urgence === 'plus_revenu' || grandeCommune ? 'confirme' : 'probable')),
-          desc: enEmploi
-            ? 'Tu es en emploi, donc le RI n’est pas la première piste automatique. Si malgré ton salaire le budget ne tient plus, le CSR peut vérifier s’il existe un complément, une aide ponctuelle ou une autre orientation adaptée.'
-            : permisF
+          badge: permisF ? 'verifier' : (loyerEleve || grandeCommune ? 'confirme' : 'probable'),
+          desc: permisF
             ? 'Tes revenus et ton épargne font ressortir le RI comme piste à examiner, mais avec un permis F il vaut mieux faire vérifier le bon cadre par le CSR et, si besoin, par un relais migration.'
             : (loyerEleve || grandeCommune)
             ? 'Tes revenus, ton épargne et ton contexte de vie font ressortir le RI comme une piste forte. L\'éligibilité finale dépend d\'une évaluation complète par un·e assistant·e social·e.'
             : 'Tes revenus et ton épargne correspondent aux critères de base du RI. Attention : l\'éligibilité finale dépend d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',
-          action: enEmploi
-            ? '1. Commence d’abord par les aides plus directes qui peuvent compléter un petit revenu, comme le subside LAMal, les allocations familiales ou certaines aides logement.\n2. Si malgré cela le budget ne tient pas, contacte le CSR pour demander s’il existe un complément ou une autre aide adaptée.\n3. Tu peux prendre contact même si tu n’es pas sûr·e de ton droit.'
-            : permisF
+          action: permisF
             ? '1. Contacte le CSR pour une évaluation complète.\n2. Précise ton statut de séjour dès le premier contact.\n3. Si la question du permis devient centrale, complète avec le CSP Fraternité.'
             : '1. Contacte le Centre Social Régional (CSR) de ta commune — c\'est gratuit et sans engagement.\n2. Prépare : pièce d\'identité, relevés de compte (3 mois), bulletins de salaire, contrat de bail.\n3. Ne repousse pas — le droit commence à la date de la demande, pas avant.',
-          today: enEmploi
-            ? 'Garde le CSR comme piste de vérification si ton salaire ne couvre plus le minimum.'
-            : grandeCommune
+          today: grandeCommune
             ? 'Tu peux commencer par contacter le CSR de ta région, même sans dossier complet.'
             : 'Prépare tes relevés de compte et prends le premier contact avec le CSR.',
           docs: ['Pièce d’identité ou permis', 'Relevés de compte des 3 derniers mois', 'Bail et dernier loyer', 'Bulletins de salaire ou preuve d’absence de revenu'],
@@ -3543,19 +3728,13 @@
         res.push({
           nom: 'Revenu d\'insertion (RI)',
           badge: 'verifier',
-          desc: enEmploi
-            ? 'Tu es en emploi, donc le RI n’est pas automatiquement la première piste. Si malgré ton salaire les charges restent trop lourdes, le CSR peut regarder avec toi s’il existe un complément ou une autre aide.'
-            : permisF
+          desc: permisF
             ? 'Tes revenus sont faibles, mais avec ton statut de séjour et ta fortune, seul un examen individualisé permet de savoir si le RI est envisageable.'
             : 'Tes revenus sont faibles mais ta fortune pourrait impacter l\'éligibilité. Seul un·e assistant·e social·e peut se prononcer.',
-          action: enEmploi
-            ? 'Commence par les aides qui complètent un revenu modeste. Si le budget ne tient toujours pas, demande ensuite au CSR un entretien pour faire le point sur les compléments ou aides possibles.'
-            : permisF
+          action: permisF
             ? 'Contacte le CSR pour un entretien d’évaluation et ajoute une vérification migration si nécessaire.'
             : 'Contacte le CSR de ta commune pour un entretien d\'évaluation gratuit et confidentiel.',
-          today: enEmploi
-            ? 'Le CSR reste une porte d’entrée utile si ton revenu ne suffit plus, même si tu travailles.'
-            : 'Demande un entretien d’évaluation et annonce clairement tes revenus, ton loyer et ta situation familiale.',
+          today: 'Demande un entretien d’évaluation et annonce clairement tes revenus, ton loyer et ta situation familiale.',
           docs: ['Relevés de compte', 'Taxation ou attestations de fortune', 'Bail ou charges du ménage'],
           lienRI: true,
           liensCadreSejour: permisF
@@ -3613,17 +3792,7 @@
     }
 
     // ── 6. LACI ───────────────────────────────────────────────────────────
-    if (chomageIndem && !alreadyChomage && !permisN && !sansStatut) {
-      res.push({
-        nom: 'Assurance chômage (LACI)',
-        badge: 'confirme',
-        desc: permisG
-          ? 'Tu es déjà indemnisé·e. Avec un permis G, garde aussi en tête les aspects transfrontaliers et l’organisme compétent selon ta situation.'
-          : 'Tu es déjà indemnisé·e — tu es dans ton droit. Assure-toi d\'utiliser toutes tes indemnités et de respecter tes obligations (recherches d\'emploi, disponibilité).',
-        action: '• Tu as droit à 400 indemnités journalières maximum (520 si tu as des enfants ou un handicap).\n• Si tu approches de la fin de tes droits et que tu as 60 ans ou plus, renseigne-toi sur la rente-pont AVS.',
-        liensLACI: true
-      });
-    } else if (chomageNonIndem && !alreadyChomage && !permisN && !sansStatut) {
+    if (chomageNonIndem && !alreadyChomage && !permisN && !sansStatut) {
       res.push({
         nom: 'Assurance chômage (LACI)',
         badge: (permisL || permisG || permisF || permisS) ? 'verifier' : 'probable',
@@ -3642,7 +3811,7 @@
     }
 
     // ── 7. Rente-pont AVS ─────────────────────────────────────────────────
-    if (age60plus && (chomage || sitPro.indexOf('Sans emploi') !== -1) && (fortFaible || fortMoyenne)) {
+    if (age60plus && chomage && (fortFaible || fortMoyenne)) {
       res.push({
         nom: 'Rente-pont AVS — l\'aide la plus méconnue',
         badge: 'probable',
@@ -3721,7 +3890,7 @@
         liensSenectute: true
       });
     }
-    if (incapacite !== 'non' || retraite) {
+    if (invalidite) {
       res.push({
         nom: 'CMS — Soins et aide à domicile',
         badge: 'verifier',
@@ -3798,6 +3967,7 @@
     });
 
     var list = document.getElementById('results-list');
+    if (list) list.setAttribute('aria-busy', 'true');
     list.innerHTML = '';
     var topActions = [];
     var docsMap = {};
@@ -3841,7 +4011,7 @@
 
       var purposeHtml = buildResultDetail('Cette aide sert à', getAidPurpose(r.nom), 'is-purpose', true);
       var whyHtml = shouldShowWhy(r) ? buildResultDetail('Pourquoi cette aide ressort', getWhySummary(r), 'is-why', false) : '';
-      var actionHtml = r.action ? buildResultDetail('Prochaine étape', '<div style="white-space:pre-line;">' + r.action + '</div>', 'is-action', !r.today) : '';
+      var actionHtml = r.action ? buildResultDetail('Prochaine étape', '<div style="white-space:pre-line;">' + linkifyPhoneNumbersInHtml(r.action) + '</div>', 'is-action', !r.today) : '';
       var docsHtml = r.docs && r.docs.length
         ? buildResultDetail('Documents à préparer', '<ul>' + r.docs.map(function(doc) { return '<li>' + doc + '</li>'; }).join('') + '</ul>', 'is-docs', false)
         : '';
@@ -3909,14 +4079,16 @@
       var el = document.getElementById('step' + i);
       if (el) el.style.display = 'none';
     }
-    document.getElementById('results').style.display = 'block';
-    var simulator = document.getElementById('simulateur');
-    if (simulator) simulator.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    revealResultsPane();
   }
 
   document.querySelectorAll('a[target="_blank"]').forEach(function(link) {
     if (!link.rel || link.rel.indexOf('noopener') === -1) {
       link.rel = 'noopener noreferrer';
+    }
+    if (!link.getAttribute('aria-label')) {
+      var baseLabel = (link.textContent || '').replace(/\s+/g, ' ').trim();
+      if (baseLabel) link.setAttribute('aria-label', baseLabel + ' (s’ouvre dans un nouvel onglet)');
     }
   });
 
@@ -3935,6 +4107,13 @@
         e.preventDefault();
         toggleCatCard(card);
       }
+    });
+  });
+
+  document.querySelectorAll('.cat-card a, .cat-card button').forEach(function(control) {
+    if (control.classList.contains('cat-card')) return;
+    control.addEventListener('click', function(e) {
+      e.stopPropagation();
     });
   });
 
