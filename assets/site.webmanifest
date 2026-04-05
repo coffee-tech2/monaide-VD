@@ -1,0 +1,19 @@
+{
+  "name": "MonAide-VD",
+  "short_name": "MonAide-VD",
+  "id": "/",
+  "lang": "fr-CH",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7efe5",
+  "theme_color": "#2d5a32",
+  "icons": [
+    {
+      "src": "./icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

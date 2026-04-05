@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://monaide-vaud.ch/sitemap.xml

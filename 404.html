@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page introuvable | MonAide-VD</title>
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #e8693a;
+    --sage-dark: #2d5a32;
+    --cream: #faf7f2;
+    --dark: #1e1c1a;
+    --warm-gray: #6b6560;
+    --border: #e8ddd5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: linear-gradient(180deg, #fbf5ee 0%, #f7efe5 100%);
+    color: var(--dark);
+    display: grid;
+    place-items: center;
+    padding: 1.2rem;
+  }
+  .shell {
+    width: min(100%, 720px);
+    background: rgba(255,253,249,0.9);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 2rem 1.4rem;
+    box-shadow: 0 24px 48px rgba(72,59,49,0.08);
+    text-align: center;
+  }
+  .brand {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+  }
+  .brand .main { color: var(--orange); }
+  .brand .vd { color: var(--sage-dark); }
+  h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+  }
+  p {
+    margin: 0 auto 1.25rem;
+    max-width: 34ch;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--warm-gray);
+  }
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid var(--border);
+  }
+  .btn-primary {
+    background: var(--sage-dark);
+    color: white;
+    border-color: var(--sage-dark);
+  }
+  .btn-secondary {
+    background: white;
+    color: var(--dark);
+  }
+</style>
+</head>
+<body>
+  <main class="shell">
+    <div class="brand"><span class="main">MonAide</span>-<span class="vd">VD</span></div>
+    <h1>Cette page n’existe pas</h1>
+    <p>Le lien est peut-être ancien, incomplet ou mal recopié. Tu peux revenir à l’accueil ou aller directement au simulateur.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/">Retour à l’accueil</a>
+      <a class="btn btn-secondary" href="/#simulateur">Aller au simulateur</a>
+    </div>
+  </main>
+</body>
+</html>
