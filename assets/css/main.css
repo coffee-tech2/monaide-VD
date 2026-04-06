@@ -388,6 +388,8 @@
   .guide-backlink:hover,
   .guide-backlink-chip:hover { background:#fff3ea; border-color:#e2b79f; color:var(--orange-dark); transform:translateY(-1px); box-shadow:0 10px 22px rgba(72,59,49,0.08); }
   .guide-backlink-chip { position:absolute; left:0; top:0; }
+  .guide-detail-page .guide-topline { justify-content:flex-start; }
+  .guide-detail-page .guide-backlink-chip { position:static; min-width:auto; }
   .guide-breadcrumbs { display:none; }
   .guide-breadcrumbs a { color:var(--warm-gray); text-decoration:none; font-weight:600; }
   .guide-breadcrumbs a:hover { color:var(--orange-dark); }
@@ -716,6 +718,7 @@
     .guide-card-title { font-size:1.12rem; }
     .guide-backlink,
     .guide-backlink-chip { position:static; margin-bottom:0.75rem; font-size:0.8rem; width:100%; max-width:320px; }
+    .guide-detail-page .guide-topline { justify-content:flex-start; }
     .guide-stamp { font-size:0.67rem; }
     .guide-inline-actions { flex-direction:column; align-items:stretch; }
     .guide-inline-actions a { width:100%; }
