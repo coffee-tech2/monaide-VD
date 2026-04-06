@@ -382,9 +382,9 @@
   .guide-page main { padding-top: 0; }
   .guide-home-btn { text-decoration:none; }
   .guide-shell { max-width: 860px; margin: 0 auto; padding: 6.7rem 2rem 4.2rem; position: relative; z-index: 1; text-align: center; }
-  .guide-topline { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:0.7rem; margin-bottom:1rem; }
+  .guide-topline { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:0.85rem; width:fit-content; max-width:100%; margin:0 auto 1rem; }
   .guide-backlink,
-  .guide-backlink-chip { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:0.68rem 1rem; border-radius:999px; background:#faf6f0; border:1px solid #decfbe; color:var(--warm-gray); text-decoration:none; font-size:0.85rem; font-weight:700; line-height:1.2; margin:0 auto 0.85rem; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.18s ease, box-shadow 0.18s ease; box-shadow:0 6px 16px rgba(72,59,49,0.05); }
+  .guide-backlink-chip { display:inline-flex; align-items:center; justify-content:center; min-height:42px; min-width:18.5rem; padding:0.68rem 1rem; border-radius:999px; background:#faf6f0; border:1px solid #decfbe; color:var(--warm-gray); text-decoration:none; font-size:0.85rem; font-weight:700; line-height:1.2; margin:0; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.18s ease, box-shadow 0.18s ease; box-shadow:0 6px 16px rgba(72,59,49,0.05); }
   .guide-backlink:hover,
   .guide-backlink-chip:hover { background:#fff3ea; border-color:#e2b79f; color:var(--orange-dark); transform:translateY(-1px); box-shadow:0 10px 22px rgba(72,59,49,0.08); }
   .guide-breadcrumbs { display:none; }
@@ -392,7 +392,7 @@
   .guide-breadcrumbs a:hover { color:var(--orange-dark); }
   .guide-breadcrumb-sep { color:#b5a89d; font-size:0.82rem; line-height:1; }
   .guide-breadcrumbs [aria-current="page"] { color:var(--sage-dark); font-weight:700; }
-  .guide-stamp { display:inline-flex; align-items:center; justify-content:center; padding:0.5rem 0.9rem; border-radius:999px; border:1px solid #e7ddd1; background:rgba(255,255,255,0.82); color:var(--warm-gray); font-size:0.74rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:1rem; }
+  .guide-stamp { display:inline-flex; align-items:center; justify-content:center; min-height:42px; min-width:18.5rem; padding:0.68rem 1rem; border-radius:999px; border:1px solid #e7ddd1; background:rgba(255,255,255,0.82); color:var(--warm-gray); font-size:0.74rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin:0; box-shadow:0 6px 16px rgba(72,59,49,0.05); }
   .guide-title { font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(2.25rem, 5vw, 4rem); line-height:0.98; letter-spacing:-0.055em; color:var(--sage-dark); margin:0 auto 1rem; max-width:14ch; }
   .guide-lead { max-width: 60ch; margin: 0 auto; font-size:1.04rem; line-height:1.75; color:var(--warm-gray); }
   .guide-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:0.8rem; margin-top:1.5rem; }
