@@ -85,6 +85,25 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
+    var betaBanner = document.getElementById('beta-banner');
+    var betaBannerClose = document.getElementById('beta-banner-close');
+    var betaBannerStorageKey = 'monaide-beta-banner-dismissed';
+
+    try {
+      if (betaBanner && window.localStorage && localStorage.getItem(betaBannerStorageKey) === '1') {
+        betaBanner.style.display = 'none';
+      }
+    } catch (error) {}
+
+    if (betaBanner && betaBannerClose) {
+      betaBannerClose.addEventListener('click', function() {
+        betaBanner.style.display = 'none';
+        try {
+          if (window.localStorage) localStorage.setItem(betaBannerStorageKey, '1');
+        } catch (error) {}
+      });
+    }
+
     document.querySelectorAll('a[href="https://www.vd.ch/prestation/contacter-un-centre-social-regional-csr"]').forEach(function(link) {
       link.setAttribute('href', CSR_FINDER_URL);
     });
