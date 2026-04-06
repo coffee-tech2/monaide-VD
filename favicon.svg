@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MonAide-VD">
+  <rect width="64" height="64" rx="18" fill="#f7efe5"/>
+  <path d="M14 46V18h6l12 16 12-16h6v28h-6V28L33 42h-2L20 28v18z" fill="#2d5a32"/>
+  <path d="M38 46h12c5.5 0 9-3.9 9-9.2 0-5.2-3.5-9.1-9-9.1H38zm6-5.2V33h5.4c2.4 0 3.8 1.5 3.8 3.9 0 2.4-1.4 3.9-3.8 3.9z" fill="#e8693a"/>
+</svg>
