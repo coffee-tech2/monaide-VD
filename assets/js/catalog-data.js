@@ -416,6 +416,7 @@
         }
       ],
       links: [
+        { kind: 'info', label: 'Guide détaillé', url: '/dettes-budget/' },
         { kind: 'info', label: 'Voir Parlons Cash', url: window.MONAIDE_LINKS.PARLONS_CASH },
         { kind: 'info', label: 'Voir aussi le CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
         { kind: 'info', label: 'Voir aussi Jet Service', url: window.MONAIDE_LINKS.JET_SERVICE }
@@ -874,7 +875,8 @@
       ],
       links: [
         { kind: 'action', label: 'S’inscrire à l’ORP', url: window.MONAIDE_LINKS.ORP_REGISTER },
-        { kind: 'info', label: 'Infos chômage (LACI)', url: window.MONAIDE_LINKS.LACI_INFO }
+        { kind: 'info', label: 'Infos chômage (LACI)', url: window.MONAIDE_LINKS.LACI_INFO },
+        { kind: 'info', label: 'Guide détaillé', url: '/chomage-laci/' }
       ],
       documentationTarget: null
     },
@@ -1441,7 +1443,8 @@
       ],
       links: [
         { kind: 'action', label: 'ASLOCA Vaud', url: window.MONAIDE_LINKS.ASLOCA_VAUD },
-        { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME }
+        { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
+        { kind: 'info', label: 'Guide détaillé', url: '/aides-logement/' }
       ],
       documentationTarget: null
     },
@@ -1840,7 +1843,8 @@
       ],
       links: [
         { kind: 'info', label: 'Logements subventionnés', url: window.MONAIDE_LINKS.LUP_INFO },
-        { kind: 'info', label: 'FVL', url: window.MONAIDE_LINKS.FVL }
+        { kind: 'info', label: 'FVL', url: window.MONAIDE_LINKS.FVL },
+        { kind: 'info', label: 'Guide détaillé', url: '/aides-logement/' }
       ],
       documentationTarget: null
     },
