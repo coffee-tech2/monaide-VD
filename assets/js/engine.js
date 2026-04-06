@@ -551,7 +551,7 @@
         : 'Selon ton taux d\'incapacité, tu pourrais avoir droit à des mesures de réadaptation ou à une rente partielle.',
       action: (flags.permisF || flags.permisL || flags.permisS)
         ? 'Dépose quand même la demande si la piste est sérieuse, mais prévois une vérification complémentaire sur le cadre d’assurance et de séjour.'
-        : '⚠ Important : le droit AI commence à la date du dépôt de la demande — pas de rétroactivité. Ne repousse pas.\n1. Télécharge le formulaire 001.303 sur aivd.ch.\n2. Dépose-le même incomplet — l\'AIVD te contactera pour compléter.\n3. ☏ Office AI Vaud : 021 342 91 11',
+        : '⚠ Important : la date de dépôt compte beaucoup en AI. Selon la prestation et la situation, les règles de naissance du droit ou l\'effet rétroactif ne sont pas les mêmes, donc ne repousse pas la demande.\n1. Télécharge le formulaire 001.303 sur aivd.ch.\n2. Dépose-le même incomplet — l\'AIVD te contactera pour compléter.\n3. ☏ Office AI Vaud : 021 342 91 11',
       today: 'Si ton incapacité dure, dépose la demande sans attendre d’avoir un dossier “parfait”.',
       docs: ['Certificats médicaux', 'Pièce d’identité', 'Historique professionnel récent'],
       liensAI: true,
