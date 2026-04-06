@@ -382,9 +382,12 @@
   .guide-page main { padding-top: 0; }
   .guide-home-btn { text-decoration:none; }
   .guide-shell { max-width: 860px; margin: 0 auto; padding: 6.7rem 2rem 4.2rem; position: relative; z-index: 1; text-align: center; }
-  .guide-backlink { display:inline-flex; align-items:center; gap:0.4rem; margin-bottom:1rem; color:var(--warm-gray); text-decoration:none; font-size:0.85rem; font-weight:600; }
-  .guide-backlink:hover { color:var(--orange-dark); }
-  .guide-breadcrumbs { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:0.45rem; margin:0 auto 1rem; font-size:0.79rem; color:var(--warm-gray); max-width:56rem; }
+  .guide-topline { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:0.7rem; margin-bottom:1rem; }
+  .guide-backlink,
+  .guide-backlink-chip { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:0.68rem 1rem; border-radius:999px; background:#faf6f0; border:1px solid #decfbe; color:var(--warm-gray); text-decoration:none; font-size:0.85rem; font-weight:700; line-height:1.2; margin:0 auto 0.85rem; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.18s ease, box-shadow 0.18s ease; box-shadow:0 6px 16px rgba(72,59,49,0.05); }
+  .guide-backlink:hover,
+  .guide-backlink-chip:hover { background:#fff3ea; border-color:#e2b79f; color:var(--orange-dark); transform:translateY(-1px); box-shadow:0 10px 22px rgba(72,59,49,0.08); }
+  .guide-breadcrumbs { display:none; }
   .guide-breadcrumbs a { color:var(--warm-gray); text-decoration:none; font-weight:600; }
   .guide-breadcrumbs a:hover { color:var(--orange-dark); }
   .guide-breadcrumb-sep { color:#b5a89d; font-size:0.82rem; line-height:1; }
@@ -402,12 +405,12 @@
   .guide-card p { margin:0; color:var(--warm-gray); line-height:1.68; }
   .guide-list { margin:0.8rem 0 0; padding-left:1.1rem; color:var(--warm-gray); line-height:1.7; }
   .guide-list li + li { margin-top:0.28rem; }
-  .guide-inline-actions { display:flex; flex-wrap:wrap; align-items:center; gap:0.6rem; margin-top:0.95rem; }
-  .guide-inline-actions a { display:inline-flex; align-items:center; justify-content:center; min-height:40px; padding:0.62rem 0.95rem; border-radius:999px; background:#faf6f0; border:1px solid #decfbe; color:var(--warm-gray); text-decoration:none; font-weight:700; line-height:1.2; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.18s ease; }
-  .guide-inline-actions a:hover { background:#fff3ea; border-color:#e2b79f; color:var(--orange-dark); transform:translateY(-1px); }
-  .guide-page main .guide-card a:not(.btn-primary):not(.btn-secondary) { display:inline-flex; align-items:center; justify-content:center; min-height:40px; padding:0.62rem 0.95rem; border-radius:999px; background:#faf6f0; border:1px solid #decfbe; color:var(--warm-gray); text-decoration:none; font-weight:700; line-height:1.2; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.18s ease; }
-  .guide-page main .guide-card a:not(.btn-primary):not(.btn-secondary):hover { background:#fff3ea; border-color:#e2b79f; color:var(--orange-dark); transform:translateY(-1px); }
-  .guide-page main .guide-card a:not(.btn-primary):not(.btn-secondary) + a:not(.btn-primary):not(.btn-secondary) { margin-left:0.6rem; }
+  .guide-inline-actions { display:flex; flex-wrap:wrap; align-items:center; gap:0.7rem; margin-top:0.95rem; }
+  .guide-inline-actions a { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:0.68rem 1rem; border-radius:999px; background:#faf6f0; border:1px solid #decfbe; color:var(--warm-gray); text-decoration:none; font-weight:700; line-height:1.2; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.18s ease, box-shadow 0.18s ease; box-shadow:0 6px 16px rgba(72,59,49,0.05); }
+  .guide-inline-actions a:hover { background:#fff3ea; border-color:#e2b79f; color:var(--orange-dark); transform:translateY(-1px); box-shadow:0 10px 22px rgba(72,59,49,0.08); }
+  .guide-page main .guide-card a:not(.btn-primary):not(.btn-secondary) { display:inline-flex; align-items:center; justify-content:center; min-height:42px; padding:0.68rem 1rem; border-radius:999px; background:#faf6f0; border:1px solid #decfbe; color:var(--warm-gray); text-decoration:none; font-weight:700; line-height:1.2; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.18s ease, box-shadow 0.18s ease; box-shadow:0 6px 16px rgba(72,59,49,0.05); }
+  .guide-page main .guide-card a:not(.btn-primary):not(.btn-secondary):hover { background:#fff3ea; border-color:#e2b79f; color:var(--orange-dark); transform:translateY(-1px); box-shadow:0 10px 22px rgba(72,59,49,0.08); }
+  .guide-page main .guide-card a:not(.btn-primary):not(.btn-secondary) + a:not(.btn-primary):not(.btn-secondary) { margin-left:0; }
 
   @media (max-width: 900px) {
     .hero-shell { grid-template-columns: 1fr; }
@@ -700,7 +703,8 @@
     .footer-contact { max-width:28ch; margin:0.62rem auto 0; font-size:0.76rem; line-height:1.56; }
     .footer-meta { max-width:26ch; margin:0.7rem auto 0; font-size:0.72rem; line-height:1.5; }
     .guide-shell { padding:5.8rem 1rem 3rem; }
-    .guide-breadcrumbs { justify-content:center; gap:0.35rem; margin-bottom:0.85rem; font-size:0.75rem; }
+    .guide-topline { gap:0.55rem; margin-bottom:0.85rem; }
+    .guide-breadcrumbs { display:none; }
     .guide-title { max-width:12ch; font-size:clamp(2rem, 12vw, 3rem); }
     .guide-lead { font-size:0.97rem; line-height:1.65; }
     .guide-actions { flex-direction:column; }
@@ -709,7 +713,8 @@
     .guide-grid { grid-template-columns:1fr; }
     .guide-card { border-radius:22px; padding:1.08rem 1rem; }
     .guide-card-title { font-size:1.12rem; }
-    .guide-backlink { margin-bottom:0.85rem; font-size:0.8rem; }
+    .guide-backlink,
+    .guide-backlink-chip { margin-bottom:0.75rem; font-size:0.8rem; width:100%; max-width:320px; }
     .guide-stamp { font-size:0.67rem; }
     .guide-inline-actions { flex-direction:column; align-items:stretch; }
     .guide-inline-actions a { width:100%; }
