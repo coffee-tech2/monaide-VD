@@ -381,7 +381,7 @@
 
   .guide-page main { padding-top: 0; }
   .guide-home-btn { text-decoration:none; }
-  .guide-shell { max-width: 860px; margin: 0 auto; padding: 6.7rem 2rem 4.2rem; position: relative; z-index: 1; text-align: center; }
+  .guide-shell { max-width: 1180px; margin: 0 auto; padding: 6.7rem 2rem 4.2rem; position: relative; z-index: 1; text-align: center; }
   .guide-topline { position:relative; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:0.85rem; width:100%; max-width:100%; margin:0 auto 1rem; min-height:42px; }
   .guide-backlink,
   .guide-backlink-chip { display:inline-flex; align-items:center; justify-content:center; min-height:42px; min-width:18.5rem; padding:0.68rem 1rem; border-radius:999px; background:#faf6f0; border:1px solid #decfbe; color:var(--warm-gray); text-decoration:none; font-size:0.85rem; font-weight:700; line-height:1.2; margin:0; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.18s ease, box-shadow 0.18s ease; box-shadow:0 6px 16px rgba(72,59,49,0.05); }
