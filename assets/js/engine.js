@@ -290,7 +290,7 @@
         nom: 'Menace d\'expulsion — agis maintenant',
         badge: 'confirme',
         desc: 'C\'est une urgence. Tu as des droits et des délais légaux — mais ils sont courts.',
-        action: '1. Ne quitte JAMAIS ton logement sans décision de justice.\n2. Contacte immédiatement le CSR de ta commune.\n3. Contacte l\'ASLOCA Vaud : ☏ 021 617 16 17 — ils défendent les locataires.\n4. Délai légal de contestation : 30 jours.',
+        action: '1. Ne quitte pas ton logement de toi-même sans avoir fait vérifier la situation.\n2. Contacte immédiatement le CSR de ta commune.\n3. Contacte l\'ASLOCA Vaud : ☏ 021 617 16 17 — ils défendent les locataires.\n4. Les délais de contestation sont souvent très courts, donc n’attends pas.',
         today: 'C’est une démarche du jour même: CSR puis ASLOCA.',
         docs: ['Courriers du bailleur ou de l’office des poursuites', 'Contrat de bail', 'Preuves de paiement ou retards'],
         liensDettes: true
@@ -336,8 +336,8 @@
       res.push(buildResult({
         nom: 'Subside LAMal — réduction de prime',
         badge: 'confirme',
-        desc: 'Bénéficiaire du RI ou des PC : tu as droit au subside LAMal automatiquement, sans démarche supplémentaire.',
-        action: '✔ Vérifie que le subside est bien actif. Si ce n’est pas le cas, contacte ton agence AAS ou l’OVAM.',
+        desc: 'Si tu touches déjà le RI ou les PC, le subside LAMal est normalement lié à cette situation. Le plus utile est de vérifier qu’il est bien actif et correctement appliqué.',
+        action: '✔ Vérifie que le subside apparaît bien sur ta prime ou dans ta décision. Si ce n’est pas le cas, contacte ton agence AAS ou l’OVAM.',
         today: 'Regarde ta dernière décision ou appelle ton agence AAS pour vérifier que la réduction est bien active.',
         docs: ['Attestation RI ou PC', 'Police LAMal actuelle'],
         liens: true
@@ -403,7 +403,7 @@
           : 'Tes revenus et ton épargne correspondent aux critères de base du RI. Attention : l\'éligibilité finale dépend d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',
         action: flags.permisF
           ? '1. Contacte le CSR pour une évaluation complète.\n2. Précise ton statut de séjour dès le premier contact.\n3. Si la question du permis devient centrale, complète avec le CSP Fraternité.'
-          : '1. Contacte le Centre Social Régional (CSR) de ta commune — c\'est gratuit et sans engagement.\n2. Prépare : pièce d\'identité, relevés de compte (3 mois), bulletins de salaire, contrat de bail.\n3. Ne repousse pas — le droit commence à la date de la demande, pas avant.',
+          : '1. Contacte le Centre Social Régional (CSR) de ta commune — c\'est gratuit et sans engagement.\n2. Prépare : pièce d\'identité, relevés de compte (3 mois), bulletins de salaire, contrat de bail.\n3. N’attends pas trop : la date du premier contact ou de la demande peut compter dans l’examen du dossier.',
         today: flags.grandeCommune
           ? 'Tu peux commencer par contacter le CSR de ta région, même sans dossier complet.'
           : 'Prépare tes relevés de compte et prends le premier contact avec le CSR.',
@@ -461,8 +461,8 @@
       res.push(buildResult({
         nom: 'CarteCulture — Caritas',
         badge: 'confirme',
-        desc: 'Bénéficiaire du RI, des PC, d\'un subside LAMal ou d\'une bourse : tu as automatiquement droit à la CarteCulture. Plus de 270 offres culturelles, sportives et de loisirs à prix réduit.',
-        action: '1. Demande ta carte sur carteculture.ch ou auprès de Caritas Vaud.\n2. Tu auras besoin d\'un justificatif de ta situation (attestation RI, PC, etc.) et d\'une photo d\'identité.\n3. La carte est entièrement gratuite.',
+        desc: 'Si tu touches déjà le RI, les PC, un subside LAMal ou une bourse, la CarteCulture est en principe une piste très forte sur présentation du bon justificatif. Elle donne accès à de nombreuses offres culturelles, sportives et de loisirs à prix réduit.',
+        action: '1. Demande ta carte sur carteculture.ch ou auprès de Caritas Vaud.\n2. Prépare le justificatif correspondant à ta situation (attestation RI, PC, décision de subside, etc.) et une photo d\'identité.\n3. La carte est gratuite.',
         today: 'Fais la demande quand ton aide principale est confirmée, c’est rapide et gratuit.',
         docs: ['Justificatif d’aide actuelle', 'Photo d’identité'],
         liensCarte: true
@@ -491,7 +491,7 @@
         : 'Tu pourrais avoir droit aux indemnités chômage si tu remplis les conditions : avoir cotisé à l\'AVS pendant au moins 12 mois dans les 2 dernières années, être domicilié·e en Suisse, être disponible pour un emploi à plein temps.',
       action: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
         ? 'Inscris-toi rapidement ou fais vérifier ta situation auprès du chômage / ORP, mais pars du principe qu’une vérification individualisée sera nécessaire.'
-        : '⚠ Attention : tu dois t\'inscrire à l\'ORP dans les 30 jours suivant la fin de ton contrat, sinon tu perds des jours d\'indemnité.\n1. Inscris-toi immédiatement à l\'ORP en ligne.\n2. Prépare : certificat de travail, attestation de l\'employeur, pièce d\'identité.\n3. Tu recevras 70% de ton salaire (80% si tu as des enfants ou un handicap).',
+        : '⚠ Attention : n’attends pas pour t’inscrire à l’ORP, car un retard peut faire perdre des indemnités.\n1. Inscris-toi rapidement à l’ORP en ligne.\n2. Prépare : certificat de travail, attestation de l’employeur, pièce d’identité.\n3. Le montant de l’indemnité est souvent de 70% du gain assuré, parfois 80% selon la situation.',
       today: 'Si ton contrat est terminé ou va se terminer, l’inscription ORP est une priorité.',
       docs: ['Certificat de travail', 'Attestation de l’employeur', 'Pièce d’identité ou permis'],
       liensLACI: true,
@@ -505,8 +505,8 @@
       res.push(buildResult({
         nom: 'Rente-pont AVS — l\'aide la plus méconnue',
         badge: 'probable',
-        desc: 'Tu as 60 ans ou plus et tu n\'as plus de revenu ? La rente-pont existe pour toi — presque personne ne la connaît. Elle peut te verser entre 1\'260 et 2\'520 CHF/mois jusqu\'à tes 65 ans.',
-        action: '1. Conditions : 400 indemnités chômage épuisées, 20 ans de cotisation AVS dont 5 après 50 ans, fortune < 50\'000 CHF.\n2. Fais la demande auprès de ta caisse AVS dès la fin de tes droits chômage.\n3. Ne pas attendre — la rente commence à la date de la demande.',
+        desc: 'Si tu as 60 ans ou plus et que tes droits au chômage s’épuisent, la rente-pont peut devenir une piste importante. Le montant dépend ensuite du calcul fait sur ta situation.',
+        action: '1. Conditions principales à vérifier : 400 indemnités chômage épuisées, 20 ans de cotisation AVS dont 5 après 50 ans, fortune sous le seuil prévu.\n2. Fais la demande auprès de ta caisse AVS dès la fin de tes droits chômage.\n3. N’attends pas trop : la date de dépôt peut compter.',
         today: 'Ne laisse pas passer cette piste si tu approches de la fin du chômage.',
         docs: ['Décisions chômage', 'Extrait AVS si possible', 'Relevés de fortune'],
         liensRentePont: true

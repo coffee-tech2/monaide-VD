@@ -169,7 +169,7 @@
           title: 'Démarche',
           items: [
             'Formulaire 001.303 à l’Office AI Vaud',
-            'Ne pas attendre — pas de rétroactivité',
+            'Déposer la demande sans trop attendre',
             'Ton médecin, ton psychiatre ou ton psychologue peut t’accompagner'
           ]
         }
