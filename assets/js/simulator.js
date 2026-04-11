@@ -148,6 +148,15 @@
     toggleConditionalBlock('group-loyer', logementAvecCout, 'loyer');
   }
 
+  function normalizeSimulatorIntroCopy() {
+    var stepOne = document.getElementById('step1');
+    if (!stepOne) return;
+    var title = stepOne.querySelector('.step-title');
+    var subtitle = stepOne.querySelector('.step-subtitle');
+    if (title) title.textContent = 'Quelques infos utiles';
+    if (subtitle) subtitle.textContent = 'Pour situer ta situation.';
+  }
+
   // ─── Navigation ──────────────────────────────────────────────────────────
   window.navVers = function(id) {
     var el = document.getElementById(id);
@@ -760,6 +769,7 @@
         select.value = checked.value;
       }
     });
+    normalizeSimulatorIntroCopy();
     syncStatutSejourField();
     syncAidesActuellesField();
     syncLogementField();
