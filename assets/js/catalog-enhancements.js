@@ -107,23 +107,6 @@
     });
   }
 
-  function getCatalogRiInfoHtml() {
-    return '<span class="inline-info catalog-ri-info" tabindex="0" aria-label="RI : Revenu d’insertion">i<span class="inline-info-bubble">RI = Revenu d’insertion. C’est une aide financière de dernier recours qui se demande via le CSR.</span></span>';
-  }
-
-  function enhanceCatalogRiHints() {
-    document.querySelectorAll('.cat-card-title, .cat-card-body p, .expand-list li, .expand-links a, .cat-quicklinks a').forEach(function(el) {
-      if (el.innerHTML.indexOf('catalog-ri-info') !== -1) return;
-      if (el.innerHTML.indexOf('RI') === -1) return;
-
-      var card = el.closest('.cat-card');
-      var cardItem = getCatalogStoreItemFromCard(card);
-      if (cardItem && cardItem.id === 'ri') return;
-
-      el.innerHTML = el.innerHTML.replace(/\bRI\b(?![^<]*catalog-ri-info)/, 'RI ' + getCatalogRiInfoHtml());
-    });
-  }
-
   function enhanceCatalogCardAccessibility() {
     document.querySelectorAll('.cat-card').forEach(function(card, index) {
       var body = card.querySelector('.cat-card-body');
@@ -175,5 +158,4 @@
 
   enhanceCatalogCardAccessibility();
   enhanceDocumentationAccessibility();
-  enhanceCatalogRiHints();
   enhanceCatalogLinkHierarchy();
