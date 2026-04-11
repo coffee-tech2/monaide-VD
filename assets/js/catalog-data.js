@@ -324,9 +324,9 @@
       category: 'financier',
       summary: 'Premier contact social · Porte d’entrée pour le RI · Orientation locale',
       audience: 'Personnes qui ne savent pas par où commencer ou qui n’ont plus assez pour vivre.',
-      purpose: 'Le CSR aide à faire le point, explique le RI, vérifie les pistes possibles et oriente vers les bons services.',
+      purpose: 'Le CSR traite le RI, peut examiner certaines situations sociales et orienter vers d’autres services si nécessaire.',
       highlights: [
-        'Première porte d’entrée sociale locale',
+        'Instance sociale locale pour le RI',
         'Examine et octroie le RI',
         'Peut orienter vers d’autres aides'
       ],
@@ -335,7 +335,7 @@
         'Prendre un premier contact, même sans dossier complet',
         'Préparer identité, revenus, bail et relevés si possible'
       ],
-      bodyIntro: 'Le CSR est souvent la meilleure première porte quand tu ne sais pas par où commencer ou que tu n’as plus assez pour vivre. C’est aussi le service qui examine et octroie le Revenu d’insertion (RI).',
+      bodyIntro: 'Le CSR est l’instance qui examine notamment les demandes de RI et certaines situations sociales. Il peut aussi orienter vers d’autres services du canton ou de la commune.',
       sections: [
         {
           title: 'Ce qu’il fait',
