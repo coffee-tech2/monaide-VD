@@ -112,7 +112,7 @@
       liensBourse: [
         { type: 'link', label: 'Infos bourses OCBE', linkKey: 'OCBE_INFO' },
         { type: 'link', label: 'Faire une demande OCBE', linkKey: 'OCBE_APPLY' },
-        { type: 'link', label: 'Jet Service — aide au dossier', linkKey: 'JET_SERVICE' },
+        { type: 'link', label: 'Jet Service — appui jeunes & formation', linkKey: 'JET_SERVICE' },
         { type: 'link', label: 'Financement de la formation', linkKey: 'FORMATION_AID_MEMO' },
         { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Bourses d’études — OCBE' }
       ],

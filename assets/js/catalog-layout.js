@@ -29,7 +29,6 @@
           { id: 'csr', dataCat: 'financier' },
           { id: 'ri', dataCat: 'financier' },
           { id: 'parlons-cash', dataCat: 'financier' },
-          { id: 'jet-service', dataCat: 'financier formation' },
           { id: 'bcma', dataCat: 'financier' },
           { id: 'allocations-familiales', dataCat: 'financier' },
           { id: 'apg', dataCat: 'financier' },
@@ -40,7 +39,7 @@
       {
         id: 'groupe-emploi',
         title: 'Emploi & formation',
-        subtitle: 'Chômage, rente-pont, bourses',
+        subtitle: 'Chômage, bourses, accompagnement jeunes & formation',
         items: [
           { id: 'laci', dataCat: 'emploi' },
           { id: 'rente-pont', dataCat: 'emploi' },
