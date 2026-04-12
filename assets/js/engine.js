@@ -120,7 +120,7 @@
       alreadyChomage: aidesListe.includes('chomage'),
       age60plus: age === '60-64' || age === '65plus',
       fortFaible: fortune === 'moins4000',
-      fortSous50000: fortune === '4000-15000' || fortune === '15000-50000',
+      fortSous50000: ['4000-8000', '8000-15000', '15000-30000', '30000-50000'].indexOf(fortune) !== -1,
       loyerEleve: loyer === '1200-1800' || loyer === 'plus1800',
       primeElevee: primeLamal === '250-400' || primeLamal === 'plus400',
       urgenceActive: dettes === 'loyer' || logement.includes('Sans logement fixe'),
