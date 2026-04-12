@@ -559,6 +559,32 @@
     }));
   }
 
+  function addJetServiceResult(res, flags) {
+    var jeune = flags.age === '18-25';
+    var formation = flags.enFormation;
+    if (!jeune && !formation) return;
+
+    res.push(buildResult({
+      nom: 'CSP Jet Service — service social jeunes',
+      badge: 'probable',
+      desc: jeune && formation
+        ? 'Comme tu as entre 18 et 25 ans et que tu es en formation, Jet Service est une très bonne porte d’entrée pour faire le point sur les bourses, le budget, le travail ou d’autres démarches sociales.'
+        : jeune
+        ? 'Comme tu as entre 18 et 25 ans, Jet Service peut être une porte d’entrée très utile pour faire le point sur tes droits, ton budget, le travail ou des démarches compliquées.'
+        : 'Comme tu es en formation, Jet Service peut t’aider à faire le point sur les bourses, le budget, le travail ou d’autres démarches sociales liées à ta situation.'
+      ,
+      action: jeune && formation
+        ? 'Prends contact avec Jet Service si tu veux être aidé·e pour un dossier de bourse, une question de budget, de contrat ou plus largement pour comprendre vers quel service te tourner.'
+        : jeune
+        ? 'Prends contact avec Jet Service si tu as besoin d’un appui pour comprendre un courrier, gérer un budget serré, un contrat de travail ou une démarche sociale.'
+        : 'Prends contact avec Jet Service si tu veux être aidé·e pour une demande de bourse, une question de budget, un souci avec un employeur ou un dossier social.'
+      ,
+      today: 'Garde cette porte d’entrée si tu sens que les démarches sont floues ou trop lourdes à faire seul·e.',
+      docs: ['Courriers reçus si tu en as', 'Pièce d’identité', 'Documents liés à la formation ou au budget selon ta question'],
+      liensJetService: true
+    }));
+  }
+
   window.computeSimulationResults = function(profile) {
     profile = profile || {};
     var flags = finalizeSimulationFlags(deriveSimulationFlags(profile));
@@ -607,6 +633,7 @@
     addRentePontResult(res, flags);
     if (enFormation && !alreadyBourse) addOcbeResult(res, flags);
     if (incapacite !== 'non' && !alreadyAI) addAiResult(res, flags);
+    addJetServiceResult(res, flags);
 
     if (invalidite && !retraite) addProInfirmisResult(res);
     if (retraite || age === '65plus') addProSenectuteResult(res);

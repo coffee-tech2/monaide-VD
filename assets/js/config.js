@@ -85,6 +85,7 @@
       'liensLACI',
       'liensRentePont',
       'liensAI',
+      'liensJetService',
       'liensProInfirmis',
       'liensSenectute',
       'liensCMS',
@@ -156,6 +157,10 @@
         { type: 'link', label: 'Formulaires AI Vaud', linkKey: 'AI_FORMS' },
         { type: 'link', label: 'Infos AI Vaud', linkKey: 'AI_HOME' },
         { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Assurance invalidité (AI)' }
+      ],
+      liensJetService: [
+        { type: 'link', label: 'Voir Jet Service', linkKey: 'JET_SERVICE' },
+        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'CSP Jet Service — service social jeunes' }
       ],
       liensProInfirmis: [
         { type: 'link', label: 'Pro Infirmis Vaud', linkKey: 'PRO_INFIRMIS' }
@@ -245,6 +250,7 @@
       { patterns: ['revenu d insertion'], priority: 6, priorityWhenEmploi: 90 },
       { patterns: ['allocations familiales'], priority: 10 },
       { patterns: ['bourses', 'ocbe'], priority: 12 },
+      { patterns: ['jet service'], priority: 16 },
       { patterns: ['brapa', 'parlons cash'], priority: 14 },
       { patterns: ['evam', 'aide d urgence', 'fraternite', 'appartenances'], priority: 1 },
       { patterns: ['lavi', 'malleyprairie'], priority: 1 },
