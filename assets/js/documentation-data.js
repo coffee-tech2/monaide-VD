@@ -10,7 +10,7 @@
         accordion: {
           title: 'Revenu d’insertion (RI)',
           subtitle: 'Demande · Documents · CSR',
-          leadHtml: 'Le RI aide à couvrir le minimum pour vivre. La demande se fait auprès du <strong class="doc-strong">CSR de ta commune</strong>.',
+          leadHtml: 'Le RI peut aider à couvrir le minimum pour vivre après examen du dossier. La demande se fait auprès du <strong class="doc-strong">CSR de ta commune</strong>.',
           contact: {
             label: 'Qui contacter d’abord',
             text: 'Le CSR de ta région. Même si ton dossier n’est pas complet, tu peux commencer par là.'
@@ -50,7 +50,7 @@
         accordion: {
           title: 'Subside LAMal',
           subtitle: 'Calcul · Demande · AAS',
-          leadHtml: 'Le subside réduit la prime d’assurance maladie. La demande se fait en ligne ou avec une <strong class="doc-strong">agence AAS</strong>. C’est l’<strong class="doc-strong">OVAM</strong> qui rend la décision.',
+          leadHtml: 'Le subside peut réduire la prime d’assurance maladie selon le dossier. La demande se fait en ligne ou avec une <strong class="doc-strong">agence AAS</strong>. C’est l’<strong class="doc-strong">OVAM</strong> qui rend la décision.',
           contact: {
             label: 'Qui contacter d’abord',
             text: 'Une agence AAS si tu bloques sur le calcul ou sur la demande. L’OVAM reste le service qui décide ensuite.'
@@ -91,7 +91,7 @@
         accordion: {
           title: 'Assurance invalidité (AI)',
           subtitle: 'Formulaires · Santé · Réadaptation',
-          leadHtml: 'L’AI intervient en cas d’incapacité durable. Elle cherche d’abord la <strong class="doc-strong">réadaptation avant la rente</strong>.',
+          leadHtml: 'L’AI intervient en cas d’incapacité durable. Elle cherche d’abord la <strong class="doc-strong">réadaptation avant la rente</strong>, selon la situation examinée.',
           contact: {
             label: 'Qui contacter d’abord',
             text: 'AI Vaud. Ton médecin, ton psychiatre ou ton psychologue peut aussi t’accompagner dans la démarche.'
@@ -176,7 +176,7 @@
         accordion: {
           title: 'CarteCulture — Caritas',
           subtitle: 'Qui peut l’obtenir · Justificatifs · Démarche',
-          leadHtml: 'Carte gratuite donnant accès à des réductions dans la culture, le sport, les loisirs et certaines offres du quotidien.',
+          leadHtml: 'Carte gratuite qui peut donner accès à des réductions dans la culture, le sport, les loisirs et certaines offres du quotidien.',
           contact: {
             label: 'Qui contacter d’abord',
             text: 'L’équipe CarteCulture Vaud si tu veux vérifier ton droit ou savoir quel justificatif envoyer.'

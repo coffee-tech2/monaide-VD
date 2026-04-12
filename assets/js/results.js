@@ -22,7 +22,7 @@
       return matchesResultPatterns(name, item.patterns);
     });
     if (rule) return rule.value;
-    return 'Aide ou droit possible';
+    return 'Aide ou piste possible';
   }
 
   function isSecondaryResult(name) {

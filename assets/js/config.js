@@ -182,7 +182,7 @@
   };
 
   window.MONAIDE_RESULTS_UI_CONFIG = {
-    defaultPurpose: 'Cette aide ou orientation sert à t’ouvrir une piste concrète selon ta situation.',
+    defaultPurpose: 'Cette piste sert à t’ouvrir une orientation concrète selon ta situation.',
     badgeOrder: {
       confirme: 0,
       probable: 1,
@@ -212,17 +212,20 @@
     openCatalogLabel: 'Voir le catalogue des aides →',
     noCoverageText: 'Le simulateur ne couvre pas tout. Le catalogue recense des ressources vaudoises supplémentaires — associations, services, aides spécifiques — qui pourraient te concerner.',
     purposeRules: [
-      { patterns: ['subside lamal'], text: 'Cette aide sert à réduire le montant de ta prime d’assurance maladie.' },
-      { patterns: ['revenu d insertion', 'centre social regional'], text: 'Cette aide sert à garantir un minimum pour vivre ou à ouvrir une première porte sociale.' },
-      { patterns: ['prestations complementaires'], text: 'Cette aide sert à compléter une rente AVS ou AI quand elle ne suffit pas.' },
-      { patterns: ['allocations familiales', 'apg'], text: 'Cette aide sert à soutenir financièrement une situation familiale ou une perte de gain reconnue.' },
-      { patterns: ['assurance invalidite', 'pro infirmis'], text: 'Cette aide sert à soutenir les personnes dont la santé limite durablement la capacité de travail ou l’autonomie.' },
-      { patterns: ['assurance chomage'], text: 'Cette aide sert à couvrir une perte d’emploi quand les conditions de chômage sont remplies.' },
-      { patterns: ['bourses', 'ocbe', 'jet service'], text: 'Cette aide sert à soutenir une formation ou à aider à financer un parcours d’études.' },
+      { patterns: ['subside lamal'], text: 'Cette aide sert à réduire le montant de la prime d’assurance maladie quand les conditions sont remplies.' },
+      { patterns: ['revenu d insertion'], text: 'Cette aide sert à couvrir le minimum pour vivre quand les revenus ne suffisent plus, sous réserve d’un examen complet du dossier.' },
+      { patterns: ['centre social regional', 'aas'], text: 'Ce service sert à faire un premier point, expliquer les démarches possibles et orienter vers la bonne porte d’entrée.' },
+      { patterns: ['prestations complementaires'], text: 'Cette aide sert à compléter une rente AVS ou AI quand elle ne suffit pas à couvrir le budget de base.' },
+      { patterns: ['allocations familiales', 'apg'], text: 'Cette aide sert à soutenir une situation familiale ou une perte de gain reconnue, selon la caisse compétente et le dossier.' },
+      { patterns: ['assurance invalidite'], text: 'Cette aide sert à soutenir une incapacité durable, d’abord par la réadaptation puis, selon la situation, par d’autres prestations.' },
+      { patterns: ['pro infirmis'], text: 'Ce service sert à accompagner les démarches quand la santé ou le handicap compliquent le quotidien.' },
+      { patterns: ['assurance chomage'], text: 'Cette aide sert à couvrir une perte d’emploi si les conditions de chômage sont remplies et confirmées.' },
+      { patterns: ['bourses', 'ocbe'], text: 'Cette aide sert à soutenir une formation quand les ressources du ménage ne suffisent pas, après examen du dossier.' },
+      { patterns: ['jet service'], text: 'Ce service sert à aider à comprendre ou remplir certaines démarches de formation ou de budget.' },
       { patterns: ['carteculture', 'passculture'], text: 'Cette aide sert à rendre la culture, les loisirs ou certaines sorties plus accessibles.' },
-      { patterns: ['parlons cash', 'brapa'], text: 'Cette aide sert à débloquer une situation financière ou des démarches liées à des dettes ou à des pensions.' },
-      { patterns: ['evam', 'fraternite', 'appartenances', 'aide d urgence'], text: 'Cette aide sert à orienter en matière de séjour, d’asile, de migration ou de droits de base.' },
-      { patterns: ['lavi', 'malleyprairie', 'lignes d ecoute', 'le passage'], text: 'Cette aide sert à apporter un soutien rapide, humain ou sécurisant dans une situation difficile ou urgente.' }
+      { patterns: ['parlons cash', 'brapa'], text: 'Cette piste sert à débloquer une situation financière ou des démarches liées à des dettes ou à des pensions.' },
+      { patterns: ['evam', 'fraternite', 'appartenances', 'aide d urgence'], text: 'Cette orientation sert à clarifier les droits de base, le séjour, l’asile ou les bons relais selon la situation.' },
+      { patterns: ['lavi', 'malleyprairie', 'lignes d ecoute', 'le passage'], text: 'Cette orientation sert à apporter un soutien rapide, humain ou sécurisant dans une situation difficile ou urgente.' }
     ],
     kindRules: [
       { patterns: ['centre social regional', 'aas', 'vaud pour vous', 'jet service'], value: 'Service d’orientation' },
@@ -253,7 +256,7 @@
       { patterns: ['assurance invalidite'], title: 'Qui contacter d’abord', text: 'AI Vaud est la bonne porte d’entrée. Un médecin, psychiatre ou psychologue peut aussi t’aider à préparer la demande.', actionLabel: 'Infos AI Vaud', actionKey: 'AI_HOME' },
       { patterns: ['prestations complementaires'], title: 'Qui contacter d’abord', text: 'Le plus simple est souvent de commencer par une agence AAS, qui peut faire un premier tri avant la demande officielle.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
       { patterns: ['bourses', 'ocbe'], title: 'Qui contacter d’abord', text: 'Commence par l’OCBE. Si le dossier te paraît compliqué, Jet Service peut aussi aider à le remplir.', actionLabel: 'Faire une demande OCBE', actionKey: 'OCBE_APPLY' },
-      { patterns: ['carteculture'], title: 'Qui contacter d’abord', text: 'Si tu as déjà une aide sociale ou un revenu modeste, la piste CarteCulture vaut la peine d’être activée rapidement.', actionLabel: 'Demander la CarteCulture', actionKey: 'CARTECULTURE_APPLY' },
+      { patterns: ['carteculture'], title: 'Qui contacter d’abord', text: 'Si tu as déjà une aide sociale ou un revenu modeste, la piste CarteCulture peut valoir la peine d’être activée après les démarches prioritaires.', actionLabel: 'Demander la CarteCulture', actionKey: 'CARTECULTURE_APPLY' },
       { patterns: ['evam'], title: 'Qui contacter d’abord', text: 'Quand le séjour ou le cadre asile est central, le relais EVAM reste souvent la première porte à utiliser.', actionLabel: 'EVAM Vaud', actionKey: 'EVAM_HOME' },
       { patterns: ['lavi'], title: 'Qui contacter d’abord', text: 'En cas de violence, d’agression ou d’infraction, le centre LAVI est une bonne première porte, même sans plainte.', actionLabel: 'Centre LAVI Vaud', actionKey: 'LAVI_LAUSANNE' }
     ],

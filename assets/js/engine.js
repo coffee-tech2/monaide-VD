@@ -159,7 +159,7 @@
     res.push(buildResult({
       nom: 'EVAM — Permis N, F et S',
       badge: 'confirme',
-      desc: 'Avec un permis N, le premier relais passe d’abord par l’EVAM et le dispositif asile.',
+      desc: 'Avec un permis N, le premier relais passe généralement par l’EVAM et le dispositif asile.',
       action: 'Commence par le relais EVAM qui suit déjà ton dossier. Pour les questions de statut ou de courrier, complète avec le CSP Fraternité.',
       today: 'Repère d’abord le service EVAM qui suit ton dossier.',
       docs: ['Permis N', 'Décisions SEM/SPOP ou courriers récents', 'Coordonnées du foyer ou du service EVAM'],
@@ -180,7 +180,7 @@
     res.push(buildResult({
       nom: 'EVAM — Permis N, F et S',
       badge: 'confirme',
-      desc: 'Avec un permis S, il vaut mieux faire confirmer le cadre exact avant de lancer des demandes ordinaires.',
+      desc: 'Avec un permis S, il vaut mieux faire confirmer le cadre exact avant de lancer des démarches ordinaires.',
       action: 'Passe d’abord par le relais EVAM ou le service qui suit ta situation.',
       today: 'Fais confirmer d’abord le cadre de prise en charge.',
       docs: ['Permis S', 'Courriers récents', 'Pièce d’identité', 'Justificatifs de logement si tu en as'],
@@ -266,7 +266,7 @@
     res.push(buildResult({
       nom: 'Pro Senectute Vaud — conseil gratuit pour les 60+',
       badge: 'verifier',
-      desc: 'Aide administrative, déclaration d\'impôts, droits AVS et PC, accompagnement social — tout ça gratuitement.',
+      desc: 'Aide administrative, déclaration d\'impôts, questions AVS ou PC, accompagnement social : une bonne porte si les démarches deviennent lourdes.',
       action: '☏ 021 646 17 21 — permanences dans tout le canton.',
       today: 'Appelle si tu as 60+ et que les démarches AVS/PC deviennent difficiles à gérer seul·e.',
       liensSenectute: true
@@ -277,7 +277,7 @@
     res.push(buildResult({
       nom: 'CMS — Soins et aide à domicile',
       badge: 'verifier',
-      desc: 'Tu veux rester chez toi mais tu as besoin d\'aide ? Les CMS envoient des professionnel·le·s pour les soins, l\'aide quotidienne, la téléalarme. Pris en charge partiellement par ta LAMal.',
+      desc: 'Les CMS peuvent aider pour les soins, le maintien à domicile ou certaines aides du quotidien. Le financement dépend ensuite de la prestation et de la couverture.',
       action: '☏ AVASAD (réseau CMS Vaud) : 0800 820 830. Ou sur prescription de ton médecin.',
       today: 'À prioriser si le maintien à domicile devient compliqué.',
       liensCMS: true
@@ -336,7 +336,7 @@
       res.push(buildResult({
         nom: 'Subside LAMal — réduction de prime',
         badge: 'confirme',
-        desc: 'Si tu touches déjà le RI ou les PC, le subside LAMal est normalement lié à cette situation. Le plus utile est de vérifier qu’il est bien actif et correctement appliqué.',
+        desc: 'Si tu touches déjà le RI ou les PC, le subside LAMal est généralement lié à cette situation. Le plus utile est de vérifier qu’il est bien actif et correctement appliqué.',
         action: '✔ Vérifie que le subside apparaît bien sur ta prime ou dans ta décision. Si ce n’est pas le cas, contacte ton agence AAS ou l’OVAM.',
         today: 'Regarde ta dernière décision ou appelle ton agence AAS pour vérifier que la réduction est bien active.',
         docs: ['Attestation RI ou PC', 'Police LAMal actuelle'],
@@ -352,8 +352,8 @@
         desc: (flags.permisF || flags.permisL)
           ? 'Le subside reste une piste importante, mais avec ton statut de séjour il vaut mieux faire vérifier le cadre exact par une AAS ou un relais spécialisé en plus du calcul officiel.'
           : flags.primeElevee
-          ? 'Tes revenus semblent compatibles avec un subside et ta prime maladie est lourde. C’est une piste prioritaire.'
-          : 'Avec ton niveau de revenus, tu remplis probablement les conditions. Le montant exact dépend de ton Revenu Déterminant Unifié (RDU), qui tient compte de tes revenus ET de ta fortune.',
+          ? 'Tes revenus semblent compatibles avec un subside et ta prime maladie pèse lourd dans le budget. C’est une piste importante à vérifier.'
+          : 'Avec ton niveau de revenus, un subside est probablement envisageable. Le montant exact dépend ensuite du Revenu Déterminant Unifié (RDU), qui tient compte des revenus et de la fortune.',
         action: (flags.permisF || flags.permisL)
           ? '1. Fais le calcul officiel.\n2. Dépose ensuite la demande avec une AAS.\n3. Si la question touche aussi au séjour, ajoute une vérification auprès du CSP Fraternité.\n4. En cas de doute sur la décision, contacte l’OVAM.'
           : '1. Utilise le simulateur officiel pour estimer ton droit.\n2. Si la piste se confirme, dépose la demande en ligne ou avec une AAS.\n3. L’OVAM examinera ensuite ton dossier et rendra la décision.',
@@ -399,8 +399,8 @@
         desc: flags.permisF
           ? 'Tes revenus et ton épargne font ressortir le RI comme piste à examiner, mais avec un permis F il vaut mieux faire vérifier le bon cadre par le CSR et, si besoin, par un relais migration.'
           : (flags.loyerEleve || flags.grandeCommune)
-          ? 'Tes revenus, ton épargne et ton contexte de vie font ressortir le RI comme une piste forte. L\'éligibilité finale dépend d\'une évaluation complète par un·e assistant·e social·e.'
-          : 'Tes revenus et ton épargne correspondent aux critères de base du RI. Attention : l\'éligibilité finale dépend d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',
+          ? 'Tes revenus, ton épargne et ton contexte de vie font ressortir le RI comme une piste forte. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e.'
+          : 'Tes revenus et ton épargne font ressortir le RI comme une piste sérieuse. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',
         action: flags.permisF
           ? '1. Contacte le CSR pour une évaluation complète.\n2. Précise ton statut de séjour dès le premier contact.\n3. Si la question du permis devient centrale, complète avec le CSP Fraternité.'
           : '1. Contacte le Centre Social Régional (CSR) de ta commune — c\'est gratuit et sans engagement.\n2. Prépare : pièce d\'identité, relevés de compte (3 mois), bulletins de salaire, contrat de bail.\n3. N’attends pas trop : la date du premier contact ou de la demande peut compter dans l’examen du dossier.',
@@ -436,7 +436,7 @@
     res.push(buildResult({
       nom: 'Prestations complémentaires AVS/AI (PC)',
       badge: flags.revenuFaible ? 'probable' : 'verifier',
-      desc: 'Les PC complètent une rente AVS ou AI quand elle ne suffit pas pour couvrir les besoins de base. Le droit dépend surtout de la rente, du loyer, des primes maladie, des autres revenus et de la fortune.',
+      desc: 'Les PC peuvent compléter une rente AVS ou AI quand elle ne suffit pas pour couvrir les besoins de base. Le droit dépend surtout de la rente, du loyer, des primes maladie, des autres revenus et de la fortune.',
       action: '1. Demande d’abord un calcul estimatif ou des explications à ton agence AAS.\n2. Si la piste se confirme, dépose la demande officielle auprès de l’agence AAS de ta région.\n3. La Caisse AVS Vaud examine ensuite le dossier et rend la décision.',
       today: 'Commence par faire vérifier le calcul avec ton agence AAS.',
       docs: ['Décision AVS ou AI', 'Montant de la rente', 'Bail, primes maladie, relevés bancaires'],
@@ -448,7 +448,7 @@
     res.push(buildResult({
       nom: 'Allocations familiales',
       badge: 'probable',
-      desc: 'Si tu as des enfants à charge et que tu ne reçois pas déjà les allocations familiales, cette piste vaut la peine d’être vérifiée. La porte d’entrée dépend de ta situation professionnelle.',
+      desc: 'Si tu as des enfants à charge et que tu ne reçois pas déjà les allocations familiales, cette piste mérite d’être vérifiée. La porte d’entrée dépend de ta situation professionnelle.',
       action: '• Salarié·e : demande via ton employeur ou sa caisse.\n• Au chômage : adresse-toi à ta caisse de chômage pour le supplément correspondant.\n• Sans activité lucrative : passe par une AAS si les conditions sont remplies.\n• Les montants et le droit exact dépendent aussi de la situation de l’autre parent.',
       today: 'Vérifie d’abord par quelle caisse ou quel organisme ta situation doit passer, puis prépare les justificatifs des enfants.',
       docs: ['Pièces d’identité des parents', 'Actes de naissance des enfants', 'Attestation de formation si 16–25 ans'],
@@ -461,9 +461,9 @@
       res.push(buildResult({
         nom: 'CarteCulture — Caritas',
         badge: 'confirme',
-        desc: 'Si tu touches déjà le RI, les PC, un subside LAMal ou une bourse, la CarteCulture est en principe une piste très forte sur présentation du bon justificatif. Elle donne accès à de nombreuses offres culturelles, sportives et de loisirs à prix réduit.',
+        desc: 'Si tu touches déjà le RI, les PC, un subside LAMal ou une bourse, la CarteCulture est souvent accessible avec le bon justificatif. Elle donne accès à de nombreuses offres culturelles, sportives et de loisirs à prix réduit.',
         action: '1. Demande ta carte sur carteculture.ch ou auprès de Caritas Vaud.\n2. Prépare le justificatif correspondant à ta situation (attestation RI, PC, décision de subside, etc.) et une photo d\'identité.\n3. La carte est gratuite.',
-        today: 'Fais la demande quand ton aide principale est confirmée, c’est rapide et gratuit.',
+        today: 'Tu peux garder cette piste juste après tes démarches prioritaires.',
         docs: ['Justificatif d’aide actuelle', 'Photo d’identité'],
         liensCarte: true
       }));
@@ -474,7 +474,7 @@
       res.push(buildResult({
         nom: 'CarteCulture — Caritas',
         badge: 'probable',
-        desc: 'Avec tes revenus, tu pourrais être éligible à la CarteCulture (seuil : revenu inférieur au minimum vital).',
+        desc: 'Avec tes revenus, la CarteCulture pourrait être envisageable si le seuil retenu correspond bien à ta situation.',
         action: 'Contacte Caritas Vaud pour vérifier ton éligibilité — c\'est gratuit.',
         today: 'Garde cette piste pour juste après les aides financières prioritaires.',
         liensCarte: true
@@ -488,11 +488,11 @@
       badge: (flags.permisL || flags.permisG || flags.permisF || flags.permisS) ? 'verifier' : 'probable',
       desc: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
         ? 'Le chômage reste une piste possible, mais avec ton statut ou ton cadre de séjour, il faut vérifier plus finement les conditions de cotisation, de domicile et l’autorité compétente.'
-        : 'Tu pourrais avoir droit aux indemnités chômage si tu remplis les conditions : avoir cotisé à l\'AVS pendant au moins 12 mois dans les 2 dernières années, être domicilié·e en Suisse, être disponible pour un emploi à plein temps.',
+        : 'Une indemnité chômage pourrait être possible si les conditions sont remplies : cotisations suffisantes, domicile compatible et disponibilité pour un emploi.',
       action: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
         ? 'Inscris-toi rapidement ou fais vérifier ta situation auprès du chômage / ORP, mais pars du principe qu’une vérification individualisée sera nécessaire.'
         : '⚠ Attention : n’attends pas pour t’inscrire à l’ORP, car un retard peut faire perdre des indemnités.\n1. Inscris-toi rapidement à l’ORP en ligne.\n2. Prépare : certificat de travail, attestation de l’employeur, pièce d’identité.\n3. Le montant de l’indemnité est souvent de 70% du gain assuré, parfois 80% selon la situation.',
-      today: 'Si ton contrat est terminé ou va se terminer, l’inscription ORP est une priorité.',
+      today: 'Si ton contrat est terminé ou va se terminer, l’inscription ORP est une priorité à ne pas repousser.',
       docs: ['Certificat de travail', 'Attestation de l’employeur', 'Pièce d’identité ou permis'],
       liensLACI: true,
       liensCadreSejour: flags.permisL || flags.permisF || flags.permisS,
@@ -505,7 +505,7 @@
       res.push(buildResult({
         nom: 'Rente-pont AVS — l\'aide la plus méconnue',
         badge: 'probable',
-        desc: 'Si tu as 60 ans ou plus et que tes droits au chômage s’épuisent, la rente-pont peut devenir une piste importante. Le montant dépend ensuite du calcul fait sur ta situation.',
+        desc: 'Si tu as 60 ans ou plus et que tes droits au chômage s’épuisent, la rente-pont peut devenir une piste importante. Le montant dépend ensuite d’un calcul sur ta situation.',
         action: '1. Conditions principales à vérifier : 400 indemnités chômage épuisées, 20 ans de cotisation AVS dont 5 après 50 ans, fortune sous le seuil prévu.\n2. Fais la demande auprès de ta caisse AVS dès la fin de tes droits chômage.\n3. N’attends pas trop : la date de dépôt peut compter.',
         today: 'Ne laisse pas passer cette piste si tu approches de la fin du chômage.',
         docs: ['Décisions chômage', 'Extrait AVS si possible', 'Relevés de fortune'],
@@ -531,7 +531,7 @@
       badge: (flags.permisL || flags.permisS || flags.permisF) ? 'verifier' : (flags.revenuFaible ? 'probable' : 'verifier'),
       desc: (flags.permisL || flags.permisS || flags.permisF)
         ? 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais le titre de séjour fait partie des critères examinés par l’OCBE avec la situation financière.'
-        : 'Tu es en formation post-obligatoire (CFC, maturité, HES, université…). Une bourse est possible selon les ressources de ta famille — il n\'y a pas de critère de mérite, seulement financier.',
+        : 'Tu es en formation post-obligatoire (CFC, maturité, HES, université…). Une bourse peut être possible selon les ressources du ménage — il n\'y a pas de critère de mérite, mais un examen financier.',
       action: '1. Commence par le questionnaire d\'éligibilité OCBE.\n2. Dépose ensuite la demande même si certaines pièces manquent encore.\n3. Jet Service (CSP Vaud) peut aider à remplir le dossier.\n4. Si la bourse ne passe pas ou ne suffit pas, regarde aussi les pistes privées et aides ponctuelles liées au financement de la formation.',
       today: 'Commence par l’OCBE, puis fais-toi aider si besoin pour compléter le dossier sans attendre qu’il soit parfait.',
       docs: ['Attestation de formation', 'Déclaration d’impôts du ménage ou des parents', 'Bail si tu vis seul·e'],
@@ -547,8 +547,8 @@
       desc: (flags.permisF || flags.permisL || flags.permisS)
         ? 'L’AI peut rester une piste en cas d’incapacité durable, mais avec ton statut il faut souvent vérifier plus finement les conditions d’assurance, de cotisation et de séjour.'
         : flags.incapacite === 'totale'
-        ? 'Ton niveau d\'incapacité correspond probablement aux critères AI. L\'objectif premier de l\'AI est la réadaptation avant la rente — elle peut financer ta formation, tes aides techniques, ton retour au travail.'
-        : 'Selon ton taux d\'incapacité, tu pourrais avoir droit à des mesures de réadaptation ou à une rente partielle.',
+        ? 'Ton niveau d\'incapacité semble compatible avec une piste AI. L\'objectif premier de l\'AI reste la réadaptation avant la rente : formation, aides techniques, retour au travail.'
+        : 'Selon ton taux d\'incapacité, des mesures de réadaptation ou une rente partielle peuvent éventuellement être examinées.',
       action: (flags.permisF || flags.permisL || flags.permisS)
         ? 'Dépose quand même la demande si la piste est sérieuse, mais prévois une vérification complémentaire sur le cadre d’assurance et de séjour.'
         : '⚠ Important : la date de dépôt compte beaucoup en AI. Selon la prestation et la situation, les règles de naissance du droit ou l\'effet rétroactif ne sont pas les mêmes, donc ne repousse pas la demande.\n1. Télécharge le formulaire 001.303 sur aivd.ch.\n2. Dépose-le même incomplet — l\'AIVD te contactera pour compléter.\n3. ☏ Office AI Vaud : 021 342 91 11',

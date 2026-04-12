@@ -59,15 +59,15 @@
         'Faire la demande en ligne ou avec une agence AAS',
         'Préparer revenus, taxation et police LAMal'
       ],
-      bodyIntro: 'Si ton revenu est modeste, l’État peut payer une partie de ta prime LAMal. La demande se fait en ligne ou avec une AAS. C’est l’OVAM qui rend la décision.',
+      bodyIntro: 'Si ton revenu est modeste, un subside peut réduire une partie de ta prime LAMal. La demande se fait en ligne ou avec une AAS. C’est l’OVAM qui rend la décision.',
       sections: [
         {
           title: 'Conditions',
           items: [
             'Domicile dans le canton de Vaud',
-            'Permis de séjour valide',
+            'Cadre de séjour compatible à vérifier selon la situation',
             'RDU inférieur aux seuils cantonaux',
-            'Automatique si tu reçois le RI ou des PC'
+            'Généralement liée au RI ou aux PC si ta situation est bien enregistrée'
           ]
         },
         {
@@ -76,7 +76,7 @@
             'Dernière taxation à portée',
             'Évaluer le droit puis déposer la demande',
             'Demande possible en ligne ou via ton agence AAS',
-            'L’OVAM confirme ensuite le droit ou non au subside'
+            'L’OVAM examine ensuite le dossier et rend la décision'
           ]
         }
       ],
@@ -100,7 +100,7 @@
       category: 'financier',
       summary: 'Adultes sans ressources suffisantes · Aide de dernier recours',
       audience: 'Personnes qui n’ont plus assez pour vivre ou dont les revenus ne couvrent plus le minimum.',
-      purpose: 'Le RI garantit un minimum pour vivre quand les revenus ne suffisent plus. La demande se fait via le CSR.',
+      purpose: 'Le RI peut aider à couvrir le minimum pour vivre quand les revenus ne suffisent plus. La demande se fait via le CSR.',
       highlights: [
         'Aide financière de dernier recours dans le canton',
         'La demande passe par le CSR de la région',
@@ -111,15 +111,15 @@
         'Prendre un premier rendez-vous, même sans dossier parfait',
         'Préparer identité, revenus, bail et relevés si possible'
       ],
-      bodyIntro: 'Le RI veut dire <strong>Revenu d’insertion</strong>. C’est l’aide financière de dernier recours dans le canton de Vaud. Si tu n’as plus assez pour vivre, le RI peut garantir un revenu minimum. La demande passe par le CSR, qui examine ensuite le dossier.',
+      bodyIntro: 'Le RI veut dire <strong>Revenu d’insertion</strong>. C’est l’aide financière de dernier recours dans le canton de Vaud. Si tu n’as plus assez pour vivre, le RI peut être une piste importante. La demande passe par le CSR, qui examine ensuite le dossier.',
       sections: [
         {
           title: 'Conditions',
           items: [
             'Majeur·e, domicilié·e dans le canton',
-            'Permis valide (pas permis N)',
-            'Revenus inférieurs au barème RI',
-            'Fortune < 4 000 CHF (8 000 en couple)'
+            'Cadre de séjour à vérifier selon la situation',
+            'Revenus et charges à examiner selon le barème RI',
+            'Fortune limitée, à vérifier selon la composition du ménage'
           ]
         },
         {
@@ -144,7 +144,7 @@
       category: 'sante',
       summary: 'Incapacité de travail durable · Dès 40% d’incapacité',
       audience: 'Personnes dont la santé limite durablement la capacité de travail.',
-      purpose: 'L’AI peut financer une réadaptation, une formation, des aides techniques ou une rente selon la situation.',
+      purpose: 'L’AI peut ouvrir des mesures de réadaptation, financer certaines aides techniques ou, selon la situation, conduire à une rente.',
       highlights: [
         'Peut aider avant même une décision de rente',
         'La réadaptation passe avant la rente',
@@ -155,13 +155,13 @@
         'Ne pas attendre pour déposer la demande',
         'Se faire aider par son médecin, psychiatre ou psychologue si besoin'
       ],
-      bodyIntro: 'Si une maladie ou un accident t’empêche de travailler durablement, l’AI peut aider. Elle peut financer une réadaptation, une formation ou des aides techniques. Dépose ta demande sans trop attendre.',
+      bodyIntro: 'Si une maladie ou un accident t’empêche de travailler durablement, l’AI peut être une piste importante. Elle peut ouvrir une réadaptation, une formation ou certaines aides techniques. Dépose la demande sans trop attendre.',
       sections: [
         {
           title: 'Conditions',
           items: [
             'Incapacité ≥ 40% pendant au moins 1 an',
-            '3 ans de cotisation AVS/AI minimum',
+            'Durée d’assurance et de cotisation à vérifier selon la situation',
             'Rente partielle dès 40%, entière dès 70%'
           ]
         },
@@ -248,7 +248,7 @@
         'Faire la demande en ligne',
         'Contacter l’équipe CarteCulture si tu bloques'
       ],
-      bodyIntro: 'Tu bénéficies du RI, d’un subside LAMal ou d’une bourse ? Tu as probablement droit à la CarteCulture — réductions sur plus de 270 offres dans le canton. Entièrement gratuite.',
+      bodyIntro: 'Tu bénéficies du RI, d’un subside LAMal ou d’une bourse ? La CarteCulture peut souvent être obtenue avec le bon justificatif. Elle donne accès à des réductions dans plus de 270 offres du canton.',
       sections: [
         {
           title: 'Conditions',
@@ -291,7 +291,7 @@
         'Préparer revenus, charges et fortune',
         'Déposer ensuite la demande officielle'
       ],
-      bodyIntro: 'Tu as une rente AVS ou AI mais elle ne suffit pas ? Les PC servent à compléter le budget de base. Dans le canton, le plus simple est souvent de commencer par une agence AAS.',
+      bodyIntro: 'Tu as une rente AVS ou AI mais elle ne suffit pas ? Les PC peuvent compléter le budget de base après examen des revenus, charges et fortune. Dans le canton, le plus simple est souvent de commencer par une agence AAS.',
       sections: [
         {
           title: 'Conditions',
@@ -327,7 +327,7 @@
       purpose: 'Le CSR traite le RI, peut examiner certaines situations sociales et orienter vers d’autres services si nécessaire.',
       highlights: [
         'Instance sociale locale pour le RI',
-        'Examine et octroie le RI',
+        'Instruit et évalue les demandes liées au RI',
         'Peut orienter vers d’autres aides'
       ],
       firstSteps: [
@@ -340,8 +340,8 @@
         {
           title: 'Ce qu’il fait',
           items: [
-            'Explique ce qu’est le RI et vérifie si tu peux le demander',
-            'Évalue le droit au Revenu d’insertion (RI)',
+            'Explique ce qu’est le RI et vérifie si une demande semble pertinente',
+            'Évalue si une demande de Revenu d’insertion (RI) est envisageable',
             'Aide à constituer un dossier',
             'Oriente vers d’autres services du canton ou de la commune'
           ]
@@ -854,7 +854,7 @@
         'Préparer les pièces de fin de contrat',
         'Vérifier ensuite les indemnités avec la caisse chômage'
       ],
-      bodyIntro: 'Tu as perdu ton emploi ? Si tu as cotisé à l’AVS pendant au moins 12 mois dans les 2 dernières années, tu peux avoir droit aux indemnités chômage. L’inscription à l’ORP doit se faire le plus vite possible.',
+      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si les conditions de cotisation et de disponibilité sont remplies. L’inscription à l’ORP doit se faire rapidement.',
       sections: [
         {
           title: 'Conditions',
@@ -897,7 +897,7 @@
         'Préparer les informations chômage et AVS',
         'Contacter la caisse AVS si la piste se confirme'
       ],
-      bodyIntro: 'Tu as 60 ans ou plus et tu arrives en fin de droits chômage ? Cette aide existe pour toi et presque personne ne la connaît. Elle peut faire le lien jusqu’à la retraite AVS.',
+      bodyIntro: 'Tu as 60 ans ou plus et tu arrives en fin de droits chômage ? Cette aide reste méconnue, mais elle peut parfois faire le lien jusqu’à la retraite AVS si les conditions sont remplies.',
       sections: [
         {
           title: 'Conditions',
@@ -939,7 +939,7 @@
         'Contacter l’EVAM si tu es dans ce cadre',
         'Passer au CSP Fraternité pour les questions de permis ou de courrier'
       ],
-      bodyIntro: 'Tu es en procédure d’asile (permis N), admis·e provisoirement (permis F) ou protégé·e temporairement (permis S) ? L’EVAM est souvent le premier relais pour l’accompagnement social, l’hébergement et le soutien de base.',
+      bodyIntro: 'Tu es en procédure d’asile (permis N), admis·e provisoirement (permis F) ou protégé·e temporairement (permis S) ? L’EVAM est souvent le premier relais pour l’accompagnement social, l’hébergement et le soutien de base, selon le cadre exact de ta situation.',
       sections: [
         {
           title: 'Pour qui',
@@ -2214,7 +2214,7 @@
         'Expliquer ce qui bloque dans les démarches',
         'Demander une orientation ou un accompagnement'
       ],
-      bodyIntro: 'Tu ne sais pas à quelle aide tu as droit ou tu n’arrives pas à faire tes démarches ? Le programme Vaud pour vous met à disposition des professionnel·le·s qui t’accompagnent gratuitement.',
+      bodyIntro: 'Tu ne sais pas quelle aide ou quel service pourrait te concerner, ou tu n’arrives pas à faire tes démarches ? Le programme Vaud pour vous met à disposition des professionnel·le·s qui t’accompagnent gratuitement.',
       sections: [
         {
           title: 'Pour qui',
