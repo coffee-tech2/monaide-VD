@@ -20,6 +20,7 @@
   function renderDocumentationShortcut(item) {
     if (!item || !item.shortcut || !item.shortcut.href) return '';
     return '<a href="' + escapeDocHtml(item.shortcut.href) + '" target="_blank" rel="noopener noreferrer" class="docs-shortcut-card">'
+      + '<span class="docs-shortcut-external" aria-hidden="true">&#8599;</span>'
       + '<div class="docs-shortcut-kicker">' + escapeDocHtml(item.shortcut.kicker) + '</div>'
       + '<div class="docs-shortcut-title">' + escapeDocHtml(item.shortcut.title) + '</div>'
       + '<div class="docs-link-text">' + escapeDocHtml(item.shortcut.text) + '</div>'

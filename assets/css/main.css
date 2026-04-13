@@ -325,9 +325,11 @@
   .glossary-pill span { display:block; font-size:0.75rem; line-height:1.55; color:var(--warm-gray); text-align: justify; text-justify: inter-word; hyphens: none; }
   .docs-shortcuts { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.75rem; }
   .guide-links-grid { margin-top:0.2rem; }
-  .docs-shortcut-card { display:block; padding:1rem 1rem 0.95rem; background:white; border:1.5px solid var(--border); border-radius:16px; text-decoration:none; transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
+  .docs-shortcut-card { display:block; position:relative; padding:1rem 1rem 0.95rem; background:white; border:1.5px solid var(--border); border-radius:16px; text-decoration:none; transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
   .docs-shortcut-card:hover { transform:translateY(-2px); box-shadow:0 12px 24px rgba(72,59,49,0.07); border-color:#dcc5b4; background:#fffdfa; }
   .docs-shortcut-card:focus-visible { outline:2px solid rgba(232,105,58,0.24); outline-offset:3px; }
+  .docs-shortcut-external { position:absolute; top:0.9rem; right:0.95rem; display:inline-flex; align-items:center; justify-content:center; width:1.6rem; height:1.6rem; border-radius:999px; border:1.5px solid #eadfd4; background:#fffaf4; color:var(--orange-dark); font-size:0.8rem; line-height:1; transition:transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, color 0.18s ease; }
+  .docs-shortcut-card:hover .docs-shortcut-external { transform:translateY(-1px); border-color:#e1bda4; background:#fff1e7; color:var(--orange-dark); }
   .docs-shortcut-kicker { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange); margin-bottom:0.35rem; }
   .docs-shortcut-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:1.04rem; font-weight:800; letter-spacing:-0.04em; color:var(--dark); margin-bottom:0.3rem; }
   .docs-link-text { font-size:0.79rem; line-height:1.55; color:var(--warm-gray); text-align:justify; text-justify:inter-word; hyphens:none; }
