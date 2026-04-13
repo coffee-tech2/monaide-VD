@@ -13,6 +13,8 @@
           { id: 'pro-infirmis', dataCat: 'sante' },
           { id: 'pro-senectute', dataCat: 'sante' },
           { id: 'espace-proches', dataCat: 'sante' },
+          { id: 'repit-proches-aidants', dataCat: 'sante' },
+          { id: 'sante-mentale-relais', dataCat: 'sante' },
           { id: 'addiction-vaud', dataCat: 'sante' },
           { id: 'relaids', dataCat: 'sante' },
           { id: 'unisante', dataCat: 'sante' },
@@ -31,13 +33,17 @@
           { id: 'ri', dataCat: 'financier' },
           { id: 'pc-familles', dataCat: 'financier' },
           { id: 'comipp', dataCat: 'financier' },
+          { id: 'prestations-communales', dataCat: 'financier' },
           { id: 'accueil-jour-enfants', dataCat: 'financier' },
+          { id: 'garde-enfants-malades', dataCat: 'financier' },
           { id: 'parlons-cash', dataCat: 'financier' },
           { id: 'bcma', dataCat: 'financier' },
           { id: 'allocations-familiales', dataCat: 'financier' },
           { id: 'apg', dataCat: 'financier' },
           { id: 'csp-vaud', dataCat: 'financier' },
-          { id: 'brapa', dataCat: 'financier' }
+          { id: 'brapa', dataCat: 'financier' },
+          { id: 'separation-divorce', dataCat: 'financier' },
+          { id: 'mediation-familiale', dataCat: 'financier' }
         ]
       },
       {
@@ -49,6 +55,7 @@
           { id: 'rente-pont', dataCat: 'emploi' },
           { id: 'jet-service', dataCat: 'formation emploi' },
           { id: 'guichet-t1', dataCat: 'formation emploi' },
+          { id: 'rupture-apprentissage', dataCat: 'formation emploi' },
           { id: 'bourse', dataCat: 'formation' }
         ]
       },
@@ -105,7 +112,10 @@
         subtitle: 'Lignes d’écoute, aide aux victimes, nourriture',
         items: [
           { id: 'lignes-ecoute', dataCat: 'urgence' },
+          { id: 'crise-psychique', dataCat: 'urgence' },
           { id: 'lavi', dataCat: 'urgence' },
+          { id: 'violences-conjugales', dataCat: 'urgence' },
+          { id: 'aide-alimentaire-region', dataCat: 'urgence' },
           { id: 'distributions-alimentaires', dataCat: 'urgence' },
           { id: 'malleyprairie', dataCat: 'urgence' },
           { id: 'le-passage', dataCat: 'urgence' },

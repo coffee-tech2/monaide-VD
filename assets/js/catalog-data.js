@@ -856,6 +856,96 @@
       documentationTarget: null
     },
     {
+      id: 'separation-divorce',
+      title: 'Séparation, divorce et premiers repères',
+      category: 'financier',
+      summary: 'Parents ou couples qui se séparent · Enfants, budget, démarches à clarifier',
+      audience: 'Personnes en séparation ou divorce qui ne savent pas encore par où commencer pour les aspects familiaux et pratiques.',
+      purpose: 'Cette fiche aide à repérer les premières démarches utiles quand une séparation bouleverse le quotidien, le budget ou l’organisation avec les enfants.',
+      highlights: [
+        'Utile dès le début, même si tout n’est pas encore décidé',
+        'Pour ne pas mélanger pensions, garde et démarches pratiques',
+        'Bon premier repère avant d’aller plus loin'
+      ],
+      firstSteps: [
+        'Faire le point sur ce qui bloque le plus vite',
+        'Regarder les ressources familiales du canton',
+        'Voir ensuite si un service spécifique comme le BRAPA ou une médiation est utile'
+      ],
+      bodyIntro: 'Une séparation mélange souvent émotions, enfants, logement et argent. Le plus utile est souvent de distinguer rapidement ce qui relève du quotidien, ce qui relève des enfants, et ce qui demande un relais spécialisé.',
+      sections: [
+        {
+          title: 'Quand cette fiche est utile',
+          items: [
+            'Début de séparation ou divorce en cours',
+            'Questions sur les enfants, le budget ou l’organisation',
+            'Besoin d’un premier repère avant des démarches plus ciblées'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Regarder les ressources cantonales pour familles en crise',
+            'Repérer ensuite si le besoin concerne pension, médiation ou protection',
+            'Passer vers le bon service sans attendre que tout soit clair'
+          ]
+        }
+      ],
+      reviewedAt: '13 avril 2026',
+      decisionBy: 'Selon la question: justice, BRAPA, médiation ou autre service compétent',
+      links: [
+        { kind: 'info', label: 'Se séparer, vivre un deuil — Vaud', url: window.MONAIDE_LINKS.FAMILY_CRISIS },
+        { kind: 'info', label: 'BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT },
+        { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'mediation-familiale',
+      title: 'Médiation familiale et conflits parentaux',
+      category: 'financier',
+      summary: 'Conflit autour des enfants, de l’organisation ou des pensions · Chercher un apaisement',
+      audience: 'Parents ou ex-conjoints qui cherchent une manière plus structurée de parler des conflits familiaux.',
+      purpose: 'Cette fiche aide à repérer quand une médiation familiale peut être une meilleure porte d’entrée qu’un conflit qui s’envenime.',
+      highlights: [
+        'Utile avant que tout se bloque',
+        'Peut aider sur les désaccords autour des enfants ou des pensions',
+        'À distinguer d’une urgence ou d’une situation de violence'
+      ],
+      firstSteps: [
+        'Voir d’abord si la médiation correspond à la situation',
+        'Chercher ensuite la bonne structure de médiation',
+        'Basculer vers un service de protection si la situation est violente'
+      ],
+      bodyIntro: 'Quand le dialogue est bloqué mais qu’il faut encore organiser les enfants, les pensions ou le quotidien, la médiation familiale peut parfois éviter que tout se durcisse encore plus.',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Conflit parental ou conjugal sans urgence immédiate',
+            'Besoin d’un cadre pour reparler de l’organisation',
+            'Désaccords persistants autour des enfants ou de l’argent'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Regarder les structures de médiation disponibles',
+            'Voir si un financement peut parfois exister',
+            'Ne pas choisir cette piste si la sécurité est en jeu'
+          ]
+        }
+      ],
+      reviewedAt: '13 avril 2026',
+      decisionBy: 'Structure de médiation ou service compétent selon la situation',
+      links: [
+        { kind: 'info', label: 'Médiations et ombudsmans — Vaud', url: window.MONAIDE_LINKS.MEDIATIONS_OMBUDSMANS },
+        { kind: 'info', label: 'Financement BRAPA de séances de médiation', url: window.MONAIDE_LINKS.BRAPA_MEDIATION },
+        { kind: 'info', label: 'Se séparer, vivre un deuil — Vaud', url: window.MONAIDE_LINKS.FAMILY_CRISIS }
+      ],
+      documentationTarget: null
+    },
+    {
       id: 'pc-familles',
       title: 'PC Familles — soutien pour parents qui travaillent',
       category: 'financier',
@@ -987,6 +1077,96 @@
         { kind: 'info', label: 'Accueil de jour des enfants — Vaud', url: window.MONAIDE_LINKS.ACCUEIL_JOUR_INFO },
         { kind: 'info', label: 'Garde d’enfants malades — Croix-Rouge', url: window.MONAIDE_LINKS.CROIX_ROUGE_GARDE_MALADE },
         { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'prestations-communales',
+      title: 'Prestations communales et aides locales',
+      category: 'financier',
+      summary: 'Commune de domicile · Aides du quotidien · Prestations souvent méconnues',
+      audience: 'Personnes ou familles qui veulent savoir si leur commune propose des aides concrètes en plus des aides cantonales.',
+      purpose: 'Cette fiche aide à penser aux aides communales souvent oubliées : frais de garde, sacs taxés, couches, sport, vélo, repas ou soutien ponctuel.',
+      highlights: [
+        'Très variable d’une commune à l’autre',
+        'Souvent utile avant ou en complément d’une aide cantonale',
+        'Bon réflexe quand le budget est serré'
+      ],
+      firstSteps: [
+        'Chercher d’abord la page sociale ou prestations de ta commune',
+        'Regarder les aides familles, enfance, sport ou quotidien',
+        'Contacter ensuite la commune si la page n’est pas claire'
+      ],
+      bodyIntro: 'Beaucoup de communes vaudoises proposent de petites aides très concrètes, mais elles restent peu visibles. Cela peut concerner des frais de garde, des aides pour les enfants, des activités ou des dépenses du quotidien.',
+      sections: [
+        {
+          title: 'À chercher d’abord',
+          items: [
+            'Aides aux familles et à l’enfance',
+            'Réduction de frais liés à la garde ou au parascolaire',
+            'Prestations pour sport, camps, repas ou dépenses ponctuelles'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Partir du site officiel de ta commune',
+            'Chercher les mots-clés aide sociale, prestations, familles ou enfance',
+            'Appeler ensuite l’administration communale si besoin'
+          ]
+        }
+      ],
+      reviewedAt: '13 avril 2026',
+      decisionBy: 'Commune de domicile concernée',
+      links: [
+        { kind: 'info', label: 'Liste officielle des communes vaudoises', url: window.MONAIDE_LINKS.COMMUNES_LIST },
+        { kind: 'info', label: 'Gérer le quotidien — familles', url: window.MONAIDE_LINKS.GERER_QUOTIDIEN_FAMILLES },
+        { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'garde-enfants-malades',
+      title: 'Garde d’enfants malades — soutien ponctuel aux parents',
+      category: 'financier',
+      summary: 'Parents qui travaillent · Enfant malade · Relais à domicile ou dépannage',
+      audience: 'Parents qui n’ont pas de solution quand un enfant tombe malade et qu’il faut organiser le quotidien rapidement.',
+      purpose: 'Cette fiche aide à repérer les relais utiles quand un enfant malade ne peut pas aller à l’école, à la crèche ou chez la maman de jour.',
+      highlights: [
+        'Utile en cas d’imprévu très concret',
+        'Peut éviter une absence non gérable au travail',
+        'À regarder aussi quand le réseau familial est épuisé'
+      ],
+      firstSteps: [
+        'Regarder la prestation de garde d’enfants malades',
+        'Vérifier ensuite si une solution de dépannage existe dans ton réseau',
+        'Contacter rapidement le service si tu es déjà bloqué·e'
+      ],
+      bodyIntro: 'Quand un enfant tombe malade, le plus dur est souvent de trouver vite une solution. Selon la situation, un service de garde à domicile ou un soutien ponctuel peut parfois éviter que tout le quotidien s’effondre.',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Enfant malade à la maison',
+            'Parent sans solution immédiate',
+            'Besoin de relais rapide pour tenir quelques heures ou quelques jours'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Contacter d’abord le service concerné',
+            'Expliquer l’âge de l’enfant et le besoin concret',
+            'Demander aussi s’il existe un autre relais pour les jours suivants'
+          ]
+        }
+      ],
+      reviewedAt: '13 avril 2026',
+      decisionBy: 'Service de soutien concerné, selon disponibilité',
+      links: [
+        { kind: 'action', label: 'Garde d’enfants malades — Croix-Rouge vaudoise', url: window.MONAIDE_LINKS.CROIX_ROUGE_GARDE_MALADE },
+        { kind: 'info', label: 'Parents-Rescousse — Croix-Rouge vaudoise', url: window.MONAIDE_LINKS.PARENTS_RESCOUSSE },
+        { kind: 'info', label: 'Accueil de jour des enfants — Vaud', url: window.MONAIDE_LINKS.ACCUEIL_JOUR_INFO }
       ],
       documentationTarget: null
     },
@@ -1742,6 +1922,51 @@
       documentationTarget: null
     },
     {
+      id: 'rupture-apprentissage',
+      title: 'Rupture d’apprentissage — premiers relais',
+      category: 'emploi',
+      summary: 'Jeunes en formation · Contrat interrompu · Besoin d’une solution rapide',
+      audience: 'Jeunes qui ont arrêté un apprentissage, risquent de le quitter ou n’ont plus de solution de formation.',
+      purpose: 'Cette fiche aide à reprendre pied rapidement après une rupture d’apprentissage ou un parcours de formation bloqué.',
+      highlights: [
+        'À ne pas laisser traîner',
+        'Bon relais pour éviter de rester seul·e après une rupture',
+        'Souvent utile avec Jet Service ou T1'
+      ],
+      firstSteps: [
+        'Contacter rapidement un guichet T1 ou l’orientation',
+        'Garder le contrat, les échanges et les documents de formation',
+        'Demander aussi un appui social ou juridique si la rupture se passe mal'
+      ],
+      bodyIntro: 'Une rupture d’apprentissage peut vite laisser un grand vide. Le plus utile est souvent de chercher tout de suite une nouvelle piste, plutôt que d’attendre seul·e que la situation se tasse.',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Apprentissage interrompu ou en train de se casser',
+            'Aucune solution de suite trouvée',
+            'Besoin d’aide pour l’orientation ou les démarches'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Contacter rapidement le guichet régional T1',
+            'Demander un conseil en orientation',
+            'Voir aussi Jet Service si tu as besoin d’un appui social ou juridique'
+          ]
+        }
+      ],
+      reviewedAt: '13 avril 2026',
+      decisionBy: 'Guichet T1 ou service d’orientation compétent',
+      links: [
+        { kind: 'action', label: 'Guichets régionaux T1', url: window.MONAIDE_LINKS.T1_GUICHETS },
+        { kind: 'action', label: 'Demander un conseil en orientation', url: window.MONAIDE_LINKS.T1_CONTACT },
+        { kind: 'info', label: 'Jet Service — CSP Vaud', url: window.MONAIDE_LINKS.JET_SERVICE }
+      ],
+      documentationTarget: null
+    },
+    {
       id: 'pro-senectute',
       title: 'Pro Senectute Vaud — services pour les 60+',
       category: 'sante',
@@ -1823,6 +2048,96 @@
       links: [
         { kind: 'info', label: 'Proches aidants — Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
         { kind: 'info', label: 'Questions fréquentes', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FAQ }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'repit-proches-aidants',
+      title: 'Proches aidant·es — répit et aides concrètes',
+      category: 'sante',
+      summary: 'Fatigue, relève, pause, soutien concret · Quand aider devient trop lourd',
+      audience: 'Personnes qui aident déjà un proche et ont besoin d’un vrai relais, pas seulement d’information.',
+      purpose: 'Cette fiche aide à repérer des solutions concrètes de répit, de relève ou d’aide à domicile quand la charge devient trop lourde.',
+      highlights: [
+        'À regarder avant l’épuisement',
+        'Concret pour tenir dans la durée',
+        'Utile même si tu aides “juste un peu” mais souvent'
+      ],
+      firstSteps: [
+        'Commencer par les infos proches aidants du canton',
+        'Voir les solutions de relève ou de répit possibles',
+        'Contacter ensuite un service pour du concret'
+      ],
+      bodyIntro: 'Quand on aide un proche, le plus dur est souvent de tenir dans la durée. Il existe parfois des solutions de relève, de répit ou d’aide à domicile, même si on ne les connaît pas encore.',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Fatigue importante ou charge mentale forte',
+            'Besoin de souffler sans abandonner le proche',
+            'Questions concrètes sur les relais à domicile'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Regarder d’abord les infos cantonales proches aidants',
+            'Demander ensuite quels relais existent dans ta région',
+            'Voir aussi les CMS si l’aide à domicile devient nécessaire'
+          ]
+        }
+      ],
+      reviewedAt: '13 avril 2026',
+      decisionBy: 'Information et orientation, selon les services disponibles',
+      links: [
+        { kind: 'info', label: 'Informations, conseils et répit — Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
+        { kind: 'info', label: 'Questions fréquentes proches aidants', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FAQ },
+        { kind: 'info', label: 'AVASAD / CMS Vaud', url: window.MONAIDE_LINKS.CMS_AVASAD }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'sante-mentale-relais',
+      title: 'Santé mentale — premiers relais',
+      category: 'sante',
+      summary: 'Anxiété, épuisement, mal-être, besoin de parler · Premiers repères utiles',
+      audience: 'Personnes qui sentent que ça ne va plus très bien et ne savent pas encore vers qui se tourner.',
+      purpose: 'Cette fiche aide à repérer des premiers relais quand on a besoin de soutien psychique, de conseil ou d’orientation.',
+      highlights: [
+        'Utile avant la crise',
+        'Pour soi ou pour un proche',
+        'Bon point d’entrée quand on ne sait pas à qui parler'
+      ],
+      firstSteps: [
+        'Regarder les ressources cantonales sur la santé mentale',
+        'Chercher un premier relais de proximité',
+        'Basculer vers l’urgence si la situation devient critique'
+      ],
+      bodyIntro: 'Quand on dort mal, qu’on s’épuise, qu’on craque souvent ou qu’on se sent perdu·e, le plus difficile est souvent de savoir où commencer. Cette fiche sert justement à ouvrir un premier repère simple.',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Mal-être qui dure',
+            'Besoin de parler ou d’être orienté·e',
+            'Inquiétude pour soi ou pour un proche'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Commencer par un premier relais simple',
+            'Demander ensuite à qui parler selon la situation',
+            'Ne pas attendre si la situation bascule en urgence'
+          ]
+        }
+      ],
+      reviewedAt: '13 avril 2026',
+      decisionBy: 'Orientation et soins selon la situation, pas une autorité unique',
+      links: [
+        { kind: 'info', label: 'Cultiver sa santé mentale — Vaud', url: window.MONAIDE_LINKS.MENTAL_HEALTH_SUPPORT },
+        { kind: 'info', label: 'Urgences — État de Vaud', url: window.MONAIDE_LINKS.URGENCES_VAUD },
+        { kind: 'info', label: 'Unisanté', url: window.MONAIDE_LINKS.UNISANTE }
       ],
       documentationTarget: null
     },
@@ -2353,6 +2668,51 @@
       documentationTarget: null
     },
     {
+      id: 'crise-psychique',
+      title: 'Crise psychique / urgence psychiatrique',
+      category: 'urgence',
+      summary: 'Crise aiguë, danger, risque suicidaire ou forte désorganisation · Agir vite',
+      audience: 'Personnes en crise psychique ou proches qui ont besoin d’un repère immédiat.',
+      purpose: 'Cette fiche aide à réagir vite quand la situation psychique devient aiguë et nécessite un relais urgent.',
+      highlights: [
+        'À utiliser quand la situation devient critique',
+        'Pour soi ou pour un proche',
+        'Ne pas rester seul·e face à une crise'
+      ],
+      firstSteps: [
+        'Appeler un service d’urgence si le danger est immédiat',
+        'Contacter les urgences psychiatriques si la crise s’aggrave',
+        'Expliquer simplement ce qui se passe maintenant'
+      ],
+      bodyIntro: 'Quand une crise psychique devient aiguë, le plus important est d’agir vite et de chercher un relais humain immédiat. Si la personne est en danger, il faut passer en mode urgence.',
+      sections: [
+        {
+          title: 'Signes qui demandent de réagir vite',
+          items: [
+            'Risque suicidaire ou propos très inquiétants',
+            'Perte de contact avec la réalité',
+            'Agitation extrême, panique ou effondrement brutal'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Appeler les urgences si le danger est immédiat',
+            'Contacter ensuite les urgences psychiatriques',
+            'Chercher un relais pour la suite une fois la crise contenue'
+          ]
+        }
+      ],
+      reviewedAt: '13 avril 2026',
+      decisionBy: 'Urgences et équipe psychiatrique compétente',
+      links: [
+        { kind: 'action', label: 'Urgences — État de Vaud', url: window.MONAIDE_LINKS.URGENCES_VAUD },
+        { kind: 'action', label: 'Urgences psychiatriques — CHUV', url: window.MONAIDE_LINKS.URGENCES_PSY_CHUV },
+        { kind: 'info', label: 'La Main Tendue 143', url: window.MONAIDE_LINKS.MAIN_TENDUE }
+      ],
+      documentationTarget: null
+    },
+    {
       id: 'distributions-alimentaires',
       title: 'Distributions alimentaires — Canton de Vaud',
       category: 'urgence',
@@ -2392,6 +2752,51 @@
         { kind: 'info', label: 'Liste complète Vaud', url: window.MONAIDE_LINKS.GUIDE_SOCIAL_FOOD },
         { kind: 'info', label: 'Cartons du Cœur', url: window.MONAIDE_LINKS.CARTONS_COEUR },
         { kind: 'info', label: 'Épiceries Caritas Vaud', url: window.MONAIDE_LINKS.CARITAS_EPICERIES }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'aide-alimentaire-region',
+      title: 'Aide alimentaire par région',
+      category: 'urgence',
+      summary: 'Repas, colis, épiceries solidaires · Trouver une solution proche de chez soi',
+      audience: 'Personnes qui ont besoin d’un appui alimentaire rapide et cherchent un lieu utile dans leur région.',
+      purpose: 'Cette fiche aide à trouver plus vite les lieux qui distribuent des repas, des colis ou des achats à petit prix dans le canton.',
+      highlights: [
+        'Très concret quand le besoin est immédiat',
+        'Utile pour partir d’une liste par région ou commune',
+        'À compléter avec les aides locales ou communales'
+      ],
+      firstSteps: [
+        'Regarder d’abord la liste par région ou commune',
+        'Vérifier les horaires avant de te déplacer',
+        'Appeler si tu ne sais pas quel lieu est le plus adapté'
+      ],
+      bodyIntro: 'Quand le frigo est vide, le plus utile est souvent de repérer vite le bon lieu près de chez soi. Selon la région, cela peut être une distribution, une épicerie solidaire ou un autre relais alimentaire.',
+      sections: [
+        {
+          title: 'Ce qu’on peut trouver',
+          items: [
+            'Distributions alimentaires',
+            'Épiceries solidaires ou sociales',
+            'Aide ponctuelle selon les associations locales'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Commencer par la liste cantonale ou régionale',
+            'Vérifier adresse, horaires et éventuelles conditions',
+            'Chercher aussi dans ta commune si besoin'
+          ]
+        }
+      ],
+      reviewedAt: '13 avril 2026',
+      decisionBy: 'Associations et dispositifs concernés, selon horaires et conditions',
+      links: [
+        { kind: 'action', label: 'Guide Social — aide alimentaire (VD)', url: window.MONAIDE_LINKS.GUIDE_SOCIAL_FOOD },
+        { kind: 'info', label: 'Cartons du Cœur', url: window.MONAIDE_LINKS.CARTONS_COEUR },
+        { kind: 'info', label: 'Épiceries Caritas', url: window.MONAIDE_LINKS.CARITAS_EPICERIES }
       ],
       documentationTarget: null
     },
@@ -2440,6 +2845,52 @@
       links: [
         { kind: 'action', label: 'MalleyPrairie', url: window.MONAIDE_LINKS.MALLEY_PRAIRIE },
         { kind: 'info', label: 'Violence Que Faire', url: window.MONAIDE_LINKS.VIOLENCE_QUE_FAIRE }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'violences-conjugales',
+      title: 'Violences conjugales / besoin de protection',
+      category: 'urgence',
+      summary: 'Violence au sein du couple ou du foyer · Protection, hébergement, orientation',
+      audience: 'Personnes qui vivent une violence dans le couple ou le foyer, ou proches qui cherchent une première porte sûre.',
+      purpose: 'Cette fiche aide à trouver rapidement une porte de protection, d’écoute et d’hébergement quand la violence est là.',
+      highlights: [
+        'Pour agir vite sans rester seul·e',
+        'Avec ou sans plainte',
+        'Utile même si on n’est pas encore prêt·e à tout raconter'
+      ],
+      firstSteps: [
+        'Chercher d’abord un lieu ou un relais sûr',
+        'Contacter un service spécialisé',
+        'Passer ensuite à la suite avec le rythme possible'
+      ],
+      bodyIntro: 'Quand il y a de la violence dans le couple ou dans le foyer, le plus important est la sécurité. Tu n’as pas besoin d’avoir tout décidé pour demander de l’aide ou trouver un premier relais.',
+      sections: [
+        {
+          title: 'Quand cette fiche est utile',
+          items: [
+            'Violence physique, psychologique, sexuelle ou économique',
+            'Besoin de parler sans être jugé·e',
+            'Besoin d’un lieu sûr ou d’un accompagnement rapide'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Contacter un service spécialisé',
+            'Chercher un hébergement si rester sur place n’est plus possible',
+            'Voir ensuite la LAVI pour l’accompagnement'
+          ]
+        }
+      ],
+      reviewedAt: '13 avril 2026',
+      decisionBy: 'Services de protection et d’accompagnement compétents',
+      links: [
+        { kind: 'action', label: 'Violence domestique — où trouver de l’aide', url: window.MONAIDE_LINKS.VIOLENCE_HELP },
+        { kind: 'action', label: 'MalleyPrairie', url: window.MONAIDE_LINKS.MALLEY_PRAIRIE },
+        { kind: 'info', label: 'Violence que faire', url: window.MONAIDE_LINKS.VIOLENCE_QUE_FAIRE },
+        { kind: 'info', label: 'LAVI Vaud', url: window.MONAIDE_LINKS.LAVI_INFO }
       ],
       documentationTarget: null
     },
