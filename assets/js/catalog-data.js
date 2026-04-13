@@ -1700,7 +1700,7 @@
     {
       id: 'croix-rouge-vaudoise',
       title: 'Croix-Rouge vaudoise — aide et accompagnement',
-      category: 'logement',
+      category: 'financier',
       summary: 'Situations de vulnérabilité · Aîné·es · Familles · Précarité',
       audience: 'Personnes fragilisées qui ont besoin d’un appui concret dans le quotidien.',
       purpose: 'La Croix-Rouge vaudoise propose des aides pratiques et un accompagnement pour des situations de vulnérabilité variées.',

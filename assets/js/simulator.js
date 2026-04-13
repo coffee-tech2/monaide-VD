@@ -516,7 +516,7 @@
       return;
     }
 
-    container.innerHTML = '<div class="results-profile-title">Récap de ta situation</div>'
+    container.innerHTML = '<div class="results-profile-title">Récapitulatif</div>'
       + '<div class="results-profile-text">Voici les réponses prises en compte pour lire les résultats juste en dessous. Tu peux en ouvrir une pour la corriger rapidement.</div>'
       + '<div class="results-profile-actions"><button type="button" class="result-link-btn" onclick="editSimulationAnswers()">Modifier mes réponses</button></div>'
       + '<div class="results-profile-grid">'

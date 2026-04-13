@@ -41,6 +41,7 @@
           { id: 'allocations-familiales', dataCat: 'financier' },
           { id: 'apg', dataCat: 'financier' },
           { id: 'csp-vaud', dataCat: 'financier' },
+          { id: 'croix-rouge-vaudoise', dataCat: 'financier' },
           { id: 'brapa', dataCat: 'financier' },
           { id: 'separation-divorce', dataCat: 'financier' },
           { id: 'mediation-familiale', dataCat: 'financier' }
@@ -67,8 +68,7 @@
           { id: 'menace-expulsion', dataCat: 'logement' },
           { id: 'lup', dataCat: 'logement' },
           { id: 'aide-logement-familles', dataCat: 'logement' },
-          { id: 'asloca', dataCat: 'logement' },
-          { id: 'croix-rouge-vaudoise', dataCat: 'logement' }
+          { id: 'asloca', dataCat: 'logement' }
         ]
       },
       {

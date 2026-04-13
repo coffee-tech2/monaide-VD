@@ -308,11 +308,6 @@
       list.innerHTML += renderResultCard(r, index);
     });
 
-    var firstContactMeta = getResultsFirstContactMeta(res);
-    if (firstContactMeta) {
-      list.innerHTML = '<div class="results-first-contact result-reveal" style="animation-delay:0.02s;"><div class="results-first-contact-title">' + escapeHtml(firstContactMeta.title || ((RESULTS_UI_CONFIG.summaryTitles || {}).firstContact || 'Qui contacter d’abord')) + '</div><div class="results-first-contact-text">' + escapeHtml(firstContactMeta.text) + '</div><div class="result-link-row"><a href="' + firstContactMeta.actionUrl + '" target="_blank" rel="noopener noreferrer" class="result-link-btn">' + escapeHtml(firstContactMeta.actionLabel) + '</a></div></div>' + list.innerHTML;
-    }
-
     if (topActions.length) {
       list.innerHTML += buildTopActionsBanner(topActions, res.length);
     }
