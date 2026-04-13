@@ -10,6 +10,10 @@
   }
 
   function renderDocumentationMenuItem(item) {
+    var shortcutHref = item && item.shortcut && item.shortcut.href ? item.shortcut.href : '';
+    if (shortcutHref) {
+      return '<a href="' + escapeDocHtml(shortcutHref) + '" target="_blank" rel="noopener noreferrer">' + escapeDocHtml(item.menuLabel) + '</a>';
+    }
     return '<a href="#' + escapeDocHtml(item.blockId) + '" onclick="event.preventDefault();openDocumentationTarget(\'' + escapeDocHtml(item.blockId) + '\',\'' + escapeDocHtml(item.accordionId) + '\')">' + escapeDocHtml(item.menuLabel) + '</a>';
   }
 
