@@ -96,8 +96,22 @@
     }).join('');
   }
 
+  function renderCatalogRenderTrust(item) {
+    if (!item || (!item.reviewedAt && !item.decisionBy && !item.reviewNote)) return '';
+    var rows = [];
+    if (item.reviewedAt) {
+      rows.push('<span class="catalog-trust-pill"><strong>Dernier contrôle</strong> ' + escapeCatalogRenderHtml(item.reviewedAt) + '</span>');
+    }
+    if (item.decisionBy) {
+      rows.push('<span class="catalog-trust-pill"><strong>Qui traite ou décide</strong> ' + escapeCatalogRenderHtml(item.decisionBy) + '</span>');
+    }
+    var note = item.reviewNote || 'Contenu relu avec une logique d’orientation sociale, mais ne remplace pas une décision officielle.';
+    return '<div class="catalog-trust"><div class="catalog-trust-row">' + rows.join('') + '</div><div class="catalog-trust-note">' + escapeCatalogRenderHtml(note) + '</div></div>';
+  }
+
   function renderCatalogRenderBody(item) {
     return '<div class="cat-card-body" style="display:none;">'
+      + renderCatalogRenderTrust(item)
       + '<p>' + (item.bodyIntro || '') + '</p>'
       + renderCatalogRenderSections(item)
       + renderCatalogRenderCallouts(item)

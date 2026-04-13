@@ -77,7 +77,7 @@
           ]
         },
         shortcut: {
-          kicker: 'Demande en ligne',
+          kicker: 'Formulaire officiel',
           title: 'Subside LAMal',
           text: 'Faire le calcul officiel puis lancer la demande.',
           href: LINKS.SUBSIDE_HOME
@@ -119,7 +119,7 @@
           ]
         },
         shortcut: {
-          kicker: 'Formulaires AI',
+          kicker: 'Formulaire officiel',
           title: 'Assurance invalidité',
           text: 'Accéder aux formulaires et démarrer la demande AI.',
           href: LINKS.AI_FORMS
@@ -162,7 +162,7 @@
           ]
         },
         shortcut: {
-          kicker: 'Demande en ligne',
+          kicker: 'Formulaire officiel',
           title: 'Bourse ou prêt OCBE',
           text: 'Faire une première demande ou un renouvellement.',
           href: LINKS.OCBE_APPLY

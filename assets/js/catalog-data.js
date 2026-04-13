@@ -17,6 +17,8 @@
         'Venir avec les courriers ou décisions déjà reçus si tu en as'
       ],
       bodyIntro: 'L’AAS est souvent la bonne première porte pour le subside LAMal, l’AVS, l’AI ou les PC. Tu peux y aller même si tu n’es pas encore sûr·e de ton droit.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'L’AAS oriente et aide à préparer, mais ne rend pas la décision finale',
       sections: [
         {
           title: 'Pour quoi',
@@ -60,6 +62,8 @@
         'Préparer revenus, taxation et police LAMal'
       ],
       bodyIntro: 'Si ton revenu est modeste, un subside peut réduire une partie de ta prime LAMal. La demande se fait en ligne ou avec une AAS. C’est l’OVAM qui rend la décision.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'OVAM',
       sections: [
         {
           title: 'Conditions',
@@ -112,6 +116,8 @@
         'Préparer identité, revenus, bail et relevés si possible'
       ],
       bodyIntro: 'Le RI veut dire <strong>Revenu d’insertion</strong>. C’est l’aide financière de dernier recours dans le canton de Vaud. Si tu n’as plus assez pour vivre, le RI peut être une piste importante. La demande passe par le CSR, qui examine ensuite le dossier.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'CSR de la région',
       sections: [
         {
           title: 'Conditions',
@@ -155,7 +161,9 @@
         'Ne pas attendre pour déposer la demande',
         'Se faire aider par son médecin, psychiatre ou psychologue si besoin'
       ],
-      bodyIntro: 'Si une maladie ou un accident t’empêche de travailler durablement, l’AI peut être une piste importante. Elle peut ouvrir une réadaptation, une formation ou certaines aides techniques. Dépose la demande sans trop attendre.',
+      bodyIntro: 'Si une maladie ou un accident t’empêche de travailler durablement, l’AI peut être une piste importante. Elle peut ouvrir une réadaptation, une formation ou certaines aides techniques. Mieux vaut ouvrir la démarche assez tôt si la situation dure.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'Office AI Vaud',
       sections: [
         {
           title: 'Conditions',
@@ -187,7 +195,7 @@
       category: 'formation',
       summary: 'Étudiant·es et apprenti·es · Ressources familiales insuffisantes',
       audience: 'Personnes en formation post-obligatoire qui ont besoin d’un soutien pour financer leurs études.',
-      purpose: 'L’OCBE peut prendre en charge une partie des frais d’études ou de formation selon les revenus du ménage.',
+      purpose: 'L’OCBE peut parfois prendre en charge une partie des frais d’études ou de formation selon les revenus du ménage.',
       highlights: [
         'Formation post-obligatoire concernée',
         'Demande à refaire en principe chaque année',
@@ -198,7 +206,9 @@
         'Faire une demande en ligne',
         'Préparer les documents fiscaux et l’attestation d’inscription'
       ],
-      bodyIntro: 'Tu es étudiant·e et tes parents n’ont pas les moyens de payer ta formation ? L’État peut prendre en charge une partie ou la totalité de tes frais.',
+      bodyIntro: 'Tu es étudiant·e, apprenti·e ou en autre formation post-obligatoire et le financement ne tient pas ? Une bourse peut parfois aider, après examen du dossier par l’OCBE.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'OCBE',
       sections: [
         {
           title: 'Conditions',
@@ -248,7 +258,7 @@
         'Faire la demande en ligne',
         'Contacter l’équipe CarteCulture si tu bloques'
       ],
-      bodyIntro: 'Tu bénéficies du RI, d’un subside LAMal ou d’une bourse ? La CarteCulture peut souvent être obtenue avec le bon justificatif. Elle donne accès à des réductions dans plus de 270 offres du canton.',
+      bodyIntro: 'Tu bénéficies déjà du RI, d’un subside LAMal ou d’une bourse ? La CarteCulture peut souvent être une piste utile avec le bon justificatif. Elle donne accès à des réductions dans plus de 270 offres du canton.',
       sections: [
         {
           title: 'Conditions',
@@ -292,6 +302,8 @@
         'Déposer ensuite la demande officielle'
       ],
       bodyIntro: 'Tu as une rente AVS ou AI mais elle ne suffit pas ? Les PC peuvent compléter le budget de base après examen des revenus, charges et fortune. Dans le canton, le plus simple est souvent de commencer par une agence AAS.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'Caisse AVS Vaud, souvent après un premier passage par l’AAS',
       sections: [
         {
           title: 'Conditions',
@@ -336,6 +348,8 @@
         'Préparer identité, revenus, bail et relevés si possible'
       ],
       bodyIntro: 'Le CSR est l’instance qui examine notamment les demandes de RI et certaines situations sociales. Il peut aussi orienter vers d’autres services du canton ou de la commune.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'CSR de la région',
       sections: [
         {
           title: 'Ce qu’il fait',
@@ -489,6 +503,8 @@
         'Lancer la démarche sans attendre'
       ],
       bodyIntro: 'Si tu as un enfant à charge, des allocations familiales peuvent exister. Mais elles ne sont pas versées automatiquement : il faut les demander par la bonne porte selon ta situation.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'Employeur, caisse de chômage ou AAS selon la situation',
       sections: [
         {
           title: 'Conditions',
@@ -805,7 +821,7 @@
         'Rassembler la décision judiciaire et les preuves de non-paiement',
         'Attendre ensuite le questionnaire ou le rendez-vous'
       ],
-      bodyIntro: 'L’autre parent ne paie pas la pension alimentaire fixée par le juge ? Le BRAPA peut avancer les montants à ta place et se charger ensuite de les récupérer. Tu n’as pas à te battre seul·e.',
+      bodyIntro: 'L’autre parent ne paie pas la pension alimentaire fixée par le juge ? Le BRAPA peut, dans certains cas, avancer les montants à ta place et se charger ensuite de les récupérer. Tu n’as pas à te battre seul·e.',
       sections: [
         {
           title: 'Conditions',
@@ -831,9 +847,146 @@
           html: 'Le BRAPA peut aussi t’aider à obtenir le versement direct des allocations familiales si l’autre parent ne te les transfère pas.'
         }
       ],
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'BRAPA',
       links: [
         { kind: 'action', label: 'Demander une avance BRAPA', url: window.MONAIDE_LINKS.BRAPA_APPLY },
         { kind: 'action', label: 'Contacter le BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'pc-familles',
+      title: 'PC Familles — soutien pour parents qui travaillent',
+      category: 'financier',
+      summary: 'Parents avec enfant de moins de 16 ans · Activité lucrative · Budget insuffisant',
+      audience: 'Parents qui travaillent mais n’arrivent pas à couvrir le minimum pour vivre malgré leur activité.',
+      purpose: 'Les PC Familles peuvent compléter un budget familial modeste et, selon la situation, aider aussi sur certains frais reconnus.',
+      highlights: [
+        'Concerne surtout les parents avec enfant de moins de 16 ans',
+        'Utile quand on travaille déjà mais que le budget ne tient pas',
+        'Peut être estimé avant de déposer le dossier'
+      ],
+      firstSteps: [
+        'Faire d’abord une estimation officielle',
+        'Préparer revenus, loyer, frais de garde et assurance maladie',
+        'Déposer ensuite la demande si la piste semble sérieuse'
+      ],
+      bodyIntro: 'Tu travailles mais le budget familial ne suffit toujours pas ? Les PC Familles peuvent parfois compléter le revenu du ménage, selon les revenus, la fortune, les enfants et certains frais reconnus.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'CRD PC Familles de la région',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Parent avec enfant de moins de 16 ans',
+            'Activité lucrative du ou des parents',
+            'Revenus insuffisants malgré le travail',
+            'Domicile dans le canton à vérifier selon les règles en vigueur'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Commencer par l’estimation officielle',
+            'Préparer fiche de salaire, loyer, frais de garde et primes LAMal',
+            'Le CRD PC Familles examine ensuite le dossier et rend la décision'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'action', label: 'Estimer son droit aux PC Familles', url: window.MONAIDE_LINKS.PC_FAMILLES_SIMULATEUR },
+        { kind: 'info', label: 'Infos PC Familles', url: window.MONAIDE_LINKS.PC_FAMILLES_INFO },
+        { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'comipp',
+      title: 'ComiPP — prestation ponctuelle pour familles',
+      category: 'financier',
+      summary: 'Parents avec enfant · Coup dur ponctuel · Aide financière ciblée',
+      audience: 'Familles qui traversent un coup dur ponctuel et ont besoin d’une aide ciblée plutôt que d’un soutien durable.',
+      purpose: 'Le ComiPP peut soutenir certaines dépenses ponctuelles pour une famille quand la situation devient difficile.',
+      highlights: [
+        'Aide ponctuelle, pas un revenu régulier',
+        'Peut être utile après un imprévu ou un moment de bascule',
+        'À regarder surtout pour les familles avec enfants'
+      ],
+      firstSteps: [
+        'Lire les conditions officielles',
+        'Préparer le motif de la demande et les justificatifs utiles',
+        'Déposer la demande sans attendre si la dépense est urgente'
+      ],
+      bodyIntro: 'Il ne s’agit pas d’une aide mensuelle, mais d’un appui ponctuel. Le ComiPP peut parfois aider une famille avec enfants quand un imprévu ou une dépense précise fait dérailler le budget.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'Service compétent du canton, sur dossier',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Famille avec enfant à charge',
+            'Coup dur ponctuel ou dépense ciblée',
+            'Budget fragilisé sans forcément entrer dans une aide durable'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Expliquer clairement la dépense ou le besoin ponctuel',
+            'Joindre les pièces utiles sur la situation familiale et financière',
+            'Attendre ensuite la réponse du service compétent'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'action', label: 'Demander une prestation ComiPP', url: window.MONAIDE_LINKS.COMIPP_APPLY },
+        { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'accueil-jour-enfants',
+      title: 'Accueil de jour & réduction des frais de garde',
+      category: 'financier',
+      summary: 'Crèche, parascolaire, UAPE, accueil familial · Tarifs selon commune ou réseau',
+      audience: 'Parents qui cherchent une solution de garde ou veulent savoir si le tarif peut être réduit.',
+      purpose: 'Cette fiche aide à repérer où demander une place d’accueil de jour et comment faire valoir une réduction de tarif quand elle existe.',
+      highlights: [
+        'Les règles varient selon la commune et le réseau',
+        'Le coût peut parfois être réduit selon le revenu',
+        'Utile aussi pour le parascolaire et l’accueil familial'
+      ],
+      firstSteps: [
+        'Chercher le réseau ou la commune de domicile',
+        'Demander le barème ou le calcul du tarif',
+        'Préparer revenu, composition du ménage et besoin de garde'
+      ],
+      bodyIntro: 'Crèche, UAPE, accueil familial ou parascolaire : le bon tarif ne tombe pas toujours tout seul. Selon la commune ou le réseau, une réduction peut parfois exister si les revenus du ménage sont modestes.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'Commune ou réseau d’accueil de jour concerné',
+      sections: [
+        {
+          title: 'À savoir',
+          items: [
+            'Les places et tarifs dépendent souvent du réseau local',
+            'La commune peut rester un passage important selon les cas',
+            'Le revenu du ménage influence souvent le coût final'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Identifier d’abord le réseau ou la commune compétente',
+            'Demander clairement le barème et les aides possibles',
+            'Préparer revenus, attestation d’activité et besoin de garde'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'info', label: 'Accueil de jour des enfants — Vaud', url: window.MONAIDE_LINKS.ACCUEIL_JOUR_INFO },
+        { kind: 'info', label: 'Garde d’enfants malades — Croix-Rouge', url: window.MONAIDE_LINKS.CROIX_ROUGE_GARDE_MALADE },
+        { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
       ],
       documentationTarget: null
     },
@@ -855,6 +1008,8 @@
         'Vérifier ensuite les indemnités avec la caisse chômage'
       ],
       bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si les conditions de cotisation et de disponibilité sont remplies. L’inscription à l’ORP doit se faire rapidement.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'ORP pour le suivi, caisse de chômage pour les indemnités',
       sections: [
         {
           title: 'Conditions',
@@ -1406,6 +1561,51 @@
       documentationTarget: null
     },
     {
+      id: 'aide-logement-familles',
+      title: 'Aide individuelle au logement (AIL) — familles',
+      category: 'logement',
+      summary: 'Familles à revenu modeste · Certaines communes seulement · Soutien sur le loyer',
+      audience: 'Familles qui paient un loyer trop lourd dans une commune où l’AIL existe.',
+      purpose: 'L’AIL peut parfois réduire une partie du loyer pour certaines familles, dans les communes concernées.',
+      highlights: [
+        'Ne concerne pas tout le canton de la même manière',
+        'Très liée à la commune de domicile',
+        'Piste utile quand le loyer pèse trop lourd pour une famille'
+      ],
+      firstSteps: [
+        'Vérifier si ta commune propose l’AIL',
+        'Préparer bail, revenus et composition du ménage',
+        'Déposer ensuite la demande si la commune confirme'
+      ],
+      bodyIntro: 'Certaines communes peuvent accorder une aide individuelle au logement pour les familles quand le loyer devient trop lourd. Ce n’est pas une aide générale : il faut d’abord vérifier si ta commune est concernée.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'Commune de domicile concernée',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Famille avec budget serré',
+            'Loyer trop lourd par rapport au revenu',
+            'Commune participant au dispositif'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Vérifier d’abord si ta commune participe',
+            'Préparer bail, revenus et composition du ménage',
+            'La commune examine ensuite la demande et répond'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'info', label: 'Infos aide au logement', url: window.MONAIDE_LINKS.AIL_INFO },
+        { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES },
+        { kind: 'info', label: 'Guide détaillé', url: '/aides-logement/' }
+      ],
+      documentationTarget: null
+    },
+    {
       id: 'menace-expulsion',
       title: 'Menace d’expulsion — que faire ?',
       category: 'logement',
@@ -1497,6 +1697,51 @@
       documentationTarget: null
     },
     {
+      id: 'guichet-t1',
+      title: 'Guichet T1 — solution de formation après l’école obligatoire',
+      category: 'emploi',
+      summary: 'Jeunes 15–25 ans · Rupture d’apprentissage ou pas de solution · Orientation',
+      audience: 'Jeunes qui n’ont pas de solution de formation, ont arrêté un apprentissage ou ne savent plus vers qui se tourner.',
+      purpose: 'Le dispositif T1 aide à retrouver une piste de formation ou d’insertion quand le parcours s’est bloqué.',
+      highlights: [
+        'Utile après une rupture d’apprentissage',
+        'Bon relais si aucune solution n’est trouvée à la rentrée',
+        'Peut réorienter vers le bon guichet régional'
+      ],
+      firstSteps: [
+        'Lire d’abord les solutions proposées',
+        'Contacter le guichet régional ou l’orientation',
+        'Expliquer simplement où le parcours s’est bloqué'
+      ],
+      bodyIntro: 'Tu n’as plus de place de formation, tu as arrêté un apprentissage ou tu ne sais plus quelle piste suivre ? Le dispositif T1 peut aider à retrouver une solution plus vite et à éviter de rester seul·e dans l’attente.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'Guichet régional T1 ou service d’orientation compétent',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Pas de solution de formation après l’école obligatoire',
+            'Rupture d’apprentissage ou d’année',
+            'Besoin d’un relais rapide vers la bonne mesure'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Regarder d’abord le guichet régional compétent',
+            'Contacter ensuite l’orientation si besoin',
+            'Venir avec les documents de formation déjà reçus si tu en as'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'info', label: 'Transition 1 — Vaud', url: window.MONAIDE_LINKS.T1_INFO },
+        { kind: 'action', label: 'Guichets régionaux T1', url: window.MONAIDE_LINKS.T1_GUICHETS },
+        { kind: 'action', label: 'Demander un conseil en orientation', url: window.MONAIDE_LINKS.T1_CONTACT }
+      ],
+      documentationTarget: null
+    },
+    {
       id: 'pro-senectute',
       title: 'Pro Senectute Vaud — services pour les 60+',
       category: 'sante',
@@ -1534,6 +1779,50 @@
       ],
       links: [
         { kind: 'action', label: 'Pro Senectute Vaud', url: window.MONAIDE_LINKS.PRO_SENECTUTE }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'espace-proches',
+      title: 'Espace Proches — soutien aux proches aidant·es',
+      category: 'sante',
+      summary: 'Personnes qui aident un proche malade, âgé ou dépendant · Infos, conseils, répit',
+      audience: 'Personnes qui soutiennent régulièrement un proche et commencent à s’épuiser ou à se perdre dans les démarches.',
+      purpose: 'Espace Proches aide à comprendre les droits, trouver du répit et repérer les soutiens possibles quand on aide déjà quelqu’un au quotidien.',
+      highlights: [
+        'Utile avant l’épuisement, pas seulement quand ça craque',
+        'Informations concrètes sur le répit et les aides',
+        'Bon repère si tu aides un parent, un conjoint ou un enfant'
+      ],
+      firstSteps: [
+        'Lire les infos proches aidants du canton',
+        'Regarder les réponses aux questions fréquentes',
+        'Demander un premier conseil si tu ne sais plus comment tenir'
+      ],
+      bodyIntro: 'Tu aides souvent un proche malade, âgé, en situation de handicap ou avec des troubles psychiques ? Espace Proches peut t’aider à faire le point sur le répit, les relais utiles et les démarches à connaître.',
+      reviewedAt: '12 avril 2026',
+      decisionBy: 'Service d’information et d’orientation, pas une autorité de décision',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Fatigue ou charge qui devient trop lourde',
+            'Besoin de relais, de répit ou d’informations',
+            'Questions sur les aides possibles pour le proche ou pour toi'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Commencer par les infos cantonales proches aidants',
+            'Regarder les FAQ pour des réponses rapides',
+            'Demander ensuite un conseil plus ciblé si besoin'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'info', label: 'Proches aidants — Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
+        { kind: 'info', label: 'Questions fréquentes', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FAQ }
       ],
       documentationTarget: null
     },
@@ -1731,7 +2020,7 @@
         'Annoncer à l’employeur ou à la caisse compétente',
         'Préparer les justificatifs liés à la naissance ou l’adoption'
       ],
-      bodyIntro: '98 jours de congé payé pour la maman, 14 jours pour le papa. C’est une assurance à laquelle tu as cotisé : pense à faire valoir ce droit.',
+      bodyIntro: 'Une allocation APG peut compenser une partie de la perte de gain liée à la maternité, à la paternité ou à l’adoption si les conditions sont remplies. Il faut en général faire valoir la demande par la bonne caisse.',
       sections: [
         {
           title: 'Conditions',

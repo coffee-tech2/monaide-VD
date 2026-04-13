@@ -12,6 +12,7 @@
           { id: 'cms', dataCat: 'sante' },
           { id: 'pro-infirmis', dataCat: 'sante' },
           { id: 'pro-senectute', dataCat: 'sante' },
+          { id: 'espace-proches', dataCat: 'sante' },
           { id: 'addiction-vaud', dataCat: 'sante' },
           { id: 'relaids', dataCat: 'sante' },
           { id: 'unisante', dataCat: 'sante' },
@@ -23,11 +24,14 @@
       },
       {
         id: 'groupe-revenus',
-        title: 'Revenus & aides financières',
-        subtitle: 'RI, allocations familiales, dettes, APG',
+        title: 'Familles, revenus & aides financières',
+        subtitle: 'RI, aides pour familles, pensions, APG, dettes',
         items: [
           { id: 'csr', dataCat: 'financier' },
           { id: 'ri', dataCat: 'financier' },
+          { id: 'pc-familles', dataCat: 'financier' },
+          { id: 'comipp', dataCat: 'financier' },
+          { id: 'accueil-jour-enfants', dataCat: 'financier' },
           { id: 'parlons-cash', dataCat: 'financier' },
           { id: 'bcma', dataCat: 'financier' },
           { id: 'allocations-familiales', dataCat: 'financier' },
@@ -39,11 +43,12 @@
       {
         id: 'groupe-emploi',
         title: 'Emploi & formation',
-        subtitle: 'Chômage, bourses, accompagnement jeunes & formation',
+        subtitle: 'Chômage, bourses, apprentissage, soutien jeunes',
         items: [
           { id: 'laci', dataCat: 'emploi' },
           { id: 'rente-pont', dataCat: 'emploi' },
           { id: 'jet-service', dataCat: 'formation emploi' },
+          { id: 'guichet-t1', dataCat: 'formation emploi' },
           { id: 'bourse', dataCat: 'formation' }
         ]
       },
@@ -54,6 +59,7 @@
         items: [
           { id: 'menace-expulsion', dataCat: 'logement' },
           { id: 'lup', dataCat: 'logement' },
+          { id: 'aide-logement-familles', dataCat: 'logement' },
           { id: 'asloca', dataCat: 'logement' },
           { id: 'croix-rouge-vaudoise', dataCat: 'logement' }
         ]
