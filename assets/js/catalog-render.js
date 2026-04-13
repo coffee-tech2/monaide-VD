@@ -99,9 +99,6 @@
   function renderCatalogRenderTrust(item) {
     if (!item || (!item.reviewedAt && !item.decisionBy && !item.reviewNote)) return '';
     var rows = [];
-    if (item.reviewedAt) {
-      rows.push('<span class="catalog-trust-pill"><strong>Dernier contrôle</strong> ' + escapeCatalogRenderHtml(item.reviewedAt) + '</span>');
-    }
     if (item.decisionBy) {
       rows.push('<span class="catalog-trust-pill"><strong>Qui traite ou décide</strong> ' + escapeCatalogRenderHtml(item.decisionBy) + '</span>');
     }
