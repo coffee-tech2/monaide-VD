@@ -1174,12 +1174,12 @@
       id: 'laci',
       title: 'Assurance chômage (LACI)',
       category: 'emploi',
-      summary: 'Personnes ayant perdu leur emploi · 12 mois cotisés AVS',
+      summary: 'Personnes ayant perdu leur emploi · 12 mois cotisés ou exceptions possibles',
       audience: 'Personnes qui ont perdu leur emploi et doivent s’inscrire rapidement au chômage.',
-      purpose: 'La LACI remplace une partie du salaire après une perte d’emploi, à condition de remplir les critères de cotisation et de disponibilité.',
+      purpose: 'La LACI peut remplacer une partie du salaire après une perte d’emploi, si les conditions de cotisation ou de libération sont remplies et si la personne est apte au placement.',
       highlights: [
         'L’inscription à l’ORP doit se faire vite',
-        'Le droit dépend des cotisations AVS',
+        'Le droit dépend des cotisations ou d’une exception reconnue',
         'Suivi ORP et recherches d’emploi obligatoires'
       ],
       firstSteps: [
@@ -1187,14 +1187,15 @@
         'Préparer les pièces de fin de contrat',
         'Vérifier ensuite les indemnités avec la caisse chômage'
       ],
-      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si les conditions de cotisation et de disponibilité sont remplies. L’inscription à l’ORP doit se faire rapidement.',
+      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois durant les 2 dernières années, ou si tu es libéré·e des conditions de cotisation dans certains cas (par exemple études, maladie ou autre motif reconnu), puis si les autres conditions sont remplies. L’inscription à l’ORP doit se faire rapidement.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'ORP pour le suivi, caisse de chômage pour les indemnités',
       sections: [
         {
           title: 'Conditions',
           items: [
-            '12 mois de cotisation AVS dans les 2 dernières années',
+            'En principe : 12 mois de cotisation durant les 2 dernières années',
+            'Ou libération possible des conditions de cotisation dans certains cas reconnus',
             'Domicile en Suisse',
             'Disponible et apte au placement'
           ]

@@ -522,11 +522,11 @@
       nom: 'Assurance chômage (LACI)',
       badge: (flags.permisL || flags.permisG || flags.permisF || flags.permisS) ? 'verifier' : 'probable',
       desc: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
-        ? 'Le chômage reste une piste possible, mais avec ton statut ou ton cadre de séjour, il faut vérifier plus finement les conditions de cotisation, de domicile et l’autorité compétente.'
-        : 'Une indemnité chômage pourrait être possible si les conditions sont remplies : cotisations suffisantes, domicile compatible et disponibilité pour un emploi.',
+        ? 'Le chômage peut rester une piste, mais avec ton statut ou ton cadre de séjour il faut vérifier plus finement les conditions de cotisation, de domicile en Suisse et l’autorité compétente.'
+        : 'Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois durant les 2 dernières années ou si tu es libéré·e des conditions de cotisation dans certains cas, puis si les autres conditions sont remplies.',
       action: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
-        ? 'Inscris-toi rapidement ou fais vérifier ta situation auprès du chômage / ORP, mais pars du principe qu’une vérification individualisée sera nécessaire.'
-        : '⚠ Attention : n’attends pas pour t’inscrire à l’ORP, car un retard peut faire perdre des indemnités.\n1. Inscris-toi rapidement à l’ORP en ligne.\n2. Prépare : certificat de travail, attestation de l’employeur, pièce d’identité.\n3. Le montant de l’indemnité est souvent de 70% du gain assuré, parfois 80% selon la situation.',
+        ? 'Inscris-toi rapidement ou fais vérifier ta situation auprès de l’ORP et d’une caisse de chômage, en partant du principe qu’une vérification individualisée sera nécessaire.'
+        : '1. Inscris-toi rapidement à l’ORP.\n2. Vérifie ensuite avec une caisse de chômage si la période de cotisation est suffisante ou si une libération des conditions de cotisation peut s’appliquer.\n3. Prépare : certificat de travail, attestation de l’employeur, pièce d’identité et documents sur ta situation récente.',
       today: 'Si ton contrat est terminé ou va se terminer, l’inscription ORP est une priorité à ne pas repousser.',
       docs: ['Certificat de travail', 'Attestation de l’employeur', 'Pièce d’identité ou permis'],
       liensLACI: true,
