@@ -113,6 +113,9 @@
       'liensCMS',
       'liensDettes',
       'liensParlonsCash',
+      'liensCommunes',
+      'liensGardeEnfants',
+      'liensAideAlimentaire',
       'liensCSR'
     ],
     sets: {
@@ -202,6 +205,21 @@
         { type: 'link', label: 'Parlons Cash', linkKey: 'PARLONS_CASH' },
         { type: 'link', label: 'CSP Vaud', linkKey: 'CSP_HOME' }
       ],
+      liensCommunes: [
+        { type: 'link', label: 'Liste des communes vaudoises', linkKey: 'COMMUNES_LIST' },
+        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Prestations communales et aides locales' }
+      ],
+      liensGardeEnfants: [
+        { type: 'link', label: 'Garde d’enfants malades — Croix-Rouge vaudoise', linkKey: 'CROIX_ROUGE_GARDE_MALADE' },
+        { type: 'link', label: 'Parents-Rescousse — Croix-Rouge vaudoise', linkKey: 'PARENTS_RESCOUSSE' },
+        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Garde d’enfants malades — soutien ponctuel aux parents' }
+      ],
+      liensAideAlimentaire: [
+        { type: 'link', label: 'Repères aide alimentaire — Guide Social', linkKey: 'GUIDE_SOCIAL_FOOD' },
+        { type: 'link', label: 'Cartons du Coeur', linkKey: 'CARTONS_COEUR' },
+        { type: 'link', label: 'Épiceries Caritas', linkKey: 'CARITAS_EPICERIES' },
+        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Aide alimentaire par région' }
+      ],
       liensCSR: [
         { type: 'csr', label: 'Trouver ton CSR' }
       ]
@@ -246,6 +264,9 @@
       { patterns: ['allocations familiales', 'apg'], text: 'Cette aide sert à soutenir une situation familiale ou une perte de gain reconnue, selon la caisse compétente et le dossier.' },
       { patterns: ['assurance invalidite'], text: 'Cette aide sert à soutenir une incapacité durable, d’abord par la réadaptation puis, selon la situation, par d’autres prestations.' },
       { patterns: ['pro infirmis'], text: 'Ce service sert à accompagner les démarches quand la santé ou le handicap compliquent le quotidien.' },
+      { patterns: ['prestations communales', 'aides locales'], text: 'Cette piste sert à repérer des aides de proximité qui dépendent souvent de la commune ou d’acteurs locaux.' },
+      { patterns: ['garde d enfants malades'], text: 'Cette aide sert à trouver un relais ponctuel quand un enfant est malade et que les parents ne peuvent pas assurer seuls.' },
+      { patterns: ['aide alimentaire par region'], text: 'Cette piste sert à repérer rapidement des distributions, épiceries sociales ou relais alimentaires près de chez toi.' },
       { patterns: ['assurance chomage'], text: 'Cette aide sert à couvrir une perte d’emploi si les conditions de chômage sont remplies et confirmées.' },
       { patterns: ['bourses', 'ocbe'], text: 'Cette aide sert à soutenir une formation quand les ressources du ménage ne suffisent pas, après examen du dossier.' },
       { patterns: ['jet service'], text: 'Ce service sert à aider à comprendre ou remplir certaines démarches de formation ou de budget.' },
@@ -257,6 +278,7 @@
     kindRules: [
       { patterns: ['centre social regional', 'aas', 'vaud pour vous', 'jet service'], value: 'Service d’orientation' },
       { patterns: ['parlons cash', 'pro infirmis', 'pro senectute', 'appartenances', 'fraternite', 'csp vaud'], value: 'Ressource complémentaire' },
+      { patterns: ['prestations communales', 'aide alimentaire par region', 'garde d enfants malades'], value: 'Ressource complémentaire' },
       { patterns: ['carteculture', 'passculture'], value: 'Ressource complémentaire' },
       { patterns: ['lavi', 'malleyprairie', 'lignes d ecoute', 'aide d urgence'], value: 'Repère urgent' }
     ],
@@ -273,6 +295,9 @@
       { patterns: ['allocations familiales'], priority: 10 },
       { patterns: ['bourses', 'ocbe'], priority: 12 },
       { patterns: ['jet service'], priority: 16 },
+      { patterns: ['prestations communales'], priority: 18 },
+      { patterns: ['garde d enfants malades'], priority: 19 },
+      { patterns: ['aide alimentaire par region'], priority: 20 },
       { patterns: ['brapa', 'parlons cash'], priority: 14 },
       { patterns: ['evam', 'aide d urgence', 'fraternite', 'appartenances'], priority: 1 },
       { patterns: ['lavi', 'malleyprairie'], priority: 1 },

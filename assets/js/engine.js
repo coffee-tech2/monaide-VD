@@ -322,6 +322,41 @@
     }));
   }
 
+  function addPrestationsCommunalesResult(res, flags) {
+    res.push(buildResult({
+      nom: 'Prestations communales et aides locales',
+      badge: (flags.aEnfants || flags.grandeCommune) ? 'probable' : 'verifier',
+      desc: flags.aEnfants
+        ? 'Selon la commune, il existe parfois des aides concrètes pour les familles : garde, loisirs, couches, repas ou frais du quotidien.'
+        : 'Certaines communes proposent des aides ponctuelles ou locales que le simulateur ne peut pas confirmer automatiquement.',
+      action: 'Regarde le site de ta commune ou appelle le CSR si tu veux savoir quelles aides locales existent vraiment près de chez toi.',
+      today: 'Garde cette piste surtout si tu as des enfants, des frais du quotidien lourds ou si tu vis dans une grande commune.',
+      liensCommunes: true
+    }));
+  }
+
+  function addGardeEnfantsMaladesResult(res, flags) {
+    res.push(buildResult({
+      nom: 'Garde d’enfants malades — soutien ponctuel aux parents',
+      badge: 'verifier',
+      desc: 'Quand un enfant tombe malade et qu’aucun parent ne peut rester à domicile, il existe parfois des relais ponctuels à demander selon les conditions du service.',
+      action: 'Vérifie rapidement les conditions de la Croix-Rouge vaudoise ou les autres relais parentaux disponibles dans ta région.',
+      today: 'Garde cette piste comme solution pratique si un enfant malade bloque le travail, la formation ou l’organisation familiale.',
+      liensGardeEnfants: true
+    }));
+  }
+
+  function addAideAlimentaireRegionResult(res, flags) {
+    res.push(buildResult({
+      nom: 'Aide alimentaire par région',
+      badge: flags.revenu === 'aucun' ? 'probable' : 'verifier',
+      desc: 'Si le budget ne suffit plus pour manger correctement, il existe des distributions, épiceries sociales ou relais alimentaires à chercher près de chez toi.',
+      action: 'Commence par regarder les relais alimentaires de ta région, puis complète si besoin avec un CSR ou une permanence sociale.',
+      today: 'Utilise cette piste surtout si la nourriture devient une difficulté immédiate.',
+      liensAideAlimentaire: true
+    }));
+  }
+
   function addFallbackResult(res) {
     res.push(buildResult({
       nom: 'Aucune aide identifiée automatiquement',
@@ -638,7 +673,10 @@
     if (invalidite && !retraite) addProInfirmisResult(res);
     if (retraite || age === '65plus') addProSenectuteResult(res);
     if (invalidite) addCmsResult(res);
+    if ((revenuFaible || loyerEleve || aEnfants) && !sansStatut) addPrestationsCommunalesResult(res, flags);
+    if (aEnfants && (enEmploi || enFormation || chomageNonIndem)) addGardeEnfantsMaladesResult(res, flags);
     if (dettes !== 'non') addDettesResult(res, dettes);
+    if ((revenuFaible || dettes === 'dettes' || dettes === 'surendette') && !sansStatut) addAideAlimentaireRegionResult(res, flags);
     if (logement.includes('Locataire') && !alreadyRI && (loyerEleve || dettes === 'loyer' || revenuFaible)) {
       addAidesLogementResult(res, grandeCommune, dettes, loyerEleve);
     }
