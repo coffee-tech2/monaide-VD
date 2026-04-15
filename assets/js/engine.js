@@ -7,7 +7,10 @@
 
   function readFieldValue(id, fallback) {
     var el = document.getElementById(id);
-    return (el && el.value) || fallback || '';
+    if (el && el.value) return el.value;
+    var checked = document.querySelector('input.choice-input[name="' + id + '"]:checked');
+    if (checked && checked.value) return checked.value;
+    return fallback || '';
   }
 
   function readAidesListe() {
