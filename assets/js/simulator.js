@@ -316,9 +316,9 @@
     var quickReviewBtn = ensureQuickReviewButton(stepEl);
     var groups = getStepQuestionGroups(step);
     var sets = getVisibleStepQuestionSets(step);
-    if (!groups.length || !sets.length) return;
+    if (!groups.length) return;
     var maxIndex = sets.length - 1;
-    if (questionIndexByStep[step] > maxIndex) questionIndexByStep[step] = maxIndex;
+    if (sets.length && questionIndexByStep[step] > maxIndex) questionIndexByStep[step] = maxIndex;
     if (questionIndexByStep[step] < 0) questionIndexByStep[step] = 0;
 
     groups.forEach(function(group) {
@@ -338,16 +338,25 @@
       });
     });
 
+    if (!sets.length || !stepEl.querySelector('.step-question-set.is-visible')) {
+      groups.forEach(function(group) {
+        group.style.display = '';
+      });
+      stepEl.querySelectorAll('.step-question-set').forEach(function(wrapper) {
+        wrapper.classList.add('is-visible');
+      });
+    }
+
     var progress = stepEl.querySelector('.step-question-progress');
-    if (progress) progress.textContent = 'Bloc ' + (questionIndexByStep[step] + 1) + ' sur ' + sets.length;
+    if (progress) progress.textContent = sets.length ? ('Bloc ' + (questionIndexByStep[step] + 1) + ' sur ' + sets.length) : '';
 
     var prevBtn = stepEl.querySelector('.step-actions .btn-prev');
     var nextBtn = stepEl.querySelector('.step-actions .btn-next');
     if (prevBtn) prevBtn.style.visibility = (step === 1 && questionIndexByStep[step] === 0) ? 'hidden' : 'visible';
     if (quickReviewBtn) quickReviewBtn.style.display = quickReviewMode ? 'inline-flex' : 'none';
     if (nextBtn) {
-      if (step === TOTAL_STEPS && questionIndexByStep[step] === maxIndex) nextBtn.innerHTML = 'Voir mes r&#233;sultats';
-      else if (questionIndexByStep[step] < maxIndex) nextBtn.innerHTML = 'Continuer &#8594;';
+      if (step === TOTAL_STEPS && (!sets.length || questionIndexByStep[step] === maxIndex)) nextBtn.innerHTML = 'Voir mes r&#233;sultats';
+      else if (sets.length && questionIndexByStep[step] < maxIndex) nextBtn.innerHTML = 'Continuer &#8594;';
       else nextBtn.innerHTML = 'Continuer &#8594;';
     }
   }
