@@ -441,7 +441,7 @@
       id: 'bcma',
       title: 'Bureau cantonal de médiation administrative (BCMA)',
       category: 'financier',
-      summary: 'Blocage avec une administration cantonale · Médiation gratuite et indépendante',
+      summary: 'Blocage avec un service cantonal · Médiation gratuite',
       audience: 'Personnes qui n’arrivent plus à avancer avec un service de l’État de Vaud ou qui ne comprennent pas une démarche administrative.',
       purpose: 'Le BCMA aide à renouer le dialogue avec une autorité cantonale, à clarifier une situation et à débloquer un différend avec l’administration.',
       highlights: [
@@ -454,7 +454,7 @@
         'Préparer les courriers ou décisions déjà reçus',
         'Contacter le BCMA pour expliquer simplement ce qui bloque'
       ],
-      bodyIntro: 'Si tu es bloqué·e avec un service de l’État de Vaud, que tu ne comprends plus une démarche ou qu’un échange tourne en rond, le BCMA peut servir d’intermédiaire. Ce n’est pas un service qui décide à la place de l’administration, mais il peut aider à débloquer la situation.',
+      bodyIntro: 'Si un échange avec l’État de Vaud tourne en rond, le BCMA peut aider à rétablir le dialogue et à clarifier la situation.',
       sections: [
         {
           title: 'Quand cette fiche est utile',
@@ -617,7 +617,7 @@
       id: 'sante-sexuelle-profa',
       title: 'Santé sexuelle — PROFA',
       category: 'sante',
-      summary: 'Contraception, dépistage, grossesse imprévue, questions intimes',
+      summary: 'Contraception, dépistage, grossesse imprévue',
       audience: 'Personnes qui ont besoin d’un lieu sûr pour parler de santé sexuelle, de contraception, de dépistage ou de grossesse.',
       purpose: 'PROFA permet de poser des questions intimes, faire un dépistage, parler de contraception ou être accompagné·e dans une grossesse imprévue.',
       highlights: [
@@ -630,7 +630,7 @@
         'Prendre contact rapidement si la question est urgente',
         'Venir avec tes questions, même si tu ne sais pas exactement quoi demander'
       ],
-      bodyIntro: 'Tu peux aller chez PROFA pour des questions de contraception, de dépistage, de grossesse imprévue, d’orientation sexuelle, d’identité de genre ou simplement si tu as besoin d’un lieu de parole sans jugement.',
+      bodyIntro: 'PROFA est une porte d’entrée simple pour la contraception, le dépistage, la grossesse imprévue et les questions intimes.',
       sections: [
         {
           title: 'Pour quoi',
@@ -668,7 +668,7 @@
       id: 'l-check',
       title: 'L-Check — santé sexuelle inclusive',
       category: 'sante',
-      summary: 'FSF, personnes trans et partenaires · Espace safe · Renens',
+      summary: 'Consultation inclusive · Renens',
       audience: 'Personnes qui cherchent un lieu plus ciblé et plus rassurant pour parler de santé sexuelle, de genre ou d’orientation.',
       purpose: 'L-Check est une consultation inclusive portée par PROFA, pensée pour les personnes qui ne se sentent pas à l’aise dans un cadre plus classique.',
       highlights: [
@@ -681,7 +681,7 @@
         'Prendre rendez-vous',
         'Choisir ce lieu si tu veux un cadre plus safe et plus ciblé'
       ],
-      bodyIntro: 'L-Check est une consultation de santé sexuelle portée par PROFA à Renens. C’est un espace plus ciblé pour les femmes* qui ont des relations sexuelles avec des femmes, les personnes trans et leurs partenaires, avec une approche safe et sans jugement.',
+      bodyIntro: 'L-Check est une consultation inclusive portée par PROFA à Renens, pensée pour un cadre plus safe et plus ciblé.',
       sections: [
         {
           title: 'Pour quoi',
@@ -717,7 +717,7 @@
       id: 'voqueer',
       title: 'Voqueer — soutien LGBTQIA+',
       category: 'sante',
-      summary: 'Infos, soutien, groupes, ressources communautaires dans le canton',
+      summary: 'Soutien, groupes et ressources LGBTQIA+',
       audience: 'Personnes LGBTQIA+ ou proches qui cherchent soutien, repères ou ressources dans le canton.',
       purpose: 'Voqueer peut être une bonne première porte si tu cherches du soutien communautaire, des groupes ou des ressources LGBTQIA+ vaudoises.',
       highlights: [
@@ -730,7 +730,7 @@
         'Regarder les groupes et ressources proposés',
         'Utiliser aussi PROFA ou L-Check si tu as besoin d’un suivi santé'
       ],
-      bodyIntro: 'Voqueer est une association vaudoise pour la diversité sexuelle et de genre. Ce n’est pas une consultation médicale, mais cela peut être une vraie bonne porte d’entrée si tu cherches du soutien, des repères, des groupes ou des ressources LGBTQIA+ dans le canton.',
+      bodyIntro: 'Voqueer peut être une bonne porte d’entrée si tu cherches du soutien, des groupes ou des ressources LGBTQIA+ dans le canton.',
       sections: [
         {
           title: 'Tu peux y trouver',
@@ -1390,7 +1390,7 @@
       id: 'passculture',
       title: 'Passculture',
       category: 'culture',
-      summary: 'Jeunes en formation postobligatoire · Tarif culturel à 5 CHF',
+      summary: 'Culture à petit prix · 5 CHF pour les jeunes en formation',
       audience: 'Jeunes en formation postobligatoire dans le canton qui veulent accéder à des sorties culturelles à petit prix.',
       purpose: 'Le Passculture donne accès à des billets à prix réduit dans de nombreux lieux culturels partenaires.',
       highlights: [
@@ -1403,7 +1403,7 @@
         'Regarder les lieux partenaires',
         'Venir avec ta carte de légitimation'
       ],
-      bodyIntro: 'Tu es au gymnase, en apprentissage ou dans une autre formation postobligatoire vaudoise ? Le Passculture donne accès à des billets à 5 CHF dans de nombreux lieux culturels du canton.',
+      bodyIntro: 'Le Passculture donne accès à des billets à 5 CHF dans de nombreux lieux culturels du canton pour les jeunes en formation.',
       sections: [
         {
           title: 'Pour qui',
@@ -1477,7 +1477,7 @@
       id: 'caritas-vetements',
       title: 'Boutiques de vêtements Caritas — Lausanne',
       category: 'petitbudget',
-      summary: 'Habits et accessoires · Seconde main · Lausanne',
+      summary: 'Habits à petit prix · Seconde main · Lausanne',
       audience: 'Personnes qui ont besoin de vêtements corrects sans dépenser trop.',
       purpose: 'Les boutiques Caritas offrent une solution simple pour s’habiller à petit prix.',
       highlights: [
@@ -1490,7 +1490,7 @@
         'Voir les repères à Lausanne',
         'Passer en boutique avec le budget que tu peux te permettre'
       ],
-      bodyIntro: 'Si tu as besoin d’habits corrects sans dépenser trop, les boutiques Caritas sont une bonne piste. Tu y trouves des vêtements, chaussures et accessoires à petit prix, simplement.',
+      bodyIntro: 'Les boutiques Caritas sont une bonne piste pour trouver des habits corrects à petit prix, simplement.',
       sections: [
         {
           title: 'Ce qu’on y trouve',
@@ -1615,7 +1615,7 @@
       id: 'emmaus',
       title: 'Emmaüs Étagnières — brocante solidaire',
       category: 'petitbudget',
-      summary: 'Meubles, objets, vêtements · Plus de 1’000m² · Étagnières',
+      summary: 'Meubles, objets, vêtements · Brocante solidaire · Étagnières',
       audience: 'Personnes qui cherchent beaucoup d’équipement d’un coup à petit prix.',
       purpose: 'Emmaüs est utile pour meubler, s’habiller ou récupérer des objets du quotidien dans un même lieu.',
       highlights: [
@@ -1628,7 +1628,7 @@
         'Regarder les horaires avant de partir',
         'Prévoir un moyen de transport si tu cherches du mobilier'
       ],
-      bodyIntro: 'Emmaüs Étagnières propose une grande brocante solidaire avec meubles, habits et objets à petit prix. C’est pratique si tu cherches beaucoup de choses au même endroit.',
+      bodyIntro: 'Emmaüs Étagnières est pratique si tu cherches meubles, habits et objets à petit prix au même endroit.',
       sections: [
         {
           title: 'Ce qu’on y trouve',
@@ -1659,7 +1659,7 @@
       id: 'brocki-lausanne',
       title: 'Armée du Salut — Brocki Lausanne',
       category: 'petitbudget',
-      summary: 'Meubles, vêtements, objets · Prix modestes · Ramassage à domicile',
+      summary: 'Meubles, vêtements, objets · Prix modestes',
       audience: 'Personnes qui cherchent une option simple d’occasion à Lausanne.',
       purpose: 'La Brocki de l’Armée du Salut permet de s’équiper à prix modestes en meubles, habits et objets du quotidien.',
       highlights: [
@@ -1672,7 +1672,7 @@
         'Regarder les horaires',
         'Prévoir le transport si tu cherches des meubles'
       ],
-      bodyIntro: 'La Brocki de l’Armée du Salut vend meubles, habits et objets du quotidien à prix modestes. C’est une bonne option si tu cherches de l’occasion simple et accessible à Lausanne.',
+      bodyIntro: 'La Brocki de l’Armée du Salut est une bonne option si tu cherches de l’occasion simple et accessible à Lausanne.',
       sections: [
         {
           title: 'Ce qu’on y trouve',
@@ -1702,7 +1702,7 @@
       id: 'croix-rouge-vaudoise',
       title: 'Croix-Rouge vaudoise — aide et accompagnement',
       category: 'financier',
-      summary: 'Situations de vulnérabilité · Aîné·es · Familles · Précarité',
+      summary: 'Aîné·es, familles, précarité · Aide concrète et orientation',
       audience: 'Personnes fragilisées qui ont besoin d’un appui concret dans le quotidien.',
       purpose: 'La Croix-Rouge vaudoise propose des aides pratiques et un accompagnement pour des situations de vulnérabilité variées.',
       highlights: [
@@ -1715,7 +1715,7 @@
         'Contacter la Croix-Rouge vaudoise',
         'Expliquer la situation concrète qui pose problème'
       ],
-      bodyIntro: 'La Croix-Rouge vaudoise propose une aide concrète aux personnes en situation de vulnérabilité : accompagnement, aide aux aîné·es, garde d’enfants malades, orientation sociale.',
+      bodyIntro: 'La Croix-Rouge vaudoise propose une aide concrète aux familles, aux aîné·es et aux personnes en situation de vulnérabilité.',
       sections: [
         {
           title: 'Prestations',
@@ -2146,7 +2146,7 @@
       id: 'addiction-vaud',
       title: 'Addiction Vaud — informations & orientation',
       category: 'sante',
-      summary: 'Alcool, drogues, jeux, écrans · Gratuit · Confidentiel',
+      summary: 'Addictions et proches · Gratuit · Confidentiel',
       audience: 'Personnes concernées par une addiction ou proches qui cherchent un premier repère.',
       purpose: 'Addiction Vaud aide à faire le point, à se situer et à trouver le bon relais dans le canton.',
       highlights: [
@@ -2159,7 +2159,7 @@
         'Faire un test si tu veux un premier repère',
         'Appeler si tu veux parler à quelqu’un sans t’engager'
       ],
-      bodyIntro: 'Tu te poses des questions sur ta consommation ou celle d’un proche ? Addiction Vaud offre des informations claires, des tests d’auto-évaluation et une orientation vers les ressources vaudoises adaptées.',
+      bodyIntro: 'Addiction Vaud aide à faire le point sur une consommation, un comportement addictif ou la situation d’un proche.',
       sections: [
         {
           title: 'Pour qui',
@@ -2194,7 +2194,7 @@
       id: 'relaids',
       title: 'Rel’Aids — réduction des risques',
       category: 'sante',
-      summary: 'Consommation de drogues · Équipe mobile · Sans inscription',
+      summary: 'Réduction des risques · Équipe mobile · Sans inscription',
       audience: 'Personnes marginalisées par leur consommation de drogues ou proches qui cherchent un contact humain.',
       purpose: 'Rel’Aids va au-devant des personnes concernées pour réduire les risques et créer un lien vers des soins ou un soutien.',
       highlights: [
@@ -2207,7 +2207,7 @@
         'Prendre contact si toi ou un proche en avez besoin',
         'Utiliser ce relais même sans projet de soin clair'
       ],
-      bodyIntro: 'Rel’Aids est une équipe de travailleurs sociaux qui se déplace sur tout le canton à la rencontre des personnes marginalisées par leur consommation de drogues. Pas de jugement, pas d’inscription.',
+      bodyIntro: 'Rel’Aids va au-devant des personnes concernées par la consommation de drogues, sans jugement ni inscription.',
       sections: [
         {
           title: 'Ce qu’ils font',
@@ -2236,7 +2236,7 @@
       id: 'unisante',
       title: 'Unisanté — soins médicaux accessibles',
       category: 'sante',
-      summary: 'Urgences · Sans-papiers · Situations précaires · 24h/24',
+      summary: 'Consultations et urgences · Lausanne',
       audience: 'Personnes qui ont besoin de soins ou d’une porte médicale accessible, y compris en situation précaire.',
       purpose: 'Unisanté est une vraie porte d’entrée santé à Lausanne pour des soins de base, des urgences et des situations complexes.',
       highlights: [
@@ -2249,7 +2249,7 @@
         'Regarder le site Unisanté',
         'Ne pas attendre si la situation médicale se dégrade'
       ],
-      bodyIntro: 'Unisanté est le centre de référence en médecine générale à Lausanne. Il accueille toute personne en consultation ou en urgence, y compris les personnes en situation précaire ou sans statut légal.',
+      bodyIntro: 'Unisanté peut être un bon premier relais pour une consultation, une urgence simple ou une orientation santé à Lausanne.',
       sections: [
         {
           title: 'Prestations',
@@ -2280,7 +2280,7 @@
       id: 'point-deau',
       title: 'Le Point d’Eau — accueil & hygiène',
       category: 'sante',
-      summary: 'Personnes en grande précarité · Sans condition · Lausanne',
+      summary: 'Douche, soins, lessive · Accueil bas seuil à Lausanne',
       audience: 'Personnes qui ont besoin d’un lieu d’accueil bas seuil avec hygiène, soins et orientation.',
       purpose: 'Le Point d’Eau permet de retrouver des services de base très concrets sans inscription ni jugement.',
       highlights: [
@@ -2293,7 +2293,7 @@
         'Regarder les horaires',
         'T’y rendre directement si tu as besoin de ces services'
       ],
-      bodyIntro: 'Le Point d’Eau est une fondation lausannoise d’accueil bas seuil. Elle propose des prestations d’hygiène, de soins et d’orientation sans inscription, sans condition et sans jugement.',
+      bodyIntro: 'Le Point d’Eau propose des prestations très concrètes de base : douches, soins, lessive et orientation, sans rendez-vous.',
       sections: [
         {
           title: 'Ce qu’on y trouve',
@@ -2364,7 +2364,7 @@
       id: 'csp-vaud',
       title: 'CSP Vaud — soutien social & permanence juridique',
       category: 'financier',
-      summary: 'Toute personne en difficulté · Gratuit · Confidentiel',
+      summary: 'Permanences sociales, juridiques et budget',
       audience: 'Personnes qui ont besoin d’un soutien social ou juridique de premier recours.',
       purpose: 'Le CSP Vaud aide sur les dettes, les démarches, le droit du bail, certaines questions juridiques et des situations sociales complexes.',
       highlights: [
@@ -2377,7 +2377,7 @@
         'Préciser si ta question est sociale, juridique ou liée aux dettes',
         'Venir avec les papiers utiles si tu en as'
       ],
-      bodyIntro: 'Le Centre Social Protestant Vaud offre des consultations sociales et juridiques gratuites pour toute personne en difficulté : dettes, droits, démarches administratives, logement, assurances sociales.',
+      bodyIntro: 'Le CSP Vaud propose plusieurs permanences utiles quand une situation devient trop compliquée à gérer seul·e.',
       sections: [
         {
           title: 'Domaines couverts',
@@ -2717,7 +2717,7 @@
       id: 'distributions-alimentaires',
       title: 'Distributions alimentaires — Canton de Vaud',
       category: 'urgence',
-      summary: 'Personnes en situation de précarité · Conditions variables',
+      summary: 'Précarité alimentaire · Conditions variables selon les lieux',
       audience: 'Personnes ou familles qui ont besoin d’un accès rapide à de la nourriture.',
       purpose: 'Cette fiche aide à repérer les distributions alimentaires et épiceries solidaires selon les régions.',
       highlights: [
@@ -2730,7 +2730,7 @@
         'Appeler si tu veux vérifier horaires et conditions',
         'Ne pas hésiter à y aller si le besoin est là'
       ],
-      bodyIntro: 'Des endroits dans tout le canton permettent d’avoir accès à des aliments gratuitement ou à prix solidaire. Tu n’as pas à avoir honte d’y aller.',
+      bodyIntro: 'Dans tout le canton, des lieux permettent d’accéder à des aliments gratuitement ou à prix solidaire.',
       sections: [
         {
           title: 'Pour qui',
@@ -2899,7 +2899,7 @@
       id: 'le-passage',
       title: 'Le Passage — accueil de jour bas seuil',
       category: 'urgence',
-      summary: 'Personnes en grande précarité · Gratuit · Sans rendez-vous · 7j/7',
+      summary: 'Grande précarité · Gratuit · Sans rendez-vous · 7j/7',
       audience: 'Personnes qui ont besoin d’un lieu où aller dans la journée pour souffler, manger, se soigner ou être orientées.',
       purpose: 'Le Passage offre un accueil de jour très accessible pour retrouver un repère concret dans une situation de grande précarité.',
       highlights: [
@@ -2912,7 +2912,7 @@
         'Demander ce dont tu as besoin',
         'Utiliser ce lieu comme premier repère si tu n’as nulle part où aller'
       ],
-      bodyIntro: 'Tu as besoin d’un endroit où aller, d’écoute, de soins ou d’un repas ? Le Passage est un espace d’accueil de jour ouvert à toutes les personnes en situation de précarité, sans inscription et sans condition.',
+      bodyIntro: 'Le Passage est un accueil de jour très accessible si tu as besoin d’un repas, d’écoute, de soins ou simplement d’un lieu où aller.',
       sections: [
         {
           title: 'Ce qu’on y trouve',
@@ -2942,7 +2942,7 @@
       id: 'vaud-pour-vous',
       title: 'Programme Vaud pour vous',
       category: 'urgence',
-      summary: 'Toute la population · Accompagnement gratuit · Démarches administratives',
+      summary: 'Accompagnement gratuit · Démarches administratives',
       audience: 'Personnes qui ne savent pas à quelles aides elles ont droit ou qui n’arrivent plus à faire les démarches seules.',
       purpose: 'Vaud pour vous aide à trouver la bonne porte et à avancer dans les démarches administratives avec un accompagnement humain.',
       highlights: [
@@ -2955,7 +2955,7 @@
         'Expliquer ce qui bloque dans les démarches',
         'Demander une orientation ou un accompagnement'
       ],
-      bodyIntro: 'Tu ne sais pas quelle aide ou quel service pourrait te concerner, ou tu n’arrives pas à faire tes démarches ? Le programme Vaud pour vous met à disposition des professionnel·le·s qui t’accompagnent gratuitement.',
+      bodyIntro: 'Vaud pour vous aide à trouver la bonne porte quand tout paraît flou ou que les démarches n’avancent plus.',
       sections: [
         {
           title: 'Pour qui',
