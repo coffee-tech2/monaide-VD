@@ -97,13 +97,7 @@
   }
 
   function renderCatalogRenderTrust(item) {
-    if (!item || (!item.reviewedAt && !item.decisionBy && !item.reviewNote)) return '';
-    var rows = [];
-    if (item.decisionBy) {
-      rows.push('<span class="catalog-trust-pill"><strong>Qui traite ou décide</strong> ' + escapeCatalogRenderHtml(item.decisionBy) + '</span>');
-    }
-    var note = item.reviewNote || 'Contenu relu avec une logique d’orientation sociale, mais ne remplace pas une décision officielle.';
-    return '<div class="catalog-trust"><div class="catalog-trust-row">' + rows.join('') + '</div><div class="catalog-trust-note">' + escapeCatalogRenderHtml(note) + '</div></div>';
+    return '';
   }
 
   function renderCatalogRenderBody(item) {
