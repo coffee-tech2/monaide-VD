@@ -620,6 +620,20 @@
     }));
   }
 
+  function addRuptureApprentissageResult(res, flags) {
+    if (flags.age !== '18-25' || flags.enEmploi || (!flags.enFormation && !flags.etudiant)) return;
+
+    res.push(buildResult({
+      nom: 'Rupture d’apprentissage — premiers relais',
+      badge: 'verifier',
+      desc: 'Si ta formation se bloque, si un apprentissage s’arrête ou si tu n’as plus de solution claire, cette piste peut aider à rebondir plus vite.',
+      action: 'Regarde d’abord les guichets T1 ou demande un conseil en orientation. Jet Service peut compléter si tu as aussi besoin d’un appui social, budget ou démarches.',
+      today: 'Garde cette piste si la suite de ta formation devient floue ou se casse.',
+      docs: ['Contrat d’apprentissage ou documents de formation si tu en as', 'Courriers reçus', 'Questions notées à l’avance'],
+      liensRuptureApprentissage: true
+    }));
+  }
+
   window.computeSimulationResults = function(profile) {
     profile = profile || {};
     var flags = finalizeSimulationFlags(deriveSimulationFlags(profile));
@@ -669,6 +683,7 @@
     if (enFormation && !alreadyBourse) addOcbeResult(res, flags);
     if (incapacite !== 'non' && !alreadyAI) addAiResult(res, flags);
     addJetServiceResult(res, flags);
+    addRuptureApprentissageResult(res, flags);
 
     if (invalidite && !retraite) addProInfirmisResult(res);
     if (retraite || age === '65plus') addProSenectuteResult(res);

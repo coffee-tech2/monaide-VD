@@ -48,7 +48,7 @@
       id: 'subside-lamal',
       title: 'Subside LAMal — réduction de prime',
       category: 'sante',
-      summary: 'Revenus modestes · Toute personne domiciliée dans le canton',
+      summary: 'Prime maladie trop lourde · Revenus modestes · Décision OVAM',
       audience: 'Personnes dont la prime maladie pèse trop lourd dans le budget.',
       purpose: 'Le subside LAMal réduit le coût de l’assurance maladie de base selon les revenus, la fortune et la composition du ménage.',
       highlights: [
@@ -61,7 +61,7 @@
         'Faire la demande en ligne ou avec une agence AAS',
         'Préparer revenus, taxation et police LAMal'
       ],
-      bodyIntro: 'Si ton revenu est modeste, un subside peut réduire une partie de ta prime LAMal. La demande se fait en ligne ou avec une AAS. C’est l’OVAM qui rend la décision.',
+      bodyIntro: 'Quand la prime LAMal pèse trop lourd, un subside peut parfois réduire la facture. La demande se fait en ligne ou avec une AAS, puis l’OVAM rend la décision.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'OVAM',
       sections: [
@@ -102,7 +102,7 @@
       id: 'ri',
       title: 'Revenu d’insertion (RI)',
       category: 'financier',
-      summary: 'Adultes sans ressources suffisantes · Aide de dernier recours',
+      summary: 'Minimum pour vivre · Dernier recours · Dossier CSR',
       audience: 'Personnes qui n’ont plus assez pour vivre ou dont les revenus ne couvrent plus le minimum.',
       purpose: 'Le RI peut aider à couvrir le minimum pour vivre quand les revenus ne suffisent plus. La demande se fait via le CSR.',
       highlights: [
@@ -115,7 +115,7 @@
         'Prendre un premier rendez-vous, même sans dossier parfait',
         'Préparer identité, revenus, bail et relevés si possible'
       ],
-      bodyIntro: 'Le RI veut dire <strong>Revenu d’insertion</strong>. C’est l’aide financière de dernier recours dans le canton de Vaud. Si tu n’as plus assez pour vivre, le RI peut être une piste importante. La demande passe par le CSR, qui examine ensuite le dossier.',
+      bodyIntro: 'Le RI est l’aide financière de dernier recours dans le canton de Vaud. Si tu n’as plus assez pour vivre, la piste passe par le CSR, qui examine ensuite le dossier.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'CSR de la région',
       sections: [
@@ -148,7 +148,7 @@
       id: 'ai',
       title: 'Assurance invalidité (AI)',
       category: 'sante',
-      summary: 'Incapacité de travail durable · Dès 40% d’incapacité',
+      summary: 'Santé durablement limitée · Réadaptation puis rente selon le dossier',
       audience: 'Personnes dont la santé limite durablement la capacité de travail.',
       purpose: 'L’AI peut ouvrir des mesures de réadaptation, financer certaines aides techniques ou, selon la situation, conduire à une rente.',
       highlights: [
@@ -161,7 +161,7 @@
         'Ne pas attendre pour déposer la demande',
         'Se faire aider par son médecin, psychiatre ou psychologue si besoin'
       ],
-      bodyIntro: 'Si une maladie ou un accident t’empêche de travailler durablement, l’AI peut être une piste importante. Elle peut ouvrir une réadaptation, une formation ou certaines aides techniques. Mieux vaut ouvrir la démarche assez tôt si la situation dure.',
+      bodyIntro: 'Si une maladie ou un accident limite durablement le travail, l’AI peut ouvrir une réadaptation, des aides techniques ou, selon le dossier, une rente.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'Office AI Vaud',
       sections: [
@@ -193,7 +193,7 @@
       id: 'bourse',
       title: 'Bourses d’études — OCBE',
       category: 'formation',
-      summary: 'Étudiant·es et apprenti·es · Ressources familiales insuffisantes',
+      summary: 'Formation post-obligatoire · Ressources du ménage insuffisantes',
       audience: 'Personnes en formation post-obligatoire qui ont besoin d’un soutien pour financer leurs études.',
       purpose: 'L’OCBE peut parfois prendre en charge une partie des frais d’études ou de formation selon les revenus du ménage.',
       highlights: [
@@ -206,7 +206,7 @@
         'Faire une demande en ligne',
         'Préparer les documents fiscaux et l’attestation d’inscription'
       ],
-      bodyIntro: 'Tu es étudiant·e, apprenti·e ou en autre formation post-obligatoire et le financement ne tient pas ? Une bourse peut parfois aider, après examen du dossier par l’OCBE.',
+      bodyIntro: 'Quand le financement d’une formation post-obligatoire ne tient pas, une bourse peut parfois aider après examen du dossier par l’OCBE.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'OCBE',
       sections: [
@@ -859,7 +859,7 @@
       id: 'separation-divorce',
       title: 'Séparation, divorce et premiers repères',
       category: 'financier',
-      summary: 'Parents ou couples qui se séparent · Enfants, budget, démarches à clarifier',
+      summary: 'Séparation ou divorce · Enfants, budget, démarches à clarifier',
       audience: 'Personnes en séparation ou divorce qui ne savent pas encore par où commencer pour les aspects familiaux et pratiques.',
       purpose: 'Cette fiche aide à repérer les premières démarches utiles quand une séparation bouleverse le quotidien, le budget ou l’organisation avec les enfants.',
       highlights: [
@@ -872,7 +872,7 @@
         'Regarder les ressources familiales du canton',
         'Voir ensuite si un service spécifique comme le BRAPA ou une médiation est utile'
       ],
-      bodyIntro: 'Une séparation mélange souvent émotions, enfants, logement et argent. Le plus utile est souvent de distinguer rapidement ce qui relève du quotidien, ce qui relève des enfants, et ce qui demande un relais spécialisé.',
+      bodyIntro: 'Une séparation mélange souvent enfants, logement, argent et démarches. Le plus utile est de distinguer vite ce qui relève du quotidien, des enfants et d’un relais spécialisé.',
       sections: [
         {
           title: 'Quand cette fiche est utile',
@@ -904,7 +904,7 @@
       id: 'mediation-familiale',
       title: 'Médiation familiale et conflits parentaux',
       category: 'financier',
-      summary: 'Conflit autour des enfants, de l’organisation ou des pensions · Chercher un apaisement',
+      summary: 'Conflit parental ou conjugal · Cadre pour reparler des enfants ou du budget',
       audience: 'Parents ou ex-conjoints qui cherchent une manière plus structurée de parler des conflits familiaux.',
       purpose: 'Cette fiche aide à repérer quand une médiation familiale peut être une meilleure porte d’entrée qu’un conflit qui s’envenime.',
       highlights: [
@@ -917,7 +917,7 @@
         'Chercher ensuite la bonne structure de médiation',
         'Basculer vers un service de protection si la situation est violente'
       ],
-      bodyIntro: 'Quand le dialogue est bloqué mais qu’il faut encore organiser les enfants, les pensions ou le quotidien, la médiation familiale peut parfois éviter que tout se durcisse encore plus.',
+      bodyIntro: 'Quand le dialogue est bloqué mais qu’il faut encore organiser les enfants ou le budget, la médiation familiale peut parfois éviter que tout se durcisse.',
       sections: [
         {
           title: 'Quand cette piste est utile',
@@ -1084,7 +1084,7 @@
       id: 'prestations-communales',
       title: 'Prestations communales et aides locales',
       category: 'financier',
-      summary: 'Commune de domicile · Aides du quotidien · Prestations souvent méconnues',
+      summary: 'Commune de domicile · Aides locales du quotidien souvent oubliées',
       audience: 'Personnes ou familles qui veulent savoir si leur commune propose des aides concrètes en plus des aides cantonales.',
       purpose: 'Cette fiche aide à penser aux aides communales souvent oubliées : frais de garde, sacs taxés, couches, sport, vélo, repas ou soutien ponctuel.',
       highlights: [
@@ -1097,7 +1097,7 @@
         'Regarder les aides familles, enfance, sport ou quotidien',
         'Contacter ensuite la commune si la page n’est pas claire'
       ],
-      bodyIntro: 'Beaucoup de communes vaudoises proposent de petites aides très concrètes, mais elles restent peu visibles. Cela peut concerner des frais de garde, des aides pour les enfants, des activités ou des dépenses du quotidien.',
+      bodyIntro: 'Beaucoup de communes vaudoises proposent de petites aides très concrètes, mais elles restent peu visibles. Cela peut concerner la garde, les enfants, les loisirs ou des dépenses du quotidien.',
       sections: [
         {
           title: 'À chercher d’abord',
@@ -1129,7 +1129,7 @@
       id: 'garde-enfants-malades',
       title: 'Garde d’enfants malades — soutien ponctuel aux parents',
       category: 'financier',
-      summary: 'Parents qui travaillent · Enfant malade · Relais à domicile ou dépannage',
+      summary: 'Enfant malade · Parent sans solution immédiate · Relais ponctuel',
       audience: 'Parents qui n’ont pas de solution quand un enfant tombe malade et qu’il faut organiser le quotidien rapidement.',
       purpose: 'Cette fiche aide à repérer les relais utiles quand un enfant malade ne peut pas aller à l’école, à la crèche ou chez la maman de jour.',
       highlights: [
@@ -1142,7 +1142,7 @@
         'Vérifier ensuite si une solution de dépannage existe dans ton réseau',
         'Contacter rapidement le service si tu es déjà bloqué·e'
       ],
-      bodyIntro: 'Quand un enfant tombe malade, le plus dur est souvent de trouver vite une solution. Selon la situation, un service de garde à domicile ou un soutien ponctuel peut parfois éviter que tout le quotidien s’effondre.',
+      bodyIntro: 'Quand un enfant tombe malade, le plus dur est souvent de trouver vite une solution. Un service de garde à domicile ou un relais ponctuel peut parfois aider à tenir.',
       sections: [
         {
           title: 'Quand cette piste est utile',
@@ -1926,7 +1926,7 @@
       id: 'rupture-apprentissage',
       title: 'Rupture d’apprentissage — premiers relais',
       category: 'emploi',
-      summary: 'Jeunes en formation · Contrat interrompu · Besoin d’une solution rapide',
+      summary: 'Jeunes en formation · Parcours bloqué · Rebond rapide',
       audience: 'Jeunes qui ont arrêté un apprentissage, risquent de le quitter ou n’ont plus de solution de formation.',
       purpose: 'Cette fiche aide à reprendre pied rapidement après une rupture d’apprentissage ou un parcours de formation bloqué.',
       highlights: [
@@ -1939,7 +1939,7 @@
         'Garder le contrat, les échanges et les documents de formation',
         'Demander aussi un appui social ou juridique si la rupture se passe mal'
       ],
-      bodyIntro: 'Une rupture d’apprentissage peut vite laisser un grand vide. Le plus utile est souvent de chercher tout de suite une nouvelle piste, plutôt que d’attendre seul·e que la situation se tasse.',
+      bodyIntro: 'Une rupture d’apprentissage peut vite laisser un grand vide. Le plus utile est souvent de chercher tout de suite une nouvelle piste, plutôt que d’attendre seul·e.',
       sections: [
         {
           title: 'Quand cette piste est utile',
@@ -2056,7 +2056,7 @@
       id: 'repit-proches-aidants',
       title: 'Proches aidant·es — répit et aides concrètes',
       category: 'sante',
-      summary: 'Fatigue, relève, pause, soutien concret · Quand aider devient trop lourd',
+      summary: 'Relève, pause, aide à domicile · Quand la charge devient trop lourde',
       audience: 'Personnes qui aident déjà un proche et ont besoin d’un vrai relais, pas seulement d’information.',
       purpose: 'Cette fiche aide à repérer des solutions concrètes de répit, de relève ou d’aide à domicile quand la charge devient trop lourde.',
       highlights: [
@@ -2069,7 +2069,7 @@
         'Voir les solutions de relève ou de répit possibles',
         'Contacter ensuite un service pour du concret'
       ],
-      bodyIntro: 'Quand on aide un proche, le plus dur est souvent de tenir dans la durée. Il existe parfois des solutions de relève, de répit ou d’aide à domicile, même si on ne les connaît pas encore.',
+      bodyIntro: 'Quand on aide un proche, le plus dur est souvent de tenir dans la durée. Il existe parfois des solutions de relève, de répit ou d’aide à domicile.',
       sections: [
         {
           title: 'Quand cette piste est utile',
@@ -2101,7 +2101,7 @@
       id: 'sante-mentale-relais',
       title: 'Santé mentale — premiers relais',
       category: 'sante',
-      summary: 'Anxiété, épuisement, mal-être, besoin de parler · Premiers repères utiles',
+      summary: 'Mal-être, anxiété, épuisement · Premiers relais',
       audience: 'Personnes qui sentent que ça ne va plus très bien et ne savent pas encore vers qui se tourner.',
       purpose: 'Cette fiche aide à repérer des premiers relais quand on a besoin de soutien psychique, de conseil ou d’orientation.',
       highlights: [
@@ -2114,7 +2114,7 @@
         'Chercher un premier relais de proximité',
         'Basculer vers l’urgence si la situation devient critique'
       ],
-      bodyIntro: 'Quand on dort mal, qu’on s’épuise, qu’on craque souvent ou qu’on se sent perdu·e, le plus difficile est souvent de savoir où commencer. Cette fiche sert justement à ouvrir un premier repère simple.',
+      bodyIntro: 'Quand on dort mal, qu’on s’épuise ou qu’on se sent perdu·e, le plus difficile est souvent de savoir où commencer. Cette fiche ouvre un premier repère simple.',
       sections: [
         {
           title: 'Quand cette piste est utile',
@@ -2672,7 +2672,7 @@
       id: 'crise-psychique',
       title: 'Crise psychique / urgence psychiatrique',
       category: 'urgence',
-      summary: 'Crise aiguë, danger, risque suicidaire ou forte désorganisation · Agir vite',
+      summary: 'Crise, angoisse aiguë, idées suicidaires · Urgence psychique',
       audience: 'Personnes en crise psychique ou proches qui ont besoin d’un repère immédiat.',
       purpose: 'Cette fiche aide à réagir vite quand la situation psychique devient aiguë et nécessite un relais urgent.',
       highlights: [
@@ -2685,7 +2685,7 @@
         'Contacter les urgences psychiatriques si la crise s’aggrave',
         'Expliquer simplement ce qui se passe maintenant'
       ],
-      bodyIntro: 'Quand une crise psychique devient aiguë, le plus important est d’agir vite et de chercher un relais humain immédiat. Si la personne est en danger, il faut passer en mode urgence.',
+      bodyIntro: 'Quand la situation bascule en crise psychique, il faut agir vite et chercher un relais humain immédiat. Si la personne est en danger, il faut passer en mode urgence.',
       sections: [
         {
           title: 'Signes qui demandent de réagir vite',
@@ -2760,7 +2760,7 @@
       id: 'aide-alimentaire-region',
       title: 'Aide alimentaire par région',
       category: 'urgence',
-      summary: 'Repas, colis, épiceries solidaires · Trouver une solution proche de chez soi',
+      summary: 'Repas, colis, épiceries solidaires · Trouver vite un relais proche',
       audience: 'Personnes qui ont besoin d’un appui alimentaire rapide et cherchent un lieu utile dans leur région.',
       purpose: 'Cette fiche aide à trouver plus vite les lieux qui distribuent des repas, des colis ou des achats à petit prix dans le canton.',
       highlights: [
@@ -2773,7 +2773,7 @@
         'Vérifier les horaires avant de te déplacer',
         'Appeler si tu ne sais pas quel lieu est le plus adapté'
       ],
-      bodyIntro: 'Quand le frigo est vide, le plus utile est souvent de repérer vite le bon lieu près de chez soi. Selon la région, cela peut être une distribution, une épicerie solidaire ou un autre relais alimentaire.',
+      bodyIntro: 'Quand le frigo est vide, le plus utile est souvent de repérer vite le bon lieu près de chez soi : distribution, épicerie solidaire ou autre relais alimentaire.',
       sections: [
         {
           title: 'Ce qu’on peut trouver',
@@ -2853,7 +2853,7 @@
       id: 'violences-conjugales',
       title: 'Violences conjugales / besoin de protection',
       category: 'urgence',
-      summary: 'Violence au sein du couple ou du foyer · Protection, hébergement, orientation',
+      summary: 'Violence au foyer · Protection, hébergement, premiers relais',
       audience: 'Personnes qui vivent une violence dans le couple ou le foyer, ou proches qui cherchent une première porte sûre.',
       purpose: 'Cette fiche aide à trouver rapidement une porte de protection, d’écoute et d’hébergement quand la violence est là.',
       highlights: [
@@ -2866,7 +2866,7 @@
         'Contacter un service spécialisé',
         'Passer ensuite à la suite avec le rythme possible'
       ],
-      bodyIntro: 'Quand il y a de la violence dans le couple ou dans le foyer, le plus important est la sécurité. Tu n’as pas besoin d’avoir tout décidé pour demander de l’aide ou trouver un premier relais.',
+      bodyIntro: 'Quand il y a de la violence dans le couple ou dans le foyer, le plus important est la sécurité. Tu n’as pas besoin d’avoir tout décidé pour demander un premier relais.',
       sections: [
         {
           title: 'Quand cette fiche est utile',

@@ -1,20 +1,56 @@
   window.MONAIDE_CATALOG_LAYOUT_DATA = {
     groups: [
       {
+        id: 'groupe-revenus',
+        title: 'Familles, revenus & aides financières',
+        subtitle: 'RI, aides familles, pensions, dettes et budget',
+        items: [
+          { id: 'csr', dataCat: 'financier' },
+          { id: 'ri', dataCat: 'financier' },
+          { id: 'prestations-communales', dataCat: 'financier' },
+          { id: 'allocations-familiales', dataCat: 'financier' },
+          { id: 'apg', dataCat: 'financier' },
+          { id: 'pc-familles', dataCat: 'financier' },
+          { id: 'comipp', dataCat: 'financier' },
+          { id: 'brapa', dataCat: 'financier' },
+          { id: 'separation-divorce', dataCat: 'financier' },
+          { id: 'mediation-familiale', dataCat: 'financier' },
+          { id: 'accueil-jour-enfants', dataCat: 'financier' },
+          { id: 'garde-enfants-malades', dataCat: 'financier' },
+          { id: 'parlons-cash', dataCat: 'financier' },
+          { id: 'bcma', dataCat: 'financier' },
+          { id: 'csp-vaud', dataCat: 'financier' },
+          { id: 'croix-rouge-vaudoise', dataCat: 'financier' }
+        ]
+      },
+      {
+        id: 'groupe-emploi',
+        title: 'Emploi & formation',
+        subtitle: 'Chômage, bourses, apprentissage et orientation',
+        items: [
+          { id: 'laci', dataCat: 'emploi' },
+          { id: 'bourse', dataCat: 'formation' },
+          { id: 'jet-service', dataCat: 'formation emploi' },
+          { id: 'guichet-t1', dataCat: 'formation emploi' },
+          { id: 'rupture-apprentissage', dataCat: 'formation emploi' },
+          { id: 'rente-pont', dataCat: 'emploi' }
+        ]
+      },
+      {
         id: 'groupe-sante',
         title: 'Santé & assurances',
-        subtitle: 'LAMal, AI, PC, soins, accompagnement, santé sexuelle',
+        subtitle: 'LAMal, AI, PC, soins, proches aidant·es',
         items: [
-          { id: 'aas', dataCat: 'sante' },
           { id: 'subside-lamal', dataCat: 'sante' },
+          { id: 'aas', dataCat: 'sante' },
           { id: 'ai', dataCat: 'sante' },
           { id: 'pc', dataCat: 'sante' },
           { id: 'cms', dataCat: 'sante' },
-          { id: 'pro-infirmis', dataCat: 'sante' },
-          { id: 'pro-senectute', dataCat: 'sante' },
           { id: 'espace-proches', dataCat: 'sante' },
           { id: 'repit-proches-aidants', dataCat: 'sante' },
           { id: 'sante-mentale-relais', dataCat: 'sante' },
+          { id: 'pro-infirmis', dataCat: 'sante' },
+          { id: 'pro-senectute', dataCat: 'sante' },
           { id: 'addiction-vaud', dataCat: 'sante' },
           { id: 'relaids', dataCat: 'sante' },
           { id: 'unisante', dataCat: 'sante' },
@@ -22,42 +58,6 @@
           { id: 'sante-sexuelle-profa', dataCat: 'sante' },
           { id: 'l-check', dataCat: 'sante' },
           { id: 'voqueer', dataCat: 'sante' }
-        ]
-      },
-      {
-        id: 'groupe-revenus',
-        title: 'Familles, revenus & aides financières',
-        subtitle: 'RI, aides pour familles, pensions, APG, dettes',
-        items: [
-          { id: 'csr', dataCat: 'financier' },
-          { id: 'ri', dataCat: 'financier' },
-          { id: 'pc-familles', dataCat: 'financier' },
-          { id: 'comipp', dataCat: 'financier' },
-          { id: 'prestations-communales', dataCat: 'financier' },
-          { id: 'accueil-jour-enfants', dataCat: 'financier' },
-          { id: 'garde-enfants-malades', dataCat: 'financier' },
-          { id: 'parlons-cash', dataCat: 'financier' },
-          { id: 'bcma', dataCat: 'financier' },
-          { id: 'allocations-familiales', dataCat: 'financier' },
-          { id: 'apg', dataCat: 'financier' },
-          { id: 'csp-vaud', dataCat: 'financier' },
-          { id: 'croix-rouge-vaudoise', dataCat: 'financier' },
-          { id: 'brapa', dataCat: 'financier' },
-          { id: 'separation-divorce', dataCat: 'financier' },
-          { id: 'mediation-familiale', dataCat: 'financier' }
-        ]
-      },
-      {
-        id: 'groupe-emploi',
-        title: 'Emploi & formation',
-        subtitle: 'Chômage, bourses, apprentissage, soutien jeunes',
-        items: [
-          { id: 'laci', dataCat: 'emploi' },
-          { id: 'rente-pont', dataCat: 'emploi' },
-          { id: 'jet-service', dataCat: 'formation emploi' },
-          { id: 'guichet-t1', dataCat: 'formation emploi' },
-          { id: 'rupture-apprentissage', dataCat: 'formation emploi' },
-          { id: 'bourse', dataCat: 'formation' }
         ]
       },
       {
@@ -69,6 +69,35 @@
           { id: 'lup', dataCat: 'logement' },
           { id: 'aide-logement-familles', dataCat: 'logement' },
           { id: 'asloca', dataCat: 'logement' }
+        ]
+      },
+      {
+        id: 'groupe-urgences',
+        title: 'Urgences & premiers secours psychosociaux',
+        subtitle: 'Violences, crise, aide alimentaire, écoute',
+        items: [
+          { id: 'violences-conjugales', dataCat: 'urgence' },
+          { id: 'malleyprairie', dataCat: 'urgence' },
+          { id: 'lavi', dataCat: 'urgence' },
+          { id: 'crise-psychique', dataCat: 'urgence' },
+          { id: 'aide-alimentaire-region', dataCat: 'urgence' },
+          { id: 'distributions-alimentaires', dataCat: 'urgence' },
+          { id: 'lignes-ecoute', dataCat: 'urgence' },
+          { id: 'le-passage', dataCat: 'urgence' },
+          { id: 'vaud-pour-vous', dataCat: 'urgence' }
+        ]
+      },
+      {
+        id: 'groupe-migration',
+        title: 'Migration',
+        subtitle: 'Asile, séjour, accompagnement et intégration',
+        items: [
+          { id: 'fraternite', dataCat: 'migration' },
+          { id: 'evam', dataCat: 'migration' },
+          { id: 'aide-urgence-sejour', dataCat: 'migration urgence' },
+          { id: 'appartenances', dataCat: 'migration' },
+          { id: 'caritas-migration', dataCat: 'migration' },
+          { id: 'foyer-evam-femmes', dataCat: 'migration' }
         ]
       },
       {
@@ -85,41 +114,12 @@
         ]
       },
       {
-        id: 'groupe-migration',
-        title: 'Migration',
-        subtitle: 'Asile, accompagnement, intégration',
-        items: [
-          { id: 'evam', dataCat: 'migration' },
-          { id: 'aide-urgence-sejour', dataCat: 'migration urgence' },
-          { id: 'appartenances', dataCat: 'migration' },
-          { id: 'fraternite', dataCat: 'migration' },
-          { id: 'caritas-migration', dataCat: 'migration' },
-          { id: 'foyer-evam-femmes', dataCat: 'migration' }
-        ]
-      },
-      {
         id: 'groupe-culture',
         title: 'Loisirs & culture',
         subtitle: 'CarteCulture, offres solidaires',
         items: [
           { id: 'passculture', dataCat: 'culture formation' },
           { id: 'carte', dataCat: 'culture' }
-        ]
-      },
-      {
-        id: 'groupe-urgences',
-        title: 'Urgences & premiers secours psychosociaux',
-        subtitle: 'Lignes d’écoute, aide aux victimes, nourriture',
-        items: [
-          { id: 'lignes-ecoute', dataCat: 'urgence' },
-          { id: 'crise-psychique', dataCat: 'urgence' },
-          { id: 'lavi', dataCat: 'urgence' },
-          { id: 'violences-conjugales', dataCat: 'urgence' },
-          { id: 'aide-alimentaire-region', dataCat: 'urgence' },
-          { id: 'distributions-alimentaires', dataCat: 'urgence' },
-          { id: 'malleyprairie', dataCat: 'urgence' },
-          { id: 'le-passage', dataCat: 'urgence' },
-          { id: 'vaud-pour-vous', dataCat: 'urgence' }
         ]
       }
     ]
