@@ -537,7 +537,7 @@
       1: [['commune', 'age'], ['situation_familiale', 'statut_sejour']],
       2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
       3: [['revenu', 'fortune', 'prime_lamal'], ['aides_actuelles']],
-      4: [['incapacite', 'dettes']]
+      4: [['incapacite', 'dettes'], ['separation_en_cours', 'besoin_protection'], ['proche_aidant', 'sante_mentale']]
     },
     requiredFieldsForCurrentStep: {
       1: ['age', 'situation_familiale', 'statut_sejour'],
