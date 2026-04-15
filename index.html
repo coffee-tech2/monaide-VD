@@ -698,7 +698,7 @@
         <div class="step" id="step4" style="display:none;">
           <div class="step-label">&#201;tape 4 sur 4</div>
           <h3 class="step-title">Ta sant&#233; et ton budget</h3>
-          <p class="step-subtitle">Deux derni&#232;res questions utiles pour rep&#233;rer les aides li&#233;es &#224; la sant&#233; ou aux dettes.</p>
+          <p class="step-subtitle">Quelques derni&#232;res questions utiles pour rep&#233;rer les bons relais selon ta situation.</p>
           <div class="form-group">
             <label class="form-label">As-tu une incapacit&#233; de travail ou un handicap&#160;?</label>
             <div class="choice-grid">
@@ -728,6 +728,34 @@
               <option value="dettes">Oui &#8212; dettes importantes (cr&#233;dits, poursuites)</option>
               <option value="surendette">Oui &#8212; situation de surendettement</option>
             </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Y a-t-il une s&#233;paration ou un divorce en cours&#160;?</label>
+            <div class="choice-grid">
+              <label><input class="choice-input" type="radio" name="separation_en_cours" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span><span class="choice-desc">Pas de s&#233;paration en cours</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="separation_en_cours" value="oui"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui</span><span class="choice-desc">S&#233;paration, divorce ou rupture importante</span></span><span class="choice-check"></span></span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">As-tu besoin de protection ou vis-tu de la violence dans le couple ou le foyer&#160;?</label>
+            <div class="choice-grid">
+              <label><input class="choice-input" type="radio" name="besoin_protection" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span><span class="choice-desc">Pas de besoin de protection signal&#233;</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="besoin_protection" value="oui"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui</span><span class="choice-desc">Violence, peur ou besoin d&#8217;un relais s&#251;r</span></span><span class="choice-check"></span></span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Aides-tu r&#233;guli&#232;rement un proche malade, &#226;g&#233; ou en situation de handicap&#160;?</label>
+            <div class="choice-grid">
+              <label><input class="choice-input" type="radio" name="proche_aidant" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span><span class="choice-desc">Pas de r&#244;le d&#8217;aide r&#233;gulier</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="proche_aidant" value="oui"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui</span><span class="choice-desc">Aide r&#233;guli&#232;re &#224; un proche au quotidien</span></span><span class="choice-check"></span></span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">As-tu l&#8217;impression que ta sant&#233; mentale, ou celle d&#8217;un proche, devient difficile &#224; g&#233;rer&#160;?</label>
+            <div class="choice-grid">
+              <label><input class="choice-input" type="radio" name="sante_mentale" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span><span class="choice-desc">Pas de difficult&#233; signal&#233;e en ce moment</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="sante_mentale" value="oui"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui</span><span class="choice-desc">Besoin d&#8217;un premier relais ou d&#8217;une orientation</span></span><span class="choice-check"></span></span></label>
+            </div>
           </div>
           <div class="step-actions"><button type="button" class="btn-nav btn-prev" onclick="goToStep(3)">&#8592; Retour</button><button type="button" class="btn-nav btn-next btn-analyze" onclick="goToResultsValidated()">Voir mes r&#233;sultats</button></div>
         </div>

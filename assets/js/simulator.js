@@ -4,7 +4,7 @@
     1: [['commune', 'age'], ['situation_familiale', 'statut_sejour']],
     2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
     3: [['revenu', 'fortune', 'prime_lamal'], ['aides_actuelles']],
-    4: [['incapacite', 'dettes']]
+    4: [['incapacite', 'dettes'], ['separation_en_cours', 'besoin_protection'], ['proche_aidant', 'sante_mentale']]
   };
 
   function selectedValue(name, fallback) {
@@ -476,7 +476,7 @@
     if (['commune', 'age', 'situation_familiale', 'statut_sejour'].indexOf(fieldId) !== -1) return 1;
     if (['situation_pro', 'logement', 'enfants', 'loyer', 'en_formation'].indexOf(fieldId) !== -1) return 2;
     if (['revenu', 'fortune', 'prime_lamal', 'aides_actuelles'].indexOf(fieldId) !== -1) return 3;
-    if (['incapacite', 'dettes'].indexOf(fieldId) !== -1) return 4;
+    if (['incapacite', 'dettes', 'separation_en_cours', 'besoin_protection', 'proche_aidant', 'sante_mentale'].indexOf(fieldId) !== -1) return 4;
     return 1;
   }
 
@@ -509,6 +509,11 @@
     ].filter(function(item) {
       return !!item.value;
     });
+
+    if (String(data.separation || '').trim()) items.push({ label: 'Séparation', value: data.separation, field: 'separation_en_cours' });
+    if (String(data.protection || '').trim()) items.push({ label: 'Protection', value: data.protection, field: 'besoin_protection' });
+    if (String(data.procheAidant || '').trim()) items.push({ label: 'Proche aidé', value: data.procheAidant, field: 'proche_aidant' });
+    if (String(data.santeMentale || '').trim()) items.push({ label: 'Santé mentale', value: data.santeMentale, field: 'sante_mentale' });
 
     if (!items.length) {
       container.style.display = 'none';

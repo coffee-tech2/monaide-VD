@@ -116,6 +116,10 @@
       'liensCommunes',
       'liensGardeEnfants',
       'liensAideAlimentaire',
+      'liensSeparation',
+      'liensViolence',
+      'liensProchesAidants',
+      'liensSanteMentale',
       'liensCSR'
     ],
     sets: {
@@ -226,6 +230,27 @@
         { type: 'link', label: 'Épiceries Caritas', linkKey: 'CARITAS_EPICERIES' },
         { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Aide alimentaire par région' }
       ],
+      liensSeparation: [
+        { type: 'link', label: 'Infos séparation / divorce', linkKey: 'BRAPA_CONTACT' },
+        { type: 'link', label: 'Demander une avance BRAPA', linkKey: 'BRAPA_APPLY' },
+        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Séparation, divorce et premiers repères' }
+      ],
+      liensViolence: [
+        { type: 'link', label: 'Trouver de l’aide', linkKey: 'VIOLENCE_HELP' },
+        { type: 'link', label: 'MalleyPrairie', linkKey: 'MALLEY_PRAIRIE' },
+        { type: 'link', label: 'LAVI Vaud', linkKey: 'LAVI_INFO' },
+        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Violences conjugales / besoin de protection' }
+      ],
+      liensProchesAidants: [
+        { type: 'link', label: 'Infos proches aidant·es', linkKey: 'ESPACE_PROCHES_INFO' },
+        { type: 'link', label: 'Questions fréquentes', linkKey: 'ESPACE_PROCHES_FAQ' },
+        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Proches aidant·es — répit et aides concrètes' }
+      ],
+      liensSanteMentale: [
+        { type: 'link', label: 'Cultiver sa santé mentale', linkKey: 'MENTAL_HEALTH_SUPPORT' },
+        { type: 'link', label: 'Urgences — Vaud', linkKey: 'URGENCES_VAUD' },
+        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Santé mentale — premiers relais' }
+      ],
       liensCSR: [
         { type: 'csr', label: 'Trouver ton CSR' }
       ]
@@ -273,6 +298,9 @@
       { patterns: ['prestations communales', 'aides locales'], text: 'Cette piste sert à repérer des aides de proximité qui dépendent souvent de la commune ou d’acteurs locaux.' },
       { patterns: ['garde d enfants malades'], text: 'Cette aide sert à trouver un relais ponctuel quand un enfant est malade et que les parents ne peuvent pas assurer seuls.' },
       { patterns: ['aide alimentaire par region'], text: 'Cette piste sert à repérer rapidement des distributions, épiceries sociales ou relais alimentaires près de chez toi.' },
+      { patterns: ['separation', 'divorce'], text: 'Cette piste sert à clarifier les premières démarches, les questions de pension, de garde et les impacts concrets sur le budget.' },
+      { patterns: ['proches aidant'], text: 'Cette piste sert à repérer des solutions de répit, de relève et de soutien quand tu aides régulièrement un proche.' },
+      { patterns: ['sante mentale'], text: 'Cette piste sert à trouver un premier relais humain quand la santé mentale devient difficile à gérer.' },
       { patterns: ['assurance chomage'], text: 'Cette aide sert à couvrir une perte d’emploi si les conditions de chômage sont remplies et confirmées.' },
       { patterns: ['bourses', 'ocbe'], text: 'Cette aide sert à soutenir une formation quand les ressources du ménage ne suffisent pas, après examen du dossier.' },
       { patterns: ['jet service'], text: 'Ce service sert à aider à comprendre ou remplir certaines démarches de formation ou de budget.' },
@@ -280,14 +308,16 @@
       { patterns: ['carteculture', 'passculture'], text: 'Cette aide sert à rendre la culture, les loisirs ou certaines sorties plus accessibles.' },
       { patterns: ['parlons cash', 'brapa'], text: 'Cette piste sert à débloquer une situation financière ou des démarches liées à des dettes ou à des pensions.' },
       { patterns: ['evam', 'fraternite', 'appartenances', 'aide d urgence'], text: 'Cette orientation sert à clarifier les droits de base, le séjour, l’asile ou les bons relais selon la situation.' },
-      { patterns: ['lavi', 'malleyprairie', 'lignes d ecoute', 'le passage'], text: 'Cette orientation sert à apporter un soutien rapide, humain ou sécurisant dans une situation difficile ou urgente.' }
+      { patterns: ['lavi', 'malleyprairie', 'lignes d ecoute', 'le passage', 'violences conjugales'], text: 'Cette orientation sert à apporter un soutien rapide, humain ou sécurisant dans une situation difficile ou urgente.' }
     ],
     kindRules: [
       { patterns: ['centre social regional', 'aas', 'vaud pour vous', 'jet service', 'rupture d apprentissage', 'guichet t1'], value: 'Service d’orientation' },
       { patterns: ['parlons cash', 'pro infirmis', 'pro senectute', 'appartenances', 'fraternite', 'csp vaud'], value: 'Ressource complémentaire' },
       { patterns: ['prestations communales', 'aide alimentaire par region', 'garde d enfants malades'], value: 'Ressource complémentaire' },
+      { patterns: ['separation', 'divorce', 'proches aidant'], value: 'Ressource complémentaire' },
+      { patterns: ['sante mentale'], value: 'Service d’orientation' },
       { patterns: ['carteculture', 'passculture'], value: 'Ressource complémentaire' },
-      { patterns: ['lavi', 'malleyprairie', 'lignes d ecoute', 'aide d urgence'], value: 'Repère urgent' }
+      { patterns: ['lavi', 'malleyprairie', 'lignes d ecoute', 'aide d urgence', 'violences conjugales'], value: 'Repère urgent' }
     ],
     secondaryRules: [
       ['carteculture', 'passculture', 'pro senectute', 'pro infirmis', 'parlons cash', 'vaud pour vous', 'lignes d ecoute']
@@ -303,12 +333,15 @@
       { patterns: ['bourses', 'ocbe'], priority: 12 },
       { patterns: ['jet service'], priority: 16 },
       { patterns: ['rupture d apprentissage', 'guichet t1'], priority: 17 },
+      { patterns: ['separation', 'divorce'], priority: 13 },
       { patterns: ['prestations communales'], priority: 18 },
       { patterns: ['garde d enfants malades'], priority: 19 },
       { patterns: ['aide alimentaire par region'], priority: 20 },
+      { patterns: ['sante mentale'], priority: 21 },
+      { patterns: ['proches aidant'], priority: 22 },
       { patterns: ['brapa', 'parlons cash'], priority: 14 },
       { patterns: ['evam', 'aide d urgence', 'fraternite', 'appartenances'], priority: 1 },
-      { patterns: ['lavi', 'malleyprairie'], priority: 1 },
+      { patterns: ['lavi', 'malleyprairie', 'violences conjugales'], priority: 1 },
       { patterns: ['carteculture', 'passculture', 'pro infirmis', 'pro senectute', 'vaud pour vous'], priority: 40 }
     ],
     firstContactRules: [

@@ -26,7 +26,11 @@
       travail: getFieldDisplayValue('situation_pro'),
       logement: getFieldDisplayValue('logement'),
       revenu: getFieldDisplayValue('revenu'),
-      fortune: getFieldDisplayValue('fortune')
+      fortune: getFieldDisplayValue('fortune'),
+      separation: readFieldValue('separation_en_cours', 'non') === 'oui' ? 'Oui' : '',
+      protection: readFieldValue('besoin_protection', 'non') === 'oui' ? 'Oui' : '',
+      procheAidant: readFieldValue('proche_aidant', 'non') === 'oui' ? 'Oui' : '',
+      santeMentale: readFieldValue('sante_mentale', 'non') === 'oui' ? 'Oui' : ''
     };
   }
 
@@ -50,6 +54,10 @@
       aidesListe: readAidesListe(),
       incapacite: readFieldValue('incapacite', 'non'),
       dettes: readFieldValue('dettes', 'non'),
+      separationEnCours: readFieldValue('separation_en_cours', 'non'),
+      besoinProtection: readFieldValue('besoin_protection', 'non'),
+      procheAidant: readFieldValue('proche_aidant', 'non'),
+      santeMentale: readFieldValue('sante_mentale', 'non'),
       summary: buildProfileSummary(commune)
     };
   };
@@ -69,6 +77,10 @@
     var aidesListe = profile.aidesListe || [];
     var incapacite = profile.incapacite || 'non';
     var dettes = profile.dettes || 'non';
+    var separationEnCours = profile.separationEnCours || 'non';
+    var besoinProtection = profile.besoinProtection || 'non';
+    var procheAidant = profile.procheAidant || 'non';
+    var santeMentale = profile.santeMentale || 'non';
 
     var permisB = permis.indexOf('Permis B') !== -1;
     var permisC = permis.indexOf('Permis C') !== -1;
@@ -93,6 +105,10 @@
       aidesListe: aidesListe,
       incapacite: incapacite,
       dettes: dettes,
+      separationEnCours: separationEnCours,
+      besoinProtection: besoinProtection,
+      procheAidant: procheAidant,
+      santeMentale: santeMentale,
       revenuFaible: revenu === 'aucun' || revenu === 'moins1000' || revenu === '1000-2000',
       revenuModere: revenu === '2000-3500',
       retraite: sitPro.includes('Retrait') || age === '65plus' || aidesListe.includes('AVS'),
@@ -354,6 +370,50 @@
       action: 'Commence par regarder les relais alimentaires de ta région, puis complète si besoin avec un CSR ou une permanence sociale.',
       today: 'Utilise cette piste surtout si la nourriture devient une difficulté immédiate.',
       liensAideAlimentaire: true
+    }));
+  }
+
+  function addSeparationResult(res, flags) {
+    res.push(buildResult({
+      nom: 'Séparation, divorce et premiers repères',
+      badge: flags.aEnfants ? 'probable' : 'verifier',
+      desc: flags.aEnfants
+        ? 'Quand une séparation commence avec des enfants, il faut souvent clarifier rapidement pension, garde, budget et premières démarches.'
+        : 'Quand une séparation ou un divorce commence, il est utile de clarifier rapidement les premiers repères administratifs et financiers.',
+      action: flags.aEnfants
+        ? 'Commence par faire le point sur la garde, la pension et le budget. Si une pension n’est pas versée, regarde aussi la piste BRAPA.'
+        : 'Commence par clarifier les premières démarches, les papiers utiles et les impacts concrets sur le budget ou le logement.',
+      liensSeparation: true
+    }));
+  }
+
+  function addViolenceProtectionResult(res) {
+    res.push(buildResult({
+      nom: 'Violences conjugales / besoin de protection',
+      badge: 'confirme',
+      desc: 'Si tu vis de la violence ou que tu as besoin de protection, la priorité est la sécurité et l’accès à un relais spécialisé.',
+      action: 'Cherche d’abord un relais sûr. Tu peux appeler un service spécialisé même si tu n’as pas encore tout décidé ou si tu ne veux pas encore déposer plainte.',
+      liensViolence: true
+    }));
+  }
+
+  function addProchesAidantsResult(res) {
+    res.push(buildResult({
+      nom: 'Proches aidant·es — répit et aides concrètes',
+      badge: 'verifier',
+      desc: 'Si tu aides régulièrement un proche, il existe des solutions de répit, de relève et d’information pour ne pas porter cela seul·e.',
+      action: 'Commence par regarder les solutions de répit, de relève à domicile et les conseils pratiques disponibles pour les proches aidant·es.',
+      liensProchesAidants: true
+    }));
+  }
+
+  function addSanteMentaleRelaisResult(res) {
+    res.push(buildResult({
+      nom: 'Santé mentale — premiers relais',
+      badge: 'verifier',
+      desc: 'Quand la santé mentale devient difficile à gérer, un premier relais humain peut aider à faire le point et à trouver la bonne porte.',
+      action: 'Commence par un relais simple et humain. Si la situation devient aiguë ou dangereuse, il faut passer ensuite au mode urgence.',
+      liensSanteMentale: true
     }));
   }
 
@@ -649,6 +709,10 @@
     var aEnfants = flags.aEnfants;
     var chomageNonIndem = flags.chomageNonIndem;
     var enEmploi = flags.enEmploi;
+    var separationEnCours = flags.separationEnCours;
+    var besoinProtection = flags.besoinProtection;
+    var procheAidant = flags.procheAidant;
+    var santeMentale = flags.santeMentale;
     var permisN = flags.permisN;
     var permisS = flags.permisS;
     var sansStatut = flags.sansStatut;
@@ -684,6 +748,10 @@
     if (incapacite !== 'non' && !alreadyAI) addAiResult(res, flags);
     addJetServiceResult(res, flags);
     addRuptureApprentissageResult(res, flags);
+    if (besoinProtection === 'oui') addViolenceProtectionResult(res);
+    if (separationEnCours === 'oui' && besoinProtection !== 'oui') addSeparationResult(res, flags);
+    if (procheAidant === 'oui') addProchesAidantsResult(res);
+    if (santeMentale === 'oui') addSanteMentaleRelaisResult(res);
 
     if (invalidite && !retraite) addProInfirmisResult(res);
     if (retraite || age === '65plus') addProSenectuteResult(res);
