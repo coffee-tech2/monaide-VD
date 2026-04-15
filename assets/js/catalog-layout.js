@@ -5,22 +5,22 @@
         title: 'Familles, revenus & aides financières',
         subtitle: 'RI, aides familles, pensions, dettes et budget',
         items: [
-          { id: 'csr', dataCat: 'financier' },
-          { id: 'ri', dataCat: 'financier' },
-          { id: 'prestations-communales', dataCat: 'financier' },
-          { id: 'allocations-familiales', dataCat: 'financier' },
-          { id: 'apg', dataCat: 'financier' },
-          { id: 'pc-familles', dataCat: 'financier' },
-          { id: 'comipp', dataCat: 'financier' },
-          { id: 'brapa', dataCat: 'financier' },
-          { id: 'separation-divorce', dataCat: 'financier' },
-          { id: 'mediation-familiale', dataCat: 'financier' },
-          { id: 'accueil-jour-enfants', dataCat: 'financier' },
-          { id: 'garde-enfants-malades', dataCat: 'financier' },
-          { id: 'parlons-cash', dataCat: 'financier' },
-          { id: 'bcma', dataCat: 'financier' },
-          { id: 'csp-vaud', dataCat: 'financier' },
-          { id: 'croix-rouge-vaudoise', dataCat: 'financier' }
+          { id: 'csr', dataCat: 'financier', tier: 'essential' },
+          { id: 'ri', dataCat: 'financier', tier: 'essential' },
+          { id: 'prestations-communales', dataCat: 'financier', tier: 'essential' },
+          { id: 'allocations-familiales', dataCat: 'financier', tier: 'essential' },
+          { id: 'apg', dataCat: 'financier', tier: 'known' },
+          { id: 'pc-familles', dataCat: 'financier', tier: 'known' },
+          { id: 'comipp', dataCat: 'financier', tier: 'known' },
+          { id: 'brapa', dataCat: 'financier', tier: 'known' },
+          { id: 'separation-divorce', dataCat: 'financier', tier: 'known' },
+          { id: 'mediation-familiale', dataCat: 'financier', tier: 'known' },
+          { id: 'accueil-jour-enfants', dataCat: 'financier', tier: 'known' },
+          { id: 'garde-enfants-malades', dataCat: 'financier', tier: 'known' },
+          { id: 'parlons-cash', dataCat: 'financier', tier: 'complement' },
+          { id: 'bcma', dataCat: 'financier', tier: 'complement' },
+          { id: 'csp-vaud', dataCat: 'financier', tier: 'complement' },
+          { id: 'croix-rouge-vaudoise', dataCat: 'financier', tier: 'complement' }
         ]
       },
       {
@@ -28,12 +28,12 @@
         title: 'Emploi & formation',
         subtitle: 'Chômage, bourses, apprentissage et orientation',
         items: [
-          { id: 'laci', dataCat: 'emploi' },
-          { id: 'bourse', dataCat: 'formation' },
-          { id: 'jet-service', dataCat: 'formation emploi' },
-          { id: 'guichet-t1', dataCat: 'formation emploi' },
-          { id: 'rupture-apprentissage', dataCat: 'formation emploi' },
-          { id: 'rente-pont', dataCat: 'emploi' }
+          { id: 'laci', dataCat: 'emploi', tier: 'essential' },
+          { id: 'bourse', dataCat: 'formation', tier: 'essential' },
+          { id: 'jet-service', dataCat: 'formation emploi', tier: 'essential' },
+          { id: 'guichet-t1', dataCat: 'formation emploi', tier: 'known' },
+          { id: 'rupture-apprentissage', dataCat: 'formation emploi', tier: 'known' },
+          { id: 'rente-pont', dataCat: 'emploi', tier: 'complement' }
         ]
       },
       {
@@ -41,23 +41,23 @@
         title: 'Santé & assurances',
         subtitle: 'LAMal, AI, PC, soins, proches aidant·es',
         items: [
-          { id: 'subside-lamal', dataCat: 'sante' },
-          { id: 'aas', dataCat: 'sante' },
-          { id: 'ai', dataCat: 'sante' },
-          { id: 'pc', dataCat: 'sante' },
-          { id: 'cms', dataCat: 'sante' },
-          { id: 'espace-proches', dataCat: 'sante' },
-          { id: 'repit-proches-aidants', dataCat: 'sante' },
-          { id: 'sante-mentale-relais', dataCat: 'sante' },
-          { id: 'pro-infirmis', dataCat: 'sante' },
-          { id: 'pro-senectute', dataCat: 'sante' },
-          { id: 'addiction-vaud', dataCat: 'sante' },
-          { id: 'relaids', dataCat: 'sante' },
-          { id: 'unisante', dataCat: 'sante' },
-          { id: 'point-deau', dataCat: 'sante' },
-          { id: 'sante-sexuelle-profa', dataCat: 'sante' },
-          { id: 'l-check', dataCat: 'sante' },
-          { id: 'voqueer', dataCat: 'sante' }
+          { id: 'subside-lamal', dataCat: 'sante', tier: 'essential' },
+          { id: 'aas', dataCat: 'sante', tier: 'essential' },
+          { id: 'ai', dataCat: 'sante', tier: 'essential' },
+          { id: 'pc', dataCat: 'sante', tier: 'essential' },
+          { id: 'cms', dataCat: 'sante', tier: 'known' },
+          { id: 'espace-proches', dataCat: 'sante', tier: 'known' },
+          { id: 'repit-proches-aidants', dataCat: 'sante', tier: 'known' },
+          { id: 'sante-mentale-relais', dataCat: 'sante', tier: 'known' },
+          { id: 'pro-infirmis', dataCat: 'sante', tier: 'complement' },
+          { id: 'pro-senectute', dataCat: 'sante', tier: 'complement' },
+          { id: 'addiction-vaud', dataCat: 'sante', tier: 'complement' },
+          { id: 'relaids', dataCat: 'sante', tier: 'complement' },
+          { id: 'unisante', dataCat: 'sante', tier: 'complement' },
+          { id: 'point-deau', dataCat: 'sante', tier: 'complement' },
+          { id: 'sante-sexuelle-profa', dataCat: 'sante', tier: 'complement' },
+          { id: 'l-check', dataCat: 'sante', tier: 'complement' },
+          { id: 'voqueer', dataCat: 'sante', tier: 'complement' }
         ]
       },
       {
@@ -65,10 +65,10 @@
         title: 'Logement',
         subtitle: 'Expulsion, logements subventionnés',
         items: [
-          { id: 'menace-expulsion', dataCat: 'logement' },
-          { id: 'lup', dataCat: 'logement' },
-          { id: 'aide-logement-familles', dataCat: 'logement' },
-          { id: 'asloca', dataCat: 'logement' }
+          { id: 'menace-expulsion', dataCat: 'logement', tier: 'essential' },
+          { id: 'asloca', dataCat: 'logement', tier: 'essential' },
+          { id: 'aide-logement-familles', dataCat: 'logement', tier: 'known' },
+          { id: 'lup', dataCat: 'logement', tier: 'complement' }
         ]
       },
       {
@@ -76,15 +76,15 @@
         title: 'Urgences & premiers secours psychosociaux',
         subtitle: 'Violences, crise, aide alimentaire, écoute',
         items: [
-          { id: 'violences-conjugales', dataCat: 'urgence' },
-          { id: 'malleyprairie', dataCat: 'urgence' },
-          { id: 'lavi', dataCat: 'urgence' },
-          { id: 'crise-psychique', dataCat: 'urgence' },
-          { id: 'aide-alimentaire-region', dataCat: 'urgence' },
-          { id: 'distributions-alimentaires', dataCat: 'urgence' },
-          { id: 'lignes-ecoute', dataCat: 'urgence' },
-          { id: 'le-passage', dataCat: 'urgence' },
-          { id: 'vaud-pour-vous', dataCat: 'urgence' }
+          { id: 'violences-conjugales', dataCat: 'urgence', tier: 'essential' },
+          { id: 'malleyprairie', dataCat: 'urgence', tier: 'essential' },
+          { id: 'lavi', dataCat: 'urgence', tier: 'essential' },
+          { id: 'crise-psychique', dataCat: 'urgence', tier: 'essential' },
+          { id: 'aide-alimentaire-region', dataCat: 'urgence', tier: 'known' },
+          { id: 'distributions-alimentaires', dataCat: 'urgence', tier: 'known' },
+          { id: 'lignes-ecoute', dataCat: 'urgence', tier: 'complement' },
+          { id: 'le-passage', dataCat: 'urgence', tier: 'complement' },
+          { id: 'vaud-pour-vous', dataCat: 'urgence', tier: 'complement' }
         ]
       },
       {
@@ -92,12 +92,12 @@
         title: 'Migration',
         subtitle: 'Asile, séjour, accompagnement et intégration',
         items: [
-          { id: 'fraternite', dataCat: 'migration' },
-          { id: 'evam', dataCat: 'migration' },
-          { id: 'aide-urgence-sejour', dataCat: 'migration urgence' },
-          { id: 'appartenances', dataCat: 'migration' },
-          { id: 'caritas-migration', dataCat: 'migration' },
-          { id: 'foyer-evam-femmes', dataCat: 'migration' }
+          { id: 'fraternite', dataCat: 'migration', tier: 'essential' },
+          { id: 'evam', dataCat: 'migration', tier: 'essential' },
+          { id: 'aide-urgence-sejour', dataCat: 'migration urgence', tier: 'known' },
+          { id: 'appartenances', dataCat: 'migration', tier: 'known' },
+          { id: 'caritas-migration', dataCat: 'migration', tier: 'complement' },
+          { id: 'foyer-evam-femmes', dataCat: 'migration', tier: 'complement' }
         ]
       },
       {
@@ -105,12 +105,12 @@
         title: 'Seconde main & petit budget',
         subtitle: 'Courses, habits, meubles et objets à prix solidaires',
         items: [
-          { id: 'epicerie-caritas', dataCat: 'petitbudget' },
-          { id: 'caritas-vetements', dataCat: 'petitbudget' },
-          { id: 'boutique-csp-palud', dataCat: 'petitbudget' },
-          { id: 'galetas-csp', dataCat: 'petitbudget' },
-          { id: 'emmaus', dataCat: 'petitbudget' },
-          { id: 'brocki-lausanne', dataCat: 'petitbudget' }
+          { id: 'epicerie-caritas', dataCat: 'petitbudget', tier: 'essential' },
+          { id: 'caritas-vetements', dataCat: 'petitbudget', tier: 'known' },
+          { id: 'boutique-csp-palud', dataCat: 'petitbudget', tier: 'known' },
+          { id: 'galetas-csp', dataCat: 'petitbudget', tier: 'complement' },
+          { id: 'emmaus', dataCat: 'petitbudget', tier: 'complement' },
+          { id: 'brocki-lausanne', dataCat: 'petitbudget', tier: 'complement' }
         ]
       },
       {
@@ -118,8 +118,8 @@
         title: 'Loisirs & culture',
         subtitle: 'CarteCulture, offres solidaires',
         items: [
-          { id: 'passculture', dataCat: 'culture formation' },
-          { id: 'carte', dataCat: 'culture' }
+          { id: 'carte', dataCat: 'culture', tier: 'essential' },
+          { id: 'passculture', dataCat: 'culture formation', tier: 'known' }
         ]
       }
     ]

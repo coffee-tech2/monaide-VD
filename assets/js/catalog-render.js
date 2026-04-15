@@ -36,6 +36,7 @@
           groupTitle: group.title || '',
           groupSubtitle: group.subtitle || '',
           dataCat: layoutItem.dataCat || item.category || '',
+          tier: layoutItem.tier || 'known',
           order: itemIndex
         };
         byNormalizedTitle[normalizedTitle] = meta;
@@ -124,20 +125,36 @@
   }
 
   function renderCatalogCardMarkup(item, dataCat) {
-    return '<div class="cat-card" data-cat="' + escapeCatalogRenderHtml(dataCat || item.category || '') + '" data-aid-id="' + escapeCatalogRenderHtml(item.id) + '" data-render-source="catalog-data" onclick="toggleCatCard(this)">'
+    var meta = CATALOG_LAYOUT.byNormalizedTitle[normalizeAidText(item.title || '')] || {};
+    var tier = meta.tier || 'known';
+    var extraClass = tier === 'essential' ? ' is-essential' : '';
+    return '<div class="cat-card' + extraClass + '" data-tier="' + escapeCatalogRenderHtml(tier) + '" data-cat="' + escapeCatalogRenderHtml(dataCat || item.category || '') + '" data-aid-id="' + escapeCatalogRenderHtml(item.id) + '" data-render-source="catalog-data" onclick="toggleCatCard(this)">'
       + renderCatalogRenderHeader(item)
       + renderCatalogRenderQuicklinks(item)
       + renderCatalogRenderBody(item)
       + '</div>';
   }
 
+  function getTierLabel(tier) {
+    if (tier === 'essential') return 'Essentiel';
+    if (tier === 'complement') return 'Compléments';
+    return 'À connaître';
+  }
+
   function renderCatalogGroupMarkup(groupMeta) {
+    var previousTier = null;
     var cardsMarkup = CATALOG_LAYOUT.cards
       .filter(function(cardMeta) { return cardMeta.groupId === groupMeta.id; })
       .sort(function(a, b) { return a.order - b.order; })
       .map(function(meta) {
         var item = getCatalogRenderItemById(meta.itemId);
-        return item ? renderCatalogCardMarkup(item, meta.dataCat) : '';
+        if (!item) return '';
+        var tierIntro = '';
+        if (meta.tier !== previousTier) {
+          tierIntro = '<div class="cat-tier-heading" data-tier="' + escapeCatalogRenderHtml(meta.tier || 'known') + '"><span class="cat-tier-kicker">' + escapeCatalogRenderHtml(getTierLabel(meta.tier)) + '</span></div>';
+          previousTier = meta.tier;
+        }
+        return tierIntro + renderCatalogCardMarkup(item, meta.dataCat);
       })
       .join('');
 
