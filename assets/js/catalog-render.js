@@ -97,7 +97,12 @@
   }
 
   function renderCatalogRenderTrust(item) {
-    return '';
+    if (!item || (!item.decisionBy && !item.reviewNote)) return '';
+    var note = item.reviewNote || 'Contenu relu avec une logique d’orientation sociale, mais ne remplace pas une décision officielle.';
+    var meta = item.decisionBy
+      ? '<div class="catalog-trust-meta"><strong>Qui traite ou décide</strong><span>' + escapeCatalogRenderHtml(item.decisionBy) + '</span></div>'
+      : '';
+    return '<div class="catalog-trust"><div class="catalog-trust-note">' + escapeCatalogRenderHtml(note) + '</div>' + meta + '</div>';
   }
 
   function renderCatalogRenderBody(item) {
