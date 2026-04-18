@@ -174,7 +174,7 @@
 
   function buildResultDetail(title, body, className, openByDefault) {
     if (!body) return '';
-    return '<details class="result-detail ' + className + '"' + (openByDefault ? ' open' : '') + '><summary><span class="result-detail-title">' + title + '</span></summary><div class="result-detail-body">' + body + '</div></details>';
+    return '<details class="result-detail ' + className + '"' + (openByDefault ? ' open' : '') + '><summary><span class="result-detail-title">' + title + '</span><span class="result-detail-hint">' + escapeHtml(RESULTS_UI_CONFIG.detailHint || 'Appuie pour ouvrir') + '</span></summary><div class="result-detail-body">' + body + '</div></details>';
   }
 
   function sortSimulationResults(results, resultContext) {
@@ -201,7 +201,7 @@
 
   function buildResultMoreHtml(result, followUpHtml) {
     if (!followUpHtml) return '';
-    return '<details class="result-more-shell"><summary>' + escapeHtml(RESULTS_UI_CONFIG.moreDetailsLabel || 'Voir les détails') + '</summary><div class="result-more-body">' + followUpHtml + '</div></details>';
+    return '<details class="result-more-shell"><summary><span class="result-more-label-open">' + escapeHtml(RESULTS_UI_CONFIG.moreDetailsLabel || 'Ouvrir le détail de cette piste') + '</span><span class="result-more-label-close">' + escapeHtml(RESULTS_UI_CONFIG.lessDetailsLabel || 'Refermer le détail') + '</span><span class="result-more-hint">' + escapeHtml(RESULTS_UI_CONFIG.moreDetailsHint || 'Explications, étapes et documents utiles') + '</span></summary><div class="result-more-body">' + followUpHtml + '</div></details>';
   }
 
   function buildResultNameHtml(result) {
@@ -217,11 +217,11 @@
     var detailClasses = RESULTS_UI_CONFIG.detailClasses || {};
     var purposeText = getAidPurpose(result.nom);
     var links = buildResultLinksHtml(result);
-    var purposeHtml = buildResultDetail(detailTitles.purpose || 'Cette aide sert à', purposeText, detailClasses.purpose || 'is-purpose', false);
-    var whyHtml = shouldShowWhy(result) ? buildResultDetail(detailTitles.why || 'Pourquoi cette aide ressort', getWhySummary(result), detailClasses.why || 'is-why', false) : '';
-    var actionHtml = result.action ? buildResultDetail(detailTitles.action || 'Prochaine étape', '<div style="white-space:pre-line;">' + linkifyPhoneNumbersInHtml(result.action) + '</div>', detailClasses.action || 'is-action', !result.today) : '';
+    var purposeHtml = buildResultDetail(detailTitles.purpose || 'À quoi ça peut servir', purposeText, detailClasses.purpose || 'is-purpose', true);
+    var whyHtml = shouldShowWhy(result) ? buildResultDetail(detailTitles.why || 'Pourquoi cette piste apparaît', getWhySummary(result), detailClasses.why || 'is-why', false) : '';
+    var actionHtml = result.action ? buildResultDetail(detailTitles.action || 'Ce que tu peux faire maintenant', '<div style="white-space:pre-line;">' + linkifyPhoneNumbersInHtml(result.action) + '</div>', detailClasses.action || 'is-action', false) : '';
     var docsHtml = result.docs && result.docs.length
-      ? buildResultDetail(detailTitles.docs || 'Documents à préparer', '<ul>' + result.docs.map(function(doc) { return '<li>' + doc + '</li>'; }).join('') + '</ul>', detailClasses.docs || 'is-docs', false)
+      ? buildResultDetail(detailTitles.docs || 'Documents utiles à préparer', '<ul>' + result.docs.map(function(doc) { return '<li>' + doc + '</li>'; }).join('') + '</ul>', detailClasses.docs || 'is-docs', false)
       : '';
     var startSummary = getActionSummary(result.action || result.today || '');
     var startHtml = startSummary

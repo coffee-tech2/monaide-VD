@@ -265,10 +265,10 @@
       verifier: 2
     },
     detailTitles: {
-      purpose: 'Cette aide sert à',
-      why: 'Pourquoi cette aide ressort',
-      action: 'Prochaine étape',
-      docs: 'Documents à préparer'
+      purpose: 'À quoi ça peut servir',
+      why: 'Pourquoi cette piste apparaît',
+      action: 'Ce que tu peux faire maintenant',
+      docs: 'Documents utiles à préparer'
     },
     detailClasses: {
       purpose: 'is-purpose',
@@ -283,7 +283,10 @@
       region: 'Dans ta région',
       more: 'Plus d’aides potentielles dans le catalogue'
     },
-    moreDetailsLabel: 'Voir les détails',
+    moreDetailsLabel: 'Ouvrir le détail de cette piste',
+    lessDetailsLabel: 'Refermer le détail',
+    moreDetailsHint: 'Explications, étapes et documents utiles',
+    detailHint: 'ouvrir',
     moreCatalogLabel: 'En savoir plus',
     openCatalogLabel: 'Voir le catalogue des aides →',
     noCoverageText: 'Le simulateur ne couvre pas tout. Le catalogue recense des ressources vaudoises supplémentaires — associations, services, aides spécifiques — qui pourraient te concerner.',
