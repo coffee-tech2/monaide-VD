@@ -146,7 +146,9 @@
       urgenceActive: dettes === 'loyer' || logement.includes('Sans logement fixe'),
       grandeCommune: ['lausanne', 'renens', 'vevey', 'nyon', 'yverdon', 'montreux', 'morges'].some(function(v) { return communeNorm.includes(v); }),
       statutStableOrdinaire: permis.includes('suisse') || permisB || permisC,
-      statutAvecNuance: permisF || permisL || permisS
+      statutAvecNuance: permisF || permisL || permisS,
+      besoinAlimentaireProbable: revenu === 'aucun' || revenu === 'moins1000' || dettes === 'surendette',
+      besoinLocalConcret: enfants !== 'non' || dettes !== 'non' || loyer === 'plus1800' || logement.includes('Sans logement fixe')
     };
   }
 
@@ -161,6 +163,16 @@
 
   function buildResult(base) {
     return base;
+  }
+
+  function dedupeResults(results) {
+    var seen = {};
+    return (results || []).filter(function(item) {
+      if (!item || !item.nom) return false;
+      if (seen[item.nom]) return false;
+      seen[item.nom] = true;
+      return true;
+    });
   }
 
   function addUrgenceOrientationResults(res) {
@@ -773,17 +785,17 @@
     if (invalidite && !retraite) addProInfirmisResult(res);
     if (retraite || age === '65plus') addProSenectuteResult(res);
     if (invalidite) addCmsResult(res);
-    if ((revenuFaible || loyerEleve || aEnfants) && !sansStatut) addPrestationsCommunalesResult(res, flags);
-    if (aEnfants && (enEmploi || enFormation || chomageNonIndem)) addGardeEnfantsMaladesResult(res, flags);
+    if ((flags.besoinLocalConcret || (flags.revenuFaible && flags.grandeCommune)) && !sansStatut) addPrestationsCommunalesResult(res, flags);
+    if (aEnfants && (enEmploi || enFormation)) addGardeEnfantsMaladesResult(res, flags);
     if (dettes !== 'non') addDettesResult(res, dettes);
-    if ((revenuFaible || dettes === 'dettes' || dettes === 'surendette') && !sansStatut) addAideAlimentaireRegionResult(res, flags);
+    if ((flags.besoinAlimentaireProbable || dettes === 'dettes' || dettes === 'surendette') && !sansStatut) addAideAlimentaireRegionResult(res, flags);
     if (logement.includes('Locataire') && !alreadyRI && (loyerEleve || dettes === 'loyer' || revenuFaible)) {
       addAidesLogementResult(res, grandeCommune, dettes, loyerEleve);
     }
     if (res.length === 0) addFallbackResult(res);
 
     return {
-      results: res,
+      results: dedupeResults(res),
       context: {
         enEmploi: enEmploi
       }
