@@ -129,13 +129,14 @@
       permisF: permisF,
       permisS: permisS,
       sansStatut: permis.indexOf('sans statut') !== -1,
-      alreadyRI: aidesListe.includes('RI'),
+      alreadyRI: aidesListe.includes('RI') || sitPro === 'Bénéficiaire du RI',
       alreadyPC: aidesListe.includes('PC'),
       alreadyLAMal: aidesListe.includes('lamal'),
       alreadyAF: aidesListe.includes('alloc_fam'),
       alreadyBourse: aidesListe.includes('bourse'),
       alreadyCarteCulture: aidesListe.includes('carteculture'),
       alreadyAI: aidesListe.includes('AI'),
+      alreadyAVS: aidesListe.includes('AVS'),
       alreadyChomage: aidesListe.includes('chomage'),
       age60plus: age === '60-64' || age === '65plus',
       fortFaible: fortune === 'moins4000',
@@ -152,7 +153,7 @@
   function finalizeSimulationFlags(flags) {
     flags.chomage = flags.chomageIndem || flags.chomageNonIndem;
     flags.permiOK = !flags.permisN && !flags.sansStatut;
-    flags.permiRI = flags.permiOK && !flags.permisS && !flags.permisG;
+    flags.permiRI = flags.permiOK && !flags.permisS && !flags.permisG && !flags.permisL;
     flags.invalidite = flags.incapacite !== 'non' || flags.sitPro.includes('incapacit') || flags.sitPro.includes('invalidit') || flags.alreadyAI;
     flags.carteConfirmee = flags.alreadyRI || flags.alreadyPC || flags.alreadyLAMal || flags.alreadyBourse;
     return flags;
@@ -446,15 +447,15 @@
     if (flags.revenuFaible || (flags.revenuModere && flags.primeElevee)) {
       res.push(buildResult({
         nom: 'Subside LAMal — réduction de prime',
-        badge: (flags.primeElevee && flags.statutStableOrdinaire) ? 'confirme' : 'probable',
+        badge: 'probable',
         desc: (flags.permisF || flags.permisL)
           ? 'Le subside reste une piste importante, mais avec ton statut de séjour il vaut mieux faire vérifier le cadre exact par une AAS ou un relais spécialisé en plus du calcul officiel.'
           : flags.primeElevee
           ? 'Tes revenus semblent compatibles avec un subside et ta prime maladie pèse lourd dans le budget. C’est une piste importante à vérifier.'
           : 'Avec ton niveau de revenus, un subside est probablement envisageable. Le montant exact dépend ensuite du Revenu Déterminant Unifié (RDU), qui tient compte des revenus et de la fortune.',
         action: (flags.permisF || flags.permisL)
-          ? '1. Fais le calcul officiel.\n2. Dépose ensuite la demande avec une AAS.\n3. Si la question touche aussi au séjour, ajoute une vérification auprès du CSP Fraternité.\n4. En cas de doute sur la décision, contacte l’OVAM.'
-          : '1. Utilise le simulateur officiel pour estimer ton droit.\n2. Si la piste se confirme, dépose la demande en ligne ou avec une AAS.\n3. L’OVAM examinera ensuite ton dossier et rendra la décision.',
+          ? '1. Fais d’abord le calcul officiel du subside.\n2. Si le résultat semble positif, prépare ta police LAMal, tes revenus et ton permis.\n3. Dépose la demande avec une agence d’assurances sociales (AAS) pour éviter une erreur de dossier.\n4. Si la question touche aussi au séjour, demande en parallèle un avis au CSP Fraternité.'
+          : '1. Utilise le simulateur officiel du canton pour estimer ton droit.\n2. Prépare ta police LAMal, ta dernière taxation ou une estimation de tes revenus.\n3. Si la piste se confirme, dépose la demande en ligne ou avec une agence AAS.\n4. Garde la décision reçue : elle pourra aussi servir de justificatif pour d’autres aides.',
         today: 'Commence par le calcul officiel. Si tu bloques, passe par une AAS. En cas de doute sur le suivi du dossier, contacte l’OVAM.',
         docs: ['Dernière taxation si disponible', 'Police LAMal', 'Relevés de revenus'],
         liens: true,
@@ -468,7 +469,7 @@
         nom: 'Subside LAMal — réduction de prime',
         badge: 'verifier',
         desc: 'Un subside partiel est possible selon ta fortune et ta situation exacte. On ne peut pas se prononcer sans le calcul officiel.',
-        action: 'Fais le calcul officiel. Si la piste se confirme, dépose la demande sans trop attendre. En cas de question sur le dossier, contacte une AAS ou l’OVAM.',
+        action: '1. Fais le calcul officiel, même si tu n’es pas sûr·e des montants.\n2. Si tu hésites sur les revenus à indiquer, contacte une agence AAS avant d’envoyer.\n3. Si le calcul semble positif, dépose la demande et garde une copie de la confirmation.',
         today: 'Fais le test officiel avant de lancer d’autres démarches.',
         docs: ['Police LAMal', 'Revenus du ménage', 'Taxation ou estimation de revenus'],
         liens: true
@@ -493,15 +494,15 @@
     if (flags.revenuFaible && flags.fortFaible) {
       res.push(buildResult({
         nom: 'Revenu d\'insertion (RI)',
-        badge: flags.permisF ? 'verifier' : (flags.loyerEleve || flags.grandeCommune ? 'confirme' : 'probable'),
+        badge: flags.permisF ? 'verifier' : 'probable',
         desc: flags.permisF
           ? 'Tes revenus et ton épargne font ressortir le RI comme piste à examiner, mais avec un permis F il vaut mieux faire vérifier le bon cadre par le CSR et, si besoin, par un relais migration.'
           : (flags.loyerEleve || flags.grandeCommune)
           ? 'Tes revenus, ton épargne et ton contexte de vie font ressortir le RI comme une piste forte. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e.'
           : 'Tes revenus et ton épargne font ressortir le RI comme une piste sérieuse. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',
         action: flags.permisF
-          ? '1. Contacte le CSR pour une évaluation complète.\n2. Précise ton statut de séjour dès le premier contact.\n3. Si la question du permis devient centrale, complète avec le CSP Fraternité.'
-          : '1. Contacte le Centre Social Régional (CSR) de ta commune — c\'est gratuit et sans engagement.\n2. Prépare : pièce d\'identité, relevés de compte (3 mois), bulletins de salaire, contrat de bail.\n3. N’attends pas trop : la date du premier contact ou de la demande peut compter dans l’examen du dossier.',
+          ? '1. Contacte le CSR pour demander un entretien d’évaluation.\n2. Précise ton statut de séjour dès le premier contact : ça évite d’être orienté·e vers le mauvais service.\n3. Prépare tes relevés de compte, ton bail et tes justificatifs de revenus.\n4. Si la question du permis devient centrale, complète avec le CSP Fraternité.'
+          : '1. Trouve le CSR de ta commune et demande un entretien d’évaluation.\n2. Explique simplement : revenus actuels, loyer, personnes dans le ménage, dettes urgentes s’il y en a.\n3. Prépare : pièce d’identité, relevés de compte des 3 derniers mois, bail, dernière prime maladie, bulletins de salaire ou preuve d’absence de revenu.\n4. Tu peux prendre contact même si ton dossier n’est pas parfait : le CSR t’indiquera les pièces manquantes.',
         today: flags.grandeCommune
           ? 'Tu peux commencer par contacter le CSR de ta région, même sans dossier complet.'
           : 'Prépare tes relevés de compte et prends le premier contact avec le CSR.',
@@ -520,8 +521,8 @@
           ? 'Tes revenus sont faibles, mais avec ton statut de séjour et ta fortune, seul un examen individualisé permet de savoir si le RI est envisageable.'
           : 'Tes revenus sont faibles mais ta fortune pourrait impacter l\'éligibilité. Seul un·e assistant·e social·e peut se prononcer.',
         action: flags.permisF
-          ? 'Contacte le CSR pour un entretien d’évaluation et ajoute une vérification migration si nécessaire.'
-          : 'Contacte le CSR de ta commune pour un entretien d\'évaluation gratuit et confidentiel.',
+          ? '1. Contacte le CSR pour un entretien d’évaluation.\n2. Demande clairement si ton statut de séjour change la marche à suivre.\n3. Ajoute une permanence migration si le CSR te le conseille ou si tu reçois des informations contradictoires.'
+          : '1. Contacte le CSR de ta commune pour demander un entretien d’évaluation.\n2. Prépare tes relevés de compte, ton bail et tes justificatifs de revenus.\n3. Si tu ne sais pas quoi préparer, demande simplement une liste de documents avant le rendez-vous.',
         today: 'Demande un entretien d’évaluation et annonce clairement tes revenus, ton loyer et ta situation familiale.',
         docs: ['Relevés de compte', 'Taxation ou attestations de fortune', 'Bail ou charges du ménage'],
         lienRI: true,
@@ -573,7 +574,7 @@
         nom: 'CarteCulture — Caritas',
         badge: 'probable',
         desc: 'Avec tes revenus, la CarteCulture pourrait être envisageable si le seuil retenu correspond bien à ta situation.',
-        action: 'Contacte Caritas Vaud pour vérifier ton éligibilité — c\'est gratuit.',
+        action: '1. Vérifie les critères sur le site CarteCulture.\n2. Si ta situation correspond, prépare un justificatif de revenu ou d’aide sociale.\n3. En cas de doute, contacte Caritas Vaud avant de déposer la demande.',
         today: 'Garde cette piste pour juste après les aides financières prioritaires.',
         liensCarte: true
       }));
@@ -583,18 +584,30 @@
   function addLaciResult(res, flags) {
     res.push(buildResult({
       nom: 'Assurance chômage (LACI)',
-      badge: (flags.permisL || flags.permisG || flags.permisF || flags.permisS) ? 'verifier' : 'probable',
+      badge: (flags.permisL || flags.permisG || flags.permisF || flags.permisS || flags.sitPro.indexOf('Sans emploi') !== -1) ? 'verifier' : 'probable',
       desc: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
         ? 'Le chômage peut rester une piste, mais avec ton statut ou ton cadre de séjour il faut vérifier plus finement les conditions de cotisation, de domicile en Suisse et l’autorité compétente.'
         : 'Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois durant les 2 dernières années ou si tu es libéré·e des conditions de cotisation dans certains cas, puis si les autres conditions sont remplies.',
       action: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
-        ? 'Inscris-toi rapidement ou fais vérifier ta situation auprès de l’ORP et d’une caisse de chômage, en partant du principe qu’une vérification individualisée sera nécessaire.'
-        : '1. Inscris-toi rapidement à l’ORP.\n2. Vérifie ensuite avec une caisse de chômage si la période de cotisation est suffisante ou si une libération des conditions de cotisation peut s’appliquer.\n3. Prépare : certificat de travail, attestation de l’employeur, pièce d’identité et documents sur ta situation récente.',
+        ? '1. Inscris-toi ou fais vérifier ta situation auprès de l’ORP.\n2. Choisis ensuite une caisse de chômage et demande un contrôle de ton droit.\n3. Fais préciser les règles liées à ton permis, ton domicile et ton dernier emploi avant de conclure que tu n’as pas droit.'
+        : '1. Inscris-toi à l’ORP dès que possible si ce n’est pas encore fait.\n2. Choisis une caisse de chômage : c’est elle qui vérifie le droit financier.\n3. Fais vérifier les conditions principales : en général 12 mois de cotisation dans les 2 dernières années, ou une possible libération des conditions de cotisation selon la situation.\n4. Prépare : certificat de travail, attestation de l’employeur, pièce d’identité ou permis, derniers contrats et courriers de fin d’emploi.',
       today: 'Si ton contrat est terminé ou va se terminer, l’inscription ORP est une priorité à ne pas repousser.',
       docs: ['Certificat de travail', 'Attestation de l’employeur', 'Pièce d’identité ou permis'],
       liensLACI: true,
       liensCadreSejour: flags.permisL || flags.permisF || flags.permisS,
       liensFrontalier: flags.permisG
+    }));
+  }
+
+  function addChomageActifResult(res) {
+    res.push(buildResult({
+      nom: 'Assurance chômage — droits déjà ouverts',
+      badge: 'confirme',
+      desc: 'Tu indiques recevoir déjà le chômage. L’enjeu principal est donc de garder le suivi ORP et caisse clair, et d’anticiper la suite si tes indemnités arrivent bientôt à la fin.',
+      action: '1. Regarde ton dernier décompte de chômage pour savoir combien d’indemnités il reste.\n2. Si la fin de droit approche, demande rapidement à ton ORP ou à ta caisse quelles démarches anticiper.\n3. Si tu n’arrives plus à couvrir les besoins de base, prépare aussi un contact avec le CSR.\n4. Si tu as 60 ans ou plus, vérifie en plus la piste rente-pont.',
+      today: 'Commence par ton dernier décompte : il te donne la durée restante et aide à savoir quoi anticiper.',
+      docs: ['Dernier décompte chômage', 'Courriers ORP ou caisse de chômage', 'Contrats ou certificats de travail récents'],
+      liensLACI: true
     }));
   }
 
@@ -617,7 +630,7 @@
         nom: 'Rente-pont AVS — à anticiper',
         badge: 'verifier',
         desc: 'La rente-pont n\'est pas encore accessible à ton âge, mais pense à cotiser à l\'AVS maintenant pour y avoir droit à 60 ans si besoin.',
-        action: 'Renseigne-toi dès maintenant pour anticiper.',
+        action: '1. Garde cette piste en tête si le chômage dure.\n2. Demande à ta caisse ou à l’ORP comment suivre tes indemnités restantes.\n3. Si tu approches de 60 ans, renseigne-toi avant la fin de droit.',
         liensRentePont: true
       }));
     }
@@ -630,7 +643,7 @@
       desc: (flags.permisL || flags.permisS || flags.permisF)
         ? 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais le titre de séjour fait partie des critères examinés par l’OCBE avec la situation financière.'
         : 'Tu es en formation post-obligatoire (CFC, maturité, HES, université…). Une bourse peut être possible selon les ressources du ménage — il n\'y a pas de critère de mérite, mais un examen financier.',
-      action: '1. Commence par le questionnaire d\'éligibilité OCBE.\n2. Dépose ensuite la demande même si certaines pièces manquent encore.\n3. Jet Service (CSP Vaud) peut aider à remplir le dossier.\n4. Si la bourse ne passe pas ou ne suffit pas, regarde aussi les pistes privées et aides ponctuelles liées au financement de la formation.',
+      action: '1. Commence par le questionnaire d’éligibilité OCBE.\n2. Prépare l’attestation de formation et les informations financières du ménage ou des parents.\n3. Dépose la demande même si certaines pièces doivent encore être complétées.\n4. Si le dossier te bloque, contacte Jet Service (CSP Vaud) pour être accompagné·e.\n5. Si la bourse ne passe pas ou ne suffit pas, regarde aussi les fondations privées et aides ponctuelles liées à la formation.',
       today: 'Commence par l’OCBE, puis fais-toi aider si besoin pour compléter le dossier sans attendre qu’il soit parfait.',
       docs: ['Attestation de formation', 'Déclaration d’impôts du ménage ou des parents', 'Bail si tu vis seul·e'],
       liensBourse: true,
@@ -648,8 +661,8 @@
         ? 'Ton niveau d\'incapacité semble compatible avec une piste AI. L\'objectif premier de l\'AI reste la réadaptation avant la rente : formation, aides techniques, retour au travail.'
         : 'Selon ton taux d\'incapacité, des mesures de réadaptation ou une rente partielle peuvent éventuellement être examinées.',
       action: (flags.permisF || flags.permisL || flags.permisS)
-        ? 'Dépose quand même la demande si la piste est sérieuse, mais prévois une vérification complémentaire sur le cadre d’assurance et de séjour.'
-        : '⚠ Important : la date de dépôt compte beaucoup en AI. Selon la prestation et la situation, les règles de naissance du droit ou l\'effet rétroactif ne sont pas les mêmes, donc ne repousse pas la demande.\n1. Télécharge le formulaire 001.303 sur aivd.ch.\n2. Dépose-le même incomplet — l\'AIVD te contactera pour compléter.\n3. ☏ Office AI Vaud : 021 342 91 11',
+        ? '1. Si l’incapacité est durable, dépose quand même une demande si la piste est sérieuse.\n2. Prévois une vérification complémentaire sur le cadre d’assurance et de séjour.\n3. Garde les certificats médicaux et courriers reçus : ils seront importants pour comprendre le dossier.'
+        : '1. Si l’incapacité dure, ne repousse pas la demande uniquement parce que le dossier n’est pas parfait.\n2. Télécharge le formulaire 001.303 sur aivd.ch ou demande-le à l’Office AI Vaud.\n3. Joins les certificats médicaux déjà disponibles, même si tout n’est pas encore complet.\n4. Note les dates importantes : début de l’incapacité, arrêts de travail, hospitalisations, changements d’emploi.\n5. Office AI Vaud : ☏ 021 342 91 11.',
       today: 'Si ton incapacité dure, dépose la demande sans attendre d’avoir un dossier “parfait”.',
       docs: ['Certificats médicaux', 'Pièce d’identité', 'Historique professionnel récent'],
       liensAI: true,
@@ -745,6 +758,7 @@
     if ((retraite || alreadyAI) && !alreadyPC) addPcResult(res, flags);
     if (aEnfants && !alreadyAF) addAllocationsFamilialesResult(res);
     addCarteCultureResult(res, flags);
+    if (alreadyChomage) addChomageActifResult(res);
     if (chomageNonIndem && !alreadyChomage && !permisN && !sansStatut) addLaciResult(res, flags);
     addRentePontResult(res, flags);
     if (enFormation && !alreadyBourse) addOcbeResult(res, flags);

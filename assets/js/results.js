@@ -194,8 +194,8 @@
   }
 
   function getResultBadgeMeta(result) {
-    if (result.badge === 'confirme') return { className: 'badge-oui', label: 'Prioritaire' };
-    if (result.badge === 'probable') return { className: 'badge-probable', label: 'À explorer' };
+    if (result.badge === 'confirme') return { className: 'badge-oui', label: 'Confirmé' };
+    if (result.badge === 'probable') return { className: 'badge-probable', label: 'Probablement' };
     return { className: 'badge-verifier', label: 'À vérifier' };
   }
 
@@ -275,7 +275,7 @@
       results: results.map(function(item) {
         return {
           nom: item.nom,
-          badgeLabel: item.badge === 'confirme' ? 'Prioritaire' : item.badge === 'probable' ? 'À explorer' : 'À vérifier',
+          badgeLabel: item.badge === 'confirme' ? 'Confirmé' : item.badge === 'probable' ? 'Probablement' : 'À vérifier',
           why: getWhySummary(item),
           today: item.today || '',
           action: item.action ? item.action.replace(/\n+/g, ' ') : ''
