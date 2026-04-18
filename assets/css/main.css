@@ -262,6 +262,7 @@
   .result-detail.is-today { background: #f0f7f1; border-color: #c8decb; }
   .result-detail.is-action { background: #fff4ea; border-color: #efc2a0; }
   .result-detail.is-docs { background: #fff6ee; border-color: #efccb0; }
+  .result-detail.is-links { background: #fffaf4; border-color: #ead4bf; }
   .result-detail summary { list-style: none; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0.55rem 1rem; cursor: pointer; padding: 0.85rem 2.45rem 0.85rem 0.95rem; user-select: none; -webkit-user-select: none; position: relative; background: rgba(255,255,255,0.5); transition: background 0.18s ease; }
   .result-detail summary:hover { background: rgba(255,255,255,0.78); }
   .result-detail summary::-webkit-details-marker { display: none; }

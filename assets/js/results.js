@@ -68,7 +68,7 @@
       .trim();
     if (!cleaned) return '';
     var sentence = cleaned.split(/(?<=[.!?])\s+/)[0] || cleaned;
-    if (sentence.length > 150) sentence = sentence.slice(0, 147).trim() + '…';
+    if (sentence.length > 115) sentence = sentence.slice(0, 112).trim() + '…';
     return sentence;
   }
 
@@ -217,7 +217,7 @@
     var detailClasses = RESULTS_UI_CONFIG.detailClasses || {};
     var purposeText = getAidPurpose(result.nom);
     var links = buildResultLinksHtml(result);
-    var purposeHtml = buildResultDetail(detailTitles.purpose || 'À quoi ça peut servir', purposeText, detailClasses.purpose || 'is-purpose', true);
+    var purposeHtml = buildResultDetail(detailTitles.purpose || 'À quoi ça peut servir', purposeText, detailClasses.purpose || 'is-purpose', false);
     var whyHtml = shouldShowWhy(result) ? buildResultDetail(detailTitles.why || 'Pourquoi cette piste apparaît', getWhySummary(result), detailClasses.why || 'is-why', false) : '';
     var actionHtml = result.action ? buildResultDetail(detailTitles.action || 'Ce que tu peux faire maintenant', '<div style="white-space:pre-line;">' + linkifyPhoneNumbersInHtml(result.action) + '</div>', detailClasses.action || 'is-action', false) : '';
     var docsHtml = result.docs && result.docs.length
@@ -229,7 +229,8 @@
       : '';
     var moreHtml = '<div class="result-link-row"><button type="button" class="result-link-btn is-secondary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="openCatalogForAid(this.getAttribute(\'data-aid-query\'))">' + escapeHtml(RESULTS_UI_CONFIG.moreCatalogLabel || 'En savoir plus') + '</button></div>';
     var kindHtml = '<div class="result-kind">' + getResultKind(result.nom) + '</div>';
-    var followUpHtml = purposeHtml + whyHtml + actionHtml + docsHtml + moreHtml + (links ? '<div class="result-link-row">' + links + '</div>' : '');
+    var linksHtml = links ? buildResultDetail(detailTitles.links || 'Liens utiles', '<div class="result-link-row">' + links + '</div>', detailClasses.links || 'is-links', false) : '';
+    var followUpHtml = whyHtml + actionHtml + docsHtml + linksHtml + purposeHtml + moreHtml;
     var badgeMeta = getResultBadgeMeta(result);
     return '<div class="result-item result-reveal" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div>' + startHtml + buildResultMoreHtml(result, followUpHtml) + '</div></div>';
   }
@@ -307,10 +308,6 @@
       }
       list.innerHTML += renderResultCard(r, index);
     });
-
-    if (topActions.length) {
-      list.innerHTML += buildTopActionsBanner(topActions, res.length);
-    }
 
     var docList = Object.keys(docsMap).slice(0, 8);
     if (docList.length) {

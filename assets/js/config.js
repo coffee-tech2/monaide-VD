@@ -267,17 +267,19 @@
     detailTitles: {
       purpose: 'À quoi ça peut servir',
       why: 'Pourquoi cette piste apparaît',
-      action: 'Ce que tu peux faire maintenant',
-      docs: 'Documents utiles à préparer'
+      action: 'Plan d’action',
+      docs: 'Documents à préparer',
+      links: 'Liens utiles'
     },
     detailClasses: {
       purpose: 'is-purpose',
       why: 'is-why',
       action: 'is-action',
-      docs: 'is-docs'
+      docs: 'is-docs',
+      links: 'is-links'
     },
     summaryTitles: {
-      start: 'Par quoi commencer',
+      start: 'Premier geste',
       firstContact: 'Qui contacter d’abord',
       docs: 'Documents utiles à rassembler',
       region: 'Dans ta région',
@@ -285,7 +287,7 @@
     },
     moreDetailsLabel: 'Ouvrir le détail de cette piste',
     lessDetailsLabel: 'Refermer le détail',
-    moreDetailsHint: 'Explications, étapes et documents utiles',
+    moreDetailsHint: 'Pourquoi, étapes, documents et liens',
     detailHint: 'ouvrir',
     moreCatalogLabel: 'En savoir plus',
     openCatalogLabel: 'Voir le catalogue des aides →',
