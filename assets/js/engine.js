@@ -400,10 +400,10 @@
         ? 'Quand une séparation commence avec des enfants, il faut souvent clarifier rapidement pension, garde, budget et premières démarches.'
         : 'Quand une séparation ou un divorce commence, il est utile de clarifier rapidement les premiers repères administratifs et financiers.',
       action: flags.aEnfants
-        ? '1. Fais une liste courte des sujets urgents : garde, pension, logement, budget, assurances.\n2. Si une pension alimentaire n’est pas versée, regarde rapidement la piste BRAPA.\n3. Prépare les décisions existantes, conventions, preuves de revenus et frais des enfants.\n4. Si la séparation crée une urgence financière ou de logement, contacte aussi le CSR.'
-        : '1. Clarifie d’abord ce qui change concrètement : logement, budget, assurances, dettes, courrier.\n2. Rassemble les documents importants avant les rendez-vous.\n3. Si tu ne sais pas par quoi commencer, demande une permanence sociale ou juridique pour trier les priorités.',
+        ? '1. Fais une liste courte des sujets urgents : sécurité, enfants, logement, pension, budget, assurances.\n2. Si une décision fixe déjà une pension et qu’elle n’est pas payée, appelle le BRAPA au 021 316 52 21.\n3. Prépare jugement, ordonnance, convention, preuves de non-paiement, revenus et frais des enfants.\n4. Si la séparation crée une urgence financière ou de logement, contacte aussi le CSR. S’il y a violence ou peur, passe d’abord par les ressources de protection.'
+        : '1. Clarifie d’abord ce qui change concrètement : logement, budget, assurances, dettes, courrier.\n2. Rassemble les documents importants avant les rendez-vous : bail, revenus, comptes, décisions ou courriers reçus.\n3. Si tu ne sais pas par quoi commencer, demande une permanence sociale ou juridique pour trier les priorités.\n4. S’il y a violence, menace ou emprise, ne commence pas par une médiation : cherche d’abord un relais de protection.',
       docs: flags.aEnfants
-        ? ['Jugement ou convention si existant', 'Preuves de pension payée ou non payée', 'Frais et documents des enfants']
+        ? ['Jugement, ordonnance ou convention si existant', 'Preuves de pension payée ou non payée', 'Revenus et justificatifs financiers', 'Frais et documents des enfants']
         : ['Bail ou documents logement', 'Revenus actuels', 'Courriers administratifs liés à la séparation'],
       liensSeparation: true
     }));

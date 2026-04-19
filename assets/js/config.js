@@ -231,8 +231,9 @@
         { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Aide alimentaire par région' }
       ],
       liensSeparation: [
-        { type: 'link', label: 'Infos séparation / divorce', linkKey: 'BRAPA_CONTACT' },
+        { type: 'link', label: 'Repères séparation / famille', linkKey: 'FAMILY_CRISIS' },
         { type: 'link', label: 'Demander une avance BRAPA', linkKey: 'BRAPA_APPLY' },
+        { type: 'link', label: 'Contacter le BRAPA', linkKey: 'BRAPA_CONTACT' },
         { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Séparation, divorce et premiers repères' }
       ],
       liensViolence: [

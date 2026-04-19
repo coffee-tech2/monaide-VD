@@ -852,42 +852,42 @@
       audience: 'Parents séparé·es qui ne reçoivent pas la pension alimentaire fixée par décision.',
       purpose: 'Le BRAPA peut avancer la pension non payée et t’aider à faire respecter les versements dus.',
       highlights: [
-        'Avance les montants dans certains cas',
-        'Peut aussi intervenir sur les allocations familiales non reversées',
-        'Démarche gratuite'
+        'Nécessite une décision judiciaire valable',
+        'La pension doit être non versée ou partiellement versée',
+        'Avance possible selon revenus, fortune et barèmes'
       ],
       firstSteps: [
-        'Contacter le BRAPA',
-        'Rassembler la décision judiciaire et les preuves de non-paiement',
-        'Attendre ensuite le questionnaire ou le rendez-vous'
+        'Appeler le BRAPA au 021 316 52 21',
+        'Préparer la décision qui fixe la pension',
+        'Rassembler les preuves de non-paiement et les justificatifs financiers'
       ],
-      bodyIntro: 'L’autre parent ne paie pas la pension alimentaire fixée par le juge ? Le BRAPA peut, dans certains cas, avancer les montants à ta place et se charger ensuite de les récupérer. Tu n’as pas à te battre seul·e.',
+      bodyIntro: 'L’autre parent ne paie pas, ou seulement en partie, une pension alimentaire fixée par une décision valable ? Le BRAPA peut aider au recouvrement et, selon les revenus et la fortune, verser des avances. L’avance est liée au recouvrement auprès du débiteur.',
       sections: [
         {
           title: 'Conditions',
           items: [
-            'Décision judiciaire valable',
-            'Pension non versée depuis au moins 1 mois',
-            'Revenus inférieurs aux seuils BRAPA',
-            'Domicile dans le canton de Vaud',
-            'La question peut aussi toucher l’entretien de l’enfant ou les allocations familiales non reversées'
+            'Disposer d’une décision judiciaire formelle valable : jugement, ordonnance, convention ou titre équivalent',
+            'La pension alimentaire fixée n’est pas versée ou seulement partiellement versée',
+            'Pour les avances : analyse des revenus, de la fortune et des barèmes BRAPA',
+            'La pension doit être cédée à l’État si le dossier est pris en charge pour les avances',
+            'Le BRAPA peut aussi aider pour le versement direct d’allocations familiales non reversées'
           ]
         },
         {
           title: 'Démarche',
           items: [
-            'Appeler le 021 316 52 21',
-            'Remplir ensuite le questionnaire transmis',
-            'Préparer jugement, convention ou décision fixant la pension',
-            'Préparer preuves de non-paiement, coordonnées de l’autre parent et justificatifs utiles',
-            'Si la situation familiale est floue, relire aussi les repères CSP sur séparation et entretien de l’enfant'
+            'Appeler le 021 316 52 21 pendant les heures d’ouverture',
+            'Remplir le questionnaire envoyé après l’entretien téléphonique',
+            'Préparer le titre d’entretien : jugement de divorce, ordonnance, mesures protectrices ou convention alimentaire',
+            'Ajouter l’attestation de formation pour les enfants qui ne sont plus en scolarité obligatoire',
+            'Préparer preuves des ressources financières et autres documents demandés par le BRAPA'
           ]
         }
       ],
       callouts: [
         {
           kind: 'callout',
-          html: 'Le BRAPA peut aussi t’aider à obtenir le versement direct des allocations familiales si l’autre parent ne te les transfère pas.'
+          html: 'À ne pas confondre : une séparation sans décision fixant une pension ne suffit pas pour une avance BRAPA. Il faut d’abord un titre valable.'
         }
       ],
       reviewedAt: '12 avril 2026',
@@ -929,12 +929,18 @@
         {
           title: 'Démarche',
           items: [
-            'Regarder les ressources cantonales pour familles en crise',
             'Séparer les questions urgentes : sécurité, logement, enfants, argent, papiers',
-            'Repérer ensuite si le besoin concerne pension, médiation ou protection',
-            'Passer vers le bon service sans attendre que tout soit clair',
-            'Si une décision existe déjà et qu’une pension n’est pas payée, regarder la piste BRAPA'
+            'S’il y a violence ou peur : passer d’abord par les ressources de protection, pas par une médiation',
+            'S’il existe déjà une décision et que la pension n’est pas payée : contacter le BRAPA',
+            'S’il y a une décision, une pension impayée et une possibilité d’arrangement : demander au BRAPA la piste médiation familiale',
+            'Si la séparation crée une urgence financière ou de logement : contacter aussi le CSR'
           ]
+        }
+      ],
+      callouts: [
+        {
+          kind: 'warning',
+          html: 'La médiation n’est pas la bonne porte si la situation implique violence, menace ou emprise. Dans ce cas, priorité aux ressources de protection.'
         }
       ],
       reviewedAt: '13 avril 2026',
