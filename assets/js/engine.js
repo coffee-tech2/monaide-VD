@@ -440,7 +440,7 @@
       nom: 'Santé mentale — premiers relais',
       badge: 'verifier',
       desc: 'Quand la santé mentale devient difficile à gérer, un premier relais humain peut aider à faire le point et à trouver la bonne porte.',
-      action: '1. Si tu te sens en danger ou que quelqu’un risque de se faire du mal, appelle les urgences.\n2. Sinon, commence par un relais humain : médecin traitant, 143, 147 pour les jeunes, ou une permanence santé mentale.\n3. Prépare simplement ce que tu veux dire : depuis quand, ce qui devient difficile, ce qui t’inquiète.\n4. Si tu accompagnes un proche, demande aussi comment l’aider sans porter seul·e la situation.',
+      action: '1. Si toi ou quelqu’un d’autre risque de se faire du mal maintenant, appelle le 144 ou le 117.\n2. Si c’est une détresse psychologique urgente dans le canton de Vaud, appelle le 0848 133 133.\n3. Si tu as surtout besoin de parler maintenant : 143 pour les adultes, 147 pour les jeunes.\n4. Pour préparer un rendez-vous, note depuis quand ça ne va pas, ce qui devient difficile, les traitements éventuels et les personnes de confiance.',
       docs: ['Médicaments ou traitements actuels si concernés', 'Coordonnées du médecin si existant', 'Quelques notes sur ce qui se passe'],
       liensSanteMentale: true
     }));

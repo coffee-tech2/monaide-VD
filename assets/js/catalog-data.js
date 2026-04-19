@@ -2161,27 +2161,35 @@
         'Bon point d’entrée quand on ne sait pas à qui parler'
       ],
       firstSteps: [
-        'Regarder les ressources cantonales sur la santé mentale',
-        'Chercher un premier relais de proximité',
-        'Basculer vers l’urgence si la situation devient critique'
+        'Si la sécurité est en jeu, appeler tout de suite le 144 ou le 117',
+        'Si c’est une détresse psychologique urgente mais non vitale, appeler le 0848 133 133',
+        'Sinon, commencer par un relais humain : médecin, 143, 147 pour les jeunes, ou Unisanté'
       ],
-      bodyIntro: 'Quand on dort mal, qu’on s’épuise ou qu’on se sent perdu·e, le plus difficile est souvent de savoir où commencer. Cette fiche ouvre un premier repère simple.',
+      bodyIntro: 'Quand on dort mal, qu’on s’épuise, qu’on angoisse ou qu’on se sent perdu·e, le plus difficile est souvent de savoir où commencer. Cette fiche aide à choisir entre écoute, premier rendez-vous et urgence.',
       sections: [
         {
           title: 'Quand cette piste est utile',
           items: [
             'Mal-être qui dure',
             'Besoin de parler ou d’être orienté·e',
-            'Inquiétude pour soi ou pour un proche'
+            'Inquiétude pour soi ou pour un proche',
+            'Situation difficile, mais sans danger immédiat'
           ]
         },
         {
           title: 'Démarche',
           items: [
-            'Commencer par un premier relais simple',
-            'Demander ensuite à qui parler selon la situation',
-            'Ne pas attendre si la situation bascule en urgence'
+            'Pour parler tout de suite : 143 pour les adultes, 147 pour les jeunes',
+            'Pour une détresse psychologique urgente dans le canton : 0848 133 133',
+            'Pour un suivi : contacter son médecin, Unisanté ou un service de santé mentale',
+            'Si la personne risque de se faire du mal ou de faire du mal à quelqu’un : 144 ou 117'
           ]
+        }
+      ],
+      callouts: [
+        {
+          kind: 'warning',
+          html: 'Cette fiche n’est pas faite pour “tenir bon” seul·e. En danger immédiat : 144 ou 117. Pour une urgence psychiatrique vaudoise non vitale : 0848 133 133.'
         }
       ],
       reviewedAt: '13 avril 2026',
@@ -2699,18 +2707,24 @@
         {
           title: 'Adultes',
           items: [
-            '143 — La Main Tendue (24h/24)',
-            'Urgences psy CHUV — 021 314 11 11',
-            'Stop Suicide — prévention et ressources'
+            '143 — La Main Tendue : écoute 24h/24, anonyme et confidentielle',
+            '0848 133 133 — détresse psychologique / urgences psychiatriques Vaud',
+            'STOP SUICIDE — prévention et ressources, surtout pour les jeunes, mais pas une helpline d’urgence'
           ]
         },
         {
           title: 'Jeunes & familles',
           items: [
-            '147 — Pro Juventute (24h/24)',
-            'Par téléphone ou chat selon le service',
-            'Gratuit et anonyme'
+            '147 — Pro Juventute : soutien gratuit et confidentiel 24h/24',
+            'Accessible par téléphone, WhatsApp, e-mail ou chat selon les options du site',
+            'Pour les jeunes et jeunes adultes qui ont besoin de parler vite'
           ]
+        }
+      ],
+      callouts: [
+        {
+          kind: 'warning',
+          html: 'Si quelqu’un risque de se blesser maintenant, ne reste pas uniquement sur une ligne d’écoute : appelle le 144 ou le 117.'
         }
       ],
       links: [
@@ -2733,9 +2747,9 @@
         'Ne pas rester seul·e face à une crise'
       ],
       firstSteps: [
-        'Appeler un service d’urgence si le danger est immédiat',
-        'Contacter les urgences psychiatriques si la crise s’aggrave',
-        'Expliquer simplement ce qui se passe maintenant'
+        'Danger vital ou passage à l’acte imminent : appeler le 144 ou le 117',
+        'Détresse psychologique urgente dans le canton : appeler le 0848 133 133',
+        'Expliquer simplement ce qui se passe maintenant : risque, lieu, personne concernée'
       ],
       bodyIntro: 'Quand la situation bascule en crise psychique, il faut agir vite et chercher un relais humain immédiat. Si la personne est en danger, il faut passer en mode urgence.',
       sections: [
@@ -2750,10 +2764,17 @@
         {
           title: 'Démarche',
           items: [
-            'Appeler les urgences si le danger est immédiat',
-            'Contacter ensuite les urgences psychiatriques',
-            'Chercher un relais pour la suite une fois la crise contenue'
+            '144 si danger médical immédiat ou risque de passage à l’acte',
+            '117 si la sécurité d’une personne est menacée',
+            '0848 133 133 pour les urgences psychiatriques / détresse psychologique du canton de Vaud',
+            'Rester avec la personne si c’est possible et sans danger, ou appeler depuis un lieu sûr'
           ]
+        }
+      ],
+      callouts: [
+        {
+          kind: 'warning',
+          html: 'En crise psychique aiguë, l’objectif n’est pas de trouver “la bonne administration”, mais de sécuriser la personne et obtenir un relais médical ou d’urgence.'
         }
       ],
       reviewedAt: '13 avril 2026',
