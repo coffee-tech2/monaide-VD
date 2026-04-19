@@ -321,9 +321,9 @@
         nom: 'Menace d\'expulsion — agis maintenant',
         badge: 'confirme',
         desc: 'C\'est une urgence. Tu as des droits et des délais légaux — mais ils sont courts.',
-        action: '1. Ne quitte pas ton logement de toi-même sans avoir fait vérifier la situation.\n2. Contacte immédiatement le CSR de ta commune.\n3. Contacte l\'ASLOCA Vaud : ☏ 021 617 16 17 — ils défendent les locataires.\n4. Les délais de contestation sont souvent très courts, donc n’attends pas.',
-        today: 'C’est une démarche du jour même: CSR puis ASLOCA.',
-        docs: ['Courriers du bailleur ou de l’office des poursuites', 'Contrat de bail', 'Preuves de paiement ou retards'],
+        action: '1. Garde la lettre, l’enveloppe et note la date de réception.\n2. Contacte l’ASLOCA Vaud aujourd’hui : ☏ 021 617 16 17, pour vérifier les délais et tes options.\n3. Contacte immédiatement le CSR de ta commune si le retard vient d’un manque de revenu.\n4. Ne quitte pas ton logement de toi-même sans avoir fait vérifier la situation et sans décision judiciaire.',
+        today: 'C’est une démarche du jour même : ASLOCA puis CSR si le problème est financier.',
+        docs: ['Courriers du bailleur ou de l’office des poursuites', 'Enveloppe avec la date de réception si tu l’as', 'Contrat de bail', 'Preuves de paiement ou retards'],
         liensDettes: true
       }));
       return;
@@ -332,10 +332,10 @@
     res.push(buildResult({
       nom: 'Parlons Cash — dettes et surendettement',
       badge: 'verifier',
-      desc: 'Si les dettes, les poursuites ou les factures te dépassent, Parlons Cash peut te donner un premier repère simple et t’aider à agir plus tôt.',
-      action: '1. Regarde d’abord Parlons Cash pour comprendre quoi faire selon ta situation.\n2. Si besoin, contacte ensuite le CSP Vaud pour un appui plus direct.\n3. Plus tôt tu agis, plus les solutions sont nombreuses.',
-      today: 'Commence par lister tes dettes, puis ouvre Parlons Cash ou demande un premier rendez-vous.',
-      docs: ['Liste des dettes ou poursuites', 'Factures impayées', 'Budget mensuel si tu l’as'],
+      desc: 'Si les dettes, les poursuites ou les factures te dépassent, Parlons Cash propose une ligne gratuite, confidentielle et sans jugement.',
+      action: '1. Appelle Parlons Cash au 0840 43 21 00.\n2. Avant l’appel, fais une liste simple : qui réclame quoi, montant, délai, poursuite ou rappel.\n3. Demande quoi payer en priorité : loyer, assurance maladie, alimentation, impôts, crédits ou autres factures.\n4. Si la situation est complexe, demande vers quel service prendre rendez-vous ensuite, par exemple CSP Vaud ou accompagnement spécialisé.',
+      today: 'Commence par lister les dettes, puis appelle Parlons Cash avant de promettre des arrangements impossibles.',
+      docs: ['Liste des dettes ou poursuites', 'Factures impayées', 'Commandements de payer ou rappels', 'Budget mensuel si tu l’as'],
       liensParlonsCash: true
     }));
   }
@@ -343,11 +343,11 @@
   function addAidesLogementResult(res, grandeCommune, dettes, loyerEleve) {
     res.push(buildResult({
       nom: 'Aides logement communales ou parapubliques',
-      badge: (dettes === 'loyer' || loyerEleve) ? 'probable' : 'verifier',
+      badge: 'verifier',
       desc: grandeCommune
-        ? 'Dans certaines grandes communes vaudoises, il existe parfois des soutiens liés au loyer ou des aides ponctuelles quand le budget logement devient trop lourd.'
-        : 'Certaines communes ou fondations proposent des soutiens liés au loyer ou au maintien dans le logement. Cela dépend beaucoup de l’endroit et de la situation.',
-      action: '1. Regarde le site de ta commune, rubrique aide sociale, logement ou prestations.\n2. Si tu ne trouves rien, appelle le CSR et demande s’il existe une aide locale liée au logement.\n3. Prépare ton bail, ton dernier loyer et une estimation de tes revenus.\n4. Si tu as reçu un rappel ou une menace d’expulsion, traite plutôt cela comme une urgence.',
+        ? 'Dans certaines communes vaudoises, il existe des soutiens liés au loyer, notamment l’aide individuelle au logement pour certaines familles. Cela dépend de la commune et des conditions.'
+        : 'Certaines communes ou fondations proposent des soutiens liés au loyer ou au maintien dans le logement. Cela dépend fortement du lieu et de la situation.',
+      action: '1. Regarde si ta commune propose une aide logement, notamment l’AIL si tu es une famille.\n2. Attention : l’AIL existe seulement dans certaines communes et ne concerne pas les personnes au RI ou aux PC AVS/AI.\n3. Prépare ton bail, ton dernier loyer, tes revenus et la composition du ménage.\n4. Si tu as reçu un rappel ou une menace d’expulsion, traite cela comme une urgence : ASLOCA et CSR.',
       docs: ['Contrat de bail', 'Dernier avis de loyer', 'Revenus actuels ou budget mensuel'],
       today: 'Garde cette piste si ton loyer pèse trop lourd ou si tu crains de ne plus réussir à le tenir.',
       liensDettes: false

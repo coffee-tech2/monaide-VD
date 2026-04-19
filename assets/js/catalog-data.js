@@ -407,17 +407,17 @@
       audience: 'Personnes dont le budget ne tient plus, avec dettes, rappels ou poursuites.',
       purpose: 'Parlons Cash aide à comprendre la situation, trouver un premier repère et agir avant que les dettes s’aggravent.',
       highlights: [
-        'Explications simples et concrètes',
-        'Orientation vers les bons services du canton',
-        'Utile aussi pour les proches',
+        'Ligne gratuite : 0840 43 21 00',
+        'Conseil confidentiel et sans jugement',
+        'Entretiens ou accompagnement possible selon la situation',
         'Jet Service peut aussi aider sur le budget pour les jeunes et les personnes en formation'
       ],
       firstSteps: [
-        'Lire les repères de Parlons Cash',
-        'Faire le point sur les factures et rappels',
-        'Contacter ensuite le bon service si besoin'
+        'Appeler Parlons Cash au 0840 43 21 00',
+        'Faire une liste simple des factures, rappels et poursuites',
+        'Demander quoi payer en priorité avant de promettre des arrangements'
       ],
-      bodyIntro: 'Si tu as des dettes, des poursuites ou que ton budget ne tient plus, Parlons Cash peut t’aider à y voir plus clair. C’est une bonne première porte pour comprendre la situation et savoir vers qui aller ensuite.',
+      bodyIntro: 'Si tu as des dettes, des poursuites ou que ton budget ne tient plus, Parlons Cash peut t’aider gratuitement, confidentiellement et sans jugement. C’est une bonne première porte pour comprendre quoi faire avant que les dettes s’aggravent.',
       sections: [
         {
           title: 'Ce que tu y trouves',
@@ -437,7 +437,16 @@
             'Poursuites, rappels ou commandement de payer',
             'Budget devenu trop serré',
             'Besoin de comprendre quoi payer en priorité',
-            'Besoin d’un premier repère avant d’appeler'
+            'Besoin d’un premier repère avant de négocier avec des créanciers'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Appeler le 0840 43 21 00',
+            'Dire simplement ce qui bloque : factures, poursuites, loyer, impôts, crédits ou primes maladie',
+            'Demander un conseil sur les priorités de paiement',
+            'Préparer ensuite un budget ou un rendez-vous si un suivi est proposé'
           ]
         },
         {
@@ -452,7 +461,7 @@
       callouts: [
         {
           kind: 'tip',
-          html: 'Un commandement de payer a des délais courts : l’opposition se fait en principe dans les 10 jours. Si tu ne sais pas quoi faire, demande rapidement conseil avant de laisser passer le délai.'
+          html: 'Un commandement de payer a des délais courts : l’opposition se fait en principe dans les 10 jours. Si tu ne sais pas quoi faire, appelle rapidement avant de laisser passer le délai.'
         }
       ],
       links: [
@@ -1806,9 +1815,9 @@
       audience: 'Familles qui paient un loyer trop lourd dans une commune où l’AIL existe.',
       purpose: 'L’AIL peut parfois réduire une partie du loyer pour certaines familles, dans les communes concernées.',
       highlights: [
-        'Ne concerne pas tout le canton de la même manière',
-        'Très liée à la commune de domicile',
-        'Piste utile quand le loyer pèse trop lourd pour une famille'
+        'Existe seulement dans certaines communes',
+        'Pour familles avec loyer trop lourd',
+        'Pas pour les personnes au RI ou aux PC AVS/AI'
       ],
       firstSteps: [
         'Vérifier si ta commune propose l’AIL',
@@ -1820,19 +1829,22 @@
       decisionBy: 'Commune de domicile concernée',
       sections: [
         {
-          title: 'Quand cette piste est utile',
+          title: 'Conditions de base',
           items: [
-            'Famille avec budget serré',
-            'Loyer trop lourd par rapport au revenu',
-            'Commune participant au dispositif'
+            'Famille domiciliée dans une commune qui participe au dispositif',
+            'Loyer trop lourd par rapport aux revenus du ménage',
+            'Moyens suffisants pour subvenir aux besoins de base malgré la charge locative',
+            'Ne pas percevoir le RI ni les prestations complémentaires AVS/AI',
+            'Aide calculée selon situation familiale, revenus et loyer'
           ]
         },
         {
           title: 'Démarche',
           items: [
-            'Vérifier d’abord si ta commune participe',
-            'Préparer bail, revenus et composition du ménage',
-            'La commune examine ensuite la demande et répond'
+            'Vérifier d’abord si ta commune fait partie des communes participantes',
+            'Déposer la demande directement auprès de la commune de domicile',
+            'Préparer bail, revenus, fortune éventuelle et composition du ménage',
+            'L’aide est en principe accordée pour 12 mois renouvelables si les conditions sont remplies'
           ]
         }
       ],
@@ -1856,9 +1868,9 @@
         'Ne jamais quitter le logement sans décision de justice'
       ],
       firstSteps: [
-        'Contacter vite le CSR si la situation est financière',
-        'Contacter l’ASLOCA Vaud',
-        'Garder tous les courriers et ne rien ignorer'
+        'Garder l’enveloppe, la lettre et toutes les dates',
+        'Contacter l’ASLOCA Vaud immédiatement',
+        'Contacter le CSR si le retard de loyer vient d’un manque de revenu'
       ],
       bodyIntro: 'Tu as reçu une lettre de résiliation ? Ne panique pas, mais agis vite. Tu as des droits et des délais. Ne quitte pas ton logement sans décision de justice.',
       sections: [
@@ -1873,10 +1885,17 @@
         {
           title: 'Démarche',
           items: [
-            'Contacter immédiatement le CSR si le loyer n’est plus tenable',
-            'Contacter l’ASLOCA pour la défense des locataires',
-            'Ne jamais quitter le logement sans décision judiciaire'
+            'Lire la date de réception et garder l’enveloppe',
+            'Contacter l’ASLOCA pour faire vérifier les délais et possibilités de contestation',
+            'Contacter immédiatement le CSR si le loyer n’est plus tenable ou s’il y a un retard',
+            'Ne jamais quitter le logement sans avoir fait vérifier la situation et sans décision judiciaire'
           ]
+        }
+      ],
+      callouts: [
+        {
+          kind: 'warning',
+          html: 'Une résiliation ou une menace d’expulsion se traite vite. Les délais peuvent être courts : ne laisse pas le courrier dans un tiroir.'
         }
       ],
       links: [
