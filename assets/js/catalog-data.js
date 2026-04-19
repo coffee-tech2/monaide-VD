@@ -2987,3 +2987,58 @@
       documentationTarget: null
     }
   ];
+
+  (function normalizeCatalogReviewMetadata() {
+    var defaultReviewDate = '19 avril 2026';
+    var decisionByDefaults = {
+      carte: 'Caritas Vaud / CarteCulture Vaud',
+      'parlons-cash': 'Programme Parlons Cash / services spécialisés selon la situation',
+      bcma: 'Bureau cantonal de médiation administrative',
+      cms: 'CMS / AVASAD selon la région',
+      'pro-infirmis': 'Pro Infirmis Vaud',
+      'sante-sexuelle-profa': 'PROFA',
+      'l-check': 'PROFA / consultation L-Check',
+      voqueer: 'Voqueer',
+      lavi: 'Centre LAVI compétent',
+      brapa: 'BRAPA',
+      'rente-pont': 'Caisse AVS Vaud ou service compétent indiqué',
+      evam: 'EVAM',
+      appartenances: 'Appartenances',
+      fraternite: 'CSP Vaud / La Fraternité',
+      passculture: 'Passculture Vaud / partenaires culturels',
+      'epicerie-caritas': 'Caritas Vaud',
+      'caritas-vetements': 'Caritas Vaud',
+      'boutique-csp-palud': 'CSP Vaud',
+      'galetas-csp': 'CSP Vaud',
+      emmaus: 'Emmaüs Vaud',
+      'brocki-lausanne': 'Armée du Salut Suisse',
+      'croix-rouge-vaudoise': 'Croix-Rouge vaudoise',
+      'menace-expulsion': 'ASLOCA, justice de paix ou service logement selon la situation',
+      'jet-service': 'CSP Vaud / Jet Service',
+      'pro-senectute': 'Pro Senectute Vaud',
+      'addiction-vaud': 'Addiction Vaud / réseau spécialisé',
+      relaids: 'Fondation Le Relais / Rel’Aids',
+      unisante: 'Unisanté',
+      'point-deau': 'Le Point d’Eau / Caritas Vaud',
+      apg: 'Caisse AVS compétente',
+      'csp-vaud': 'CSP Vaud',
+      lup: 'Commune, régie ou service logement compétent',
+      asloca: 'ASLOCA Vaud',
+      'aide-urgence-sejour': 'EVAM ou service cantonal compétent selon la situation',
+      'caritas-migration': 'Caritas Vaud',
+      'foyer-evam-femmes': 'EVAM',
+      'lignes-ecoute': 'Ligne d’écoute concernée',
+      'distributions-alimentaires': 'Association ou lieu de distribution concerné',
+      malleyprairie: 'Fondation MalleyPrairie',
+      'le-passage': 'Fondation ABS / Le Passage',
+      'vaud-pour-vous': 'Programme Vaud pour vous'
+    };
+
+    (window.MONAIDE_CATALOG_ITEMS || []).forEach(function(item) {
+      if (!item) return;
+      if (!item.reviewedAt) item.reviewedAt = defaultReviewDate;
+      if (!item.decisionBy) {
+        item.decisionBy = decisionByDefaults[item.id] || 'Organisme indiqué dans la fiche, à confirmer selon la situation';
+      }
+    });
+  })();

@@ -103,7 +103,7 @@
     var decision = item.decisionBy || 'À confirmer auprès du service indiqué dans la fiche';
     var meta = '<div class="catalog-trust-meta"><strong>Qui traite ou décide</strong><span>' + escapeCatalogRenderHtml(decision) + '</span></div>';
     var reviewed = item.reviewedAt
-      ? '<div class="catalog-trust-meta"><strong>Dernière relecture</strong><span>' + escapeCatalogRenderHtml(item.reviewedAt) + '</span></div>'
+      ? '<div class="catalog-trust-meta"><strong>Dernière relecture MonAide-VD</strong><span>' + escapeCatalogRenderHtml(item.reviewedAt) + '</span></div>'
       : '';
     return '<div class="catalog-trust"><div class="catalog-trust-note">' + escapeCatalogRenderHtml(note) + '</div>' + meta + reviewed + '</div>';
   }
