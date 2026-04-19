@@ -8,12 +8,12 @@
     CSP_MIGRATION_HOURS: 'https://csp.ch/vaud/permanences-info-conseil-migration/',
     CSP_HOME: 'https://csp.ch/vaud/',
     JET_SERVICE: 'https://csp.ch/vaud/services/questions-de-jeunes/',
-    FORMATION_AID_MEMO: 'https://csp.ch/vaud/financement-de-la-formation-aide-memoire/',
     PARLONS_CASH: 'https://www.vd.ch/aides-financieres-et-soutien-social/2023-parlons-cash-dettes-et-surendettement',
     EVAM_HOME: 'https://www.evam.ch',
     EVAM_VD_INFO: 'https://www.vd.ch/population/population-etrangere/aide-aux-migrants-evam',
     URGENCE_SEJOUR: 'https://www.vd.ch/prestation/demander-les-prestations-daide-durgence-en-cas-de-decision-de-renvoi-du-territoire-suisse',
     OCBE_INFO: 'https://www.vd.ch/formation/aides-financieres-aux-etudes-et-a-la-formation-professionnelle-bourses-ou-prets/informations-principales',
+    OCBE_ELIGIBILITY: 'https://www.vd.ch/formation/aides-financieres-aux-etudes-et-a-la-formation-professionnelle-bourses-ou-prets/informations-principales',
     OCBE_APPLY: 'https://www.vd.ch/prestation/demander-une-bourse-ou-un-pret-detudes-ou-dapprentissage',
     AI_HOME: 'https://aivd.ch/',
     AI_FORMS: 'https://aivd.ch/formulaires/',
@@ -140,10 +140,10 @@
         { type: 'link', label: 'Caisse AVS Vaud', linkKey: 'CAISSE_AVS_HOME' }
       ],
       liensBourse: [
+        { type: 'link', label: 'Faire le test d’éligibilité OCBE', linkKey: 'OCBE_ELIGIBILITY' },
         { type: 'link', label: 'Infos bourses OCBE', linkKey: 'OCBE_INFO' },
         { type: 'link', label: 'Faire une demande OCBE', linkKey: 'OCBE_APPLY' },
         { type: 'link', label: 'Jet Service — appui jeunes & formation', linkKey: 'JET_SERVICE' },
-        { type: 'link', label: 'Financement de la formation', linkKey: 'FORMATION_AID_MEMO' },
         { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Bourses d’études — OCBE' }
       ],
       liensAF: [

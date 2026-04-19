@@ -187,9 +187,9 @@
             'En cas de refus, une réclamation peut être déposée dans les 30 jours. Jet Service peut aider gratuitement à relire la décision.'
           ],
           actions: [
-            { label: 'Faire une demande OCBE', href: LINKS.OCBE_APPLY, primary: true },
+            { label: 'Faire le test d’éligibilité OCBE', href: LINKS.OCBE_ELIGIBILITY, primary: true },
+            { label: 'Faire une demande OCBE', href: LINKS.OCBE_APPLY, primary: false },
             { label: 'Infos bourses OCBE', href: LINKS.OCBE_INFO, primary: false },
-            { label: 'Aide-mémoire Jet Service (PDF)', href: 'https://csp.ch/wp-content/uploads/sites/4/2025/12/2025-aide-memoire-bourses-WEB.pdf', primary: false },
             { label: 'Guide détaillé MonAide-VD', href: '/bourses-ocbe/', primary: false }
           ]
         },

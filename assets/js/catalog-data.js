@@ -251,9 +251,9 @@
         }
       ],
       links: [
+        { kind: 'action', label: 'Faire le test d’éligibilité OCBE', url: window.MONAIDE_LINKS.OCBE_ELIGIBILITY },
         { kind: 'info', label: 'Infos bourses OCBE', url: window.MONAIDE_LINKS.OCBE_INFO },
         { kind: 'action', label: 'Faire une demande OCBE', url: window.MONAIDE_LINKS.OCBE_APPLY },
-        { kind: 'info', label: 'Aide-mémoire Jet Service (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2025/12/2025-aide-memoire-bourses-WEB.pdf' },
         { kind: 'info', label: 'Fondations privées (PDF)', url: 'https://www.vd.ch/fileadmin/user_upload/organisation/dsas/DGCS/OCBE_Liste_fondations_priv%C3%A9es.pdf' },
         { kind: 'info', label: 'Guide détaillé', url: '/bourses-ocbe/' }
       ],
@@ -458,9 +458,6 @@
       links: [
         { kind: 'info', label: 'Guide détaillé', url: '/dettes-budget/' },
         { kind: 'info', label: 'Voir Parlons Cash', url: window.MONAIDE_LINKS.PARLONS_CASH },
-        { kind: 'info', label: 'CSP : gérer son budget (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2023/03/VD-Gerer-budget-CSP-Vaud-2023-WEB.pdf' },
-        { kind: 'info', label: 'CSP : comprendre les poursuites (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2023/03/VD-Comprendre-les-poursuites-WEB-2023-CSP-Vaud.pdf' },
-        { kind: 'info', label: 'CSP : vivre avec ses dettes (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2023/03/VD-Vivre-avec-ses-dettes-WEB-2023-CSP-Vaud.pdf' },
         { kind: 'info', label: 'Voir aussi le CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
         { kind: 'info', label: 'Voir aussi Jet Service', url: window.MONAIDE_LINKS.JET_SERVICE }
       ],
@@ -883,8 +880,7 @@
       decisionBy: 'BRAPA',
       links: [
         { kind: 'action', label: 'Demander une avance BRAPA', url: window.MONAIDE_LINKS.BRAPA_APPLY },
-        { kind: 'action', label: 'Contacter le BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT },
-        { kind: 'info', label: 'CSP : autorité parentale et entretien (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2025/03/Aide-memoire-autorite-parentale-2023.pdf' }
+        { kind: 'action', label: 'Contacter le BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT }
       ],
       documentationTarget: null
     },
@@ -931,9 +927,6 @@
       decisionBy: 'Selon la question: justice, BRAPA, médiation ou autre service compétent',
       links: [
         { kind: 'info', label: 'Se séparer, vivre un deuil — Vaud', url: window.MONAIDE_LINKS.FAMILY_CRISIS },
-        { kind: 'info', label: 'CSP : se séparer (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2025/03/Aide-memoire-se-separer-2023.pdf' },
-        { kind: 'info', label: 'CSP : divorcer (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2025/03/Aide-memoire-divorcer-2021.pdf' },
-        { kind: 'info', label: 'CSP : autorité parentale et entretien (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2025/03/Aide-memoire-autorite-parentale-2023.pdf' },
         { kind: 'info', label: 'BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT },
         { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
       ],
