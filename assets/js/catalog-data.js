@@ -122,18 +122,24 @@
         {
           title: 'Conditions',
           items: [
-            'Majeur·e, domicilié·e dans le canton',
-            'Cadre de séjour à vérifier selon la situation',
-            'Revenus et charges à examiner selon le barème RI',
-            'Fortune limitée, à vérifier selon la composition du ménage'
+            'Être majeur·e (18 ans ou plus)',
+            'Vivre dans le canton de Vaud',
+            'Être suisse ou avoir un permis de séjour / une autorisation de renseigner',
+            'Avoir des ressources mensuelles inférieures au barème cantonal du RI',
+            'Fortune maximale : 4’000 CHF seul·e, 8’000 CHF en couple, +2’000 CHF par enfant, 10’000 CHF maximum par famille',
+            'Pour les personnes de plus de 57 ans : limite de fortune de 10’000 CHF, quelle que soit la situation familiale',
+            'Le RI intervient en dernier recours, après les revenus, assurances sociales, aide familiale possible et autres prestations'
           ]
         },
         {
           title: 'Démarche',
           items: [
-            'Contacter d’abord le CSR de ta commune',
-            'Rendez-vous d’évaluation avec un·e assistant·e social·e',
-            'Dossier financier à constituer'
+            'Contacter le CSR compétent pour ta commune de domicile',
+            'Le CSR examine ta situation et détermine si le RI est possible',
+            'Préparer une pièce d’identité, le permis de séjour si concerné et la fiche du contrôle des habitants',
+            'Préparer les 3 derniers décomptes de tous tes comptes bancaires ou postaux, en Suisse ou à l’étranger',
+            'Préparer le bail à loyer et la preuve de paiement du dernier loyer',
+            'Apporter aussi les autres documents demandés par le CSR ou le CSIR selon ta situation'
           ]
         }
       ],

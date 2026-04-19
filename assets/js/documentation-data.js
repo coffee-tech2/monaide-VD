@@ -18,6 +18,7 @@
           infoBoxes: [
             { label: 'Comment faire', text: 'Commence par le CSR de ta commune. Le CSR vérifie ensuite si le RI est la bonne piste ou s’il faut d’abord activer une autre aide.' },
             { label: 'Bon repère', text: 'Tu peux commencer même si tu n’as pas encore tous les papiers. Le plus important est de ne pas rester seul·e si le budget ne tient plus.' },
+            { label: 'Conditions de base', text: 'Être majeur·e, vivre dans le canton, avoir un séjour compatible, des ressources sous le barème RI et une fortune sous les limites cantonales.' },
             { label: 'À éviter', text: 'Ne vide pas tes comptes, ne cache pas une ressource et ne quitte pas ton logement sans conseil. Le CSR doit comprendre la situation réelle.' }
           ],
           preChecklistNotes: [
@@ -27,10 +28,10 @@
           checklist: [
             'Pièce d’identité ou permis de séjour',
             'Numéro AVS — sur ta carte d’assurance maladie, ta carte AVS ou certains courriers officiels',
-            'Attestation de domicile — à demander à ta commune si tu ne l’as pas',
+            'Fiche du contrôle des habitants ou attestation de domicile — à demander à ta commune si tu ne l’as pas',
             'Revenus récents — salaires, indemnités chômage, rentes, pensions ou autres entrées d’argent',
-            'Relevés bancaires récents — en général via e-banking, bancomat ou demande à la banque',
-            'Bail à loyer et dernières preuves de paiement du loyer',
+            'Décomptes des 3 derniers mois de tous tes comptes bancaires ou postaux, en Suisse ou à l’étranger',
+            'Bail à loyer et preuve de paiement du dernier loyer',
             'Police LAMal et factures de primes — disponibles dans les courriers ou l’espace client de ta caisse maladie',
             'Dernière taxation ou déclaration fiscale — via VaudTax, le courrier des impôts ou l’office d’impôt si besoin'
           ],
