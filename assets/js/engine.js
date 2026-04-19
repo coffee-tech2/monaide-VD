@@ -32,8 +32,7 @@
       fortune: getFieldDisplayValue('fortune'),
       separation: readFieldValue('separation_en_cours', 'non') === 'oui' ? 'Oui' : '',
       protection: readFieldValue('besoin_protection', 'non') === 'oui' ? 'Oui' : '',
-      procheAidant: readFieldValue('proche_aidant', 'non') === 'oui' ? 'Oui' : '',
-      santeMentale: readFieldValue('sante_mentale', 'non') === 'oui' ? 'Oui' : ''
+      procheAidant: readFieldValue('proche_aidant', 'non') === 'oui' ? 'Oui' : ''
     };
   }
 
@@ -60,7 +59,6 @@
       separationEnCours: readFieldValue('separation_en_cours', 'non'),
       besoinProtection: readFieldValue('besoin_protection', 'non'),
       procheAidant: readFieldValue('proche_aidant', 'non'),
-      santeMentale: readFieldValue('sante_mentale', 'non'),
       summary: buildProfileSummary(commune)
     };
   };
@@ -83,7 +81,6 @@
     var separationEnCours = profile.separationEnCours || 'non';
     var besoinProtection = profile.besoinProtection || 'non';
     var procheAidant = profile.procheAidant || 'non';
-    var santeMentale = profile.santeMentale || 'non';
 
     var permisB = permis.indexOf('Permis B') !== -1;
     var permisC = permis.indexOf('Permis C') !== -1;
@@ -111,7 +108,6 @@
       separationEnCours: separationEnCours,
       besoinProtection: besoinProtection,
       procheAidant: procheAidant,
-      santeMentale: santeMentale,
       revenuFaible: revenu === 'aucun' || revenu === 'moins1000' || revenu === '1000-2000',
       revenuModere: revenu === '2000-3500',
       retraite: sitPro.includes('Retrait') || age === '65plus' || aidesListe.includes('AVS'),
@@ -435,17 +431,6 @@
     }));
   }
 
-  function addSanteMentaleRelaisResult(res) {
-    res.push(buildResult({
-      nom: 'Santé mentale — premiers relais',
-      badge: 'verifier',
-      desc: 'Quand la santé mentale devient difficile à gérer, un premier relais humain peut aider à faire le point et à trouver la bonne porte.',
-      action: '1. Si toi ou quelqu’un d’autre risque de se faire du mal maintenant, appelle le 144 ou le 117.\n2. Si c’est une détresse psychologique urgente dans le canton de Vaud, appelle le 0848 133 133.\n3. Si tu as surtout besoin de parler maintenant : 143 pour les adultes, 147 pour les jeunes.\n4. Pour préparer un rendez-vous, note depuis quand ça ne va pas, ce qui devient difficile, les traitements éventuels et les personnes de confiance.',
-      docs: ['Médicaments ou traitements actuels si concernés', 'Coordonnées du médecin si existant', 'Quelques notes sur ce qui se passe'],
-      liensSanteMentale: true
-    }));
-  }
-
   function addFallbackResult(res) {
     res.push(buildResult({
       nom: 'Aucune aide identifiée automatiquement',
@@ -756,7 +741,6 @@
     var separationEnCours = flags.separationEnCours;
     var besoinProtection = flags.besoinProtection;
     var procheAidant = flags.procheAidant;
-    var santeMentale = flags.santeMentale;
     var permisN = flags.permisN;
     var permisS = flags.permisS;
     var sansStatut = flags.sansStatut;
@@ -796,7 +780,6 @@
     if (besoinProtection === 'oui') addViolenceProtectionResult(res);
     if (separationEnCours === 'oui' && besoinProtection !== 'oui') addSeparationResult(res, flags);
     if (procheAidant === 'oui') addProchesAidantsResult(res);
-    if (santeMentale === 'oui') addSanteMentaleRelaisResult(res);
 
     if (invalidite && !retraite) addProInfirmisResult(res);
     if (retraite || age === '65plus') addProSenectuteResult(res);

@@ -119,7 +119,6 @@
       'liensSeparation',
       'liensViolence',
       'liensProchesAidants',
-      'liensSanteMentale',
       'liensCSR'
     ],
     sets: {
@@ -245,11 +244,6 @@
         { type: 'link', label: 'Infos proches aidant·es', linkKey: 'ESPACE_PROCHES_INFO' },
         { type: 'link', label: 'Questions fréquentes', linkKey: 'ESPACE_PROCHES_FAQ' },
         { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Proches aidant·es — répit et aides concrètes' }
-      ],
-      liensSanteMentale: [
-        { type: 'link', label: 'Cultiver sa santé mentale', linkKey: 'MENTAL_HEALTH_SUPPORT' },
-        { type: 'link', label: 'Urgences — Vaud', linkKey: 'URGENCES_VAUD' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Santé mentale — premiers relais' }
       ],
       liensCSR: [
         { type: 'csr', label: 'Trouver ton CSR' }
@@ -410,7 +404,7 @@
       'ombudsman': ['bureau cantonal de mediation administrative bcma'],
       'violence': ['lavi aide aux victimes', 'malleyprairie violence conjugale familiale'],
       'handicap': ['assurance invalidite ai', 'pro infirmis vaud'],
-      'sante mentale': ['cms soins et aide a domicile', 'pro infirmis vaud', 'addiction vaud informations orientation']
+      'sante mentale': ['sante mentale premiers relais', 'lignes d ecoute d urgence', 'crise psychique urgence psychiatrique']
     },
     aliasMap: {
       'csr': ['centre social regional csr'],
@@ -542,7 +536,7 @@
       1: [['commune', 'age'], ['situation_familiale', 'statut_sejour']],
       2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
       3: [['revenu', 'fortune', 'prime_lamal'], ['aides_actuelles']],
-      4: [['incapacite', 'dettes'], ['separation_en_cours', 'besoin_protection'], ['proche_aidant', 'sante_mentale']]
+      4: [['incapacite', 'dettes'], ['separation_en_cours', 'besoin_protection'], ['proche_aidant']]
     },
     requiredFieldsForCurrentStep: {
       1: ['age', 'situation_familiale', 'statut_sejour'],
