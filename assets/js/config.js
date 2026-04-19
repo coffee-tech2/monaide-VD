@@ -49,6 +49,7 @@
     PARENTS_RESCOUSSE: 'https://croixrougevaudoise.ch/prestations/parents-rescousse/',
     ESPACE_PROCHES_INFO: 'https://www.vd.ch/aides-financieres-et-soutien-social/proches-aidants/informations-conseils-repit-releve-a-domicile-formations',
     ESPACE_PROCHES_FAQ: 'https://www.vd.ch/aides-financieres-et-soutien-social/proches-aidants/etre-proche-aidant-reponses-aux-questions-frequentes',
+    ESPACE_PROCHES_FINANCES: 'https://www.vd.ch/aides-financieres-et-soutien-social/proches-aidants/aides-financieres-utiles-aux-proches-aidants-et-conges-pour-proches-aidants-en-emploi',
     MENTAL_HEALTH_SUPPORT: 'https://www.vd.ch/sante-soins-et-handicap/prevention-et-maladies/sante-mentale/cultiver-sa-sante-mentale',
     URGENCES_VAUD: 'https://www.vd.ch/sante-soins-et-handicap/dispositifs-de-soins-vaudois/urgences',
     URGENCES_PSY_CHUV: 'https://www.chuv.ch/fr/fiches-psy/unite-urgences-et-crise-urgences-psychiatriques',
@@ -242,6 +243,7 @@
       ],
       liensProchesAidants: [
         { type: 'link', label: 'Infos proches aidant·es', linkKey: 'ESPACE_PROCHES_INFO' },
+        { type: 'link', label: 'Aides financières et congés', linkKey: 'ESPACE_PROCHES_FINANCES' },
         { type: 'link', label: 'Questions fréquentes', linkKey: 'ESPACE_PROCHES_FAQ' },
         { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Proches aidant·es — répit et aides concrètes' }
       ],

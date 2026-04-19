@@ -2107,42 +2107,59 @@
       id: 'repit-proches-aidants',
       title: 'Proches aidant·es — répit et aides concrètes',
       category: 'sante',
-      summary: 'Relève, pause, aide à domicile · Quand la charge devient trop lourde',
+      summary: 'Hotline 0800 660 660 · Relève · Carte d’urgence · Aides possibles',
       audience: 'Personnes qui aident déjà un proche et ont besoin d’un vrai relais, pas seulement d’information.',
-      purpose: 'Cette fiche aide à repérer des solutions concrètes de répit, de relève ou d’aide à domicile quand la charge devient trop lourde.',
+      purpose: 'Cette fiche aide à repérer les soutiens concrets pour proches aidant·es : information, relève, carte d’urgence, CMS, congés et aides financières possibles.',
       highlights: [
-        'À regarder avant l’épuisement',
-        'Concret pour tenir dans la durée',
-        'Utile même si tu aides “juste un peu” mais souvent'
+        'Hotline cantonale gratuite : 0800 660 660',
+        'Carte d’urgence proche aidant via le CMS',
+        'Congés et aides financières possibles selon la situation'
       ],
       firstSteps: [
-        'Commencer par les infos proches aidants du canton',
-        'Voir les solutions de relève ou de répit possibles',
-        'Contacter ensuite un service pour du concret'
+        'Appeler Espace Proches au 0800 660 660 pour faire le tri',
+        'Contacter le CMS si la personne aidée vit à domicile ou a besoin d’une carte d’urgence',
+        'Regarder les aides financières et congés si tu as réduit ton travail ou si la charge impacte ton revenu'
       ],
-      bodyIntro: 'Quand on aide un proche, le plus dur est souvent de tenir dans la durée. Il existe parfois des solutions de relève, de répit ou d’aide à domicile.',
+      bodyIntro: 'Quand on aide régulièrement un proche, le plus dur est souvent de tenir dans la durée. Dans le canton de Vaud, il existe des relais très concrets : conseil gratuit, carte d’urgence, relève à domicile, consultation psychologique, congés et certaines aides financières.',
       sections: [
         {
           title: 'Quand cette piste est utile',
           items: [
-            'Fatigue importante ou charge mentale forte',
-            'Besoin de souffler sans abandonner le proche',
-            'Questions concrètes sur les relais à domicile'
+            'Tu aides un proche au moins régulièrement, par exemple pour soins, repas, démarches, finances ou présence',
+            'La personne aidée est atteinte dans sa santé, son autonomie, son âge ou son handicap',
+            'Tu es fatigué·e, tu réduis ton travail, ou tu ne sais plus comment organiser la suite'
+          ]
+        },
+        {
+          title: 'Aides et relais à vérifier',
+          items: [
+            'Espace Proches : écoute, informations, orientation et entretiens individuels gratuits',
+            'CMS / AVASAD : carte d’urgence proche aidant et organisation de l’aide à domicile',
+            'Relève à domicile : Pro Infirmis, Alzheimer Vaud, Pro-XY ou Croix-Rouge selon la situation',
+            'Aides financières possibles : aide à l’entourage, aides à domicile, AMINH pour enfant mineur handicapé, congés proches aidants'
           ]
         },
         {
           title: 'Démarche',
           items: [
-            'Regarder d’abord les infos cantonales proches aidants',
-            'Demander ensuite quels relais existent dans ta région',
-            'Voir aussi les CMS si l’aide à domicile devient nécessaire'
+            'Appeler le 0800 660 660 et expliquer qui tu aides, à quelle fréquence et ce qui devient difficile',
+            'Demander si une carte d’urgence proche aidant est utile',
+            'Si tu as diminué ou arrêté ton activité pour aider : demander explicitement les pistes d’aides financières et congés',
+            'Préparer les coordonnées du proche aidé, les suivis CMS/médicaux existants et une courte liste de ce que tu fais au quotidien'
           ]
         }
       ],
+      callouts: [
+        {
+          kind: 'callout',
+          html: 'À garder dans le simulateur : ce n’est pas seulement de l’écoute. Il peut y avoir carte d’urgence, relève, aide à domicile, congés et aides financières selon la situation.'
+        }
+      ],
       reviewedAt: '13 avril 2026',
-      decisionBy: 'Information et orientation, selon les services disponibles',
+      decisionBy: 'Espace Proches, CMS/AVASAD, DGCS ou organismes de relève selon la prestation',
       links: [
         { kind: 'info', label: 'Informations, conseils et répit — Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
+        { kind: 'info', label: 'Aides financières et congés', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FINANCES },
         { kind: 'info', label: 'Questions fréquentes proches aidants', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FAQ },
         { kind: 'info', label: 'AVASAD / CMS Vaud', url: window.MONAIDE_LINKS.CMS_AVASAD }
       ],

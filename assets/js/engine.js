@@ -424,9 +424,9 @@
     res.push(buildResult({
       nom: 'Proches aidant·es — répit et aides concrètes',
       badge: 'verifier',
-      desc: 'Si tu aides régulièrement un proche, il existe des solutions de répit, de relève et d’information pour ne pas porter cela seul·e.',
-      action: '1. Note concrètement ce que tu fais pour le proche : soins, repas, administratif, présence, déplacements.\n2. Contacte un relais proche aidant·e pour demander quelles solutions de répit ou relève existent.\n3. Si la personne aidée est suivie par un CMS, demande aussi une évaluation de la situation.\n4. Garde les courriers médicaux ou décisions utiles pour expliquer le contexte.',
-      docs: ['Coordonnées du proche aidé', 'Courriers médicaux ou CMS si disponibles', 'Liste des tâches d’aide au quotidien'],
+      desc: 'Si tu aides régulièrement un proche, il existe dans le canton des soutiens concrets : Espace Proches, CMS, carte d’urgence, relève, congés et parfois aides financières.',
+      action: '1. Note concrètement ce que tu fais pour le proche : soins, repas, administratif, présence, déplacements, surveillance.\n2. Appelle Espace Proches au 0800 660 660 pour faire le tri gratuitement.\n3. Si la personne aidée vit à domicile, contacte aussi le CMS pour demander une évaluation, une carte d’urgence proche aidant ou une relève.\n4. Si tu as réduit ou arrêté ton activité pour aider, demande explicitement si une aide financière ou un congé proche aidant est possible.',
+      docs: ['Coordonnées du proche aidé', 'Courriers médicaux ou CMS si disponibles', 'Liste des tâches d’aide au quotidien', 'Preuve de réduction d’activité ou perte de revenu si concerné·e'],
       liensProchesAidants: true
     }));
   }
