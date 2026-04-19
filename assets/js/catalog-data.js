@@ -251,7 +251,7 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'Faire le test d’éligibilité OCBE', url: window.MONAIDE_LINKS.OCBE_ELIGIBILITY },
+        { kind: 'action', label: 'Faire le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage)', url: window.MONAIDE_LINKS.OCBE_ELIGIBILITY },
         { kind: 'info', label: 'Infos bourses OCBE', url: window.MONAIDE_LINKS.OCBE_INFO },
         { kind: 'action', label: 'Faire une demande OCBE', url: window.MONAIDE_LINKS.OCBE_APPLY },
         { kind: 'info', label: 'Fondations privées (PDF)', url: 'https://www.vd.ch/fileadmin/user_upload/organisation/dsas/DGCS/OCBE_Liste_fondations_priv%C3%A9es.pdf' },

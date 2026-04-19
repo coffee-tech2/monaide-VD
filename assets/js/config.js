@@ -140,7 +140,7 @@
         { type: 'link', label: 'Caisse AVS Vaud', linkKey: 'CAISSE_AVS_HOME' }
       ],
       liensBourse: [
-        { type: 'link', label: 'Faire le test d’éligibilité OCBE', linkKey: 'OCBE_ELIGIBILITY' },
+        { type: 'link', label: 'Faire le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage)', linkKey: 'OCBE_ELIGIBILITY' },
         { type: 'link', label: 'Infos bourses OCBE', linkKey: 'OCBE_INFO' },
         { type: 'link', label: 'Faire une demande OCBE', linkKey: 'OCBE_APPLY' },
         { type: 'link', label: 'Jet Service — appui jeunes & formation', linkKey: 'JET_SERVICE' },
@@ -354,7 +354,7 @@
       { patterns: ['subside lamal'], title: 'Qui contacter d’abord', text: 'Commence par le calcul officiel. Si tu bloques, une agence AAS peut aussi t’aider à faire la demande.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
       { patterns: ['assurance invalidite'], title: 'Qui contacter d’abord', text: 'AI Vaud est la bonne porte d’entrée. Un médecin, psychiatre ou psychologue peut aussi t’aider à préparer la demande.', actionLabel: 'Infos AI Vaud', actionKey: 'AI_HOME' },
       { patterns: ['prestations complementaires'], title: 'Qui contacter d’abord', text: 'Le plus simple est souvent de commencer par une agence AAS, qui peut faire un premier tri avant la demande officielle.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
-      { patterns: ['bourses', 'ocbe'], title: 'Qui contacter d’abord', text: 'Commence par le test d’éligibilité OCBE, puis dépose une demande si la piste semble correspondre. Si le dossier te paraît compliqué, Jet Service peut aussi aider à le remplir.', actionLabel: 'Faire le test OCBE', actionKey: 'OCBE_ELIGIBILITY' },
+      { patterns: ['bourses', 'ocbe'], title: 'Qui contacter d’abord', text: 'Commence par le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage), puis dépose une demande si la piste semble correspondre. Si le dossier te paraît compliqué, Jet Service peut aussi aider à le remplir.', actionLabel: 'Faire le test d’éligibilité de l’OCBE', actionKey: 'OCBE_ELIGIBILITY' },
       { patterns: ['carteculture'], title: 'Qui contacter d’abord', text: 'Si tu as déjà une aide sociale ou un revenu modeste, la piste CarteCulture peut valoir la peine d’être activée après les démarches prioritaires.', actionLabel: 'Demander la CarteCulture', actionKey: 'CARTECULTURE_APPLY' },
       { patterns: ['evam'], title: 'Qui contacter d’abord', text: 'Quand le séjour ou le cadre asile est central, le relais EVAM reste souvent la première porte à utiliser.', actionLabel: 'EVAM Vaud', actionKey: 'EVAM_HOME' },
       { patterns: ['lavi'], title: 'Qui contacter d’abord', text: 'En cas de violence, d’agression ou d’infraction, le centre LAVI est une bonne première porte, même sans plainte.', actionLabel: 'Centre LAVI Vaud', actionKey: 'LAVI_LAUSANNE' }

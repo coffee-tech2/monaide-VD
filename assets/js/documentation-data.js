@@ -187,7 +187,7 @@
             'En cas de refus, une réclamation peut être déposée dans les 30 jours. Jet Service peut aider gratuitement à relire la décision.'
           ],
           actions: [
-            { label: 'Faire le test d’éligibilité OCBE', href: LINKS.OCBE_ELIGIBILITY, primary: true },
+            { label: 'Faire le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage)', href: LINKS.OCBE_ELIGIBILITY, primary: true },
             { label: 'Faire une demande OCBE', href: LINKS.OCBE_APPLY, primary: false },
             { label: 'Infos bourses OCBE', href: LINKS.OCBE_INFO, primary: false },
             { label: 'Guide détaillé MonAide-VD', href: '/bourses-ocbe/', primary: false }
