@@ -10,3 +10,12 @@ Le site sert:
 - un catalogue des aides
 - une documentation pratique
 - plusieurs guides detailles pour le SEO et l’orientation directe
+
+## Contrôles utiles avant publication
+
+```bash
+node scripts/simulator-smoke-test.js
+node scripts/catalog-quality-check.js
+```
+
+Ces scripts vérifient les cas sensibles du simulateur et la qualité minimale des fiches du catalogue (champs essentiels, doublons et liens internes).

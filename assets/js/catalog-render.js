@@ -98,12 +98,14 @@
   }
 
   function renderCatalogRenderTrust(item) {
-    if (!item || (!item.decisionBy && !item.reviewNote)) return '';
+    if (!item) return '';
     var note = item.reviewNote || 'Contenu relu avec une logique d’orientation sociale, mais ne remplace pas une décision officielle.';
-    var meta = item.decisionBy
-      ? '<div class="catalog-trust-meta"><strong>Qui traite ou décide</strong><span>' + escapeCatalogRenderHtml(item.decisionBy) + '</span></div>'
+    var decision = item.decisionBy || 'À confirmer auprès du service indiqué dans la fiche';
+    var meta = '<div class="catalog-trust-meta"><strong>Qui traite ou décide</strong><span>' + escapeCatalogRenderHtml(decision) + '</span></div>';
+    var reviewed = item.reviewedAt
+      ? '<div class="catalog-trust-meta"><strong>Dernière relecture</strong><span>' + escapeCatalogRenderHtml(item.reviewedAt) + '</span></div>'
       : '';
-    return '<div class="catalog-trust"><div class="catalog-trust-note">' + escapeCatalogRenderHtml(note) + '</div>' + meta + '</div>';
+    return '<div class="catalog-trust"><div class="catalog-trust-note">' + escapeCatalogRenderHtml(note) + '</div>' + meta + reviewed + '</div>';
   }
 
   function renderCatalogRenderBody(item) {

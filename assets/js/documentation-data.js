@@ -16,18 +16,27 @@
             text: 'Le CSR de ta région. Même si ton dossier n’est pas complet, tu peux commencer par là.'
           },
           infoBoxes: [
-            { label: 'Comment faire', text: 'Commence par le CSR. On te dira ensuite quoi apporter.' },
-            { label: 'Bon repère', text: 'Tu peux commencer même si tu n’as pas encore tous les papiers.' }
+            { label: 'Comment faire', text: 'Commence par le CSR de ta commune. Le CSR vérifie ensuite si le RI est la bonne piste ou s’il faut d’abord activer une autre aide.' },
+            { label: 'Bon repère', text: 'Tu peux commencer même si tu n’as pas encore tous les papiers. Le plus important est de ne pas rester seul·e si le budget ne tient plus.' },
+            { label: 'À éviter', text: 'Ne vide pas tes comptes, ne cache pas une ressource et ne quitte pas ton logement sans conseil. Le CSR doit comprendre la situation réelle.' }
+          ],
+          preChecklistNotes: [
+            '<strong>Astuce.</strong> Prépare les documents que tu as déjà, même si le dossier n’est pas parfait. Une photo lisible sur téléphone peut parfois aider à démarrer, puis le CSR te dira ce qu’il faut compléter.'
           ],
           checklistLabel: 'Documents à préparer',
           checklist: [
             'Pièce d’identité ou permis de séjour',
-            'Numéro AVS et attestation de domicile',
-            'Revenus, relevés de compte et bail',
-            'Police LAMal et dernière taxation'
+            'Numéro AVS — sur ta carte d’assurance maladie, ta carte AVS ou certains courriers officiels',
+            'Attestation de domicile — à demander à ta commune si tu ne l’as pas',
+            'Revenus récents — salaires, indemnités chômage, rentes, pensions ou autres entrées d’argent',
+            'Relevés bancaires récents — en général via e-banking, bancomat ou demande à la banque',
+            'Bail à loyer et dernières preuves de paiement du loyer',
+            'Police LAMal et factures de primes — disponibles dans les courriers ou l’espace client de ta caisse maladie',
+            'Dernière taxation ou déclaration fiscale — via VaudTax, le courrier des impôts ou l’office d’impôt si besoin'
           ],
           notes: [
-            'Si tu n’as pas tous les papiers, commence quand même. Le CSR te dira la suite.'
+            'Si tu n’as pas tous les papiers, commence quand même. Le CSR te dira la suite.',
+            'Si tu as perdu des bulletins de salaire, tu peux demander une copie à ton employeur ou aux RH. C’est une demande normale.'
           ],
           actions: [
             { label: 'Ouvrir la démarche officielle RI', href: LINKS.RI_APPLY, primary: true },
@@ -56,18 +65,22 @@
             text: 'Une agence AAS si tu bloques sur le calcul ou sur la demande. L’OVAM reste le service qui décide ensuite.'
           },
           infoBoxes: [
-            { label: 'Comment faire', text: 'Fais le calcul officiel puis dépose la demande.' },
-            { label: 'Bon repère', text: 'La date de dépôt compte. En cas de doute, demande de l’aide.' },
+            { label: 'Comment faire', text: 'Fais le calcul officiel puis dépose la demande. Si le résultat est flou, une AAS peut t’aider gratuitement.' },
+            { label: 'Bon repère', text: 'La date de dépôt compte. En cas de doute, demande de l’aide plutôt que d’attendre.' },
             { label: 'Version papier', text: 'Si tu ne peux pas faire la demande en ligne, une agence AAS peut la remplir avec toi gratuitement.' }
           ],
           checklistLabel: 'Documents à préparer',
           checklist: [
-            'Numéro AVS et pièce d’identité',
-            'Dernière taxation',
-            'Police LAMal'
+            'Numéro AVS — sur la carte d’assurance maladie ou la carte AVS',
+            'Pièce d’identité ou permis de séjour',
+            'Dernière taxation — courrier des impôts, VaudTax ou demande à l’office d’impôt',
+            'Police LAMal — courrier de ta caisse maladie ou espace client en ligne',
+            'Revenus actuels si la situation a changé depuis la taxation',
+            'Coordonnées bancaires si demandées'
           ],
           notes: [
-            'La date de dépôt compte. Si l’OVAM accorde un effet rétroactif, l’assureur corrige ensuite les primes payées en trop.'
+            'La date de dépôt compte. Si l’OVAM accorde un effet rétroactif, l’assureur corrige ensuite les primes payées en trop.',
+            'Erreur fréquente : croire que le calcul rapide suffit. Il faut déposer une vraie demande pour recevoir une décision.'
           ],
           actions: [
             { label: 'Évaluer et demander le subside', href: LINKS.SUBSIDE_HOME, primary: true },
@@ -98,7 +111,8 @@
           },
           infoBoxes: [
             { label: 'Canal', text: 'Formulaires PDF à télécharger, imprimer et envoyer si tu préfères une demande papier.' },
-            { label: 'Bon repère', text: 'Un suivi médical peut t’aider à préparer le dossier.' }
+            { label: 'Bon repère', text: 'Un suivi médical peut t’aider à préparer le dossier.' },
+            { label: 'À retenir', text: 'L’AI ne sert pas seulement à demander une rente. Elle peut aussi proposer des mesures de réadaptation ou des moyens auxiliaires.' }
           ],
           preChecklistNotes: [
             '<strong>Formulaire PDF.</strong> Ici, tu peux bien télécharger des formulaires PDF AI, les imprimer et les utiliser pour une demande papier si c’est plus simple pour toi.'
@@ -106,11 +120,16 @@
           checklistLabel: 'Documents à préparer',
           checklist: [
             'Pièce d’identité',
-            'Certificats et rapports médicaux',
-            'Formulaire AI 001.303'
+            'Formulaire AI 001.303 rempli et signé',
+            'Certificats et rapports médicaux récents',
+            'Coordonnées du médecin, psychiatre, psychologue ou thérapeute qui te suit',
+            'Contrat de travail, certificats de salaire ou attestations chômage si tu en as',
+            'Dates importantes : début des symptômes, arrêt de travail, hospitalisation, reprise partielle',
+            'Courriers d’assurance perte de gain, accident ou employeur si concernés'
           ],
           notes: [
-            'N’attends pas que tout soit fixé. L’AI peut aider avant même qu’une rente soit décidée.'
+            'N’attends pas que tout soit fixé. L’AI peut aider avant même qu’une rente soit décidée.',
+            'Erreur fréquente : attendre une année complète avant de déposer. Si l’incapacité dure ou risque de durer, il vaut mieux demander conseil rapidement.'
           ],
           actions: [
             { label: 'Ouvrir les formulaires AI Vaud', href: LINKS.AI_FORMS, primary: true },
@@ -140,7 +159,8 @@
           },
           infoBoxes: [
             { label: 'Canal', text: 'La demande commence en ligne. Ensuite, la confirmation signée peut partir par mail ou par courrier.' },
-            { label: 'Bon repère', text: 'N’attends pas d’avoir toutes les pièces pour commencer. La date de dépôt compte.' }
+            { label: 'Bon repère', text: 'N’attends pas d’avoir toutes les pièces pour commencer. La date de dépôt compte.' },
+            { label: 'Attention', text: 'Une bourse dépend souvent aussi de la situation des parents ou du ménage. Ce n’est pas seulement ton revenu personnel.' }
           ],
           preChecklistNotes: [
             '<strong>Courrier postal.</strong> Si tu utilises le courrier postal, la demande commence en ligne. Ensuite, tu imprimes la page de confirmation, tu la signes et tu l’envoies en PDF à <a href="mailto:info.bourses@vd.ch">info.bourses@vd.ch</a> ou par courrier à <strong>OCBE, Route des Plaines-du-Loup 1, 1014 Lausanne</strong>.'
@@ -148,12 +168,16 @@
           checklistLabel: 'Documents à préparer',
           checklist: [
             'Pièce d’identité ou permis',
-            'Attestation d’inscription',
-            'Documents fiscaux utiles',
-            'Attestation de domicile'
+            'Attestation d’inscription ou confirmation de formation',
+            'Documents fiscaux utiles de l’étudiant·e et, selon la situation, des parents ou du ménage',
+            'Attestation de domicile',
+            'Bail ou justificatif de logement si tu ne vis pas chez tes parents',
+            'Coordonnées bancaires',
+            'Contrat d’apprentissage, salaire d’apprenti·e ou revenu d’activité si concerné'
           ],
           notes: [
-            'Pour les bourses, la date de dépôt compte. Si certaines pièces manquent, l’OCBE peut te dire comment compléter ensuite.'
+            'Pour les bourses, la date de dépôt compte. Si certaines pièces manquent, l’OCBE peut te dire comment compléter ensuite.',
+            'Erreur fréquente : abandonner parce qu’il manque une pièce. Commence la demande et garde la confirmation de dépôt.'
           ],
           actions: [
             { label: 'Faire une demande OCBE', href: LINKS.OCBE_APPLY, primary: true },
@@ -183,7 +207,8 @@
           },
           infoBoxes: [
             { label: 'Canal', text: 'Formulaire en ligne. Si tu bloques, l’équipe peut t’aider par téléphone.' },
-            { label: 'Bon repère', text: 'Le justificatif de situation demandé peut varier selon ton cas.' }
+            { label: 'Bon repère', text: 'Le justificatif de situation demandé peut varier selon ton cas.' },
+            { label: 'À quoi ça sert', text: 'La carte peut réduire le prix de certaines offres culturelles, sportives, de loisirs ou du quotidien.' }
           ],
           preChecklistNotes: [
             '<strong>Version papier.</strong> La demande passe par le formulaire en ligne. Si ce n’est pas possible, tu peux appeler l’équipe CarteCulture Vaud au <a href="tel:0213175980">021 317 59 80</a>.'
@@ -195,11 +220,13 @@
           checklistLabel: 'Documents à préparer',
           checklist: [
             'Pièce d’identité',
-            'Justificatif de situation (attestation RI, PC, subside ou bourse)',
-            'Photo d’identité (format passeport)'
+            'Justificatif de situation — attestation RI, PC, subside LAMal, bourse ou autre preuve demandée',
+            'Photo d’identité format passeport',
+            'Adresse e-mail ou numéro de téléphone pour le suivi de la demande'
           ],
           notes: [
-            'Si tu hésites sur le justificatif à envoyer, l’équipe CarteCulture Vaud peut te renseigner.'
+            'Si tu hésites sur le justificatif à envoyer, l’équipe CarteCulture Vaud peut te renseigner.',
+            'Erreur fréquente : ne pas demander la carte alors qu’on reçoit déjà une aide qui peut servir de justificatif.'
           ],
           actions: [
             { label: 'Demander la CarteCulture', href: LINKS.CARTECULTURE_APPLY, primary: true },
