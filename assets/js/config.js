@@ -85,7 +85,7 @@
     GUIDE_SOCIAL_FOOD: 'https://www.guidesocial.ch/recherche/vaud/fiche/aide-alimentaire-994',
     CARTONS_COEUR: 'https://www.cartonsdcoeur.ch/nos-antennes/',
     CARITAS_EPICERIES: 'https://caritas-vaud.ch/epicerie/',
-    MALLEY_PRAIRIE: 'https://fondationmalleyprairie.ch',
+    MALLEY_PRAIRIE: 'https://malleyprairie.ch/',
     VIOLENCE_QUE_FAIRE: 'https://www.violencequefaire.ch',
     LE_PASSAGE: 'https://www.fondationabs.ch/le-passage.html',
     VAUD_POUR_VOUS: 'https://www.vd.ch/aides-financieres-et-soutien-social/informations-et-accompagnement-personnel/programme-vaud-pour-vous'

@@ -418,8 +418,8 @@
       nom: 'Violences conjugales / besoin de protection',
       badge: 'confirme',
       desc: 'Si tu vis de la violence ou que tu as besoin de protection, la priorité est la sécurité et l’accès à un relais spécialisé.',
-      action: '1. Si tu es en danger immédiat, appelle les urgences.\n2. Sinon, contacte un relais spécialisé comme MalleyPrairie ou la LAVI pour parler de la situation en sécurité.\n3. Tu peux demander conseil même si tu ne veux pas encore déposer plainte.\n4. Si possible, garde une copie des messages, certificats médicaux ou constats, mais ne prends pas de risque pour les récupérer.',
-      docs: ['Pièce d’identité si disponible', 'Messages ou preuves uniquement si c’est sans danger', 'Certificats médicaux ou constats si existants'],
+      action: '1. Si le danger est immédiat, appelle le 117. En cas de blessure ou d’urgence médicale, appelle le 144.\n2. Si tu peux parler en sécurité, contacte MalleyPrairie au 021 620 76 76 pour conseil, évaluation du danger ou mise à l’abri.\n3. Contacte ensuite la LAVI pour connaître tes droits, les aides possibles et l’accompagnement, même sans plainte déposée.\n4. Garde messages, constats ou certificats uniquement si c’est sans danger. Ne prends pas de risque pour récupérer des affaires ou des papiers.',
+      docs: ['Pièce d’identité si disponible', 'Messages ou preuves uniquement si c’est sans danger', 'Certificats médicaux ou constats si existants', 'Adresse ou lieu sûr où te rappeler si possible'],
       liensViolence: true
     }));
   }

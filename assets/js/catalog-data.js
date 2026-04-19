@@ -794,34 +794,48 @@
       category: 'urgence',
       summary: 'Violence conjugale, agression, abus · Gratuit · Confidentiel',
       audience: 'Personnes qui ont subi une violence, une agression, des abus ou une autre infraction pénale.',
-      purpose: 'La LAVI offre un soutien gratuit et confidentiel aux victimes, avec accompagnement social, juridique et psychologique.',
+      purpose: 'La LAVI offre un soutien gratuit et confidentiel aux victimes et à certains proches, avec accompagnement social, juridique, psychologique et parfois matériel.',
       highlights: [
         'Gratuit et confidentiel',
         'Pas besoin de déposer plainte pour demander de l’aide',
-        'Ouvert quel que soit le statut de séjour'
+        'Aide possible pour les victimes et certains proches'
       ],
       firstSteps: [
-        'Contacter le centre LAVI Vaud',
-        'Demander un premier entretien',
+        'Si le danger est immédiat, appeler d’abord la police ou les urgences',
+        'Sinon, contacter le centre LAVI Vaud pour un rendez-vous confidentiel',
         'Expliquer simplement ce qui s’est passé, même si tout n’est pas clair'
       ],
-      bodyIntro: 'Tu as vécu une violence physique, sexuelle ou psychologique ? La LAVI t’offre un soutien gratuit et confidentiel : conseil, accompagnement, aide financière dans certains cas. Tu n’as pas à porter ça seul·e.',
+      bodyIntro: 'Tu as vécu une violence physique, sexuelle ou psychologique, ou une autre infraction qui t’a atteint·e directement ? La LAVI peut t’aider gratuitement et confidentiellement. Tu peux demander conseil même sans plainte déposée.',
       sections: [
         {
           title: 'Pour qui',
           items: [
-            'Toute personne victime d’une infraction pénale',
-            'Quel que soit ton statut de séjour',
-            'Avec ou sans plainte déposée'
+            'Victime d’une infraction pénale avec atteinte physique, sexuelle ou psychique',
+            'Certains proches de la victime peuvent aussi être aidés',
+            'Avec ou sans plainte déposée au moment du premier contact'
+          ]
+        },
+        {
+          title: 'Ce que la LAVI peut faire',
+          items: [
+            'Informer sur les droits, la plainte, les démarches et les protections possibles',
+            'Orienter vers une aide psychologique, juridique, sociale ou médicale',
+            'Étudier certaines aides d’urgence ou financières selon la situation'
           ]
         },
         {
           title: 'Démarche',
           items: [
-            'Contacter directement le centre LAVI',
-            'Pas besoin de déposer plainte pour bénéficier de l’aide',
-            'Accompagnement juridique et psychologique possible'
+            'Contacter directement un centre LAVI vaudois',
+            'Demander un rendez-vous confidentiel',
+            'Apporter les documents existants seulement si tu les as déjà : constat, messages, certificat médical, courriers'
           ]
+        }
+      ],
+      callouts: [
+        {
+          kind: 'warning',
+          html: 'La LAVI n’est pas le numéro d’urgence. En danger immédiat, appelle d’abord la police au 117 ou les urgences médicales au 144.'
         }
       ],
       links: [
@@ -2843,27 +2857,28 @@
       id: 'malleyprairie',
       title: 'MalleyPrairie — violence conjugale & familiale',
       category: 'urgence',
-      summary: 'Femmes, hommes, LGBTIQ+ · Hébergement d’urgence · 24h/24',
+      summary: 'Violence dans le couple ou la famille · Conseil · Mise à l’abri · 24h/24',
       audience: 'Personnes victimes de violences conjugales ou familiales qui ont besoin d’un soutien ou d’une mise à l’abri.',
-      purpose: 'MalleyPrairie est une porte d’entrée très concrète pour la violence conjugale et familiale, avec hébergement d’urgence et accompagnement.',
+      purpose: 'MalleyPrairie est une porte d’entrée très concrète pour la violence conjugale et familiale, avec ligne téléphonique, consultations et hébergement selon la situation.',
       highlights: [
         '24h/24, 7j/7',
-        'Hébergement d’urgence et consultations',
-        'Interprétariat possible'
+        'Consultations pour les personnes victimes ou concernées',
+        'Hébergement d’urgence pour femmes avec ou sans enfant'
       ],
       firstSteps: [
-        'Appeler avant de te déplacer',
+        'Si le danger est immédiat, appeler d’abord le 117',
+        'Appeler MalleyPrairie avant de te déplacer',
         'Dire si le danger est immédiat',
         'Demander une mise à l’abri ou un conseil urgent'
       ],
-      bodyIntro: 'Tu subis des violences au sein de ton couple ou de ta famille ? MalleyPrairie est là 24h/24, 7j/7. Hébergement d’urgence pour les femmes, consultations ambulatoires pour toutes et tous.',
+      bodyIntro: 'Tu subis des violences dans ton couple ou ta famille ? MalleyPrairie répond 24h/24 et 7j/7. La ligne permet de demander conseil, d’évaluer l’urgence et de voir s’il faut une mise à l’abri.',
       sections: [
         {
           title: 'Pour qui',
           items: [
-            'Femmes, hommes, LGBTIQ+ victimes de violence',
-            'Personnes majeures domiciliées dans le canton',
-            'Avec ou sans enfants'
+            'Personnes majeures domiciliées dans le canton de Vaud, quelle que soit leur identité de genre ou orientation sexuelle',
+            'Femmes victimes avec ou sans enfant pour l’hébergement d’urgence',
+            'Personnes victimes, proches ou professionnel·les qui ont besoin d’un premier conseil'
           ]
         },
         {
@@ -2871,14 +2886,22 @@
           items: [
             '021 620 76 76 — 24h/24 et 7j/7',
             'Appeler avant de te déplacer',
-            'Interprétariat disponible si nécessaire'
+            'Expliquer rapidement si tu peux rester au domicile ou si une mise à l’abri est nécessaire'
+          ]
+        },
+        {
+          title: 'À retenir',
+          items: [
+            'On peut appeler même si on n’est pas prêt·e à porter plainte',
+            'Les enfants exposés à la violence sont aussi concernés par la protection',
+            'Ne prends pas de risque pour récupérer des documents ou affaires personnelles'
           ]
         }
       ],
       callouts: [
         {
-          kind: 'callout',
-          html: '021 620 76 76 — disponible 24h/24, 7j/7.'
+          kind: 'warning',
+          html: 'Danger immédiat : 117. Si tu peux parler en sécurité, MalleyPrairie répond au 021 620 76 76, 24h/24 et 7j/7.'
         }
       ],
       links: [
@@ -2900,9 +2923,9 @@
         'Utile même si on n’est pas encore prêt·e à tout raconter'
       ],
       firstSteps: [
-        'Chercher d’abord un lieu ou un relais sûr',
-        'Contacter un service spécialisé',
-        'Passer ensuite à la suite avec le rythme possible'
+        'Si le danger est immédiat, appeler le 117',
+        'Se mettre dans un endroit sûr si possible',
+        'Contacter MalleyPrairie ou la LAVI pour organiser la suite'
       ],
       bodyIntro: 'Quand il y a de la violence dans le couple ou dans le foyer, le plus important est la sécurité. Tu n’as pas besoin d’avoir tout décidé pour demander un premier relais.',
       sections: [
@@ -2917,10 +2940,25 @@
         {
           title: 'Démarche',
           items: [
-            'Contacter un service spécialisé',
-            'Chercher un hébergement si rester sur place n’est plus possible',
-            'Voir ensuite la LAVI pour l’accompagnement'
+            'Danger immédiat : appeler la police au 117 ou les urgences médicales au 144',
+            'Si tu peux parler en sécurité : appeler MalleyPrairie pour conseil ou mise à l’abri',
+            'Contacter ensuite la LAVI pour les droits, l’accompagnement et les aides possibles',
+            'Garder les messages, constats ou certificats seulement si c’est sans danger'
           ]
+        },
+        {
+          title: 'À ne pas oublier',
+          items: [
+            'Tu peux demander de l’aide même sans déposer plainte',
+            'Ne préviens pas l’auteur·e des violences si cela augmente le risque',
+            'Ne te mets pas en danger pour récupérer des papiers ou des affaires'
+          ]
+        }
+      ],
+      callouts: [
+        {
+          kind: 'warning',
+          html: 'Priorité absolue : ta sécurité. Si rester sur place est dangereux, appelle le 117 ou cherche un lieu sûr avant de penser aux démarches administratives.'
         }
       ],
       reviewedAt: '13 avril 2026',
