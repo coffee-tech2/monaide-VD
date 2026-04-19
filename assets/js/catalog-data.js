@@ -424,6 +424,8 @@
           items: [
             'Explications simples sur dettes et surendettement',
             'Repères concrets pour agir sans attendre',
+            'Priorités de paiement : loyer, assurance maladie, alimentation, pension alimentaire, garde, impôts et charges courantes',
+            'Repères sur les poursuites : commandement de payer, opposition, saisie et minimum d’existence',
             'Orientation vers les bons services dans le canton',
             'Infos utiles aussi pour les proches'
           ]
@@ -432,8 +434,9 @@
           title: 'Quand l’utiliser',
           items: [
             'Factures qui s’accumulent',
-            'Poursuites ou rappels',
+            'Poursuites, rappels ou commandement de payer',
             'Budget devenu trop serré',
+            'Besoin de comprendre quoi payer en priorité',
             'Besoin d’un premier repère avant d’appeler'
           ]
         },
@@ -448,13 +451,16 @@
       ],
       callouts: [
         {
-          kind: 'callout',
-          html: 'N’hésite pas à appeler si tu as une question ou un doute. Ils sont aussi là pour ça.'
+          kind: 'tip',
+          html: 'Un commandement de payer a des délais courts : l’opposition se fait en principe dans les 10 jours. Si tu ne sais pas quoi faire, demande rapidement conseil avant de laisser passer le délai.'
         }
       ],
       links: [
         { kind: 'info', label: 'Guide détaillé', url: '/dettes-budget/' },
         { kind: 'info', label: 'Voir Parlons Cash', url: window.MONAIDE_LINKS.PARLONS_CASH },
+        { kind: 'info', label: 'CSP : gérer son budget (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2023/03/VD-Gerer-budget-CSP-Vaud-2023-WEB.pdf' },
+        { kind: 'info', label: 'CSP : comprendre les poursuites (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2023/03/VD-Comprendre-les-poursuites-WEB-2023-CSP-Vaud.pdf' },
+        { kind: 'info', label: 'CSP : vivre avec ses dettes (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2023/03/VD-Vivre-avec-ses-dettes-WEB-2023-CSP-Vaud.pdf' },
         { kind: 'info', label: 'Voir aussi le CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
         { kind: 'info', label: 'Voir aussi Jet Service', url: window.MONAIDE_LINKS.JET_SERVICE }
       ],
@@ -852,7 +858,8 @@
             'Décision judiciaire valable',
             'Pension non versée depuis au moins 1 mois',
             'Revenus inférieurs aux seuils BRAPA',
-            'Domicile dans le canton de Vaud'
+            'Domicile dans le canton de Vaud',
+            'La question peut aussi toucher l’entretien de l’enfant ou les allocations familiales non reversées'
           ]
         },
         {
@@ -860,7 +867,9 @@
           items: [
             'Appeler le 021 316 52 21',
             'Remplir ensuite le questionnaire transmis',
-            'Préparer jugement, coordonnées et justificatifs utiles'
+            'Préparer jugement, convention ou décision fixant la pension',
+            'Préparer preuves de non-paiement, coordonnées de l’autre parent et justificatifs utiles',
+            'Si la situation familiale est floue, relire aussi les repères CSP sur séparation et entretien de l’enfant'
           ]
         }
       ],
@@ -874,7 +883,8 @@
       decisionBy: 'BRAPA',
       links: [
         { kind: 'action', label: 'Demander une avance BRAPA', url: window.MONAIDE_LINKS.BRAPA_APPLY },
-        { kind: 'action', label: 'Contacter le BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT }
+        { kind: 'action', label: 'Contacter le BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT },
+        { kind: 'info', label: 'CSP : autorité parentale et entretien (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2025/03/Aide-memoire-autorite-parentale-2023.pdf' }
       ],
       documentationTarget: null
     },
@@ -902,6 +912,7 @@
           items: [
             'Début de séparation ou divorce en cours',
             'Questions sur les enfants, le budget ou l’organisation',
+            'Questions sur pension alimentaire, autorité parentale, prise en charge ou entretien de l’enfant',
             'Besoin d’un premier repère avant des démarches plus ciblées'
           ]
         },
@@ -909,8 +920,10 @@
           title: 'Démarche',
           items: [
             'Regarder les ressources cantonales pour familles en crise',
+            'Séparer les questions urgentes : sécurité, logement, enfants, argent, papiers',
             'Repérer ensuite si le besoin concerne pension, médiation ou protection',
-            'Passer vers le bon service sans attendre que tout soit clair'
+            'Passer vers le bon service sans attendre que tout soit clair',
+            'Si une décision existe déjà et qu’une pension n’est pas payée, regarder la piste BRAPA'
           ]
         }
       ],
@@ -918,6 +931,9 @@
       decisionBy: 'Selon la question: justice, BRAPA, médiation ou autre service compétent',
       links: [
         { kind: 'info', label: 'Se séparer, vivre un deuil — Vaud', url: window.MONAIDE_LINKS.FAMILY_CRISIS },
+        { kind: 'info', label: 'CSP : se séparer (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2025/03/Aide-memoire-se-separer-2023.pdf' },
+        { kind: 'info', label: 'CSP : divorcer (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2025/03/Aide-memoire-divorcer-2021.pdf' },
+        { kind: 'info', label: 'CSP : autorité parentale et entretien (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2025/03/Aide-memoire-autorite-parentale-2023.pdf' },
         { kind: 'info', label: 'BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT },
         { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
       ],
@@ -2413,7 +2429,7 @@
             'Dettes et budget',
             'Droits et démarches administratives',
             'Questions juridiques (bail, travail, assurances)',
-            'Couple et famille'
+            'Couple, séparation, divorce et famille'
           ]
         },
         {
@@ -2434,7 +2450,8 @@
       ],
       links: [
         { kind: 'action', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
-        { kind: 'info', label: 'Permanence juridique', url: 'https://csp.ch/vaud/services/questions-juridiques/' }
+        { kind: 'info', label: 'Permanence juridique', url: 'https://csp.ch/vaud/services/questions-juridiques/' },
+        { kind: 'info', label: 'Aide-mémoires CSP Vaud', url: 'https://csp.ch/vaud/aide-memoires/' }
       ],
       documentationTarget: null
     },
