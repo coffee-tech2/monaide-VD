@@ -662,17 +662,20 @@
   }
 
   function addOcbeResult(res, flags) {
+    var statutNuance = flags.permisL || flags.permisS || flags.permisF || flags.permisB || flags.permisG;
+    var desc = statutNuance
+      ? 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais l’OCBE doit vérifier plusieurs points : formation reconnue, statut de séjour, domicile des parents ou statut d’indépendance, et situation financière.'
+      : 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais il faut vérifier plusieurs conditions avant de conclure : formation reconnue, domicile des parents ou indépendance, revenus du ménage et documents OCBE.';
+
     res.push(buildResult({
       nom: 'Bourses d\'études — OCBE',
-      badge: (flags.permisL || flags.permisS || flags.permisF) ? 'verifier' : (flags.revenuFaible ? 'probable' : 'verifier'),
-      desc: (flags.permisL || flags.permisS || flags.permisF)
-        ? 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais le titre de séjour fait partie des critères examinés par l’OCBE avec la situation financière.'
-        : 'Tu es en formation post-obligatoire (CFC, maturité, HES, université…). Une bourse peut être possible selon les ressources du ménage — il n\'y a pas de critère de mérite, mais un examen financier.',
-      action: '1. Commence par le questionnaire d’éligibilité OCBE.\n2. Prépare l’attestation de formation et les informations financières du ménage ou des parents.\n3. Dépose la demande même si certaines pièces doivent encore être complétées.\n4. Si le dossier te bloque, contacte Jet Service (CSP Vaud) pour être accompagné·e.\n5. Si la bourse ne passe pas ou ne suffit pas, regarde aussi les fondations privées et aides ponctuelles liées à la formation.',
-      today: 'Commence par l’OCBE, puis fais-toi aider si besoin pour compléter le dossier sans attendre qu’il soit parfait.',
-      docs: ['Attestation de formation', 'Déclaration d’impôts du ménage ou des parents', 'Bail si tu vis seul·e'],
+      badge: 'verifier',
+      desc: desc,
+      action: '1. Commence par le questionnaire d’éligibilité OCBE.\n2. Vérifie que ta formation est reconnue en Suisse et qu’elle se déroule après l’école obligatoire.\n3. Prépare l’attestation de formation, les documents fiscaux et les informations sur tes parents, sauf si tu penses remplir les conditions d’indépendance.\n4. Dépose la demande même si certaines pièces doivent encore être complétées : le droit débute en principe le mois suivant le dépôt.\n5. Si tu reçois un refus ou si le montant semble insuffisant, demande rapidement de l’aide à Jet Service : le délai de réclamation est de 30 jours.',
+      today: 'Commence par l’OCBE sans attendre le dossier parfait, puis fais-toi aider par Jet Service si le statut, les parents ou les documents compliquent la demande.',
+      docs: ['Attestation de formation', 'Documents fiscaux du ménage ou des parents', 'Permis ou pièce d’identité', 'Bail si tu vis seul·e', 'Preuves d’activité si tu demandes le statut d’indépendant·e'],
       liensBourse: true,
-      liensCadreSejour: flags.permisL || flags.permisS || flags.permisF
+      liensCadreSejour: statutNuance
     }));
   }
 

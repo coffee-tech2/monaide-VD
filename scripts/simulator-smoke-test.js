@@ -89,7 +89,7 @@ const tests = [
         formation: 'oui_apres_obligatoire',
         revenu: 'moins1000'
       });
-      assert(hasResult(results, 'Bourses d\'études', 'probable'), 'Student should receive OCBE orientation');
+      assert(hasResult(results, 'Bourses d\'études', 'verifier'), 'Student should receive OCBE orientation to verify because key OCBE criteria are not all asked');
       assert(!hasResult(results, 'Revenu d\'insertion'), 'Student should not receive ordinary RI result');
     }
   },

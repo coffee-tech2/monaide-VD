@@ -222,11 +222,13 @@
         {
           title: 'Conditions',
           items: [
-            'Formation post-obligatoire (CFC, maturité, HES, uni…)',
-            'Formation reconnue : établissement public ou école privée subventionnée, avec titre reconnu en Suisse',
-            'Domicile, nationalité ou titre de séjour à vérifier selon la situation',
-            'Ressources de l’étudiant·e et/ou de la famille insuffisantes selon le calcul OCBE',
-            'Les résultats scolaires ne sont pas le critère principal, mais un redoublement ou un arrêt peut avoir un impact',
+            'Formation reconnue en Suisse après l’école obligatoire : transition cantonale, formation préparatoire, passerelle, secondaire II ou tertiaire reconnu',
+            'Établissement reconnu en Suisse ; les écoles privées non reconnues/subventionnées ne donnent en principe pas droit à cette aide',
+            'Ressources de l’étudiant·e et de ses parents examinées, sauf situation d’indépendance reconnue',
+            'Personne dépendante : conditions liées au domicile des parents dans le canton de Vaud et au statut de séjour',
+            'Permis B hors UE/AELE : en principe 5 ans de séjour en Suisse + parents domiciliés dans le canton de Vaud',
+            'Permis F : possible seulement dans certains cas, notamment sans dépendre de l’EVAM',
+            'Personne indépendante : plus de 18 ans, première formation ou 4 ans d’activité lucrative, puis 2 ans d’activité dans le canton de Vaud avec revenu suffisant avant la formation',
             'Certaines formations équivalentes ou inférieures à un titre déjà obtenu peuvent être limitées'
           ]
         },
@@ -234,10 +236,11 @@
           title: 'Démarche',
           items: [
             'Tester son éligibilité avec le questionnaire OCBE',
-            'Demande en ligne sur le portail OCBE',
+            'Déposer la demande en ligne dès l’ouverture, en général dès avril pour l’année scolaire ou académique suivante',
             'Préparer attestation d’inscription, documents fiscaux, domicile et éventuels revenus',
             'Si la formation dure plusieurs années, refaire une demande chaque année',
-            'Si une pièce manque, commencer quand même la demande et compléter ensuite selon les indications OCBE'
+            'Si une pièce manque, commencer quand même la demande et compléter ensuite selon les indications OCBE',
+            'En cas de refus : délai de 30 jours pour déposer une réclamation, idéalement avec l’aide de Jet Service'
           ]
         }
       ],
@@ -250,6 +253,7 @@
       links: [
         { kind: 'info', label: 'Infos bourses OCBE', url: window.MONAIDE_LINKS.OCBE_INFO },
         { kind: 'action', label: 'Faire une demande OCBE', url: window.MONAIDE_LINKS.OCBE_APPLY },
+        { kind: 'info', label: 'Aide-mémoire Jet Service (PDF)', url: 'https://csp.ch/wp-content/uploads/sites/4/2025/12/2025-aide-memoire-bourses-WEB.pdf' },
         { kind: 'info', label: 'Fondations privées (PDF)', url: 'https://www.vd.ch/fileadmin/user_upload/organisation/dsas/DGCS/OCBE_Liste_fondations_priv%C3%A9es.pdf' },
         { kind: 'info', label: 'Guide détaillé', url: '/bourses-ocbe/' }
       ],

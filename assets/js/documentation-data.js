@@ -162,9 +162,10 @@
           },
           infoBoxes: [
             { label: 'Canal', text: 'La demande commence en ligne. Ensuite, la confirmation signée peut partir par mail ou par courrier.' },
-            { label: 'Bon repère', text: 'N’attends pas d’avoir toutes les pièces pour commencer. La date de dépôt compte.' },
+            { label: 'Bon repère', text: 'N’attends pas d’avoir toutes les pièces pour commencer. Le droit débute en principe le mois suivant le dépôt de la demande.' },
             { label: 'Attention', text: 'Une bourse dépend souvent aussi de la situation des parents ou du ménage. Ce n’est pas seulement ton revenu personnel.' },
-            { label: 'Formation reconnue', text: 'La formation doit en principe être post-obligatoire et reconnue. Certaines formations équivalentes à un titre déjà obtenu peuvent poser problème.' }
+            { label: 'Formation reconnue', text: 'La formation doit se dérouler dans un établissement reconnu en Suisse. Les écoles privées non reconnues/subventionnées sont en principe exclues.' },
+            { label: 'Dépendant·e / indépendant·e', text: 'L’OCBE distingue les personnes dépendantes et indépendantes financièrement des parents. Ce point peut changer le calcul et les conditions.' }
           ],
           preChecklistNotes: [
             '<strong>Courrier postal.</strong> Si tu utilises le courrier postal, la demande commence en ligne. Ensuite, tu imprimes la page de confirmation, tu la signes et tu l’envoies en PDF à <a href="mailto:info.bourses@vd.ch">info.bourses@vd.ch</a> ou par courrier à <strong>OCBE, Route des Plaines-du-Loup 1, 1014 Lausanne</strong>.'
@@ -182,11 +183,13 @@
           notes: [
             'Pour les bourses, la date de dépôt compte. Si certaines pièces manquent, l’OCBE peut te dire comment compléter ensuite.',
             'Erreur fréquente : abandonner parce qu’il manque une pièce. Commence la demande et garde la confirmation de dépôt.',
-            'Si la formation dure plusieurs années, une nouvelle demande doit en principe être déposée chaque année.'
+            'Si la formation dure plusieurs années, une nouvelle demande doit en principe être déposée chaque année.',
+            'En cas de refus, une réclamation peut être déposée dans les 30 jours. Jet Service peut aider gratuitement à relire la décision.'
           ],
           actions: [
             { label: 'Faire une demande OCBE', href: LINKS.OCBE_APPLY, primary: true },
             { label: 'Infos bourses OCBE', href: LINKS.OCBE_INFO, primary: false },
+            { label: 'Aide-mémoire Jet Service (PDF)', href: 'https://csp.ch/wp-content/uploads/sites/4/2025/12/2025-aide-memoire-bourses-WEB.pdf', primary: false },
             { label: 'Guide détaillé MonAide-VD', href: '/bourses-ocbe/', primary: false }
           ]
         },
