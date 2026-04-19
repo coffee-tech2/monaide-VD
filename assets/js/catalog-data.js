@@ -70,17 +70,20 @@
           items: [
             'Domicile dans le canton de Vaud',
             'Cadre de séjour compatible à vérifier selon la situation',
-            'RDU inférieur aux seuils cantonaux',
-            'Généralement liée au RI ou aux PC si ta situation est bien enregistrée'
+            'Prime LAMal obligatoire concernée, pas les assurances complémentaires',
+            'Droit calculé avec le revenu déterminant unifié (RDU), selon revenu, fortune, ménage et région de primes',
+            'Dernière taxation fiscale définitive souvent utilisée, sauf changement important de situation financière',
+            'Bénéficiaires RI ou PC AVS/AI : traitement spécifique du subside'
           ]
         },
         {
           title: 'Démarche',
           items: [
-            'Dernière taxation à portée',
-            'Évaluer le droit puis déposer la demande',
-            'Demande possible en ligne ou via ton agence AAS',
-            'L’OVAM examine ensuite le dossier et rend la décision'
+            'Avoir la dernière décision de taxation sous la main si possible',
+            'Évaluer le droit sur l’outil officiel, puis déposer une vraie demande',
+            'Demande possible en ligne ou gratuitement via ton agence AAS',
+            'L’OVAM examine ensuite le dossier et envoie une décision',
+            'Si le subside est accordé, il est versé à l’assureur et tu paies le solde de prime'
           ]
         }
       ],
@@ -220,8 +223,11 @@
           title: 'Conditions',
           items: [
             'Formation post-obligatoire (CFC, maturité, HES, uni…)',
-            'Domicile vaudois',
-            'Ressources familiales insuffisantes selon barème OCBE'
+            'Formation reconnue : établissement public ou école privée subventionnée, avec titre reconnu en Suisse',
+            'Domicile, nationalité ou titre de séjour à vérifier selon la situation',
+            'Ressources de l’étudiant·e et/ou de la famille insuffisantes selon le calcul OCBE',
+            'Les résultats scolaires ne sont pas le critère principal, mais un redoublement ou un arrêt peut avoir un impact',
+            'Certaines formations équivalentes ou inférieures à un titre déjà obtenu peuvent être limitées'
           ]
         },
         {
@@ -229,7 +235,9 @@
           items: [
             'Tester son éligibilité avec le questionnaire OCBE',
             'Demande en ligne sur le portail OCBE',
-            'Déclaration d’impôts des parents à préparer'
+            'Préparer attestation d’inscription, documents fiscaux, domicile et éventuels revenus',
+            'Si la formation dure plusieurs années, refaire une demande chaque année',
+            'Si une pièce manque, commencer quand même la demande et compléter ensuite selon les indications OCBE'
           ]
         }
       ],
@@ -314,17 +322,22 @@
         {
           title: 'Conditions',
           items: [
-            'Bénéficiaire d’une rente AVS ou AI',
-            'Domicile en Suisse depuis 10 ans en principe',
-            'Revenus, charges et fortune examinés ensemble'
+            'Avoir droit à une rente AVS ou AI, à une allocation pour impotent AI, ou à des indemnités journalières AI pendant au moins 6 mois',
+            'Avoir son domicile et sa résidence habituelle en Suisse',
+            'Pour les personnes hors UE/AELE : délai de séjour à vérifier, souvent 10 ans, ou 5 ans pour réfugiés/apatrides',
+            'Fortune maximale : 100’000 CHF seul·e, 200’000 CHF en couple, 50’000 CHF par enfant',
+            'Les dépenses reconnues doivent dépasser les revenus déterminants',
+            'Les PC sont un droit légal si les conditions sont remplies, pas une aide sociale de type RI'
           ]
         },
         {
           title: 'Démarche',
           items: [
             'Faire d’abord estimer la situation avec une AAS',
-            'Déposer ensuite la demande officielle',
-            'La Caisse AVS Vaud examine le dossier et rend la décision'
+            'Préparer décision AVS/AI, bail, primes maladie, revenus, fortune et charges importantes',
+            'Déposer ensuite la demande officielle auprès de l’agence AVS/AAS ou de la caisse compétente',
+            'La Caisse AVS Vaud examine le dossier et rend la décision',
+            'Le droit n’est pas automatique : il faut déposer une demande'
           ]
         }
       ],
@@ -1203,15 +1216,20 @@
             'En principe : 12 mois de cotisation durant les 2 dernières années',
             'Ou libération possible des conditions de cotisation dans certains cas reconnus',
             'Domicile en Suisse',
-            'Disponible et apte au placement'
+            'Avoir terminé la scolarité obligatoire et ne pas avoir atteint l’âge AVS',
+            'Être disponible et apte au placement',
+            'Faire contrôler son chômage et respecter les obligations ORP',
+            'Le droit aux indemnités est examiné par la caisse de chômage, pas seulement par l’ORP'
           ]
         },
         {
           title: 'Démarche',
           items: [
-            'S’inscrire à l’ORP dès la fin du contrat',
-            'Préparer attestation employeur et certificat de travail',
-            'Puis suivre les recherches d’emploi et convocations'
+            'Commencer les recherches d’emploi dès que tu sais que ton poste n’est plus garanti',
+            'S’inscrire à l’ORP en ligne via Job-Room ou au guichet de ta région',
+            'Choisir une caisse de chômage et lui transmettre la demande d’indemnité',
+            'Préparer les attestations employeur des 2 dernières années, contrat, lettre de licenciement et certificats de salaire',
+            'Chaque mois, remettre les preuves de recherches d’emploi et documents demandés'
           ]
         }
       ],
