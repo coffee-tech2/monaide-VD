@@ -2,24 +2,25 @@
     --forest: #1C3B30;
     --vaud: #2A6B52;
     --mint: #D6EEE5;
-    --cream: #F5F3EE;
-    --surface: #F5F3EE;
+    --cream: #ECE8DE;
+    --surface: #EEEAE2;
     --attention: #F0D89A;
     --alert-text: #5E4A20;
     --orange: var(--vaud); --orange-dark: var(--forest); --orange-light: var(--mint);
     --sage: var(--vaud); --sage-light: var(--mint); --sage-dark: var(--forest);
     --peach: #EADAAE; --peach-light: #FBF2D5;
     --warm-gray: #5E625C; --dark: #1C3B30;
-    --white: #FFFDF8; --border: #D8D4CA;
+    --white: #F8F4EC; --border: #D2CCC0;
     --shadow: 0 18px 44px rgba(28,59,48,0.08);
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(180deg, #ECE8DE 0%, var(--cream) 46%, #EFE9DD 100%); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(180deg, #E3DED2 0%, var(--cream) 46%, #E8E1D3 100%); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
   body.nav-open { overflow: hidden; }
+  body::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:2147483647; background:rgba(28,59,48,0.045); mix-blend-mode:multiply; }
   .skip-link { position:absolute; left:1rem; top:-3rem; z-index:220; padding:0.75rem 1rem; border-radius:999px; background:var(--sage-dark); color:white; font-size:0.82rem; font-weight:700; text-decoration:none; box-shadow:0 14px 28px rgba(28,59,48,0.18); transition:top 0.18s ease, transform 0.18s ease; }
   .skip-link:focus { top:0.9rem; transform:translateY(0); }
 
-  nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(245,243,238,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100; height: 68px; }
+  nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(236,232,222,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 100; height: 68px; }
   .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
   .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.43rem; font-weight: 800; letter-spacing:-0.045em; color: var(--sage-dark); text-decoration: none; display:inline-flex; align-items:center; gap:0.62rem; }
   .nav-logo::before { content:''; width:2rem; height:2rem; border-radius:0.72rem; background:radial-gradient(circle at center, #FFFDF8 0 0.24rem, transparent 0.26rem), var(--vaud); box-shadow:0 12px 24px rgba(28,59,48,0.14); flex-shrink:0; }
@@ -72,7 +73,7 @@
   .hero { min-height: 58vh; display: flex; align-items: center; justify-content: center; padding: 104px 2rem 3rem; position: relative; overflow: hidden; background:
     radial-gradient(circle at 20% 18%, rgba(42,107,82,0.13) 0%, rgba(42,107,82,0) 34%),
     radial-gradient(circle at 82% 8%, rgba(240,216,154,0.32) 0%, rgba(240,216,154,0) 32%),
-    linear-gradient(180deg, #ECE8DE 0%, #F5F3EE 100%); }
+    linear-gradient(180deg, #E3DED2 0%, #ECE8DE 100%); }
   .hero-bg { position: absolute; inset: 0; background:
     linear-gradient(90deg, rgba(45,90,50,0.025) 0, rgba(45,90,50,0.025) 1px, transparent 1px, transparent 72px),
     linear-gradient(rgba(45,90,50,0.025) 0, rgba(45,90,50,0.025) 1px, transparent 1px, transparent 72px);
