@@ -140,7 +140,7 @@
   .section-plain { background:#f9f4ed; }
   .section-soft { background:#f7f1e9; }
   .section-cream { background:var(--cream); }
-  .section-simulateur { background:linear-gradient(180deg,#F5F3EE 0%,#D6EEE5 52%,#F5F3EE 100%); }
+  .section-simulateur { background:linear-gradient(180deg,#F5F3EE 0%,#F2EEDC 58%,#F5F3EE 100%); }
   .section-inner.narrow { max-width:760px; }
   .section-inner.catalog-inner { max-width:680px; }
   .section-tag { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--orange); margin-bottom: 0.5rem; }
