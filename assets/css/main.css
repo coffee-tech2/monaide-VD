@@ -200,7 +200,7 @@
   .choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.82rem; align-items: start; }
   .choice-grid label { display: block; min-width: 0; }
   .choice-input { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; }
-  .choice-card { display: flex; align-items: flex-start; gap: 0.72rem; padding: 0.82rem 0.92rem; border-radius: 18px; border: 1.5px solid #D8D4CA; background: #FFFDF8; cursor: pointer; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s, box-shadow 0.2s, background 0.18s, color 0.18s; position: relative; min-height: 66px; width: 100%; box-sizing: border-box; overflow: hidden; box-shadow:0 10px 22px rgba(28,59,48,0.035); }
+  .choice-card { display: flex; align-items: center; gap: 0.72rem; padding: 0.88rem 0.92rem; border-radius: 18px; border: 1.5px solid #D8D4CA; background: #FFFDF8; cursor: pointer; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s, box-shadow 0.2s, background 0.18s, color 0.18s; position: relative; min-height: 58px; width: 100%; box-sizing: border-box; overflow: hidden; box-shadow:0 10px 22px rgba(28,59,48,0.035); }
   .choice-card::before { content:''; position:absolute; inset:0 auto 0 0; width:4px; background:transparent; transition:background 0.18s ease, width 0.22s ease; }
   .choice-card:hover { border-color: rgba(42,107,82,0.34); background: #FFFDF8; box-shadow: 0 16px 34px rgba(28,59,48,0.08); transform:translateY(-2px); }
   .choice-input:checked + .choice-card { border-color: rgba(42,107,82,0.82); background: linear-gradient(180deg, #F3FAF6 0%, var(--mint) 100%); box-shadow: 0 16px 32px rgba(42,107,82,0.14), inset 0 0 0 1px rgba(42,107,82,0.10); }
@@ -208,11 +208,10 @@
   .choice-input:focus + .choice-card { outline: 2px solid rgba(42,107,82,0.22); outline-offset: 2px; }
   .choice-icon { display: none !important; }
   .choice-text { flex: 1; min-width: 0; display: block; padding-right:0.15rem; }
-  .choice-title { display: block; font-size: 0.88rem; font-weight: 800; color: var(--dark); line-height: 1.18; margin-bottom: 0.16rem; letter-spacing:-0.025em; }
-  .choice-desc { display: block !important; font-size:0.72rem; line-height:1.35; color:#777168; }
-  .choice-check { width: 1rem; height: 1rem; border-radius: 50%; border: 1.5px solid #d3c8bc; background: rgba(255,255,255,0.78); flex-shrink: 0; position: relative; margin-top:0.05rem; }
+  .choice-title { display: block; font-size: 0.88rem; font-weight: 800; color: var(--dark); line-height: 1.18; margin-bottom: 0; letter-spacing:-0.025em; }
+  .choice-desc { display: none !important; }
+  .choice-check { width: 1rem; height: 1rem; border-radius: 50%; border: 1.5px solid #d3c8bc; background: rgba(255,255,255,0.78); flex-shrink: 0; position: relative; margin-top:0; }
   .choice-input:checked + .choice-card .choice-title { color: var(--forest); }
-  .choice-input:checked + .choice-card .choice-desc { color:#446657; }
   .choice-input:checked + .choice-card .choice-check { border-color: var(--vaud); background: var(--vaud); }
   .choice-input:checked + .choice-card .choice-check::after { content: ''; position: absolute; width: 0.28rem; height: 0.5rem; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); left: 0.34rem; top: 0.16rem; }
   .form-help { margin-top: 0.4rem; font-size: 0.74rem; color: var(--warm-gray); line-height: 1.55; }
