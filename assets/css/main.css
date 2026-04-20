@@ -631,7 +631,7 @@
   }
 
   @media (max-width: 600px) {
-    body { background: linear-gradient(180deg, #f0e8de 0%, #f6f0e8 100%); }
+    body { background: linear-gradient(180deg, #E3DED2 0%, #ECE8DE 100%); }
     nav { height: 64px; background: rgba(243,236,227,0.92); box-shadow: 0 8px 24px rgba(44,40,37,0.06); }
     .nav-inner { padding:0 1rem; }
     .nav-logo { font-size: 1.28rem; letter-spacing:-0.05em; }
