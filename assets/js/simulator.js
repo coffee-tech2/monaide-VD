@@ -308,6 +308,18 @@
     return button;
   }
 
+  function playChoiceFeedback(input) {
+    if (!input || !input.parentElement) return;
+    var card = input.parentElement.querySelector('.choice-card');
+    if (!card) return;
+    card.classList.remove('just-selected');
+    void card.offsetWidth;
+    card.classList.add('just-selected');
+    window.setTimeout(function() {
+      card.classList.remove('just-selected');
+    }, 420);
+  }
+
   function renderStepQuestionMode(step) {
     var stepEl = getStepElement(step);
     if (!stepEl) return;
@@ -734,6 +746,7 @@
     }
     document.querySelectorAll('input.choice-input[type="radio"]').forEach(function(input) {
       input.addEventListener('change', function() {
+        playChoiceFeedback(this);
         var select = document.getElementById(this.name);
         if (select) select.value = this.value;
         if (this.name === 'statut_sejour_base') syncStatutSejourField();
@@ -749,6 +762,7 @@
     });
     document.querySelectorAll('input.choice-input[type="checkbox"][name="aides_actuelles_multi"]').forEach(function(input) {
       input.addEventListener('change', function() {
+        playChoiceFeedback(this);
         syncAidesActuellesField(this);
         renderStepQuestionMode(currentStep);
       });

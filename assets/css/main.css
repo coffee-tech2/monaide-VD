@@ -207,17 +207,19 @@
   .choice-card { display: flex; align-items: center; gap: 0.72rem; padding: 0.88rem 0.92rem; border-radius: 18px; border: 1.5px solid #D8D4CA; background: #FFFDF8; cursor: pointer; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s, box-shadow 0.2s, background 0.18s, color 0.18s; position: relative; min-height: 58px; width: 100%; box-sizing: border-box; overflow: hidden; box-shadow:0 10px 22px rgba(28,59,48,0.035); }
   .choice-card::before { content:''; position:absolute; inset:0 auto 0 0; width:4px; background:transparent; transition:background 0.18s ease, width 0.22s ease; }
   .choice-card:hover { border-color: rgba(var(--vaud-rgb),0.34); background: #FFFDF8; box-shadow: 0 16px 34px rgba(28,59,48,0.08); transform:translateY(-2px); }
+  .choice-card:active { transform:translateY(0) scale(0.985); box-shadow:0 8px 18px rgba(28,59,48,0.06); }
   .choice-input:checked + .choice-card { border-color: rgba(var(--vaud-rgb),0.82); background: linear-gradient(180deg, #F3FAF6 0%, var(--mint) 100%); box-shadow: 0 16px 32px rgba(var(--vaud-rgb),0.14), inset 0 0 0 1px rgba(var(--vaud-rgb),0.10); }
+  .choice-card.just-selected { animation: choiceConfirm 0.34s cubic-bezier(0.22, 1, 0.36, 1); }
   .choice-input:checked + .choice-card::before { background:var(--vaud); width:5px; }
   .choice-input:focus + .choice-card { outline: 2px solid rgba(var(--vaud-rgb),0.22); outline-offset: 2px; }
   .choice-icon { display: none !important; }
   .choice-text { flex: 1; min-width: 0; display: block; padding-right:0.15rem; }
   .choice-title { display: block; font-size: 0.88rem; font-weight: 800; color: var(--dark); line-height: 1.18; margin-bottom: 0; letter-spacing:-0.025em; }
   .choice-desc { display: none !important; }
-  .choice-check { width: 1rem; height: 1rem; border-radius: 50%; border: 1.5px solid #d3c8bc; background: rgba(255,255,255,0.78); flex-shrink: 0; position: relative; margin-top:0; }
+  .choice-check { width: 1rem; height: 1rem; border-radius: 50%; border: 1.5px solid #d3c8bc; background: rgba(255,255,255,0.78); flex-shrink: 0; position: relative; margin-top:0; transition:transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.18s, border-color 0.18s; }
   .choice-input:checked + .choice-card .choice-title { color: var(--forest); }
-  .choice-input:checked + .choice-card .choice-check { border-color: var(--vaud); background: var(--vaud); }
-  .choice-input:checked + .choice-card .choice-check::after { content: ''; position: absolute; width: 0.28rem; height: 0.5rem; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); left: 0.34rem; top: 0.16rem; }
+  .choice-input:checked + .choice-card .choice-check { border-color: var(--vaud); background: var(--vaud); transform:scale(1.08); }
+  .choice-input:checked + .choice-card .choice-check::after { content: ''; position: absolute; width: 0.28rem; height: 0.5rem; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); left: 0.34rem; top: 0.16rem; animation: checkPop 0.24s cubic-bezier(0.22, 1, 0.36, 1); }
   .form-help { margin-top: 0.4rem; font-size: 0.74rem; color: var(--warm-gray); line-height: 1.55; }
   .form-group-inline { margin-top: 0.8rem; }
   .form-error { margin-top: 0.45rem; font-size: 0.75rem; color: var(--orange-dark); line-height: 1.5; display: none; }
@@ -226,7 +228,7 @@
   .step-question-progress { margin: 0.15rem 0 0.9rem; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange); }
   .step-question-hint { margin: -0.25rem 0 1rem; font-size: 0.76rem; color: var(--warm-gray); line-height: 1.55; }
   .step-question-set { display: none; }
-  .step-question-set.is-visible { display: block; animation: fadeUp 0.26s ease both; }
+  .step-question-set.is-visible { display: block; animation: stepQuestionReveal 0.32s cubic-bezier(0.22, 1, 0.36, 1) both; }
   .step-question-set .form-group { padding: 1.15rem 1.2rem 1.22rem; border: 1.5px solid #E2DCD2; border-radius: 24px; background: rgba(255,253,248,0.92); box-shadow: 0 16px 34px rgba(28,59,48,0.06); }
   .step-actions { display: flex; justify-content: space-between; align-items: center; gap: 0.65rem; flex-wrap: wrap; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #eee2d6; }
   .btn-nav { padding: 10px 18px; border-radius: 13px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.18s, border-color 0.18s, color 0.18s; border: none; }
@@ -608,6 +610,9 @@
   .doc-accordion-btn:focus-visible { outline: 2px solid rgba(var(--vaud-rgb),0.26); outline-offset: 3px; }
   @keyframes resultReveal { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes panelReveal { from { opacity: 0; transform: translateY(-6px) scaleY(0.98); } to { opacity: 1; transform: translateY(0) scaleY(1); } }
+  @keyframes choiceConfirm { 0% { transform:translateY(0) scale(0.985); } 55% { transform:translateY(-3px) scale(1.012); } 100% { transform:translateY(0) scale(1); } }
+  @keyframes checkPop { from { opacity:0; transform:rotate(45deg) scale(0.55); } to { opacity:1; transform:rotate(45deg) scale(1); } }
+  @keyframes stepQuestionReveal { from { opacity:0; transform:translateY(10px); filter:blur(2px); } to { opacity:1; transform:translateY(0); filter:blur(0); } }
   @keyframes catalogNoteReveal { from { opacity: 0; transform: translateY(14px) scale(0.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
   @keyframes catalogNoteGlow { 0% { box-shadow:0 0 0 rgba(122,158,126,0); } 45% { box-shadow:0 16px 34px rgba(122,158,126,0.12); } 100% { box-shadow:0 10px 28px rgba(72,59,49,0.04); } }
   @keyframes catalogNoteIconPop { from { opacity: 0; transform: scale(0.78) rotate(-8deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
@@ -628,6 +633,9 @@
     .hero h1,
     .hero-line,
     .hero-accent,
+    .choice-card.just-selected,
+    .choice-input:checked + .choice-card .choice-check::after,
+    .step-question-set.is-visible,
     .hero-lead,
     .hero-actions,
     .cat-card.open .cat-card-body { animation: none !important; opacity: 1 !important; transform: none !important; }
