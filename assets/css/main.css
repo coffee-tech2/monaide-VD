@@ -93,7 +93,7 @@
   .hero-line-aides { white-space: nowrap; }
   .hero-line-knowledge { white-space: nowrap; }
   .hero-line + .hero-line { animation-delay: 0.14s; }
-  .hero-accent { display:inline; white-space:normal; font-style: normal; font-weight: 800; color: var(--vaud); padding:0; background:none; animation: heroAccentReveal 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both; }
+  .hero-accent { display:inline; white-space:normal; font-style: normal; font-weight: 800; color: inherit; padding:0; background:none; animation: heroAccentReveal 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes heroLineReveal {
     from { opacity: 0; transform: translateY(18px); filter: blur(3px); }
