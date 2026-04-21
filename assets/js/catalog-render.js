@@ -120,7 +120,7 @@
   }
 
   function renderCatalogRenderHeader(item) {
-    return '<div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">' + escapeCatalogRenderHtml(item.title) + '</div><div class="cat-card-desc">' + escapeCatalogRenderHtml(item.summary || '') + '</div></div><span class="cat-card-arrow">+</span></div>';
+    return '<div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">' + escapeCatalogRenderHtml(item.title) + '</div><div class="cat-card-desc">' + escapeCatalogRenderHtml(item.summary || '') + '</div></div><span class="cat-card-arrow" aria-hidden="true">↓</span></div>';
   }
 
   function renderCatalogCardMarkup(item, dataCat) {

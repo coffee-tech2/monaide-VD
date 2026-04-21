@@ -217,15 +217,15 @@
       <p>Tu choisis ta situation, on te montre les pistes les plus utiles et quoi faire ensuite.</p>
       <div class="hero-preview-list">
         <div class="hero-preview-item">
-          <div class="hero-preview-icon">&#127968;</div>
+          <div class="hero-preview-icon" aria-hidden="true">1</div>
           <div><strong>Choix visuels</strong><span>Plus simple que des menus d&#233;roulants.</span></div>
         </div>
         <div class="hero-preview-item">
-          <div class="hero-preview-icon">&#128161;</div>
+          <div class="hero-preview-icon" aria-hidden="true">2</div>
           <div><strong>R&#233;sultats tri&#233;s</strong><span>Le plus utile d&#8217;abord, le reste ensuite.</span></div>
         </div>
         <div class="hero-preview-item">
-          <div class="hero-preview-icon">&#9742;</div>
+          <div class="hero-preview-icon" aria-hidden="true">3</div>
           <div><strong>Prochaine action</strong><span>Le bon lien ou le bon service, tout de suite.</span></div>
         </div>
       </div>
@@ -897,7 +897,7 @@
 
     <div class="catalog-note" id="catalog-note">
       <button type="button" class="catalog-note-close" onclick="closeCatalogNote()" aria-label="Fermer">×</button>
-      <span class="catalog-note-icon">&#127968;</span>
+      <span class="catalog-note-icon" aria-hidden="true"></span>
       <div class="catalog-note-body">
         <div class="catalog-note-title">N&rsquo;oublie pas le site de ta commune !</div>
         <div class="catalog-note-text">Des aides sp&eacute;cifiques existent parfois au niveau communal et peu de gens le savent &mdash; aide pour les poubelles, les couches pour nouveau-n&eacute;s, l&rsquo;achat d&rsquo;un v&eacute;lo, les frais de garde, les activit&eacute;s sportives&hellip; Cherche le site internet de ta commune et regarde dans la section &ldquo;aide sociale&rdquo; ou &ldquo;prestations&rdquo;.</div>
@@ -1025,11 +1025,36 @@
   </div>
 </section>
 
-<footer>
-  <div class="footer-logo">MonAide-VD</div>
-  <p class="footer-text"><strong>Outil communautaire d&#8217;orientation sociale pour le canton de Vaud.</strong><br>Version b&#234;ta, gratuite et ind&#233;pendante.<span class="footer-note">Le site donne un premier rep&#232;re et ne remplace pas un service officiel.</span><span class="footer-emergency">En cas d&#8217;urgence ou de situation complexe, contacte le <a href="https://www.vd.ch/aides-financieres-et-soutien-social/trouver-un-centre-social-regional-csr" target="_blank" rel="noopener noreferrer">CSR de ta r&#233;gion</a> ou <a href="https://www.vd.ch/aides-financieres-et-soutien-social/informations-et-accompagnement-personnel/programme-vaud-pour-vous" target="_blank" rel="noopener noreferrer">Vaud pour vous</a>.</span></p>
-  <div class="footer-contact">Retour, bug, aide ou information manquante : n’hésite pas à nous l’indiquer à <a href="mailto:info@monaide-vaud.ch">info@monaide-vaud.ch</a></div>
-  <div class="footer-meta">&#169; 2026 MonAide-VD &#183; Projet communautaire ind&#233;pendant</div>
+<footer class="site-footer">
+  <div class="footer-shell">
+    <div class="footer-main">
+      <a href="#top" class="footer-brand" aria-label="Retour en haut de page">
+        <span class="footer-mark" aria-hidden="true"></span>
+        <span>MonAide-VD</span>
+      </a>
+      <p class="footer-text">Outil communautaire d&#8217;orientation sociale pour le canton de Vaud. Gratuit, ind&#233;pendant, en version b&#234;ta.</p>
+      <a class="footer-contact-btn" href="mailto:info@monaide-vaud.ch">info@monaide-vaud.ch</a>
+    </div>
+    <nav class="footer-column" aria-label="Navigation du site">
+      <div class="footer-heading">Le site</div>
+      <a href="#simulateur">Simulateur</a>
+      <a href="#catalogue">Catalogue des aides</a>
+      <a href="/guides/">Guides d&#233;taill&#233;s</a>
+      <a href="#documentation">Formulaires officiels</a>
+      <a href="/a-propos/">&#192; propos</a>
+    </nav>
+    <nav class="footer-column" aria-label="Ressources utiles">
+      <div class="footer-heading">Ressources</div>
+      <a href="https://www.vd.ch/aides-financieres-et-soutien-social/trouver-un-centre-social-regional-csr" target="_blank" rel="noopener noreferrer">CSR de ta r&#233;gion</a>
+      <a href="https://www.vd.ch/aides-financieres-et-soutien-social/informations-et-accompagnement-personnel/programme-vaud-pour-vous" target="_blank" rel="noopener noreferrer">Vaud pour vous</a>
+      <a href="https://www.vd.ch/aides-financieres-et-soutien-social/trouver-une-agence-dassurance-sociale-aas/liste-des-agences-dassurances-sociales" target="_blank" rel="noopener noreferrer">Agences d&#8217;assurances sociales</a>
+      <a href="mailto:info@monaide-vaud.ch?subject=Retour%20MonAide-VD">Signaler une erreur</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2026 MonAide-VD &#183; Projet communautaire ind&#233;pendant</span>
+    <span>Le site donne un premier rep&#232;re et ne remplace pas un service officiel.</span>
+  </div>
 </footer>
 
 <script src="assets/js/config.js?v=20260419-1320"></script>
