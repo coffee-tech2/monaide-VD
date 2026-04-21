@@ -42,7 +42,7 @@
           actions: [
             { label: 'Ouvrir la démarche officielle RI', href: LINKS.RI_APPLY, primary: true },
             { label: 'Trouver ton CSR', href: 'https://www.vd.ch/aides-financieres-et-soutien-social/trouver-un-centre-social-regional-csr', primary: false },
-            { label: 'Guide détaillé MonAide-VD', href: '/revenu-insertion/', primary: false }
+            { label: 'Guide MonAide-VD', href: '/revenu-insertion/', primary: false }
           ]
         },
         shortcut: {
@@ -89,7 +89,7 @@
             { label: 'Évaluer et demander le subside', href: LINKS.SUBSIDE_HOME, primary: true },
             { label: 'OVAM : infos officielles', href: LINKS.SUBSIDE_HOME, primary: false },
             { label: 'Trouver une agence AAS', href: LINKS.AAS_LIST, primary: false },
-            { label: 'Guide détaillé MonAide-VD', href: '/subside-lamal/', primary: false }
+            { label: 'Guide MonAide-VD', href: '/subside-lamal/', primary: false }
           ]
         },
         shortcut: {
@@ -137,7 +137,7 @@
           actions: [
             { label: 'Ouvrir les formulaires AI Vaud', href: LINKS.AI_FORMS, primary: true },
             { label: 'Infos AI Vaud', href: LINKS.AI_HOME, primary: false },
-            { label: 'Guide détaillé MonAide-VD', href: '/assurance-invalidite/', primary: false }
+            { label: 'Guide MonAide-VD', href: '/assurance-invalidite/', primary: false }
           ]
         },
         shortcut: {
@@ -191,7 +191,7 @@
             { label: 'Faire le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage)', href: LINKS.OCBE_ELIGIBILITY, primary: true },
             { label: 'Faire une demande OCBE', href: LINKS.OCBE_APPLY, primary: false },
             { label: 'Infos bourses OCBE', href: LINKS.OCBE_INFO, primary: false },
-            { label: 'Guide détaillé MonAide-VD', href: '/bourses-ocbe/', primary: false }
+            { label: 'Guide MonAide-VD', href: '/bourses-ocbe/', primary: false }
           ]
         },
         shortcut: {
@@ -240,7 +240,7 @@
           actions: [
             { label: 'Demander la CarteCulture', href: LINKS.CARTECULTURE_APPLY, primary: true },
             { label: 'Contacter l’équipe CarteCulture Vaud', href: LINKS.CARTECULTURE_CONTACT, primary: false },
-            { label: 'Guide détaillé MonAide-VD', href: '/carteculture/', primary: false }
+            { label: 'Guide MonAide-VD', href: '/carteculture/', primary: false }
           ]
         }
       }
