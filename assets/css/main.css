@@ -590,7 +590,7 @@
   .site-footer-beta { display:inline-flex; align-items:center; justify-content:center; padding:0.28rem 0.62rem; border-radius:7px; background:var(--attention); color:#5E4A20; font-size:0.82rem; font-weight:800; margin-bottom:1rem; }
   .site-footer-mail { display:flex; width:fit-content; max-width:100%; padding:0.78rem 1rem; border-radius:11px; border:1px solid rgba(245,243,238,0.16); background:rgba(245,243,238,0.08); color:#F5F3EE; text-decoration:none; font-size:1rem; font-weight:800; letter-spacing:-0.03em; transition:background 0.18s, border-color 0.18s, transform 0.18s; }
   .site-footer-mail:hover { background:rgba(245,243,238,0.14); border-color:rgba(245,243,238,0.28); transform:translateY(-1px); }
-  .site-footer-nav { display:flex; flex-direction:column; gap:0.72rem; align-self:start; }
+  .site-footer-nav { position:static !important; inset:auto !important; height:auto !important; display:flex; flex-direction:column; gap:0.72rem; align-self:start; background:transparent !important; border:0 !important; box-shadow:none !important; padding:0 !important; transform:none !important; }
   .site-footer-heading { color:rgba(245,243,238,0.46); font-size:0.78rem; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:0.45rem; }
   .site-footer-nav a { color:rgba(245,243,238,0.72); text-decoration:none; font-size:1.08rem; font-weight:800; line-height:1.3; transition:color 0.18s, transform 0.18s; }
   .site-footer-nav a:hover { color:#F5F3EE; transform:translateX(2px); }
