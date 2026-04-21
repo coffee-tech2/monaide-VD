@@ -90,7 +90,7 @@
   .hero-kicker strong { font-size: 0.9rem; line-height: 1; color: var(--vaud); }
   .hero h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.75rem, 5.9vw, 4.85rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.07em; margin: 0 auto 1.35rem; animation: fadeUp 0.44s ease 0.08s both; max-width: 20.5ch; text-wrap: balance; color:var(--forest); }
   .hero-line { display:block; opacity:0; transform:translateY(18px); filter:blur(3px); animation: heroLineReveal 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-  .hero-line-aides { white-space: nowrap; color: var(--vaud); }
+  .hero-line-aides { white-space: nowrap; color: var(--vaud) !important; }
   .hero-line-knowledge { white-space: nowrap; }
   .hero-line + .hero-line { animation-delay: 0.14s; }
   .hero-accent { display:inline; white-space:normal; font-style: normal; font-weight: 800; color: inherit; padding:0; background:none; animation: heroAccentReveal 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both; }
