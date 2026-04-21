@@ -162,7 +162,8 @@
           },
           infoBoxes: [
             { label: 'Canal', text: 'La demande commence en ligne. Ensuite, la confirmation signée peut partir par mail ou par courrier.' },
-            { label: 'Bon repère', text: 'N’attends pas d’avoir toutes les pièces pour commencer. Le droit débute en principe le mois suivant le dépôt de la demande.' },
+            { label: 'Bon repère', text: 'Dépose la demande le plus tôt possible. Pour l’année complète, le délai est en principe le 31 août ou le 30 septembre selon le type de formation.' },
+            { label: 'Si tu déposes après la rentrée', text: 'L’aide commence en principe le premier jour du mois suivant le dépôt. Moins de 3 mois avant la fin de la formation, aucune aide n’est accordée pour l’année en cours.' },
             { label: 'Attention', text: 'Une bourse dépend souvent aussi de la situation des parents ou du ménage. Ce n’est pas seulement ton revenu personnel.' },
             { label: 'Formation reconnue', text: 'La formation doit se dérouler dans un établissement reconnu en Suisse. Les écoles privées non reconnues/subventionnées sont en principe exclues.' },
             { label: 'Dépendant·e / indépendant·e', text: 'L’OCBE distingue les personnes dépendantes et indépendantes financièrement des parents. Ce point peut changer le calcul et les conditions.' }
@@ -181,7 +182,7 @@
             'Contrat d’apprentissage, salaire d’apprenti·e ou revenu d’activité si concerné'
           ],
           notes: [
-            'Pour les bourses, la date de dépôt compte. Si certaines pièces manquent, l’OCBE peut te dire comment compléter ensuite.',
+            'Pour les bourses, la date de dépôt compte vraiment. Si certaines pièces manquent, commence quand même la demande et garde la confirmation de dépôt.',
             'Erreur fréquente : abandonner parce qu’il manque une pièce. Commence la demande et garde la confirmation de dépôt.',
             'Si la formation dure plusieurs années, une nouvelle demande doit en principe être déposée chaque année.',
             'En cas de refus, une réclamation peut être déposée dans les 30 jours. Jet Service peut aider gratuitement à relire la décision.'

@@ -127,12 +127,10 @@
         { type: 'link', label: 'Évaluer et demander', linkKey: 'SUBSIDE_HOME' },
         { type: 'link', label: 'OVAM : infos officielles', linkKey: 'SUBSIDE_HOME' },
         { type: 'link', label: 'Trouver une agence AAS', linkKey: 'AAS_LIST' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Subside LAMal — réduction de prime' }
       ],
       lienRI: [
         { type: 'link', label: 'Demander le RI', linkKey: 'RI_APPLY' },
         { type: 'csr', label: 'Trouver ton CSR' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Revenu d’insertion (RI)' }
       ],
       liensPC: [
         { type: 'link', label: 'Infos PC AVS/AI', linkKey: 'PC_INFO' },
@@ -144,7 +142,6 @@
         { type: 'link', label: 'Infos bourses OCBE', linkKey: 'OCBE_INFO' },
         { type: 'link', label: 'Faire une demande OCBE', linkKey: 'OCBE_APPLY' },
         { type: 'link', label: 'Jet Service — appui jeunes & formation', linkKey: 'JET_SERVICE' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Bourses d’études — OCBE' }
       ],
       liensAF: [
         { type: 'link', label: 'Voir la démarche', linkKey: 'ALLOCATIONS_INFO' },
@@ -153,7 +150,6 @@
       liensCarte: [
         { type: 'link', label: 'Demander la CarteCulture', linkKey: 'CARTECULTURE_APPLY' },
         { type: 'link', label: 'Contacter CarteCulture', linkKey: 'CARTECULTURE_CONTACT' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'CarteCulture — Caritas' }
       ],
       liensEVAM: [
         { type: 'link', label: 'EVAM Vaud', linkKey: 'EVAM_HOME' },
@@ -185,17 +181,14 @@
       liensAI: [
         { type: 'link', label: 'Formulaires AI Vaud', linkKey: 'AI_FORMS' },
         { type: 'link', label: 'Infos AI Vaud', linkKey: 'AI_HOME' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Assurance invalidité (AI)' }
       ],
       liensJetService: [
         { type: 'link', label: 'Voir Jet Service', linkKey: 'JET_SERVICE' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'CSP Jet Service — service social jeunes' }
       ],
       liensRuptureApprentissage: [
         { type: 'link', label: 'Guichets régionaux T1', linkKey: 'T1_GUICHETS' },
         { type: 'link', label: 'Demander un conseil en orientation', linkKey: 'T1_CONTACT' },
         { type: 'link', label: 'Voir Jet Service', linkKey: 'JET_SERVICE' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Rupture d’apprentissage — premiers relais' }
       ],
       liensProInfirmis: [
         { type: 'link', label: 'Pro Infirmis Vaud', linkKey: 'PRO_INFIRMIS' }
@@ -217,36 +210,30 @@
       ],
       liensCommunes: [
         { type: 'link', label: 'Liste des communes vaudoises', linkKey: 'COMMUNES_LIST' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Prestations communales et aides locales' }
       ],
       liensGardeEnfants: [
         { type: 'link', label: 'Garde d’enfants malades — Croix-Rouge vaudoise', linkKey: 'CROIX_ROUGE_GARDE_MALADE' },
         { type: 'link', label: 'Parents-Rescousse — Croix-Rouge vaudoise', linkKey: 'PARENTS_RESCOUSSE' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Garde d’enfants malades — soutien ponctuel aux parents' }
       ],
       liensAideAlimentaire: [
         { type: 'link', label: 'Repères aide alimentaire — Guide Social', linkKey: 'GUIDE_SOCIAL_FOOD' },
         { type: 'link', label: 'Cartons du Coeur', linkKey: 'CARTONS_COEUR' },
         { type: 'link', label: 'Épiceries Caritas', linkKey: 'CARITAS_EPICERIES' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Aide alimentaire par région' }
       ],
       liensSeparation: [
         { type: 'link', label: 'Repères séparation / famille', linkKey: 'FAMILY_CRISIS' },
         { type: 'link', label: 'Demander une avance BRAPA', linkKey: 'BRAPA_APPLY' },
         { type: 'link', label: 'Contacter le BRAPA', linkKey: 'BRAPA_CONTACT' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Séparation, divorce et premiers repères' }
       ],
       liensViolence: [
         { type: 'link', label: 'Trouver de l’aide', linkKey: 'VIOLENCE_HELP' },
         { type: 'link', label: 'MalleyPrairie', linkKey: 'MALLEY_PRAIRIE' },
         { type: 'link', label: 'LAVI Vaud', linkKey: 'LAVI_INFO' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Violences conjugales / besoin de protection' }
       ],
       liensProchesAidants: [
         { type: 'link', label: 'Infos proches aidant·es', linkKey: 'ESPACE_PROCHES_INFO' },
         { type: 'link', label: 'Aides financières et congés', linkKey: 'ESPACE_PROCHES_FINANCES' },
         { type: 'link', label: 'Questions fréquentes', linkKey: 'ESPACE_PROCHES_FAQ' },
-        { type: 'doc', label: 'Voir la fiche pratique', aidTitle: 'Proches aidant·es — répit et aides concrètes' }
       ],
       liensCSR: [
         { type: 'csr', label: 'Trouver ton CSR' }
@@ -496,7 +483,6 @@
       'Distributions alimentaires — canton de Vaud': '0800 30 30 38'
     },
     normalizedLabelRules: [
-      { hrefExactList: ['#bloc-ri', '#bloc-lamal', '#bloc-ai', '#bloc-bourse', '#bloc-carte'], label: 'Voir la fiche pratique' },
       { hrefLinkKeys: ['AAS_LIST'], hrefIncludesList: ['/trouver-une-agence-dassurance-sociale-aas/'], label: 'Trouver une agence AAS' },
       { hrefIncludesList: ['/trouver-un-centre-social-regional-csr'], label: 'Trouver ton CSR' },
       { hrefIncludesList: ['/prestation/demander-le-revenu-dinsertion'], label: 'Demander le RI' },

@@ -66,7 +66,7 @@
 
   function renderCatalogRenderDocLink(target) {
     if (!target || !target.blockId || !target.accordionId) return '';
-    return '<a href="#' + escapeCatalogRenderHtml(target.blockId) + '" onclick="event.preventDefault();openDocumentationTarget(\'' + escapeCatalogRenderHtml(target.blockId) + '\',\'' + escapeCatalogRenderHtml(target.accordionId) + '\')">Voir la fiche pratique</a>';
+    return '';
   }
 
   function renderCatalogRenderLinks(item) {
@@ -75,7 +75,8 @@
       if (link && link.url && link.label) parts.push(renderCatalogRenderLink(link));
     });
     if (item.documentationTarget) {
-      parts.push(renderCatalogRenderDocLink(item.documentationTarget));
+      var docLink = renderCatalogRenderDocLink(item.documentationTarget);
+      if (docLink) parts.push(docLink);
     }
     return parts.join('');
   }

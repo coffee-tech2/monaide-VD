@@ -236,7 +236,8 @@
           title: 'Démarche',
           items: [
             'Tester son éligibilité avec le questionnaire OCBE',
-            'Déposer la demande en ligne dès l’ouverture, en général dès avril pour l’année scolaire ou académique suivante',
+            'Déposer la demande le plus tôt possible. Pour que toute l’année de formation soit prise en compte, le délai est en principe le 31 août pour gymnase, apprentissage, école supérieure ou SEMO, et le 30 septembre pour université, EPFL ou haute école',
+            'Si la demande est déposée après ces délais, l’aide commence en principe le premier jour du mois suivant le dépôt ; moins de 3 mois avant la fin de la formation, aucune aide n’est accordée pour l’année en cours',
             'Préparer attestation d’inscription, documents fiscaux, domicile et éventuels revenus',
             'Si la formation dure plusieurs années, refaire une demande chaque année',
             'Si une pièce manque, commencer quand même la demande et compléter ensuite selon les indications OCBE',
