@@ -130,6 +130,17 @@ const tests = [
     }
   },
   {
+    name: 'Chômage sans droit déjà ouvert reste à vérifier',
+    run() {
+      const results = compute({
+        sitPro: 'Au chômage',
+        aidesListe: []
+      });
+      assert(hasResult(results, 'Assurance chômage', 'verifier'), 'Potential LACI should stay to verify when unemployment benefits are not already opened');
+      assert(!hasResult(results, 'Assurance chômage', 'probable'), 'Potential LACI should not be probable without asking contribution conditions');
+    }
+  },
+  {
     name: 'Faible revenu ne confirme pas automatiquement RI',
     run() {
       const results = compute({

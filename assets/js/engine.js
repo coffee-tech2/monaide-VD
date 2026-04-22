@@ -594,7 +594,7 @@
   function addLaciResult(res, flags) {
     res.push(buildResult({
       nom: 'Assurance chômage (LACI)',
-      badge: (flags.permisL || flags.permisG || flags.permisF || flags.permisS || flags.sitPro.indexOf('Sans emploi') !== -1) ? 'verifier' : 'probable',
+      badge: 'verifier',
       desc: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
         ? 'Le chômage peut rester une piste, mais avec ton statut ou ton cadre de séjour il faut vérifier plus finement les conditions de cotisation, de domicile en Suisse et l’autorité compétente.'
         : 'Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois durant les 2 dernières années ou si tu es libéré·e des conditions de cotisation dans certains cas, puis si les autres conditions sont remplies.',
