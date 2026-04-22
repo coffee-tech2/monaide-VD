@@ -79,6 +79,29 @@ const tests = [
     }
   },
   {
+    name: 'PC actuelles confirment LAMal et CarteCulture',
+    run() {
+      const results = compute({
+        aidesListe: ['PC']
+      });
+      assert(hasResult(results, 'Subside LAMal', 'confirme'), 'PC should confirm LAMal subsidy follow-up');
+      assert(hasResult(results, 'CarteCulture', 'confirme'), 'PC should confirm CarteCulture');
+    }
+  },
+  {
+    name: 'Enfants à charge proposent les allocations familiales sans certitude abusive',
+    run() {
+      const results = compute({
+        sitPro: 'En emploi',
+        enfants: 'oui',
+        revenu: '3500-5000',
+        fortune: 'plus50000'
+      });
+      assert(hasResult(results, 'Allocations familiales', 'probable'), 'Children at charge should suggest family allowances as probable');
+      assert(!hasResult(results, 'Allocations familiales', 'confirme'), 'Family allowances should not be confirmed automatically');
+    }
+  },
+  {
     name: 'Étudiant en formation ne reçoit pas RI ordinaire',
     run() {
       const results = compute({
