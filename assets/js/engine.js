@@ -454,6 +454,19 @@
       return;
     }
 
+    if ((flags.revenuFaible || (flags.revenuModere && flags.primeElevee)) && flags.fortune === 'plus50000') {
+      res.push(buildResult({
+        nom: 'Subside LAMal — réduction de prime',
+        badge: 'verifier',
+        desc: 'Tes revenus peuvent faire penser à un subside, mais une fortune importante peut modifier le calcul du Revenu Déterminant Unifié (RDU). Il faut donc passer par le calcul officiel.',
+        action: '1. Utilise le simulateur officiel du canton avec tes revenus et ta fortune.\n2. Prépare ta police LAMal, ta taxation ou les informations de fortune disponibles.\n3. Si le résultat semble positif ou peu clair, demande de l’aide à une agence AAS avant de conclure.',
+        today: 'Commence par le calcul officiel, car la fortune peut changer le résultat.',
+        docs: ['Police LAMal', 'Revenus du ménage', 'Taxation ou estimation de fortune'],
+        liens: true
+      }));
+      return;
+    }
+
     if (flags.revenuFaible || (flags.revenuModere && flags.primeElevee)) {
       res.push(buildResult({
         nom: 'Subside LAMal — réduction de prime',
@@ -582,8 +595,10 @@
     if (flags.revenuFaible && !flags.alreadyCarteCulture) {
       res.push(buildResult({
         nom: 'CarteCulture — Caritas',
-        badge: 'probable',
-        desc: 'Avec tes revenus, la CarteCulture pourrait être envisageable si le seuil retenu correspond bien à ta situation.',
+        badge: flags.fortune === 'plus50000' ? 'verifier' : 'probable',
+        desc: flags.fortune === 'plus50000'
+          ? 'Avec tes revenus, la CarteCulture peut rester une piste, mais il vaut mieux vérifier les critères exacts si ta fortune est importante.'
+          : 'Avec tes revenus, la CarteCulture pourrait être envisageable si le seuil retenu correspond bien à ta situation.',
         action: '1. Vérifie les critères sur le site CarteCulture.\n2. Si ta situation correspond, prépare un justificatif de revenu ou d’aide sociale.\n3. En cas de doute, contacte Caritas Vaud avant de déposer la demande.',
         today: 'Garde cette piste pour juste après les aides financières prioritaires.',
         liensCarte: true
@@ -788,7 +803,7 @@
     if (aEnfants && (enEmploi || enFormation)) addGardeEnfantsMaladesResult(res, flags);
     if (dettes !== 'non') addDettesResult(res, dettes);
     if ((flags.besoinAlimentaireProbable || dettes === 'dettes' || dettes === 'surendette') && !sansStatut) addAideAlimentaireRegionResult(res, flags);
-    if (logement.includes('Locataire') && !alreadyRI && (loyerEleve || dettes === 'loyer' || revenuFaible)) {
+    if (logement.includes('Locataire') && !alreadyRI && (loyerEleve || dettes === 'loyer')) {
       addAidesLogementResult(res, grandeCommune, dettes, loyerEleve);
     }
     if (res.length === 0) addFallbackResult(res);

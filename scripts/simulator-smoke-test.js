@@ -67,6 +67,31 @@ const tests = [
     }
   },
   {
+    name: 'Subside LAMal reste à vérifier si la fortune est élevée',
+    run() {
+      const results = compute({
+        sitPro: 'En emploi',
+        revenu: '1000-2000',
+        fortune: 'plus50000',
+        primeLamal: '250-400'
+      });
+      assert(hasResult(results, 'Subside LAMal', 'verifier'), 'High fortune should make LAMal subsidy a verification, not a probable result');
+      assert(!hasResult(results, 'Subside LAMal', 'probable'), 'LAMal subsidy should not be probable when high fortune may affect RDU');
+    }
+  },
+  {
+    name: 'CarteCulture revenu faible reste prudente si la fortune est élevée',
+    run() {
+      const results = compute({
+        sitPro: 'En emploi',
+        revenu: '1000-2000',
+        fortune: 'plus50000'
+      });
+      assert(hasResult(results, 'CarteCulture', 'verifier'), 'CarteCulture should stay to verify when low income is paired with high fortune');
+      assert(!hasResult(results, 'CarteCulture', 'probable'), 'CarteCulture should not be probable on income alone when high fortune is declared');
+    }
+  },
+  {
     name: 'RI actuel confirme LAMal et CarteCulture',
     run() {
       const results = compute({
@@ -177,6 +202,18 @@ const tests = [
       });
       assert(!hasResult(results, 'Prestations communales', 'probable'), 'Local benefits should not be probable solely because the commune is large');
       assert(hasResult(results, 'Prestations communales', 'verifier'), 'Local benefits should remain a cautious orientation when income is low');
+    }
+  },
+  {
+    name: 'Aide logement ne sort pas sans indice de loyer problématique',
+    run() {
+      const results = compute({
+        logement: 'Locataire (appartement ou maison)',
+        loyer: 'moins800',
+        revenu: '1000-2000',
+        dettes: 'non'
+      });
+      assert(!hasResult(results, 'Aides logement'), 'Housing aid should not appear only because income is low when rent is not flagged as an issue');
     }
   }
 ];
