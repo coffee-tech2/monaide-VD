@@ -485,7 +485,7 @@
   .guide-doc-card .guide-card-title { max-width:34ch; }
   .guide-doc-card .guide-list { columns:2; column-gap:2.2rem; max-width:58rem; }
   .guide-doc-card .guide-list li { break-inside:avoid; }
-  .guide-card-label { display:inline-flex; align-items:center; padding:0.34rem 0.68rem; border-radius:999px; background:#eef5ef; color:var(--sage-dark); font-size:0.68rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.56rem; }
+  .guide-card-label { display:inline-flex; align-items:center; padding:0.34rem 0.68rem; border-radius:999px; background:rgba(240,216,154,0.34); border:1px solid rgba(240,216,154,0.46); color:#5E4A20; font-size:0.68rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.56rem; }
   .guide-card-title { font-family:'Plus Jakarta Sans',sans-serif; font-size:1.34rem; line-height:1.12; letter-spacing:-0.045em; color:var(--sage-dark); margin:0 0 0.72rem; max-width:26ch; text-wrap:pretty; }
   .guide-card p { margin:0; color:var(--warm-gray); line-height:1.72; max-width:34rem; }
   .guide-list { margin:0.9rem 0 0; padding-left:1.15rem; color:var(--warm-gray); line-height:1.74; }
