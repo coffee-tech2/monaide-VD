@@ -357,7 +357,7 @@
   function addPrestationsCommunalesResult(res, flags) {
     res.push(buildResult({
       nom: 'Prestations communales et aides locales',
-      badge: (flags.aEnfants || flags.grandeCommune) ? 'probable' : 'verifier',
+      badge: flags.aEnfants ? 'probable' : 'verifier',
       desc: flags.aEnfants
         ? 'Selon la commune, il existe parfois des aides concrètes pour les familles : garde, loisirs, couches, repas ou frais du quotidien.'
         : 'Certaines communes proposent des aides ponctuelles ou locales que le simulateur ne peut pas confirmer automatiquement.',

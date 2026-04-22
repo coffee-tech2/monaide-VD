@@ -82,10 +82,13 @@ const tests = [
     name: 'PC actuelles confirment LAMal et CarteCulture',
     run() {
       const results = compute({
+        age: '65plus',
+        sitPro: 'Retraité·e (bénéficiaire AVS)',
         aidesListe: ['PC']
       });
       assert(hasResult(results, 'Subside LAMal', 'confirme'), 'PC should confirm LAMal subsidy follow-up');
       assert(hasResult(results, 'CarteCulture', 'confirme'), 'PC should confirm CarteCulture');
+      assert(!hasResult(results, 'Assurance chômage'), 'Retired/PC profile should not receive LACI orientation');
     }
   },
   {
@@ -147,6 +150,22 @@ const tests = [
       });
       assert(hasResult(results, 'Assurance invalidité', 'probable'), 'AI should be probable for total incapacity');
       assert(!hasResult(results, 'Assurance invalidité', 'confirme'), 'AI must not be confirmed automatically');
+    }
+  },
+  {
+    name: 'Grande commune seule ne rend pas les prestations communales probables',
+    run() {
+      const results = compute({
+        commune: 'Lausanne',
+        communeNorm: 'lausanne',
+        sitPro: 'Sans emploi - sans revenu',
+        enfants: 'non',
+        revenu: '1000-2000',
+        loyer: 'moins800',
+        dettes: 'non'
+      });
+      assert(!hasResult(results, 'Prestations communales', 'probable'), 'Local benefits should not be probable solely because the commune is large');
+      assert(hasResult(results, 'Prestations communales', 'verifier'), 'Local benefits should remain a cautious orientation when income is low');
     }
   }
 ];
