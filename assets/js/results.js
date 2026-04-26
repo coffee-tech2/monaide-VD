@@ -212,7 +212,12 @@
     return resultNameHtml;
   }
 
-  function renderResultCard(result, index) {
+  function renderResultSectionLabel(title, text) {
+    return '<div class="result-section-label"><div class="result-section-title">' + escapeHtml(title) + '</div><div class="result-section-text">' + escapeHtml(text) + '</div></div>';
+  }
+
+  function renderResultCard(result, index, meta) {
+    meta = meta || {};
     var detailTitles = RESULTS_UI_CONFIG.detailTitles || {};
     var detailClasses = RESULTS_UI_CONFIG.detailClasses || {};
     var purposeText = getAidPurpose(result.nom);
@@ -232,7 +237,11 @@
     var linksHtml = links ? buildResultDetail(detailTitles.links || 'Liens utiles', '<div class="result-link-row">' + links + '</div>', detailClasses.links || 'is-links', false) : '';
     var followUpHtml = whyHtml + actionHtml + docsHtml + linksHtml + purposeHtml + moreHtml;
     var badgeMeta = getResultBadgeMeta(result);
-    return '<div class="result-item result-reveal" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div>' + startHtml + buildResultMoreHtml(result, followUpHtml) + '</div></div>';
+    var cardClasses = 'result-item result-reveal';
+    if (meta.isPrimaryFocus) cardClasses += ' is-primary-focus';
+    if (meta.isSecondary) cardClasses += ' is-secondary-track';
+    var rankHtml = meta.rankLabel ? '<div class="result-rank">' + escapeHtml(meta.rankLabel) + '</div>' : '';
+    return '<div class="' + cardClasses + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div>' + startHtml + buildResultMoreHtml(result, followUpHtml) + '</div></div>';
   }
 
   function renderResultsFooterBanner(title, bodyHtml, animationIndex, extraStyle) {
@@ -296,8 +305,23 @@
     var topActions = [];
     var docsMap = {};
     var regionalOrientation = getRegionalOrientation(profile.communeNorm, profile.commune);
+    var hasPrimaryTrack = res.some(function(item) {
+      return !isSecondaryResult(item.nom || '');
+    });
+    var primaryFocusAssigned = false;
+    var secondaryLabelInserted = false;
 
     res.forEach(function(r, index) {
+      var secondary = isSecondaryResult(r.nom || '');
+      var primaryFocus = !primaryFocusAssigned && (hasPrimaryTrack ? !secondary : index === 0);
+      if (primaryFocus) primaryFocusAssigned = true;
+      if (secondary && !secondaryLabelInserted && index > 0) {
+        list.innerHTML += renderResultSectionLabel(
+          (RESULTS_UI_CONFIG.summaryTitles || {}).secondary || 'Autres pistes à regarder ensuite',
+          RESULTS_UI_CONFIG.secondaryIntroText || 'Ces ressources peuvent compléter la piste principale selon ta situation, mais elles ne sont pas forcément la première démarche à faire.'
+        );
+        secondaryLabelInserted = true;
+      }
       if (!isSecondaryResult(r.nom || '') && topActions.length < 3 && r.action) {
         topActions.push({ nom: r.nom, action: getActionSummary(r.action) });
       }
@@ -306,7 +330,11 @@
           docsMap[doc] = true;
         });
       }
-      list.innerHTML += renderResultCard(r, index);
+      list.innerHTML += renderResultCard(r, index, {
+        isPrimaryFocus: primaryFocus,
+        isSecondary: secondary,
+        rankLabel: primaryFocus ? ((RESULTS_UI_CONFIG.summaryTitles || {}).primary || 'Piste principale') : ''
+      });
     });
 
     var docList = Object.keys(docsMap).slice(0, 8);
