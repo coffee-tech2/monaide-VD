@@ -135,26 +135,14 @@
       + '</div>';
   }
 
-  function getTierLabel(tier) {
-    if (tier === 'essential') return 'Essentiel';
-    if (tier === 'complement') return 'Compléments';
-    return 'À connaître';
-  }
-
   function renderCatalogGroupMarkup(groupMeta) {
-    var previousTier = null;
     var cardsMarkup = CATALOG_LAYOUT.cards
       .filter(function(cardMeta) { return cardMeta.groupId === groupMeta.id; })
       .sort(function(a, b) { return a.order - b.order; })
       .map(function(meta) {
         var item = getCatalogRenderItemById(meta.itemId);
         if (!item) return '';
-        var tierIntro = '';
-        if (meta.tier !== previousTier) {
-          tierIntro = '<div class="cat-tier-heading" data-tier="' + escapeCatalogRenderHtml(meta.tier || 'known') + '"><span class="cat-tier-kicker">' + escapeCatalogRenderHtml(getTierLabel(meta.tier)) + '</span></div>';
-          previousTier = meta.tier;
-        }
-        return tierIntro + renderCatalogCardMarkup(item, meta.dataCat);
+        return renderCatalogCardMarkup(item, meta.dataCat);
       })
       .join('');
 

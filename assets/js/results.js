@@ -336,19 +336,11 @@
       return !isSecondaryResult(item.nom || '');
     });
     var primaryFocusAssigned = false;
-    var secondaryLabelInserted = false;
 
     res.forEach(function(r, index) {
       var secondary = isSecondaryResult(r.nom || '');
       var primaryFocus = !primaryFocusAssigned && (hasPrimaryTrack ? !secondary : index === 0);
       if (primaryFocus) primaryFocusAssigned = true;
-      if (secondary && !secondaryLabelInserted && index > 0) {
-        list.innerHTML += renderResultSectionLabel(
-          (RESULTS_UI_CONFIG.summaryTitles || {}).secondary || 'Autres pistes à regarder ensuite',
-          RESULTS_UI_CONFIG.secondaryIntroText || 'Ces ressources peuvent compléter la piste principale selon ta situation, mais elles ne sont pas forcément la première démarche à faire.'
-        );
-        secondaryLabelInserted = true;
-      }
       if (!isSecondaryResult(r.nom || '') && topActions.length < 3 && r.action) {
         topActions.push({ nom: r.nom, action: getActionSummary(r.action) });
       }
@@ -360,7 +352,7 @@
       list.innerHTML += renderResultCard(r, index, {
         isPrimaryFocus: primaryFocus,
         isSecondary: secondary,
-        rankLabel: primaryFocus ? ((RESULTS_UI_CONFIG.summaryTitles || {}).primary || 'Piste principale') : ''
+        rankLabel: ''
       });
     });
 
