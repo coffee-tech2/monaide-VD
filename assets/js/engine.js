@@ -738,75 +738,98 @@
     }));
   }
 
+  function buildSimulationRuleState(flags, res) {
+    return {
+      always: true,
+      urgenceActive: flags.urgenceActive,
+      permisN: flags.permisN,
+      permisS: flags.permisS,
+      permisF: flags.permisF,
+      permisL: flags.permisL,
+      permisG: flags.permisG,
+      sansStatut: flags.sansStatut,
+      needsLamal: !flags.alreadyLAMal && !flags.sansStatut && !flags.permisN && !flags.permisS,
+      needsRi: !flags.alreadyRI && !flags.alreadyPC && !flags.etudiant && flags.permiRI && !flags.enEmploi,
+      needsPc: (flags.retraite || flags.alreadyAI) && !flags.alreadyPC,
+      needsAllocationsFamiliales: flags.aEnfants && !flags.alreadyAF,
+      needsChomageActif: flags.alreadyChomage,
+      needsLaci: flags.chomageNonIndem && !flags.alreadyChomage && !flags.permisN && !flags.sansStatut,
+      needsOcbe: flags.enFormation && !flags.alreadyBourse,
+      needsAi: flags.incapacite !== 'non' && !flags.alreadyAI,
+      needsJetService: flags.age === '18-25' || flags.enFormation,
+      needsRuptureApprentissage: flags.age === '18-25' && !flags.enEmploi && (flags.enFormation || flags.etudiant),
+      needsViolenceProtection: flags.besoinProtection === 'oui',
+      needsSeparationSupport: flags.separationEnCours === 'oui' && flags.besoinProtection !== 'oui',
+      needsProchesAidants: flags.procheAidant === 'oui',
+      needsProInfirmis: flags.invalidite && !flags.retraite,
+      needsProSenectute: flags.retraite || flags.age === '65plus',
+      needsCms: flags.invalidite,
+      needsPrestationsCommunales: (flags.besoinLocalConcret || (flags.revenuFaible && flags.grandeCommune)) && !flags.sansStatut,
+      needsGardeMalade: flags.aEnfants && (flags.enEmploi || flags.enFormation),
+      needsDettes: flags.dettes !== 'non',
+      needsAideAlimentaire: (flags.besoinAlimentaireProbable || flags.dettes === 'dettes' || flags.dettes === 'surendette') && !flags.sansStatut,
+      needsAidesLogement: flags.logement.includes('Locataire') && !flags.alreadyRI && (flags.loyerEleve || flags.dettes === 'loyer'),
+      needsFallback: !res.length
+    };
+  }
+
+  function createSimulationRuleHandlers(res, flags) {
+    return {
+      addUrgenceOrientationResults: function() { addUrgenceOrientationResults(res); },
+      addPermisNResults: function() { addPermisNResults(res); },
+      addPermisSResults: function() { addPermisSResults(res); },
+      addPermisFResults: function() { addPermisFResults(res); },
+      addPermisLResults: function() { addPermisLResults(res); },
+      addPermisGResults: function() { addPermisGResults(res); },
+      addSansStatutResults: function() { addSansStatutResults(res); },
+      addLamalResult: function() { addLamalResult(res, flags); },
+      addRiResult: function() { addRiResult(res, flags); },
+      addPcResult: function() { addPcResult(res, flags); },
+      addAllocationsFamilialesResult: function() { addAllocationsFamilialesResult(res); },
+      addCarteCultureResult: function() { addCarteCultureResult(res, flags); },
+      addChomageActifResult: function() { addChomageActifResult(res); },
+      addLaciResult: function() { addLaciResult(res, flags); },
+      addRentePontResult: function() { addRentePontResult(res, flags); },
+      addOcbeResult: function() { addOcbeResult(res, flags); },
+      addAiResult: function() { addAiResult(res, flags); },
+      addJetServiceResult: function() { addJetServiceResult(res, flags); },
+      addRuptureApprentissageResult: function() { addRuptureApprentissageResult(res, flags); },
+      addViolenceProtectionResult: function() { addViolenceProtectionResult(res); },
+      addSeparationResult: function() { addSeparationResult(res, flags); },
+      addProchesAidantsResult: function() { addProchesAidantsResult(res); },
+      addProInfirmisResult: function() { addProInfirmisResult(res); },
+      addProSenectuteResult: function() { addProSenectuteResult(res); },
+      addCmsResult: function() { addCmsResult(res); },
+      addPrestationsCommunalesResult: function() { addPrestationsCommunalesResult(res, flags); },
+      addGardeEnfantsMaladesResult: function() { addGardeEnfantsMaladesResult(res, flags); },
+      addDettesResult: function() { addDettesResult(res, flags.dettes); },
+      addAideAlimentaireRegionResult: function() { addAideAlimentaireRegionResult(res, flags); },
+      addAidesLogementResult: function() { addAidesLogementResult(res, flags.grandeCommune, flags.dettes, flags.loyerEleve); },
+      addFallbackResult: function() { addFallbackResult(res); }
+    };
+  }
+
+  function applySimulationRules(res, flags) {
+    var registry = window.MONAIDE_SIMULATION_RULES || [];
+    var handlers = createSimulationRuleHandlers(res, flags);
+
+    registry.forEach(function(rule) {
+      var state = buildSimulationRuleState(flags, res);
+      if (!rule || !rule.handler || !rule.when) return;
+      if (!state[rule.when]) return;
+      if (typeof handlers[rule.handler] === 'function') {
+        handlers[rule.handler]();
+      }
+    });
+  }
+
   window.computeSimulationResults = function(profile) {
     profile = profile || {};
     var flags = finalizeSimulationFlags(deriveSimulationFlags(profile));
     var res = [];
     var age = flags.age;
-    var logement = flags.logement;
-    var incapacite = flags.incapacite;
-    var dettes = flags.dettes;
-    var revenuFaible = flags.revenuFaible;
-    var retraite = flags.retraite;
-    var etudiant = flags.etudiant;
-    var enFormation = flags.enFormation;
-    var aEnfants = flags.aEnfants;
-    var chomageNonIndem = flags.chomageNonIndem;
     var enEmploi = flags.enEmploi;
-    var separationEnCours = flags.separationEnCours;
-    var besoinProtection = flags.besoinProtection;
-    var procheAidant = flags.procheAidant;
-    var permisN = flags.permisN;
-    var permisS = flags.permisS;
-    var sansStatut = flags.sansStatut;
-    var permiRI = flags.permiRI;
-    var alreadyRI = flags.alreadyRI;
-    var alreadyPC = flags.alreadyPC;
-    var alreadyLAMal = flags.alreadyLAMal;
-    var alreadyAF = flags.alreadyAF;
-    var alreadyBourse = flags.alreadyBourse;
-    var alreadyAI = flags.alreadyAI;
-    var alreadyChomage = flags.alreadyChomage;
-    var invalidite = flags.invalidite;
-    var loyerEleve = flags.loyerEleve;
-    var urgenceActive = flags.urgenceActive;
-    var grandeCommune = flags.grandeCommune;
-
-    if (urgenceActive) addUrgenceOrientationResults(res);
-    if (permisN) addPermisNResults(res);
-    if (permisS) addPermisSResults(res);
-    if (flags.permisF) addPermisFResults(res);
-    if (flags.permisL) addPermisLResults(res);
-    if (flags.permisG) addPermisGResults(res);
-    if (sansStatut) addSansStatutResults(res);
-
-    if (!alreadyLAMal && !sansStatut && !permisN && !permisS) addLamalResult(res, flags);
-    if (!alreadyRI && !alreadyPC && !etudiant && permiRI && !enEmploi) addRiResult(res, flags);
-    if ((retraite || alreadyAI) && !alreadyPC) addPcResult(res, flags);
-    if (aEnfants && !alreadyAF) addAllocationsFamilialesResult(res);
-    addCarteCultureResult(res, flags);
-    if (alreadyChomage) addChomageActifResult(res);
-    if (chomageNonIndem && !alreadyChomage && !permisN && !sansStatut) addLaciResult(res, flags);
-    addRentePontResult(res, flags);
-    if (enFormation && !alreadyBourse) addOcbeResult(res, flags);
-    if (incapacite !== 'non' && !alreadyAI) addAiResult(res, flags);
-    addJetServiceResult(res, flags);
-    addRuptureApprentissageResult(res, flags);
-    if (besoinProtection === 'oui') addViolenceProtectionResult(res);
-    if (separationEnCours === 'oui' && besoinProtection !== 'oui') addSeparationResult(res, flags);
-    if (procheAidant === 'oui') addProchesAidantsResult(res);
-
-    if (invalidite && !retraite) addProInfirmisResult(res);
-    if (retraite || age === '65plus') addProSenectuteResult(res);
-    if (invalidite) addCmsResult(res);
-    if ((flags.besoinLocalConcret || (flags.revenuFaible && flags.grandeCommune)) && !sansStatut) addPrestationsCommunalesResult(res, flags);
-    if (aEnfants && (enEmploi || enFormation)) addGardeEnfantsMaladesResult(res, flags);
-    if (dettes !== 'non') addDettesResult(res, dettes);
-    if ((flags.besoinAlimentaireProbable || dettes === 'dettes' || dettes === 'surendette') && !sansStatut) addAideAlimentaireRegionResult(res, flags);
-    if (logement.includes('Locataire') && !alreadyRI && (loyerEleve || dettes === 'loyer')) {
-      addAidesLogementResult(res, grandeCommune, dettes, loyerEleve);
-    }
-    if (res.length === 0) addFallbackResult(res);
+    applySimulationRules(res, flags);
 
     return {
       results: dedupeResults(res),

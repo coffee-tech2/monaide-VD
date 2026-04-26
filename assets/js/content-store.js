@@ -130,9 +130,38 @@
     return { byAidId: byAidId };
   }
 
+  function buildGuideStoreFromData() {
+    var data = window.MONAIDE_GUIDE_DATA || { items: [] };
+    var items = (data.items || []).map(function(item, index) {
+      return {
+        id: item.id,
+        label: item.label || '',
+        title: item.title || '',
+        normalizedTitle: normalizeAidText(item.title || item.id || ''),
+        summary: item.summary || '',
+        href: item.href || '',
+        ctaLabel: item.ctaLabel || 'Ouvrir le guide',
+        featured: !!item.featured,
+        audience: item.audience || [],
+        keywords: item.keywords || [],
+        order: index
+      };
+    });
+
+    var byId = {};
+    var byNormalizedTitle = {};
+    items.forEach(function(item) {
+      byId[item.id] = item;
+      byNormalizedTitle[item.normalizedTitle] = item;
+    });
+
+    return { items: items, byId: byId, byNormalizedTitle: byNormalizedTitle };
+  }
+
   window.MONAIDE_CATALOG_STORE = buildCatalogStoreFromData();
   window.MONAIDE_DOCUMENTATION_STORE = buildDocumentationStoreFromData();
   window.MONAIDE_CONTENT_INDEX = buildAidContentIndex(window.MONAIDE_CATALOG_STORE, window.MONAIDE_DOCUMENTATION_STORE);
+  window.MONAIDE_GUIDE_STORE = buildGuideStoreFromData();
 
   window.getCatalogStoreItem = function(idOrTitle) {
     if (!idOrTitle || !window.MONAIDE_CATALOG_STORE) return null;
@@ -166,4 +195,11 @@
     var catalogItem = window.getCatalogStoreItem ? window.getCatalogStoreItem(idOrTitle) : null;
     if (!catalogItem || !window.MONAIDE_CONTENT_INDEX) return null;
     return window.MONAIDE_CONTENT_INDEX.byAidId[catalogItem.id] || null;
+  };
+
+  window.getGuideStoreItem = function(idOrTitle) {
+    if (!idOrTitle || !window.MONAIDE_GUIDE_STORE) return null;
+    return window.MONAIDE_GUIDE_STORE.byId[idOrTitle] ||
+      window.MONAIDE_GUIDE_STORE.byNormalizedTitle[normalizeAidText(idOrTitle)] ||
+      null;
   };

@@ -3,11 +3,14 @@ const path = require('path');
 const vm = require('vm');
 
 const root = path.resolve(__dirname, '..');
+const rulesPath = path.join(root, 'assets/js/simulator-rules.js');
 const enginePath = path.join(root, 'assets/js/engine.js');
+const rulesCode = fs.readFileSync(rulesPath, 'utf8');
 const engineCode = fs.readFileSync(enginePath, 'utf8');
 
 const context = { window: {}, console };
 vm.createContext(context);
+vm.runInContext(rulesCode, context, { filename: rulesPath });
 vm.runInContext(engineCode, context, { filename: enginePath });
 
 const computeSimulationResults = context.window.computeSimulationResults;
