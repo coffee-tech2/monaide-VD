@@ -273,6 +273,33 @@
     return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Plus d\'aides potentielles dans le catalogue', bodyHtml, Math.min(resultCount + 6, 12));
   }
 
+  function buildFollowUpBanner(profile, results, resultCount) {
+    var rules = window.MONAIDE_SIMULATOR_FOLLOWUPS || [];
+    if (!rules.length || !results || !results.length) return '';
+
+    var prompts = rules.filter(function(rule) {
+      if (!rule || typeof rule.when !== 'function') return false;
+      var matches = (rule.patterns || []).some(function(pattern) {
+        return results.some(function(item) {
+          return (item.nom || '').indexOf(pattern) !== -1;
+        });
+      });
+      return matches && rule.when(profile, results);
+    });
+
+    if (!prompts.length) return '';
+
+    var html = '<div style="font-size:0.78rem;color:var(--warm-gray);line-height:1.6;">';
+    html += '<p style="margin:0 0 0.7rem;"><strong style="color:var(--dark);">Pour affiner ensuite si besoin :</strong> ces points peuvent changer la porte d’entrée ou le niveau de certitude.</p>';
+    html += '<ul style="margin:0;padding-left:1rem;">';
+    prompts.slice(0, 4).forEach(function(prompt) {
+      html += '<li style="margin:0 0 0.5rem;"><strong style="color:var(--dark);">' + escapeHtml(prompt.title) + ' :</strong> ' + escapeHtml(prompt.text) + '</li>';
+    });
+    html += '</ul></div>';
+
+    return renderResultsFooterBanner('Points à clarifier si nécessaire', html, Math.min(resultCount + 5, 11));
+  }
+
   function buildLatestSimulation(profile, results, topActions, docList) {
     return {
       profile: {
@@ -345,6 +372,8 @@
     if (regionalOrientation) {
       list.innerHTML += buildRegionalBanner(regionalOrientation, res.length);
     }
+
+    list.innerHTML += buildFollowUpBanner(profile, res, res.length);
 
     latestSimulation = buildLatestSimulation(profile, res, topActions, docList);
 
