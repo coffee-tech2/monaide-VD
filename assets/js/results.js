@@ -178,7 +178,7 @@
   }
 
   function sortSimulationResults(results, resultContext) {
-    var ordre = RESULTS_UI_CONFIG.badgeOrder || { confirme: 0, probable: 1, verifier: 2 };
+    var ordre = RESULTS_UI_CONFIG.badgeOrder || { probable: 0, verifier: 1 };
     results.sort(function(a, b) {
       var priorityA = getResultPriority(a.nom || '', resultContext);
       var priorityB = getResultPriority(b.nom || '', resultContext);
@@ -194,7 +194,7 @@
   }
 
   function getResultBadgeMeta(result) {
-    if (result.badge === 'confirme') return { className: 'badge-oui', label: 'Confirmé' };
+    if (result.badge === 'probable' && result.strongProbable) return { className: 'badge-oui', label: 'Probablement' };
     if (result.badge === 'probable') return { className: 'badge-probable', label: 'Probablement' };
     return { className: 'badge-verifier', label: 'À vérifier' };
   }
@@ -312,7 +312,7 @@
       results: results.map(function(item) {
         return {
           nom: item.nom,
-          badgeLabel: item.badge === 'confirme' ? 'Confirmé' : item.badge === 'probable' ? 'Probablement' : 'À vérifier',
+          badgeLabel: item.badge === 'probable' ? 'Probablement' : 'À vérifier',
           why: getWhySummary(item),
           today: item.today || '',
           action: item.action ? item.action.replace(/\n+/g, ' ') : ''

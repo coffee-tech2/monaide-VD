@@ -58,14 +58,14 @@ function assert(condition, message) {
 
 const tests = [
   {
-    name: 'Subside LAMal actuel confirme CarteCulture',
+    name: 'Subside LAMal actuel rend CarteCulture très probable',
     run() {
       const results = compute({
         sitPro: 'En emploi',
         aidesListe: ['lamal'],
         revenu: '1000-2000'
       });
-      assert(hasResult(results, 'CarteCulture', 'confirme'), 'CarteCulture should be confirmed when LAMal subsidy already exists');
+      assert(hasResult(results, 'CarteCulture', 'probable'), 'CarteCulture should be probable when LAMal subsidy already exists');
       assert(!hasResult(results, 'Subside LAMal'), 'Existing LAMal subsidy should not be recommended again');
     }
   },
@@ -95,27 +95,27 @@ const tests = [
     }
   },
   {
-    name: 'RI actuel confirme LAMal et CarteCulture',
+    name: 'RI actuel rend LAMal et CarteCulture très probables',
     run() {
       const results = compute({
         sitPro: 'Bénéficiaire du RI',
         aidesListe: ['RI']
       });
-      assert(hasResult(results, 'Subside LAMal', 'confirme'), 'RI should confirm LAMal subsidy follow-up');
-      assert(hasResult(results, 'CarteCulture', 'confirme'), 'RI should confirm CarteCulture');
+      assert(hasResult(results, 'Subside LAMal', 'probable'), 'RI should make LAMal subsidy strongly probable');
+      assert(hasResult(results, 'CarteCulture', 'probable'), 'RI should make CarteCulture strongly probable');
       assert(!hasResult(results, 'Revenu d\'insertion'), 'Existing RI should not be recommended again');
     }
   },
   {
-    name: 'PC actuelles confirment LAMal et CarteCulture',
+    name: 'PC actuelles rendent LAMal et CarteCulture très probables',
     run() {
       const results = compute({
         age: '65plus',
         sitPro: 'Retraité·e (bénéficiaire AVS)',
         aidesListe: ['PC']
       });
-      assert(hasResult(results, 'Subside LAMal', 'confirme'), 'PC should confirm LAMal subsidy follow-up');
-      assert(hasResult(results, 'CarteCulture', 'confirme'), 'PC should confirm CarteCulture');
+      assert(hasResult(results, 'Subside LAMal', 'probable'), 'PC should make LAMal subsidy strongly probable');
+      assert(hasResult(results, 'CarteCulture', 'probable'), 'PC should make CarteCulture strongly probable');
       assert(!hasResult(results, 'Assurance chômage'), 'Retired/PC profile should not receive LACI orientation');
     }
   },
@@ -129,7 +129,7 @@ const tests = [
         fortune: 'plus50000'
       });
       assert(hasResult(results, 'Allocations familiales', 'probable'), 'Children at charge should suggest family allowances as probable');
-      assert(!hasResult(results, 'Allocations familiales', 'confirme'), 'Family allowances should not be confirmed automatically');
+      assert(!hasResult(results, 'Allocations familiales', 'confirme'), 'Family allowances should not use confirmed status');
     }
   },
   {
@@ -154,7 +154,7 @@ const tests = [
         sitPro: 'Sans emploi - sans revenu',
         revenu: 'aucun'
       });
-      assert(hasResult(results, 'Assurance chômage', 'verifier'), 'Unemployed without income should be LACI to verify, not probable/confirmed');
+      assert(hasResult(results, 'Assurance chômage', 'verifier'), 'Unemployed without income should be LACI to verify, not probable');
     }
   },
   {
@@ -169,7 +169,7 @@ const tests = [
     }
   },
   {
-    name: 'Faible revenu ne confirme pas automatiquement RI',
+    name: 'Faible revenu ne rend pas automatiquement le RI certain',
     run() {
       const results = compute({
         sitPro: 'Sans emploi - sans revenu',
@@ -177,7 +177,7 @@ const tests = [
         fortune: 'moins4000'
       });
       assert(hasResult(results, 'Revenu d\'insertion', 'probable'), 'RI should be probable for low income, not confirmed');
-      assert(!hasResult(results, 'Revenu d\'insertion', 'confirme'), 'RI must not be confirmed by simulator on income alone');
+      assert(!hasResult(results, 'Revenu d\'insertion', 'confirme'), 'RI must never be confirmed by simulator');
     }
   },
   {
@@ -188,7 +188,19 @@ const tests = [
         incapacite: 'totale'
       });
       assert(hasResult(results, 'Assurance invalidité', 'probable'), 'AI should be probable for total incapacity');
-      assert(!hasResult(results, 'Assurance invalidité', 'confirme'), 'AI must not be confirmed automatically');
+      assert(!hasResult(results, 'Assurance invalidité', 'confirme'), 'AI must never use confirmed status');
+    }
+  },
+  {
+    name: 'PC Familles apparaît pour parent qui travaille avec budget insuffisant',
+    run() {
+      const results = compute({
+        sitPro: 'En emploi',
+        enfants: 'oui',
+        revenu: '1000-2000',
+        fortune: 'moins4000'
+      });
+      assert(hasResult(results, 'PC Familles', 'probable'), 'PC Familles should be suggested for a working parent with low income');
     }
   },
   {

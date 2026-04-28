@@ -9,6 +9,7 @@ window.MONAIDE_SIMULATION_RULES = [
   { id: 'lamal', when: 'needsLamal', handler: 'addLamalResult' },
   { id: 'ri', when: 'needsRi', handler: 'addRiResult' },
   { id: 'pc', when: 'needsPc', handler: 'addPcResult' },
+  { id: 'pc-familles', when: 'needsPcFamilles', handler: 'addPcFamillesResult' },
   { id: 'allocations-familiales', when: 'needsAllocationsFamiliales', handler: 'addAllocationsFamilialesResult' },
   { id: 'carteculture', when: 'always', handler: 'addCarteCultureResult' },
   { id: 'chomage-ouvert', when: 'needsChomageActif', handler: 'addChomageActifResult' },

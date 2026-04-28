@@ -31,6 +31,7 @@ const allowedWhen = new Set([
   'needsLamal',
   'needsRi',
   'needsPc',
+  'needsPcFamilles',
   'needsAllocationsFamiliales',
   'needsChomageActif',
   'needsLaci',

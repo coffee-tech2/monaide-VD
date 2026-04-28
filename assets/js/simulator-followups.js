@@ -22,7 +22,7 @@ window.MONAIDE_SIMULATOR_FOLLOWUPS = [
     id: 'statut-sejour',
     patterns: ['Revenu d\'insertion', 'Subside LAMal', 'Prestations complémentaires', 'questions de migration'],
     title: 'Statut de séjour précis',
-    text: 'Le type de permis ou de statut de séjour peut changer la porte d’entrée ou les conditions. Si ce point est flou, fais-le confirmer rapidement.',
+    text: 'Le type de permis ou de statut de séjour peut changer la porte d’entrée ou les conditions. Si ce point est flou, fais-le vérifier rapidement.',
     when: function(profile) {
       if (!profile || !profile.permis) return false;
       return [

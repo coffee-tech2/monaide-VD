@@ -108,7 +108,7 @@ const scenarios = [
     }
   },
   {
-    name: 'CarteCulture confirmée ne remonte pas avant le subside déjà lié au RI',
+    name: 'CarteCulture très probable ne remonte pas avant le subside déjà lié au RI',
     run() {
       const results = runProfile({
         sitPro: 'Bénéficiaire du RI',

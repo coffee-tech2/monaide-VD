@@ -97,6 +97,7 @@
       'liens',
       'lienRI',
       'liensPC',
+      'liensPcFamilles',
       'liensBourse',
       'liensAF',
       'liensCarte',
@@ -136,6 +137,10 @@
         { type: 'link', label: 'Infos PC AVS/AI', linkKey: 'PC_INFO' },
         { type: 'link', label: 'Trouver une agence AAS', linkKey: 'AAS_LIST' },
         { type: 'link', label: 'Caisse AVS Vaud', linkKey: 'CAISSE_AVS_HOME' }
+      ],
+      liensPcFamilles: [
+        { type: 'link', label: 'Estimer son droit aux PC Familles', linkKey: 'PC_FAMILLES_SIMULATEUR' },
+        { type: 'link', label: 'Infos PC Familles', linkKey: 'PC_FAMILLES_INFO' }
       ],
       liensBourse: [
         { type: 'link', label: 'Faire le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage)', linkKey: 'OCBE_ELIGIBILITY' },
@@ -244,9 +249,8 @@
   window.MONAIDE_RESULTS_UI_CONFIG = {
     defaultPurpose: 'Cette piste sert à t’ouvrir une orientation concrète selon ta situation.',
     badgeOrder: {
-      confirme: 0,
-      probable: 1,
-      verifier: 2
+      probable: 0,
+      verifier: 1
     },
     detailTitles: {
       purpose: 'À quoi ça peut servir',
@@ -281,6 +285,7 @@
       { patterns: ['revenu d insertion'], text: 'Cette aide sert à couvrir le minimum pour vivre quand les revenus ne suffisent plus, sous réserve d’un examen complet du dossier.' },
       { patterns: ['centre social regional', 'aas'], text: 'Ce service sert à faire un premier point, expliquer les démarches possibles et orienter vers la bonne porte d’entrée.' },
       { patterns: ['prestations complementaires'], text: 'Cette aide sert à compléter une rente AVS ou AI quand elle ne suffit pas à couvrir le budget de base.' },
+      { patterns: ['pc familles'], text: 'Cette aide sert à compléter le budget d’un ménage avec enfants quand une activité lucrative existe déjà mais que les ressources restent insuffisantes.' },
       { patterns: ['allocations familiales', 'apg'], text: 'Cette aide sert à soutenir une situation familiale ou une perte de gain reconnue, selon la caisse compétente et le dossier.' },
       { patterns: ['assurance invalidite'], text: 'Cette aide sert à soutenir une incapacité durable, d’abord par la réadaptation puis, selon la situation, par d’autres prestations.' },
       { patterns: ['pro infirmis'], text: 'Ce service sert à accompagner les démarches quand la santé ou le handicap compliquent le quotidien.' },
@@ -290,7 +295,7 @@
       { patterns: ['separation', 'divorce'], text: 'Cette piste sert à clarifier les premières démarches, les questions de pension, de garde et les impacts concrets sur le budget.' },
       { patterns: ['proches aidant'], text: 'Cette piste sert à repérer des solutions de répit, de relève et de soutien quand tu aides régulièrement un proche.' },
       { patterns: ['sante mentale'], text: 'Cette piste sert à trouver un premier relais humain quand la santé mentale devient difficile à gérer.' },
-      { patterns: ['assurance chomage'], text: 'Cette aide sert à couvrir une perte d’emploi si les conditions de chômage sont remplies et confirmées.' },
+      { patterns: ['assurance chomage'], text: 'Cette aide sert à couvrir une perte d’emploi si les conditions de chômage sont remplies après examen du dossier.' },
       { patterns: ['bourses', 'ocbe'], text: 'Cette aide sert à soutenir une formation quand les ressources du ménage ne suffisent pas, après examen du dossier.' },
       { patterns: ['jet service'], text: 'Ce service sert à aider à comprendre ou remplir certaines démarches de formation ou de budget.' },
       { patterns: ['rupture d apprentissage', 'guichet t1'], text: 'Ce service sert à retrouver une solution de formation ou d’orientation quand le parcours se bloque.' },
@@ -303,6 +308,7 @@
       { patterns: ['centre social regional', 'aas', 'vaud pour vous', 'jet service', 'rupture d apprentissage', 'guichet t1'], value: 'Service d’orientation' },
       { patterns: ['parlons cash', 'pro infirmis', 'pro senectute', 'appartenances', 'fraternite', 'csp vaud'], value: 'Ressource complémentaire' },
       { patterns: ['prestations communales', 'aide alimentaire par region', 'garde d enfants malades'], value: 'Ressource complémentaire' },
+      { patterns: ['pc familles'], value: 'Aide ou piste possible' },
       { patterns: ['separation', 'divorce', 'proches aidant'], value: 'Ressource complémentaire' },
       { patterns: ['sante mentale'], value: 'Service d’orientation' },
       { patterns: ['carteculture', 'passculture'], value: 'Ressource complémentaire' },
@@ -318,6 +324,7 @@
       { patterns: ['assurance invalidite'], priority: 4 },
       { patterns: ['assurance chomage'], priority: 5 },
       { patterns: ['revenu d insertion'], priority: 6, priorityWhenEmploi: 90 },
+      { patterns: ['pc familles'], priority: 9, priorityWhenEmploi: 9 },
       { patterns: ['allocations familiales'], priority: 10 },
       { patterns: ['bourses', 'ocbe'], priority: 12 },
       { patterns: ['jet service'], priority: 16 },
@@ -338,6 +345,7 @@
       { patterns: ['subside lamal'], title: 'Qui contacter d’abord', text: 'Commence par le calcul officiel. Si tu bloques, une agence AAS peut aussi t’aider à faire la demande.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
       { patterns: ['assurance invalidite'], title: 'Qui contacter d’abord', text: 'AI Vaud est la bonne porte d’entrée. Un médecin, psychiatre ou psychologue peut aussi t’aider à préparer la demande.', actionLabel: 'Infos AI Vaud', actionKey: 'AI_HOME' },
       { patterns: ['prestations complementaires'], title: 'Qui contacter d’abord', text: 'Le plus simple est souvent de commencer par une agence AAS, qui peut faire un premier tri avant la demande officielle.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
+      { patterns: ['pc familles'], title: 'Qui contacter d’abord', text: 'Commence par l’estimation officielle des PC Familles. Si la piste semble plausible, le CRD PC Familles de ta région pourra ensuite examiner le dossier.', actionLabel: 'Estimer les PC Familles', actionKey: 'PC_FAMILLES_SIMULATEUR' },
       { patterns: ['bourses', 'ocbe'], title: 'Qui contacter d’abord', text: 'Commence par le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage), puis dépose une demande si la piste semble correspondre. Si le dossier te paraît compliqué, Jet Service peut aussi aider à le remplir.', actionLabel: 'Faire le test d’éligibilité de l’OCBE', actionKey: 'OCBE_ELIGIBILITY' },
       { patterns: ['carteculture'], title: 'Qui contacter d’abord', text: 'Si tu as déjà une aide sociale ou un revenu modeste, la piste CarteCulture peut valoir la peine d’être activée après les démarches prioritaires.', actionLabel: 'Demander la CarteCulture', actionKey: 'CARTECULTURE_APPLY' },
       { patterns: ['evam'], title: 'Qui contacter d’abord', text: 'Quand le séjour ou le cadre asile est central, le relais EVAM reste souvent la première porte à utiliser.', actionLabel: 'EVAM Vaud', actionKey: 'EVAM_HOME' },

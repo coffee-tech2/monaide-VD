@@ -158,6 +158,12 @@
   }
 
   function buildResult(base) {
+    if (base && base.badge === 'probable' && base.strongProbable) {
+      var confidenceText = 'Cette piste paraît très solide au vu des informations données, mais le service compétent reste seul à pouvoir confirmer le droit.';
+      if (base.desc && base.desc.indexOf(confidenceText) === -1) {
+        base.desc = base.desc.replace(/\s+$/, '') + ' ' + confidenceText;
+      }
+    }
     return base;
   }
 
@@ -174,7 +180,8 @@
   function addUrgenceOrientationResults(res) {
     res.push(buildResult({
       nom: 'Centre social régional (CSR)',
-      badge: 'confirme',
+      badge: 'probable',
+      strongProbable: true,
       desc: 'Quand le logement ou le budget devient critique, le CSR peut faire un premier point rapidement et t’orienter vers les bons relais.',
       action: '1. Contacte le CSR de ta commune et dis clairement que la situation devient urgente.\n2. Prépare les courriers récents, le bail ou les factures concernées.\n3. Si un bail ou une expulsion est en jeu, contacte aussi l’ASLOCA Vaud : ☏ 021 617 16 17.\n4. Ne quitte pas ton logement ou une procédure sans avoir fait vérifier tes options.',
       today: 'Fais ce premier contact sans attendre un dossier complet.',
@@ -186,7 +193,8 @@
   function addPermisNResults(res) {
     res.push(buildResult({
       nom: 'EVAM — Permis N, F et S',
-      badge: 'confirme',
+      badge: 'probable',
+      strongProbable: true,
       desc: 'Avec un permis N, le premier relais passe généralement par l’EVAM et le dispositif asile.',
       action: '1. Commence par le relais EVAM qui suit déjà ton dossier.\n2. Rassemble ton permis N, les courriers SEM/SPOP et les documents du foyer ou du service EVAM.\n3. Si tu ne comprends pas une décision ou une procédure, ajoute une permanence du CSP Fraternité.\n4. Note tes questions avant le rendez-vous pour ne rien oublier.',
       today: 'Repère d’abord le service EVAM qui suit ton dossier.',
@@ -207,10 +215,11 @@
   function addPermisSResults(res) {
     res.push(buildResult({
       nom: 'EVAM — Permis N, F et S',
-      badge: 'confirme',
-      desc: 'Avec un permis S, il vaut mieux faire confirmer le cadre exact avant de lancer des démarches ordinaires.',
+      badge: 'probable',
+      strongProbable: true,
+      desc: 'Avec un permis S, il vaut mieux faire vérifier le cadre exact avant de lancer des démarches ordinaires.',
       action: '1. Passe d’abord par le relais EVAM ou le service qui suit ta situation.\n2. Demande quelles aides passent par le cadre permis S et lesquelles passent par les services ordinaires.\n3. Garde tes courriers et justificatifs de logement/revenus ensemble.\n4. Si tu reçois des informations contradictoires, fais relire la situation par le CSP Fraternité.',
-      today: 'Fais confirmer d’abord le cadre de prise en charge.',
+      today: 'Fais vérifier d’abord le cadre de prise en charge.',
       docs: ['Permis S', 'Courriers récents', 'Pièce d’identité', 'Justificatifs de logement si tu en as'],
       liensEVAM: true
     }));
@@ -249,7 +258,8 @@
   function addPermisGResults(res) {
     res.push(buildResult({
       nom: 'Permis G — frontalier·ère',
-      badge: 'confirme',
+      badge: 'probable',
+      strongProbable: true,
       desc: 'Avec un permis G, les questions d’emploi, de chômage et de cadre transfrontalier passent avant les aides sociales vaudoises ordinaires.',
       action: '1. Clarifie d’abord ton pays de résidence, ton employeur et ton dernier lieu de travail.\n2. Garde ton permis G, ton contrat et les documents de fin d’emploi.\n3. Demande à l’ORP ou à une caisse de chômage quelle autorité est compétente.\n4. Vérifie aussi la couverture maladie et les droits liés au travail avant de chercher une aide sociale ordinaire.',
       today: 'Clarifie d’abord résidence, employeur et couverture chômage.',
@@ -261,7 +271,8 @@
   function addSansStatutResults(res) {
     res.push(buildResult({
       nom: 'La Fraternité CSP Vaud — questions de migration',
-      badge: 'confirme',
+      badge: 'probable',
+      strongProbable: true,
       desc: 'Sans statut régulier, il faut d’abord clarifier les droits de base et les bons relais.',
       action: '1. Va à une permanence du CSP Fraternité avant de lancer plusieurs démarches seul·e.\n2. Apporte passeport/pièce d’identité si tu en as, courriers officiels et preuves de présence ou de situation.\n3. Dis clairement s’il y a urgence : logement, santé, revenu, sécurité.\n4. Demande quelle aide de base est possible sans te mettre en difficulté.',
       today: 'Commence par cette permanence avant d’autres demandes.',
@@ -270,7 +281,8 @@
     }));
     res.push(buildResult({
       nom: 'Aide d’urgence — décision de renvoi ou sans droit de séjour',
-      badge: 'confirme',
+      badge: 'probable',
+      strongProbable: true,
       desc: 'En cas de renvoi, de séjour sans droit ou d’absence totale de ressources, la piste pertinente est souvent l’aide d’urgence.',
       action: '1. Fais vérifier cette piste avec le CSP Fraternité ou le service indiqué dans les courriers reçus.\n2. Apporte les décisions de renvoi, courriers SPOP/SEM et tout document utile.\n3. Si tu n’as plus de quoi vivre, dis-le clairement dès le premier contact.\n4. Demande où dormir, manger et recevoir le courrier si ta situation est instable.',
       today: 'Utilise cette orientation si tu n’as plus de quoi vivre.',
@@ -319,7 +331,8 @@
     if (dettes === 'loyer') {
       res.push(buildResult({
         nom: 'Menace d\'expulsion — agis maintenant',
-        badge: 'confirme',
+        badge: 'probable',
+        strongProbable: true,
         desc: 'C\'est une urgence. Tu as des droits et des délais légaux — mais ils sont courts.',
         action: '1. Garde la lettre, l’enveloppe et note la date de réception.\n2. Contacte l’ASLOCA Vaud aujourd’hui : ☏ 021 617 16 17, pour vérifier les délais et tes options.\n3. Contacte immédiatement le CSR de ta commune si le retard vient d’un manque de revenu.\n4. Ne quitte pas ton logement de toi-même sans avoir fait vérifier la situation et sans décision judiciaire.',
         today: 'C’est une démarche du jour même : ASLOCA puis CSR si le problème est financier.',
@@ -360,7 +373,7 @@
       badge: flags.aEnfants ? 'probable' : 'verifier',
       desc: flags.aEnfants
         ? 'Selon la commune, il existe parfois des aides concrètes pour les familles : garde, loisirs, couches, repas ou frais du quotidien.'
-        : 'Certaines communes proposent des aides ponctuelles ou locales que le simulateur ne peut pas confirmer automatiquement.',
+        : 'Certaines communes proposent des aides ponctuelles ou locales que le simulateur ne peut pas trancher automatiquement.',
       action: '1. Va sur le site de ta commune et cherche “aide sociale”, “prestations”, “familles”, “subsides” ou “fonds”.\n2. Note les aides concrètes possibles : déchets, couches, garde, sport, mobilité, repas, vélo, activités.\n3. Si le site n’est pas clair, appelle le greffe communal ou le CSR et demande où poser la question.\n4. Garde les factures ou justificatifs liés aux frais concernés.',
       docs: ['Factures ou justificatifs du frais concerné', 'Budget ou preuve de revenu si demandé', 'Composition du ménage'],
       today: 'Garde cette piste surtout si tu as des enfants, des frais du quotidien lourds ou si tu vis dans une grande commune.',
@@ -412,7 +425,8 @@
   function addViolenceProtectionResult(res) {
     res.push(buildResult({
       nom: 'Violences conjugales / besoin de protection',
-      badge: 'confirme',
+      badge: 'probable',
+      strongProbable: true,
       desc: 'Si tu vis de la violence ou que tu as besoin de protection, la priorité est la sécurité et l’accès à un relais spécialisé.',
       action: '1. Si le danger est immédiat, appelle le 117. En cas de blessure ou d’urgence médicale, appelle le 144.\n2. Si tu peux parler en sécurité, contacte MalleyPrairie au 021 620 76 76 pour conseil, évaluation du danger ou mise à l’abri.\n3. Contacte ensuite la LAVI pour connaître tes droits, les aides possibles et l’accompagnement, même sans plainte déposée.\n4. Garde messages, constats ou certificats uniquement si c’est sans danger. Ne prends pas de risque pour récupérer des affaires ou des papiers.',
       docs: ['Pièce d’identité si disponible', 'Messages ou preuves uniquement si c’est sans danger', 'Certificats médicaux ou constats si existants', 'Adresse ou lieu sûr où te rappeler si possible'],
@@ -444,7 +458,8 @@
     if (flags.alreadyRI || flags.alreadyPC) {
       res.push(buildResult({
         nom: 'Subside LAMal — réduction de prime',
-        badge: 'confirme',
+        badge: 'probable',
+        strongProbable: true,
         desc: 'Si tu touches déjà le RI ou les PC, le subside LAMal est généralement lié à cette situation. Le plus utile est de vérifier qu’il est bien actif et correctement appliqué.',
         action: '1. Vérifie que le subside apparaît bien sur ta prime ou dans ta décision.\n2. Si ce n’est pas clair, contacte ton agence AAS ou l’OVAM avec ta décision RI/PC et ta police LAMal.\n3. Garde la décision : elle peut servir de justificatif pour d’autres démarches, notamment la CarteCulture.',
         today: 'Regarde ta dernière décision ou appelle ton agence AAS pour vérifier que la réduction est bien active.',
@@ -478,7 +493,7 @@
           : 'Avec ton niveau de revenus, un subside est probablement envisageable. Le montant exact dépend ensuite du Revenu Déterminant Unifié (RDU), qui tient compte des revenus et de la fortune.',
         action: (flags.permisF || flags.permisL)
           ? '1. Fais d’abord le calcul officiel du subside.\n2. Si le résultat semble positif, prépare ta police LAMal, tes revenus et ton permis.\n3. Dépose la demande avec une agence d’assurances sociales (AAS) pour éviter une erreur de dossier.\n4. Si la question touche aussi au séjour, demande en parallèle un avis au CSP Fraternité.'
-          : '1. Utilise le simulateur officiel du canton pour estimer ton droit.\n2. Prépare ta police LAMal, ta dernière taxation ou une estimation de tes revenus.\n3. Si la piste se confirme, dépose la demande en ligne ou avec une agence AAS.\n4. Garde la décision reçue : elle pourra aussi servir de justificatif pour d’autres aides.',
+          : '1. Utilise le simulateur officiel du canton pour estimer ton droit.\n2. Prépare ta police LAMal, ta dernière taxation ou une estimation de tes revenus.\n3. Si la piste paraît positive, dépose la demande en ligne ou avec une agence AAS.\n4. Garde la décision reçue : elle pourra aussi servir de justificatif pour d’autres aides.',
         today: 'Commence par le calcul officiel. Si tu bloques, passe par une AAS. En cas de doute sur le suivi du dossier, contacte l’OVAM.',
         docs: ['Dernière taxation si disponible', 'Police LAMal', 'Relevés de revenus'],
         liens: true,
@@ -518,6 +533,7 @@
       res.push(buildResult({
         nom: 'Revenu d\'insertion (RI)',
         badge: flags.permisF ? 'verifier' : 'probable',
+        strongProbable: !flags.permisF,
         desc: flags.permisF
           ? 'Tes revenus et ton épargne font ressortir le RI comme piste à examiner, mais avec un permis F il vaut mieux faire vérifier le bon cadre par le CSR et, si besoin, par un relais migration.'
           : (flags.loyerEleve || flags.grandeCommune)
@@ -558,11 +574,26 @@
     res.push(buildResult({
       nom: 'Prestations complémentaires AVS/AI (PC)',
       badge: flags.revenuFaible ? 'probable' : 'verifier',
+      strongProbable: !!flags.revenuFaible,
       desc: 'Les PC peuvent compléter une rente AVS ou AI quand elle ne suffit pas pour couvrir les besoins de base. Le droit dépend surtout de la rente, du loyer, des primes maladie, des autres revenus et de la fortune.',
-      action: '1. Demande d’abord un calcul estimatif ou des explications à ton agence AAS.\n2. Prépare la décision AVS/AI, le bail, les primes maladie, les revenus et la fortune.\n3. Si la piste se confirme, dépose la demande officielle auprès de l’agence AAS de ta région.\n4. La Caisse AVS Vaud examine ensuite le dossier et rend la décision.',
+      action: '1. Demande d’abord un calcul estimatif ou des explications à ton agence AAS.\n2. Prépare la décision AVS/AI, le bail, les primes maladie, les revenus et la fortune.\n3. Si la piste paraît plausible, dépose la demande officielle auprès de l’agence AAS de ta région.\n4. La Caisse AVS Vaud examine ensuite le dossier et rend la décision.',
       today: 'Commence par faire vérifier le calcul avec ton agence AAS.',
       docs: ['Décision AVS ou AI', 'Montant de la rente', 'Bail, primes maladie, relevés bancaires'],
       liensPC: true
+    }));
+  }
+
+  function addPcFamillesResult(res, flags) {
+    res.push(buildResult({
+      nom: 'PC Familles — soutien pour parents qui travaillent',
+      badge: flags.revenuFaible ? 'probable' : 'verifier',
+      desc: flags.revenuFaible
+        ? 'Tu as des enfants, tu travailles, et le budget semble rester trop serré malgré l’activité. Les PC Familles peuvent être une piste à examiner si les autres conditions sont remplies, notamment l’âge des enfants et les revenus pris en compte.'
+        : 'Les PC Familles peuvent parfois compléter le budget d’un ménage avec enfants quand une activité lucrative existe déjà, mais il faut vérifier les conditions exactes du ménage et des revenus.',
+      action: '1. Commence par l’estimation officielle des PC Familles.\n2. Vérifie surtout l’âge des enfants, l’activité lucrative et les revenus du ménage.\n3. Prépare les fiches de salaire, le bail, les primes LAMal et, si besoin, les frais de garde.\n4. Si l’estimation semble positive ou peu claire, contacte le CRD PC Familles de ta région pour la suite.',
+      today: 'Garde cette piste si tu travailles déjà mais que le budget familial ne tient toujours pas.',
+      docs: ['Fiches de salaire', 'Bail', 'Primes LAMal', 'Frais de garde si concernés', 'Composition du ménage'],
+      liensPcFamilles: true
     }));
   }
 
@@ -582,7 +613,8 @@
     if (flags.carteConfirmee && !flags.alreadyCarteCulture) {
       res.push(buildResult({
         nom: 'CarteCulture — Caritas',
-        badge: 'confirme',
+        badge: 'probable',
+        strongProbable: true,
         desc: 'Si tu touches déjà le RI, les PC, un subside LAMal ou une bourse, la CarteCulture est souvent accessible avec le bon justificatif. Elle donne accès à de nombreuses offres culturelles, sportives et de loisirs à prix réduit.',
         action: '1. Demande ta carte sur carteculture.ch ou auprès de Caritas Vaud.\n2. Prépare le justificatif correspondant à ta situation : attestation RI, PC, décision de subside, bourse, etc.\n3. Ajoute une photo d’identité si elle est demandée.\n4. La carte est gratuite : garde-la ensuite avec tes justificatifs sociaux.',
         today: 'Tu peux garder cette piste juste après tes démarches prioritaires.',
@@ -627,7 +659,8 @@
   function addChomageActifResult(res) {
     res.push(buildResult({
       nom: 'Assurance chômage — droits déjà ouverts',
-      badge: 'confirme',
+      badge: 'probable',
+      strongProbable: true,
       desc: 'Tu indiques recevoir déjà le chômage. L’enjeu principal est donc de garder le suivi ORP et caisse clair, et d’anticiper la suite si tes indemnités arrivent bientôt à la fin.',
       action: '1. Regarde ton dernier décompte de chômage pour savoir combien d’indemnités il reste.\n2. Si la fin de droit approche, demande rapidement à ton ORP ou à ta caisse quelles démarches anticiper.\n3. Si tu n’arrives plus à couvrir les besoins de base, prépare aussi un contact avec le CSR.\n4. Si tu as 60 ans ou plus, vérifie en plus la piste rente-pont.',
       today: 'Commence par ton dernier décompte : il te donne la durée restante et aide à savoir quoi anticiper.',
@@ -751,6 +784,7 @@
       needsLamal: !flags.alreadyLAMal && !flags.sansStatut && !flags.permisN && !flags.permisS,
       needsRi: !flags.alreadyRI && !flags.alreadyPC && !flags.etudiant && flags.permiRI && !flags.enEmploi,
       needsPc: (flags.retraite || flags.alreadyAI) && !flags.alreadyPC,
+      needsPcFamilles: flags.aEnfants && flags.enEmploi && !flags.alreadyRI && !flags.alreadyPC && (flags.revenuFaible || flags.revenuModere),
       needsAllocationsFamiliales: flags.aEnfants && !flags.alreadyAF,
       needsChomageActif: flags.alreadyChomage,
       needsLaci: flags.chomageNonIndem && !flags.alreadyChomage && !flags.permisN && !flags.sansStatut,
@@ -785,6 +819,7 @@
       addLamalResult: function() { addLamalResult(res, flags); },
       addRiResult: function() { addRiResult(res, flags); },
       addPcResult: function() { addPcResult(res, flags); },
+      addPcFamillesResult: function() { addPcFamillesResult(res, flags); },
       addAllocationsFamilialesResult: function() { addAllocationsFamilialesResult(res); },
       addCarteCultureResult: function() { addCarteCultureResult(res, flags); },
       addChomageActifResult: function() { addChomageActifResult(res); },
