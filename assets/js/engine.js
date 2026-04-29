@@ -597,13 +597,16 @@
     }));
   }
 
-  function addAllocationsFamilialesResult(res) {
+  function addAllocationsFamilialesResult(res, flags) {
+    var casSimple = flags.aEnfants && flags.enEmploi && !flags.chomage && flags.separationEnCours !== 'oui';
     res.push(buildResult({
       nom: 'Allocations familiales',
-      badge: 'probable',
-      desc: 'Si tu as des enfants à charge et que tu ne reçois pas déjà les allocations familiales, cette piste mérite d’être vérifiée. La porte d’entrée dépend de ta situation professionnelle.',
-      action: '1. Si tu es salarié·e, demande à ton employeur ou à sa caisse d’allocations familiales.\n2. Si tu es au chômage, demande à ta caisse de chômage pour le supplément correspondant.\n3. Si tu es sans activité lucrative, vérifie avec une AAS si les conditions sont remplies.\n4. Prépare les actes de naissance et l’attestation de formation si l’enfant a entre 16 et 25 ans.\n5. Si l’autre parent touche déjà quelque chose, signale-le pour éviter les doublons.',
-      today: 'Vérifie d’abord par quelle caisse ou quel organisme ta situation doit passer, puis prépare les justificatifs des enfants.',
+      badge: casSimple ? 'probable' : 'verifier',
+      desc: casSimple
+        ? 'Tu as des enfants à charge et ta situation ressemble à un cas assez simple. Cette piste paraît très solide, mais il faut quand même passer par la bonne caisse et vérifier qu’aucun autre parent ne touche déjà cette aide.'
+        : 'Les allocations familiales peuvent être possibles, mais la bonne porte change selon la situation : emploi, chômage, séparation ou absence d’activité lucrative. Il vaut mieux vérifier avant de conclure.',
+      action: '1. Si tu travailles, demande d’abord à ton employeur ou à sa caisse.\n2. Si tu es au chômage, demande à ta caisse de chômage si un supplément peut être versé.\n3. Si tu ne travailles pas, vérifie avec une agence AAS ou la Caisse AVS Vaud si les conditions sont remplies.\n4. Prépare les actes de naissance et, si besoin, l’attestation de formation des enfants.\n5. Signale toujours si l’autre parent touche déjà quelque chose.',
+      today: 'Repère d’abord la bonne caisse : c’est la première vraie étape.',
       docs: ['Pièces d’identité des parents', 'Actes de naissance des enfants', 'Attestation de formation si 16–25 ans'],
       liensAF: true
     }));
@@ -627,11 +630,11 @@
     if (flags.revenuFaible && !flags.alreadyCarteCulture) {
       res.push(buildResult({
         nom: 'CarteCulture — Caritas',
-        badge: flags.fortune === 'plus50000' ? 'verifier' : 'probable',
+        badge: 'verifier',
         desc: flags.fortune === 'plus50000'
-          ? 'Avec tes revenus, la CarteCulture peut rester une piste, mais il vaut mieux vérifier les critères exacts si ta fortune est importante.'
-          : 'Avec tes revenus, la CarteCulture pourrait être envisageable si le seuil retenu correspond bien à ta situation.',
-        action: '1. Vérifie les critères sur le site CarteCulture.\n2. Si ta situation correspond, prépare un justificatif de revenu ou d’aide sociale.\n3. En cas de doute, contacte Caritas Vaud avant de déposer la demande.',
+          ? 'La CarteCulture peut rester une piste, mais un revenu bas ne suffit pas toujours. Avec une fortune importante, il faut vraiment vérifier les critères exacts.'
+          : 'La CarteCulture peut parfois être ouverte avec un revenu modeste, mais il faut vérifier quel justificatif est accepté dans ta situation.',
+        action: '1. Regarde les critères officiels de la CarteCulture.\n2. Vérifie surtout quel justificatif est demandé dans ton cas.\n3. Si ce n’est pas clair, contacte Caritas Vaud avant de faire la demande.',
         today: 'Garde cette piste pour juste après les aides financières prioritaires.',
         liensCarte: true
       }));
@@ -715,16 +718,16 @@
   function addAiResult(res, flags) {
     res.push(buildResult({
       nom: 'Assurance invalidité (AI)',
-      badge: (flags.incapacite === 'totale' && !flags.statutAvecNuance) ? 'probable' : 'verifier',
+      badge: 'verifier',
       desc: (flags.permisF || flags.permisL || flags.permisS)
-        ? 'L’AI peut rester une piste en cas d’incapacité durable, mais avec ton statut il faut souvent vérifier plus finement les conditions d’assurance, de cotisation et de séjour.'
+        ? 'L’AI peut être une piste si la situation de santé est durable, mais avec ton statut il faut souvent vérifier plus finement les conditions d’assurance et de séjour.'
         : flags.incapacite === 'totale'
-        ? 'Ton niveau d\'incapacité semble compatible avec une piste AI. L\'objectif premier de l\'AI reste la réadaptation avant la rente : formation, aides techniques, retour au travail.'
-        : 'Selon ton taux d\'incapacité, des mesures de réadaptation ou une rente partielle peuvent éventuellement être examinées.',
+        ? 'L’AI peut être une piste si la situation de santé dure et touche vraiment le travail, la formation ou l’autonomie. L’AI ne sert pas seulement pour une rente : elle peut aussi ouvrir des mesures de soutien ou de réadaptation.'
+        : 'L’AI peut être une piste si la situation de santé dure et touche le travail, la formation ou l’autonomie. Il faut ensuite une vraie évaluation du dossier.',
       action: (flags.permisF || flags.permisL || flags.permisS)
-        ? '1. Si l’incapacité est durable, dépose quand même une demande si la piste est sérieuse.\n2. Prévois une vérification complémentaire sur le cadre d’assurance et de séjour.\n3. Garde les certificats médicaux et courriers reçus : ils seront importants pour comprendre le dossier.'
-        : '1. Si l’incapacité dure, ne repousse pas la demande uniquement parce que le dossier n’est pas parfait.\n2. Télécharge le formulaire 001.303 sur aivd.ch ou demande-le à l’Office AI Vaud.\n3. Joins les certificats médicaux déjà disponibles, même si tout n’est pas encore complet.\n4. Note les dates importantes : début de l’incapacité, arrêts de travail, hospitalisations, changements d’emploi.\n5. Office AI Vaud : ☏ 021 342 91 11.',
-      today: 'Si ton incapacité dure, dépose la demande sans attendre d’avoir un dossier “parfait”.',
+        ? '1. Si la situation de santé dure, demande un premier avis à AI Vaud.\n2. Fais vérifier en parallèle si ton cadre d’assurance ou de séjour change la suite.\n3. Garde les certificats médicaux et les courriers déjà reçus.'
+        : '1. Si la situation dure, prends un premier contact avec AI Vaud.\n2. Garde les certificats médicaux déjà disponibles, même si le dossier n’est pas encore parfait.\n3. Note les dates importantes : début des arrêts, hospitalisations, changements de travail ou de formation.\n4. Si tu ne sais pas si l’AI est la bonne porte, demande-le clairement dès le premier contact.',
+      today: 'Si la situation dure, commence par un premier contact plutôt que d’attendre trop longtemps.',
       docs: ['Certificats médicaux', 'Pièce d’identité', 'Historique professionnel récent'],
       liensAI: true,
       liensCadreSejour: flags.permisF || flags.permisL || flags.permisS
@@ -820,7 +823,7 @@
       addRiResult: function() { addRiResult(res, flags); },
       addPcResult: function() { addPcResult(res, flags); },
       addPcFamillesResult: function() { addPcFamillesResult(res, flags); },
-      addAllocationsFamilialesResult: function() { addAllocationsFamilialesResult(res); },
+      addAllocationsFamilialesResult: function() { addAllocationsFamilialesResult(res, flags); },
       addCarteCultureResult: function() { addCarteCultureResult(res, flags); },
       addChomageActifResult: function() { addChomageActifResult(res); },
       addLaciResult: function() { addLaciResult(res, flags); },

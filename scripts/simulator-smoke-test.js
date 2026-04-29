@@ -187,7 +187,7 @@ const tests = [
         sitPro: 'En incapacité de travail (maladie / accident)',
         incapacite: 'totale'
       });
-      assert(hasResult(results, 'Assurance invalidité', 'probable'), 'AI should be probable for total incapacity');
+      assert(hasResult(results, 'Assurance invalidité', 'verifier'), 'AI should stay to verify for total incapacity');
       assert(!hasResult(results, 'Assurance invalidité', 'confirme'), 'AI must never use confirmed status');
     }
   },
