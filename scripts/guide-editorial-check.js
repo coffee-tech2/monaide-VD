@@ -48,7 +48,7 @@ guides.forEach((guide) => {
     errors.push(`${guide.id}: meta description absente`);
   }
 
-  if (!/https:\/\/www\.vd\.ch|https:\/\/www\.caisseavsvaud\.ch|https:\/\/www\.ahv-iv\.ch|https:\/\/csp\.ch|https:\/\/www\.prosenectute\.ch|https:\/\/www\.proinfirmis\.ch|https:\/\/www\.evam\.ch/i.test(html)) {
+  if (!/https:\/\/www\.vd\.ch|https:\/\/www\.caisseavsvaud\.ch|https:\/\/www\.ahv-iv\.ch|https:\/\/csp\.ch|https:\/\/www\.prosenectute\.ch|https:\/\/www\.proinfirmis\.ch|https:\/\/www\.evam\.ch|https:\/\/www\.carteculture\.ch|https:\/\/carteculture\.ch/i.test(html)) {
     warnings.push(`${guide.id}: aucune source officielle évidente détectée dans la page`);
   }
 
