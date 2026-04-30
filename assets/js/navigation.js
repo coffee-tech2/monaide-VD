@@ -92,6 +92,91 @@
     });
   }
 
+  function normalizeGuideText(value) {
+    return String(value || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function simplifyGuideLabel(label) {
+    var normalized = normalizeGuideText(label);
+    if (normalized.indexOf('a retenir') !== -1) return 'À retenir';
+    if (normalized.indexOf('source officielle') !== -1) return 'Source officielle';
+    if (normalized.indexOf('conditions') !== -1) return 'Conditions';
+    if (normalized.indexOf('demande') !== -1) return 'Démarche';
+    if (normalized.indexOf('a preparer') !== -1) return 'Documents';
+    if (normalized.indexOf('relais') !== -1) return 'Relais utile';
+    if (normalized.indexOf('faq') !== -1) return 'FAQ';
+    return String(label || '').trim();
+  }
+
+  function applyGuideLabelClasses() {
+    document.querySelectorAll('.guide-card-label').forEach(function(label) {
+      var normalized = normalizeGuideText(label.textContent);
+      label.classList.remove('is-human', 'is-official', 'is-conditions', 'is-action', 'is-docs', 'is-relay', 'is-faq');
+      if (normalized.indexOf('a retenir') !== -1) label.classList.add('is-human');
+      else if (normalized.indexOf('source officielle') !== -1) label.classList.add('is-official');
+      else if (normalized.indexOf('conditions') !== -1) label.classList.add('is-conditions');
+      else if (normalized.indexOf('demande') !== -1) label.classList.add('is-action');
+      else if (normalized.indexOf('a preparer') !== -1) label.classList.add('is-docs');
+      else if (normalized.indexOf('relais') !== -1) label.classList.add('is-relay');
+      else if (normalized.indexOf('faq') !== -1) label.classList.add('is-faq');
+    });
+  }
+
+  function buildGuideSummary() {
+    var body = document.body;
+    if (!body || !body.classList.contains('guide-detail-page')) return;
+    var heroShell = document.querySelector('.guide-shell');
+    var guideActions = heroShell && heroShell.querySelector('.guide-actions');
+    var firstGrid = document.querySelector('main .guide-section .guide-grid');
+    if (!guideActions || !firstGrid || heroShell.querySelector('.guide-summary')) return;
+
+    var cards = Array.prototype.slice.call(firstGrid.children || []).filter(function(node) {
+      return node && node.classList && node.classList.contains('guide-card');
+    });
+    if (!cards.length) return;
+
+    var items = [];
+    var seen = {};
+
+    cards.forEach(function(card, index) {
+      if (items.length >= 5) return;
+      var label = card.querySelector('.guide-card-label');
+      if (!label) return;
+      var shortLabel = simplifyGuideLabel(label.textContent);
+      if (!shortLabel || shortLabel === 'FAQ' || shortLabel === 'Relais utile') return;
+      if (seen[shortLabel]) return;
+      seen[shortLabel] = true;
+      if (!card.id) card.id = 'guide-bloc-' + (index + 1);
+      items.push({ href: '#' + card.id, text: shortLabel });
+    });
+
+    if (items.length < 2) return;
+
+    var summary = document.createElement('nav');
+    summary.className = 'guide-summary';
+    summary.setAttribute('aria-label', 'Sur cette page');
+
+    var kicker = document.createElement('strong');
+    kicker.className = 'guide-summary-kicker';
+    kicker.textContent = 'Sur cette page';
+    summary.appendChild(kicker);
+
+    var links = document.createElement('div');
+    links.className = 'guide-summary-links';
+    items.forEach(function(item) {
+      var link = document.createElement('a');
+      link.className = 'guide-summary-link';
+      link.href = item.href;
+      link.textContent = item.text;
+      links.appendChild(link);
+    });
+    summary.appendChild(links);
+    guideActions.insertAdjacentElement('afterend', summary);
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     var betaBanner = document.getElementById('beta-banner');
     var betaBannerClose = document.getElementById('beta-banner-close');
@@ -184,4 +269,7 @@
         syncMobileBodyState(!!(nav && nav.classList.contains('open')));
       }
     });
+
+    applyGuideLabelClasses();
+    buildGuideSummary();
   });
