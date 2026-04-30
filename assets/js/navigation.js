@@ -111,6 +111,139 @@
     return String(label || '').trim();
   }
 
+  function guideDetailCategoryForCard(card) {
+    if (!card) return '';
+    if (card.classList.contains('guide-support-card')) return 'retain';
+    var label = card.querySelector('.guide-card-label');
+    var shortLabel = simplifyGuideLabel(label ? label.textContent : '');
+    if (shortLabel === 'À retenir') return 'retain';
+    if (shortLabel === 'Source officielle' || shortLabel === 'Conditions') return 'conditions';
+    if (shortLabel === 'Démarche' || shortLabel === 'Relais utile') return 'action';
+    if (shortLabel === 'Documents') return 'documents';
+    if (shortLabel === 'FAQ') return 'faq';
+    return '';
+  }
+
+  function buildGuideDetailSections() {
+    if (!document.body || !document.body.classList.contains('guide-detail-page')) return;
+    if (document.querySelector('.guide-detail-block')) return;
+
+    var primarySection = document.querySelector('main .guide-section .guide-grid');
+    if (!primarySection) return;
+
+    var cards = Array.prototype.slice.call(primarySection.children || []).filter(function(node) {
+      return node && node.classList && node.classList.contains('guide-card');
+    });
+    if (!cards.length) return;
+
+    var recognized = cards.some(function(card) {
+      var category = guideDetailCategoryForCard(card);
+      return category === 'retain' || category === 'conditions' || category === 'action' || category === 'documents';
+    });
+    if (!recognized) return;
+
+    var parentSection = primarySection.closest('.guide-section');
+    if (!parentSection) return;
+
+    var sectionMeta = {
+      retain: { id: 'guide-retenir', summary: 'Ce qu’il faut retenir' },
+      conditions: { id: 'guide-conditions', summary: 'Conditions d’accès', title: 'Conditions d’accès', copy: 'Ce que cette aide couvre et qui peut en bénéficier.' },
+      action: { id: 'guide-demande', summary: 'Comment faire la demande', title: 'Comment faire la demande', copy: 'Par où commencer, même sans avoir tout préparé.' },
+      documents: { id: 'guide-documents', summary: 'Documents à préparer', title: 'Documents à préparer', copy: 'Une liste de ce qui est généralement demandé — tu peux commencer sans tout avoir.' },
+      faq: { id: 'guide-faq', summary: 'Questions fréquentes', title: 'Questions fréquentes', copy: '' }
+    };
+
+    var groups = {
+      retain: [],
+      conditions: [],
+      action: [],
+      documents: [],
+      misc: []
+    };
+
+    cards.forEach(function(card) {
+      var category = guideDetailCategoryForCard(card);
+      if (category && groups[category]) groups[category].push(card);
+      else groups.misc.push(card);
+    });
+
+    parentSection.innerHTML = '';
+    var container = document.createElement('div');
+    container.className = 'container';
+    parentSection.appendChild(container);
+
+    function appendBlock(key, blockCards) {
+      if (!blockCards || !blockCards.length) return;
+      var meta = sectionMeta[key];
+      if (!meta) return;
+
+      var block = document.createElement('div');
+      block.className = 'guide-detail-block guide-detail-block-' + key;
+      block.id = meta.id;
+      block.setAttribute('data-summary-label', meta.summary);
+
+      if (key !== 'retain') {
+        var head = document.createElement('div');
+        head.className = 'guide-detail-heading';
+        var title = document.createElement('h2');
+        title.textContent = meta.title;
+        head.appendChild(title);
+        if (meta.copy) {
+          var copy = document.createElement('p');
+          copy.textContent = meta.copy;
+          head.appendChild(copy);
+        }
+        block.appendChild(head);
+      }
+
+      var grid = document.createElement('div');
+      grid.className = 'guide-grid';
+      if (key === 'documents' && blockCards.length === 1) {
+        grid.classList.add('guide-detail-grid-single');
+      }
+      blockCards.forEach(function(card) { grid.appendChild(card); });
+      block.appendChild(grid);
+      container.appendChild(block);
+    }
+
+    appendBlock('retain', groups.retain);
+    appendBlock('conditions', groups.conditions);
+    appendBlock('action', groups.action);
+    appendBlock('documents', groups.documents);
+
+    if (groups.misc.length) {
+      var miscBlock = document.createElement('div');
+      miscBlock.className = 'guide-detail-block guide-detail-block-misc';
+      var miscGrid = document.createElement('div');
+      miscGrid.className = 'guide-grid';
+      groups.misc.forEach(function(card) { miscGrid.appendChild(card); });
+      miscBlock.appendChild(miscGrid);
+      container.appendChild(miscBlock);
+    }
+
+    var faqPanel = document.querySelector('.guide-faq-panel');
+    var faqSection = faqPanel && faqPanel.closest('.guide-section');
+    if (faqPanel && faqSection) {
+      faqSection.innerHTML = '';
+      var faqContainer = document.createElement('div');
+      faqContainer.className = 'container';
+      var faqBlock = document.createElement('div');
+      faqBlock.className = 'guide-detail-block guide-detail-block-faq';
+      faqBlock.id = sectionMeta.faq.id;
+      faqBlock.setAttribute('data-summary-label', sectionMeta.faq.summary);
+
+      var faqHead = document.createElement('div');
+      faqHead.className = 'guide-detail-heading';
+      var faqTitle = document.createElement('h2');
+      faqTitle.textContent = sectionMeta.faq.title;
+      faqHead.appendChild(faqTitle);
+      faqBlock.appendChild(faqHead);
+      faqBlock.appendChild(faqPanel);
+      faqContainer.appendChild(faqBlock);
+      faqSection.appendChild(faqContainer);
+    }
+  }
+
   function applyGuideLabelClasses() {
     document.querySelectorAll('.guide-card-label').forEach(function(label) {
       var normalized = normalizeGuideText(label.textContent);
@@ -130,27 +263,17 @@
     if (!body || !body.classList.contains('guide-detail-page')) return;
     var heroShell = document.querySelector('.guide-shell');
     var guideActions = heroShell && heroShell.querySelector('.guide-actions');
-    var firstGrid = document.querySelector('main .guide-section .guide-grid');
-    if (!guideActions || !firstGrid || heroShell.querySelector('.guide-summary')) return;
-
-    var cards = Array.prototype.slice.call(firstGrid.children || []).filter(function(node) {
-      return node && node.classList && node.classList.contains('guide-card');
-    });
-    if (!cards.length) return;
+    if (!guideActions || heroShell.querySelector('.guide-summary')) return;
 
     var items = [];
     var seen = {};
 
-    cards.forEach(function(card, index) {
-      if (items.length >= 5) return;
-      var label = card.querySelector('.guide-card-label');
-      if (!label) return;
-      var shortLabel = simplifyGuideLabel(label.textContent);
-      if (!shortLabel || shortLabel === 'FAQ' || shortLabel === 'Relais utile') return;
-      if (seen[shortLabel]) return;
-      seen[shortLabel] = true;
-      if (!card.id) card.id = 'guide-bloc-' + (index + 1);
-      items.push({ href: '#' + card.id, text: shortLabel });
+    var blocks = Array.prototype.slice.call(document.querySelectorAll('.guide-detail-block[data-summary-label]'));
+    blocks.forEach(function(block) {
+      var label = block.getAttribute('data-summary-label');
+      if (!label || seen[label]) return;
+      seen[label] = true;
+      items.push({ href: '#' + block.id, text: label });
     });
 
     if (items.length < 2) return;
@@ -346,7 +469,8 @@
     });
 
     applyGuideLabelClasses();
-    buildGuideSummary();
     buildGuideFaqPanels();
+    buildGuideDetailSections();
+    buildGuideSummary();
     buildGuideActionLayouts();
   });
