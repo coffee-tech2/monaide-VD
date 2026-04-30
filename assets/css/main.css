@@ -475,11 +475,13 @@
   .guide-title { font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(2.32rem, 4.8vw, 4.05rem); line-height:1.01; letter-spacing:-0.062em; color:var(--vaud); margin:0 auto 0.9rem; max-width:15ch; text-wrap:balance; }
   .guide-lead { max-width: 44rem; margin: 0 auto; font-size:1.04rem; line-height:1.74; color:var(--warm-gray); }
   .guide-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:0.85rem; margin-top:1.32rem; }
-  .guide-summary { max-width:38rem; margin:1.35rem auto 0; padding:1rem 1.05rem 1.05rem; border-radius:22px; border:1px solid rgba(222,207,190,0.92); background:rgba(255,251,246,0.92); box-shadow:0 16px 30px rgba(72,59,49,0.04); text-align:left; }
-  .guide-summary-kicker { display:block; margin-bottom:0.72rem; color:var(--sage-dark); font-size:0.72rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; }
-  .guide-summary-links { display:flex; flex-wrap:wrap; gap:0.62rem; }
-  .guide-summary-link { display:inline-flex; align-items:center; justify-content:center; min-height:40px; padding:0.62rem 0.9rem; border-radius:999px; border:1px solid var(--panel-button-border); background:var(--panel-button-bg); color:var(--warm-gray); text-decoration:none; font-size:0.84rem; font-weight:700; line-height:1.2; transition:background 0.15s, border-color 0.15s, color 0.15s, transform 0.18s ease, box-shadow 0.18s ease; box-shadow:var(--panel-button-shadow); }
-  .guide-summary-link:hover { background:var(--mint); border-color:#BFD8CE; color:var(--orange-dark); transform:translateY(-1px); box-shadow:0 10px 22px rgba(28,59,48,0.08); }
+  .guide-summary { max-width:38rem; margin:1.15rem auto 0; padding:0.85rem 0 0; border-top:1px solid rgba(222,207,190,0.85); background:transparent; box-shadow:none; text-align:left; }
+  .guide-summary-kicker { display:block; margin-bottom:0.52rem; color:rgba(61,92,78,0.82); font-size:0.68rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; }
+  .guide-summary-links { display:flex; flex-wrap:wrap; gap:0.45rem 0.72rem; }
+  .guide-summary-link { display:inline-flex; align-items:center; justify-content:center; min-height:auto; padding:0; border:none; background:transparent; color:var(--warm-gray); text-decoration:none; font-size:0.86rem; font-weight:700; line-height:1.35; transition:color 0.15s ease, transform 0.15s ease; box-shadow:none; }
+  .guide-summary-link::before { content:''; width:5px; height:5px; border-radius:999px; background:rgba(var(--vaud-rgb),0.42); margin-right:0.45rem; flex-shrink:0; transition:background 0.15s ease, transform 0.15s ease; }
+  .guide-summary-link:hover { color:var(--orange-dark); transform:translateX(1px); }
+  .guide-summary-link:hover::before { background:rgba(var(--vaud-rgb),0.78); transform:scale(1.08); }
   .guide-section { padding-top: 0.7rem; }
   .guide-section .container { max-width: 1120px; margin: 0 auto; }
   .guide-section-story { padding-top: 1.65rem; }
@@ -535,7 +537,7 @@
   @media (max-width: 1024px) {
     .guide-shell { padding:5.05rem 1.2rem 2.85rem; }
     .guide-title { max-width:15ch; font-size:clamp(2.2rem, 6vw, 3.55rem); }
-    .guide-summary { margin-top:1.12rem; padding:0.95rem 0.95rem 1rem; }
+    .guide-summary { margin-top:1rem; padding-top:0.8rem; }
     .guide-story-section-grid { grid-template-columns:1fr; gap:1.05rem 1.4rem; }
     .guide-detail-page .guide-grid { grid-template-columns:1fr; }
   }
@@ -913,9 +915,9 @@
     .guide-actions { flex-direction:column; }
     .guide-actions .btn-primary,
     .guide-actions .btn-secondary { width:100%; justify-content:center; }
-    .guide-summary { margin-top:1rem; padding:0.92rem 0.88rem 0.92rem; border-radius:20px; }
+    .guide-summary { margin-top:0.9rem; padding-top:0.72rem; }
     .guide-summary-links { display:grid; grid-template-columns:1fr; gap:0.55rem; }
-    .guide-summary-link { width:100%; justify-content:center; text-align:center; white-space:normal; }
+    .guide-summary-link { width:100%; justify-content:flex-start; text-align:left; white-space:normal; }
     .guide-story-hero { margin-bottom:1.55rem; }
     .guide-story-title { font-size:clamp(1.75rem, 9vw, 2.45rem); line-height:1.02; }
     .guide-story-text { font-size:0.97rem; line-height:1.68; }
