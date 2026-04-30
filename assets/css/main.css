@@ -547,10 +547,11 @@
   .guide-faq-answer { padding:0 0 1.12rem; color:var(--warm-gray); font-size:0.97rem; line-height:1.72; max-width:46rem; }
 
   .guide-detail-page .guide-shell { max-width:1180px; padding:4.7rem 1.75rem 2.2rem; text-align:left; }
-  .guide-detail-page .guide-topline { justify-content:flex-start; margin-bottom:0.8rem; }
-  .guide-detail-page .guide-title { max-width:18ch; margin:0 0 0.7rem; font-family:'Newsreader', serif; font-size:clamp(2.75rem, 5vw, 4.25rem); line-height:0.98; letter-spacing:-0.045em; text-wrap:balance; }
-  .guide-detail-page .guide-lead { max-width:58rem; margin:0; font-size:1.02rem; line-height:1.72; }
-  .guide-detail-page .guide-actions { justify-content:flex-start; margin-top:1.05rem; }
+  .guide-detail-page .guide-topline { justify-content:flex-start; margin-bottom:0.75rem; }
+  .guide-detail-page .guide-backlink-chip { min-height:36px; padding:0.5rem 0.82rem; font-size:0.76rem; font-weight:600; border-radius:999px; opacity:0.92; box-shadow:0 4px 12px rgba(72,59,49,0.04); }
+  .guide-detail-page .guide-title { max-width:18ch; margin:0 auto 0.7rem; font-family:'Newsreader', serif; font-size:clamp(2.75rem, 5vw, 4.25rem); line-height:0.98; letter-spacing:-0.045em; text-wrap:balance; text-align:center; }
+  .guide-detail-page .guide-lead { max-width:58rem; margin:0 auto; font-size:1.02rem; line-height:1.72; text-align:center; }
+  .guide-detail-page .guide-actions { justify-content:center; margin-top:1.05rem; }
   .guide-detail-page .guide-section { padding-top:1.25rem; }
   .guide-detail-page .guide-section .container { max-width:1180px; }
   .guide-detail-page .guide-summary { max-width:54rem; margin:1.15rem 0 0; padding:1.45rem 1.5rem; border-radius:24px; background:#fffdfa; box-shadow:none; }
@@ -561,9 +562,9 @@
   .guide-detail-page .guide-summary-link:hover { background:none; border:none; color:var(--forest); transform:none; box-shadow:none; }
   .guide-detail-page .guide-detail-block { margin-top:2.1rem; }
   .guide-detail-page .guide-detail-block:first-child { margin-top:1.55rem; }
-  .guide-detail-page .guide-detail-heading { margin:0 0 1.15rem; }
+  .guide-detail-page .guide-detail-heading { margin:0 0 1.15rem; text-align:center; }
   .guide-detail-page .guide-detail-heading h2 { margin:0 0 0.35rem; font-family:'Newsreader', serif; font-size:clamp(2rem, 4vw, 3rem); line-height:1.02; letter-spacing:-0.04em; color:var(--forest); }
-  .guide-detail-page .guide-detail-heading p { margin:0; color:var(--vaud); font-size:1rem; line-height:1.6; max-width:42rem; }
+  .guide-detail-page .guide-detail-heading p { margin:0 auto; color:var(--vaud); font-size:1rem; line-height:1.6; max-width:42rem; }
   .guide-detail-page .guide-grid { align-items:start; gap:1rem; }
   .guide-detail-page .guide-detail-grid-single { grid-template-columns:1fr; }
   .guide-detail-page .guide-card { display:block; align-self:start; height:auto; min-height:0; border-radius:24px; padding:1.45rem 1.4rem 1.25rem; box-shadow:none; background:#fffdfa; }
@@ -1105,6 +1106,7 @@
     .guide-faq-answer { padding:0 0 0.95rem; font-size:0.92rem; line-height:1.64; }
     .guide-detail-page .guide-card { border-radius:24px; padding:1.18rem 1rem 1.05rem; }
     .guide-detail-page .guide-card::before { left:1rem; right:1rem; top:0.95rem; }
+    .guide-detail-page .guide-backlink-chip { min-height:34px; padding:0.46rem 0.74rem; font-size:0.74rem; }
     .guide-detail-page .guide-card-title { font-size:1.18rem; max-width:18ch; }
     .guide-detail-page .guide-card p { font-size:0.92rem; line-height:1.62; }
     .guide-detail-page .guide-inline-actions.is-grid-links,
