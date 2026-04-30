@@ -569,6 +569,7 @@
   .guide-detail-page .guide-detail-grid-single { grid-template-columns:1fr; }
   .guide-detail-page .guide-detail-block-conditions .guide-grid,
   .guide-detail-page .guide-detail-block-action .guide-grid { grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:1.15rem; }
+  .guide-detail-page .guide-detail-block-faq .guide-grid { grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:1.15rem; }
   .guide-detail-page .guide-card { display:block; align-self:start; height:auto; min-height:0; border-radius:24px; padding:1.45rem 1.4rem 1.25rem; box-shadow:none; background:#fffdfa; }
   .guide-detail-page .guide-card::before { display:none; }
   .guide-detail-page .guide-card-label { align-self:flex-start; min-height:0; padding:0.28rem 0.62rem; border-radius:7px; margin-bottom:0.9rem; font-size:0.64rem; letter-spacing:0.08em; }
@@ -584,6 +585,10 @@
   .guide-detail-page .guide-detail-block-action .guide-grid > .guide-card p + p { margin-top:1rem; padding-top:0.95rem; border-top:1px solid rgba(223, 209, 192, 0.9); color:#5b625b; font-size:0.9rem; line-height:1.62; max-width:36ch; }
   .guide-detail-page .guide-detail-block-conditions .guide-grid > .guide-card:last-child .guide-list { display:block; column-count:2; column-gap:1.4rem; }
   .guide-detail-page .guide-detail-block-conditions .guide-grid > .guide-card:last-child .guide-list li { break-inside:avoid; margin-bottom:0.95rem; }
+  .guide-detail-page .guide-detail-block-faq .guide-card { display:flex; flex-direction:column; min-height:100%; justify-content:flex-start; }
+  .guide-detail-page .guide-detail-block-faq .guide-card-label { margin-bottom:0.9rem; }
+  .guide-detail-page .guide-detail-block-faq .guide-card-title { max-width:16ch; font-size:1.36rem; line-height:1.08; letter-spacing:-0.03em; }
+  .guide-detail-page .guide-detail-block-faq .guide-card p { max-width:38ch; font-size:1rem; line-height:1.72; }
   .guide-detail-page .guide-inline-actions { display:flex; flex-wrap:wrap; gap:0.72rem; align-items:center; margin-top:1rem; padding-top:0; }
   .guide-detail-page .guide-card > .guide-inline-actions:last-child { margin-top:1rem; padding-top:0; }
   .guide-detail-page .guide-detail-block-action .guide-card > .guide-inline-actions:last-child,
@@ -599,12 +604,6 @@
   .guide-detail-page .guide-doc-card { padding:1.45rem 1.4rem 1.2rem; }
   .guide-detail-page .guide-doc-card .guide-list { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0.8rem; margin-top:0.9rem; }
   .guide-detail-page .guide-doc-card .guide-list li { padding:1rem 1rem 0.96rem; background:#f2ede4; border:0; border-radius:14px; font-size:0.95rem; }
-  .guide-detail-page .guide-faq-panel { background:#fffdfa; border-radius:24px; box-shadow:none; padding:1.3rem 1.4rem 0.6rem; }
-  .guide-detail-page .guide-faq-panel .guide-card-label { margin-bottom:0.7rem; }
-  .guide-detail-page .guide-faq-row { border-top:1px solid rgba(188,220,205,0.95); }
-  .guide-detail-page .guide-faq-row summary { padding:1rem 0; font-size:1rem; font-weight:600; letter-spacing:-0.02em; }
-  .guide-detail-page .guide-faq-answer { font-size:0.95rem; line-height:1.68; padding:0 0 1rem; }
-
   .guide-page:not(.guide-detail-page) .guide-shell {
     max-width: 1360px;
     padding: 4.4rem 2.2rem 2rem;
@@ -712,7 +711,8 @@
 
   @media (max-width: 1024px) {
     .guide-detail-page .guide-detail-block-conditions .guide-grid,
-    .guide-detail-page .guide-detail-block-action .guide-grid { grid-template-columns:1fr; }
+    .guide-detail-page .guide-detail-block-action .guide-grid,
+    .guide-detail-page .guide-detail-block-faq .guide-grid { grid-template-columns:1fr; }
     .guide-detail-page .guide-detail-block-conditions .guide-grid > .guide-card:last-child .guide-list { column-count:1; }
     .guide-shell { padding:5.05rem 1.2rem 2.85rem; }
     .guide-title { max-width:15ch; font-size:clamp(2.2rem, 6vw, 3.55rem); }
