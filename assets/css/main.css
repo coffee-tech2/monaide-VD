@@ -544,6 +544,21 @@
   .guide-faq-row[open] .guide-faq-chevron { transform:rotate(90deg); color:var(--orange-dark); }
   .guide-faq-answer { padding:0 0 1.12rem; color:var(--warm-gray); font-size:0.97rem; line-height:1.72; max-width:46rem; }
 
+  .guide-detail-page .guide-grid { align-items:start; }
+  .guide-detail-page .guide-card { align-self:start; height:auto; border-radius:30px; padding:1.55rem 1.5rem 1.35rem; }
+  .guide-detail-page .guide-card::before { left:1.2rem; right:1.2rem; top:1rem; height:1px; background:rgba(194, 207, 198, 0.95); opacity:1; }
+  .guide-detail-page .guide-card-label { align-self:flex-start; min-height:29px; padding:0.34rem 0.74rem; border-radius:9px; margin-bottom:0.9rem; font-size:0.64rem; letter-spacing:0.1em; }
+  .guide-detail-page .guide-card-title { font-size:1.46rem; line-height:1.08; letter-spacing:-0.05em; margin-bottom:0.76rem; max-width:19ch; }
+  .guide-detail-page .guide-card p { font-size:0.98rem; line-height:1.72; max-width:34rem; }
+  .guide-detail-page .guide-card p + .guide-inline-actions,
+  .guide-detail-page .guide-card .guide-list + .guide-inline-actions,
+  .guide-detail-page .guide-card > .guide-inline-actions:last-child { margin-top:0.95rem; padding-top:0; }
+  .guide-detail-page .guide-inline-actions { gap:0.62rem; align-items:stretch; }
+  .guide-detail-page .guide-inline-actions a { min-height:40px; padding:0.62rem 0.96rem; font-size:0.83rem; }
+  .guide-detail-page .guide-inline-actions.is-grid-links { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0.72rem; }
+  .guide-detail-page .guide-inline-actions.is-grid-links a { width:100%; }
+  .guide-detail-page .guide-inline-actions.is-two-links { display:grid; grid-template-columns:repeat(2, minmax(0, max-content)); justify-content:start; gap:0.72rem; }
+
   .guide-page:not(.guide-detail-page) .guide-shell {
     max-width: 1360px;
     padding: 4.4rem 2.2rem 2rem;
@@ -1055,6 +1070,12 @@
     .guide-faq-panel { padding:1.18rem 1rem 0.82rem; border-radius:22px; }
     .guide-faq-row summary { padding:1rem 0; font-size:0.98rem; }
     .guide-faq-answer { padding:0 0 0.95rem; font-size:0.92rem; line-height:1.64; }
+    .guide-detail-page .guide-card { border-radius:24px; padding:1.18rem 1rem 1.05rem; }
+    .guide-detail-page .guide-card::before { left:1rem; right:1rem; top:0.95rem; }
+    .guide-detail-page .guide-card-title { font-size:1.18rem; max-width:18ch; }
+    .guide-detail-page .guide-card p { font-size:0.92rem; line-height:1.62; }
+    .guide-detail-page .guide-inline-actions.is-grid-links,
+    .guide-detail-page .guide-inline-actions.is-two-links { grid-template-columns:1fr; }
     .guide-page:not(.guide-detail-page) .guide-shell { padding:4.05rem 1rem 1.85rem; }
     .guide-page:not(.guide-detail-page) .guide-title { max-width:12.5ch; font-size:clamp(2.35rem, 10vw, 3.35rem); margin-bottom:0.72rem; }
     .guide-page:not(.guide-detail-page) .guide-lead { font-size:0.94rem; line-height:1.62; max-width:30rem; }

@@ -238,6 +238,20 @@
     });
   }
 
+  function buildGuideActionLayouts() {
+    if (!document.body || !document.body.classList.contains('guide-detail-page')) return;
+
+    document.querySelectorAll('.guide-inline-actions').forEach(function(group) {
+      var links = group.querySelectorAll('a');
+      group.classList.remove('is-grid-links', 'is-two-links');
+      if (links.length >= 3) {
+        group.classList.add('is-grid-links');
+      } else if (links.length === 2) {
+        group.classList.add('is-two-links');
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     var betaBanner = document.getElementById('beta-banner');
     var betaBannerClose = document.getElementById('beta-banner-close');
@@ -334,4 +348,5 @@
     applyGuideLabelClasses();
     buildGuideSummary();
     buildGuideFaqPanels();
+    buildGuideActionLayouts();
   });
