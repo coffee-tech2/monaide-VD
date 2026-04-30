@@ -177,6 +177,67 @@
     guideActions.insertAdjacentElement('afterend', summary);
   }
 
+  function buildGuideFaqPanels() {
+    if (!document.body || !document.body.classList.contains('guide-detail-page')) return;
+
+    document.querySelectorAll('.guide-section-soft .guide-grid').forEach(function(grid) {
+      if (!grid || grid.querySelector('.guide-faq-panel')) return;
+
+      var faqCards = Array.prototype.slice.call(grid.children || []).filter(function(node) {
+        if (!node || !node.classList || !node.classList.contains('guide-card')) return false;
+        var label = node.querySelector('.guide-card-label');
+        return label && simplifyGuideLabel(label.textContent) === 'FAQ';
+      });
+
+      if (faqCards.length < 2) return;
+
+      var panel = document.createElement('article');
+      panel.className = 'guide-faq-panel';
+
+      var panelLabel = document.createElement('div');
+      panelLabel.className = 'guide-card-label is-faq';
+      panelLabel.textContent = 'FAQ';
+      panel.appendChild(panelLabel);
+
+      var list = document.createElement('div');
+      list.className = 'guide-faq-list';
+
+      faqCards.forEach(function(card, index) {
+        var title = card.querySelector('.guide-card-title, h2, h3');
+        var body = card.querySelector('p');
+        if (!title || !body) return;
+
+        var row = document.createElement('details');
+        row.className = 'guide-faq-row';
+        if (index === 0) row.open = true;
+
+        var summary = document.createElement('summary');
+        var summaryText = document.createElement('span');
+        summaryText.textContent = title.textContent.trim();
+        var chevron = document.createElement('span');
+        chevron.className = 'guide-faq-chevron';
+        chevron.setAttribute('aria-hidden', 'true');
+        chevron.textContent = '›';
+        summary.appendChild(summaryText);
+        summary.appendChild(chevron);
+
+        var answer = document.createElement('div');
+        answer.className = 'guide-faq-answer';
+        answer.textContent = body.textContent.trim();
+
+        row.appendChild(summary);
+        row.appendChild(answer);
+        list.appendChild(row);
+      });
+
+      if (!list.children.length) return;
+
+      panel.appendChild(list);
+      grid.innerHTML = '';
+      grid.appendChild(panel);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     var betaBanner = document.getElementById('beta-banner');
     var betaBannerClose = document.getElementById('beta-banner-close');
@@ -272,4 +333,5 @@
 
     applyGuideLabelClasses();
     buildGuideSummary();
+    buildGuideFaqPanels();
   });
