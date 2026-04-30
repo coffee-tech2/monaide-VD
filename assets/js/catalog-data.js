@@ -2206,7 +2206,7 @@
       firstSteps: [
         'Si la sécurité est en jeu, appeler tout de suite le 144 ou le 117',
         'Si c’est une détresse psychologique urgente mais non vitale, appeler le 0848 133 133',
-        'Sinon, commencer par un relais humain : médecin, 143, 147 pour les jeunes, ou Unisanté'
+        'Sinon, commencer par un relais humain : médecin, 143 pour toute personne qui a besoin de parler, 147 pour les jeunes, ou Unisanté'
       ],
       bodyIntro: 'Quand on dort mal, qu’on s’épuise, qu’on angoisse ou qu’on se sent perdu·e, le plus difficile est souvent de savoir où commencer. Cette fiche aide à choisir entre écoute, premier rendez-vous et urgence.',
       sections: [
@@ -2222,7 +2222,7 @@
         {
           title: 'Démarche',
           items: [
-            'Pour parler tout de suite : 143 pour les adultes, 147 pour les jeunes',
+            'Pour parler tout de suite : 143 pour toute personne qui a besoin d’une écoute, 147 pour les jeunes et jeunes adultes',
             'Pour une détresse psychologique urgente dans le canton : 0848 133 133',
             'Pour un suivi : contacter son médecin, Unisanté ou un service de santé mentale',
             'Si la personne risque de se faire du mal ou de faire du mal à quelqu’un : 144 ou 117'
@@ -2748,19 +2748,19 @@
       bodyIntro: 'Si tu traverses une période difficile ou que tu as besoin de parler, ces lignes sont là maintenant. Gratuites, anonymes et sans jugement.',
       sections: [
         {
-          title: 'Adultes',
+          title: 'Écoute généraliste',
           items: [
-            '143 — La Main Tendue : écoute 24h/24, anonyme et confidentielle',
+            '143 — La Main Tendue : écoute 24h/24, anonyme et confidentielle, pour toute personne qui a besoin de parler',
             '0848 133 133 — détresse psychologique / urgences psychiatriques Vaud',
             'STOP SUICIDE — prévention et ressources, surtout pour les jeunes, mais pas une helpline d’urgence'
           ]
         },
         {
-          title: 'Jeunes & familles',
+          title: 'Écoute jeunesse',
           items: [
             '147 — Pro Juventute : soutien gratuit et confidentiel 24h/24',
             'Accessible par téléphone, WhatsApp, e-mail ou chat selon les options du site',
-            'Pour les jeunes et jeunes adultes qui ont besoin de parler vite'
+            'Pour les enfants, jeunes, jeunes adultes et leurs proches selon les ressources proposées'
           ]
         }
       ],
