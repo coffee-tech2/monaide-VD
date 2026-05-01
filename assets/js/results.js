@@ -201,21 +201,12 @@
     return { className: 'badge-verifier', confidenceClass: 'confidence-verifier', label: 'À vérifier' };
   }
 
-  function buildResultMoreHtml(result, followUpHtml) {
-    if (!followUpHtml) return '';
-    return '<details class="result-more-shell"><summary><span class="result-more-label-open">' + escapeHtml(RESULTS_UI_CONFIG.moreDetailsLabel || 'Ouvrir le détail de cette piste') + '</span><span class="result-more-label-close">' + escapeHtml(RESULTS_UI_CONFIG.lessDetailsLabel || 'Refermer le détail') + '</span><span class="result-more-hint">' + escapeHtml(RESULTS_UI_CONFIG.moreDetailsHint || 'Explications, étapes et documents utiles') + '</span></summary><div class="result-more-body">' + followUpHtml + '</div></details>';
-  }
-
   function buildResultNameHtml(result) {
     var resultNameHtml = escapeHtml(result.nom);
     if ((result.nom || '').indexOf('Subside LAMal') !== -1) {
       resultNameHtml += '<span class="inline-info" aria-hidden="true">i<span class="inline-info-bubble">Un subside est une aide financière. Ici, il sert à réduire le montant de la prime d’assurance maladie.</span></span>';
     }
     return resultNameHtml;
-  }
-
-  function renderResultSectionLabel(title, text) {
-    return '<div class="result-section-label"><div class="result-section-title">' + escapeHtml(title) + '</div><div class="result-section-text">' + escapeHtml(text) + '</div></div>';
   }
 
   function renderResultCard(result, index, meta) {
@@ -229,18 +220,21 @@
     var docsHtml = result.docs && result.docs.length
       ? buildResultDetail(detailTitles.docs || 'Documents utiles à préparer', '<ul>' + result.docs.map(function(doc) { return '<li>' + doc + '</li>'; }).join('') + '</ul>', detailClasses.docs || 'is-docs', false)
       : '';
+    var linksHtml = links
+      ? buildResultDetail('Liens utiles', '<div class="result-link-row">' + links + '</div>', 'is-links', false)
+      : '';
     var startSummary = getActionSummary(result.action || result.today || '');
     var startHtml = startSummary
       ? '<div class="result-start"><span class="result-start-label">' + escapeHtml((RESULTS_UI_CONFIG.summaryTitles || {}).start || 'Par quoi commencer') + '</span><div class="result-start-text">' + escapeHtml(startSummary) + '</div></div>'
       : '';
     var kindHtml = '<div class="result-kind">' + getResultKind(result.nom) + '</div>';
-    var followUpHtml = whyHtml + actionHtml + docsHtml;
+    var followUpHtml = whyHtml + actionHtml + docsHtml + linksHtml;
     var badgeMeta = getResultBadgeMeta(result);
     var cardClasses = 'result-item result-reveal ' + badgeMeta.confidenceClass;
     if (meta.isPrimaryFocus) cardClasses += ' is-primary-focus';
     if (meta.isSecondary) cardClasses += ' is-secondary-track';
     var rankHtml = meta.rankLabel ? '<div class="result-rank">' + escapeHtml(meta.rankLabel) + '</div>' : '';
-    var footerHtml = '<div class="result-card-footer"><button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Ouvrir le guide complet →</button>' + (links ? '<button type="button" class="result-link-btn" data-aid-query="' + escapeHtml(result.nom) + '" onclick="openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Liens utiles</button>' : '') + '</div>';
+    var footerHtml = '<div class="result-card-footer"><button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche dans le catalogue →</button></div>';
     return '<article class="' + cardClasses + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><div class="result-card-header"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div></div></div>' + startHtml + '<div class="result-card-accordion">' + followUpHtml + '</div>' + footerHtml + '</article>';
   }
 
