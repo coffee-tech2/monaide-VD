@@ -174,7 +174,9 @@
 
   function buildResultDetail(title, body, className, openByDefault) {
     if (!body) return '';
-    return '<details class="result-detail ' + className + '"' + (openByDefault ? ' open' : '') + '><summary><span class="result-detail-title">' + title + '</span><span class="result-detail-hint">' + escapeHtml(RESULTS_UI_CONFIG.detailHint || 'Appuie pour ouvrir') + '</span></summary><div class="result-detail-body">' + body + '</div></details>';
+    var subtitles = RESULTS_UI_CONFIG.detailSubtitles || {};
+    var subtitle = subtitles[className] || subtitles[title] || '';
+    return '<details class="result-detail ' + className + '"' + (openByDefault ? ' open' : '') + '><summary><span class="result-detail-copy"><span class="result-detail-title">' + title + '</span>' + (subtitle ? '<span class="result-detail-hint">' + escapeHtml(subtitle) + '</span>' : '') + '</span><span class="result-detail-chevron" aria-hidden="true"></span></summary><div class="result-detail-body">' + body + '</div></details>';
   }
 
   function sortSimulationResults(results, resultContext) {
@@ -194,9 +196,9 @@
   }
 
   function getResultBadgeMeta(result) {
-    if (result.badge === 'probable' && result.strongProbable) return { className: 'badge-oui', label: 'Probablement' };
-    if (result.badge === 'probable') return { className: 'badge-probable', label: 'Probablement' };
-    return { className: 'badge-verifier', label: 'À vérifier' };
+    if (result.badge === 'probable' && result.strongProbable) return { className: 'badge-probable', confidenceClass: 'confidence-probablement', label: 'Probablement' };
+    if (result.badge === 'probable') return { className: 'badge-probable', confidenceClass: 'confidence-probablement', label: 'Probablement' };
+    return { className: 'badge-verifier', confidenceClass: 'confidence-verifier', label: 'À vérifier' };
   }
 
   function buildResultMoreHtml(result, followUpHtml) {
@@ -222,9 +224,8 @@
     var detailClasses = RESULTS_UI_CONFIG.detailClasses || {};
     var purposeText = getAidPurpose(result.nom);
     var links = buildResultLinksHtml(result);
-    var purposeHtml = buildResultDetail(detailTitles.purpose || 'À quoi ça peut servir', purposeText, detailClasses.purpose || 'is-purpose', false);
     var whyHtml = shouldShowWhy(result) ? buildResultDetail(detailTitles.why || 'Pourquoi cette piste apparaît', getWhySummary(result), detailClasses.why || 'is-why', false) : '';
-    var actionHtml = result.action ? buildResultDetail(detailTitles.action || 'Ce que tu peux faire maintenant', '<div style="white-space:pre-line;">' + linkifyPhoneNumbersInHtml(result.action) + '</div>', detailClasses.action || 'is-action', false) : '';
+    var actionHtml = result.action ? buildResultDetail(detailTitles.action || 'Ce que tu peux faire maintenant', '<div style="white-space:pre-line;">' + linkifyPhoneNumbersInHtml(result.action) + '</div>', detailClasses.action || 'is-action', true) : '';
     var docsHtml = result.docs && result.docs.length
       ? buildResultDetail(detailTitles.docs || 'Documents utiles à préparer', '<ul>' + result.docs.map(function(doc) { return '<li>' + doc + '</li>'; }).join('') + '</ul>', detailClasses.docs || 'is-docs', false)
       : '';
@@ -232,16 +233,15 @@
     var startHtml = startSummary
       ? '<div class="result-start"><span class="result-start-label">' + escapeHtml((RESULTS_UI_CONFIG.summaryTitles || {}).start || 'Par quoi commencer') + '</span><div class="result-start-text">' + escapeHtml(startSummary) + '</div></div>'
       : '';
-    var moreHtml = '<div class="result-link-row"><button type="button" class="result-link-btn is-secondary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="openCatalogForAid(this.getAttribute(\'data-aid-query\'))">' + escapeHtml(RESULTS_UI_CONFIG.moreCatalogLabel || 'En savoir plus') + '</button></div>';
     var kindHtml = '<div class="result-kind">' + getResultKind(result.nom) + '</div>';
-    var linksHtml = links ? buildResultDetail(detailTitles.links || 'Liens utiles', '<div class="result-link-row">' + links + '</div>', detailClasses.links || 'is-links', false) : '';
-    var followUpHtml = whyHtml + actionHtml + docsHtml + linksHtml + purposeHtml + moreHtml;
+    var followUpHtml = whyHtml + actionHtml + docsHtml;
     var badgeMeta = getResultBadgeMeta(result);
-    var cardClasses = 'result-item result-reveal';
+    var cardClasses = 'result-item result-reveal ' + badgeMeta.confidenceClass;
     if (meta.isPrimaryFocus) cardClasses += ' is-primary-focus';
     if (meta.isSecondary) cardClasses += ' is-secondary-track';
     var rankHtml = meta.rankLabel ? '<div class="result-rank">' + escapeHtml(meta.rankLabel) + '</div>' : '';
-    return '<div class="' + cardClasses + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div>' + startHtml + buildResultMoreHtml(result, followUpHtml) + '</div></div>';
+    var footerHtml = '<div class="result-card-footer"><button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Ouvrir le guide complet →</button>' + (links ? '<button type="button" class="result-link-btn" data-aid-query="' + escapeHtml(result.nom) + '" onclick="openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Liens utiles</button>' : '') + '</div>';
+    return '<article class="' + cardClasses + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><div class="result-card-header"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div></div></div>' + startHtml + '<div class="result-card-accordion">' + followUpHtml + '</div>' + footerHtml + '</article>';
   }
 
   function renderResultsFooterBanner(title, bodyHtml, animationIndex, extraStyle) {
@@ -268,9 +268,9 @@
   }
 
   function buildMoreCatalogBanner(resultCount) {
-    var bodyHtml = '<div style="font-size:0.78rem;color:var(--warm-gray);line-height:1.6;margin-bottom:0.6rem;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le catalogue recense des ressources vaudoises supplémentaires — associations, services, aides spécifiques — qui pourraient te concerner.') + '</div>'
-      + '<a href="#catalogue" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:var(--sage-dark);color:white;border-radius:9px;font-size:0.8rem;font-weight:600;text-decoration:none;">' + escapeHtml(RESULTS_UI_CONFIG.openCatalogLabel || 'Voir le catalogue des aides →') + '</a>';
-    return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Plus d\'aides potentielles dans le catalogue', bodyHtml, Math.min(resultCount + 6, 12));
+    var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le catalogue recense des ressources vaudoises supplémentaires — associations, services, aides spécifiques — qui pourraient te concerner.') + '</div></div>'
+      + '<a href="#catalogue" class="results-footer-banner-btn">' + escapeHtml(RESULTS_UI_CONFIG.openCatalogLabel || 'Explorer le catalogue →') + '</a>';
+    return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Tu veux aller plus loin ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;');
   }
 
   function buildFollowUpBanner(profile, results, resultCount) {
@@ -336,6 +336,8 @@
       return !isSecondaryResult(item.nom || '');
     });
     var primaryFocusAssigned = false;
+
+    list.innerHTML = '<div class="results-count-label">' + res.length + ' piste' + (res.length > 1 ? 's' : '') + ' identifiée' + (res.length > 1 ? 's' : '') + '</div>';
 
     res.forEach(function(r, index) {
       var secondary = isSecondaryResult(r.nom || '');

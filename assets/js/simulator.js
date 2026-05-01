@@ -540,9 +540,9 @@
       return;
     }
 
-    container.innerHTML = '<div class="results-profile-title">Récapitulatif</div>'
-      + '<div class="results-profile-text">Voici les réponses prises en compte pour lire les résultats juste en dessous. Tu peux en ouvrir une pour la corriger rapidement.</div>'
-      + '<div class="results-profile-actions"><button type="button" class="result-link-btn" onclick="editSimulationAnswers()">Modifier mes réponses</button></div>'
+    container.innerHTML = '<div class="results-profile-top"><div><div class="results-profile-title">Récapitulatif</div>'
+      + '<div class="results-profile-text">Tes réponses prises en compte.</div></div>'
+      + '<button type="button" class="results-profile-edit" onclick="editSimulationAnswers()">Modifier mes réponses</button></div>'
       + '<div class="results-profile-grid">'
       + items.map(function(item) {
           return '<button type="button" class="results-profile-item is-editable" onclick="editSimulationField(\'' + escapeHtml(item.field) + '\')"><span class="results-profile-label">' + escapeHtml(item.label) + '</span><span class="results-profile-value">' + escapeHtml(item.value) + '</span></button>';

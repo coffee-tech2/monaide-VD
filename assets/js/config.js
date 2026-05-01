@@ -266,19 +266,26 @@
       docs: 'is-docs',
       links: 'is-links'
     },
+    detailSubtitles: {
+      'is-purpose': 'Ce que cette aide peut couvrir',
+      'is-why': 'Contexte et conditions',
+      'is-action': 'Étapes concrètes à suivre',
+      'is-docs': 'Ce qu’il faut rassembler',
+      'is-links': 'Contacts et pages utiles'
+    },
     summaryTitles: {
       start: 'Premier geste',
       firstContact: 'Qui contacter d’abord',
       docs: 'Documents utiles à rassembler',
       region: 'Dans ta région',
-      more: 'Plus d’aides potentielles dans le catalogue'
+      more: 'Tu veux aller plus loin ?'
     },
     moreDetailsLabel: 'Ouvrir le détail de cette piste',
     lessDetailsLabel: 'Refermer le détail',
     moreDetailsHint: 'Pourquoi, étapes, documents et liens',
     detailHint: 'ouvrir',
     moreCatalogLabel: 'En savoir plus',
-    openCatalogLabel: 'Voir le catalogue des aides →',
+    openCatalogLabel: 'Explorer le catalogue →',
     noCoverageText: 'Le simulateur ne couvre pas tout. Le catalogue recense des ressources vaudoises supplémentaires — associations, services, aides spécifiques — qui pourraient te concerner.',
     purposeRules: [
       { patterns: ['subside lamal'], text: 'Cette aide sert à réduire le montant de la prime d’assurance maladie quand les conditions sont remplies.' },
