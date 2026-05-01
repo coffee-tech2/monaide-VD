@@ -10,6 +10,32 @@
     });
   }
 
+  var catalogSearchTimer = null;
+
+  function trackCatalogEvent(name, props) {
+    if (window.trackMonaideEvent) {
+      window.trackMonaideEvent(name, props || {});
+    }
+  }
+
+  function getCatalogAidLabel(card) {
+    return card ? (card.getAttribute('data-aid-id') || ((card.querySelector('.cat-card-title') || {}).textContent || '')) : '';
+  }
+
+  function trackCatalogSearch(rawQuery, count) {
+    var queryLength = String(rawQuery || '').trim().length;
+    if (queryLength < 2) return;
+    window.clearTimeout(catalogSearchTimer);
+    catalogSearchTimer = window.setTimeout(function() {
+      trackCatalogEvent('catalog_search', {
+        source: 'catalogue',
+        length: queryLength,
+        result_count: count,
+        has_results: count > 0 ? 'yes' : 'no'
+      });
+    }, 700);
+  }
+
   window.toggleCatCard = function(card) {
     var body = card.querySelector('.cat-card-body');
     if (!body) return;
@@ -37,8 +63,8 @@
       body.style.display = 'block';
       body.style.visibility = 'visible';
       if (window.trackMonaideEvent) {
-        window.trackMonaideEvent('catalog_card_open', {
-          aid: card.getAttribute('data-aid-id') || ((card.querySelector('.cat-card-title') || {}).textContent || '')
+        trackCatalogEvent('catalog_card_open', {
+          aid: getCatalogAidLabel(card)
         });
       }
       keepCatalogCardOpeningDownward(card, previousTop);
@@ -82,6 +108,10 @@
       var hasVisible = Array.from(group.querySelectorAll('.cat-card')).some(function(cc) { return cc.style.display !== 'none'; });
       group.style.display = hasVisible ? '' : 'none';
     });
+    trackCatalogEvent('catalog_filter', {
+      category: cat,
+      result_count: count
+    });
     var noResult = document.getElementById('cat-no-result');
     if (noResult) {
       noResult.innerHTML = 'Aucun r&#233;sultat pour cette recherche.';
@@ -114,6 +144,7 @@
         noResult.style.display = 'none';
       }
     }
+    trackCatalogSearch(rawQuery, count);
   };
 
   function ouvrirCarteCatalogue(card, smooth) {
@@ -283,6 +314,10 @@
       });
       catInput.value = matchedCard.querySelector('.cat-card-title').textContent.trim();
       document.getElementById('cat-no-result').style.display = 'none';
+      trackCatalogEvent('catalog_direct_open', {
+        source: 'search_or_shortcut',
+        aid: getCatalogAidLabel(matchedCard)
+      });
       ouvrirCarteCatalogue(matchedCard, true);
     } else {
       catInput.value = query;
@@ -296,6 +331,9 @@
     var note = document.getElementById('catalog-note');
     if (!note) return;
     note.style.display = 'none';
+    trackCatalogEvent('catalog_note_close', {
+      source: 'catalogue'
+    });
   };
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -359,5 +397,21 @@
     });
 
     enhanceStaticPhoneLinks();
+
+    var catalogue = document.getElementById('catalogue');
+    if (catalogue && !catalogue.dataset.trackingBound) {
+      catalogue.dataset.trackingBound = 'true';
+      catalogue.addEventListener('click', function(e) {
+        var link = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!link || !catalogue.contains(link)) return;
+        var card = link.closest('.cat-card');
+        var href = link.getAttribute('href') || '';
+        trackCatalogEvent('catalog_link_click', {
+          aid: getCatalogAidLabel(card),
+          label: link.textContent || '',
+          link_type: href.indexOf('http') === 0 ? 'external' : 'internal'
+        });
+      });
+    }
   });
   var CATALOG_CONFIG = window.MONAIDE_CATALOG_CONFIG || {};
