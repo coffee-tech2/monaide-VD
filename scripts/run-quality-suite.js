@@ -10,6 +10,7 @@ const checks = [
   { label: 'Guides data', cmd: ['node', path.join(root, 'scripts/guide-quality-check.js')] },
   { label: 'Guides éditorial', cmd: ['node', path.join(root, 'scripts/guide-editorial-check.js')] },
   { label: 'Métadonnées site', cmd: ['node', path.join(root, 'scripts/site-metadata-check.js')] },
+  { label: 'Sitemap', cmd: ['node', path.join(root, 'scripts/sitemap-check.js')] },
   { label: 'Structure simulateur', cmd: ['node', path.join(root, 'scripts/simulator-structure-check.js')] },
   { label: 'Smoke simulateur', cmd: ['node', path.join(root, 'scripts/simulator-smoke-test.js')] },
   { label: 'Régression simulateur', cmd: ['node', path.join(root, 'scripts/simulator-regression-test.js')] },
