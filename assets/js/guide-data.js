@@ -134,8 +134,8 @@ window.MONAIDE_GUIDE_DATA = {
     {
       id: 'bourses-ocbe',
       label: 'Formation',
-      title: 'Bourses OCBE',
-      summary: 'Quand une formation coûte trop cher et qu’une aide pourrait exister.',
+      title: 'Bourse d’études Vaud (OCBE)',
+      summary: 'Quand une formation coûte trop cher et qu’une bourse ou un prêt d’études peut être envisagé.',
       href: '/bourses-ocbe/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['formation'],
