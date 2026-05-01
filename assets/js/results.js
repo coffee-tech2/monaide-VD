@@ -176,7 +176,7 @@
     if (!body) return '';
     var subtitles = RESULTS_UI_CONFIG.detailSubtitles || {};
     var subtitle = subtitles[className] || subtitles[title] || '';
-    return '<details class="result-detail ' + className + '"' + (openByDefault ? ' open' : '') + '><summary><span class="result-detail-copy"><span class="result-detail-title">' + title + '</span>' + (subtitle ? '<span class="result-detail-hint">' + escapeHtml(subtitle) + '</span>' : '') + '</span><span class="result-detail-chevron" aria-hidden="true"></span></summary><div class="result-detail-body">' + body + '</div></details>';
+    return '<details class="result-detail ' + className + '" data-detail-title="' + escapeHtml(title) + '"' + (openByDefault ? ' open' : '') + '><summary><span class="result-detail-copy"><span class="result-detail-title">' + title + '</span>' + (subtitle ? '<span class="result-detail-hint">' + escapeHtml(subtitle) + '</span>' : '') + '</span><span class="result-detail-chevron" aria-hidden="true"></span></summary><div class="result-detail-body">' + body + '</div></details>';
   }
 
   function sortSimulationResults(results, resultContext) {
@@ -235,7 +235,21 @@
     if (meta.isSecondary) cardClasses += ' is-secondary-track';
     var rankHtml = meta.rankLabel ? '<div class="result-rank">' + escapeHtml(meta.rankLabel) + '</div>' : '';
     var footerHtml = '<div class="result-card-footer"><button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { aid: this.getAttribute(\'data-aid-query\') });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche dans le catalogue →</button></div>';
-    return '<article class="' + cardClasses + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><div class="result-card-header"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div></div></div>' + startHtml + '<div class="result-card-accordion">' + followUpHtml + '</div>' + footerHtml + '</article>';
+    return '<article class="' + cardClasses + '" data-result-name="' + escapeHtml(result.nom) + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><div class="result-card-header"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div></div></div>' + startHtml + '<div class="result-card-accordion">' + followUpHtml + '</div>' + footerHtml + '</article>';
+  }
+
+  function bindResultDetailTracking(list) {
+    if (!list || !window.trackMonaideEvent) return;
+    list.querySelectorAll('.result-detail').forEach(function(detail) {
+      detail.addEventListener('toggle', function() {
+        if (!detail.open) return;
+        var card = detail.closest('.result-item');
+        window.trackMonaideEvent('result_detail_open', {
+          aid: card ? card.getAttribute('data-result-name') : '',
+          detail: detail.getAttribute('data-detail-title') || ''
+        });
+      });
+    });
   }
 
   function renderResultsFooterBanner(title, bodyHtml, animationIndex, extraStyle, extraClass) {
@@ -374,6 +388,7 @@
     }
 
     list.innerHTML += buildMoreCatalogBanner(res.length);
+    bindResultDetailTracking(list);
 
     for (var i = 1; i <= TOTAL_STEPS; i++) {
       var el = document.getElementById('step' + i);

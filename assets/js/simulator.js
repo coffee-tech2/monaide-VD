@@ -1,11 +1,34 @@
   var SIMULATOR_CONFIG = window.MONAIDE_SIMULATOR_CONFIG || {};
   var questionIndexByStep = { 1: 0, 2: 0, 3: 0, 4: 0 };
+  var simulatorTrackingStarted = false;
   var questionSetsByStep = SIMULATOR_CONFIG.questionSetsByStep || {
     1: [['commune', 'age'], ['situation_familiale', 'statut_sejour']],
     2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
     3: [['revenu', 'fortune', 'prime_lamal'], ['aides_actuelles']],
     4: [['incapacite', 'dettes'], ['separation_en_cours', 'besoin_protection'], ['proche_aidant']]
   };
+
+  function trackSimulatorEvent(name, params) {
+    if (!window.trackMonaideEvent) return;
+    window.trackMonaideEvent(name, params || {});
+  }
+
+  function trackSimulatorStart(source) {
+    if (simulatorTrackingStarted) return;
+    simulatorTrackingStarted = true;
+    trackSimulatorEvent('simulator_start', {
+      source: source || 'questionnaire'
+    });
+  }
+
+  function trackSimulatorStep(step, source) {
+    if (!simulatorTrackingStarted) return;
+    trackSimulatorEvent('simulator_step_view', {
+      step: step,
+      block: (questionIndexByStep[step] || 0) + 1,
+      source: source || 'navigation'
+    });
+  }
 
   function selectedValue(name, fallback) {
     var checked = document.querySelector('input.choice-input[name="' + name + '"]:checked');
@@ -393,6 +416,12 @@
       if (!valid) allValid = false;
     });
     if (invalidGroup) invalidGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (invalidGroup) {
+      trackSimulatorEvent('simulator_validation_error', {
+        step: step,
+        field: getGroupFieldId(invalidGroup) || 'unknown'
+      });
+    }
     return allValid;
   }
 
@@ -408,6 +437,7 @@
     if (questionIndexByStep[step] < sets.length - 1) {
       questionIndexByStep[step] += 1;
       renderStepQuestionMode(step);
+      trackSimulatorStep(step, 'next_block');
       var simulatorBody = document.getElementById('simulator-body');
       if (simulatorBody) simulatorBody.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
@@ -423,6 +453,7 @@
     if (questionIndexByStep[step] > 0) {
       questionIndexByStep[step] -= 1;
       renderStepQuestionMode(step);
+      trackSimulatorStep(step, 'previous_block');
       var simulatorBody = document.getElementById('simulator-body');
       if (simulatorBody) simulatorBody.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
@@ -450,6 +481,7 @@
     }
     currentStep = step;
     renderStepQuestionMode(step);
+    trackSimulatorStep(step, 'step_change');
     var simulator = document.getElementById('simulateur');
     if (simulator) simulator.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -602,6 +634,10 @@
         var group = firstInvalid.closest('.form-group');
         if (group) group.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
+      trackSimulatorEvent('simulator_validation_error', {
+        step: targetStep - 1,
+        field: invalidFieldId
+      });
       return false;
     }
     return true;
@@ -621,6 +657,10 @@
     });
     if (!invalidFieldId) return true;
     var step = getStepForField(invalidFieldId);
+    trackSimulatorEvent('simulator_validation_error', {
+      step: step,
+      field: invalidFieldId
+    });
     questionIndexByStep[step] = getQuestionIndexForField(step, invalidFieldId);
     goToStep(step, true);
     var firstInvalid = document.getElementById(invalidFieldId);
@@ -633,6 +673,9 @@
 
   window.editSimulationAnswers = function() {
     quickReviewMode = true;
+    trackSimulatorEvent('simulator_edit_answers', {
+      source: 'results_summary'
+    });
     var results = document.getElementById('results');
     if (results) results.style.display = 'none';
     questionIndexByStep[1] = 0;
@@ -642,6 +685,10 @@
   window.editSimulationField = function(fieldId) {
     var step = getStepForField(fieldId);
     quickReviewMode = true;
+    trackSimulatorEvent('simulator_edit_field', {
+      step: step,
+      field: fieldId
+    });
     var results = document.getElementById('results');
     if (results) results.style.display = 'none';
     questionIndexByStep[step] = getQuestionIndexForField(step, fieldId);
@@ -676,6 +723,10 @@
   }
 
   window.restart = function() {
+    trackSimulatorEvent('simulator_restart', {
+      source: 'results'
+    });
+    simulatorTrackingStarted = false;
     quickReviewMode = false;
     document.querySelectorAll('input.choice-input[type="radio"]').forEach(function(input) {
       input.checked = input.hasAttribute('checked');
@@ -751,6 +802,7 @@
     }
     document.querySelectorAll('input.choice-input[type="radio"]').forEach(function(input) {
       input.addEventListener('change', function() {
+        trackSimulatorStart('choice');
         playChoiceFeedback(this);
         var select = document.getElementById(this.name);
         if (select) select.value = this.value;
@@ -767,6 +819,7 @@
     });
     document.querySelectorAll('input.choice-input[type="checkbox"][name="aides_actuelles_multi"]').forEach(function(input) {
       input.addEventListener('change', function() {
+        trackSimulatorStart('choice');
         playChoiceFeedback(this);
         syncAidesActuellesField(this);
         renderStepQuestionMode(currentStep);
@@ -775,6 +828,7 @@
     var statutPermisDetail = document.getElementById('statut_permis_detail');
     if (statutPermisDetail) {
       statutPermisDetail.addEventListener('change', function() {
+        trackSimulatorStart('detail_select');
         syncStatutSejourField();
         setFieldValidity('statut_sejour', !!getFieldValue('statut_sejour'));
       });
@@ -782,6 +836,7 @@
     var logementDetail = document.getElementById('logement_detail');
     if (logementDetail) {
       logementDetail.addEventListener('change', function() {
+        trackSimulatorStart('detail_select');
         syncLogementField();
         setFieldValidity('logement', !!getFieldValue('logement'));
         updateConditionalQuestions();
@@ -790,6 +845,7 @@
     }
     document.querySelectorAll('.form-input').forEach(function(input) {
       input.addEventListener('input', function() {
+        trackSimulatorStart('text_input');
         if ((this.value || '').trim()) setFieldValidity(this.id, true);
       });
     });

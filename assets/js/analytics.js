@@ -1,4 +1,6 @@
 (function() {
+  window.dataLayer = window.dataLayer || [];
+
   function cleanValue(value) {
     return String(value || '')
       .replace(/\s+/g, ' ')
@@ -19,6 +21,8 @@
         detail: Object.assign({ event: eventName }, props)
       }));
     } catch (e) {}
+
+    window.dataLayer.push(Object.assign({ event: eventName }, props));
 
     if (typeof window.gtag === 'function') {
       window.gtag('event', eventName, props);
