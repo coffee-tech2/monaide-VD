@@ -667,6 +667,11 @@
       if (simulatorBody) simulatorBody.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
+    if (window.trackMonaideEvent) {
+      window.trackMonaideEvent('simulator_submit', {
+        source: 'questionnaire'
+      });
+    }
     analyserSituation();
   }
 

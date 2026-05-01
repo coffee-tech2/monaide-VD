@@ -6,7 +6,7 @@ window.MONAIDE_GUIDE_DATA = {
       title: 'Aides sociales dans le canton de Vaud',
       summary: 'Une bonne porte d’entrée si tu cherches surtout des repères généraux et à qui t’adresser d’abord.',
       href: '/aides-sociales-vaud/',
-      ctaLabel: 'Ouvrir la page',
+      ctaLabel: 'Ouvrir le guide',
       featured: true,
       audience: ['grand-public'],
       keywords: ['aides sociales', 'Vaud', 'orientation']
@@ -17,7 +17,7 @@ window.MONAIDE_GUIDE_DATA = {
       title: 'Je n’arrive plus à payer mes primes maladie',
       summary: 'Subside LAMal, OVAM, AAS et premières démarches si les primes deviennent trop lourdes.',
       href: '/primes-maladie-vaud/',
-      ctaLabel: 'Ouvrir la page',
+      ctaLabel: 'Ouvrir le guide',
       audience: ['sante', 'budget'],
       keywords: ['primes maladie', 'subside LAMal', 'OVAM']
     },
@@ -27,7 +27,7 @@ window.MONAIDE_GUIDE_DATA = {
       title: 'Je n’ai plus assez pour vivre',
       summary: 'Le point de départ quand le budget ne tient plus et qu’il faut comprendre le rôle du CSR et du RI.',
       href: '/plus-assez-pour-vivre/',
-      ctaLabel: 'Ouvrir la page',
+      ctaLabel: 'Ouvrir le guide',
       audience: ['revenu', 'urgence'],
       keywords: ['budget', 'RI', 'CSR']
     },
@@ -37,7 +37,7 @@ window.MONAIDE_GUIDE_DATA = {
       title: 'Je viens de perdre mon emploi',
       summary: 'ORP, LACI, indemnités et premières portes si les revenus s’arrêtent ou deviennent incertains.',
       href: '/perdre-son-emploi/',
-      ctaLabel: 'Ouvrir la page',
+      ctaLabel: 'Ouvrir le guide',
       audience: ['emploi'],
       keywords: ['emploi', 'ORP', 'LACI']
     },
@@ -47,7 +47,7 @@ window.MONAIDE_GUIDE_DATA = {
       title: 'J’ai besoin d’aide pour ma formation',
       summary: 'Bourses OCBE et premières pistes si les études ou l’apprentissage coûtent trop cher.',
       href: '/aide-formation-vaud/',
-      ctaLabel: 'Ouvrir la page',
+      ctaLabel: 'Ouvrir le guide',
       audience: ['formation'],
       keywords: ['formation', 'bourse', 'OCBE']
     },
@@ -57,7 +57,7 @@ window.MONAIDE_GUIDE_DATA = {
       title: 'Parent solo',
       summary: 'Allocations, pension, BRAPA et garde d’enfants quand on élève seul·e un ou plusieurs enfants.',
       href: '/parent-solo-vaud/',
-      ctaLabel: 'Ouvrir la page',
+      ctaLabel: 'Ouvrir le guide',
       audience: ['famille'],
       keywords: ['parent solo', 'BRAPA', 'allocations']
     },
@@ -67,7 +67,7 @@ window.MONAIDE_GUIDE_DATA = {
       title: 'Aide logement',
       summary: 'Loyer trop lourd, risque de résiliation, budget serré : les premières portes quand le logement devient la priorité.',
       href: '/logement-vaud/',
-      ctaLabel: 'Ouvrir la page',
+      ctaLabel: 'Ouvrir le guide',
       audience: ['logement'],
       keywords: ['logement', 'loyer', 'résiliation']
     },
@@ -77,7 +77,7 @@ window.MONAIDE_GUIDE_DATA = {
       title: 'Séparation',
       summary: 'Pension alimentaire, BRAPA et médiation quand la séparation complique aussi le budget ou les démarches.',
       href: '/separation-vaud/',
-      ctaLabel: 'Ouvrir la page',
+      ctaLabel: 'Ouvrir le guide',
       audience: ['famille'],
       keywords: ['séparation', 'pension alimentaire', 'BRAPA']
     },

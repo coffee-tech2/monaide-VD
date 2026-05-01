@@ -36,6 +36,11 @@
       card.setAttribute('aria-expanded', 'true');
       body.style.display = 'block';
       body.style.visibility = 'visible';
+      if (window.trackMonaideEvent) {
+        window.trackMonaideEvent('catalog_card_open', {
+          aid: card.getAttribute('data-aid-id') || ((card.querySelector('.cat-card-title') || {}).textContent || '')
+        });
+      }
       keepCatalogCardOpeningDownward(card, previousTop);
     }
   };

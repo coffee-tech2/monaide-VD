@@ -53,6 +53,12 @@
     var catInput = document.getElementById('cat-search');
     var query = navInput ? navInput.value.trim() : '';
     if (!query || !catInput) return;
+    if (window.trackMonaideEvent) {
+      window.trackMonaideEvent('site_search', {
+        source: 'nav',
+        length: query.length
+      });
+    }
     catInput.value = query;
     var matchedCard = findCatalogCardForAid(query);
     if (matchedCard) openCatalogForAid(query);
@@ -69,6 +75,12 @@
   window.applySearchSuggestion = function(query) {
     var catInput = document.getElementById('cat-search');
     if (!catInput || !query) return;
+    if (window.trackMonaideEvent) {
+      window.trackMonaideEvent('site_search_suggestion', {
+        source: 'catalogue',
+        label: query
+      });
+    }
     catInput.value = query;
     var matchedCard = findCatalogCardForAid(query);
     if (matchedCard) openCatalogForAid(query);

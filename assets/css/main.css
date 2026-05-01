@@ -30,6 +30,28 @@
   html { scroll-behavior: smooth; max-width:100%; overflow-x:hidden; }
   body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(180deg, #F5F3EE 0%, var(--cream) 48%, #EFE9D8 100%); color: var(--dark); line-height: 1.6; max-width:100%; overflow-x: hidden; }
   body.nav-open { overflow: hidden; }
+  h1,
+  h2,
+  h3,
+  .hero h1,
+  .guide-title,
+  .guide-card-title,
+  .guide-section-title,
+  .cat-card-title,
+  .result-name {
+    overflow-wrap: break-word;
+  }
+  .btn-primary,
+  .btn-secondary,
+  .button,
+  .cta-button,
+  .result-link-btn,
+  .guide-card-button,
+  .guide-inline-actions a,
+  .cat-filter,
+  .search-suggestion-chip {
+    max-width: 100%;
+  }
   body::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:2147483647; background:rgba(24,58,49,0.045); mix-blend-mode:multiply; }
   .skip-link { position:absolute; left:1rem; top:-3rem; z-index:220; padding:0.75rem 1rem; border-radius:999px; background:var(--sage-dark); color:white; font-size:0.82rem; font-weight:700; text-decoration:none; box-shadow:0 14px 28px rgba(28,59,48,0.18); transition:top 0.18s ease, transform 0.18s ease; }
   .skip-link:focus { top:0.9rem; transform:translateY(0); }

@@ -234,7 +234,7 @@
     if (meta.isPrimaryFocus) cardClasses += ' is-primary-focus';
     if (meta.isSecondary) cardClasses += ' is-secondary-track';
     var rankHtml = meta.rankLabel ? '<div class="result-rank">' + escapeHtml(meta.rankLabel) + '</div>' : '';
-    var footerHtml = '<div class="result-card-footer"><button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche dans le catalogue →</button></div>';
+    var footerHtml = '<div class="result-card-footer"><button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { aid: this.getAttribute(\'data-aid-query\') });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche dans le catalogue →</button></div>';
     return '<article class="' + cardClasses + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><div class="result-card-header"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div></div></div>' + startHtml + '<div class="result-card-accordion">' + followUpHtml + '</div>' + footerHtml + '</article>';
   }
 
@@ -364,6 +364,14 @@
     list.innerHTML += buildFollowUpBanner(profile, res, res.length);
 
     latestSimulation = buildLatestSimulation(profile, res, topActions, docList);
+    if (window.trackMonaideEvent) {
+      var probableCount = res.filter(function(item) { return item.badge === 'probable'; }).length;
+      window.trackMonaideEvent('simulator_results_view', {
+        count: res.length,
+        probable: probableCount,
+        verifier: res.length - probableCount
+      });
+    }
 
     list.innerHTML += buildMoreCatalogBanner(res.length);
 
