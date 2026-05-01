@@ -244,8 +244,8 @@
     return '<article class="' + cardClasses + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><div class="result-card-header"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div></div></div>' + startHtml + '<div class="result-card-accordion">' + followUpHtml + '</div>' + footerHtml + '</article>';
   }
 
-  function renderResultsFooterBanner(title, bodyHtml, animationIndex, extraStyle) {
-    return '<div class="results-footer-banner result-reveal" style="' + (extraStyle || '') + 'animation-delay:' + (0.06 * Math.min(animationIndex, 12)) + 's;"><div class="results-footer-banner-title">' + escapeHtml(title) + '</div>' + bodyHtml + '</div>';
+  function renderResultsFooterBanner(title, bodyHtml, animationIndex, extraStyle, extraClass) {
+    return '<div class="results-footer-banner ' + (extraClass || '') + ' result-reveal" style="' + (extraStyle || '') + 'animation-delay:' + (0.06 * Math.min(animationIndex, 12)) + 's;"><div class="results-footer-banner-title">' + escapeHtml(title) + '</div><div class="results-footer-banner-body">' + bodyHtml + '</div></div>';
   }
 
   function buildTopActionsBanner(topActions, resultCount) {
@@ -270,7 +270,7 @@
   function buildMoreCatalogBanner(resultCount) {
     var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le catalogue recense des ressources vaudoises supplémentaires — associations, services, aides spécifiques — qui pourraient te concerner.') + '</div></div>'
       + '<a href="#catalogue" class="results-footer-banner-btn">' + escapeHtml(RESULTS_UI_CONFIG.openCatalogLabel || 'Explorer le catalogue →') + '</a>';
-    return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Tu veux aller plus loin ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;');
+    return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Tu veux aller plus loin ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;', 'is-cta');
   }
 
   function buildFollowUpBanner(profile, results, resultCount) {

@@ -366,8 +366,15 @@
   .results-export-btn:hover { background:var(--mint); border-color:#BFD8CE; color:var(--orange-dark); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(28,59,48,0.08); }
   .results-export-btn.primary { background:var(--sage-dark); color:white; border-color:var(--sage-dark); }
   .results-export-btn.primary:hover { background:var(--forest); border-color:var(--forest); color:white; transform: translateY(-1px); box-shadow: 0 12px 24px rgba(28,59,48,0.18); }
-  .results-footer-banner { max-width:70ch; margin-top:1.6rem; background:var(--forest); border:0; border-radius:14px; padding:1.45rem 1.65rem; color:#EBF5EF; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-  .results-footer-banner-title { font-family:'Newsreader', serif; font-size:1.45rem; line-height:1; font-weight:700; letter-spacing:-0.03em; color:#EBF5EF; margin:0; }
+  .results-footer-banner { max-width:70ch; margin-top:1rem; background:#FFFDF8; border:1px solid #D8D4CA; border-left:3px solid #D6EEE5; border-radius:14px; padding:1rem 1.15rem; color:var(--forest); display:block; box-shadow:0 8px 20px rgba(28,59,48,0.04); }
+  .results-footer-banner-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:0.98rem; line-height:1.18; font-weight:800; letter-spacing:-0.035em; color:var(--forest); margin:0 0 0.45rem; }
+  .results-footer-banner-body { color:#557064; font-size:0.84rem; line-height:1.6; }
+  .results-footer-banner-body p { margin:0 0 0.6rem; }
+  .results-footer-banner-body ul { margin:0; padding-left:1.05rem; }
+  .results-footer-banner-body li { margin:0 0 0.38rem; }
+  .results-footer-banner.is-cta { margin-top:1.6rem; background:var(--forest); border:0; border-radius:14px; padding:1.45rem 1.65rem; color:#EBF5EF; display:flex; align-items:center; justify-content:space-between; gap:1rem; box-shadow:none; }
+  .results-footer-banner.is-cta .results-footer-banner-title { font-family:'Newsreader', serif; font-size:1.45rem; line-height:1; font-weight:700; letter-spacing:-0.03em; color:#EBF5EF; margin:0; }
+  .results-footer-banner.is-cta .results-footer-banner-body { display:flex; align-items:center; justify-content:space-between; gap:1rem; width:100%; color:rgba(235,245,239,.72); }
   .results-footer-banner-btn { display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto; min-height:42px; padding:0.68rem 1.25rem; border-radius:999px; background:#EBF5EF; color:var(--forest); text-decoration:none; font-weight:800; font-size:0.86rem; }
   .results-first-contact { margin-bottom:0.95rem; background:linear-gradient(135deg,#EAF6F0 0%,#FBF2D5 100%); border:1.5px solid #CDE0D7; border-radius:18px; padding:1rem 1.05rem; }
   .results-first-contact-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:0.98rem; font-weight:800; letter-spacing:-0.04em; color:var(--sage-dark); margin-bottom:0.28rem; }
