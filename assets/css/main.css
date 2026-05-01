@@ -569,7 +569,12 @@
   .guide-detail-page .guide-detail-grid-single { grid-template-columns:1fr; }
   .guide-detail-page .guide-detail-block-conditions .guide-grid,
   .guide-detail-page .guide-detail-block-action .guide-grid { grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:1.15rem; }
-  .guide-detail-page .guide-detail-block-faq .guide-grid { grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:1.15rem; }
+  .guide-detail-page .guide-detail-block-faq .guide-grid {
+    grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+    column-gap:1.55rem;
+    row-gap:2.35rem;
+    align-items:start;
+  }
   .guide-detail-page .guide-card { display:block; align-self:start; height:auto; min-height:0; border-radius:24px; padding:1.45rem 1.4rem 1.25rem; box-shadow:none; background:#fffdfa; }
   .guide-detail-page .guide-card::before { display:none; }
   .guide-detail-page .guide-card-label { align-self:flex-start; min-height:0; padding:0.28rem 0.62rem; border-radius:7px; margin-bottom:0.9rem; font-size:0.64rem; letter-spacing:0.08em; }
@@ -585,7 +590,14 @@
   .guide-detail-page .guide-detail-block-action .guide-grid > .guide-card p + p { margin-top:1rem; padding-top:0.95rem; border-top:1px solid rgba(223, 209, 192, 0.9); color:#5b625b; font-size:0.9rem; line-height:1.62; max-width:36ch; }
   .guide-detail-page .guide-detail-block-conditions .guide-grid > .guide-card:last-child .guide-list { display:block; column-count:2; column-gap:1.4rem; }
   .guide-detail-page .guide-detail-block-conditions .guide-grid > .guide-card:last-child .guide-list li { break-inside:avoid; margin-bottom:0.95rem; }
-  .guide-detail-page .guide-detail-block-faq .guide-card { display:flex; flex-direction:column; min-height:100%; justify-content:flex-start; }
+  .guide-detail-page .guide-detail-block-faq .guide-card {
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+    height:auto;
+    border-radius:18px;
+    justify-content:flex-start;
+  }
   .guide-detail-page .guide-detail-block-faq .guide-card-label { margin-bottom:0.9rem; }
   .guide-detail-page .guide-detail-block-faq .guide-card-title { max-width:16ch; font-size:1.36rem; line-height:1.08; letter-spacing:-0.03em; }
   .guide-detail-page .guide-detail-block-faq .guide-card p { max-width:38ch; font-size:1rem; line-height:1.72; }
