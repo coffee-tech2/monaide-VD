@@ -1298,7 +1298,7 @@
       firstSteps: [
         'Lire les conditions officielles',
         'Préparer les informations chômage et AVS',
-        'Contacter la caisse AVS si la piste se confirme'
+        'Contacter la caisse AVS si cette piste semble pertinente'
       ],
       bodyIntro: 'Tu as 60 ans ou plus et tu arrives en fin de droits chômage ? Cette aide reste méconnue, mais elle peut parfois faire le lien jusqu’à la retraite AVS si les conditions sont remplies.',
       sections: [
@@ -1823,7 +1823,7 @@
       firstSteps: [
         'Vérifier si ta commune propose l’AIL',
         'Préparer bail, revenus et composition du ménage',
-        'Déposer ensuite la demande si la commune confirme'
+        'Déposer ensuite la demande si la commune indique que c’est possible'
       ],
       bodyIntro: 'Certaines communes peuvent accorder une aide individuelle au logement pour les familles quand le loyer devient trop lourd. Ce n’est pas une aide générale : il faut d’abord vérifier si ta commune est concernée.',
       reviewedAt: '12 avril 2026',

@@ -234,7 +234,7 @@
     if (meta.isPrimaryFocus) cardClasses += ' is-primary-focus';
     if (meta.isSecondary) cardClasses += ' is-secondary-track';
     var rankHtml = meta.rankLabel ? '<div class="result-rank">' + escapeHtml(meta.rankLabel) + '</div>' : '';
-    var footerHtml = '<div class="result-card-footer"><button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { aid: this.getAttribute(\'data-aid-query\') });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche dans le catalogue →</button></div>';
+    var footerHtml = '<div class="result-card-footer"><button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche dans le catalogue →</button></div>';
     return '<article class="' + cardClasses + '" data-result-name="' + escapeHtml(result.nom) + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><div class="result-card-header"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div></div></div>' + startHtml + '<div class="result-card-accordion">' + followUpHtml + '</div>' + footerHtml + '</article>';
   }
 
@@ -243,9 +243,7 @@
     list.querySelectorAll('.result-detail').forEach(function(detail) {
       detail.addEventListener('toggle', function() {
         if (!detail.open) return;
-        var card = detail.closest('.result-item');
         window.trackMonaideEvent('result_detail_open', {
-          aid: card ? card.getAttribute('data-result-name') : '',
           detail: detail.getAttribute('data-detail-title') || ''
         });
       });
@@ -298,7 +296,7 @@
     if (!prompts.length) return '';
 
     var html = '<div style="font-size:0.78rem;color:var(--warm-gray);line-height:1.6;">';
-    html += '<p style="margin:0 0 0.7rem;"><strong style="color:var(--dark);">Pour affiner ensuite si besoin :</strong> ces points peuvent changer la porte d’entrée ou le niveau de certitude.</p>';
+    html += '<p style="margin:0 0 0.7rem;"><strong style="color:var(--dark);">Pour affiner ensuite si besoin :</strong> ces points peuvent changer la porte d’entrée ou le niveau de prudence.</p>';
     html += '<ul style="margin:0;padding-left:1rem;">';
     prompts.slice(0, 4).forEach(function(prompt) {
       html += '<li style="margin:0 0 0.5rem;"><strong style="color:var(--dark);">' + escapeHtml(prompt.title) + ' :</strong> ' + escapeHtml(prompt.text) + '</li>';

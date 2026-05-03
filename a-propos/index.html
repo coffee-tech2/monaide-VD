@@ -35,7 +35,7 @@
 <link rel="canonical" href="https://monaide-vaud.ch/a-propos/">
 <link rel="alternate" hreflang="fr-CH" href="https://monaide-vaud.ch/a-propos/">
 <link rel="alternate" hreflang="x-default" href="https://monaide-vaud.ch/a-propos/">
-<link rel="stylesheet" href="../assets/css/main.css?v=20260501-guide-modern-10">
+<link rel="stylesheet" href="../assets/css/main.css?v=20260502-about-gtm-1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,8 +91,25 @@
   ]
 }
 </script>
+
+<!-- Google Tag Manager: production only -->
+<script>
+(function(w,d,s,l,i){
+  var host = w.location && w.location.hostname;
+  if (host !== 'monaide-vaud.ch' && host !== 'www.monaide-vaud.ch') return;
+  w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+  j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+  f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFQRW574');
+</script>
+<!-- End Google Tag Manager -->
 </head>
-<body class="guide-page" id="top">
+<body class="guide-page about-page" id="top">
+<!-- Google Tag Manager (noscript): production only -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFQRW574" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <a href="#contenu" class="skip-link">Aller au contenu</a>
 
 <nav>
@@ -113,6 +130,7 @@
       <li><a href="/#catalogue">Catalogue des aides</a></li>
       <li><a href="/#formulaires">Formulaires</a></li>
       <li><a href="/a-propos/">À propos</a></li>
+      <li class="nav-cta-item"><a class="nav-cta-link" href="/#simulateur">Faire le simulateur <span aria-hidden="true">→</span></a></li>
     </ul>
   </div>
 </nav>
@@ -122,28 +140,15 @@
     <div class="hero-bg"></div>
     <div class="hero-blob"></div>
     <div class="guide-shell">
-      <div class="guide-topline">
-        <a class="guide-backlink-chip" href="/">Retour à l’accueil</a>
-      </div>
-      <h1 class="guide-title">À propos de MonAide-VD</h1>
-      <p class="guide-lead">MonAide-VD est un outil indépendant qui aide à repérer plus facilement des aides sociales, des ressources et des premières portes utiles dans le canton de Vaud.</p>
-      <div class="guide-actions">
-        <a href="/#simulateur" class="btn-primary">Faire le simulateur <span class="btn-arrow">→</span></a>
-        <a href="mailto:info@monaide-vaud.ch" class="btn-secondary">Nous écrire <span class="btn-arrow">→</span></a>
-      </div>
+      <h1 class="guide-title about-hero-title">Un premier repère pour <span>comprendre où commencer</span></h1>
+      <p class="guide-lead about-hero-lead">MonAide-VD aide à voir plus clairement à quoi sert une aide, quelle porte peut être utile en premier, et quels documents il vaut mieux garder sous la main. Le site reste volontairement simple, lisible et prudent.</p>
     </div>
   </section>
 
   <section class="section section-plain guide-section guide-section-story">
-    <div class="container guide-story">
-      <div class="guide-story-hero">
-        <div class="guide-card-label">Le projet</div>
-        <h2 class="guide-story-title">Un premier repère pour comprendre où commencer</h2>
-        <p class="guide-story-text">MonAide-VD aide à voir plus clairement à quoi sert une aide, quelle porte peut être utile en premier, et quels documents il vaut mieux garder sous la main. Le site reste volontairement simple, lisible et prudent.</p>
-      </div>
-
-      <div class="guide-story-flow">
-        <section class="guide-story-section">
+    <div class="container guide-story about-story">
+      <div class="guide-story-flow about-story-flow">
+        <section class="guide-story-section about-card about-card-wide">
           <div class="guide-card-label">Ce qu’est le site</div>
           <div>
             <h3 class="guide-story-block-title">Un outil d’orientation, pas un service officiel</h3>
@@ -156,37 +161,39 @@
           </div>
         </section>
 
-        <section class="guide-story-section">
-          <div class="guide-card-label">Ce que le site fait</div>
-          <div>
-            <h3 class="guide-story-block-title">Repérer une première piste utile</h3>
-            <p>Le simulateur et le catalogue servent à savoir par où commencer, avec des formulations simples et des liens vers les bons relais du canton de Vaud.</p>
-            <div class="guide-inline-actions guide-story-actions guide-story-actions-compact">
-              <a href="/#simulateur">Ouvrir le simulateur</a>
-              <a href="/#catalogue">Voir le catalogue</a>
+        <div class="about-card-grid">
+          <section class="guide-story-section about-card">
+            <div class="guide-card-label">Ce que le site fait</div>
+            <div>
+              <h3 class="guide-story-block-title">Repérer une première piste utile</h3>
+              <p>Le simulateur et le catalogue servent à savoir par où commencer, avec des formulations simples et des liens vers les bons relais du canton de Vaud.</p>
+              <div class="guide-inline-actions guide-story-actions guide-story-actions-compact">
+                <a href="/#simulateur">Ouvrir le simulateur</a>
+                <a href="/#catalogue">Voir le catalogue</a>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section class="guide-story-section" id="methodologie">
-          <div class="guide-card-label">Méthodologie</div>
-          <div>
-            <h3 class="guide-story-block-title">Sources, limites et mise à jour</h3>
-            <p>MonAide-VD est construit comme un outil d’orientation prudent. Les fiches partent des pages officielles du canton de Vaud, des communes ou des organismes concernés, puis sont reformulées pour aider à comprendre la première démarche utile.</p>
-            <ul class="guide-list guide-story-list">
-              <li>Les liens officiels sont privilégiés quand ils existent.</li>
-              <li>Les informations sont relues manuellement et peuvent évoluer avec les lois, les barèmes, les horaires ou les pratiques des services.</li>
-              <li>Le simulateur donne une orientation, pas une décision. Les droits exacts dépendent toujours du dossier, des pièces fournies et du service compétent.</li>
-              <li>Quand une information semble incomplète, ancienne ou incorrecte, un retour peut être envoyé à <a href="mailto:info@monaide-vaud.ch">info@monaide-vaud.ch</a>.</li>
-            </ul>
-            <div class="guide-inline-actions guide-story-actions guide-story-actions-compact">
-              <a href="/guides/">Voir les guides</a>
-              <a href="/#catalogue">Consulter le catalogue</a>
+          <section class="guide-story-section about-card" id="methodologie">
+            <div class="guide-card-label is-human">Méthodologie</div>
+            <div>
+              <h3 class="guide-story-block-title">Sources et limites</h3>
+              <p>MonAide-VD est construit comme un outil d’orientation prudent. Les fiches partent des pages officielles du canton de Vaud, des communes ou des organismes concernés, puis sont reformulées pour aider à comprendre la première démarche utile.</p>
+              <ul class="guide-list guide-story-list">
+                <li>Les liens officiels sont privilégiés quand ils existent.</li>
+                <li>Les règles, les barèmes, les horaires et les pratiques des services peuvent changer.</li>
+                <li>Le simulateur donne une orientation, pas une décision. Les droits exacts dépendent toujours du dossier, des pièces fournies et du service compétent.</li>
+                <li>Quand une information semble incomplète, ancienne ou incorrecte, un retour peut être envoyé à <a href="mailto:info@monaide-vaud.ch">info@monaide-vaud.ch</a>.</li>
+              </ul>
+              <div class="guide-inline-actions guide-story-actions guide-story-actions-compact">
+                <a href="/guides/">Voir les guides</a>
+                <a href="/#catalogue">Consulter le catalogue</a>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        <section class="guide-story-section">
+        <section class="guide-story-section about-card about-card-dark">
           <div class="guide-card-label">Retours</div>
           <div>
             <h3 class="guide-story-block-title">Un retour est toujours utile</h3>
@@ -194,18 +201,6 @@
             <div class="guide-inline-actions guide-story-actions guide-story-actions-compact">
               <a href="mailto:info@monaide-vaud.ch">info@monaide-vaud.ch</a>
               <a href="/#formulaires">Voir les formulaires</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="guide-story-section">
-          <div class="guide-card-label">Partager le projet</div>
-          <div>
-            <h3 class="guide-story-block-title">Le bouche-à-oreille aide aussi</h3>
-            <p>Si le site t’aide, le partager à un proche, à une association ou à un professionnel permet aussi de le rendre plus utile et plus visible.</p>
-            <div class="guide-inline-actions guide-story-actions guide-story-actions-compact">
-              <a href="/">Retour à l’accueil</a>
-              <a href="/guides/">Voir tous les guides</a>
             </div>
           </div>
         </section>

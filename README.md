@@ -14,8 +14,32 @@ Le site sert:
 ## Contrôles utiles avant publication
 
 ```bash
-node scripts/simulator-smoke-test.js
-node scripts/catalog-quality-check.js
+node scripts/run-quality-suite.js
 ```
 
-Ces scripts vérifient les cas sensibles du simulateur et la qualité minimale des fiches du catalogue (champs essentiels, doublons et liens internes).
+Ce script vérifie les points sensibles du site: catalogue, guides, métadonnées SEO, sitemap, simulateur, tracking analytics et erreurs de diff.
+
+## Suivi du trafic
+
+Le site utilise Google Tag Manager avec le conteneur `GTM-NFQRW574`.
+
+- En local (`file://`), le tracking est volontairement désactivé.
+- Sur `monaide-vaud.ch`, les pages et les événements sont envoyés à GA4 via GTM.
+- Dans Google Analytics, les premiers tests se voient dans `Rapports > Temps réel`.
+- Les données plus propres arrivent ensuite dans `Rapports > Engagement > Événements`, souvent après quelques heures.
+
+Déclencheur GTM recommandé pour les événements MonAide-VD:
+
+```text
+^(simulator_start|simulator_step_view|simulator_step_complete|simulator_validation_error|simulator_edit_answers|simulator_edit_field|simulator_submit|simulator_restart|simulator_results_view|result_detail_open|result_catalog_open|catalog_search|catalog_filter|catalog_card_open|catalog_direct_open|catalog_note_close|catalog_link_click|guide_card_click|site_search|site_search_suggestion)$
+```
+
+Événements à surveiller en priorité:
+
+- `simulator_start`: une personne commence le simulateur.
+- `simulator_step_complete`: une étape du simulateur est terminée.
+- `simulator_submit`: le formulaire est envoyé.
+- `simulator_results_view`: la page de résultats est affichée.
+- `result_detail_open`: une personne ouvre le détail d'une piste.
+- `catalog_search`: une recherche est faite dans le catalogue.
+- `guide_card_click`: une page guide est ouverte depuis la liste des guides.

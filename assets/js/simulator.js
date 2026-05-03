@@ -30,6 +30,15 @@
     });
   }
 
+  function trackSimulatorStepComplete(step, block, source) {
+    if (!simulatorTrackingStarted) return;
+    trackSimulatorEvent('simulator_step_complete', {
+      step: step,
+      block: block || ((questionIndexByStep[step] || 0) + 1),
+      source: source || 'navigation'
+    });
+  }
+
   function selectedValue(name, fallback) {
     var checked = document.querySelector('input.choice-input[name="' + name + '"]:checked');
     if (checked) return checked.value;
@@ -435,6 +444,7 @@
     }
     if (!validateCurrentQuestion(step)) return;
     if (questionIndexByStep[step] < sets.length - 1) {
+      trackSimulatorStepComplete(step, questionIndexByStep[step] + 1, 'next_block');
       questionIndexByStep[step] += 1;
       renderStepQuestionMode(step);
       trackSimulatorStep(step, 'next_block');
@@ -443,6 +453,7 @@
       return;
     }
     if (!validateStepBefore(targetStep)) return;
+    trackSimulatorStepComplete(step, questionIndexByStep[step] + 1, 'step_complete');
     questionIndexByStep[targetStep] = 0;
     goToStep(targetStep, true);
   }
@@ -708,12 +719,17 @@
     updateConditionalQuestions();
     var sets = getVisibleStepQuestionSets(TOTAL_STEPS);
     if (sets.length && questionIndexByStep[TOTAL_STEPS] < sets.length - 1) {
+      if (!validateCurrentQuestion(TOTAL_STEPS)) return;
+      trackSimulatorStepComplete(TOTAL_STEPS, questionIndexByStep[TOTAL_STEPS] + 1, 'next_block');
       questionIndexByStep[TOTAL_STEPS] += 1;
       renderStepQuestionMode(TOTAL_STEPS);
+      trackSimulatorStep(TOTAL_STEPS, 'next_block');
       var simulatorBody = document.getElementById('simulator-body');
       if (simulatorBody) simulatorBody.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
+    if (!validateCurrentQuestion(TOTAL_STEPS)) return;
+    trackSimulatorStepComplete(TOTAL_STEPS, questionIndexByStep[TOTAL_STEPS] + 1, 'submit');
     if (window.trackMonaideEvent) {
       window.trackMonaideEvent('simulator_submit', {
         source: 'questionnaire'
