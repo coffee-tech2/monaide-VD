@@ -38,7 +38,13 @@
   .guide-card-title,
   .guide-section-title,
   .cat-card-title,
-  .result-name {
+  .result-name,
+  .result-lead,
+  .result-detail-title,
+  .result-detail-hint,
+  .results-footer-banner-title,
+  .results-footer-banner-body,
+  .results-profile-value {
     overflow-wrap: break-word;
   }
   .btn-primary,
@@ -1178,7 +1184,7 @@
     .results-progress-done { margin:1rem 0 1.2rem; }
     .result-item { display:block; padding:0; border-radius:14px; gap:0; box-shadow:none; }
     .result-card-header { display:block; padding:1rem 1rem 0.9rem; }
-    .result-badge { width:max-content; }
+    .result-badge { width:max-content; max-width:100%; margin-bottom:0.55rem; white-space:normal; text-align:center; }
     .result-kind { margin-bottom:0.3rem; }
     .result-name { font-size:0.98rem; line-height:1.24; }
     .result-lead { font-size:0.82rem; margin-bottom:0.7rem; }
@@ -1197,8 +1203,11 @@
     .results-export-card,
     .results-first-contact,
     .results-help-card,
-    .results-footer-banner { max-width:none; border-radius:20px; }
+    .results-footer-banner { max-width:none; border-radius:14px; }
     .results-footer-banner { display:block; padding:1.2rem; }
+    .results-footer-banner.is-cta { display:block; }
+    .results-footer-banner.is-cta .results-footer-banner-body { display:block; width:auto; }
+    .results-footer-banner.is-cta .results-footer-banner-title { margin-bottom:0.45rem; }
     .results-footer-banner-btn { width:100%; margin-top:1rem; }
     .results-list { display:block; }
     .results-profile-summary { padding:0.95rem; }
@@ -1209,7 +1218,7 @@
     .results-help-text,
     .results-first-contact-text { max-width:none; }
     .results-profile-grid { grid-template-columns:1fr; gap:0.45rem; }
-    .results-profile-item { border-radius:15px; }
+    .results-profile-item { border-radius:10px; }
     .results-profile-actions,
     .results-export-actions,
     .results-help-actions { display:grid; grid-template-columns:1fr; }
