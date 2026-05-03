@@ -9,6 +9,7 @@ const checks = [
   { label: 'Catalogue', cmd: ['node', path.join(root, 'scripts/catalog-quality-check.js')] },
   { label: 'Guides data', cmd: ['node', path.join(root, 'scripts/guide-quality-check.js')] },
   { label: 'Guides éditorial', cmd: ['node', path.join(root, 'scripts/guide-editorial-check.js')] },
+  { label: 'Textes sensibles', cmd: ['node', path.join(root, 'scripts/text-safety-check.js')] },
   { label: 'Métadonnées site', cmd: ['node', path.join(root, 'scripts/site-metadata-check.js')] },
   { label: 'Sitemap', cmd: ['node', path.join(root, 'scripts/sitemap-check.js')] },
   { label: 'Analytics', cmd: ['node', path.join(root, 'scripts/analytics-check.js')] },
