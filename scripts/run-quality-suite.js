@@ -12,6 +12,7 @@ const checks = [
   { label: 'Textes sensibles', cmd: ['node', path.join(root, 'scripts/text-safety-check.js')] },
   { label: 'Métadonnées site', cmd: ['node', path.join(root, 'scripts/site-metadata-check.js')] },
   { label: 'Sitemap', cmd: ['node', path.join(root, 'scripts/sitemap-check.js')] },
+  { label: 'Liens internes', cmd: ['node', path.join(root, 'scripts/internal-links-check.js')] },
   { label: 'Analytics', cmd: ['node', path.join(root, 'scripts/analytics-check.js')] },
   { label: 'Structure simulateur', cmd: ['node', path.join(root, 'scripts/simulator-structure-check.js')] },
   { label: 'Smoke simulateur', cmd: ['node', path.join(root, 'scripts/simulator-smoke-test.js')] },
