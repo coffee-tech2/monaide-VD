@@ -29,7 +29,7 @@ window.MONAIDE_GUIDE_DATA = {
       href: '/plus-assez-pour-vivre/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['revenu', 'urgence'],
-      keywords: ['budget', 'RI', 'CSR']
+      keywords: ['aide sociale Vaud', 'RI', 'CSR']
     },
     {
       id: 'perdre-son-emploi',
@@ -45,11 +45,11 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'aide-formation-vaud',
       label: 'Besoin fréquent',
       title: 'J’ai besoin d’aide pour ma formation',
-      summary: 'Bourses OCBE et premières pistes si les études ou l’apprentissage coûtent trop cher.',
+      summary: 'Bourse OCBE, prêt d’études et premières pistes si les études ou l’apprentissage coûtent trop cher.',
       href: '/aide-formation-vaud/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['formation'],
-      keywords: ['formation', 'bourse', 'OCBE']
+      keywords: ['aide formation Vaud', 'bourse OCBE', 'apprentissage']
     },
     {
       id: 'parent-solo-vaud',
