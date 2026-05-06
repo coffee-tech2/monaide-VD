@@ -623,8 +623,8 @@
   .guide-detail-page .guide-detail-heading h2 { margin:0 auto 0.35rem; max-width:16ch; font-family:'Newsreader', serif; font-size:clamp(2rem, 4vw, 3rem); line-height:1.02; letter-spacing:-0.04em; color:var(--forest); text-wrap:balance; }
   .guide-detail-page .guide-detail-heading p { margin:0 auto; color:var(--vaud); font-size:1rem; line-height:1.6; max-width:42rem; }
   .guide-detail-page .guide-grid { align-items:stretch; gap:1.35rem; }
-  .guide-detail-page .guide-detail-grid-single { grid-template-columns:minmax(0, 760px); justify-content:center; }
-  .guide-detail-page .guide-detail-grid-single .guide-card { height:auto; }
+  .guide-detail-page .guide-detail-grid-single { grid-template-columns:minmax(0, 560px); justify-content:center; }
+  .guide-detail-page .guide-detail-grid-single .guide-card { height:auto; padding:1.65rem 1.6rem 1.45rem; }
   .guide-detail-page .guide-detail-grid-single .guide-card > .guide-inline-actions:last-child { margin-top:1.35rem; padding-top:0; }
   .guide-detail-page .guide-detail-block-conditions .guide-grid:not(.guide-detail-grid-single),
   .guide-detail-page .guide-detail-block-action .guide-grid:not(.guide-detail-grid-single) { grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:1.35rem; }
@@ -666,7 +666,7 @@
   .guide-detail-page .guide-detail-block-conditions .guide-grid > .guide-card:first-child > .guide-inline-actions:last-child { margin-top:auto; padding-top:1rem; }
   .guide-detail-page .guide-detail-grid-single > .guide-card:first-child { justify-content:flex-start; min-height:0; }
   .guide-detail-page .guide-detail-grid-single > .guide-card:first-child p,
-  .guide-detail-page .guide-detail-block-action .guide-detail-grid-single > .guide-card p { max-width:40rem; }
+  .guide-detail-page .guide-detail-block-action .guide-detail-grid-single > .guide-card p { max-width:29.5rem; }
   .guide-detail-page .guide-detail-grid-single > .guide-card > .guide-inline-actions:last-child { margin-top:1.35rem; padding-top:0; }
   .guide-detail-page .guide-inline-actions a { min-height:40px; padding:0.62rem 0.96rem; font-size:0.82rem; box-shadow:none; }
   .guide-detail-page .guide-inline-actions.is-grid-links { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0.75rem; }
