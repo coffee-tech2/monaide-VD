@@ -377,6 +377,11 @@
   .result-detail-body a:hover { text-decoration: underline; }
   .result-card-footer { display:flex; flex-wrap:wrap; gap:0.55rem; padding:0.9rem 1.35rem; border-top:1px solid #F0EDE6; }
   .result-link-row { margin-top:0.72rem; display:flex; flex-wrap:wrap; gap:0.55rem; }
+  .result-link-row.is-grouped { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:0.72rem; align-items:start; }
+  .result-link-group { min-width:0; padding:0.72rem 0.72rem 0.78rem; border:1px solid #EEE6DC; border-radius:14px; background:#FFFDF8; }
+  .result-link-group-label { margin-bottom:0.48rem; font-size:0.66rem; line-height:1.2; font-weight:850; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange-dark); }
+  .result-link-group-actions { display:flex; flex-wrap:wrap; gap:0.45rem; }
+  .result-link-group .result-link-btn { min-height:34px; padding:0.48rem 0.74rem; font-size:0.76rem; }
   .result-link-btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:0.55rem 1rem; min-height:38px; background:#F0EDE6; border:0; border-radius:999px; font-size:0.82rem; color:var(--sage-dark); font-weight:800; text-decoration:none; font-family:'Plus Jakarta Sans', sans-serif; cursor:pointer; transition:transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.15s, color 0.15s, box-shadow 0.2s; }
   .result-link-btn:hover { background: var(--mint); border-color: #BFD8CE; color: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 8px 18px rgba(28,59,48,0.07); }
   .result-link-btn:focus { outline: 2px solid rgba(var(--vaud-rgb),0.22); outline-offset: 2px; }
@@ -1209,6 +1214,8 @@
     .result-detail-hint { max-width:none; white-space:normal; text-align:left; }
     .result-detail-body { padding:0.15rem 1rem 0.95rem; }
     .result-link-row { display:grid; grid-template-columns:1fr; }
+    .result-link-row.is-grouped { grid-template-columns:1fr; }
+    .result-link-group-actions { display:grid; grid-template-columns:1fr; }
     .result-card-footer { display:grid; grid-template-columns:1fr; padding:0.85rem 1rem; }
     .result-link-btn,
     .results-export-btn,

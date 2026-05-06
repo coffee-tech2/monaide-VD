@@ -145,19 +145,36 @@
     return null;
   }
 
+  function getResultLinkGroup(label, fallback) {
+    var normalized = normalizeAidText(label || '');
+    if (normalized.indexOf('document') !== -1 || normalized.indexOf('preparer') !== -1 || normalized.indexOf('papiers') !== -1) return 'prepare';
+    if (normalized.indexOf('guide') !== -1 || normalized.indexOf('infos') !== -1 || normalized.indexOf('comprendre') !== -1) return 'understand';
+    if (getResultLinkClass(label).indexOf('is-primary') !== -1) return 'act';
+    return fallback || 'understand';
+  }
+
+  function resultLinkObject(label, html, group) {
+    if (!label || !html) return null;
+    return {
+      label: label,
+      html: html,
+      group: group || getResultLinkGroup(label, 'understand')
+    };
+  }
+
   function buildConfiguredResultLink(item) {
-    if (!item) return '';
+    if (!item) return null;
     if (item.type === 'doc') {
       var docTarget = resolveDocumentationLinkTarget(item);
-      return docTarget ? docPill(item.label, docTarget.blockId, docTarget.accordionId) : '';
+      return docTarget ? resultLinkObject(item.label, docPill(item.label, docTarget.blockId, docTarget.accordionId), 'prepare') : null;
     }
     if (item.type === 'csr') {
-      return pill(item.label, CSR_FINDER_URL);
+      return resultLinkObject(item.label, pill(item.label, CSR_FINDER_URL), 'act');
     }
     if (item.type === 'link' && item.linkKey && LINKS[item.linkKey]) {
-      return pill(item.label, LINKS[item.linkKey]);
+      return resultLinkObject(item.label, pill(item.label, LINKS[item.linkKey]), getResultLinkGroup(item.label, 'act'));
     }
-    return '';
+    return null;
   }
 
   function getCatalogItemForResult(result) {
@@ -184,21 +201,39 @@
 
   function buildResultGuideLink(result) {
     var link = getGuideLinkForResult(result);
-    if (!link || !link.href) return '';
-    return '<a href="' + escapeHtml(link.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(result.nom || '') + '">' + escapeHtml(link.label || 'Guide détaillé') + '</a>';
+    if (!link || !link.href) return null;
+    var label = link.label || 'Guide détaillé';
+    return resultLinkObject(label, '<a href="' + escapeHtml(link.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(result.nom || '') + '">' + escapeHtml(label) + '</a>', 'understand');
   }
 
-  function buildResultLinksHtml(result) {
-    var html = '';
+  function buildResultLinks(result) {
+    var links = [];
     var sets = RESULT_LINKS_CONFIG.sets || {};
     (RESULT_LINKS_CONFIG.flagOrder || []).forEach(function(flag) {
       if (!result || !result[flag]) return;
       (sets[flag] || []).forEach(function(item) {
-        html += buildConfiguredResultLink(item);
+        var link = buildConfiguredResultLink(item);
+        if (link) links.push(link);
       });
     });
-    html += buildResultGuideLink(result);
-    return html;
+    var guideLink = buildResultGuideLink(result);
+    if (guideLink) links.push(guideLink);
+    return links;
+  }
+
+  function buildResultLinksHtml(result) {
+    var links = buildResultLinks(result);
+    if (!links.length) return '';
+    var groups = [
+      { key: 'understand', label: 'Comprendre' },
+      { key: 'prepare', label: 'Préparer' },
+      { key: 'act', label: 'Faire la démarche' }
+    ];
+    return groups.map(function(group) {
+      var groupLinks = links.filter(function(link) { return link.group === group.key; });
+      if (!groupLinks.length) return '';
+      return '<div class="result-link-group"><div class="result-link-group-label">' + group.label + '</div><div class="result-link-group-actions">' + groupLinks.map(function(link) { return link.html; }).join('') + '</div></div>';
+    }).join('');
   }
 
   function buildResultDetail(title, body, className, openByDefault) {
@@ -250,7 +285,7 @@
       ? buildResultDetail(detailTitles.docs || 'Documents utiles à préparer', '<ul>' + result.docs.map(function(doc) { return '<li>' + doc + '</li>'; }).join('') + '</ul>', detailClasses.docs || 'is-docs', false)
       : '';
     var linksHtml = links
-      ? buildResultDetail('Liens utiles', '<div class="result-link-row">' + links + '</div>', 'is-links', false)
+      ? buildResultDetail('Liens utiles', '<div class="result-link-row is-grouped">' + links + '</div>', 'is-links', false)
       : '';
     var startSummary = getActionSummary(result.action || result.today || '');
     var startHtml = startSummary
