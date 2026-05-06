@@ -35,11 +35,11 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'perdre-son-emploi',
       label: 'Besoin fréquent',
       title: 'Je viens de perdre mon emploi',
-      summary: 'ORP, LACI, indemnités et premières portes si les revenus s’arrêtent ou deviennent incertains.',
+      summary: 'ORP, chômage, Job-Room et simulateur si les revenus s’arrêtent ou deviennent incertains.',
       href: '/perdre-son-emploi/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['emploi'],
-      keywords: ['emploi', 'ORP', 'LACI']
+      keywords: ['perte emploi Vaud', 'ORP', 'chômage']
     },
     {
       id: 'aide-formation-vaud',
@@ -185,11 +185,11 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'chomage-laci',
       label: 'Emploi',
       title: 'Chômage et LACI',
-      summary: 'Job perdu, ORP, indemnités : les premières étapes utiles sans se tromper de porte.',
+      summary: 'Inscription ORP, Job-Room, caisse de chômage et papiers utiles après une perte d’emploi.',
       href: '/chomage-laci/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['emploi'],
-      keywords: ['chômage', 'LACI', 'ORP']
+      keywords: ['chômage Vaud', 'inscription ORP', 'Job-Room']
     },
     {
       id: 'dettes-budget',
