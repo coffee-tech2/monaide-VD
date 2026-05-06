@@ -211,7 +211,7 @@
 
       var grid = document.createElement('div');
       grid.className = 'guide-grid';
-      if (key === 'documents' && blockCards.length === 1) {
+      if (blockCards.length === 1) {
         grid.classList.add('guide-detail-grid-single');
       }
       blockCards.forEach(function(card) { grid.appendChild(card); });
