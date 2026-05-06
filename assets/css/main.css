@@ -283,8 +283,11 @@
   .choice-input:checked + .choice-card .choice-check::after { content: ''; position: absolute; width: 0.28rem; height: 0.5rem; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); left: 0.34rem; top: 0.16rem; animation: checkPop 0.24s cubic-bezier(0.22, 1, 0.36, 1); }
   .form-help { margin-top: 0.4rem; font-size: 0.74rem; color: var(--warm-gray); line-height: 1.55; }
   .form-group-inline { margin-top: 0.8rem; }
-  .form-error { margin-top: 0.45rem; font-size: 0.75rem; color: var(--orange-dark); line-height: 1.5; display: none; }
+  .form-error { margin-top: 0.45rem; font-size: 0.75rem; color: var(--orange-dark); line-height: 1.5; display: none; font-weight: 750; }
+  .form-error-helper { display: none; margin-top: 0.28rem; font-size: 0.75rem; color: var(--warm-gray); line-height: 1.55; }
   .form-group.invalid .form-input { border-color: rgba(var(--vaud-rgb),0.7); }
+  .step-question-set .form-group.invalid { border-color: rgba(var(--orange-rgb),0.42); background: linear-gradient(180deg, #FFFDF8 0%, #FFF8EE 100%); box-shadow: 0 18px 38px rgba(151,92,55,0.11); }
+  .step-question-set .form-group.is-guided-error { animation: guidedErrorPulse 0.58s ease both; }
   .conditional-block[hidden] { display: none !important; }
   .step-question-progress { margin: 0.15rem 0 0.9rem; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange); }
   .step-question-hint { margin: -0.25rem 0 1rem; font-size: 0.76rem; color: var(--warm-gray); line-height: 1.55; }
@@ -1069,6 +1072,7 @@
   @keyframes choiceConfirm { 0% { transform:translateY(0) scale(0.985); } 55% { transform:translateY(-3px) scale(1.012); } 100% { transform:translateY(0) scale(1); } }
   @keyframes checkPop { from { opacity:0; transform:rotate(45deg) scale(0.55); } to { opacity:1; transform:rotate(45deg) scale(1); } }
   @keyframes stepQuestionReveal { from { opacity:0; transform:translateY(10px); filter:blur(2px); } to { opacity:1; transform:translateY(0); filter:blur(0); } }
+  @keyframes guidedErrorPulse { 0% { transform:translateY(0); } 42% { transform:translateY(-2px); } 100% { transform:translateY(0); } }
   @keyframes catalogNoteReveal { from { opacity: 0; transform: translateY(14px) scale(0.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
   @keyframes catalogNoteGlow { 0% { box-shadow:0 0 0 rgba(122,158,126,0); } 45% { box-shadow:0 16px 34px rgba(122,158,126,0.12); } 100% { box-shadow:0 10px 28px rgba(72,59,49,0.04); } }
   @keyframes catalogNoteIconPop { from { opacity: 0; transform: scale(0.78) rotate(-8deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }

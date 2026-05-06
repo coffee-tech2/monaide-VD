@@ -441,10 +441,11 @@
       if (!valid && !invalidGroup) invalidGroup = group;
       if (!valid) allValid = false;
     });
-    if (invalidGroup) invalidGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (invalidGroup) guideInvalidGroup(invalidGroup);
     if (invalidGroup) {
       trackSimulatorEvent('simulator_validation_error', {
         step: step,
+        block: (questionIndexByStep[step] || 0) + 1,
         field: getGroupFieldId(invalidGroup) || 'unknown'
       });
     }
@@ -644,8 +645,46 @@
     var group = input ? input.closest('.form-group') : null;
     if (!group) return;
     group.classList.toggle('invalid', !valid);
+    group.classList.remove('is-guided-error');
+    input.setAttribute('aria-invalid', valid ? 'false' : 'true');
     var error = group.querySelector('.form-error');
-    if (error) error.style.display = valid ? 'none' : 'block';
+    if (error) {
+      error.style.display = valid ? 'none' : 'block';
+      if (valid) error.removeAttribute('role');
+      else error.setAttribute('role', 'alert');
+    }
+    var helper = group.querySelector('.form-error-helper');
+    if (!valid && !helper) {
+      helper = document.createElement('div');
+      helper.className = 'form-error-helper';
+      helper.textContent = 'Réponds juste à cette question pour continuer. Tu peux choisir l’option la plus proche, même si ce n’est pas parfait.';
+      if (error) error.insertAdjacentElement('afterend', helper);
+      else group.appendChild(helper);
+    }
+    if (helper) helper.style.display = valid ? 'none' : 'block';
+  }
+
+  function focusInvalidGroup(group) {
+    if (!group) return;
+    var target = group.querySelector('.form-select:not([hidden]), .form-input:not([hidden]), textarea') || group.querySelector('.choice-card');
+    if (!target) return;
+    if (!target.hasAttribute('tabindex') && target.classList && target.classList.contains('choice-card')) {
+      target.setAttribute('tabindex', '-1');
+    }
+    window.setTimeout(function() {
+      try {
+        target.focus({ preventScroll: true });
+      } catch (error) {
+        target.focus();
+      }
+    }, 260);
+  }
+
+  function guideInvalidGroup(group) {
+    if (!group) return;
+    group.classList.add('is-guided-error');
+    group.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    focusInvalidGroup(group);
   }
 
   function validateStepBefore(targetStep) {
@@ -660,10 +699,11 @@
       var firstInvalid = document.getElementById(invalidFieldId);
       if (firstInvalid) {
         var group = firstInvalid.closest('.form-group');
-        if (group) group.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (group) guideInvalidGroup(group);
       }
       trackSimulatorEvent('simulator_validation_error', {
         step: targetStep - 1,
+        block: (questionIndexByStep[targetStep - 1] || 0) + 1,
         field: invalidFieldId
       });
       return false;
@@ -687,6 +727,7 @@
     var step = getStepForField(invalidFieldId);
     trackSimulatorEvent('simulator_validation_error', {
       step: step,
+      block: (questionIndexByStep[step] || 0) + 1,
       field: invalidFieldId
     });
     questionIndexByStep[step] = getQuestionIndexForField(step, invalidFieldId);
@@ -694,7 +735,7 @@
     var firstInvalid = document.getElementById(invalidFieldId);
     if (firstInvalid) {
       var group = firstInvalid.closest('.form-group');
-      if (group) group.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (group) guideInvalidGroup(group);
     }
     return false;
   }
