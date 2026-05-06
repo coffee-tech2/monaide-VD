@@ -5,6 +5,24 @@
   var simulatorAbandonTracked = false;
   var simulatorLastCompletedStep = 0;
   var simulatorLastCompletedBlock = 0;
+  var SIMULATOR_BLOCK_HINTS = {
+    1: [
+      'Deux repères suffisent pour commencer. Si tu hésites, choisis l’option la plus proche.',
+      'Ces réponses aident à éviter de proposer une démarche qui ne te concerne pas.'
+    ],
+    2: [
+      'On regarde ici ce qui peut changer les aides possibles: travail, logement, enfants ou formation.',
+      'Réponds seulement si la question apparaît. Le simulateur adapte la suite.'
+    ],
+    3: [
+      'Une fourchette suffit. Le but est d’orienter, pas de calculer un droit officiel.',
+      'Ces infos servent surtout à repérer si une aide financière mérite d’être vérifiée.'
+    ],
+    4: [
+      'Derniers points utiles: santé, dettes ou situation familiale sensible peuvent changer la bonne porte.',
+      'Encore une petite étape, puis tu verras les pistes et les prochaines actions.'
+    ]
+  };
   var questionSetsByStep = SIMULATOR_CONFIG.questionSetsByStep || {
     1: [['commune', 'age'], ['situation_familiale', 'statut_sejour']],
     2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
@@ -203,7 +221,7 @@
     var title = stepOne.querySelector('.step-title');
     var subtitle = stepOne.querySelector('.step-subtitle');
     if (title) title.textContent = 'Quelques infos utiles';
-    if (subtitle) subtitle.textContent = '';
+    if (subtitle) subtitle.textContent = SIMULATOR_BLOCK_HINTS[1][0];
   }
 
   // ─── Navigation ──────────────────────────────────────────────────────────
@@ -410,6 +428,9 @@
 
     var progress = stepEl.querySelector('.step-question-progress');
     if (progress) progress.textContent = sets.length ? ('Bloc ' + (questionIndexByStep[step] + 1) + ' sur ' + sets.length) : '';
+    var subtitle = stepEl.querySelector('.step-subtitle');
+    var hints = SIMULATOR_BLOCK_HINTS[step] || [];
+    if (subtitle && hints.length) subtitle.textContent = hints[questionIndexByStep[step]] || hints[0] || '';
 
     var prevBtn = stepEl.querySelector('.step-actions .btn-prev');
     var nextBtn = stepEl.querySelector('.step-actions .btn-next');

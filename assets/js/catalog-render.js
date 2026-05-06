@@ -106,6 +106,14 @@
     return '<div class="catalog-trust"><div class="catalog-trust-note">' + escapeCatalogRenderHtml(note) + '</div>' + meta + '</div>';
   }
 
+  function renderCatalogNextStep(item) {
+    if (!item) return '';
+    return '<div class="catalog-next-step" onclick="event.stopPropagation()">'
+      + '<div><strong>Pas sûr·e que cette fiche soit la bonne ?</strong><span>Le simulateur peut faire un premier tri avec ta situation.</span></div>'
+      + '<a href="#simulateur">Faire le simulateur <span aria-hidden="true">→</span></a>'
+      + '</div>';
+  }
+
   function renderCatalogRenderBody(item) {
     return '<div class="cat-card-body" style="display:none;">'
       + renderCatalogRenderTrust(item)
@@ -113,6 +121,7 @@
       + renderCatalogRenderSections(item)
       + renderCatalogRenderCallouts(item)
       + '<div class="expand-links">' + renderCatalogRenderLinks(item) + '</div>'
+      + renderCatalogNextStep(item)
       + '</div>';
   }
 

@@ -25,21 +25,21 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'plus-assez-pour-vivre',
       label: 'Besoin fréquent',
       title: 'Je n’ai plus assez pour vivre',
-      summary: 'Le point de départ quand le budget ne tient plus et qu’il faut comprendre le rôle du CSR et du RI.',
+      summary: 'Que faire quand le budget ne tient plus dans le canton de Vaud : CSR, RI, subside LAMal, dettes et premières portes concrètes.',
       href: '/plus-assez-pour-vivre/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['revenu', 'urgence'],
-      keywords: ['aide sociale Vaud', 'RI', 'CSR']
+      keywords: ['aide sociale Vaud', 'pas assez pour vivre', 'RI', 'CSR']
     },
     {
       id: 'perdre-son-emploi',
       label: 'Besoin fréquent',
       title: 'Je viens de perdre mon emploi',
-      summary: 'ORP, chômage, Job-Room et simulateur si les revenus s’arrêtent ou deviennent incertains.',
+      summary: 'Les premiers gestes après une perte d’emploi : inscription ORP, Job-Room, caisse de chômage et quoi faire si les revenus s’arrêtent.',
       href: '/perdre-son-emploi/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['emploi'],
-      keywords: ['perte emploi Vaud', 'ORP', 'chômage']
+      keywords: ['perte emploi Vaud', 'perdre son emploi', 'ORP', 'chômage']
     },
     {
       id: 'aide-formation-vaud',
@@ -95,21 +95,21 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'subside-lamal',
       label: 'Santé',
       title: 'Subside LAMal',
-      summary: 'Comprendre à quoi sert le subside et par où commencer.',
+      summary: 'Comprendre le subside LAMal dans le canton de Vaud, quand le demander et où vérifier si la prime maladie devient trop lourde.',
       href: '/subside-lamal/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['sante'],
-      keywords: ['subside LAMal Vaud', 'demande OVAM', 'prime maladie']
+      keywords: ['subside LAMal Vaud', 'demande OVAM', 'prime maladie', 'payer assurance maladie']
     },
     {
       id: 'revenu-insertion',
       label: 'Revenu minimum',
       title: 'Revenu d’insertion (RI)',
-      summary: 'Quand le RI peut être envisagé et comment préparer le premier contact avec le CSR.',
+      summary: 'Quand le revenu d’insertion peut être une piste, comment contacter le CSR et quels documents préparer si l’argent manque.',
       href: '/revenu-insertion/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['revenu'],
-      keywords: ['RI', 'revenu d’insertion', 'CSR']
+      keywords: ['RI', 'revenu d’insertion', 'CSR', 'aide financière Vaud']
     },
     {
       id: 'prestations-complementaires',
@@ -135,11 +135,11 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'bourses-ocbe',
       label: 'Formation',
       title: 'Bourse d’études Vaud (OCBE)',
-      summary: 'Quand une formation coûte trop cher et qu’une bourse ou un prêt d’études peut être envisagé.',
+      summary: 'Bourse d’études ou prêt OCBE dans le canton de Vaud : test d’éligibilité, délais, demande et documents à préparer.',
       href: '/bourses-ocbe/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['formation'],
-      keywords: ['bourse', 'OCBE', 'formation']
+      keywords: ['bourse Vaud', 'OCBE', 'test éligibilité OCBE', 'formation']
     },
     {
       id: 'carteculture',
@@ -175,17 +175,17 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'centre-social-regional',
       label: 'Orientation',
       title: 'Centre social régional',
-      summary: 'Le rôle du CSR pour le RI, l’accompagnement social et les premières démarches.',
+      summary: 'Comprendre quand contacter un centre social régional dans le canton de Vaud pour le RI, une évaluation sociale ou une première orientation.',
       href: '/centre-social-regional/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['orientation'],
-      keywords: ['CSR', 'centre social régional']
+      keywords: ['CSR Vaud', 'centre social régional', 'revenu insertion']
     },
     {
       id: 'chomage-laci',
       label: 'Emploi',
       title: 'Chômage et LACI',
-      summary: 'Inscription ORP, Job-Room, caisse de chômage et papiers utiles après une perte d’emploi.',
+      summary: 'Chômage Vaud et LACI : inscription ORP, Job-Room, caisse de chômage, délais et papiers utiles après une perte d’emploi.',
       href: '/chomage-laci/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['emploi'],

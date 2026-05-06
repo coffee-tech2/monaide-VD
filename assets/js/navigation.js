@@ -333,6 +333,33 @@
     });
   }
 
+  function guideHasActionLink(container, target) {
+    if (!container) return false;
+    return !!Array.prototype.slice.call(container.querySelectorAll('a[href]')).find(function(link) {
+      return (link.getAttribute('href') || '').indexOf(target) !== -1;
+    });
+  }
+
+  function addGuideLayerLinks() {
+    if (!document.body || !document.body.classList.contains('guide-detail-page')) return;
+    var heroShell = document.querySelector('.guide-shell');
+    var guideActions = heroShell && heroShell.querySelector('.guide-actions');
+    if (guideActions && !guideHasActionLink(guideActions, '#simulateur')) {
+      var simulatorLink = document.createElement('a');
+      simulatorLink.href = '/#simulateur';
+      simulatorLink.className = 'btn-secondary';
+      simulatorLink.innerHTML = 'Faire le simulateur <span class="btn-arrow">→</span>';
+      guideActions.appendChild(simulatorLink);
+    }
+
+    var main = document.querySelector('main');
+    if (!main || main.querySelector('.guide-next-step')) return;
+    var bridge = document.createElement('section');
+    bridge.className = 'guide-next-step';
+    bridge.innerHTML = '<div class="guide-next-step-inner"><div><strong>Pas sûr·e que cette page corresponde à ta situation ?</strong><span>Le simulateur peut t’aider à faire un premier tri. Le catalogue permet ensuite de comparer les aides et les services proches.</span></div><div class="guide-next-step-actions"><a href="/#simulateur">Faire le simulateur <span aria-hidden="true">→</span></a><a href="/#catalogue">Retour au catalogue</a></div></div>';
+    main.appendChild(bridge);
+  }
+
   function getCurrentGuideSlug() {
     return window.location.pathname.replace(/^\/+|\/+$/g, '').split('/').pop() || 'accueil';
   }
@@ -468,5 +495,6 @@
     buildGuideDetailSections();
     buildGuideSummary();
     buildGuideActionLayouts();
+    addGuideLayerLinks();
     bindGuideDetailTracking();
   });
