@@ -160,6 +160,34 @@
     return '';
   }
 
+  function getCatalogItemForResult(result) {
+    if (!result || !result.nom || !window.getCatalogStoreItem) return null;
+    var direct = window.getCatalogStoreItem(result.nom);
+    if (direct) return direct;
+    var normalizedName = normalizeAidText(result.nom || '');
+    var items = ((window.MONAIDE_CATALOG_STORE || {}).items || []);
+    return items.find(function(item) {
+      var title = item.normalizedTitle || normalizeAidText(item.title || '');
+      return title && (normalizedName.indexOf(title) !== -1 || title.indexOf(normalizedName) !== -1);
+    }) || null;
+  }
+
+  function getGuideLinkForResult(result) {
+    var catalogItem = getCatalogItemForResult(result);
+    if (!catalogItem || !catalogItem.links) return null;
+    return catalogItem.links.find(function(link) {
+      var href = link.href || '';
+      var label = link.normalizedLabel || normalizeAidText(link.label || '');
+      return /^\/(?!\/)/.test(href) && label.indexOf('guide') !== -1;
+    }) || null;
+  }
+
+  function buildResultGuideLink(result) {
+    var link = getGuideLinkForResult(result);
+    if (!link || !link.href) return '';
+    return '<a href="' + escapeHtml(link.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(result.nom || '') + '">' + escapeHtml(link.label || 'Guide détaillé') + '</a>';
+  }
+
   function buildResultLinksHtml(result) {
     var html = '';
     var sets = RESULT_LINKS_CONFIG.sets || {};
@@ -169,6 +197,7 @@
         html += buildConfiguredResultLink(item);
       });
     });
+    html += buildResultGuideLink(result);
     return html;
   }
 
@@ -245,6 +274,14 @@
         if (!detail.open) return;
         window.trackMonaideEvent('result_detail_open', {
           detail: detail.getAttribute('data-detail-title') || ''
+        });
+      });
+    });
+    list.querySelectorAll('[data-result-guide-link]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        window.trackMonaideEvent('result_guide_open', {
+          source: 'result_card',
+          aid: link.getAttribute('data-aid-name') || ''
         });
       });
     });

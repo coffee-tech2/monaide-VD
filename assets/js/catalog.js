@@ -406,11 +406,19 @@
         if (!link || !catalogue.contains(link)) return;
         var card = link.closest('.cat-card');
         var href = link.getAttribute('href') || '';
+        var label = link.textContent || '';
+        var linkType = href.indexOf('http') === 0 ? 'external' : 'internal';
         trackCatalogEvent('catalog_link_click', {
           aid: getCatalogAidLabel(card),
-          label: link.textContent || '',
-          link_type: href.indexOf('http') === 0 ? 'external' : 'internal'
+          label: label,
+          link_type: linkType
         });
+        if (linkType === 'internal' && normalizeAidText(label).indexOf('guide') !== -1) {
+          trackCatalogEvent('catalog_guide_open', {
+            aid: getCatalogAidLabel(card),
+            label: label
+          });
+        }
       });
     }
   });

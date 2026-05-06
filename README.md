@@ -31,7 +31,7 @@ Le site utilise Google Tag Manager avec le conteneur `GTM-NFQRW574`.
 Déclencheur GTM recommandé pour les événements MonAide-VD:
 
 ```text
-^(simulator_start|simulator_step_view|simulator_step_complete|simulator_validation_error|simulator_edit_answers|simulator_edit_field|simulator_submit|simulator_restart|simulator_results_view|result_detail_open|result_catalog_open|catalog_search|catalog_filter|catalog_card_open|catalog_direct_open|catalog_note_close|catalog_link_click|guide_card_click|site_search|site_search_suggestion)$
+^(simulator_start|simulator_step_view|simulator_step_complete|simulator_validation_error|simulator_edit_answers|simulator_edit_field|simulator_submit|simulator_restart|simulator_abandon|simulator_results_view|result_detail_open|result_catalog_open|result_guide_open|catalog_search|catalog_filter|catalog_card_open|catalog_direct_open|catalog_note_close|catalog_link_click|catalog_guide_open|guide_card_click|guide_detail_view|guide_detail_link_click|site_search|site_search_suggestion)$
 ```
 
 Événements à surveiller en priorité:
@@ -39,7 +39,12 @@ Déclencheur GTM recommandé pour les événements MonAide-VD:
 - `simulator_start`: une personne commence le simulateur.
 - `simulator_step_complete`: une étape du simulateur est terminée.
 - `simulator_submit`: le formulaire est envoyé.
+- `simulator_abandon`: une personne quitte le simulateur avant les résultats, avec l'étape et le bloc atteints.
 - `simulator_results_view`: la page de résultats est affichée.
 - `result_detail_open`: une personne ouvre le détail d'une piste.
+- `result_guide_open`: une personne passe d'un résultat de simulateur au guide détaillé lié.
 - `catalog_search`: une recherche est faite dans le catalogue.
+- `catalog_guide_open`: une personne ouvre le guide détaillé depuis une fiche catalogue.
 - `guide_card_click`: une page guide est ouverte depuis la liste des guides.
+- `guide_detail_view`: une page guide détaillée est consultée.
+- `guide_detail_link_click`: une personne clique un lien depuis un guide détaillé.

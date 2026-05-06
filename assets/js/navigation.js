@@ -333,6 +333,43 @@
     });
   }
 
+  function getCurrentGuideSlug() {
+    return window.location.pathname.replace(/^\/+|\/+$/g, '').split('/').pop() || 'accueil';
+  }
+
+  function getGuideLinkDestination(href) {
+    if (!href) return 'unknown';
+    if (href.indexOf('#simulateur') !== -1) return 'simulator';
+    if (href.indexOf('#catalogue') !== -1) return 'catalogue';
+    if (/^\/(?!\/)/.test(href)) return 'internal';
+    if (/^https?:\/\//.test(href)) return 'external';
+    if (href.charAt(0) === '#') return 'section';
+    return 'other';
+  }
+
+  function bindGuideDetailTracking() {
+    if (!document.body || !document.body.classList.contains('guide-detail-page') || !window.trackMonaideEvent) return;
+    var guideSlug = getCurrentGuideSlug();
+    window.trackMonaideEvent('guide_detail_view', {
+      guide: guideSlug,
+      title: document.title || ''
+    });
+
+    var main = document.querySelector('main');
+    if (!main || main.dataset.guideTrackingBound) return;
+    main.dataset.guideTrackingBound = 'true';
+    main.addEventListener('click', function(e) {
+      var link = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!link || !main.contains(link)) return;
+      var href = link.getAttribute('href') || '';
+      window.trackMonaideEvent('guide_detail_link_click', {
+        guide: guideSlug,
+        label: (link.textContent || '').trim(),
+        destination: getGuideLinkDestination(href)
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     var betaBanner = document.getElementById('beta-banner');
     var betaBannerClose = document.getElementById('beta-banner-close');
@@ -431,4 +468,5 @@
     buildGuideDetailSections();
     buildGuideSummary();
     buildGuideActionLayouts();
+    bindGuideDetailTracking();
   });

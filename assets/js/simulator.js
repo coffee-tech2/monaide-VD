@@ -1,6 +1,10 @@
   var SIMULATOR_CONFIG = window.MONAIDE_SIMULATOR_CONFIG || {};
   var questionIndexByStep = { 1: 0, 2: 0, 3: 0, 4: 0 };
   var simulatorTrackingStarted = false;
+  var simulatorResultsShown = false;
+  var simulatorAbandonTracked = false;
+  var simulatorLastCompletedStep = 0;
+  var simulatorLastCompletedBlock = 0;
   var questionSetsByStep = SIMULATOR_CONFIG.questionSetsByStep || {
     1: [['commune', 'age'], ['situation_familiale', 'statut_sejour']],
     2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
@@ -32,10 +36,23 @@
 
   function trackSimulatorStepComplete(step, block, source) {
     if (!simulatorTrackingStarted) return;
+    simulatorLastCompletedStep = step;
+    simulatorLastCompletedBlock = block || ((questionIndexByStep[step] || 0) + 1);
     trackSimulatorEvent('simulator_step_complete', {
       step: step,
-      block: block || ((questionIndexByStep[step] || 0) + 1),
+      block: simulatorLastCompletedBlock,
       source: source || 'navigation'
+    });
+  }
+
+  function trackSimulatorAbandon() {
+    if (!simulatorTrackingStarted || simulatorResultsShown || simulatorAbandonTracked) return;
+    simulatorAbandonTracked = true;
+    trackSimulatorEvent('simulator_abandon', {
+      step: currentStep || 1,
+      block: (questionIndexByStep[currentStep] || 0) + 1,
+      last_completed_step: simulatorLastCompletedStep,
+      last_completed_block: simulatorLastCompletedBlock
     });
   }
 
@@ -735,6 +752,7 @@
         source: 'questionnaire'
       });
     }
+    simulatorResultsShown = true;
     analyserSituation();
   }
 
@@ -743,6 +761,10 @@
       source: 'results'
     });
     simulatorTrackingStarted = false;
+    simulatorResultsShown = false;
+    simulatorAbandonTracked = false;
+    simulatorLastCompletedStep = 0;
+    simulatorLastCompletedBlock = 0;
     quickReviewMode = false;
     document.querySelectorAll('input.choice-input[type="radio"]').forEach(function(input) {
       input.checked = input.hasAttribute('checked');
@@ -787,6 +809,8 @@
     var simulator = document.getElementById('simulateur');
     if (simulator) simulator.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  window.addEventListener('pagehide', trackSimulatorAbandon);
 
   document.addEventListener('DOMContentLoaded', function() {
     for (var step = 1; step <= TOTAL_STEPS; step++) {
