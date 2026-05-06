@@ -15,11 +15,11 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'primes-maladie-vaud',
       label: 'Besoin fréquent',
       title: 'Je n’arrive plus à payer mes primes maladie',
-      summary: 'Subside LAMal, OVAM, AAS et premières démarches si les primes deviennent trop lourdes.',
+      summary: 'Subside LAMal, demande OVAM, AAS gratuite et premières démarches si les primes deviennent trop lourdes.',
       href: '/primes-maladie-vaud/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['sante', 'budget'],
-      keywords: ['primes maladie', 'subside LAMal', 'OVAM']
+      keywords: ['primes maladie Vaud', 'subside LAMal', 'OVAM']
     },
     {
       id: 'plus-assez-pour-vivre',
@@ -99,7 +99,7 @@ window.MONAIDE_GUIDE_DATA = {
       href: '/subside-lamal/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['sante'],
-      keywords: ['subside LAMal', 'assurance maladie']
+      keywords: ['subside LAMal Vaud', 'demande OVAM', 'prime maladie']
     },
     {
       id: 'revenu-insertion',
