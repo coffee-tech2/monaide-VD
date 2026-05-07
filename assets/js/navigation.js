@@ -115,10 +115,18 @@
     var normalized = normalizeGuideText(label);
     if (normalized.indexOf('a retenir') !== -1) return 'À retenir';
     if (normalized.indexOf('source officielle') !== -1) return 'Source officielle';
+    if (normalized.indexOf('a quoi ca sert') !== -1) return 'Conditions';
     if (normalized.indexOf('conditions') !== -1) return 'Conditions';
     if (normalized.indexOf('demande') !== -1) return 'Démarche';
+    if (normalized.indexOf('par ou commencer') !== -1) return 'Démarche';
+    if (normalized.indexOf('premier repere') !== -1) return 'Démarche';
+    if (normalized.indexOf('a noter') !== -1) return 'Démarche';
+    if (normalized.indexOf('point sensible') !== -1) return 'Démarche';
+    if (normalized.indexOf('suite logique') !== -1) return 'Démarche';
     if (normalized.indexOf('a preparer') !== -1) return 'Documents';
+    if (normalized.indexOf('documents') !== -1) return 'Documents';
     if (normalized.indexOf('relais') !== -1) return 'Relais utile';
+    if (normalized.indexOf('guides proches') !== -1) return 'Relais utile';
     if (normalized.indexOf('faq') !== -1) return 'FAQ';
     return String(label || '').trim();
   }
@@ -143,8 +151,11 @@
     var primarySection = document.querySelector('main .guide-section .guide-grid');
     if (!primarySection) return;
 
-    var cards = Array.prototype.slice.call(primarySection.children || []).filter(function(node) {
-      return node && node.classList && node.classList.contains('guide-card');
+    var cards = [];
+    document.querySelectorAll('main .guide-section .guide-grid').forEach(function(grid) {
+      Array.prototype.slice.call(grid.children || []).forEach(function(node) {
+        if (node && node.classList && node.classList.contains('guide-card')) cards.push(node);
+      });
     });
     if (!cards.length) return;
 
@@ -156,6 +167,10 @@
 
     var parentSection = primarySection.closest('.guide-section');
     if (!parentSection) return;
+
+    document.querySelectorAll('main .guide-section').forEach(function(section) {
+      if (section !== parentSection) section.remove();
+    });
 
     var sectionMeta = {
       retain: { id: 'guide-retenir', summary: 'Ce qu’il faut retenir' },
@@ -235,27 +250,6 @@
       container.appendChild(miscBlock);
     }
 
-    var extraFaqCards = [];
-    document.querySelectorAll('main .guide-section .guide-grid').forEach(function(grid) {
-      if (!grid || grid === primarySection) return;
-      var hasFaqCards = false;
-      Array.prototype.slice.call(grid.children || []).forEach(function(node) {
-        if (!node || !node.classList || !node.classList.contains('guide-card')) return;
-        var category = guideDetailCategoryForCard(node);
-        if (category === 'faq') {
-          hasFaqCards = true;
-          extraFaqCards.push(node);
-        }
-      });
-      if (hasFaqCards) {
-        var section = grid.closest('.guide-section');
-        if (section) section.remove();
-      }
-    });
-
-    if (extraFaqCards.length) {
-      appendBlock('faq', extraFaqCards);
-    }
   }
 
   function applyGuideLabelClasses() {
@@ -263,11 +257,11 @@
       var normalized = normalizeGuideText(label.textContent);
       label.classList.remove('is-human', 'is-official', 'is-conditions', 'is-action', 'is-docs', 'is-relay', 'is-faq');
       if (normalized.indexOf('a retenir') !== -1) label.classList.add('is-human');
-      else if (normalized.indexOf('source officielle') !== -1) label.classList.add('is-official');
+      else if (normalized.indexOf('source officielle') !== -1 || normalized.indexOf('a quoi ca sert') !== -1) label.classList.add('is-official');
       else if (normalized.indexOf('conditions') !== -1) label.classList.add('is-conditions');
-      else if (normalized.indexOf('demande') !== -1) label.classList.add('is-action');
-      else if (normalized.indexOf('a preparer') !== -1) label.classList.add('is-docs');
-      else if (normalized.indexOf('relais') !== -1) label.classList.add('is-relay');
+      else if (normalized.indexOf('demande') !== -1 || normalized.indexOf('par ou commencer') !== -1 || normalized.indexOf('premier repere') !== -1 || normalized.indexOf('a noter') !== -1 || normalized.indexOf('point sensible') !== -1 || normalized.indexOf('suite logique') !== -1) label.classList.add('is-action');
+      else if (normalized.indexOf('a preparer') !== -1 || normalized.indexOf('documents') !== -1) label.classList.add('is-docs');
+      else if (normalized.indexOf('relais') !== -1 || normalized.indexOf('guides proches') !== -1) label.classList.add('is-relay');
       else if (normalized.indexOf('faq') !== -1) label.classList.add('is-faq');
     });
   }
