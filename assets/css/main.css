@@ -580,7 +580,7 @@
   .guide-card-label.is-docs { background:rgba(238,237,254,0.76); border-color:rgba(196,191,244,0.8); color:#4f478d; }
   .guide-card-label.is-relay { background:rgba(240,237,230,0.92); border-color:rgba(213,206,198,0.96); color:var(--warm-gray); }
   .guide-card-label.is-faq { background:var(--sage-dark); border-color:var(--sage-dark); color:#f5f5ef; }
-  .guide-card-title { font-family:'Plus Jakarta Sans',sans-serif; font-size:1.34rem; line-height:1.14; letter-spacing:-0.045em; color:var(--sage-dark); margin:0 0 0.8rem; max-width:26ch; text-wrap:pretty; }
+  .guide-card-title { font-family:'Plus Jakarta Sans',sans-serif; font-size:1.34rem; line-height:1.14; letter-spacing:-0.045em; color:var(--sage-dark); margin:0 0 0.8rem; max-width:100%; text-wrap:pretty; }
   .guide-card p { margin:0; color:var(--warm-gray); line-height:1.76; max-width:35rem; }
   .guide-list { margin:0.9rem 0 0; padding-left:1.15rem; color:var(--warm-gray); line-height:1.74; }
   .guide-list li::marker { color:rgba(45,90,50,0.72); }
@@ -609,7 +609,7 @@
   .guide-detail-page .guide-shell { max-width:1180px; padding:4.7rem 1.75rem 2.2rem; text-align:left; }
   .guide-detail-page .guide-topline { justify-content:flex-start; margin-bottom:0.75rem; }
   .guide-detail-page .guide-backlink-chip { min-height:36px; padding:0.5rem 0.82rem; font-size:0.76rem; font-weight:600; border-radius:999px; opacity:0.92; box-shadow:0 4px 12px rgba(72,59,49,0.04); }
-  .guide-detail-page .guide-title { max-width:18ch; margin:0 auto 0.7rem; font-family:'Newsreader', serif; font-size:clamp(2.75rem, 5vw, 4.25rem); line-height:0.98; letter-spacing:-0.045em; text-wrap:balance; text-align:center; }
+  .guide-detail-page .guide-title { max-width:min(100%, 22ch); margin:0 auto 0.7rem; font-family:'Newsreader', serif; font-size:clamp(2.55rem, 4.6vw, 4.05rem); line-height:0.98; letter-spacing:-0.045em; text-wrap:balance; text-align:center; }
   .guide-detail-page .guide-lead { max-width:58rem; margin:0 auto; font-size:1.02rem; line-height:1.72; text-align:center; }
   .guide-detail-page .guide-actions { justify-content:center; margin-top:1.05rem; }
   .guide-detail-page .guide-section { padding-top:1.25rem; }
@@ -1368,7 +1368,7 @@
     .guide-grid { grid-template-columns:1fr; gap:1rem; }
     .guide-card { border-radius:22px; padding:1.18rem 1rem 1.05rem; }
     .guide-card-label { min-height:32px; padding:0.42rem 0.72rem; margin-bottom:0.82rem; font-size:0.65rem; }
-    .guide-card-title { font-size:1.12rem; line-height:1.16; max-width:18ch; text-wrap:pretty; }
+    .guide-card-title { font-size:1.12rem; line-height:1.16; max-width:100%; text-wrap:pretty; }
     .guide-doc-card .guide-list { grid-template-columns:1fr; }
     .guide-backlink,
     .guide-backlink-chip { position:static; margin-bottom:0.75rem; font-size:0.8rem; width:100%; max-width:320px; }
@@ -1383,7 +1383,7 @@
     .guide-detail-page .guide-card { border-radius:24px; padding:1.18rem 1rem 1.05rem; }
     .guide-detail-page .guide-card::before { left:1rem; right:1rem; top:0.95rem; }
     .guide-detail-page .guide-backlink-chip { min-height:34px; padding:0.46rem 0.74rem; font-size:0.74rem; }
-    .guide-detail-page .guide-card-title { font-size:1.18rem; max-width:18ch; }
+    .guide-detail-page .guide-card-title { font-size:1.18rem; max-width:100%; }
     .guide-detail-page .guide-card p { font-size:0.92rem; line-height:1.62; }
     .guide-detail-page .guide-inline-actions.is-grid-links,
     .guide-detail-page .guide-inline-actions.is-two-links { grid-template-columns:1fr; }
@@ -1395,7 +1395,7 @@
     .guide-page:not(.guide-detail-page) .guide-story-section p { font-size:0.93rem; line-height:1.62; }
     .guide-page:not(.guide-detail-page) .guide-card { border-radius:14px; padding:1.06rem 0.92rem 0.96rem; }
     .guide-page:not(.guide-detail-page) .guide-card::before { left:1rem; right:1rem; top:0.95rem; }
-    .guide-page:not(.guide-detail-page) .guide-card-title { font-size:1.12rem; max-width:15ch; }
+    .guide-page:not(.guide-detail-page) .guide-card-title { font-size:1.12rem; max-width:100%; }
     .guide-page:not(.guide-detail-page) .guide-card p { font-size:0.88rem; line-height:1.5; }
     .guide-page:not(.guide-detail-page) .guide-inline-actions a { min-height:36px; font-size:0.77rem; }
     .guide-page.about-page .guide-shell { padding:4.2rem 1rem 2.25rem; }
