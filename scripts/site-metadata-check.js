@@ -25,12 +25,26 @@ function normalize(text) {
     .trim();
 }
 
+function extractTagContent(html, regex) {
+  const match = html.match(regex);
+  return normalize(match && match[1]);
+}
+
 function checkMetaBasics(label, html, expectedCanonical, errors, warnings) {
-  if (!hasMatch(html, /<title>[^<]{10,}<\/title>/i)) {
+  const title = extractTagContent(html, /<title>([^<]+)<\/title>/i);
+  const description = extractTagContent(html, /<meta\s+name="description"\s+content="([^"]+)"/i);
+
+  if (!title || title.length < 10) {
     errors.push(`${label}: balise <title> absente ou trop courte`);
   }
-  if (!hasMatch(html, /<meta\s+name="description"\s+content="[^"]{40,}"/i)) {
+  if (title && title.length > 65) {
+    warnings.push(`${label}: title potentiellement trop long (${title.length} caractères)`);
+  }
+  if (!description || description.length < 40) {
     errors.push(`${label}: meta description absente ou trop courte`);
+  }
+  if (description && description.length > 160) {
+    warnings.push(`${label}: meta description potentiellement trop longue (${description.length} caractères)`);
   }
   if (!hasMatch(html, /<link\s+rel="canonical"\s+href="[^"]+"/i)) {
     errors.push(`${label}: canonical absente`);
