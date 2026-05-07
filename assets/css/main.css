@@ -1171,7 +1171,6 @@
     .section { padding: 1rem 0.9rem; scroll-margin-top: 104px; }
     #simulateur,
     #catalogue,
-    #formulaires { scroll-margin-top: 112px; }
     .section-inner { padding: 0; }
     .section-title { font-size: clamp(1.55rem, 7.4vw, 1.95rem); line-height:1.04; margin-bottom:0.42rem; }
     .section-subtitle { font-size:0.84rem; line-height:1.52; margin-bottom:1rem; max-width:none; }
