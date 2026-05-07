@@ -267,6 +267,7 @@
   }
 
   function fitGuideCardTitles() {
+    if (!document.body || !document.body.classList.contains('guide-detail-page')) return;
     document.querySelectorAll('.guide-card-title').forEach(function(title) {
       title.style.fontSize = '';
       title.style.whiteSpace = 'nowrap';

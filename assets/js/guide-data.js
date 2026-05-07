@@ -62,16 +62,6 @@ window.MONAIDE_GUIDE_DATA = {
       keywords: ['parent solo', 'BRAPA', 'allocations']
     },
     {
-      id: 'logement-vaud',
-      label: 'Besoin fréquent',
-      title: 'Aide logement',
-      summary: 'Loyer trop lourd, risque de résiliation, budget serré : les premières portes quand le logement devient la priorité.',
-      href: '/logement-vaud/',
-      ctaLabel: 'Ouvrir le guide',
-      audience: ['logement'],
-      keywords: ['logement', 'loyer', 'résiliation']
-    },
-    {
       id: 'separation-vaud',
       label: 'Besoin fréquent',
       title: 'Séparation',
