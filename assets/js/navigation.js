@@ -266,6 +266,22 @@
     });
   }
 
+  function fitGuideCardTitles() {
+    document.querySelectorAll('.guide-card-title').forEach(function(title) {
+      title.style.fontSize = '';
+      title.style.whiteSpace = 'nowrap';
+      var computed = window.getComputedStyle(title);
+      var size = parseFloat(computed.fontSize) || 18;
+      var minSize = window.innerWidth <= 600 ? 8.5 : 11;
+      var guard = 0;
+      while (title.scrollWidth > title.clientWidth && size > minSize && guard < 28) {
+        size -= 0.75;
+        title.style.fontSize = size + 'px';
+        guard += 1;
+      }
+    });
+  }
+
   function buildGuideSummary() {
     var body = document.body;
     if (!body || !body.classList.contains('guide-detail-page')) return;
@@ -490,5 +506,10 @@
     buildGuideSummary();
     buildGuideActionLayouts();
     addGuideLayerLinks();
+    fitGuideCardTitles();
     bindGuideDetailTracking();
+  });
+
+  window.addEventListener('resize', function() {
+    fitGuideCardTitles();
   });

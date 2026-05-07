@@ -580,7 +580,7 @@
   .guide-card-label.is-docs,
   .guide-card-label.is-relay,
   .guide-card-label.is-faq { background:#f5e2a4; border-color:rgba(220,188,105,0.74); color:#4f3d1a; }
-  .guide-card-title { font-family:'Plus Jakarta Sans',sans-serif; font-size:1.34rem; line-height:1.14; letter-spacing:-0.045em; color:var(--sage-dark); margin:0 0 0.8rem; max-width:100%; text-wrap:pretty; }
+  .guide-card-title { font-family:'Plus Jakarta Sans',sans-serif; font-size:1.34rem; line-height:1.14; letter-spacing:0; color:var(--sage-dark); margin:0 0 0.8rem; max-width:100%; white-space:nowrap; overflow:visible; text-wrap:nowrap; }
   .guide-card p { margin:0; color:var(--warm-gray); line-height:1.76; max-width:35rem; }
   .guide-list { margin:0.9rem 0 0; padding-left:1.15rem; color:var(--warm-gray); line-height:1.74; }
   .guide-list li::marker { color:rgba(45,90,50,0.72); }
@@ -640,7 +640,7 @@
   .guide-detail-page .guide-card { display:flex; flex-direction:column; align-self:stretch; height:100%; min-height:0; border-radius:24px; padding:1.45rem 1.4rem 1.25rem; box-shadow:none; background:#fffdfa; }
   .guide-detail-page .guide-card::before { display:none; }
   .guide-detail-page .guide-card-label { align-self:flex-start; min-height:0; padding:0.34rem 0.72rem; border-radius:999px; margin-bottom:0.9rem; font-size:0.64rem; letter-spacing:0.08em; }
-  .guide-detail-page .guide-card-title { font-family:'Newsreader', serif; font-size:1.2rem; line-height:1.1; letter-spacing:-0.02em; margin-bottom:0.72rem; max-width:22ch; }
+  .guide-detail-page .guide-card-title { font-family:'Plus Jakarta Sans',sans-serif; font-size:1.16rem; line-height:1.14; letter-spacing:0; margin-bottom:0.72rem; max-width:100%; white-space:nowrap; overflow:visible; text-wrap:nowrap; }
   .guide-detail-page .guide-card p { font-size:0.98rem; line-height:1.7; max-width:36rem; }
   .guide-detail-page .guide-list { margin-top:0.85rem; }
   .guide-detail-page .guide-list li { font-size:0.96rem; line-height:1.7; }
@@ -661,7 +661,7 @@
     justify-content:flex-start;
   }
   .guide-detail-page .guide-detail-block-faq .guide-card-label { margin-bottom:0.9rem; }
-  .guide-detail-page .guide-detail-block-faq .guide-card-title { max-width:16ch; font-size:1.36rem; line-height:1.08; letter-spacing:-0.03em; }
+  .guide-detail-page .guide-detail-block-faq .guide-card-title { max-width:100%; font-size:1.16rem; line-height:1.14; letter-spacing:0; }
   .guide-detail-page .guide-detail-block-faq .guide-card p { max-width:38ch; font-size:1rem; line-height:1.72; }
   .guide-detail-page .guide-inline-actions { display:flex; flex-wrap:wrap; gap:0.72rem; align-items:center; margin-top:1rem; padding-top:0; }
   .guide-detail-page .guide-card > .guide-inline-actions:last-child { margin-top:1rem; padding-top:0; }
@@ -685,7 +685,7 @@
   .guide-detail-page .guide-support-card { background:var(--mint); border-color:#bcdccd; padding:1.55rem 1.65rem; }
   .guide-detail-page .guide-support-card::before { display:none; }
   .guide-detail-page .guide-support-card .guide-card-label { background:#f5e2a4; border:1px solid rgba(220,188,105,0.74); color:#4f3d1a; padding:0.34rem 0.72rem; margin-bottom:0.55rem; }
-  .guide-detail-page .guide-support-card .guide-card-title { max-width:34ch; font-size:1.32rem; }
+  .guide-detail-page .guide-support-card .guide-card-title { max-width:100%; font-size:1.16rem; }
   .guide-detail-page .guide-doc-card { padding:1.45rem 1.4rem 1.2rem; }
   .guide-detail-page .guide-doc-card .guide-list { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0.8rem; margin-top:0.9rem; }
   .guide-detail-page .guide-doc-card .guide-list li { padding:1rem 1rem 0.96rem; background:#fff8ea; border:1px solid rgba(224,196,134,0.62); border-radius:14px; font-size:0.95rem; box-shadow:0 8px 18px rgba(72,59,49,0.035); }
@@ -1395,6 +1395,10 @@
     .guide-detail-page .guide-card p { font-size:0.92rem; line-height:1.62; }
     .guide-detail-page .guide-inline-actions.is-grid-links,
     .guide-detail-page .guide-inline-actions.is-two-links { grid-template-columns:1fr; }
+    .guide-detail-page .guide-detail-block-action .guide-grid,
+    .guide-detail-page .guide-detail-block-conditions .guide-grid,
+    .guide-detail-page .guide-detail-block-documents .guide-grid,
+    .guide-detail-page .guide-detail-block-faq .guide-grid { grid-template-columns:1fr !important; }
     .guide-page:not(.guide-detail-page) .guide-shell { padding:4.05rem 1rem 1.85rem; }
     .guide-page:not(.guide-detail-page) .guide-title { max-width:12.5ch; font-size:clamp(2.35rem, 10vw, 3.35rem); margin-bottom:0.72rem; }
     .guide-page:not(.guide-detail-page) .guide-lead { font-size:0.94rem; line-height:1.62; max-width:30rem; }
