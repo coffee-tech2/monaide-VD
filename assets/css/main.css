@@ -72,6 +72,7 @@
   .nav-logo-main { color: var(--orange); }
   .nav-logo-sep { color: var(--orange); }
   .nav-logo-vd { color: var(--sage-dark); }
+  .nav-beta-badge { display:inline-flex; align-items:center; justify-content:center; min-height:1.42rem; padding:0.18rem 0.46rem 0.2rem; border-radius:0.48rem; background:#F3DE97; color:#6F5624; border:1px solid rgba(207,177,92,0.72); font-size:0.68rem; font-weight:800; letter-spacing:0; line-height:1; box-shadow:0 8px 16px rgba(94,74,32,0.08); }
   .nav-mobile-actions { display:none; align-items:center; gap:0.5rem; }
   .nav-links { display: flex; gap: 0; list-style: none; align-items: center; }
   .nav-links a { text-decoration: none; color: var(--warm-gray); font-size: 0.88rem; font-weight: 500; padding: 0.45rem 0.9rem; border-radius: 8px; transition: all 0.15s; }
@@ -1146,6 +1147,7 @@
     body > nav { height: 64px; background: rgba(243,236,227,0.92); box-shadow: 0 8px 24px rgba(44,40,37,0.06); }
     .nav-inner { padding:0 1rem; }
     .nav-logo { font-size: 1.28rem; letter-spacing:-0.05em; }
+    .nav-beta-badge { min-height:1.26rem; padding:0.16rem 0.38rem 0.18rem; border-radius:0.42rem; font-size:0.61rem; }
     .nav-mobile-actions { display:flex; }
     .nav-mobile-actions .nav-search-toggle,
     .hamburger { width:40px; height:40px; border-radius:14px; background:rgba(255,255,255,0.66); border:1px solid rgba(228,216,207,0.92); box-shadow:0 8px 16px rgba(72,59,49,0.05); }
@@ -1445,6 +1447,9 @@
   }
   @media (max-width: 380px) {
     .nav-inner { padding:0 0.85rem; }
+    .nav-logo { gap:0.44rem; font-size:1.16rem; }
+    .nav-logo::before { width:1.78rem; height:1.78rem; border-radius:0.62rem; }
+    .nav-beta-badge { display:none; }
     .hero-content { padding:0.78rem 0.72rem 0.82rem; }
     .hero h1 { max-width:15ch; font-size:clamp(1.58rem, 8vw, 2rem); }
     .hero-actions .btn-primary,
