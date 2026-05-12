@@ -1192,6 +1192,7 @@
     .section-title { font-size: clamp(1.55rem, 7.4vw, 1.95rem); line-height:1.04; margin-bottom:0.42rem; }
     .section-subtitle { font-size:0.84rem; line-height:1.52; margin-bottom:1rem; max-width:none; }
     .hero { padding: 0.55rem 0.9rem 0.8rem; min-height: auto; }
+    body.beta-banner-dismissed .hero { padding-top: calc(64px + 0.85rem); }
     .hero-shell { gap: 0.85rem; justify-content:center; }
     .hero-content { width:100%; text-align:center; max-width:none; padding:0.82rem 0.85rem 0.9rem; border-radius:20px; background:linear-gradient(180deg, rgba(255,253,249,0.78) 0%, rgba(251,245,238,0.86) 100%); border:1px solid rgba(234,223,212,0.92); box-shadow:0 14px 24px rgba(72,59,49,0.05); }
     .hero-kicker { margin:0 auto 0.55rem; font-size:0.58rem; letter-spacing:0.08em; justify-content:center; line-height:1.35; max-width:30ch; }

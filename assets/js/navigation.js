@@ -416,12 +416,14 @@
     try {
       if (betaBanner && window.localStorage && localStorage.getItem(betaBannerStorageKey) === '1') {
         betaBanner.style.display = 'none';
+        document.body.classList.add('beta-banner-dismissed');
       }
     } catch (error) {}
 
     if (betaBanner && betaBannerClose) {
       betaBannerClose.addEventListener('click', function() {
         betaBanner.style.display = 'none';
+        document.body.classList.add('beta-banner-dismissed');
         try {
           if (window.localStorage) localStorage.setItem(betaBannerStorageKey, '1');
         } catch (error) {}
