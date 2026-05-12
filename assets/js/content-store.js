@@ -92,6 +92,7 @@
           };
         }),
         documentationTarget: item.documentationTarget || null,
+        relatedGuide: typeof window.getRelatedGuideForAid === 'function' ? window.getRelatedGuideForAid(item) : null,
         override: item,
         order: layoutMeta ? layoutMeta.order : index
       };
@@ -124,7 +125,8 @@
         category: catalogItem.category,
         catalogItem: catalogItem,
         documentationTarget: docTarget,
-        documentationItem: documentationItem
+        documentationItem: documentationItem,
+        relatedGuide: catalogItem.relatedGuide || null
       };
     });
     return { byAidId: byAidId };

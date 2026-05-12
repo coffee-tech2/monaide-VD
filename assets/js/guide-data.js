@@ -203,3 +203,71 @@ window.MONAIDE_GUIDE_DATA = {
     }
   ]
 };
+
+(function() {
+  var GUIDE_BY_AID_ID = {
+    aas: 'agence-assurances-sociales',
+    ai: 'assurance-invalidite',
+    'allocation-familiale': 'allocations-familiales',
+    'allocations-familiales': 'allocations-familiales',
+    apg: 'parent-solo-vaud',
+    appartenances: 'permis-sejour-vaud',
+    asloca: 'aides-logement',
+    bcma: 'dettes-budget',
+    bourse: 'bourses-ocbe',
+    brapa: 'separation-vaud',
+    'caritas-migration': 'permis-sejour-vaud',
+    carte: 'carteculture',
+    'csp-vaud': 'dettes-budget',
+    csr: 'centre-social-regional',
+    evam: 'permis-sejour-vaud',
+    fraternite: 'permis-sejour-vaud',
+    'guichet-t1': 'aide-formation-vaud',
+    laci: 'chomage-laci',
+    lup: 'aides-logement',
+    pc: 'prestations-complementaires',
+    ri: 'revenu-insertion',
+    'aide-logement-familles': 'aides-logement',
+    'aide-urgence-sejour': 'permis-sejour-vaud',
+    'aides-sociales-vaud': 'aides-sociales-vaud',
+    'assurance-invalidite': 'assurance-invalidite',
+    'centre-social-regional': 'centre-social-regional',
+    'dettes-budget': 'dettes-budget',
+    'garde-enfants-malades': 'parent-solo-vaud',
+    'jet-service': 'aide-formation-vaud',
+    'mediation-familiale': 'separation-vaud',
+    'menace-expulsion': 'aides-logement',
+    'parlons-cash': 'dettes-budget',
+    'passculture': 'carteculture',
+    'pc-familles': 'plus-assez-pour-vivre',
+    'prestations-complementaires': 'prestations-complementaires',
+    'pro-infirmis': 'assurance-invalidite',
+    'pro-senectute': 'prestations-complementaires',
+    'repit-proches-aidants': 'assurance-invalidite',
+    'rupture-apprentissage': 'aide-formation-vaud',
+    'separation-divorce': 'separation-vaud',
+    'subside-lamal': 'subside-lamal'
+  };
+
+  function getGuideById(id) {
+    return ((window.MONAIDE_GUIDE_DATA || {}).items || []).find(function(guide) {
+      return guide && guide.id === id;
+    }) || null;
+  }
+
+  window.MONAIDE_GUIDE_BY_AID_ID = GUIDE_BY_AID_ID;
+
+  window.getRelatedGuideForAid = function(aidOrItem) {
+    if (!aidOrItem) return null;
+    var aidId = typeof aidOrItem === 'string' ? aidOrItem : aidOrItem.id;
+    var guideId = (typeof aidOrItem === 'object' && aidOrItem.guideTarget) || GUIDE_BY_AID_ID[aidId];
+    var guide = getGuideById(guideId);
+    if (!guide) return null;
+    return {
+      id: guide.id,
+      href: guide.href,
+      title: guide.title,
+      label: 'Guide détaillé'
+    };
+  };
+})();

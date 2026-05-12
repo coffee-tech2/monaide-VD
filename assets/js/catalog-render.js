@@ -64,6 +64,19 @@
     return '<a href="' + escapeCatalogRenderHtml(link.url) + '"' + attrs + '>' + icon + escapeCatalogRenderHtml(link.label) + '</a>';
   }
 
+  function catalogRenderHasGuideLink(item) {
+    return (item.links || []).some(function(link) {
+      var label = normalizeAidText(link.label || '');
+      var url = link.url || '';
+      return /^\/(?!\/)/.test(url) && label.indexOf('guide') !== -1;
+    });
+  }
+
+  function getCatalogRenderGuide(item) {
+    if (!item || typeof window.getRelatedGuideForAid !== 'function') return null;
+    return window.getRelatedGuideForAid(item);
+  }
+
   function renderCatalogRenderDocLink(target) {
     if (!target || !target.blockId || !target.accordionId) return '';
     return '';
@@ -74,6 +87,10 @@
     (item.links || []).forEach(function(link) {
       if (link && link.url && link.label) parts.push(renderCatalogRenderLink(link));
     });
+    var guide = getCatalogRenderGuide(item);
+    if (guide && guide.href && !catalogRenderHasGuideLink(item)) {
+      parts.push(renderCatalogRenderLink({ label: guide.label || 'Guide détaillé', url: guide.href }));
+    }
     if (item.documentationTarget) {
       var docLink = renderCatalogRenderDocLink(item.documentationTarget);
       if (docLink) parts.push(docLink);
@@ -108,9 +125,13 @@
 
   function renderCatalogNextStep(item) {
     if (!item) return '';
+    var guide = getCatalogRenderGuide(item);
+    var guideLink = guide && guide.href
+      ? '<a href="' + escapeCatalogRenderHtml(guide.href) + '">' + escapeCatalogRenderHtml(guide.label || 'Guide détaillé') + ' <span aria-hidden="true">→</span></a>'
+      : '';
     return '<div class="catalog-next-step" onclick="event.stopPropagation()">'
-      + '<div><strong>Pas sûr·e que cette fiche soit la bonne ?</strong><span>Le simulateur peut faire un premier tri avec ta situation.</span></div>'
-      + '<a href="#simulateur">Faire le simulateur <span aria-hidden="true">→</span></a>'
+      + '<div><strong>Tu veux continuer avec cette piste ?</strong><span>Ouvre le guide pour les étapes, ou relance le simulateur si tu n’es pas sûr·e.</span></div>'
+      + '<div class="catalog-next-step-actions">' + guideLink + '<a href="#simulateur">Faire le simulateur <span aria-hidden="true">→</span></a></div>'
       + '</div>';
   }
 

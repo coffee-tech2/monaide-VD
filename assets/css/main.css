@@ -690,6 +690,7 @@
   .guide-detail-page .guide-doc-card { padding:1.45rem 1.4rem 1.2rem; }
   .guide-detail-page .guide-doc-card .guide-list { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0.8rem; margin-top:0.9rem; }
   .guide-detail-page .guide-doc-card .guide-list li { padding:1rem 1rem 0.96rem; background:#fff8ea; border:1px solid rgba(224,196,134,0.62); border-radius:14px; font-size:0.95rem; box-shadow:0 8px 18px rgba(72,59,49,0.035); }
+  .guide-detail-page .guide-faq-section { margin-top:2.4rem; padding-top:3.1rem; border-top:1px solid rgba(218,204,188,0.78); }
   .guide-practical-section { padding-top:2.1rem; }
   .guide-practical-section .guide-section-intro { max-width:760px; text-align:center; margin:0 auto 1.35rem; }
   .guide-practical-section .section-tag { display:inline-flex; align-items:center; justify-content:center; min-height:32px; padding:0.42rem 0.84rem; border-radius:999px; background:#f5e2a4; border:1px solid rgba(220,188,105,0.74); color:#4f3d1a; font-size:0.68rem; font-weight:800; letter-spacing:0.09em; margin-bottom:0.8rem; }
@@ -1070,6 +1071,7 @@
   .catalog-next-step { display:flex; justify-content:space-between; align-items:center; gap:0.9rem; margin-top:0.9rem; padding:0.82rem 0.88rem; border:1px solid #E8DDBF; border-radius:16px; background:#FFF8E8; }
   .catalog-next-step strong { display:block; color:var(--forest); font-size:0.82rem; line-height:1.25; margin-bottom:0.16rem; }
   .catalog-next-step span { display:block; color:var(--warm-gray); font-size:0.76rem; line-height:1.45; }
+  .catalog-next-step-actions { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:0.45rem; }
   .catalog-next-step a { display:inline-flex; align-items:center; justify-content:center; min-height:36px; padding:0.52rem 0.82rem; border-radius:999px; background:var(--sage-dark); color:#fff; text-decoration:none; font-size:0.78rem; font-weight:800; white-space:nowrap; }
   .expand-links a[data-link-kind]::before,
   .cat-quicklinks a[data-link-kind]::before { content: attr(data-link-kind); display: inline-flex; align-items: center; justify-content: center; padding: 2px 6px; border-radius: 999px; font-size: 0.56rem; line-height: 1; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -1370,6 +1372,7 @@
     .guide-next-step { padding:0 0.9rem 2.4rem; }
     .guide-next-step-inner,
     .catalog-next-step { flex-direction:column; align-items:stretch; }
+    .catalog-next-step-actions { justify-content:stretch; }
     .guide-next-step-actions { justify-content:stretch; }
     .guide-next-step-actions a,
     .catalog-next-step a { width:100%; }

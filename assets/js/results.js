@@ -191,12 +191,23 @@
 
   function getGuideLinkForResult(result) {
     var catalogItem = getCatalogItemForResult(result);
-    if (!catalogItem || !catalogItem.links) return null;
-    return catalogItem.links.find(function(link) {
+    if (!catalogItem) return null;
+    var existingGuide = (catalogItem.links || []).find(function(link) {
       var href = link.href || '';
       var label = link.normalizedLabel || normalizeAidText(link.label || '');
       return /^\/(?!\/)/.test(href) && label.indexOf('guide') !== -1;
-    }) || null;
+    });
+    if (existingGuide) return existingGuide;
+    var relatedGuide = catalogItem.relatedGuide ||
+      (typeof window.getRelatedGuideForAid === 'function' ? window.getRelatedGuideForAid(catalogItem.id || catalogItem) : null);
+    return relatedGuide && relatedGuide.href
+      ? {
+          label: relatedGuide.label || 'Guide détaillé',
+          normalizedLabel: normalizeAidText(relatedGuide.label || 'Guide détaillé'),
+          href: relatedGuide.href,
+          kind: 'guide'
+        }
+      : null;
   }
 
   function buildResultGuideLink(result) {
@@ -234,6 +245,17 @@
       if (!groupLinks.length) return '';
       return '<div class="result-link-group"><div class="result-link-group-label">' + group.label + '</div><div class="result-link-group-actions">' + groupLinks.map(function(link) { return link.html; }).join('') + '</div></div>';
     }).join('');
+  }
+
+  function buildResultFooter(result) {
+    var guideLink = getGuideLinkForResult(result);
+    var guideHtml = guideLink && guideLink.href
+      ? '<a href="' + escapeHtml(guideLink.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(result.nom || '') + '">' + escapeHtml(guideLink.label || 'Guide détaillé') + ' →</a>'
+      : '';
+    return '<div class="result-card-footer">'
+      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche catalogue →</button>'
+      + guideHtml
+      + '</div>';
   }
 
   function buildResultDetail(title, body, className, openByDefault) {
@@ -298,7 +320,7 @@
     if (meta.isPrimaryFocus) cardClasses += ' is-primary-focus';
     if (meta.isSecondary) cardClasses += ' is-secondary-track';
     var rankHtml = meta.rankLabel ? '<div class="result-rank">' + escapeHtml(meta.rankLabel) + '</div>' : '';
-    var footerHtml = '<div class="result-card-footer"><button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche dans le catalogue →</button></div>';
+    var footerHtml = buildResultFooter(result);
     return '<article class="' + cardClasses + '" data-result-name="' + escapeHtml(result.nom) + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><div class="result-card-header"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div></div></div>' + startHtml + '<div class="result-card-accordion">' + followUpHtml + '</div>' + footerHtml + '</article>';
   }
 
