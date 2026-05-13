@@ -55,12 +55,6 @@
     <priority>0.78</priority>
   </url>
   <url>
-    <loc>https://monaide-vaud.ch/logement-vaud/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.78</priority>
-  </url>
-  <url>
     <loc>https://monaide-vaud.ch/separation-vaud/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>

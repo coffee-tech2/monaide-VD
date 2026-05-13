@@ -789,14 +789,14 @@
   }
   .guide-page:not(.guide-detail-page) .guide-card-title {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.92rem;
+    font-size: 1.76rem;
     line-height: 1.04;
     letter-spacing: 0;
     max-width: 100%;
-    min-height: 2.08em;
+    min-height: 1.08em;
     margin-bottom: 0.62rem;
-    white-space: normal;
-    text-wrap: balance;
+    white-space: nowrap;
+    text-wrap: nowrap;
   }
   .guide-page:not(.guide-detail-page) .guide-card p {
     font-size: 0.94rem;
@@ -1421,7 +1421,7 @@
     .guide-page:not(.guide-detail-page) .guide-grid { align-items:start; }
     .guide-page:not(.guide-detail-page) .guide-card { border-radius:14px; padding:1.06rem 0.92rem 0.96rem; min-height:0; }
     .guide-page:not(.guide-detail-page) .guide-card::before { left:1rem; right:1rem; top:0.95rem; }
-    .guide-page:not(.guide-detail-page) .guide-card-title { font-size:1.5rem; line-height:1.06; max-width:100%; min-height:0; text-wrap:pretty; }
+    .guide-page:not(.guide-detail-page) .guide-card-title { font-size:1.5rem; line-height:1.06; max-width:100%; min-height:0; white-space:normal; text-wrap:pretty; }
     .guide-page:not(.guide-detail-page) .guide-card p { font-size:0.88rem; line-height:1.5; min-height:0; }
     .guide-page:not(.guide-detail-page) .guide-inline-actions a { min-height:36px; font-size:0.77rem; }
     .guide-page.about-page .guide-shell { padding:4.2rem 1rem 2.25rem; }

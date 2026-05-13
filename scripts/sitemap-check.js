@@ -19,6 +19,8 @@ function collectHtmlPages(dir, pages = []) {
     }
 
     if (entry.name !== 'index.html') return;
+    const html = fs.readFileSync(current, 'utf8');
+    if (/<meta\s+name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html)) return;
     const relativeDir = path.relative(root, path.dirname(current));
     const urlPath = relativeDir ? `/${relativeDir.replace(/\\/g, '/')}/` : '/';
     pages.push(`${siteUrl}${urlPath}`);

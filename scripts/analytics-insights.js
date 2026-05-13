@@ -3,12 +3,29 @@
 const fs = require('fs');
 const path = require('path');
 
-const desktop = path.join(process.env.HOME || '', 'Desktop');
+const home = process.env.HOME || '';
+const searchRoots = ['Desktop', 'Downloads', 'Documents']
+  .map((dir) => path.join(home, dir))
+  .filter((dir) => fs.existsSync(dir));
+
+function collectCsvFiles(dir, depth = 0, files = []) {
+  if (depth > 5) return files;
+  fs.readdirSync(dir, { withFileTypes: true }).forEach((entry) => {
+    if (entry.name.startsWith('.')) return;
+    const current = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      collectCsvFiles(current, depth + 1, files);
+      return;
+    }
+    if (entry.isFile() && entry.name.endsWith('.csv')) files.push(current);
+  });
+  return files;
+}
 
 function findCsv(fragment) {
-  return fs.readdirSync(desktop)
-    .filter((name) => name.endsWith('.csv') && name.normalize('NFD').includes(fragment))
-    .map((name) => path.join(desktop, name))
+  return searchRoots
+    .flatMap((root) => collectCsvFiles(root))
+    .filter((file) => path.basename(file).normalize('NFD').includes(fragment))
     .sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs)[0];
 }
 
@@ -70,20 +87,25 @@ const landingFile = findCsv('Trafic_issu');
 const eventFile = findCsv('Événements_');
 const pageFile = findCsv('Pages_et_écrans');
 
-if (!queryFile || !landingFile || !eventFile || !pageFile) {
-  console.error('Exports Analytics/Search Console manquants sur le Desktop.');
+if (!queryFile || !eventFile || !pageFile) {
+  console.error('Exports Analytics/Search Console manquants dans Desktop, Downloads ou Documents.');
   process.exit(1);
 }
 
 const queries = readGaCsv(queryFile);
-const landings = readGaCsv(landingFile);
+const landings = landingFile ? readGaCsv(landingFile) : [];
 const events = readGaCsv(eventFile);
 const pages = readGaCsv(pageFile);
 
-const topLandings = landings
-  .filter((row) => row['Page de destination + chaîne de requête'])
-  .sort((a, b) => num(b, 'Impressions dans la recherche naturelle Google') - num(a, 'Impressions dans la recherche naturelle Google'))
-  .slice(0, 8);
+const topLandings = landingFile
+  ? landings
+    .filter((row) => row['Page de destination + chaîne de requête'])
+    .sort((a, b) => num(b, 'Impressions dans la recherche naturelle Google') - num(a, 'Impressions dans la recherche naturelle Google'))
+    .slice(0, 8)
+  : pages
+    .filter((row) => value(row, ['Titre de la page et classe de l’écran', 'Titre de la page et classe de l\'écran']))
+    .sort((a, b) => num(b, 'Vues') - num(a, 'Vues'))
+    .slice(0, 8);
 
 const opportunities = queries
   .filter((row) => (
@@ -112,9 +134,15 @@ console.log(`- Soumissions: ${numValue(simulatorSubmits, eventCountKeys)}`);
 console.log(`- Vues résultats: ${numValue(resultViews, eventCountKeys)}`);
 console.log(`- Erreurs validation: ${numValue(validationErrors, eventCountKeys)}`);
 console.log('');
-console.log('Pages organiques principales');
+console.log(landingFile ? 'Pages organiques principales' : 'Pages GA principales');
 topLandings.forEach((row) => {
-  console.log(`- ${row['Page de destination + chaîne de requête']}: ${num(row, 'Clics dans la recherche naturelle Google')} clics / ${num(row, 'Impressions dans la recherche naturelle Google')} impressions, CTR ${(num(row, 'Taux de clics dans la recherche naturelle Google') * 100).toFixed(2)}%, pos ${num(row, 'Position moyenne dans la recherche naturelle Google').toFixed(1)}`);
+  if (landingFile) {
+    console.log(`- ${row['Page de destination + chaîne de requête']}: ${num(row, 'Clics dans la recherche naturelle Google')} clics / ${num(row, 'Impressions dans la recherche naturelle Google')} impressions, CTR ${(num(row, 'Taux de clics dans la recherche naturelle Google') * 100).toFixed(2)}%, pos ${num(row, 'Position moyenne dans la recherche naturelle Google').toFixed(1)}`);
+    return;
+  }
+  const title = value(row, ['Titre de la page et classe de l’écran', 'Titre de la page et classe de l\'écran']);
+  const duration = numValue(row, ['Durée d’engagement moyenne par utilisateur actif', 'Durée d\'engagement moyenne par utilisateur actif']);
+  console.log(`- ${title}: ${num(row, 'Vues')} vues / ${num(row, 'Utilisateurs actifs')} utilisateurs, engagement ${duration.toFixed(0)} s`);
 });
 console.log('');
 console.log('Requêtes à optimiser');
