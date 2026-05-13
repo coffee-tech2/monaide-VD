@@ -124,7 +124,7 @@ window.MONAIDE_GUIDE_DATA = {
     {
       id: 'bourses-ocbe',
       label: 'Formation',
-      title: 'OCBE Vaud : bourse d’études',
+      title: 'Bourse d’études Vaud (OCBE)',
       summary: 'Bourse ou prêt d’études OCBE : test d’éligibilité, délais, demande officielle et documents à préparer.',
       href: '/bourses-ocbe/',
       ctaLabel: 'Ouvrir le guide',
