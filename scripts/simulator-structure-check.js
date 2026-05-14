@@ -62,6 +62,12 @@ rules.forEach((rule, index) => {
   if (!rule.id || !rule.handler || !rule.when) {
     errors.push(`${label}: id, handler ou when manquant`);
   }
+  if (!rule.title || !rule.intent || !rule.confidence || !rule.sourceType) {
+    errors.push(`${label}: documentation incomplète (title, intent, confidence, sourceType requis)`);
+  }
+  if (!Array.isArray(rule.guardrails) || !rule.guardrails.length) {
+    errors.push(`${label}: garde-fous non documentés`);
+  }
   if (seen.has(rule.id)) errors.push(`${label}: id en doublon`);
   seen.add(rule.id);
   if (!allowedWhen.has(rule.when)) {

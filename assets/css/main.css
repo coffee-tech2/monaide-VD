@@ -337,6 +337,10 @@
   .results-profile-value { display:block; font-size:0.9rem; font-weight:700; color:var(--forest); line-height:1.35; }
   .results-list { display:block; width:100%; max-width:70ch; box-sizing:border-box; }
   .results-count-label { margin:1.95rem 0 0.85rem; color:#888780; font-size:0.72rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; }
+  .results-next-step { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 1rem; padding:1rem 1.15rem; border:1px solid rgba(42,107,82,0.18); border-radius:16px; background:linear-gradient(135deg, rgba(214,238,229,0.78) 0%, rgba(255,253,248,0.98) 72%); box-shadow:0 12px 26px rgba(28,59,48,0.05); }
+  .results-next-step-title { font-family:'Plus Jakarta Sans', sans-serif; font-size:0.96rem; font-weight:800; letter-spacing:-0.035em; color:var(--forest); margin-bottom:0.18rem; }
+  .results-next-step-text { margin:0; color:#557064; font-size:0.82rem; line-height:1.58; max-width:46ch; }
+  .results-next-step-actions { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:flex-end; flex:0 0 auto; }
   .result-item { position:relative; display:block; overflow:hidden; border:1px solid #D8D4CA; border-left:3px solid #C8C4BB; border-radius:14px; padding:0; margin-bottom:1rem; background:#FFFDF8; box-shadow:none; transition:border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
   .result-item:hover { border-color:#C8C4BB; transform:translateY(-1px); box-shadow:0 10px 24px rgba(28,59,48,0.05); background:#FFFDF8; }
   .result-item.confidence-probablement { border-left-color:#2A6B52; }
@@ -1230,6 +1234,8 @@
     .step-actions .btn-nav { flex:1 1 0; min-height:48px; justify-content:center; border-radius:16px; }
     .results-header h2 { font-size:2.1rem; line-height:0.98; }
     .results-progress-done { margin:1rem 0 1.2rem; }
+    .results-next-step { display:block; padding:1rem; }
+    .results-next-step-actions { display:grid; grid-template-columns:1fr; margin-top:0.82rem; justify-content:stretch; }
     .result-item { display:block; padding:0; border-radius:14px; gap:0; box-shadow:none; }
     .result-card-header { display:block; padding:1rem 1rem 0.9rem; }
     .result-badge { width:max-content; max-width:100%; margin-bottom:0.55rem; white-space:normal; text-align:center; }

@@ -177,6 +177,55 @@
     });
   }
 
+  function appendResultCaution(result, text) {
+    if (!result || !text) return;
+    if (result.desc && result.desc.indexOf(text) !== -1) return;
+    result.desc = (result.desc || '').replace(/\s+$/, '');
+    result.desc += (result.desc ? ' ' : '') + text;
+  }
+
+  function downgradeResult(result, text) {
+    if (!result) return;
+    result.badge = 'verifier';
+    result.strongProbable = false;
+    appendResultCaution(result, text);
+  }
+
+  function applySimulationGuardrails(results, flags) {
+    (results || []).forEach(function(result) {
+      var name = result.nom || '';
+
+      if (flags.fortune === 'plus50000') {
+        if (name.indexOf('Prestations complémentaires') !== -1 || name.indexOf('PC Familles') !== -1) {
+          downgradeResult(result, 'Comme tu indiques une fortune importante, cette piste doit être vérifiée avec le calcul officiel avant de la considérer comme probable.');
+        }
+      }
+
+      if (flags.permisG && (
+        name.indexOf('Subside LAMal') !== -1 ||
+        name.indexOf('CarteCulture') !== -1 ||
+        name.indexOf('Prestations complémentaires') !== -1
+      )) {
+        downgradeResult(result, 'Avec un permis G, le domicile et le cadre transfrontalier peuvent changer la démarche : il faut vérifier l’autorité compétente avant de conclure.');
+      }
+
+      if ((flags.permisS || flags.permisN || flags.sansStatut) && (
+        name.indexOf('Subside LAMal') !== -1 ||
+        name.indexOf('Revenu d\'insertion') !== -1 ||
+        name.indexOf('Prestations complémentaires') !== -1 ||
+        name.indexOf('Assurance chômage') !== -1
+      )) {
+        downgradeResult(result, 'Ton statut de séjour rend cette piste sensible : commence par le relais spécialisé indiqué avant une démarche ordinaire.');
+      }
+
+      if (flags.etudiant && name.indexOf('Revenu d\'insertion') !== -1) {
+        downgradeResult(result, 'Comme tu es en formation, les bourses ou aides de formation passent souvent avant une aide sociale ordinaire.');
+      }
+    });
+
+    return results;
+  }
+
   function addUrgenceOrientationResults(res) {
     res.push(buildResult({
       nom: 'Centre social régional (CSR)',
@@ -868,6 +917,7 @@
     var age = flags.age;
     var enEmploi = flags.enEmploi;
     applySimulationRules(res, flags);
+    applySimulationGuardrails(res, flags);
 
     return {
       results: dedupeResults(res),

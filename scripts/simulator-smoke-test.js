@@ -95,6 +95,48 @@ const tests = [
     }
   },
   {
+    name: 'PC AVS/AI reste à vérifier si la fortune est élevée',
+    run() {
+      const results = compute({
+        age: '65plus',
+        sitPro: 'Retraité·e (bénéficiaire AVS)',
+        revenu: '1000-2000',
+        fortune: 'plus50000',
+        aidesListe: []
+      });
+      assert(hasResult(results, 'Prestations complémentaires', 'verifier'), 'High fortune should make PC AVS/AI a verification, not a probable result');
+      assert(!hasResult(results, 'Prestations complémentaires', 'probable'), 'PC AVS/AI should not be probable when high fortune may affect the official calculation');
+    }
+  },
+  {
+    name: 'PC Familles reste à vérifier si la fortune est élevée',
+    run() {
+      const results = compute({
+        sitPro: 'En emploi',
+        enfants: 'oui',
+        revenu: '1000-2000',
+        fortune: 'plus50000'
+      });
+      assert(hasResult(results, 'PC Familles', 'verifier'), 'High fortune should make PC Familles a verification, not a probable result');
+      assert(!hasResult(results, 'PC Familles', 'probable'), 'PC Familles should not be probable when high fortune may affect the official calculation');
+    }
+  },
+  {
+    name: 'Permis G garde les aides ordinaires prudentes',
+    run() {
+      const results = compute({
+        permis: 'Permis G',
+        sitPro: 'En emploi',
+        revenu: '1000-2000',
+        fortune: 'moins4000',
+        primeLamal: '250-400'
+      });
+      assert(hasResult(results, 'Permis G', 'probable'), 'Frontier worker profile should receive the dedicated Permis G orientation');
+      assert(!hasResult(results, 'Subside LAMal', 'probable'), 'Permis G should not receive a probable ordinary LAMal subsidy result');
+      assert(!hasResult(results, 'CarteCulture', 'probable'), 'Permis G should not receive a probable ordinary CarteCulture result');
+    }
+  },
+  {
     name: 'RI actuel rend LAMal et CarteCulture très probables',
     run() {
       const results = compute({

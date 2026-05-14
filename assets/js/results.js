@@ -253,7 +253,7 @@
       ? '<a href="' + escapeHtml(guideLink.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(result.nom || '') + '">' + escapeHtml(guideLink.label || 'Guide détaillé') + ' →</a>'
       : '';
     return '<div class="result-card-footer">'
-      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche catalogue →</button>'
+      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche catalogue →</button>'
       + guideHtml
       + '</div>';
   }
@@ -357,6 +357,21 @@
     return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).start || 'Par quoi commencer', bodyHtml, Math.min(resultCount, 8), 'margin-top:0.25rem;');
   }
 
+  function buildResultsNextStepBanner(primaryResult) {
+    if (!primaryResult || !primaryResult.nom) return '';
+    var guideLink = getGuideLinkForResult(primaryResult);
+    var guideHtml = guideLink && guideLink.href
+      ? '<a href="' + escapeHtml(guideLink.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(primaryResult.nom || '') + '">Guide détaillé →</a>'
+      : '';
+    return '<div class="results-next-step result-reveal">'
+      + '<div><div class="results-next-step-title">Suite logique</div>'
+      + '<p class="results-next-step-text">Commence par la première piste, puis ouvre sa fiche catalogue. Si tu veux creuser, passe ensuite au guide détaillé.</p></div>'
+      + '<div class="results-next-step-actions">'
+      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(primaryResult.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_next_step\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche catalogue →</button>'
+      + guideHtml
+      + '</div></div>';
+  }
+
   function buildDocsBanner(docList, resultCount) {
     return '';
   }
@@ -369,7 +384,7 @@
 
   function buildMoreCatalogBanner(resultCount) {
     var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le catalogue recense des ressources vaudoises supplémentaires — associations, services, aides spécifiques — qui pourraient te concerner.') + '</div></div>'
-      + '<a href="#catalogue" class="results-footer-banner-btn">' + escapeHtml(RESULTS_UI_CONFIG.openCatalogLabel || 'Explorer le catalogue →') + '</a>';
+      + '<a href="#catalogue" class="results-footer-banner-btn" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'results_footer\', aid: \'catalogue_des_aides\' });}">' + escapeHtml(RESULTS_UI_CONFIG.openCatalogLabel || 'Catalogue des aides →') + '</a>';
     return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Tu veux aller plus loin ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;', 'is-cta');
   }
 
@@ -436,8 +451,11 @@
       return !isSecondaryResult(item.nom || '');
     });
     var primaryFocusAssigned = false;
+    var primaryResult = res.find(function(item) {
+      return item && !isSecondaryResult(item.nom || '');
+    }) || res[0];
 
-    list.innerHTML = '<div class="results-count-label">' + res.length + ' piste' + (res.length > 1 ? 's' : '') + ' identifiée' + (res.length > 1 ? 's' : '') + '</div>';
+    list.innerHTML = '<div class="results-count-label">' + res.length + ' piste' + (res.length > 1 ? 's' : '') + ' identifiée' + (res.length > 1 ? 's' : '') + '</div>' + buildResultsNextStepBanner(primaryResult);
 
     res.forEach(function(r, index) {
       var secondary = isSecondaryResult(r.nom || '');
