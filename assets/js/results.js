@@ -95,16 +95,29 @@
     return !!(result.why || result.desc);
   }
 
-  function getWhySummary(result) {
+  function getProfileWhyReasons(result, profile) {
+    var reasons = [];
+    var name = result && result.nom ? result.nom : '';
+    if (profile && profile.age === '18-25' && matchesResultPatterns(name, ['jet service'])) {
+      reasons.push('Car tu as entre 18 et 25 ans.');
+    }
+    return reasons;
+  }
+
+  function getWhySummary(result, profile) {
     if (!result) return '';
     var raw = String(result.why || result.desc || '')
       .replace(/\n+/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
-    if (!raw) return '';
+    var reasons = getProfileWhyReasons(result, profile);
+    if (!raw && !reasons.length) return '';
     var sentence = raw.split(/(?<=[.!?])\s+/)[0] || raw;
     if (sentence.length > 135) sentence = sentence.slice(0, 132).trim() + '…';
-    return sentence;
+    if (reasons.length && matchesResultPatterns(result.nom || '', ['jet service'])) {
+      sentence = sentence.replace(/^Comme tu as entre 18 et 25 ans(?: et que tu es en formation)?,\s*/i, '');
+    }
+    return reasons.concat(sentence).filter(Boolean).join(' ');
   }
 
   function getResultLinkClass(label) {
@@ -301,8 +314,8 @@
     var detailClasses = RESULTS_UI_CONFIG.detailClasses || {};
     var purposeText = getAidPurpose(result.nom);
     var links = buildResultLinksHtml(result);
-    var whyHtml = shouldShowWhy(result) ? buildResultDetail(detailTitles.why || 'Pourquoi cette piste apparaît', getWhySummary(result), detailClasses.why || 'is-why', false) : '';
-    var actionHtml = result.action ? buildResultDetail(detailTitles.action || 'Ce que tu peux faire maintenant', '<div style="white-space:pre-line;">' + linkifyPhoneNumbersInHtml(result.action) + '</div>', detailClasses.action || 'is-action', true) : '';
+    var whyHtml = shouldShowWhy(result) ? buildResultDetail(detailTitles.why || 'Pourquoi cette piste apparaît', getWhySummary(result, meta.profile), detailClasses.why || 'is-why', false) : '';
+    var actionHtml = result.action ? buildResultDetail(detailTitles.action || 'Ce que tu peux faire maintenant', '<div style="white-space:pre-line;">' + linkifyPhoneNumbersInHtml(result.action) + '</div>', detailClasses.action || 'is-action', false) : '';
     var docsHtml = result.docs && result.docs.length
       ? buildResultDetail(detailTitles.docs || 'Documents utiles à préparer', '<ul>' + result.docs.map(function(doc) { return '<li>' + doc + '</li>'; }).join('') + '</ul>', detailClasses.docs || 'is-docs', false)
       : '';
@@ -472,7 +485,8 @@
       list.innerHTML += renderResultCard(r, index, {
         isPrimaryFocus: primaryFocus,
         isSecondary: secondary,
-        rankLabel: ''
+        rankLabel: '',
+        profile: profile
       });
     });
 
