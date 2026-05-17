@@ -711,15 +711,20 @@
 
   .guide-detail-page .guide-card {
     border-radius:14px;
-    border-color:#DED6C7;
+    border-color:#BFD8CE;
+    border-left:4px solid #BFD8CE;
     background:#FFFDF8;
     box-shadow:none;
   }
   .guide-detail-page .guide-card-primary {
-    border-left:4px solid var(--vaud);
+    border-left-color:#BFD8CE;
   }
   .guide-detail-page .guide-card:not(.guide-card-primary) {
-    border-left:4px solid var(--accent);
+    border-left-color:#BFD8CE;
+  }
+  .guide-detail-page .guide-faq-card {
+    border-color:var(--accent-border);
+    border-left-color:var(--accent);
   }
   .guide-detail-page .guide-card-label {
     border-radius:7px;
