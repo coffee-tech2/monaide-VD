@@ -239,8 +239,7 @@
           ],
           actions: [
             { label: 'Demander la CarteCulture', href: LINKS.CARTECULTURE_APPLY, primary: true },
-            { label: 'Contacter l’équipe CarteCulture Vaud', href: LINKS.CARTECULTURE_CONTACT, primary: false },
-            { label: 'Guide MonAide-VD', href: '/carteculture/', primary: false }
+            { label: 'Contacter l’équipe CarteCulture Vaud', href: LINKS.CARTECULTURE_CONTACT, primary: false }
           ]
         }
       }

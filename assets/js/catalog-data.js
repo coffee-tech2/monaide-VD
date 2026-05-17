@@ -298,8 +298,7 @@
       ],
       links: [
         { kind: 'action', label: 'Demander la CarteCulture', url: window.MONAIDE_LINKS.CARTECULTURE_APPLY },
-        { kind: 'info', label: 'Contacter CarteCulture', url: window.MONAIDE_LINKS.CARTECULTURE_CONTACT },
-        { kind: 'info', label: 'Guide détaillé', url: '/carteculture/' }
+        { kind: 'info', label: 'Contacter CarteCulture', url: window.MONAIDE_LINKS.CARTECULTURE_CONTACT }
       ],
       documentationTarget: { blockId: 'bloc-carte', accordionId: 'doc-carte' }
     },

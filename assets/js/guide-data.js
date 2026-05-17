@@ -132,16 +132,6 @@ window.MONAIDE_GUIDE_DATA = {
       keywords: ['bourse Vaud', 'OCBE', 'test éligibilité OCBE', 'formation']
     },
     {
-      id: 'carteculture',
-      label: 'Culture',
-      title: 'CarteCulture',
-      summary: 'À qui elle s’adresse et comment la demander avec le bon justificatif.',
-      href: '/carteculture/',
-      ctaLabel: 'Ouvrir le guide',
-      audience: ['culture'],
-      keywords: ['CarteCulture', 'Caritas']
-    },
-    {
       id: 'assurance-invalidite',
       label: 'Santé',
       title: 'Assurance invalidité',
@@ -217,7 +207,6 @@ window.MONAIDE_GUIDE_DATA = {
     bourse: 'bourses-ocbe',
     brapa: 'separation-vaud',
     'caritas-migration': 'permis-sejour-vaud',
-    carte: 'carteculture',
     'csp-vaud': 'dettes-budget',
     csr: 'centre-social-regional',
     evam: 'permis-sejour-vaud',
@@ -238,7 +227,6 @@ window.MONAIDE_GUIDE_DATA = {
     'mediation-familiale': 'separation-vaud',
     'menace-expulsion': 'aides-logement',
     'parlons-cash': 'dettes-budget',
-    'passculture': 'carteculture',
     'pc-familles': 'plus-assez-pour-vivre',
     'prestations-complementaires': 'prestations-complementaires',
     'pro-infirmis': 'assurance-invalidite',
