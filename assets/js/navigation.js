@@ -408,6 +408,39 @@
     });
   }
 
+  function initMonaideMotionReveal() {
+    if (window.__monaideMotionRevealInit) return;
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    window.__monaideMotionRevealInit = true;
+
+    var selectors = [
+      '.section > .container',
+      '.cat-group',
+      '.guide-story-section',
+      '.guide-card',
+      '.doc-accordion-shell',
+      '.community-inner'
+    ].join(',');
+    var targets = Array.from(document.querySelectorAll(selectors)).filter(function(el) {
+      return !el.closest('#simulateur') && !el.classList.contains('result-item') && !el.classList.contains('result-reveal');
+    });
+    if (!targets.length) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    targets.forEach(function(el) {
+      el.classList.add('motion-reveal');
+      observer.observe(el);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     var betaBanner = document.getElementById('beta-banner');
     var betaBannerClose = document.getElementById('beta-banner-close');
@@ -511,6 +544,7 @@
     addGuideLayerLinks();
     fitGuideCardTitles();
     bindGuideDetailTracking();
+    initMonaideMotionReveal();
   });
 
   window.addEventListener('resize', function() {

@@ -520,7 +520,10 @@
     }
     for (var i = 1; i <= TOTAL_STEPS; i++) {
       var el = document.getElementById('step' + i);
-      if (el) el.style.display = (i === step) ? 'block' : 'none';
+      if (el) {
+        el.style.display = (i === step) ? 'block' : 'none';
+        el.classList.toggle('is-active-step', i === step);
+      }
     }
     for (var i = 1; i <= TOTAL_STEPS; i++) {
       var dot = document.getElementById('dot' + i);

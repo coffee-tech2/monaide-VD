@@ -334,7 +334,7 @@
     if (meta.isSecondary) cardClasses += ' is-secondary-track';
     var rankHtml = meta.rankLabel ? '<div class="result-rank">' + escapeHtml(meta.rankLabel) + '</div>' : '';
     var footerHtml = buildResultFooter(result);
-    return '<article class="' + cardClasses + '" data-result-name="' + escapeHtml(result.nom) + '" style="animation-delay:' + (0.06 * Math.min(index, 8)) + 's;"><div class="result-card-header"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div></div></div>' + startHtml + '<div class="result-card-accordion">' + followUpHtml + '</div>' + footerHtml + '</article>';
+    return '<article class="' + cardClasses + '" data-result-name="' + escapeHtml(result.nom) + '" style="animation-delay:' + (0.08 * Math.min(index, 8)) + 's;"><div class="result-card-header"><span class="result-badge ' + badgeMeta.className + '">' + badgeMeta.label + '</span><div class="result-content">' + rankHtml + kindHtml + '<div class="result-name">' + buildResultNameHtml(result) + '</div><div class="result-lead">' + escapeHtml(purposeText) + '</div></div></div>' + startHtml + '<div class="result-card-accordion">' + followUpHtml + '</div>' + footerHtml + '</article>';
   }
 
   function bindResultDetailTracking(list) {
@@ -358,7 +358,7 @@
   }
 
   function renderResultsFooterBanner(title, bodyHtml, animationIndex, extraStyle, extraClass) {
-    return '<div class="results-footer-banner ' + (extraClass || '') + ' result-reveal" style="' + (extraStyle || '') + 'animation-delay:' + (0.06 * Math.min(animationIndex, 12)) + 's;"><div class="results-footer-banner-title">' + escapeHtml(title) + '</div><div class="results-footer-banner-body">' + bodyHtml + '</div></div>';
+    return '<div class="results-footer-banner ' + (extraClass || '') + ' result-reveal" style="' + (extraStyle || '') + 'animation-delay:' + (0.08 * Math.min(animationIndex, 12)) + 's;"><div class="results-footer-banner-title">' + escapeHtml(title) + '</div><div class="results-footer-banner-body">' + bodyHtml + '</div></div>';
   }
 
   function buildTopActionsBanner(topActions, resultCount) {
