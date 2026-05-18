@@ -107,10 +107,16 @@
     var aEnfants = profile.enfants && profile.enfants !== 'non';
     var chomage = profile.sitPro === 'Au chômage' || String(profile.sitPro || '').indexOf('Sans emploi') !== -1;
     var logementFragile = String(profile.logement || '').indexOf('Locataire') !== -1 && (profile.loyer === '1200-1800' || profile.loyer === 'plus1800');
+    var logementInstable = String(profile.logement || '').indexOf('Sans logement fixe') !== -1 || String(profile.logement || '').indexOf('structure d’accueil') !== -1;
     var permisNuance = /Permis (B|F|L|S|G|N)/.test(profile.permis || '') || String(profile.permis || '').indexOf('sans statut') !== -1;
+    var aidesListe = profile.aidesListe || [];
+    var dejaAideSociale = aidesListe.indexOf('RI') !== -1 || aidesListe.indexOf('PC') !== -1 || aidesListe.indexOf('lamal') !== -1 || aidesListe.indexOf('bourse') !== -1;
 
     if (profile.age === '18-25' && matchesResultPatterns(name, ['jet service', 'rupture d apprentissage', 'bourses', 'ocbe'])) {
       reasons.push('Car tu as entre 18 et 25 ans.');
+    }
+    if (profile.age === '65plus' && matchesResultPatterns(name, ['prestations complementaires', 'pro senectute', 'aas'])) {
+      reasons.push('Car tu indiques être à l’âge AVS.');
     }
     if (enFormation && matchesResultPatterns(name, ['bourses', 'ocbe', 'jet service', 'rupture d apprentissage'])) {
       reasons.push('Car tu indiques être en formation.');
@@ -130,17 +136,31 @@
     if (logementFragile && matchesResultPatterns(name, ['aides logement', 'centre social regional', 'revenu d insertion'])) {
       reasons.push('Car ton loyer semble lourd par rapport à la situation indiquée.');
     }
+    if (logementInstable && matchesResultPatterns(name, ['centre social regional', 'aides logement', 'urgence', 'expulsion'])) {
+      reasons.push('Car ton logement semble instable ou déjà fragile.');
+    }
     if (permisNuance && matchesResultPatterns(name, ['fraternite', 'evam', 'permis', 'subside lamal', 'assurance chomage', 'revenu d insertion'])) {
       reasons.push('Car ton statut de séjour peut changer la bonne démarche.');
     }
     if (profile.incapacite && profile.incapacite !== 'non' && matchesResultPatterns(name, ['assurance invalidite', 'pro infirmis', 'cms'])) {
       reasons.push('Car tu indiques une limite de santé ou une incapacité.');
     }
+    if (profile.dettes === 'loyer' && matchesResultPatterns(name, ['expulsion', 'asloca', 'centre social regional', 'dettes', 'parlons cash'])) {
+      reasons.push('Car tu indiques un retard de loyer ou une pression sur le logement.');
+    } else if (profile.dettes && profile.dettes !== 'non' && matchesResultPatterns(name, ['dettes', 'parlons cash', 'centre social regional', 'aide alimentaire'])) {
+      reasons.push('Car tu indiques des dettes ou des factures difficiles à gérer.');
+    }
     if (profile.separationEnCours === 'oui' && matchesResultPatterns(name, ['separation', 'brapa', 'centre social regional'])) {
       reasons.push('Car une séparation peut changer le budget, le logement ou les démarches familiales.');
     }
+    if (profile.besoinProtection === 'oui' && matchesResultPatterns(name, ['violence', 'protection', 'malley', 'lavi', '142'])) {
+      reasons.push('Car tu indiques un besoin de protection ou une situation de violence.');
+    }
     if (profile.procheAidant === 'oui' && matchesResultPatterns(name, ['proches aidant', 'cms'])) {
       reasons.push('Car tu indiques aider régulièrement un proche.');
+    }
+    if (dejaAideSociale && matchesResultPatterns(name, ['carteculture', 'subside lamal'])) {
+      reasons.push('Car tu indiques déjà une aide qui peut servir de repère ou de justificatif.');
     }
     return reasons;
   }

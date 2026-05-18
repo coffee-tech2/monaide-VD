@@ -572,7 +572,7 @@
   .guide-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1.35rem; align-items:stretch; }
   .guide-card { position:relative; display:flex; flex-direction:column; align-self:stretch; height:100%; min-height:0; background:rgba(255,253,250,0.96); border:1px solid rgba(233,221,208,0.96); border-radius:28px; padding:1.62rem 1.55rem 1.48rem; box-shadow:0 16px 30px rgba(72,59,49,0.035); overflow:hidden; transition:border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.22s ease; }
   .guide-card::before { content:''; position:absolute; left:1.35rem; right:1.35rem; top:0; height:2px; border-radius:999px; background:linear-gradient(90deg, rgba(var(--vaud-rgb),0.5), rgba(240,216,154,0.32), transparent); opacity:0.7; }
-  .guide-card:hover { border-color:rgba(191,216,206,0.95); box-shadow:0 18px 34px rgba(28,59,48,0.065); transform:translateY(-2px); background:#fffdf9; }
+  .guide-card:hover { border-color:rgba(191,216,206,0.95); box-shadow:0 18px 34px rgba(28,59,48,0.065); transform:translateY(-2px) scale(1.01); background:#fffdf9; }
   .guide-card-primary { background:linear-gradient(180deg, #fffdf9 0%, #fbf7f0 100%); border-color:#ebddd0; }
   .guide-support-card { grid-column:1 / -1; background:linear-gradient(135deg, rgba(214,238,229,0.58) 0%, rgba(255,252,247,0.98) 68%, rgba(240,216,154,0.18) 100%); border-color:rgba(42,107,82,0.2); box-shadow:0 18px 34px rgba(28,59,48,0.055); }
   .guide-support-card::before { background:linear-gradient(90deg, var(--mousse), rgba(240,216,154,0.58), transparent); opacity:0.95; }
@@ -625,7 +625,7 @@
   .guide-detail-page .guide-actions { justify-content:center; margin-top:1.05rem; }
   .guide-detail-page .guide-section { padding-top:1.25rem; }
   .guide-detail-page .guide-section .container { max-width:1180px; }
-  .guide-detail-page .guide-summary { max-width:54rem; margin:1.15rem 0 0; padding:1.45rem 1.5rem; border-radius:24px; background:#fffdfa; box-shadow:none; }
+  .guide-detail-page .guide-summary { max-width:54rem; margin:1.15rem auto 0; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none; }
   .guide-detail-page .guide-summary-kicker { margin-bottom:0.9rem; color:#7a7b73; font-size:0.72rem; font-weight:700; letter-spacing:0.08em; }
   .guide-detail-page .guide-summary-links { display:flex; flex-direction:column; gap:0.7rem; }
   .guide-detail-page .guide-summary-link { display:flex; align-items:flex-start; justify-content:flex-start; min-height:0; padding:0; border:none; border-radius:0; background:none; box-shadow:none; color:var(--vaud); font-size:0.93rem; font-weight:500; line-height:1.45; }
@@ -744,22 +744,22 @@
   .guide-detail-page .guide-faq-section {
     border-top-color:var(--accent-border);
   }
-  .guide-detail-page.guide-visual-test .hero-bg {
+  .guide-detail-page .hero-bg {
     background:#f6f1e8;
   }
-  .guide-detail-page.guide-visual-test .guide-shell {
+  .guide-detail-page .guide-shell {
     text-align:left;
   }
-  .guide-detail-page.guide-visual-test .guide-topline {
+  .guide-detail-page .guide-topline {
     justify-content:flex-start;
   }
-  .guide-detail-page.guide-visual-test .guide-backlink-chip,
-  .guide-detail-page.guide-visual-test .btn-primary,
-  .guide-detail-page.guide-visual-test .btn-secondary {
+  .guide-detail-page .guide-backlink-chip,
+  .guide-detail-page .btn-primary,
+  .guide-detail-page .btn-secondary {
     border-radius:8px;
     box-shadow:none;
   }
-  .guide-detail-page.guide-visual-test .guide-card {
+  .guide-detail-page .guide-card {
     border-radius:8px;
     border:1px solid #c8d8d0;
     border-left:1px solid #c8d8d0;
@@ -767,20 +767,20 @@
     box-shadow:none;
     transform:none;
   }
-  .guide-detail-page.guide-visual-test .guide-card::before {
+  .guide-detail-page .guide-card::before {
     display:none;
   }
-  .guide-detail-page.guide-visual-test .guide-card:hover {
-    transform:none;
+  .guide-detail-page .guide-card:hover {
+    transform:translateY(-1px) scale(1.006);
     box-shadow:none;
     border-color:#9fbfb0;
   }
-  .guide-detail-page.guide-visual-test .guide-card-primary {
+  .guide-detail-page .guide-card-primary {
     background:#fffdf8;
     border-color:#9fbfb0;
   }
-  .guide-detail-page.guide-visual-test .guide-card-label,
-  .guide-detail-page.guide-visual-test .guide-support-card .guide-card-label {
+  .guide-detail-page .guide-card-label,
+  .guide-detail-page .guide-support-card .guide-card-label {
     min-height:0;
     padding:0 0 0.32rem;
     border:0;
@@ -790,33 +790,33 @@
     color:#6e5521;
     letter-spacing:0.095em;
   }
-  .guide-detail-page.guide-visual-test .guide-inline-actions a,
-  .guide-detail-page.guide-visual-test main .guide-card a:not(.btn-primary):not(.btn-secondary) {
+  .guide-detail-page .guide-inline-actions a,
+  .guide-detail-page main .guide-card a:not(.btn-primary):not(.btn-secondary) {
     border-radius:8px;
     background:#fffdf8;
     border-color:#d7c7ae;
     box-shadow:none;
   }
-  .guide-detail-page.guide-visual-test .guide-inline-actions a:hover,
-  .guide-detail-page.guide-visual-test main .guide-card a:not(.btn-primary):not(.btn-secondary):hover {
+  .guide-detail-page .guide-inline-actions a:hover,
+  .guide-detail-page main .guide-card a:not(.btn-primary):not(.btn-secondary):hover {
     transform:none;
     box-shadow:none;
     background:#f7f0df;
     border-color:#b68a2d;
   }
-  .guide-detail-page.guide-visual-test .guide-doc-card .guide-list li {
+  .guide-detail-page .guide-doc-card .guide-list li {
     border-radius:8px;
     border-left:1px solid #d7c7ae;
     background:#fffdf8;
   }
-  .guide-detail-page.guide-visual-test .guide-practical-section .section-tag {
+  .guide-detail-page .guide-practical-section .section-tag {
     border-radius:0;
     background:transparent;
     border:0;
     border-bottom:1px solid rgba(192,151,58,0.58);
     color:#6e5521;
   }
-  .guide-detail-page.guide-visual-test .guide-faq-card {
+  .guide-detail-page .guide-faq-card {
     border-color:#d7c7ae;
   }
   .guide-practical-section .guide-card p { font-size:0.93rem; line-height:1.58; }
@@ -1265,7 +1265,9 @@
     .step-question-set.is-visible,
     .hero-lead,
     .hero-actions,
-    .cat-card.open .cat-card-body { animation: none !important; opacity: 1 !important; transform: none !important; }
+    .cat-card.open .cat-card-body,
+    .guide-card:hover,
+    .cat-card:hover { animation: none !important; opacity: 1 !important; transform: none !important; }
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -1514,6 +1516,7 @@
     .guide-next-step-actions a,
     .catalog-next-step a { width:100%; }
     .guide-summary { margin-top:0.9rem; padding:0.92rem 0.9rem 0.88rem; }
+    .guide-detail-page .guide-summary { padding:0; }
     .guide-summary-links { display:grid; grid-template-columns:1fr; gap:0.55rem; }
     .guide-summary-link { width:100%; justify-content:flex-start; text-align:left; white-space:normal; min-height:38px; }
     .guide-story-hero { margin-bottom:1.55rem; }
