@@ -14,7 +14,7 @@
     var rule = (RESULTS_UI_CONFIG.purposeRules || []).find(function(item) {
       return matchesResultPatterns(name, item.patterns);
     });
-    return rule ? rule.text : (RESULTS_UI_CONFIG.defaultPurpose || 'Cette aide ou orientation sert à t’ouvrir une piste concrète selon ta situation.');
+    return rule ? rule.text : (RESULTS_UI_CONFIG.defaultPurpose || 'Cette piste donne une première porte à vérifier selon les réponses indiquées.');
   }
 
   function getResultKind(name) {
@@ -437,7 +437,7 @@
   }
 
   function buildMoreCatalogBanner(resultCount) {
-    var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le catalogue recense des ressources vaudoises supplémentaires — associations, services, aides spécifiques — qui pourraient te concerner.') + '</div></div>'
+    var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le catalogue permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.') + '</div></div>'
       + '<a href="#catalogue" class="results-footer-banner-btn" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'results_footer\', aid: \'catalogue_des_aides\' });}">' + escapeHtml(RESULTS_UI_CONFIG.openCatalogLabel || 'Catalogue des aides →') + '</a>';
     return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Tu veux aller plus loin ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;', 'is-cta');
   }

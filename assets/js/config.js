@@ -247,7 +247,7 @@
   };
 
   window.MONAIDE_RESULTS_UI_CONFIG = {
-    defaultPurpose: 'Cette piste sert à t’ouvrir une orientation concrète selon ta situation.',
+    defaultPurpose: 'Cette piste donne une première porte à vérifier selon les réponses indiquées.',
     badgeOrder: {
       probable: 0,
       verifier: 1
@@ -286,7 +286,7 @@
     detailHint: 'ouvrir',
     moreCatalogLabel: 'En savoir plus',
     openCatalogLabel: 'Explorer le catalogue →',
-    noCoverageText: 'Le simulateur ne couvre pas tout. Le catalogue recense des ressources vaudoises supplémentaires — associations, services, aides spécifiques — qui pourraient te concerner.',
+    noCoverageText: 'Le simulateur ne couvre pas tout. Le catalogue permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.',
     purposeRules: [
       { patterns: ['subside lamal'], text: 'Cette aide sert à réduire le montant de la prime d’assurance maladie quand les conditions sont remplies.' },
       { patterns: ['revenu d insertion'], text: 'Cette aide sert à couvrir le minimum pour vivre quand les revenus ne suffisent plus, sous réserve d’un examen complet du dossier.' },
