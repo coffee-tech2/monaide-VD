@@ -744,6 +744,81 @@
   .guide-detail-page .guide-faq-section {
     border-top-color:var(--accent-border);
   }
+  .guide-detail-page.guide-visual-test .hero-bg {
+    background:#f6f1e8;
+  }
+  .guide-detail-page.guide-visual-test .guide-shell {
+    text-align:left;
+  }
+  .guide-detail-page.guide-visual-test .guide-topline {
+    justify-content:flex-start;
+  }
+  .guide-detail-page.guide-visual-test .guide-backlink-chip,
+  .guide-detail-page.guide-visual-test .btn-primary,
+  .guide-detail-page.guide-visual-test .btn-secondary {
+    border-radius:8px;
+    box-shadow:none;
+  }
+  .guide-detail-page.guide-visual-test .guide-card {
+    border-radius:8px;
+    border:1px solid #c8d8d0;
+    border-left:1px solid #c8d8d0;
+    background:#fffdf8;
+    box-shadow:none;
+    transform:none;
+  }
+  .guide-detail-page.guide-visual-test .guide-card::before {
+    display:none;
+  }
+  .guide-detail-page.guide-visual-test .guide-card:hover {
+    transform:none;
+    box-shadow:none;
+    border-color:#9fbfb0;
+  }
+  .guide-detail-page.guide-visual-test .guide-card-primary {
+    background:#fffdf8;
+    border-color:#9fbfb0;
+  }
+  .guide-detail-page.guide-visual-test .guide-card-label,
+  .guide-detail-page.guide-visual-test .guide-support-card .guide-card-label {
+    min-height:0;
+    padding:0 0 0.32rem;
+    border:0;
+    border-bottom:1px solid rgba(192,151,58,0.58);
+    border-radius:0;
+    background:transparent;
+    color:#6e5521;
+    letter-spacing:0.095em;
+  }
+  .guide-detail-page.guide-visual-test .guide-inline-actions a,
+  .guide-detail-page.guide-visual-test main .guide-card a:not(.btn-primary):not(.btn-secondary) {
+    border-radius:8px;
+    background:#fffdf8;
+    border-color:#d7c7ae;
+    box-shadow:none;
+  }
+  .guide-detail-page.guide-visual-test .guide-inline-actions a:hover,
+  .guide-detail-page.guide-visual-test main .guide-card a:not(.btn-primary):not(.btn-secondary):hover {
+    transform:none;
+    box-shadow:none;
+    background:#f7f0df;
+    border-color:#b68a2d;
+  }
+  .guide-detail-page.guide-visual-test .guide-doc-card .guide-list li {
+    border-radius:8px;
+    border-left:1px solid #d7c7ae;
+    background:#fffdf8;
+  }
+  .guide-detail-page.guide-visual-test .guide-practical-section .section-tag {
+    border-radius:0;
+    background:transparent;
+    border:0;
+    border-bottom:1px solid rgba(192,151,58,0.58);
+    color:#6e5521;
+  }
+  .guide-detail-page.guide-visual-test .guide-faq-card {
+    border-color:#d7c7ae;
+  }
   .guide-practical-section .guide-card p { font-size:0.93rem; line-height:1.58; }
   .guide-page:not(.guide-detail-page) .guide-shell {
     max-width: 1360px;
