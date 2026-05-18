@@ -849,7 +849,8 @@
       ],
       links: [
         { kind: 'action', label: 'LAVI Vaud', url: window.MONAIDE_LINKS.LAVI_INFO },
-        { kind: 'action', label: 'Centre LAVI Lausanne', url: window.MONAIDE_LINKS.LAVI_LAUSANNE }
+        { kind: 'action', label: 'Centre LAVI Lausanne', url: window.MONAIDE_LINKS.LAVI_LAUSANNE },
+        { kind: 'info', label: '142 — aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 }
       ],
       documentationTarget: null
     },
@@ -2595,7 +2596,8 @@
       ],
       links: [
         { kind: 'action', label: 'ASLOCA Vaud', url: window.MONAIDE_LINKS.ASLOCA_VAUD },
-        { kind: 'info', label: 'Voir les services', url: window.MONAIDE_LINKS.ASLOCA_SERVICES }
+        { kind: 'info', label: 'Voir les services', url: window.MONAIDE_LINKS.ASLOCA_SERVICES },
+        { kind: 'info', label: 'Guide détaillé', url: '/aides-logement/' }
       ],
       documentationTarget: null
     },
@@ -2969,7 +2971,8 @@
       ],
       links: [
         { kind: 'action', label: 'MalleyPrairie', url: window.MONAIDE_LINKS.MALLEY_PRAIRIE },
-        { kind: 'info', label: 'Violence Que Faire', url: window.MONAIDE_LINKS.VIOLENCE_QUE_FAIRE }
+        { kind: 'info', label: 'Violence Que Faire', url: window.MONAIDE_LINKS.VIOLENCE_QUE_FAIRE },
+        { kind: 'info', label: '142 — aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 }
       ],
       documentationTarget: null
     },
@@ -3030,6 +3033,7 @@
         { kind: 'action', label: 'Violence domestique — où trouver de l’aide', url: window.MONAIDE_LINKS.VIOLENCE_HELP },
         { kind: 'action', label: 'MalleyPrairie', url: window.MONAIDE_LINKS.MALLEY_PRAIRIE },
         { kind: 'info', label: 'Violence que faire', url: window.MONAIDE_LINKS.VIOLENCE_QUE_FAIRE },
+        { kind: 'info', label: '142 — aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 },
         { kind: 'info', label: 'LAVI Vaud', url: window.MONAIDE_LINKS.LAVI_INFO }
       ],
       documentationTarget: null
