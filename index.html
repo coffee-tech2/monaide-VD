@@ -103,39 +103,6 @@
   }
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "MonAide-VD remplace-t-il un service officiel ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Le site donne un premier repère pour s’orienter, mais ne remplace pas un service officiel ni une décision administrative."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Par où commencer si je suis perdu·e ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le plus simple est de commencer par le simulateur pour obtenir un premier tri, puis d’ouvrir le guide ou la fiche du catalogue qui correspond à ta situation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment signaler une erreur ou une aide manquante ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tu peux écrire à info@monaide-vaud.ch pour signaler un bug, une information à corriger ou une aide manquante."
-      }
-    }
-  ]
-}
-</script>
-
 <!-- Google Tag Manager: production only -->
 <script>
 (function(w,d,s,l,i){
@@ -605,13 +572,13 @@
             <label class="form-label">Es-tu en formation&#160;?</label>
             <div class="choice-grid">
               <label><input class="choice-input" type="radio" name="en_formation" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="en_formation" value="oui_apres_obligatoire"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui, post-obligatoire</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="en_formation" value="oui_obligatoire"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui, scolarit&#233; obligatoire</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="en_formation" value="oui_apres_obligatoire"><span class="choice-card"><span class="choice-text"><span class="choice-title">Post-obligatoire</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="en_formation" value="oui_obligatoire"><span class="choice-card"><span class="choice-text"><span class="choice-title">Scolarit&#233; obligatoire</span></span><span class="choice-check"></span></span></label>
             </div>
             <select class="form-select" id="en_formation" hidden>
               <option value="non">Non</option>
-              <option value="oui_apres_obligatoire">Oui &#8212; formation post-obligatoire (CFC, maturit&#233;, HES, uni&#8230;)</option>
-              <option value="oui_obligatoire">Oui &#8212; scolarit&#233; obligatoire</option>
+              <option value="oui_apres_obligatoire">Post-obligatoire</option>
+              <option value="oui_obligatoire">Scolarit&#233; obligatoire</option>
             </select>
             <div class="form-help">Cette question s&#8217;affiche seulement si elle peut changer le r&#233;sultat.</div>
           </div>
@@ -1011,27 +978,6 @@
     <h2 class="community-title">Tu vois une erreur, une aide manquante ou un point flou&#160;?</h2>
     <p class="feedback-text">Le site est en bêta et continue d’évoluer. Tes retours aident à corriger les infos, clarifier les formulations et repérer les aides qui manquent encore.</p>
     <a href="mailto:info@monaide-vaud.ch?subject=Retour%20MonAide-VD" class="feedback-link">Nous écrire <span class="btn-arrow">→</span></a>
-  </div>
-</section>
-
-<section class="section section-plain" id="faq">
-  <div class="section-inner narrow">
-    <div class="section-tag">Questions fréquentes</div>
-    <h2 class="section-title">Avant de commencer, voici l’essentiel</h2>
-    <div class="faq-list" aria-label="Questions fréquentes">
-      <article class="faq-item">
-        <h3>Est-ce que MonAide-VD remplace un service officiel&#160;?</h3>
-        <p>Non. Le site sert à faire un premier tri et à trouver une première porte utile, mais il ne remplace pas une décision officielle ni un accompagnement social.</p>
-      </article>
-      <article class="faq-item">
-        <h3>Si je suis perdu·e, je commence par quoi&#160;?</h3>
-        <p>Le plus simple est de commencer par le simulateur. Si tu arrives déjà avec un sujet précis, tu peux aussi passer directement par le catalogue ou les guides.</p>
-      </article>
-      <article class="faq-item">
-        <h3>Comment signaler une erreur ou une aide manquante&#160;?</h3>
-        <p>Tu peux nous écrire à <a href="mailto:info@monaide-vaud.ch">info@monaide-vaud.ch</a>. Les retours concrets sont très utiles pour améliorer le site.</p>
-      </article>
-    </div>
   </div>
 </section>
 

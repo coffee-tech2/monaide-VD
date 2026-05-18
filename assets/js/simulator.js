@@ -100,6 +100,51 @@
     if (select) select.value = '';
   }
 
+  function isStudentSituation(value) {
+    return String(value || '').indexOf('tudiant') !== -1 || String(value || '').indexOf('apprentissage') !== -1;
+  }
+
+  function setChoiceOptionVisibility(name, value, visible) {
+    document.querySelectorAll('input.choice-input[name="' + name + '"][value="' + value + '"]').forEach(function(input) {
+      var label = input.closest('label');
+      if (label) {
+        label.hidden = !visible;
+        label.style.display = visible ? '' : 'none';
+      }
+    });
+    var select = document.getElementById(name);
+    if (!select) return;
+    Array.from(select.options).forEach(function(option) {
+      if (option.value === value) option.hidden = !visible;
+    });
+  }
+
+  function syncFormationQuestionMode() {
+    var sitPro = selectedValue('situation_pro', '');
+    var group = document.getElementById('group-formation');
+    if (!group) return;
+    var label = group.querySelector('.form-label');
+    var helper = group.querySelector('.form-help');
+    var student = isStudentSituation(sitPro);
+
+    setChoiceOptionVisibility('en_formation', 'non', !student);
+
+    if (student) {
+      if (label) label.textContent = 'Quel type de formation ?';
+      if (helper) {
+        helper.textContent = '';
+        helper.hidden = true;
+      }
+      if (selectedValue('en_formation', '') === 'non') clearRadioValue('en_formation');
+    } else {
+      if (label) label.textContent = 'Es-tu en formation ?';
+      if (helper) {
+        helper.textContent = 'Cette question s’affiche seulement si elle peut changer le résultat.';
+        helper.hidden = false;
+      }
+    }
+  }
+
   function toggleConditionalBlock(id, show, resetName, resetValue) {
     var el = document.getElementById(id);
     if (!el) return;
@@ -206,12 +251,14 @@
     var logement = selectedValue('logement', '');
 
     var retraite = sitPro.indexOf('Retrait') !== -1 || age === '65plus';
-    var jeuneOuFormation = age === 'moins18' || age === '18-25' || age === '26-35' || sitPro.indexOf('tudiant') !== -1;
+    var situationEtudiante = isStudentSituation(sitPro);
+    var jeuneOuFormation = age === 'moins18' || age === '18-25' || age === '26-35' || situationEtudiante;
     var familleAvecEnfants = famille.indexOf('enfants') !== -1 || famille.indexOf('Parent seul') !== -1;
     var logementAvecCout = logement.indexOf('Locataire') !== -1 || logement.indexOf('Propri') !== -1;
 
     toggleConditionalBlock('group-enfants', !famille || familleAvecEnfants || famille === 'Autre', 'enfants', familleAvecEnfants ? null : 'non');
-    toggleConditionalBlock('group-formation', !retraite && (!sitPro || jeuneOuFormation || sitPro.indexOf('tudiant') !== -1), 'en_formation', 'non');
+    toggleConditionalBlock('group-formation', !retraite && (!sitPro || jeuneOuFormation), 'en_formation', 'non');
+    syncFormationQuestionMode();
     toggleConditionalBlock('group-loyer', logementAvecCout, 'loyer');
   }
 
@@ -340,7 +387,11 @@
   }
 
   function getRequiredFieldsForCurrentStep(step) {
-    return (SIMULATOR_CONFIG.requiredFieldsForCurrentStep && SIMULATOR_CONFIG.requiredFieldsForCurrentStep[step]) || [];
+    var fields = ((SIMULATOR_CONFIG.requiredFieldsForCurrentStep && SIMULATOR_CONFIG.requiredFieldsForCurrentStep[step]) || []).slice();
+    if (step === 2 && isStudentSituation(selectedValue('situation_pro', '')) && fields.indexOf('en_formation') === -1) {
+      fields.push('en_formation');
+    }
+    return fields;
   }
 
   function updateRequiredMarkers(step) {
@@ -540,7 +591,11 @@
   }
 
   function getStepRequiredFields(step) {
-    return (SIMULATOR_CONFIG.requiredFieldsBeforeStep && SIMULATOR_CONFIG.requiredFieldsBeforeStep[step]) || [];
+    var fields = ((SIMULATOR_CONFIG.requiredFieldsBeforeStep && SIMULATOR_CONFIG.requiredFieldsBeforeStep[step]) || []).slice();
+    if (step === 3 && isStudentSituation(selectedValue('situation_pro', '')) && fields.indexOf('en_formation') === -1) {
+      fields.push('en_formation');
+    }
+    return fields;
   }
 
   function getFieldValue(fieldId) {
@@ -678,7 +733,8 @@
       else error.setAttribute('role', 'alert');
     }
     var helper = group.querySelector('.form-error-helper');
-    if (!valid && !helper) {
+    var suppressGuidedError = fieldId === 'en_formation' && isStudentSituation(selectedValue('situation_pro', ''));
+    if (!valid && !helper && !suppressGuidedError) {
       helper = document.createElement('div');
       helper.className = 'form-error-helper';
       helper.textContent = 'Réponds juste à cette question pour continuer. Tu peux choisir l’option la plus proche, même si ce n’est pas parfait.';
@@ -736,7 +792,11 @@
   }
 
   function getAllRequiredFieldIds() {
-    return SIMULATOR_CONFIG.allRequiredFieldIds || ['age', 'situation_familiale', 'statut_sejour', 'situation_pro', 'logement', 'revenu', 'fortune', 'prime_lamal'];
+    var fields = (SIMULATOR_CONFIG.allRequiredFieldIds || ['age', 'situation_familiale', 'statut_sejour', 'situation_pro', 'logement', 'revenu', 'fortune', 'prime_lamal']).slice();
+    if (isStudentSituation(selectedValue('situation_pro', '')) && fields.indexOf('en_formation') === -1) {
+      fields.push('en_formation');
+    }
+    return fields;
   }
 
   function validateAllSimulationFields() {

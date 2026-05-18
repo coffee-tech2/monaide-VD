@@ -504,13 +504,14 @@
   }
 
   function addLamalResult(res, flags) {
+    var lamalRetroactiveNote = '\n\nÀ savoir : selon les périodes, la réponse de l’OVAM peut prendre du temps. Si le subside est accordé, il est versé à ton assureur depuis la date reconnue. Si tu as payé trop de primes pendant l’attente, l’assurance corrige en général la situation, par remboursement ou par déduction sur les prochaines primes.';
     if (flags.alreadyRI || flags.alreadyPC) {
       res.push(buildResult({
         nom: 'Subside LAMal — réduction de prime',
         badge: 'probable',
         strongProbable: true,
         desc: 'Si tu touches déjà le RI ou les PC, le subside LAMal est généralement lié à cette situation. Le plus utile est de vérifier qu’il est bien actif et correctement appliqué.',
-        action: '1. Vérifie que le subside apparaît bien sur ta prime ou dans ta décision.\n2. Si ce n’est pas clair, contacte ton agence AAS ou l’OVAM avec ta décision RI/PC et ta police LAMal.\n3. Garde la décision : elle peut servir de justificatif pour d’autres démarches, notamment la CarteCulture.',
+        action: '1. Vérifie que le subside apparaît bien sur ta prime ou dans ta décision.\n2. Si ce n’est pas clair, contacte ton agence AAS ou l’OVAM avec ta décision RI/PC et ta police LAMal.\n3. Garde la décision : elle peut servir de justificatif pour d’autres démarches, notamment la CarteCulture.' + lamalRetroactiveNote,
         today: 'Regarde ta dernière décision ou appelle ton agence AAS pour vérifier que la réduction est bien active.',
         docs: ['Attestation RI ou PC', 'Police LAMal actuelle'],
         liens: true
@@ -523,7 +524,7 @@
         nom: 'Subside LAMal — réduction de prime',
         badge: 'verifier',
         desc: 'Tes revenus peuvent faire penser à un subside, mais une fortune importante peut modifier le calcul du Revenu Déterminant Unifié (RDU). Il faut donc passer par le calcul officiel.',
-        action: '1. Utilise le simulateur officiel du canton avec tes revenus et ta fortune.\n2. Prépare ta police LAMal, ta taxation ou les informations de fortune disponibles.\n3. Si le résultat semble positif ou peu clair, demande de l’aide à une agence AAS avant de conclure.',
+        action: '1. Utilise le simulateur officiel du canton avec tes revenus et ta fortune.\n2. Prépare ta police LAMal, ta taxation ou les informations de fortune disponibles.\n3. Si le résultat semble positif ou peu clair, demande de l’aide à une agence AAS avant de conclure.' + lamalRetroactiveNote,
         today: 'Commence par le calcul officiel, car la fortune peut changer le résultat.',
         docs: ['Police LAMal', 'Revenus du ménage', 'Taxation ou estimation de fortune'],
         liens: true
@@ -541,8 +542,8 @@
           ? 'Tes revenus semblent compatibles avec un subside et ta prime maladie pèse lourd dans le budget. C’est une piste importante à vérifier.'
           : 'Avec ton niveau de revenus, un subside est probablement envisageable. Le montant exact dépend ensuite du Revenu Déterminant Unifié (RDU), qui tient compte des revenus et de la fortune.',
         action: (flags.permisF || flags.permisL)
-          ? '1. Fais d’abord le calcul officiel du subside.\n2. Si le résultat semble positif, prépare ta police LAMal, tes revenus et ton permis.\n3. Dépose la demande avec une agence d’assurances sociales (AAS) pour éviter une erreur de dossier.\n4. Si la question touche aussi au séjour, demande en parallèle un avis au CSP Fraternité.'
-          : '1. Utilise le simulateur officiel du canton pour estimer ton droit.\n2. Prépare ta police LAMal, ta dernière taxation ou une estimation de tes revenus.\n3. Si la piste paraît positive, dépose la demande en ligne ou avec une agence AAS.\n4. Garde la décision reçue : elle pourra aussi servir de justificatif pour d’autres aides.',
+          ? '1. Fais d’abord le calcul officiel du subside.\n2. Si le résultat semble positif, prépare ta police LAMal, tes revenus et ton permis.\n3. Dépose la demande avec une agence d’assurances sociales (AAS) pour éviter une erreur de dossier.\n4. Si la question touche aussi au séjour, demande en parallèle un avis au CSP Fraternité.' + lamalRetroactiveNote
+          : '1. Utilise le simulateur officiel du canton pour estimer ton droit.\n2. Prépare ta police LAMal, ta dernière taxation ou une estimation de tes revenus.\n3. Si la piste paraît positive, dépose la demande en ligne ou avec une agence AAS.\n4. Garde la décision reçue : elle pourra aussi servir de justificatif pour d’autres aides.' + lamalRetroactiveNote,
         today: 'Commence par le calcul officiel. Si tu bloques, passe par une AAS. En cas de doute sur le suivi du dossier, contacte l’OVAM.',
         docs: ['Dernière taxation si disponible', 'Police LAMal', 'Relevés de revenus'],
         liens: true,
@@ -556,7 +557,7 @@
         nom: 'Subside LAMal — réduction de prime',
         badge: 'verifier',
         desc: 'Un subside partiel est possible selon ta fortune et ta situation exacte. On ne peut pas se prononcer sans le calcul officiel.',
-        action: '1. Fais le calcul officiel, même si tu n’es pas sûr·e des montants.\n2. Si tu hésites sur les revenus à indiquer, contacte une agence AAS avant d’envoyer.\n3. Si le calcul semble positif, dépose la demande et garde une copie de la confirmation.',
+        action: '1. Fais le calcul officiel, même si tu n’es pas sûr·e des montants.\n2. Si tu hésites sur les revenus à indiquer, contacte une agence AAS avant d’envoyer.\n3. Si le calcul semble positif, dépose la demande et garde une copie de la confirmation.' + lamalRetroactiveNote,
         today: 'Fais le test officiel avant de lancer d’autres démarches.',
         docs: ['Police LAMal', 'Revenus du ménage', 'Taxation ou estimation de revenus'],
         liens: true
