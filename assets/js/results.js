@@ -56,6 +56,12 @@
     }
     var separationEnCours = !!(context && context.separationEnCours);
     if (separationEnCours && matchesResultPatterns(name, ['separation', 'divorce'])) return 9.5;
+    var incapaciteDurable = !!(context && context.incapaciteDurable);
+    if (incapaciteDurable) {
+      if (matchesResultPatterns(name, ['assurance invalidite'])) return 1.5;
+      if (matchesResultPatterns(name, ['pro infirmis', 'cms'])) return 4.5;
+      if (matchesResultPatterns(name, ['subside lamal'])) return 8;
+    }
     var rule = (RESULTS_UI_CONFIG.priorityRules || []).find(function(item) {
       return matchesResultPatterns(name, item.patterns);
     });

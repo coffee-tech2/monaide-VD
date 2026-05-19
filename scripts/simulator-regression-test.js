@@ -178,6 +178,25 @@ const scenarios = [
     }
   },
   {
+    name: 'Incapacité durable remonte avant LAMal',
+    run() {
+      const results = runProfile({
+        sitPro: 'Sans emploi - sans revenu',
+        revenu: '1000-2000',
+        incapacite: 'oui_durable',
+        aidesListe: []
+      });
+      const aiIndex = indexOfResult(results, 'Assurance invalidité');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const proInfirmisIndex = indexOfResult(results, 'Pro Infirmis');
+      assert(aiIndex !== -1, 'AI should appear for durable incapacity');
+      assert(lamalIndex !== -1, 'LAMal should remain visible');
+      assert(proInfirmisIndex !== -1, 'Pro Infirmis should remain visible as support');
+      assert(aiIndex < lamalIndex, 'AI should be before LAMal when durable incapacity is declared');
+      assert(proInfirmisIndex < lamalIndex, 'Pro Infirmis should be before LAMal when durable incapacity is declared');
+    }
+  },
+  {
     name: 'CarteCulture très probable ne remonte pas avant le subside déjà lié au RI',
     run() {
       const results = runProfile({
