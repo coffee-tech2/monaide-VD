@@ -113,6 +113,28 @@ const scenarios = [
     }
   },
   {
+    name: 'Sans emploi sans revenu garde LACI et RI avant LAMal',
+    run() {
+      const results = runProfile({
+        age: '26-35',
+        sitPro: 'Sans emploi - sans revenu',
+        revenu: 'moins1000',
+        dettes: 'non',
+        aidesListe: []
+      });
+      const laciIndex = indexOfResult(results, 'Assurance chômage');
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const cashIndex = indexOfResult(results, 'Parlons Cash');
+      assert(laciIndex !== -1, 'LACI should appear when employment ended or is unclear');
+      assert(riIndex !== -1, 'RI should appear as immediate budget fallback');
+      assert(lamalIndex !== -1, 'LAMal should remain visible but not first');
+      assert(laciIndex < lamalIndex, 'LACI should be before LAMal');
+      assert(riIndex < lamalIndex, 'RI should be before LAMal');
+      assert(cashIndex === -1, 'Parlons Cash should not appear without a debt signal');
+    }
+  },
+  {
     name: 'CarteCulture très probable ne remonte pas avant le subside déjà lié au RI',
     run() {
       const results = runProfile({

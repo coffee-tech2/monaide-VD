@@ -40,6 +40,12 @@
       if (matchesResultPatterns(name, ['subside lamal'])) return 6;
       if (matchesResultPatterns(name, ['rupture d apprentissage', 'guichet t1'])) return 35;
     }
+    var sansRevenuEtSansEmploi = !!(context && context.sansRevenuEtSansEmploi);
+    if (sansRevenuEtSansEmploi) {
+      if (matchesResultPatterns(name, ['assurance chomage'])) return 0;
+      if (matchesResultPatterns(name, ['revenu d insertion', 'centre social regional'])) return 1;
+      if (matchesResultPatterns(name, ['subside lamal'])) return 6;
+    }
     var rule = (RESULTS_UI_CONFIG.priorityRules || []).find(function(item) {
       return matchesResultPatterns(name, item.patterns);
     });

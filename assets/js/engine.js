@@ -917,6 +917,7 @@
     var res = [];
     var age = flags.age;
     var enEmploi = flags.enEmploi;
+    var sansRevenuEtSansEmploi = flags.sitPro.indexOf('Sans emploi') !== -1 && (flags.revenu === 'aucun' || flags.revenu === 'moins1000');
     applySimulationRules(res, flags);
     applySimulationGuardrails(res, flags);
 
@@ -926,7 +927,8 @@
         enEmploi: enEmploi,
         age: age,
         enFormation: flags.enFormation,
-        etudiant: flags.etudiant
+        etudiant: flags.etudiant,
+        sansRevenuEtSansEmploi: sansRevenuEtSansEmploi
       }
     };
   };
