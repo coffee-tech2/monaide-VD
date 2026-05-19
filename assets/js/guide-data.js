@@ -2,7 +2,7 @@ window.MONAIDE_GUIDE_DATA = {
   items: [
     {
       id: 'aides-sociales-vaud',
-      label: 'Entrée générale',
+      label: 'Orientation',
       title: 'Aides sociales dans le canton de Vaud',
       summary: 'Une bonne porte d’entrée si tu cherches surtout des repères généraux et à qui t’adresser d’abord.',
       href: '/aides-sociales-vaud/',
@@ -13,7 +13,7 @@ window.MONAIDE_GUIDE_DATA = {
     },
     {
       id: 'primes-maladie-vaud',
-      label: 'Besoin fréquent',
+      label: 'Santé',
       title: 'Je n’arrive plus à payer mes primes maladie',
       summary: 'Subside LAMal, demande OVAM, AAS gratuite et premières démarches si les primes deviennent trop lourdes.',
       href: '/primes-maladie-vaud/',
@@ -23,7 +23,7 @@ window.MONAIDE_GUIDE_DATA = {
     },
     {
       id: 'plus-assez-pour-vivre',
-      label: 'Besoin fréquent',
+      label: 'Revenus',
       title: 'Je n’ai plus assez pour vivre',
       summary: 'Que faire quand le budget ne tient plus dans le canton de Vaud : CSR, RI, subside LAMal, dettes et premières portes concrètes.',
       href: '/plus-assez-pour-vivre/',
@@ -33,7 +33,7 @@ window.MONAIDE_GUIDE_DATA = {
     },
     {
       id: 'perdre-son-emploi',
-      label: 'Besoin fréquent',
+      label: 'Emploi',
       title: 'Je viens de perdre mon emploi',
       summary: 'Les premiers gestes après une perte d’emploi : inscription ORP, Job-Room, caisse de chômage et quoi faire si les revenus s’arrêtent.',
       href: '/perdre-son-emploi/',
@@ -43,7 +43,7 @@ window.MONAIDE_GUIDE_DATA = {
     },
     {
       id: 'aide-formation-vaud',
-      label: 'Besoin fréquent',
+      label: 'Formation',
       title: 'J’ai besoin d’aide pour ma formation',
       summary: 'Bourse OCBE, prêt d’études et premières pistes si les études ou l’apprentissage coûtent trop cher.',
       href: '/aide-formation-vaud/',
@@ -53,7 +53,7 @@ window.MONAIDE_GUIDE_DATA = {
     },
     {
       id: 'parent-solo-vaud',
-      label: 'Besoin fréquent',
+      label: 'Famille',
       title: 'Parent solo',
       summary: 'Allocations, pension, BRAPA et garde d’enfants quand on élève seul·e un ou plusieurs enfants.',
       href: '/parent-solo-vaud/',
@@ -63,7 +63,7 @@ window.MONAIDE_GUIDE_DATA = {
     },
     {
       id: 'separation-vaud',
-      label: 'Besoin fréquent',
+      label: 'Famille',
       title: 'Séparation',
       summary: 'Pension alimentaire, BRAPA et médiation quand la séparation complique aussi le budget ou les démarches.',
       href: '/separation-vaud/',
@@ -93,7 +93,7 @@ window.MONAIDE_GUIDE_DATA = {
     },
     {
       id: 'revenu-insertion',
-      label: 'Revenu minimum',
+      label: 'Revenus',
       title: 'Revenu d’insertion (RI)',
       summary: 'Quand le revenu d’insertion peut être une piste, comment contacter le CSR et quels documents préparer si l’argent manque.',
       href: '/revenu-insertion/',

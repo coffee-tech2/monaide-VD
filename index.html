@@ -861,14 +861,13 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="search" id="cat-search" class="catalog-search-input" placeholder="Rechercher une aide..." autocomplete="off" inputmode="search" enterkeyhint="search" aria-label="Rechercher une aide dans le catalogue" oninput="filtrerCatalogue()">
       </div>
-      <div class="search-helper">Essaie aussi : caisse maladie, permis, loyer, emploi, dettes, habits pas chers.</div>
       <div class="search-suggestions" aria-label="Suggestions de recherche">
-        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('caisse maladie')">Caisse maladie</button>
-        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('permis')">Permis / séjour</button>
-        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('loyer')">Aide pour le loyer</button>
-        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('emploi')">Perte d’emploi</button>
-        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('parlons cash')">Dettes / budget</button>
-        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('habits pas chers')">Habits pas chers</button>
+        <span>Exemples :</span>
+        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('caisse maladie')">caisse maladie</button>
+        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('permis')">permis</button>
+        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('loyer')">loyer</button>
+        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('emploi')">emploi</button>
+        <button type="button" class="search-suggestion-chip" onclick="applySearchSuggestion('parlons cash')">dettes</button>
       </div>
     </div>
     <div class="catalog-filter-sticky">
