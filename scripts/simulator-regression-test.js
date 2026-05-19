@@ -135,6 +135,31 @@ const scenarios = [
     }
   },
   {
+    name: 'Urgence logement passe avant le subside LAMal',
+    run() {
+      const results = runProfile({
+        age: '26-35',
+        sitPro: 'En emploi',
+        revenu: '1000-2000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '1200-1800',
+        dettes: 'loyer',
+        aidesListe: []
+      });
+      const expulsionIndex = indexOfResult(results, 'Menace d\'expulsion');
+      const csrIndex = indexOfResult(results, 'Centre social régional');
+      const aidesLogementIndex = indexOfResult(results, 'Aides logement');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      assert(expulsionIndex !== -1, 'Expulsion support should appear for rent debt');
+      assert(csrIndex !== -1, 'CSR should appear as immediate social entry point');
+      assert(aidesLogementIndex !== -1, 'Housing aid should remain visible');
+      assert(lamalIndex !== -1, 'LAMal should remain visible but lower priority');
+      assert(expulsionIndex < csrIndex, 'Expulsion support should be before CSR in housing emergency');
+      assert(csrIndex < aidesLogementIndex, 'CSR should be before broader housing aid');
+      assert(aidesLogementIndex < lamalIndex, 'Housing tracks should be before LAMal in housing emergency');
+    }
+  },
+  {
     name: 'CarteCulture très probable ne remonte pas avant le subside déjà lié au RI',
     run() {
       const results = runProfile({

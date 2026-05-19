@@ -918,6 +918,7 @@
     var age = flags.age;
     var enEmploi = flags.enEmploi;
     var sansRevenuEtSansEmploi = flags.sitPro.indexOf('Sans emploi') !== -1 && (flags.revenu === 'aucun' || flags.revenu === 'moins1000');
+    var urgenceLogement = flags.dettes === 'loyer' || flags.logement.includes('Sans logement fixe');
     applySimulationRules(res, flags);
     applySimulationGuardrails(res, flags);
 
@@ -928,7 +929,8 @@
         age: age,
         enFormation: flags.enFormation,
         etudiant: flags.etudiant,
-        sansRevenuEtSansEmploi: sansRevenuEtSansEmploi
+        sansRevenuEtSansEmploi: sansRevenuEtSansEmploi,
+        urgenceLogement: urgenceLogement
       }
     };
   };

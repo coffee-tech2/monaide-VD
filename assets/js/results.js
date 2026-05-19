@@ -46,6 +46,14 @@
       if (matchesResultPatterns(name, ['revenu d insertion', 'centre social regional'])) return 1;
       if (matchesResultPatterns(name, ['subside lamal'])) return 6;
     }
+    var urgenceLogement = !!(context && context.urgenceLogement);
+    if (urgenceLogement) {
+      if (matchesResultPatterns(name, ['expulsion', 'asloca'])) return 0;
+      if (matchesResultPatterns(name, ['centre social regional', 'revenu d insertion'])) return 1;
+      if (matchesResultPatterns(name, ['aides logement'])) return 2;
+      if (matchesResultPatterns(name, ['parlons cash', 'dettes'])) return 3;
+      if (matchesResultPatterns(name, ['subside lamal'])) return 8;
+    }
     var rule = (RESULTS_UI_CONFIG.priorityRules || []).find(function(item) {
       return matchesResultPatterns(name, item.patterns);
     });
