@@ -921,6 +921,7 @@
     var urgenceLogement = flags.dettes === 'loyer' || flags.logement.includes('Sans logement fixe');
     var separationEnCours = flags.separationEnCours === 'oui';
     var incapaciteDurable = flags.incapacite === 'oui_durable';
+    var procheAidant = flags.procheAidant === 'oui';
     applySimulationRules(res, flags);
     applySimulationGuardrails(res, flags);
 
@@ -934,7 +935,8 @@
         sansRevenuEtSansEmploi: sansRevenuEtSansEmploi,
         urgenceLogement: urgenceLogement,
         separationEnCours: separationEnCours,
-        incapaciteDurable: incapaciteDurable
+        incapaciteDurable: incapaciteDurable,
+        procheAidant: procheAidant
       }
     };
   };

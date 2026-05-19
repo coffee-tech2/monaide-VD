@@ -197,6 +197,22 @@ const scenarios = [
     }
   },
   {
+    name: 'Proche aidant remonte avant LAMal',
+    run() {
+      const results = runProfile({
+        sitPro: 'En emploi',
+        revenu: '2000-3500',
+        procheAidant: 'oui',
+        aidesListe: []
+      });
+      const procheAidantIndex = indexOfResult(results, 'Proches aidant');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      assert(procheAidantIndex !== -1, 'Proche aidant support should appear when declared');
+      assert(lamalIndex !== -1, 'LAMal should remain visible');
+      assert(procheAidantIndex < lamalIndex, 'Proche aidant support should be before LAMal when declared');
+    }
+  },
+  {
     name: 'CarteCulture très probable ne remonte pas avant le subside déjà lié au RI',
     run() {
       const results = runProfile({
