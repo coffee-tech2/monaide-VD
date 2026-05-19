@@ -87,9 +87,14 @@ const scenarios = [
       });
       const ocbeIndex = indexOfResult(results, 'Bourses d\'études');
       const jetIndex = indexOfResult(results, 'Jet Service');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const ruptureIndex = indexOfResult(results, 'Rupture d’apprentissage');
       assert(ocbeIndex !== -1, 'OCBE should appear for training profile');
       assert(jetIndex !== -1, 'Jet Service should appear as support for training profile');
+      assert(lamalIndex !== -1, 'LAMal should still appear as a budget/health track');
       assert(ocbeIndex < jetIndex, 'OCBE should remain before Jet Service');
+      assert(jetIndex < lamalIndex, 'Jet Service should stay before LAMal for a young training profile');
+      assert(ruptureIndex === -1, 'Rupture apprenticeship should not appear without a rupture signal');
     }
   },
   {

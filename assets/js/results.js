@@ -33,6 +33,13 @@
 
   function getResultPriority(name, context) {
     var enEmploi = !!(context && context.enEmploi);
+    var jeuneEnFormation = !!(context && context.age === '18-25' && context.enFormation);
+    if (jeuneEnFormation) {
+      if (matchesResultPatterns(name, ['bourses', 'ocbe'])) return 0;
+      if (matchesResultPatterns(name, ['jet service'])) return 1;
+      if (matchesResultPatterns(name, ['subside lamal'])) return 6;
+      if (matchesResultPatterns(name, ['rupture d apprentissage', 'guichet t1'])) return 35;
+    }
     var rule = (RESULTS_UI_CONFIG.priorityRules || []).find(function(item) {
       return matchesResultPatterns(name, item.patterns);
     });

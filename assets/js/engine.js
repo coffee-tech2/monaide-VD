@@ -844,7 +844,7 @@
       needsOcbe: flags.enFormation && !flags.alreadyBourse,
       needsAi: flags.incapacite !== 'non' && !flags.alreadyAI,
       needsJetService: flags.age === '18-25' || flags.enFormation,
-      needsRuptureApprentissage: flags.age === '18-25' && !flags.enEmploi && (flags.enFormation || flags.etudiant),
+      needsRuptureApprentissage: false,
       needsViolenceProtection: flags.besoinProtection === 'oui',
       needsSeparationSupport: flags.separationEnCours === 'oui' && flags.besoinProtection !== 'oui',
       needsProchesAidants: flags.procheAidant === 'oui',
@@ -923,7 +923,10 @@
     return {
       results: dedupeResults(res),
       context: {
-        enEmploi: enEmploi
+        enEmploi: enEmploi,
+        age: age,
+        enFormation: flags.enFormation,
+        etudiant: flags.etudiant
       }
     };
   };
