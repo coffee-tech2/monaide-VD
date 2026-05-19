@@ -54,6 +54,8 @@
       if (matchesResultPatterns(name, ['parlons cash', 'dettes'])) return 3;
       if (matchesResultPatterns(name, ['subside lamal'])) return 8;
     }
+    var separationEnCours = !!(context && context.separationEnCours);
+    if (separationEnCours && matchesResultPatterns(name, ['separation', 'divorce'])) return 9.5;
     var rule = (RESULTS_UI_CONFIG.priorityRules || []).find(function(item) {
       return matchesResultPatterns(name, item.patterns);
     });

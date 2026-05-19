@@ -160,6 +160,24 @@ const scenarios = [
     }
   },
   {
+    name: 'Séparation en cours remonte dans les premiers repères',
+    run() {
+      const results = runProfile({
+        sitPro: 'En emploi',
+        enfants: 'oui',
+        revenu: '1000-2000',
+        separationEnCours: 'oui',
+        aidesListe: []
+      });
+      const separationIndex = indexOfResult(results, 'Séparation');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      assert(separationIndex !== -1, 'Separation support should appear when separation is declared');
+      assert(allocationsIndex !== -1, 'Family allowances should remain visible');
+      assert(separationIndex <= 3, 'Separation should stay in the first visible results');
+      assert(separationIndex < allocationsIndex, 'Separation should be before generic family allowances when separation is active');
+    }
+  },
+  {
     name: 'CarteCulture très probable ne remonte pas avant le subside déjà lié au RI',
     run() {
       const results = runProfile({

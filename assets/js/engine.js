@@ -919,6 +919,7 @@
     var enEmploi = flags.enEmploi;
     var sansRevenuEtSansEmploi = flags.sitPro.indexOf('Sans emploi') !== -1 && (flags.revenu === 'aucun' || flags.revenu === 'moins1000');
     var urgenceLogement = flags.dettes === 'loyer' || flags.logement.includes('Sans logement fixe');
+    var separationEnCours = flags.separationEnCours === 'oui';
     applySimulationRules(res, flags);
     applySimulationGuardrails(res, flags);
 
@@ -930,7 +931,8 @@
         enFormation: flags.enFormation,
         etudiant: flags.etudiant,
         sansRevenuEtSansEmploi: sansRevenuEtSansEmploi,
-        urgenceLogement: urgenceLogement
+        urgenceLogement: urgenceLogement,
+        separationEnCours: separationEnCours
       }
     };
   };
