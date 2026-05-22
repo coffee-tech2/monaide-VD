@@ -139,8 +139,8 @@
     } else {
       if (label) label.textContent = 'Es-tu en formation ?';
       if (helper) {
-        helper.textContent = 'Cette question s’affiche seulement si elle peut changer le résultat.';
-        helper.hidden = false;
+        helper.textContent = '';
+        helper.hidden = true;
       }
     }
   }
