@@ -139,6 +139,7 @@
     var revenuModere = profile.revenu === '2000-3500';
     var primeElevee = profile.primeLamal === '250-400' || profile.primeLamal === 'plus400';
     var enFormation = profile.formation === 'oui_apres_obligatoire';
+    var jeuneEnFormation = profile.age === '18-25' && enFormation;
     var aEnfants = profile.enfants && profile.enfants !== 'non';
     var chomage = profile.sitPro === 'Au chômage' || String(profile.sitPro || '').indexOf('Sans emploi') !== -1;
     var logementFragile = String(profile.logement || '').indexOf('Locataire') !== -1 && (profile.loyer === '1200-1800' || profile.loyer === 'plus1800');
@@ -147,16 +148,22 @@
     var aidesListe = profile.aidesListe || [];
     var dejaAideSociale = aidesListe.indexOf('RI') !== -1 || aidesListe.indexOf('PC') !== -1 || aidesListe.indexOf('lamal') !== -1 || aidesListe.indexOf('bourse') !== -1;
 
-    if (profile.age === '18-25' && matchesResultPatterns(name, ['jet service', 'rupture d apprentissage', 'bourses', 'ocbe'])) {
+    if (jeuneEnFormation && matchesResultPatterns(name, ['bourses', 'ocbe'])) {
+      reasons.push('Car tu es en formation et entre 18 et 25 ans : une bourse OCBE peut parfois aider à couvrir une partie des frais de formation.');
+    } else if (jeuneEnFormation && matchesResultPatterns(name, ['jet service'])) {
+      reasons.push('Car Jet Service aide les jeunes en formation à faire le point sur les bourses, le budget, le travail ou les démarches qui deviennent floues.');
+    } else if (profile.age === '18-25' && matchesResultPatterns(name, ['rupture d apprentissage'])) {
       reasons.push('Car tu as entre 18 et 25 ans.');
     }
     if (profile.age === '65plus' && matchesResultPatterns(name, ['prestations complementaires', 'pro senectute', 'aas'])) {
       reasons.push('Car tu indiques être à l’âge AVS.');
     }
-    if (enFormation && matchesResultPatterns(name, ['bourses', 'ocbe', 'jet service', 'rupture d apprentissage'])) {
+    if (enFormation && matchesResultPatterns(name, ['rupture d apprentissage'])) {
       reasons.push('Car tu indiques être en formation.');
     }
-    if (revenuFaible && matchesResultPatterns(name, ['revenu d insertion', 'centre social regional', 'subside lamal', 'aide alimentaire', 'carteculture'])) {
+    if (jeuneEnFormation && matchesResultPatterns(name, ['subside lamal'])) {
+      reasons.push('Car en formation, la prime maladie peut vite peser lourd dans le budget : le subside LAMal sert à vérifier si elle peut être réduite.');
+    } else if (revenuFaible && matchesResultPatterns(name, ['revenu d insertion', 'centre social regional', 'subside lamal', 'aide alimentaire', 'carteculture'])) {
       reasons.push('Car tes revenus indiqués sont bas.');
     }
     if (revenuModere && primeElevee && matchesResultPatterns(name, ['subside lamal'])) {
