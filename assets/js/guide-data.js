@@ -115,11 +115,11 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'allocations-familiales',
       label: 'Famille',
       title: 'Allocations familiales',
-      summary: 'Repérer la bonne porte selon la situation professionnelle et les enfants à charge.',
+      summary: 'Demande d’allocations familiales Vaud : bonne caisse, enfant en formation, chômage ou absence d’activité.',
       href: '/allocations-familiales/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['famille'],
-      keywords: ['allocations familiales', 'enfants']
+      keywords: ['allocations familiales Vaud', 'demande allocations familiales', 'enfant en formation', 'caisse allocations']
     },
     {
       id: 'bourses-ocbe',
