@@ -1600,6 +1600,13 @@
     padding:1.18rem 1.2rem 1.05rem;
   }
 
+  .guide-detail-page .guide-faq-card .guide-card-title {
+    font-size:1.34rem;
+    line-height:1.14;
+    letter-spacing:0;
+    text-wrap:pretty;
+  }
+
   .catalog-filter-sticky {
     backdrop-filter:none;
     -webkit-backdrop-filter:none;
