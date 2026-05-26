@@ -182,7 +182,7 @@
   .section-inner.catalog-inner { max-width:680px; }
   .section-tag { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--orange); margin-bottom: 0.5rem; }
   .section-tag-pill { display:inline-flex; align-items:center; padding:0.38rem 0.78rem; border-radius:var(--radius-sm); background:#FFFDF8; border:1px solid #C8D8D0; color:var(--sage-dark); font-weight:800; letter-spacing:0.1em; margin-bottom:0.75rem; }
-  .section-title { font-family: 'Newsreader', Georgia, serif; font-size: clamp(2.05rem, 3.8vw, 3rem); font-weight: 680; line-height: 1.04; letter-spacing:-0.042em; margin-bottom: 0.65rem; color: var(--vaud); }
+  .section-title { font-family: 'Newsreader', Georgia, serif; font-size: clamp(2.05rem, 3.8vw, 3rem); font-weight: 680; line-height: 1.08; letter-spacing:-0.042em; margin-bottom: 0.65rem; color: var(--vaud); }
   .section-subtitle { color: var(--warm-gray); font-size: 0.92rem; line-height:1.65; margin:0 0 2rem; max-width: 34rem; }
   .section-subtitle a { color: var(--orange-dark); font-weight: 700; text-decoration: none; }
   .section-subtitle a:hover { color: var(--sage-dark); }
@@ -1277,7 +1277,7 @@
     #simulateur,
     #catalogue,
     .section-inner { padding: 0; }
-    .section-title { font-size: clamp(1.55rem, 7.4vw, 1.95rem); line-height:1.04; margin-bottom:0.42rem; }
+    .section-title { font-size: clamp(1.55rem, 7.4vw, 1.95rem); line-height:1.08; margin-bottom:0.42rem; }
     .section-subtitle { font-size:0.84rem; line-height:1.52; margin-bottom:1rem; max-width:none; }
     .hero { padding: 0.55rem 0.9rem 0.8rem; min-height: auto; }
     body.beta-banner-dismissed .hero { padding-top: calc(64px + 0.85rem); }
@@ -1532,6 +1532,95 @@
     .search-suggestions,
     .docs-shortcuts { grid-template-columns:1fr; }
   }
+
+  /* DA stabilization pass: guides and catalogue hierarchy */
+  .guide-card-label,
+  .guide-page:not(.guide-detail-page) .guide-card-label,
+  .guide-detail-page .guide-card-label,
+  .guide-detail-page .guide-support-card .guide-card-label,
+  .guide-detail-page .guide-practical-section .section-tag,
+  .cat-tier-kicker,
+  .cat-tier-heading[data-tier="essential"] .cat-tier-kicker,
+  .cat-tier-heading[data-tier="complement"] .cat-tier-kicker {
+    border-color:rgba(var(--vaud-rgb),0.34);
+    color:var(--vaud);
+  }
+
+  .guide-card p,
+  .guide-detail-page .guide-card p,
+  .guide-page:not(.guide-detail-page) .guide-card p {
+    max-width:60ch;
+    font-size:0.95rem;
+    line-height:1.72;
+  }
+
+  .guide-card p + p,
+  .guide-detail-page .guide-card p + p {
+    margin-top:0.85rem;
+  }
+
+  .guide-page:not(.guide-detail-page) .guide-card-title {
+    white-space:normal;
+    text-wrap:pretty;
+    min-height:0;
+  }
+
+  .guide-detail-page .guide-card {
+    padding:1.26rem 1.28rem 1.12rem;
+    border:1px solid #C8D8D0;
+    border-left:1px solid #C8D8D0;
+    background:rgba(255,253,248,0.72);
+  }
+
+  .guide-detail-page .guide-card-primary {
+    padding:1.48rem 1.48rem 1.32rem;
+    border-color:#9FBFB0;
+    border-left:4px solid var(--vaud);
+    background:#F1F8F4;
+  }
+
+  .guide-detail-page .guide-card-primary .guide-card-title {
+    color:var(--forest);
+  }
+
+  .guide-detail-page .guide-doc-card,
+  .guide-detail-page .guide-faq-card {
+    border-left:1px solid #C8D8D0;
+  }
+
+  .guide-detail-page .guide-faq-section {
+    margin-top:3rem;
+    padding-top:3rem;
+    border-top:2px solid #C8D8D0;
+  }
+
+  .guide-detail-page .guide-faq-card {
+    background:#FFFDF8;
+    border-color:#D8D4CA;
+    padding:1.18rem 1.2rem 1.05rem;
+  }
+
+  .catalog-filter-sticky {
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    box-shadow:none;
+    background:#FAF7F2;
+  }
+
+  .cat-filter.active {
+    border-color:var(--forest);
+    outline:2px solid rgba(var(--vaud-rgb),0.2);
+    outline-offset:2px;
+  }
+
+  .catalog-note-title {
+    color:var(--vaud);
+  }
+
+  .cat-card-header {
+    min-height:0;
+  }
+
   @media (min-width: 601px) {
     .nav-mobile-actions { display:none; }
     .hamburger { display: none; }
