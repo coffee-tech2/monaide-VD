@@ -164,12 +164,12 @@ window.MONAIDE_GUIDE_DATA = {
     {
       id: 'chomage-laci',
       label: 'Emploi',
-      title: 'Chômage et LACI',
-      summary: 'Chômage Vaud et LACI : inscription ORP, Job-Room, caisse de chômage, délais et papiers utiles après une perte d’emploi.',
+      title: 'Inscription ORP Vaud',
+      summary: 'Inscription ORP Vaud, Job-Room, caisse de chômage, preuves de recherche d’emploi et papiers utiles après une perte d’emploi.',
       href: '/chomage-laci/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['emploi'],
-      keywords: ['chômage Vaud', 'inscription ORP', 'Job-Room']
+      keywords: ['inscription ORP Vaud', 'chômage LACI', 'Job-Room', 'preuves recherche emploi']
     },
     {
       id: 'dettes-budget',
