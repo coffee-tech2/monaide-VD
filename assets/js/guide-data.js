@@ -185,11 +185,11 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'aides-logement',
       label: 'Logement',
       title: 'Aides logement',
-      summary: 'Loyer trop lourd, menace de résiliation ou besoin d’un logement plus abordable.',
+      summary: 'Aide au logement Vaud : simulation, loyer trop lourd, résiliation, ASLOCA, CSR et logement subventionné.',
       href: '/aides-logement/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['logement'],
-      keywords: ['aides logement', 'loyer']
+      keywords: ['aide logement Vaud', 'simulation logement', 'loyer trop lourd', 'résiliation bail', 'ASLOCA']
     }
   ]
 };
