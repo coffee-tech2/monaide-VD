@@ -749,9 +749,16 @@
 
   function addOcbeResult(res, flags) {
     var statutNuance = flags.permisL || flags.permisS || flags.permisF || flags.permisB || flags.permisG;
-    var desc = statutNuance
-      ? 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais l’OCBE doit vérifier plusieurs points : formation reconnue, statut de séjour, domicile des parents ou statut d’indépendance, et situation financière.'
-      : 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais il faut vérifier plusieurs conditions avant de conclure : formation reconnue, domicile des parents ou indépendance, revenus du ménage et documents OCBE.';
+    var desc;
+    if (!flags.enFormation && flags.etudiant) {
+      desc = statutNuance
+        ? 'Tu sembles être en formation ou en apprentissage. Les bourses OCBE sont possibles si ta formation est post-obligatoire et reconnue en Suisse, mais ton statut de séjour et ta situation familiale doivent aussi être vérifiés.'
+        : 'Tu sembles être en formation ou en apprentissage. Les bourses OCBE sont possibles si ta formation est post-obligatoire et reconnue en Suisse. Il vaut la peine de vérifier les conditions avant de conclure.';
+    } else {
+      desc = statutNuance
+        ? 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais l’OCBE doit vérifier plusieurs points : formation reconnue, statut de séjour, domicile des parents ou statut d’indépendance, et situation financière.'
+        : 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais il faut vérifier plusieurs conditions avant de conclure : formation reconnue, domicile des parents ou indépendance, revenus du ménage et documents OCBE.';
+    }
 
     res.push(buildResult({
       nom: 'Bourses d\'études — OCBE',
@@ -841,9 +848,9 @@
       needsAllocationsFamiliales: flags.aEnfants && !flags.alreadyAF,
       needsChomageActif: flags.alreadyChomage,
       needsLaci: flags.chomageNonIndem && !flags.alreadyChomage && !flags.permisN && !flags.sansStatut,
-      needsOcbe: flags.enFormation && !flags.alreadyBourse,
+      needsOcbe: (flags.enFormation || flags.etudiant) && !flags.alreadyBourse,
       needsAi: flags.incapacite !== 'non' && !flags.alreadyAI,
-      needsJetService: flags.age === '18-25' || flags.enFormation,
+      needsJetService: flags.age === '18-25' || flags.enFormation || flags.etudiant,
       needsRuptureApprentissage: false,
       needsViolenceProtection: flags.besoinProtection === 'oui',
       needsSeparationSupport: flags.separationEnCours === 'oui' && flags.besoinProtection !== 'oui',
