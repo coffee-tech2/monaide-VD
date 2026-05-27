@@ -470,16 +470,19 @@
     document.querySelectorAll('.nav-dropdown > a').forEach(function(a) {
       a.setAttribute('aria-haspopup', 'true');
       a.setAttribute('aria-expanded', 'false');
-      a.setAttribute('role', 'button');
       a.addEventListener('click', function(e) {
         var menu = this.nextElementSibling;
         if (!menu) return;
-        e.preventDefault();
-        e.stopPropagation();
-        var willOpen = !menu.classList.contains('open');
+        if (window.innerWidth <= 600) {
+          e.preventDefault();
+          e.stopPropagation();
+          var willOpen = !menu.classList.contains('open');
+          closeMobileNavDropdowns();
+          menu.classList.toggle('open', willOpen);
+          this.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+          return;
+        }
         closeMobileNavDropdowns();
-        menu.classList.toggle('open', willOpen);
-        this.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
       });
     });
     // Fermer le dropdown en cliquant ailleurs
