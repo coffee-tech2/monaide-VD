@@ -286,8 +286,8 @@
     moreDetailsHint: 'Pourquoi, étapes, documents et liens',
     detailHint: 'ouvrir',
     moreCatalogLabel: 'En savoir plus',
-    openCatalogLabel: 'Explorer le catalogue →',
-    noCoverageText: 'Le simulateur ne couvre pas tout. Le catalogue permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.',
+    openCatalogLabel: 'Explorer le répertoire →',
+    noCoverageText: 'Le simulateur ne couvre pas tout. Le répertoire permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.',
     purposeRules: [
       { patterns: ['subside lamal'], text: 'Cette aide sert à réduire le montant de la prime d’assurance maladie quand les conditions sont remplies.' },
       { patterns: ['revenu d insertion'], text: 'Cette aide sert à couvrir le minimum pour vivre quand les revenus ne suffisent plus, sous réserve d’un examen complet du dossier.' },

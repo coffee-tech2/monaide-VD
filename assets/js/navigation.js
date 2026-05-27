@@ -367,7 +367,7 @@
     if (!main || main.querySelector('.guide-next-step')) return;
     var bridge = document.createElement('section');
     bridge.className = 'guide-next-step';
-    bridge.innerHTML = '<div class="guide-next-step-inner"><div><strong>Pas sûr·e que cette page corresponde à ta situation ?</strong><span>Le simulateur peut t’aider à faire un premier tri. Le catalogue permet ensuite de comparer les aides et les services proches.</span></div><div class="guide-next-step-actions"><a href="/#simulateur">Faire le simulateur <span aria-hidden="true">→</span></a><a href="/#catalogue">Retour au catalogue</a></div></div>';
+    bridge.innerHTML = '<div class="guide-next-step-inner"><div><strong>Pas sûr·e que cette page corresponde à ta situation ?</strong><span>Le simulateur peut t’aider à faire un premier tri. Le répertoire permet ensuite de comparer les aides et les services proches.</span></div><div class="guide-next-step-actions"><a href="/#simulateur">Faire le simulateur <span aria-hidden="true">→</span></a><a href="/#catalogue">Retour au répertoire</a></div></div>';
     main.appendChild(bridge);
   }
 

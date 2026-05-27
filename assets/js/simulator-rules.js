@@ -316,7 +316,7 @@ window.MONAIDE_SIMULATION_RULES = [
     when: 'needsFallback',
     handler: 'addFallbackResult',
     confidence: 'orientation générale',
-    guardrails: ['Ne prétend pas qu’il n’existe aucune aide.', 'Renvoie vers catalogue et premier relais humain.'],
+    guardrails: ['Ne prétend pas qu’il n’existe aucune aide.', 'Renvoie vers répertoire et premier relais humain.'],
     sourceType: 'sécurité UX'
   }
 ];

@@ -369,7 +369,7 @@
       ? '<a href="' + escapeHtml(guideLink.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(result.nom || '') + '">' + escapeHtml(guideLink.label || 'Guide détaillé') + ' →</a>'
       : '';
     return '<div class="result-card-footer">'
-      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche catalogue →</button>'
+      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche du répertoire →</button>'
       + guideHtml
       + '</div>';
   }
@@ -481,9 +481,9 @@
       : '';
     return '<div class="results-next-step result-reveal">'
       + '<div><div class="results-next-step-title">Suite logique</div>'
-      + '<p class="results-next-step-text">Commence par la première piste, puis ouvre sa fiche catalogue. Si tu veux creuser, passe ensuite au guide détaillé.</p></div>'
+      + '<p class="results-next-step-text">Commence par la première piste, puis ouvre sa fiche du répertoire. Si tu veux creuser, passe ensuite au guide détaillé.</p></div>'
       + '<div class="results-next-step-actions">'
-      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(primaryResult.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_next_step\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche catalogue →</button>'
+      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(primaryResult.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_next_step\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche du répertoire →</button>'
       + guideHtml
       + '</div></div>';
   }
@@ -499,8 +499,8 @@
   }
 
   function buildMoreCatalogBanner(resultCount) {
-    var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le catalogue permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.') + '</div></div>'
-      + '<a href="#catalogue" class="results-footer-banner-btn" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'results_footer\', aid: \'catalogue_des_aides\' });}">' + escapeHtml(RESULTS_UI_CONFIG.openCatalogLabel || 'Catalogue des aides →') + '</a>';
+    var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le répertoire permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.') + '</div></div>'
+      + '<a href="#catalogue" class="results-footer-banner-btn" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'results_footer\', aid: \'catalogue_des_aides\' });}">' + escapeHtml(RESULTS_UI_CONFIG.openCatalogLabel || 'Répertoire des aides →') + '</a>';
     return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Tu veux aller plus loin ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;', 'is-cta');
   }
 
