@@ -1583,10 +1583,16 @@
   }
 
   .guide-detail-page .guide-faq-card .guide-card-title {
+    display:block;
+    max-width:100%;
+    min-width:0;
     font-size:1.34rem !important;
     line-height:1.14 !important;
     letter-spacing:0 !important;
     font-weight:800 !important;
+    white-space:normal !important;
+    overflow-wrap:anywhere !important;
+    word-break:normal;
     text-wrap:pretty;
   }
 
