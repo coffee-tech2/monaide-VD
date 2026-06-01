@@ -61,7 +61,11 @@
       if (matchesResultPatterns(name, ['subside lamal'])) return 8;
     }
     var separationEnCours = !!(context && context.separationEnCours);
-    if (separationEnCours && matchesResultPatterns(name, ['separation', 'divorce'])) return 9.5;
+    if (separationEnCours) {
+      if (matchesResultPatterns(name, ['separation', 'divorce'])) return 0.5;
+      if (matchesResultPatterns(name, ['pc familles'])) return 2.5;
+      if (matchesResultPatterns(name, ['subside lamal'])) return 8;
+    }
     var incapaciteDurable = !!(context && context.incapaciteDurable);
     if (incapaciteDurable) {
       if (matchesResultPatterns(name, ['assurance invalidite'])) return 1.5;

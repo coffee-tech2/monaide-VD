@@ -256,6 +256,63 @@ const scenarios = [
       assert(lamalIndex !== -1, 'LAMal can remain visible as a secondary track');
       assert((violenceIndex !== -1 ? violenceIndex : laviIndex) < lamalIndex, 'Protection support should stay before LAMal');
     }
+  },
+  {
+    name: 'Parcours primes maladie trop lourdes priorise LAMal',
+    run() {
+      const results = runProfile({
+        sitPro: 'En emploi',
+        revenu: '2000-3500',
+        fortune: 'moins4000',
+        primeLamal: 'plus400',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '700-1200'
+      });
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      assert(lamalIndex === 0, 'LAMal should be the first track when the main signal is a heavy health insurance premium');
+      assert(riIndex === -1, 'RI should not appear without a base-needs signal in the heavy premium scenario');
+    }
+  },
+  {
+    name: 'Parcours plus assez pour vivre garde RI avant LAMal',
+    run() {
+      const results = runProfile({
+        sitPro: 'Sans emploi - sans revenu',
+        revenu: 'aucun',
+        fortune: 'moins4000',
+        primeLamal: '250-400',
+        dettes: 'non'
+      });
+      const laciIndex = indexOfResult(results, 'Assurance chômage');
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const foodIndex = indexOfResult(results, 'Aide alimentaire');
+      assert(laciIndex !== -1, 'LACI should remain visible to avoid missing unemployment rights');
+      assert(riIndex !== -1 && riIndex <= 1, 'RI should be one of the first two tracks when basic income is missing');
+      assert(lamalIndex !== -1 && riIndex < lamalIndex, 'RI should be before LAMal when there is no income');
+      assert(foodIndex !== -1 && foodIndex <= 4, 'Food support should stay visible in a no-income scenario');
+    }
+  },
+  {
+    name: 'Parcours séparation parent solo priorise la porte séparation',
+    run() {
+      const results = runProfile({
+        sitPro: 'En emploi',
+        enfants: 'moins16',
+        revenu: '1000-2000',
+        fortune: 'moins4000',
+        separationEnCours: 'oui'
+      });
+      const separationIndex = indexOfResult(results, 'Séparation');
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      assert(separationIndex === 0, 'Separation should be first when a parent solo/separation signal is active');
+      assert(pcFamillesIndex !== -1, 'PC Familles should remain visible for a working parent with low income');
+      assert(allocationsIndex !== -1, 'Family allowances should remain visible for children at charge');
+      assert(lamalIndex !== -1 && separationIndex < lamalIndex, 'Separation should be before LAMal in this path');
+    }
   }
 ];
 
