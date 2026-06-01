@@ -15,8 +15,9 @@
       'Réponds seulement si la question apparaît. Le simulateur adapte la suite.'
     ],
     3: [
-      'Une fourchette suffit. Le but est d’orienter, pas de calculer un droit officiel.',
-      'Ces infos servent surtout à repérer si une aide financière mérite d’être vérifiée.'
+      'Commence par une fourchette de revenu. Le but est d’orienter, pas de calculer un droit officiel.',
+      'Pour l’épargne et la prime maladie, une estimation suffit. Tu peux choisir “Je ne sais pas”.',
+      'Dernier point: dis seulement si une aide est déjà ouverte, pour éviter les doublons.'
     ],
     4: [
       'Derniers points utiles: santé, dettes ou situation familiale sensible peuvent changer la bonne porte.',
@@ -26,7 +27,7 @@
   var questionSetsByStep = SIMULATOR_CONFIG.questionSetsByStep || {
     1: [['commune', 'age'], ['situation_familiale', 'statut_sejour', 'besoin_protection']],
     2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
-    3: [['revenu', 'fortune', 'prime_lamal'], ['aides_actuelles']],
+    3: [['revenu'], ['fortune', 'prime_lamal'], ['aides_actuelles']],
     4: [['incapacite', 'dettes'], ['separation_en_cours'], ['proche_aidant']]
   };
 
