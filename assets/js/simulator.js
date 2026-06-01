@@ -24,10 +24,10 @@
     ]
   };
   var questionSetsByStep = SIMULATOR_CONFIG.questionSetsByStep || {
-    1: [['commune', 'age'], ['situation_familiale', 'statut_sejour']],
+    1: [['commune', 'age'], ['situation_familiale', 'statut_sejour', 'besoin_protection']],
     2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
     3: [['revenu', 'fortune', 'prime_lamal'], ['aides_actuelles']],
-    4: [['incapacite', 'dettes'], ['separation_en_cours', 'besoin_protection'], ['proche_aidant']]
+    4: [['incapacite', 'dettes'], ['separation_en_cours'], ['proche_aidant']]
   };
 
   function trackSimulatorEvent(name, params) {
@@ -634,10 +634,10 @@
   }
 
   function getStepForField(fieldId) {
-    if (['commune', 'age', 'situation_familiale', 'statut_sejour'].indexOf(fieldId) !== -1) return 1;
+    if (['commune', 'age', 'situation_familiale', 'statut_sejour', 'besoin_protection'].indexOf(fieldId) !== -1) return 1;
     if (['situation_pro', 'logement', 'enfants', 'loyer', 'en_formation'].indexOf(fieldId) !== -1) return 2;
     if (['revenu', 'fortune', 'prime_lamal', 'aides_actuelles'].indexOf(fieldId) !== -1) return 3;
-    if (['incapacite', 'dettes', 'separation_en_cours', 'besoin_protection', 'proche_aidant'].indexOf(fieldId) !== -1) return 4;
+    if (['incapacite', 'dettes', 'separation_en_cours', 'proche_aidant'].indexOf(fieldId) !== -1) return 4;
     return 1;
   }
 
