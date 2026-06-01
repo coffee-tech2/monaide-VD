@@ -478,6 +478,7 @@
       strongProbable: true,
       desc: 'Si tu vis de la violence ou que tu as besoin de protection, la priorité est la sécurité et l’accès à un relais spécialisé.',
       action: '1. Si le danger est immédiat, appelle le 117. En cas de blessure ou d’urgence médicale, appelle le 144.\n2. Si tu peux parler en sécurité, contacte MalleyPrairie au 021 620 76 76 pour conseil, évaluation du danger ou mise à l’abri.\n3. Contacte ensuite la LAVI pour connaître tes droits, les aides possibles et l’accompagnement, même sans plainte déposée.\n4. Garde messages, constats ou certificats uniquement si c’est sans danger. Ne prends pas de risque pour récupérer des affaires ou des papiers.',
+      today: 'Si tu ne te sens pas en sécurité, cherche d’abord un relais de protection avant les démarches administratives.',
       docs: ['Pièce d’identité si disponible', 'Messages ou preuves uniquement si c’est sans danger', 'Certificats médicaux ou constats si existants', 'Adresse ou lieu sûr où te rappeler si possible'],
       liensViolence: true
     }));
@@ -489,6 +490,7 @@
       badge: 'verifier',
       desc: 'Si tu aides régulièrement un proche, il existe dans le canton des soutiens concrets : Espace Proches, CMS, carte d’urgence, relève, congés et parfois aides financières.',
       action: '1. Note concrètement ce que tu fais pour le proche : soins, repas, administratif, présence, déplacements, surveillance.\n2. Appelle Espace Proches au 0800 660 660 pour faire le tri gratuitement.\n3. Si la personne aidée vit à domicile, contacte aussi le CMS pour demander une évaluation, une carte d’urgence proche aidant ou une relève.\n4. Si tu as réduit ou arrêté ton activité pour aider, demande explicitement si une aide financière ou un congé proche aidant est possible.',
+      today: 'Commence par Espace Proches : l’appel permet de trier répit, CMS, carte d’urgence et aides possibles.',
       docs: ['Coordonnées du proche aidé', 'Courriers médicaux ou CMS si disponibles', 'Liste des tâches d’aide au quotidien', 'Preuve de réduction d’activité ou perte de revenu si concerné·e'],
       liensProchesAidants: true
     }));
@@ -940,6 +942,7 @@
         enFormation: flags.enFormation,
         etudiant: flags.etudiant,
         sansRevenuEtSansEmploi: sansRevenuEtSansEmploi,
+        chomageNonIndem: flags.chomageNonIndem,
         urgenceLogement: urgenceLogement,
         separationEnCours: separationEnCours,
         incapaciteDurable: incapaciteDurable,

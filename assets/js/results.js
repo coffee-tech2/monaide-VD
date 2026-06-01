@@ -46,6 +46,12 @@
       if (matchesResultPatterns(name, ['revenu d insertion', 'centre social regional'])) return 1;
       if (matchesResultPatterns(name, ['subside lamal'])) return 6;
     }
+    var chomageNonIndem = !!(context && context.chomageNonIndem);
+    if (chomageNonIndem) {
+      if (matchesResultPatterns(name, ['assurance chomage'])) return 0;
+      if (matchesResultPatterns(name, ['revenu d insertion', 'centre social regional'])) return 1;
+      if (matchesResultPatterns(name, ['subside lamal'])) return 6;
+    }
     var urgenceLogement = !!(context && context.urgenceLogement);
     if (urgenceLogement) {
       if (matchesResultPatterns(name, ['expulsion', 'asloca'])) return 0;

@@ -107,9 +107,12 @@ const scenarios = [
       });
       const laciIndex = indexOfResult(results, 'Assurance chômage');
       const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
       assert(laciIndex !== -1, 'LACI should appear for unemployment profile');
       assert(riIndex !== -1, 'RI should remain visible as fallback');
+      assert(lamalIndex !== -1, 'LAMal should remain visible as a secondary budget track');
       assert(laciIndex < riIndex, 'LACI should stay before RI in unemployment profile');
+      assert(laciIndex < lamalIndex, 'LACI should stay before LAMal in unemployment profile');
     }
   },
   {
