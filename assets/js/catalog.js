@@ -138,6 +138,13 @@
   }
 
   function insertCatalogEssentialsPrompt() {
+    var filtersRow = document.querySelector('.catalog-filter-row');
+    if (!filtersRow || document.getElementById('catalog-essentials-note')) return;
+    var note = document.createElement('div');
+    note.id = 'catalog-essentials-note';
+    note.className = 'catalog-essentials-note';
+    note.innerHTML = '<span>Pour commencer, on affiche quelques aides principales.</span> <button id="catalog-show-all-btn" class="catalog-show-all-btn" type="button">Voir toutes les aides &#8594;</button>';
+    filtersRow.parentNode.insertBefore(note, filtersRow.nextSibling);
     var btn = document.getElementById('catalog-show-all-btn');
     if (btn) btn.addEventListener('click', showAllCatalogAids);
   }
