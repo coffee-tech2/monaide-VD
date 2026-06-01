@@ -95,7 +95,7 @@
       ],
       links: [
         { kind: 'action', label: 'Évaluer et demander le subside', url: window.MONAIDE_LINKS.SUBSIDE_HOME },
-        { kind: 'info', label: 'OVAM : infos officielles', url: window.MONAIDE_LINKS.SUBSIDE_HOME },
+        { kind: 'info', label: 'OVAM — infos officielles', url: 'https://www.vd.ch/themes/sante/assurances/assurance-maladie-obligatoire' },
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST },
         { kind: 'info', label: 'Guide détaillé', url: '/subside-lamal/' }
       ],
@@ -957,56 +957,14 @@
       decisionBy: 'Selon la question: justice, BRAPA, médiation ou autre service compétent',
       links: [
         { kind: 'info', label: 'Se séparer, vivre un deuil — Vaud', url: window.MONAIDE_LINKS.FAMILY_CRISIS },
+        { kind: 'info', label: 'Médiation familiale — financement BRAPA possible', url: window.MONAIDE_LINKS.BRAPA_MEDIATION },
+        { kind: 'info', label: 'Médiations et ombudsmans — Vaud', url: window.MONAIDE_LINKS.MEDIATIONS_OMBUDSMANS },
         { kind: 'info', label: 'BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT },
         { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
       ],
       documentationTarget: null
     },
-    {
-      id: 'mediation-familiale',
-      title: 'Médiation familiale et conflits parentaux',
-      category: 'financier',
-      summary: 'Conflit parental ou conjugal · Cadre pour reparler des enfants ou du budget',
-      audience: 'Parents ou ex-conjoints qui cherchent une manière plus structurée de parler des conflits familiaux.',
-      purpose: 'Cette fiche aide à repérer quand une médiation familiale peut être une meilleure porte d’entrée qu’un conflit qui s’envenime.',
-      highlights: [
-        'Utile avant que tout se bloque',
-        'Peut aider sur les désaccords autour des enfants ou des pensions',
-        'À distinguer d’une urgence ou d’une situation de violence'
-      ],
-      firstSteps: [
-        'Voir d’abord si la médiation correspond à la situation',
-        'Chercher ensuite la bonne structure de médiation',
-        'Basculer vers un service de protection si la situation est violente'
-      ],
-      bodyIntro: 'Quand le dialogue est bloqué mais qu’il faut encore organiser les enfants ou le budget, la médiation familiale peut parfois éviter que tout se durcisse.',
-      sections: [
-        {
-          title: 'Quand cette piste est utile',
-          items: [
-            'Conflit parental ou conjugal sans urgence immédiate',
-            'Besoin d’un cadre pour reparler de l’organisation',
-            'Désaccords persistants autour des enfants ou de l’argent'
-          ]
-        },
-        {
-          title: 'Démarche',
-          items: [
-            'Regarder les structures de médiation disponibles',
-            'Voir si un financement peut parfois exister',
-            'Ne pas choisir cette piste si la sécurité est en jeu'
-          ]
-        }
-      ],
-      reviewedAt: '13 avril 2026',
-      decisionBy: 'Structure de médiation ou service compétent selon la situation',
-      links: [
-        { kind: 'info', label: 'Médiations et ombudsmans — Vaud', url: window.MONAIDE_LINKS.MEDIATIONS_OMBUDSMANS },
-        { kind: 'info', label: 'Financement BRAPA de séances de médiation', url: window.MONAIDE_LINKS.BRAPA_MEDIATION },
-        { kind: 'info', label: 'Se séparer, vivre un deuil — Vaud', url: window.MONAIDE_LINKS.FAMILY_CRISIS }
-      ],
-      documentationTarget: null
-    },
+
     {
       id: 'pc-familles',
       title: 'PC Familles — soutien pour parents qui travaillent',
@@ -1540,91 +1498,57 @@
       ],
       documentationTarget: null
     },
+
     {
-      id: 'caritas-vetements',
-      title: 'Boutiques de vêtements Caritas — Lausanne',
+      id: 'habits-petit-prix',
+      title: 'S’habiller à petit prix — Lausanne et canton',
       category: 'petitbudget',
-      summary: 'Habits à petit prix · Seconde main · Lausanne',
+      summary: 'Seconde main · Boutiques solidaires · Lausanne et canton',
       audience: 'Personnes qui ont besoin de vêtements corrects sans dépenser trop.',
-      purpose: 'Les boutiques Caritas offrent une solution simple pour s’habiller à petit prix.',
+      purpose: 'Plusieurs boutiques solidaires permettent de trouver des habits, des chaussures et des accessoires à petit prix à Lausanne et dans le canton.',
       highlights: [
-        'Seconde main et petits prix',
-        'Utile pour s’équiper vite sans trop dépenser',
-        'Ouvert à tout le monde'
+        'Caritas : boutiques avenue de Morges et au Tunnel',
+        'CSP Palud : très central à Lausanne',
+        'Galetas CSP : meubles, habits et objets dans tout le canton'
       ],
       firstSteps: [
-        'Regarder les points de vente Caritas',
-        'Voir les repères à Lausanne',
-        'Passer en boutique avec le budget que tu peux te permettre'
+        'Choisir le lieu selon ce dont tu as besoin et où tu es',
+        'Regarder les horaires avant de te déplacer',
+        'Passer directement sans inscription'
       ],
-      bodyIntro: 'Les boutiques Caritas sont une bonne piste pour trouver des habits corrects à petit prix, simplement.',
+      bodyIntro: 'Plusieurs adresses à Lausanne permettent de s’habiller à petit prix : boutiques Caritas, CSP Palud et Galetas CSP. Chacune a ses spécificités.',
       sections: [
         {
-          title: 'Ce qu’on y trouve',
+          title: 'Boutiques Caritas — Lausanne',
           items: [
-            'Vêtements femme, homme et enfant',
-            'Chaussures, sacs et accessoires',
-            'Seconde main et parfois fins de série',
-            'Rabais supplémentaires avec certaines cartes Caritas'
+            'Vêtements femme, homme et enfant, chaussures et accessoires',
+            'Une boutique au Tunnel, une autre avenue de Morges 26',
+            'Rabais supplémentaires avec certaines cartes Caritas',
+            'Ouvert à tout le monde'
           ]
         },
         {
-          title: 'Repères à Lausanne',
+          title: 'Boutique CSP — Escaliers-du-Marché',
           items: [
-            'Une boutique au Tunnel',
-            'Une autre près de l’épicerie, avenue de Morges',
-            'Ouvert à tout le monde',
-            'Pratique si tu dois t’équiper vite'
+            '9, Escaliers-du-Marché, 1003 Lausanne (près de la Palud)',
+            'Vêtements d’occasion et livres',
+            'Mar–ven : 10h–18h30 · Sam : 10h–15h'
+          ]
+        },
+        {
+          title: 'Galetas CSP — meubles, habits et objets',
+          items: [
+            'Mont-sur-Lausanne, Morges, Montreux, Payerne, Renens',
+            'Meubles, électroménager, vêtements et objets du quotidien',
+            'Ramassage à domicile possible pour certains objets',
+            'Horaires sur galetas.ch'
           ]
         }
       ],
       links: [
         { kind: 'info', label: 'Seconde main Caritas', url: 'https://caritas-regio.ch/fr/prestations/petits-budgets/seconde-main' },
-        { kind: 'info', label: 'Caritas Vaud', url: 'https://caritas-regio.ch/fr/a-propos-de-caritas/vaud' }
-      ],
-      documentationTarget: null
-    },
-    {
-      id: 'boutique-csp-palud',
-      title: 'Boutique CSP Vaud — Palud',
-      category: 'petitbudget',
-      summary: 'Vêtements d’occasion · Centre de Lausanne · Prix solidaires',
-      audience: 'Personnes qui cherchent des habits à petit prix au centre de Lausanne.',
-      purpose: 'La boutique du CSP près de la Palud est une piste directe pour s’équiper sans aller loin ni dépenser beaucoup.',
-      highlights: [
-        'Très central à Lausanne',
-        'Prix solidaires',
-        'Simple et direct si tu veux t’équiper vite'
-      ],
-      firstSteps: [
-        'Voir la boutique CSP de Lausanne',
-        'Regarder les horaires',
-        'Passer sur place si tu es déjà au centre-ville'
-      ],
-      bodyIntro: 'Au centre de Lausanne, près de la Palud, le CSP a une boutique de vêtements d’occasion utile si tu veux t’équiper sans aller loin ni dépenser beaucoup. C’est une piste simple et directe en ville.',
-      sections: [
-        {
-          title: 'Ce qu’on y trouve',
-          items: [
-            'Vêtements d’occasion',
-            'Pièces homme et femme',
-            'Quelques marques à prix très bas',
-            'Livres d’occasion au rez-de-chaussée'
-          ]
-        },
-        {
-          title: 'Pratique',
-          items: [
-            '9, Escaliers-du-Marché, 1003 Lausanne',
-            'Près de la place de la Palud',
-            'Mar–ven : 10h–18h30',
-            'Sam : 10h–15h'
-          ]
-        }
-      ],
-      links: [
-        { kind: 'info', label: 'Voir la boutique de Lausanne', url: 'https://csp.ch/vaud/une-nouvelle-boutique-de-vetements-au-centre-de-lausanne/' },
-        { kind: 'info', label: 'Galetas et boutiques CSP', url: 'https://csp.ch/vaud/galetas-et-boutiques/' }
+        { kind: 'info', label: 'Boutique CSP Palud', url: 'https://csp.ch/vaud/une-nouvelle-boutique-de-vetements-au-centre-de-lausanne/' },
+        { kind: 'info', label: 'Galetas CSP Vaud', url: 'https://csp.ch/vaud/galetas-et-boutiques/' }
       ],
       documentationTarget: null
     },
@@ -2175,12 +2099,7 @@
           ]
         }
       ],
-      callouts: [
-        {
-          kind: 'callout',
-          html: 'À garder dans le simulateur : ce n’est pas seulement de l’écoute. Il peut y avoir carte d’urgence, relève, aide à domicile, congés et aides financières selon la situation.'
-        }
-      ],
+      callouts: [],
       reviewedAt: '13 avril 2026',
       decisionBy: 'Espace Proches, CMS/AVASAD, DGCS ou organismes de relève selon la prestation',
       links: [
@@ -2873,51 +2792,7 @@
       ],
       documentationTarget: null
     },
-    {
-      id: 'aide-alimentaire-region',
-      title: 'Aide alimentaire par région',
-      category: 'urgence',
-      summary: 'Repas, colis, épiceries solidaires · Trouver vite un relais proche',
-      audience: 'Personnes qui ont besoin d’un appui alimentaire rapide et cherchent un lieu utile dans leur région.',
-      purpose: 'Cette fiche aide à trouver plus vite les lieux qui distribuent des repas, des colis ou des achats à petit prix dans le canton.',
-      highlights: [
-        'Très concret quand le besoin est immédiat',
-        'Utile pour partir d’une liste par région ou commune',
-        'À compléter avec les aides locales ou communales'
-      ],
-      firstSteps: [
-        'Regarder d’abord la liste par région ou commune',
-        'Vérifier les horaires avant de te déplacer',
-        'Appeler si tu ne sais pas quel lieu est le plus adapté'
-      ],
-      bodyIntro: 'Quand le frigo est vide, le plus utile est souvent de repérer vite le bon lieu près de chez soi : distribution, épicerie solidaire ou autre relais alimentaire.',
-      sections: [
-        {
-          title: 'Ce qu’on peut trouver',
-          items: [
-            'Distributions alimentaires',
-            'Épiceries solidaires ou sociales',
-            'Aide ponctuelle selon les associations locales'
-          ]
-        },
-        {
-          title: 'Démarche',
-          items: [
-            'Commencer par la liste cantonale ou régionale',
-            'Vérifier adresse, horaires et éventuelles conditions',
-            'Chercher aussi dans ta commune si besoin'
-          ]
-        }
-      ],
-      reviewedAt: '13 avril 2026',
-      decisionBy: 'Associations et dispositifs concernés, selon horaires et conditions',
-      links: [
-        { kind: 'action', label: 'Guide Social — aide alimentaire (VD)', url: window.MONAIDE_LINKS.GUIDE_SOCIAL_FOOD },
-        { kind: 'info', label: 'Cartons du Cœur', url: window.MONAIDE_LINKS.CARTONS_COEUR },
-        { kind: 'info', label: 'Épiceries Caritas', url: window.MONAIDE_LINKS.CARITAS_EPICERIES }
-      ],
-      documentationTarget: null
-    },
+
     {
       id: 'malleyprairie',
       title: 'MalleyPrairie — violence conjugale & familiale',

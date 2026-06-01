@@ -14,7 +14,6 @@
           { id: 'comipp', dataCat: 'financier', tier: 'known' },
           { id: 'brapa', dataCat: 'financier', tier: 'known' },
           { id: 'separation-divorce', dataCat: 'financier', tier: 'known' },
-          { id: 'mediation-familiale', dataCat: 'financier', tier: 'known' },
           { id: 'accueil-jour-enfants', dataCat: 'financier', tier: 'known' },
           { id: 'garde-enfants-malades', dataCat: 'financier', tier: 'known' },
           { id: 'parlons-cash', dataCat: 'financier', tier: 'complement' },
@@ -80,7 +79,6 @@
           { id: 'malleyprairie', dataCat: 'urgence', tier: 'essential' },
           { id: 'lavi', dataCat: 'urgence', tier: 'essential' },
           { id: 'crise-psychique', dataCat: 'urgence', tier: 'essential' },
-          { id: 'aide-alimentaire-region', dataCat: 'urgence', tier: 'known' },
           { id: 'distributions-alimentaires', dataCat: 'urgence', tier: 'known' },
           { id: 'lignes-ecoute', dataCat: 'urgence', tier: 'complement' },
           { id: 'le-passage', dataCat: 'urgence', tier: 'complement' },
@@ -106,8 +104,7 @@
         subtitle: 'Courses, habits, meubles et objets à prix solidaires',
         items: [
           { id: 'epicerie-caritas', dataCat: 'petitbudget', tier: 'essential' },
-          { id: 'caritas-vetements', dataCat: 'petitbudget', tier: 'known' },
-          { id: 'boutique-csp-palud', dataCat: 'petitbudget', tier: 'known' },
+          { id: 'habits-petit-prix', dataCat: 'petitbudget', tier: 'known' },
           { id: 'galetas-csp', dataCat: 'petitbudget', tier: 'complement' },
           { id: 'emmaus', dataCat: 'petitbudget', tier: 'complement' },
           { id: 'brocki-lausanne', dataCat: 'petitbudget', tier: 'complement' }

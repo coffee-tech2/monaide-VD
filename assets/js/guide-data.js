@@ -224,7 +224,6 @@ window.MONAIDE_GUIDE_DATA = {
     'dettes-budget': 'dettes-budget',
     'garde-enfants-malades': 'parent-solo-vaud',
     'jet-service': 'aide-formation-vaud',
-    'mediation-familiale': 'separation-vaud',
     'menace-expulsion': 'aides-logement',
     'parlons-cash': 'dettes-budget',
     'pc-familles': 'plus-assez-pour-vivre',
