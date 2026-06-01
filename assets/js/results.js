@@ -42,8 +42,10 @@
     }
     var sansRevenuEtSansEmploi = !!(context && context.sansRevenuEtSansEmploi);
     if (sansRevenuEtSansEmploi) {
-      if (matchesResultPatterns(name, ['assurance chomage'])) return 0;
-      if (matchesResultPatterns(name, ['revenu d insertion', 'centre social regional'])) return 1;
+      if (matchesResultPatterns(name, ['revenu d insertion', 'centre social regional'])) return 0;
+      if (matchesResultPatterns(name, ['parlons cash', 'dettes'])) return 1;
+      if (matchesResultPatterns(name, ['aide alimentaire'])) return 2;
+      if (matchesResultPatterns(name, ['assurance chomage'])) return 3;
       if (matchesResultPatterns(name, ['subside lamal'])) return 6;
     }
     var chomageNonIndem = !!(context && context.chomageNonIndem);
@@ -204,9 +206,6 @@
     }
     if (profile.separationEnCours === 'oui' && matchesResultPatterns(name, ['separation', 'brapa', 'centre social regional'])) {
       reasons.push('Car une séparation peut changer le budget, le logement ou les démarches familiales.');
-    }
-    if (profile.besoinProtection === 'oui' && matchesResultPatterns(name, ['violence', 'protection', 'malley', 'lavi', '142'])) {
-      reasons.push('Car tu indiques un besoin de protection ou une situation de violence.');
     }
     if (profile.procheAidant === 'oui' && matchesResultPatterns(name, ['proches aidant', 'cms'])) {
       reasons.push('Car tu indiques aider régulièrement un proche.');

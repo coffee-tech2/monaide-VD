@@ -270,10 +270,10 @@ const scenarios = [
       const riIndex = indexOfResult(results, 'Revenu d\'insertion');
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       const foodIndex = indexOfResult(results, 'Aide alimentaire');
-      assert(laciIndex !== -1, 'LACI should remain visible to avoid missing unemployment rights');
-      assert(riIndex !== -1 && riIndex <= 1, 'RI should be one of the first two tracks when basic income is missing');
+      assert(riIndex === 0, 'RI should be first when the profile says no job and no income');
+      assert(laciIndex !== -1 && laciIndex > riIndex, 'LACI should remain visible after RI to avoid missing unemployment rights');
       assert(lamalIndex !== -1 && riIndex < lamalIndex, 'RI should be before LAMal when there is no income');
-      assert(foodIndex !== -1 && foodIndex <= 4, 'Food support should stay visible in a no-income scenario');
+      assert(foodIndex !== -1 && foodIndex <= 3, 'Food support should stay highly visible in a no-income scenario');
     }
   },
   {
