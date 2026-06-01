@@ -46,7 +46,6 @@
 
   function renderGuideCard(item) {
     var classes = ['guide-card'];
-    if (item.featured || priorityRank(item) < 99) classes.push('guide-card-primary');
     var displayTitle = guideCardTitle(item);
 
     return [
