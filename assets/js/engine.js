@@ -827,7 +827,7 @@
       permisG: flags.permisG,
       sansStatut: flags.sansStatut,
       needsLamal: !flags.alreadyLAMal && !flags.sansStatut && !flags.permisN && !flags.permisS,
-      needsRi: !flags.alreadyRI && !flags.alreadyPC && !flags.etudiant && flags.permiRI && !flags.enEmploi,
+      needsRi: !flags.alreadyRI && !flags.alreadyPC && !flags.etudiant && !flags.retraite && flags.permiRI && !flags.enEmploi,
       needsPc: (flags.retraite || flags.alreadyAI) && !flags.alreadyPC,
       needsPcFamilles: flags.aEnfants && flags.enEmploi && !flags.alreadyRI && !flags.alreadyPC && (flags.revenuFaible || flags.revenuModere),
       needsAllocationsFamiliales: flags.aEnfants && !flags.alreadyAF,
@@ -912,6 +912,7 @@
     var separationEnCours = flags.separationEnCours === 'oui';
     var incapaciteDurable = flags.incapacite === 'oui_durable';
     var procheAidant = flags.procheAidant === 'oui';
+    var retraite = !!flags.retraite;
     applySimulationRules(res, flags);
     applySimulationGuardrails(res, flags);
 
@@ -922,6 +923,7 @@
         age: age,
         enFormation: flags.enFormation,
         etudiant: flags.etudiant,
+        retraite: retraite,
         sansRevenuEtSansEmploi: sansRevenuEtSansEmploi,
         chomageNonIndem: flags.chomageNonIndem,
         urgenceLogement: urgenceLogement,

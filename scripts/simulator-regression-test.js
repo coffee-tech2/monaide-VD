@@ -295,6 +295,25 @@ const scenarios = [
       assert(allocationsIndex !== -1, 'Family allowances should remain visible for children at charge');
       assert(lamalIndex !== -1 && separationIndex < lamalIndex, 'Separation should be before LAMal in this path');
     }
+  },
+  {
+    name: 'Parcours retraité priorise PC et retire RI',
+    run() {
+      const results = runProfile({
+        age: '65plus',
+        sitPro: 'Retraité·e',
+        revenu: '1000-2000',
+        fortune: 'moins4000',
+        primeLamal: '250-400'
+      });
+      const pcIndex = indexOfResult(results, 'Prestations complémentaires');
+      const proSenectuteIndex = indexOfResult(results, 'Pro Senectute');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      assert(pcIndex === 0, 'PC should be first for a retired low-income profile');
+      assert(proSenectuteIndex !== -1 && proSenectuteIndex < lamalIndex, 'Pro Senectute should come before LAMal for retired profiles');
+      assert(riIndex === -1, 'RI should not be proposed as a simulator result for retired profiles');
+    }
   }
 ];
 

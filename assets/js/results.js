@@ -33,6 +33,13 @@
 
   function getResultPriority(name, context) {
     var enEmploi = !!(context && context.enEmploi);
+    var retraite = !!(context && context.retraite);
+    if (retraite) {
+      if (matchesResultPatterns(name, ['prestations complementaires', 'pc avs', 'pc'])) return 0;
+      if (matchesResultPatterns(name, ['pro senectute', 'aas'])) return 1;
+      if (matchesResultPatterns(name, ['subside lamal'])) return 3;
+      if (matchesResultPatterns(name, ['carteculture'])) return 8;
+    }
     var jeuneEnFormation = !!(context && context.age === '18-25' && context.enFormation);
     if (jeuneEnFormation) {
       if (matchesResultPatterns(name, ['bourses', 'ocbe'])) return 0;
