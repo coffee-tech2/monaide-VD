@@ -1640,3 +1640,37 @@
     .nav-mobile-actions { display:none; }
     .hamburger { display: none; }
   }
+
+/* Répertoire — affichage allégé au premier chargement */
+.catalog-essentials-note {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:0.42rem;
+  padding:0.2rem 0 0.85rem;
+  color:var(--warm-gray);
+  font-size:0.8rem;
+  line-height:1.5;
+}
+.catalog-show-all-btn {
+  appearance:none;
+  border:0;
+  background:transparent;
+  padding:0;
+  color:var(--sage-dark);
+  font:inherit;
+  font-weight:800;
+  cursor:pointer;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+  text-decoration-color:#C8D8D0;
+}
+.catalog-show-all-btn:hover {
+  color:var(--forest);
+  text-decoration-color:var(--forest);
+}
+.catalog-show-all-btn:focus-visible {
+  outline:2px solid rgba(var(--vaud-rgb),0.26);
+  outline-offset:3px;
+}
