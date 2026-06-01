@@ -25,7 +25,7 @@
     ]
   };
   var questionSetsByStep = SIMULATOR_CONFIG.questionSetsByStep || {
-    1: [['commune', 'age'], ['situation_familiale', 'statut_sejour', 'besoin_protection']],
+    1: [['commune', 'age'], ['situation_familiale', 'statut_sejour']],
     2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
     3: [['revenu'], ['fortune', 'prime_lamal'], ['aides_actuelles']],
     4: [['incapacite', 'dettes'], ['separation_en_cours'], ['proche_aidant']]
@@ -635,7 +635,7 @@
   }
 
   function getStepForField(fieldId) {
-    if (['commune', 'age', 'situation_familiale', 'statut_sejour', 'besoin_protection'].indexOf(fieldId) !== -1) return 1;
+    if (['commune', 'age', 'situation_familiale', 'statut_sejour'].indexOf(fieldId) !== -1) return 1;
     if (['situation_pro', 'logement', 'enfants', 'loyer', 'en_formation'].indexOf(fieldId) !== -1) return 2;
     if (['revenu', 'fortune', 'prime_lamal', 'aides_actuelles'].indexOf(fieldId) !== -1) return 3;
     if (['incapacite', 'dettes', 'separation_en_cours', 'proche_aidant'].indexOf(fieldId) !== -1) return 4;
@@ -673,7 +673,6 @@
     });
 
     if (String(data.separation || '').trim()) items.push({ label: 'Séparation', value: data.separation, field: 'separation_en_cours' });
-    if (String(data.protection || '').trim()) items.push({ label: 'Protection', value: data.protection, field: 'besoin_protection' });
     if (String(data.procheAidant || '').trim()) items.push({ label: 'Proche aidé', value: data.procheAidant, field: 'proche_aidant' });
     if (!items.length) {
       container.style.display = 'none';

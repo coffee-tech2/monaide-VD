@@ -200,16 +200,6 @@ window.MONAIDE_SIMULATION_RULES = [
     sourceType: 'orientation formation'
   },
   {
-    id: 'violence-protection',
-    title: 'Violence ou protection',
-    intent: 'Prioriser la sécurité avant toute autre démarche.',
-    when: 'needsViolenceProtection',
-    handler: 'addViolenceProtectionResult',
-    confidence: 'orientation prioritaire',
-    guardrails: ['Sécurité immédiate avant budget ou médiation.', 'Messages/preuves seulement si sans danger.'],
-    sourceType: 'urgence sociale'
-  },
-  {
     id: 'separation',
     title: 'Séparation',
     intent: 'Trier budget, enfants, logement et pensions quand une séparation est en cours.',

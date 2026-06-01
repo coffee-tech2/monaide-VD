@@ -31,7 +31,6 @@
       revenu: getFieldDisplayValue('revenu'),
       fortune: getFieldDisplayValue('fortune'),
       separation: readFieldValue('separation_en_cours', 'non') === 'oui' ? 'Oui' : '',
-      protection: readFieldValue('besoin_protection', 'non') === 'oui' ? 'Oui' : '',
       procheAidant: readFieldValue('proche_aidant', 'non') === 'oui' ? 'Oui' : ''
     };
   }
@@ -57,7 +56,6 @@
       incapacite: readFieldValue('incapacite', 'non'),
       dettes: readFieldValue('dettes', 'non'),
       separationEnCours: readFieldValue('separation_en_cours', 'non'),
-      besoinProtection: readFieldValue('besoin_protection', 'non'),
       procheAidant: readFieldValue('proche_aidant', 'non'),
       summary: buildProfileSummary(commune)
     };
@@ -79,7 +77,6 @@
     var incapacite = profile.incapacite || 'non';
     var dettes = profile.dettes || 'non';
     var separationEnCours = profile.separationEnCours || 'non';
-    var besoinProtection = profile.besoinProtection || 'non';
     var procheAidant = profile.procheAidant || 'non';
 
     var permisB = permis.indexOf('Permis B') !== -1;
@@ -106,7 +103,6 @@
       incapacite: incapacite,
       dettes: dettes,
       separationEnCours: separationEnCours,
-      besoinProtection: besoinProtection,
       procheAidant: procheAidant,
       revenuFaible: revenu === 'aucun' || revenu === 'moins1000' || revenu === '1000-2000',
       revenuModere: revenu === '2000-3500',
@@ -468,19 +464,6 @@
         ? ['Jugement, ordonnance ou convention si existant', 'Preuves de pension payée ou non payée', 'Revenus et justificatifs financiers', 'Frais et documents des enfants']
         : ['Bail ou documents logement', 'Revenus actuels', 'Courriers administratifs liés à la séparation'],
       liensSeparation: true
-    }));
-  }
-
-  function addViolenceProtectionResult(res) {
-    res.push(buildResult({
-      nom: 'Violences conjugales / besoin de protection',
-      badge: 'probable',
-      strongProbable: true,
-      desc: 'Si tu vis de la violence ou que tu as besoin de protection, la priorité est la sécurité et l’accès à un relais spécialisé.',
-      action: '1. Si le danger est immédiat, appelle le 117. En cas de blessure ou d’urgence médicale, appelle le 144.\n2. Si tu peux parler en sécurité, contacte MalleyPrairie au 021 620 76 76 pour conseil, évaluation du danger ou mise à l’abri.\n3. Contacte ensuite la LAVI pour connaître tes droits, les aides possibles et l’accompagnement, même sans plainte déposée.\n4. Garde messages, constats ou certificats uniquement si c’est sans danger. Ne prends pas de risque pour récupérer des affaires ou des papiers.',
-      today: 'Si tu ne te sens pas en sécurité, cherche d’abord un relais de protection avant les démarches administratives.',
-      docs: ['Pièce d’identité si disponible', 'Messages ou preuves uniquement si c’est sans danger', 'Certificats médicaux ou constats si existants', 'Adresse ou lieu sûr où te rappeler si possible'],
-      liensViolence: true
     }));
   }
 
@@ -854,8 +837,7 @@
       needsAi: flags.incapacite !== 'non' && !flags.alreadyAI,
       needsJetService: flags.age === '18-25' || flags.enFormation || flags.etudiant,
       needsRuptureApprentissage: false,
-      needsViolenceProtection: flags.besoinProtection === 'oui',
-      needsSeparationSupport: flags.separationEnCours === 'oui' && flags.besoinProtection !== 'oui',
+      needsSeparationSupport: flags.separationEnCours === 'oui',
       needsProchesAidants: flags.procheAidant === 'oui',
       needsProInfirmis: flags.invalidite && !flags.retraite,
       needsProSenectute: flags.retraite || flags.age === '65plus',
@@ -891,7 +873,6 @@
       addAiResult: function() { addAiResult(res, flags); },
       addJetServiceResult: function() { addJetServiceResult(res, flags); },
       addRuptureApprentissageResult: function() { addRuptureApprentissageResult(res, flags); },
-      addViolenceProtectionResult: function() { addViolenceProtectionResult(res); },
       addSeparationResult: function() { addSeparationResult(res, flags); },
       addProchesAidantsResult: function() { addProchesAidantsResult(res); },
       addProInfirmisResult: function() { addProInfirmisResult(res); },

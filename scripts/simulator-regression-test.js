@@ -45,7 +45,6 @@ const baseProfile = {
   incapacite: 'non',
   dettes: 'non',
   separationEnCours: 'non',
-  besoinProtection: 'non',
   procheAidant: 'non'
 };
 
@@ -238,23 +237,6 @@ const scenarios = [
         revenu: 'aucun'
       });
       assert(results[0] && results[0].nom.indexOf('EVAM') !== -1, 'EVAM should be first for permis N');
-    }
-  },
-  {
-    name: 'Besoin de protection priorise les relais violence',
-    run() {
-      const results = runProfile({
-        besoinProtection: 'oui',
-        revenu: '1000-2000',
-        dettes: 'non',
-        separationEnCours: 'non'
-      });
-      const violenceIndex = indexOfResult(results, 'Violences conjugales');
-      const laviIndex = indexOfResult(results, 'LAVI');
-      const lamalIndex = indexOfResult(results, 'Subside LAMal');
-      assert(violenceIndex !== -1 || laviIndex !== -1, 'Protection profile should include violence/LAVI support');
-      assert(lamalIndex !== -1, 'LAMal can remain visible as a secondary track');
-      assert((violenceIndex !== -1 ? violenceIndex : laviIndex) < lamalIndex, 'Protection support should stay before LAMal');
     }
   },
   {

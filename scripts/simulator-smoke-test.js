@@ -36,7 +36,6 @@ const baseProfile = {
   incapacite: 'non',
   dettes: 'non',
   separationEnCours: 'non',
-  besoinProtection: 'non',
   procheAidant: 'non',
   santeMentale: 'non'
 };
