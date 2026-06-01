@@ -89,72 +89,7 @@
     scrollCatalogFilterIntoView(btn);
   }
 
-  var CATALOG_ESSENTIAL_IDS = [
-    'subside-lamal',
-    'ri',
-    'csr',
-    'laci',
-    'bourse',
-    'distributions-alimentaires',
-    'asloca',
-    'jet-service',
-    'brapa',
-    'lignes-ecoute'
-  ];
-  var catalogEssentialsMode = true;
-
-  function hideCatalogEssentialsPrompt() {
-    var note = document.getElementById('catalog-essentials-note');
-    if (note) note.style.display = 'none';
-  }
-
-  function updateCatalogGroupsVisibility() {
-    document.querySelectorAll('.cat-group').forEach(function(group) {
-      var hasVisible = Array.from(group.querySelectorAll('.cat-card')).some(function(card) {
-        return card.style.display !== 'none';
-      });
-      group.style.display = hasVisible ? '' : 'none';
-    });
-  }
-
-  function applyCatalogEssentialsFilter() {
-    if (!catalogEssentialsMode) return;
-    document.querySelectorAll('.cat-card').forEach(function(card) {
-      var aidId = card.dataset.aidId || '';
-      card.style.display = CATALOG_ESSENTIAL_IDS.indexOf(aidId) !== -1 ? '' : 'none';
-    });
-    updateCatalogGroupsVisibility();
-  }
-
-  function showAllCatalogAids() {
-    catalogEssentialsMode = false;
-    document.querySelectorAll('.cat-card').forEach(function(card) {
-      card.style.display = '';
-    });
-    document.querySelectorAll('.cat-group').forEach(function(group) {
-      group.style.display = '';
-    });
-    hideCatalogEssentialsPrompt();
-  }
-
-  function insertCatalogEssentialsPrompt() {
-    var filtersRow = document.querySelector('.catalog-filter-row');
-    if (!filtersRow || document.getElementById('catalog-essentials-note')) return;
-    var note = document.createElement('div');
-    note.id = 'catalog-essentials-note';
-    note.className = 'catalog-essentials-note';
-    note.innerHTML = '<span>Pour commencer, on affiche quelques aides principales.</span> <button id="catalog-show-all-btn" class="catalog-show-all-btn" type="button">Voir toutes les aides &#8594;</button>';
-    filtersRow.parentNode.insertBefore(note, filtersRow.nextSibling);
-    var btn = document.getElementById('catalog-show-all-btn');
-    if (btn) btn.addEventListener('click', showAllCatalogAids);
-  }
-
-  window.applyCatalogEssentialsFilter = applyCatalogEssentialsFilter;
-  window.showAllCatalogAids = showAllCatalogAids;
-
   window.setCatFilter = function(cat, btn) {
-    catalogEssentialsMode = false;
-    hideCatalogEssentialsPrompt();
     setActiveCatalogFilterButton(btn);
     document.getElementById('cat-search').value = '';
     document.querySelectorAll('.cat-card.open').forEach(function(cc) {
@@ -169,7 +104,10 @@
       item.style.display = show ? '' : 'none';
       if (show) count++;
     });
-    updateCatalogGroupsVisibility();
+    document.querySelectorAll('.cat-group').forEach(function(group) {
+      var hasVisible = Array.from(group.querySelectorAll('.cat-card')).some(function(cc) { return cc.style.display !== 'none'; });
+      group.style.display = hasVisible ? '' : 'none';
+    });
     trackCatalogEvent('catalog_filter', {
       category: cat,
       result_count: count
@@ -185,10 +123,6 @@
     var rawQuery = document.getElementById('cat-search').value || '';
     var q = normalizeAidText(rawQuery);
     var expandedQueries = expandSearchQueries(rawQuery);
-    if (q) {
-      catalogEssentialsMode = false;
-      hideCatalogEssentialsPrompt();
-    }
     setActiveCatalogFilterButton(document.querySelector('.cat-filter'));
     var count = 0;
     document.querySelectorAll('.cat-card').forEach(function(item) {
@@ -197,7 +131,10 @@
       item.style.display = show ? '' : 'none';
       if (show) count++;
     });
-    updateCatalogGroupsVisibility();
+    document.querySelectorAll('.cat-group').forEach(function(group) {
+      var hasVisible = Array.from(group.querySelectorAll('.cat-card')).some(function(cc) { return cc.style.display !== 'none'; });
+      group.style.display = hasVisible ? '' : 'none';
+    });
     var noResult = document.getElementById('cat-no-result');
     if (noResult) {
       if (count === 0 && q) {
@@ -313,8 +250,6 @@
   window.openCatalogGroup = function(groupId) {
     var group = document.getElementById(groupId);
     if (!group) return;
-    catalogEssentialsMode = false;
-    hideCatalogEssentialsPrompt();
     var filterMap = {
       'groupe-urgences': 'urgence',
       'groupe-sante': 'sante',
@@ -360,8 +295,6 @@
   window.openCatalogForAid = function(query) {
     var catInput = document.getElementById('cat-search');
     if (!catInput || !query) return;
-    catalogEssentialsMode = false;
-    hideCatalogEssentialsPrompt();
     var storeItem = window.getCatalogStoreItem ? window.getCatalogStoreItem(query) : null;
     var matchedCard = null;
     if (storeItem && storeItem.id) {
@@ -404,9 +337,6 @@
   };
 
   document.addEventListener('DOMContentLoaded', function() {
-    insertCatalogEssentialsPrompt();
-    applyCatalogEssentialsFilter();
-
     var catalogNote = document.getElementById('catalog-note');
     if (catalogNote) {
       var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
