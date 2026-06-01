@@ -834,6 +834,14 @@
     border-color: rgba(216, 201, 184, 0.98);
     box-shadow: 0 4px 14px rgba(72,59,49,0.02);
   }
+  .guide-page:not(.guide-detail-page) .guide-card-primary {
+    background:#FDFCF9;
+    border-color:rgba(216, 201, 184, 0.98);
+    border-left:1px solid rgba(216, 201, 184, 0.98);
+  }
+  .guide-page:not(.guide-detail-page) .guide-card-primary .guide-card-title {
+    color:var(--sage-dark);
+  }
   .guide-page:not(.guide-detail-page) .guide-card::before {
     display: none;
   }
