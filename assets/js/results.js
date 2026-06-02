@@ -14,7 +14,7 @@
     var rule = (RESULTS_UI_CONFIG.purposeRules || []).find(function(item) {
       return matchesResultPatterns(name, item.patterns);
     });
-    return rule ? rule.text : (RESULTS_UI_CONFIG.defaultPurpose || 'Cette piste peut valoir la peine selon tes réponses.');
+    return rule ? rule.text : (RESULTS_UI_CONFIG.defaultPurpose || 'Cette piste donne une première porte à vérifier selon les réponses indiquées.');
   }
 
   function getResultKind(name) {
@@ -334,8 +334,8 @@
       (typeof window.getRelatedGuideForAid === 'function' ? window.getRelatedGuideForAid(catalogItem.id || catalogItem) : null);
     return relatedGuide && relatedGuide.href
       ? {
-          label: relatedGuide.label || 'Lire le guide',
-          normalizedLabel: normalizeAidText(relatedGuide.label || 'Lire le guide'),
+          label: relatedGuide.label || 'Guide détaillé',
+          normalizedLabel: normalizeAidText(relatedGuide.label || 'Guide détaillé'),
           href: relatedGuide.href,
           kind: 'guide'
         }
@@ -345,7 +345,7 @@
   function buildResultGuideLink(result) {
     var link = getGuideLinkForResult(result);
     if (!link || !link.href) return null;
-    var label = link.label || 'Lire le guide';
+    var label = link.label || 'Guide détaillé';
     return resultLinkObject(label, '<a href="' + escapeHtml(link.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(result.nom || '') + '">' + escapeHtml(label) + '</a>', 'understand');
   }
 
@@ -382,10 +382,10 @@
   function buildResultFooter(result) {
     var guideLink = getGuideLinkForResult(result);
     var guideHtml = guideLink && guideLink.href
-      ? '<a href="' + escapeHtml(guideLink.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(result.nom || '') + '">' + escapeHtml(guideLink.label || 'Lire le guide') + ' →</a>'
+      ? '<a href="' + escapeHtml(guideLink.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(result.nom || '') + '">' + escapeHtml(guideLink.label || 'Guide détaillé') + ' →</a>'
       : '';
     return '<div class="result-card-footer">'
-      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche →</button>'
+      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche du répertoire →</button>'
       + guideHtml
       + '</div>';
   }
@@ -439,7 +439,7 @@
       ? buildResultDetail(detailTitles.docs || 'Documents utiles à préparer', '<ul>' + result.docs.map(function(doc) { return '<li>' + doc + '</li>'; }).join('') + '</ul>', detailClasses.docs || 'is-docs', false)
       : '';
     var linksHtml = links
-      ? buildResultDetail('Où aller ensuite', '<div class="result-link-row is-grouped">' + links + '</div>', 'is-links', false)
+      ? buildResultDetail('Liens utiles', '<div class="result-link-row is-grouped">' + links + '</div>', 'is-links', false)
       : '';
     var startSummary = getActionSummary(result.action || result.today || '');
     var startHtml = startSummary
@@ -493,13 +493,13 @@
     if (!primaryResult || !primaryResult.nom) return '';
     var guideLink = getGuideLinkForResult(primaryResult);
     var guideHtml = guideLink && guideLink.href
-      ? '<a href="' + escapeHtml(guideLink.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(primaryResult.nom || '') + '">Lire le guide →</a>'
+      ? '<a href="' + escapeHtml(guideLink.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(primaryResult.nom || '') + '">Guide détaillé →</a>'
       : '';
     return '<div class="results-next-step result-reveal">'
-      + '<div><div class="results-next-step-title">Par où commencer</div>'
-      + '<p class="results-next-step-text">Regarde d’abord la première piste. Sa fiche explique à quoi elle sert, qui décide et quel lien ouvrir.</p></div>'
+      + '<div><div class="results-next-step-title">Suite logique</div>'
+      + '<p class="results-next-step-text">Commence par la première piste, puis ouvre sa fiche du répertoire. Si tu veux creuser, passe ensuite au guide détaillé.</p></div>'
       + '<div class="results-next-step-actions">'
-      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(primaryResult.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_next_step\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Voir la fiche →</button>'
+      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(primaryResult.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_next_step\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche du répertoire →</button>'
       + guideHtml
       + '</div></div>';
   }
@@ -510,14 +510,14 @@
 
   function buildRegionalBanner(regionalOrientation, resultCount) {
     if (!regionalOrientation) return '';
-    var bodyHtml = '<div style="font-size:0.79rem;color:var(--dark);line-height:1.65;margin-bottom:0.6rem;">Pour <strong>' + escapeHtml(regionalOrientation.commune) + '</strong>, le relais territorial le plus proche semble être <strong>' + escapeHtml(regionalOrientation.label) + '</strong>. Pour une aide financière ou sociale, regarde aussi le CSR et l\'agence AAS de ta région.</div><div class="result-link-row"><a href="' + regionalOrientation.csrUrl + '" target="_blank" rel="noopener noreferrer" class="result-link-btn">Voir le CSR</a><a href="' + regionalOrientation.aasUrl + '" target="_blank" rel="noopener noreferrer" class="result-link-btn">Voir l&#8217;agence AAS</a></div>';
+    var bodyHtml = '<div style="font-size:0.79rem;color:var(--dark);line-height:1.65;margin-bottom:0.6rem;">Pour <strong>' + escapeHtml(regionalOrientation.commune) + '</strong>, le rep&#232;re territorial le plus probable est <strong>' + escapeHtml(regionalOrientation.label) + '</strong>. Pour les aides financi&#232;res et les prestations sociales, v&#233;rifie ensuite le CSR et l\'agence AAS de ta r&#233;gion.</div><div class="result-link-row"><a href="' + regionalOrientation.csrUrl + '" target="_blank" rel="noopener noreferrer" class="result-link-btn">Voir le CSR</a><a href="' + regionalOrientation.aasUrl + '" target="_blank" rel="noopener noreferrer" class="result-link-btn">Voir l&#8217;agence AAS</a></div>';
     return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).region || 'Dans ta région', bodyHtml, Math.min(resultCount + 3, 11));
   }
 
   function buildMoreCatalogBanner(resultCount) {
-    var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Tu peux aussi chercher directement dans le répertoire : budget, logement, santé, famille, formation ou séjour.') + '</div></div>'
+    var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le répertoire permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.') + '</div></div>'
       + '<a href="#catalogue" class="results-footer-banner-btn" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'results_footer\', aid: \'catalogue_des_aides\' });}">' + escapeHtml(RESULTS_UI_CONFIG.openCatalogLabel || 'Répertoire des aides →') + '</a>';
-    return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Besoin de regarder plus large ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;', 'is-cta');
+    return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Tu veux aller plus loin ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;', 'is-cta');
   }
 
   function buildFollowUpBanner(profile, results, resultCount) {
@@ -537,14 +537,14 @@
     if (!prompts.length) return '';
 
     var html = '<div style="font-size:0.78rem;color:var(--warm-gray);line-height:1.6;">';
-    html += '<p style="margin:0 0 0.7rem;"><strong style="color:var(--dark);">Avant de conclure :</strong> ces points peuvent changer la suite.</p>';
+    html += '<p style="margin:0 0 0.7rem;"><strong style="color:var(--dark);">Pour affiner ensuite si besoin :</strong> ces points peuvent changer la porte d’entrée ou le niveau de prudence.</p>';
     html += '<ul style="margin:0;padding-left:1rem;">';
     prompts.slice(0, 4).forEach(function(prompt) {
       html += '<li style="margin:0 0 0.5rem;"><strong style="color:var(--dark);">' + escapeHtml(prompt.title) + ' :</strong> ' + escapeHtml(prompt.text) + '</li>';
     });
     html += '</ul></div>';
 
-    return renderResultsFooterBanner('À vérifier avant de décider', html, Math.min(resultCount + 5, 11));
+    return renderResultsFooterBanner('Points à clarifier si nécessaire', html, Math.min(resultCount + 5, 11));
   }
 
   function buildLatestSimulation(profile, results, topActions, docList) {
@@ -587,7 +587,7 @@
       return item && !isSecondaryResult(item.nom || '');
     }) || res[0];
 
-    list.innerHTML = '<div class="results-count-label">' + res.length + ' piste' + (res.length > 1 ? 's' : '') + ' à regarder</div>' + buildResultsNextStepBanner(primaryResult);
+    list.innerHTML = '<div class="results-count-label">' + res.length + ' piste' + (res.length > 1 ? 's' : '') + ' identifiée' + (res.length > 1 ? 's' : '') + '</div>' + buildResultsNextStepBanner(primaryResult);
 
     res.forEach(function(r, index) {
       var secondary = isSecondaryResult(r.nom || '');

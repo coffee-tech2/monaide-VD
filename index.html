@@ -170,7 +170,7 @@
 
 <div class="beta-banner" id="beta-banner">
   <div class="beta-banner-copy">
-    <strong>Version bêta.</strong> Le site aide à s’orienter, mais une décision officielle dépend toujours du service compétent.
+    <strong>Version bêta en développement.</strong> Les résultats sont indicatifs, non exhaustifs, et ne remplacent pas un service officiel.
   </div>
   <button class="beta-banner-close" id="beta-banner-close" type="button" aria-label="Fermer le bandeau bêta">&times;</button>
 </div>
@@ -185,7 +185,7 @@
         <span class="hero-line hero-line-aides">d&#8217;<span class="hero-accent">aides sociales</span></span>
         <span class="hero-line hero-line-knowledge">vaudoises</span>
       </h1>
-      <p class="hero-lead">Beaucoup d’aides existent, mais elles ne sont pas toujours faciles à trouver.<span>Réponds à quelques questions, puis regarde les démarches qui peuvent valoir la peine.</span></p>
+      <p class="hero-lead">Des aides existent, mais elles sont parfois difficiles &#224; rep&#233;rer.<span>MonAide-VD aide &#224; trier les premi&#232;res pistes, puis &#224; comprendre quoi faire.</span></p>
       <div class="hero-actions">
         <a href="#simulateur" class="btn-primary">Faire le simulateur <span class="btn-arrow">&#8594;</span></a>
         <a href="#catalogue" class="btn-secondary">Répertoire des aides <span class="btn-arrow">&#8594;</span></a>
@@ -196,7 +196,7 @@
 </section>
 
 <div class="entry-strip">
-  <span class="entry-strip-label">Tu sais déjà où regarder ?</span>
+  <span class="entry-strip-label">Tu sais d&#233;j&#224; ce que tu cherches&#160;?</span>
   <a href="#catalogue" class="entry-strip-link">Répertoire des aides</a>
   <span class="entry-strip-sep" aria-hidden="true">&#183;</span>
   <a href="/guides/" class="entry-strip-link">Guides pratiques</a>
@@ -204,8 +204,8 @@
 
 <section class="section section-simulateur" id="simulateur">
   <div class="section-inner">
-    <h2 class="section-title">Quelles aides regarder en premier ?</h2>
-    <p class="section-subtitle">4 étapes courtes pour faire un premier tri.</p>
+    <h2 class="section-title">Quelles aides pourraient te concerner&#160;?</h2>
+    <p class="section-subtitle">4 étapes courtes pour repérer les pistes les plus plausibles.</p>
 
     <div class="simulator-card">
       <div class="simulator-header">
@@ -221,7 +221,7 @@
       <div class="simulator-body" id="simulator-body">
         <div class="step" id="step1" style="display:block;">
           <div class="step-label">&#201;tape 1 sur 4</div>
-          <h3 class="step-title">Quelques infos utiles pour commencer</h3>
+          <h3 class="step-title">Quelques questions sur ta situation actuelle</h3>
           <p class="step-subtitle"></p>
           <div class="form-group">
             <label class="form-label">Ta commune</label>
@@ -682,22 +682,22 @@
       <div class="simulator-body" id="results" style="display:none;" role="region" aria-label="Résultats du simulateur" tabindex="-1">
         <div class="results-header">
           <h2>Tes pistes d’aides</h2>
-          <p>À partir de tes réponses, voici les pistes à regarder en priorité.</p>
+          <p>Basé sur tes réponses — résultats indicatifs, non exhaustifs.</p>
         </div>
         <div class="results-progress-done" aria-hidden="true">
           <span></span><span></span><span></span><span></span>
         </div>
         <div class="results-note" id="results-note">
           <button type="button" class="results-note-close" onclick="closeResultsNote()" aria-label="Fermer le bloc À savoir">&times;</button>
-          <strong>À savoir</strong><br>Ces pistes ne sont pas une décision. Certaines aides demandent encore un calcul officiel ou un examen du dossier.
+          <strong>À savoir</strong><br>Ces résultats donnent un premier repère. Certaines aides dépendent encore d’un calcul officiel ou d’un examen du dossier.
         </div>
         <div id="results-profile-summary" class="results-profile-summary" style="display:none;" aria-live="polite"></div>
         <div id="results-list" class="results-list" aria-live="polite" aria-busy="false"></div>
         <div class="results-export-card">
-          <div class="results-export-title">Garder une trace</div>
-          <p class="results-export-text">Tu peux garder une courte checklist pour reprendre les démarches plus tard.</p>
+          <div class="results-export-title">Garder mes r&#233;sultats</div>
+          <p class="results-export-text">Tu peux télécharger une checklist courte ou enregistrer un résumé en PDF.</p>
           <div class="results-export-actions">
-            <button type="button" class="results-export-btn primary" onclick="telechargerChecklist()">Télécharger la checklist</button>
+            <button type="button" class="results-export-btn primary" onclick="telechargerChecklist()">T&#233;l&#233;charger ma checklist</button>
             <button type="button" class="results-export-btn" onclick="imprimerResultats()">Imprimer / PDF</button>
           </div>
         </div>
@@ -710,13 +710,13 @@
 <section class="section section-plain" id="catalogue">
   <div class="section-inner catalog-inner">
     <div class="section-tag">Répertoire</div>
-    <h2 class="section-title">Répertoire des aides et services</h2>
-    <p class="section-subtitle">Ouvre une fiche pour voir à quoi elle sert, dans quels cas elle peut aider et où commencer. <span class="catalog-intro-note">La liste est mise à jour régulièrement, sans prétendre tout couvrir.</span></p>
+    <h2 class="section-title">Les aides et services qui pourraient te concerner</h2>
+    <p class="section-subtitle">Clique sur une aide pour voir les d&#233;tails, les conditions et les d&#233;marches. <span class="catalog-intro-note">Toutes les fiches se d&#233;plient &#8212; liste non exhaustive, mise &#224; jour r&#233;guli&#232;rement.</span></p>
 
     <div class="catalog-tools">
       <div class="catalog-search-bar" role="search">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="search" id="cat-search" class="catalog-search-input" placeholder="Exemple : loyer, primes, chômage..." autocomplete="off" inputmode="search" enterkeyhint="search" aria-label="Rechercher une aide dans le répertoire" oninput="filtrerCatalogue()">
+        <input type="search" id="cat-search" class="catalog-search-input" placeholder="Rechercher une aide..." autocomplete="off" inputmode="search" enterkeyhint="search" aria-label="Rechercher une aide dans le répertoire" oninput="filtrerCatalogue()">
       </div>
       <div class="search-suggestions" aria-label="Suggestions de recherche">
         <span>Exemples :</span>
@@ -749,7 +749,7 @@
       <span class="catalog-note-icon" aria-hidden="true"></span>
       <div class="catalog-note-body">
         <div class="catalog-note-title">N&rsquo;oublie pas le site de ta commune !</div>
-        <div class="catalog-note-text">Certaines communes proposent aussi leurs propres coups de pouce : taxe poubelle, couches pour nouveau-né, vélo, garde d’enfants, sport ou culture. Va aussi voir le site de ta commune, souvent dans les rubriques “aide sociale”, “prestations” ou “famille”.</div>
+        <div class="catalog-note-text">Des aides sp&eacute;cifiques existent parfois au niveau communal et peu de gens le savent &mdash; aide pour les poubelles, les couches pour nouveau-n&eacute;s, l&rsquo;achat d&rsquo;un v&eacute;lo, les frais de garde, les activit&eacute;s sportives&hellip; Cherche le site internet de ta commune et regarde dans la section &ldquo;aide sociale&rdquo; ou &ldquo;prestations&rdquo;.</div>
       </div>
     </div>
     <div id="cat-grid">
@@ -760,9 +760,9 @@
 
 <section class="section section-plain" id="guides">
   <div class="section-inner">
-    <div class="section-tag">Guides</div>
-    <h2 class="section-title">Quand tu veux comprendre une situation</h2>
-    <p class="section-subtitle">Les guides reprennent les cas les plus fréquents, avec les premiers gestes et les documents à garder sous la main.</p>
+    <div class="section-tag">Aller plus loin</div>
+    <h2 class="section-title">Guides sur les aides les plus recherchées</h2>
+    <p class="section-subtitle">Si tu arrives avec une question précise, tu peux aussi ouvrir directement un guide simple sur le sujet.</p>
     <div class="section-action-line">
       <a href="/guides/" class="section-chip-link">Voir tous les guides <span aria-hidden="true">→</span></a>
     </div>
@@ -770,17 +770,17 @@
       <a href="/subside-lamal/" class="docs-shortcut-card">
         <div class="docs-shortcut-kicker">Santé</div>
         <div class="docs-shortcut-title">Subside LAMal</div>
-        <div class="docs-link-text">À quoi ça sert, quand demander et quoi préparer.</div>
+        <div class="docs-link-text">Comprendre à quoi ça sert, par où commencer et quoi préparer.</div>
       </a>
       <a href="/revenu-insertion/" class="docs-shortcut-card">
         <div class="docs-shortcut-kicker">Revenus</div>
         <div class="docs-shortcut-title">Revenu d’insertion</div>
-        <div class="docs-link-text">Quand contacter le CSR et quoi préparer si l’argent manque.</div>
+        <div class="docs-link-text">Voir le rôle du CSR, ce qu’il traite concrètement et dans quels cas le contacter.</div>
       </a>
       <a href="/bourses-ocbe/" class="docs-shortcut-card">
         <div class="docs-shortcut-kicker">Formation</div>
         <div class="docs-shortcut-title">Bourses OCBE</div>
-        <div class="docs-link-text">Faire le test, déposer la demande et garder les bons documents.</div>
+        <div class="docs-link-text">Repérer la première démarche et les pièces les plus utiles.</div>
       </a>
       <a href="/chomage-laci/" class="docs-shortcut-card">
         <div class="docs-shortcut-kicker">Emploi</div>
@@ -790,12 +790,12 @@
       <a href="/dettes-budget/" class="docs-shortcut-card">
         <div class="docs-shortcut-kicker">Budget</div>
         <div class="docs-shortcut-title">Dettes et budget</div>
-        <div class="docs-link-text">Savoir qui appeler quand les factures deviennent trop lourdes.</div>
+        <div class="docs-link-text">Voir les bonnes premières portes quand le budget ne tient plus.</div>
       </a>
       <a href="/aides-logement/" class="docs-shortcut-card">
         <div class="docs-shortcut-kicker">Logement</div>
         <div class="docs-shortcut-title">Aides logement</div>
-        <div class="docs-link-text">Loyer trop lourd, courrier du bailleur ou besoin d’un logement plus adapté.</div>
+        <div class="docs-link-text">Repérer les pistes utiles si le loyer devient trop lourd ou si le logement est menacé.</div>
       </a>
     </div>
   </div>
@@ -803,9 +803,9 @@
 
 <section class="community-section" id="retours">
   <div class="community-inner">
-    <div class="community-kicker">Retours</div>
-    <h2 class="community-title">Tu as vu quelque chose à corriger ?</h2>
-    <p class="feedback-text">Une aide manque, une démarche a changé ou une phrase n’est pas claire ? Écris-nous. C’est comme ça que le site reste utile.</p>
+    <div class="community-kicker">Améliorer le site</div>
+    <h2 class="community-title">Aide-nous à garder ces infos utiles.</h2>
+    <p class="feedback-text">Une situation manque, une démarche a changé ou une phrase n’est pas assez claire&#160;? Écris-nous. Chaque retour aide à rendre MonAide-VD plus juste et plus simple à utiliser.</p>
     <a href="mailto:info@monaide-vaud.ch?subject=Retour%20MonAide-VD" class="feedback-link">Nous écrire <span class="btn-arrow">→</span></a>
   </div>
 </section>
@@ -817,7 +817,7 @@
         <span class="site-footer-mark" aria-hidden="true"></span>
         <span>MonAide-VD</span>
       </a>
-      <p>Un site indépendant pour aider à s’orienter dans les aides sociales vaudoises.</p>
+      <p>Outil d&#8217;orientation sociale pour le canton de Vaud. Projet ind&#233;pendant, en b&#234;ta.</p>
       <a href="mailto:info@monaide-vaud.ch" class="site-footer-mail">info@monaide-vaud.ch</a>
     </div>
     <div class="site-footer-nav" role="navigation" aria-label="Navigation du site">
@@ -830,7 +830,7 @@
   </div>
   <div class="site-footer-bottom">
     <span>&#169; 2026 MonAide-VD &#183; Projet ind&#233;pendant</span>
-    <span>Les informations aident à s’orienter, mais ne remplacent pas une décision officielle.</span>
+    <span>Le site donne un premier rep&#232;re et ne remplace pas un service officiel.</span>
   </div>
 </footer>
 
