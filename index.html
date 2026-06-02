@@ -224,6 +224,82 @@
           <h3 class="step-title">Quelques questions sur ta situation actuelle</h3>
           <p class="step-subtitle"></p>
           <div class="form-group">
+            <label class="form-label">Ton &#226;ge</label>
+            <div class="choice-grid">
+              <label><input class="choice-input" type="radio" name="age" id="age-moins18" value="moins18"><span class="choice-card"><span class="choice-text"><span class="choice-title">Moins de 18 ans</span><span class="choice-desc">Mineur&#183;e ou adolescent&#183;e</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="age" id="age-18-25" value="18-25"><span class="choice-card"><span class="choice-text"><span class="choice-title">18 &#8211; 25 ans</span><span class="choice-desc">Jeune adulte, &#233;tudes ou premiers emplois</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="age" id="age-26-35" value="26-35"><span class="choice-card"><span class="choice-text"><span class="choice-title">26 &#8211; 35 ans</span><span class="choice-desc">Vie active, formation ou reprise</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="age" id="age-36-49" value="36-49"><span class="choice-card"><span class="choice-text"><span class="choice-title">36 &#8211; 49 ans</span><span class="choice-desc">Situation familiale ou pro stabilis&#233;e</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="age" id="age-50-59" value="50-59"><span class="choice-card"><span class="choice-text"><span class="choice-title">50 &#8211; 59 ans</span><span class="choice-desc">Transition d&#8217;emploi ou fragilit&#233;s possibles</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="age" id="age-60-64" value="60-64"><span class="choice-card"><span class="choice-text"><span class="choice-title">60 &#8211; 64 ans</span><span class="choice-desc">Approche de la retraite ou rente-pont</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="age" id="age-65plus" value="65plus"><span class="choice-card"><span class="choice-text"><span class="choice-title">65 ans et plus</span><span class="choice-desc">Retraite, AVS, PC et aides 60+</span></span><span class="choice-check"></span></span></label>
+            </div>
+            <select class="form-select" id="age" hidden>
+              <option value="">Choisir&#8230;</option>
+              <option value="moins18">Moins de 18 ans</option>
+              <option value="18-25">18 &#8211; 25 ans</option>
+              <option value="26-35">26 &#8211; 35 ans</option>
+              <option value="36-49">36 &#8211; 49 ans</option>
+              <option value="50-59">50 &#8211; 59 ans</option>
+              <option value="60-64">60 &#8211; 64 ans</option>
+              <option value="65plus">65 ans et plus</option>
+            </select>
+            <div class="form-error">Choisis une tranche d&#8217;&#226;ge pour continuer.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Ta situation familiale</label>
+            <div class="choice-grid">
+              <label><input class="choice-input" type="radio" name="situation_familiale" value="C&#233;libataire sans enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">C&#233;libataire sans enfants</span><span class="choice-desc">Personne seule, sans charge d&#8217;enfant</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="situation_familiale" value="Parent seul avec enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">Parent seul&#183;e</span><span class="choice-desc">Tu g&#232;res seul&#183;e avec enfants</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="situation_familiale" value="En couple (conjoint&#183;e de fait) / mari&#233;&#183;e sans enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">En couple (conjoint&#183;e de fait) / mari&#233;&#183;e sans enfants</span><span class="choice-desc">Deux adultes dans le foyer</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="situation_familiale" value="En couple (conjoint&#183;e de fait) / mari&#233;&#183;e avec enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">En couple (conjoint&#183;e de fait) / mari&#233;&#183;e avec enfants</span><span class="choice-desc">Famille avec un ou plusieurs enfants</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="situation_familiale" value="Autre"><span class="choice-card"><span class="choice-text"><span class="choice-title">Autre situation</span><span class="choice-desc">Famille recompos&#233;e ou situation atypique</span></span><span class="choice-check"></span></span></label>
+            </div>
+            <select class="form-select" id="situation_familiale" hidden>
+              <option value="">Choisir&#8230;</option>
+              <option>C&#233;libataire sans enfants</option>
+              <option>En couple (conjoint&#183;e de fait) / mari&#233;&#183;e sans enfants</option>
+              <option>En couple (conjoint&#183;e de fait) / mari&#233;&#183;e avec enfants</option>
+              <option>Parent seul avec enfants</option>
+              <option>Autre</option>
+            </select>
+            <div class="form-error">Choisis la situation familiale la plus proche de la tienne.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Ton statut en Suisse</label>
+            <select class="form-select" id="statut_sejour" hidden>
+              <option value="">Choisir&#8230;</option>
+              <option>Nationalit&#233; suisse</option>
+              <option>Permis C (&#233;tablissement)</option>
+              <option>Permis B (s&#233;jour)</option>
+              <option>Permis L (courte dur&#233;e)</option>
+              <option>Permis G (frontalier&#183;&#232;re)</option>
+              <option>Permis F (admission provisoire)</option>
+              <option>Permis N (requ&#233;rant&#183;e d&#8217;asile)</option>
+              <option>Permis S (protection temporaire)</option>
+              <option>Autre / sans statut r&#233;gulier</option>
+            </select>
+            <div class="choice-grid">
+              <label><input class="choice-input" type="radio" name="statut_sejour_base" value="suisse"><span class="choice-card"><span class="choice-text"><span class="choice-title">Nationalit&#233; suisse</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="statut_sejour_base" value="permis"><span class="choice-card"><span class="choice-text"><span class="choice-title">Permis</span></span><span class="choice-check"></span></span></label>
+              <label><input class="choice-input" type="radio" name="statut_sejour_base" value="autre"><span class="choice-card"><span class="choice-text"><span class="choice-title">Autre situation</span></span><span class="choice-check"></span></span></label>
+            </div>
+            <div class="form-group-inline" id="group-statut-permis" hidden>
+              <label class="form-label" for="statut_permis_detail">Quel permis&#160;?</label>
+              <select class="form-select" id="statut_permis_detail">
+                <option value="">Choisir un permis&#8230;</option>
+                <option value="Permis C (&#233;tablissement)">Permis C</option>
+                <option value="Permis B (s&#233;jour)">Permis B</option>
+                <option value="Permis L (courte dur&#233;e)">Permis L</option>
+                <option value="Permis G (frontalier&#183;&#232;re)">Permis G</option>
+                <option value="Permis F (admission provisoire)">Permis F</option>
+                <option value="Permis N (requ&#233;rant&#183;e d&#8217;asile)">Permis N</option>
+                <option value="Permis S (protection temporaire)">Permis S</option>
+              </select>
+            </div>
+            <div class="form-error">Choisis ton statut en Suisse pour continuer.</div>
+          </div>
+          <div class="form-group">
             <label class="form-label">Ta commune</label>
             <input class="form-input" id="commune" list="communes-list" placeholder="Lausanne, Nyon, Yverdon..." autocomplete="off" spellcheck="false">
             <datalist id="communes-list">
@@ -338,82 +414,6 @@
             </datalist>
             <div class="form-help">Commence à taper pour voir les suggestions.</div>
             <div class="form-error">Indique ta commune.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Ton &#226;ge</label>
-            <div class="choice-grid">
-              <label><input class="choice-input" type="radio" name="age" id="age-moins18" value="moins18"><span class="choice-card"><span class="choice-text"><span class="choice-title">Moins de 18 ans</span><span class="choice-desc">Mineur&#183;e ou adolescent&#183;e</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-18-25" value="18-25"><span class="choice-card"><span class="choice-text"><span class="choice-title">18 &#8211; 25 ans</span><span class="choice-desc">Jeune adulte, &#233;tudes ou premiers emplois</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-26-35" value="26-35"><span class="choice-card"><span class="choice-text"><span class="choice-title">26 &#8211; 35 ans</span><span class="choice-desc">Vie active, formation ou reprise</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-36-49" value="36-49"><span class="choice-card"><span class="choice-text"><span class="choice-title">36 &#8211; 49 ans</span><span class="choice-desc">Situation familiale ou pro stabilis&#233;e</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-50-59" value="50-59"><span class="choice-card"><span class="choice-text"><span class="choice-title">50 &#8211; 59 ans</span><span class="choice-desc">Transition d&#8217;emploi ou fragilit&#233;s possibles</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-60-64" value="60-64"><span class="choice-card"><span class="choice-text"><span class="choice-title">60 &#8211; 64 ans</span><span class="choice-desc">Approche de la retraite ou rente-pont</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-65plus" value="65plus"><span class="choice-card"><span class="choice-text"><span class="choice-title">65 ans et plus</span><span class="choice-desc">Retraite, AVS, PC et aides 60+</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="age" hidden>
-              <option value="">Choisir&#8230;</option>
-              <option value="moins18">Moins de 18 ans</option>
-              <option value="18-25">18 &#8211; 25 ans</option>
-              <option value="26-35">26 &#8211; 35 ans</option>
-              <option value="36-49">36 &#8211; 49 ans</option>
-              <option value="50-59">50 &#8211; 59 ans</option>
-              <option value="60-64">60 &#8211; 64 ans</option>
-              <option value="65plus">65 ans et plus</option>
-            </select>
-            <div class="form-error">Choisis une tranche d&#8217;&#226;ge pour continuer.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Ta situation familiale</label>
-            <div class="choice-grid">
-              <label><input class="choice-input" type="radio" name="situation_familiale" value="C&#233;libataire sans enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">C&#233;libataire sans enfants</span><span class="choice-desc">Personne seule, sans charge d&#8217;enfant</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_familiale" value="Parent seul avec enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">Parent seul&#183;e</span><span class="choice-desc">Tu g&#232;res seul&#183;e avec enfants</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_familiale" value="En couple (conjoint&#183;e de fait) / mari&#233;&#183;e sans enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">En couple (conjoint&#183;e de fait) / mari&#233;&#183;e sans enfants</span><span class="choice-desc">Deux adultes dans le foyer</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_familiale" value="En couple (conjoint&#183;e de fait) / mari&#233;&#183;e avec enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">En couple (conjoint&#183;e de fait) / mari&#233;&#183;e avec enfants</span><span class="choice-desc">Famille avec un ou plusieurs enfants</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_familiale" value="Autre"><span class="choice-card"><span class="choice-text"><span class="choice-title">Autre situation</span><span class="choice-desc">Famille recompos&#233;e ou situation atypique</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="situation_familiale" hidden>
-              <option value="">Choisir&#8230;</option>
-              <option>C&#233;libataire sans enfants</option>
-              <option>En couple (conjoint&#183;e de fait) / mari&#233;&#183;e sans enfants</option>
-              <option>En couple (conjoint&#183;e de fait) / mari&#233;&#183;e avec enfants</option>
-              <option>Parent seul avec enfants</option>
-              <option>Autre</option>
-            </select>
-            <div class="form-error">Choisis la situation familiale la plus proche de la tienne.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Ton statut en Suisse</label>
-            <select class="form-select" id="statut_sejour" hidden>
-              <option value="">Choisir&#8230;</option>
-              <option>Nationalit&#233; suisse</option>
-              <option>Permis C (&#233;tablissement)</option>
-              <option>Permis B (s&#233;jour)</option>
-              <option>Permis L (courte dur&#233;e)</option>
-              <option>Permis G (frontalier&#183;&#232;re)</option>
-              <option>Permis F (admission provisoire)</option>
-              <option>Permis N (requ&#233;rant&#183;e d&#8217;asile)</option>
-              <option>Permis S (protection temporaire)</option>
-              <option>Autre / sans statut r&#233;gulier</option>
-            </select>
-            <div class="choice-grid">
-              <label><input class="choice-input" type="radio" name="statut_sejour_base" value="suisse"><span class="choice-card"><span class="choice-text"><span class="choice-title">Nationalit&#233; suisse</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="statut_sejour_base" value="permis"><span class="choice-card"><span class="choice-text"><span class="choice-title">Permis</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="statut_sejour_base" value="autre"><span class="choice-card"><span class="choice-text"><span class="choice-title">Autre situation</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <div class="form-group-inline" id="group-statut-permis" hidden>
-              <label class="form-label" for="statut_permis_detail">Quel permis&#160;?</label>
-              <select class="form-select" id="statut_permis_detail">
-                <option value="">Choisir un permis&#8230;</option>
-                <option value="Permis C (&#233;tablissement)">Permis C</option>
-                <option value="Permis B (s&#233;jour)">Permis B</option>
-                <option value="Permis L (courte dur&#233;e)">Permis L</option>
-                <option value="Permis G (frontalier&#183;&#232;re)">Permis G</option>
-                <option value="Permis F (admission provisoire)">Permis F</option>
-                <option value="Permis N (requ&#233;rant&#183;e d&#8217;asile)">Permis N</option>
-                <option value="Permis S (protection temporaire)">Permis S</option>
-              </select>
-            </div>
-            <div class="form-error">Choisis ton statut en Suisse pour continuer.</div>
           </div>
           <div class="step-actions"><span></span><button type="button" class="btn-nav btn-next" onclick="goToStepValidated(2)">Continuer &#8594;</button></div>
         </div>

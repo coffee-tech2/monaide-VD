@@ -583,7 +583,7 @@
   window.MONAIDE_SIMULATOR_CONFIG = {
     totalSteps: 4,
     questionSetsByStep: {
-      1: [['commune', 'age'], ['situation_familiale', 'statut_sejour']],
+      1: [['age', 'situation_familiale'], ['statut_sejour', 'commune']],
       2: [['situation_pro', 'logement', 'enfants'], ['loyer', 'en_formation']],
       3: [['revenu'], ['fortune', 'prime_lamal'], ['aides_actuelles']],
       4: [['incapacite', 'dettes'], ['separation_en_cours'], ['proche_aidant']]
