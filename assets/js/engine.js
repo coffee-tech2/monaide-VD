@@ -65,6 +65,7 @@
     var communeNorm = profile.communeNorm || '';
     var age = profile.age || '';
     var permis = profile.permis || '';
+    var famille = profile.famille || '';
     var sitPro = profile.sitPro || '';
     var logement = profile.logement || '';
     var loyer = profile.loyer || '';
@@ -86,6 +87,7 @@
     var permisN = permis.indexOf('Permis N') !== -1;
     var permisF = permis.indexOf('Permis F') !== -1;
     var permisS = permis.indexOf('Permis S') !== -1;
+    var familleIndiqueEnfants = /enfant/i.test(famille) || /parent seul/i.test(famille);
 
     return {
       communeNorm: communeNorm,
@@ -109,7 +111,7 @@
       retraite: sitPro.includes('Retrait') || age === '65plus' || aidesListe.includes('AVS'),
       etudiant: sitPro.includes('tudiant') || formation !== 'non',
       enFormation: formation === 'oui_apres_obligatoire',
-      aEnfants: enfants !== 'non' && enfants !== '',
+      aEnfants: familleIndiqueEnfants || (enfants !== 'non' && enfants !== ''),
       chomageIndem: sitPro === 'Au chômage' && aidesListe.includes('chomage'),
       chomageNonIndem: sitPro.indexOf('Sans emploi') !== -1 || (sitPro === 'Au chômage' && !aidesListe.includes('chomage')),
       enEmploi: sitPro === 'En emploi',
@@ -140,7 +142,7 @@
       statutStableOrdinaire: permis.includes('suisse') || permisB || permisC,
       statutAvecNuance: permisF || permisL || permisS,
       besoinAlimentaireProbable: revenu === 'aucun' || revenu === 'moins1000' || dettes === 'surendette',
-      besoinLocalConcret: enfants !== 'non' || dettes !== 'non' || loyer === 'plus1800' || logement.includes('Sans logement fixe')
+      besoinLocalConcret: familleIndiqueEnfants || enfants !== 'non' || dettes !== 'non' || loyer === 'plus1800' || logement.includes('Sans logement fixe')
     };
   }
 

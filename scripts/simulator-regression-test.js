@@ -297,6 +297,24 @@ const scenarios = [
     }
   },
   {
+    name: 'Situation familiale avec enfants déclenche les pistes famille',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'En emploi',
+        enfants: 'non',
+        revenu: '2000-3500',
+        fortune: '4000-8000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '1200-1800'
+      });
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      assert(allocationsIndex !== -1, 'Family status with children should trigger family allowances even if the child detail question is missing');
+      assert(pcFamillesIndex !== -1, 'Family status with children should keep PC Familles visible for a working low/moderate-income parent');
+    }
+  },
+  {
     name: 'Parcours retraité priorise PC et retire RI',
     run() {
       const results = runProfile({
