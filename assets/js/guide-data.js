@@ -35,7 +35,7 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'perdre-son-emploi',
       label: 'Emploi',
       title: 'Je viens de perdre mon emploi',
-      summary: 'Les premiers gestes après une perte d’emploi : inscription ORP, Job-Room, caisse de chômage et quoi faire si les revenus s’arrêtent.',
+      summary: 'ORP, preuves de recherche, caisse de chômage et aides à vérifier si l’argent manque après une perte d’emploi.',
       href: '/perdre-son-emploi/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['emploi'],
