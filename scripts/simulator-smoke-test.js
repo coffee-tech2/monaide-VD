@@ -221,6 +221,16 @@ const tests = [
     }
   },
   {
+    name: 'Chômage déjà perçu ne ressort pas comme résultat',
+    run() {
+      const results = compute({
+        sitPro: 'Au chômage',
+        aidesListe: ['chomage']
+      });
+      assert(!hasResult(results, 'Assurance chômage'), 'Existing unemployment benefits should not be recommended again');
+    }
+  },
+  {
     name: 'Faible revenu ne rend pas automatiquement le RI certain',
     run() {
       const results = compute({

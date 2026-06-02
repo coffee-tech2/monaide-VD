@@ -857,7 +857,7 @@
       needsPc: (flags.retraite || flags.alreadyAI) && !flags.alreadyPC,
       needsPcFamilles: flags.aEnfants && flags.enEmploi && !flags.alreadyRI && !flags.alreadyPC && (flags.revenuFaible || flags.revenuModere),
       needsAllocationsFamiliales: flags.aEnfants && !flags.alreadyAF,
-      needsChomageActif: flags.alreadyChomage,
+      needsChomageActif: false,
       needsLaci: flags.chomageNonIndem && !flags.alreadyChomage && !flags.permisN && !flags.sansStatut,
       needsOcbe: (flags.enFormation || flags.etudiant) && !flags.alreadyBourse,
       needsAi: flags.incapacite !== 'non' && !flags.alreadyAI,
