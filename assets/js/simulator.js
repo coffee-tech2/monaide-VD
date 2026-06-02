@@ -254,7 +254,8 @@
     var retraite = sitPro.indexOf('Retrait') !== -1 || age === '65plus';
     var situationEtudiante = isStudentSituation(sitPro);
     var jeuneOuFormation = age === 'moins18' || age === '18-25' || age === '26-35' || situationEtudiante;
-    var familleAvecEnfants = famille.indexOf('enfants') !== -1 || famille.indexOf('Parent seul') !== -1;
+    var familleNorm = famille.toLowerCase();
+    var familleAvecEnfants = familleNorm.indexOf('enfant') !== -1 || famille.indexOf('Parent seul') !== -1;
     var logementAvecCout = logement.indexOf('Locataire') !== -1 || logement.indexOf('Propri') !== -1;
 
     toggleConditionalBlock('group-enfants', !famille || familleAvecEnfants || famille === 'Autre', 'enfants', familleAvecEnfants ? null : 'non');
