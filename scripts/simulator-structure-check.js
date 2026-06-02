@@ -44,6 +44,8 @@ const allowedWhen = new Set([
   'needsProInfirmis',
   'needsProSenectute',
   'needsCms',
+  'needsFraisMaladieInvalidite',
+  'needsAminh',
   'needsPrestationsCommunales',
   'needsGardeMalade',
   'needsDettes',

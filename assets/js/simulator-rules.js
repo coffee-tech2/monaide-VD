@@ -100,6 +100,16 @@ window.MONAIDE_SIMULATION_RULES = [
     sourceType: 'prestation sociale'
   },
   {
+    id: 'frais-maladie-invalidite',
+    title: 'Frais maladie et invalidité liés aux PC',
+    intent: 'Ne pas manquer les frais de santé ou de handicap qui peuvent parfois être annoncés quand les PC sont déjà ouvertes.',
+    when: 'needsFraisMaladieInvalidite',
+    handler: 'addFraisMaladieInvaliditeResult',
+    confidence: 'à vérifier',
+    guardrails: ['Seulement si les PC sont déjà indiquées.', 'Les factures doivent être vérifiées par AAS ou Caisse AVS.'],
+    sourceType: 'prestation sociale'
+  },
+  {
     id: 'pc-familles',
     title: 'PC Familles',
     intent: 'Repérer les familles qui travaillent mais dont le budget reste trop serré.',
@@ -217,6 +227,16 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addProchesAidantsResult',
     confidence: 'orientation utile',
     guardrails: ['Distinguer aide au proche et droits propres de la personne aidante.'],
+    sourceType: 'soutien social'
+  },
+  {
+    id: 'aminh',
+    title: 'AMINH enfant en situation de handicap',
+    intent: 'Ajouter une piste de soutien à domicile quand la personne indique des enfants et un rôle de proche aidant.',
+    when: 'needsAminh',
+    handler: 'addAminhResult',
+    confidence: 'à vérifier',
+    guardrails: ['Ne suppose pas automatiquement le handicap de l’enfant.', 'Présenter comme piste à faire vérifier, pas comme droit acquis.'],
     sourceType: 'soutien social'
   },
   {

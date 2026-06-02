@@ -372,6 +372,30 @@
     }));
   }
 
+  function addFraisMaladieInvaliditeResult(res) {
+    res.push(buildResult({
+      nom: 'Frais de maladie et d’invalidité — PC AVS/AI',
+      badge: 'verifier',
+      desc: 'Si tu touches déjà les PC, certains frais liés à la santé, au handicap ou à l’aide à domicile peuvent parfois être annoncés en plus. Il faut faire vérifier les factures avant de conclure.',
+      action: '1. Mets de côté les factures de santé, de soins, de transport médical, de moyens auxiliaires ou d’aide à domicile.\n2. Contacte une agence AAS ou la Caisse AVS Vaud et demande quels frais peuvent être annoncés.\n3. Garde les décisions PC, les factures originales et les preuves de paiement.\n4. Si tu aides un proche, demande aussi si un soutien de proche aidant·e ou une évaluation CMS est utile.',
+      today: 'Garde les factures et fais vérifier avant de les laisser de côté.',
+      docs: ['Décision PC', 'Factures de santé ou d’aide à domicile', 'Preuves de paiement si disponibles'],
+      liensFraisMaladieInvalidite: true
+    }));
+  }
+
+  function addAminhResult(res) {
+    res.push(buildResult({
+      nom: 'Enfant en situation de handicap — aides à domicile (AMINH)',
+      badge: 'verifier',
+      desc: 'Si tu aides un enfant en situation de handicap ou avec un besoin important à domicile, il peut exister des soutiens pour la relève, l’aide concrète ou l’organisation du quotidien.',
+      action: '1. Note ce qui demande de l’aide à domicile : soins, surveillance, déplacements, repas, nuit, démarches ou relève.\n2. Contacte Espace Proches ou le CMS pour faire un premier tri.\n3. Si l’enfant a déjà un suivi médical ou AI, garde les courriers et décisions utiles.\n4. Demande clairement quelles aides financières, relais ou évaluations à domicile peuvent être envisagés.',
+      today: 'Commence par décrire le besoin concret à domicile, puis demande à quel service l’annoncer.',
+      docs: ['Courriers médicaux ou AI si disponibles', 'Liste des besoins à domicile', 'Coordonnées du suivi médical ou social'],
+      liensAminh: true
+    }));
+  }
+
   function addDettesResult(res, dettes) {
     if (dettes === 'loyer') {
       res.push(buildResult({
@@ -842,6 +866,8 @@
       needsProInfirmis: flags.invalidite && !flags.retraite,
       needsProSenectute: flags.retraite || flags.age === '65plus',
       needsCms: flags.invalidite,
+      needsFraisMaladieInvalidite: flags.alreadyPC,
+      needsAminh: flags.aEnfants && flags.procheAidant === 'oui',
       needsPrestationsCommunales: (flags.besoinLocalConcret || (flags.revenuFaible && flags.grandeCommune)) && !flags.sansStatut,
       needsGardeMalade: flags.aEnfants && (flags.enEmploi || flags.enFormation),
       needsDettes: flags.dettes !== 'non',
@@ -878,6 +904,8 @@
       addProInfirmisResult: function() { addProInfirmisResult(res); },
       addProSenectuteResult: function() { addProSenectuteResult(res); },
       addCmsResult: function() { addCmsResult(res); },
+      addFraisMaladieInvaliditeResult: function() { addFraisMaladieInvaliditeResult(res); },
+      addAminhResult: function() { addAminhResult(res); },
       addPrestationsCommunalesResult: function() { addPrestationsCommunalesResult(res, flags); },
       addGardeEnfantsMaladesResult: function() { addGardeEnfantsMaladesResult(res, flags); },
       addDettesResult: function() { addDettesResult(res, flags.dettes); },

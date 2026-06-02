@@ -161,6 +161,17 @@ const tests = [
     }
   },
   {
+    name: 'PC actuelles proposent les frais maladie et invalidité à vérifier',
+    run() {
+      const results = compute({
+        age: '65plus',
+        sitPro: 'Retraité·e (bénéficiaire AVS)',
+        aidesListe: ['PC']
+      });
+      assert(hasResult(results, 'Frais de maladie et d’invalidité', 'verifier'), 'Existing PC should suggest checking reimbursable health/disability costs');
+    }
+  },
+  {
     name: 'Enfants à charge proposent les allocations familiales sans certitude abusive',
     run() {
       const results = compute({
@@ -230,6 +241,19 @@ const tests = [
       });
       assert(hasResult(results, 'Assurance invalidité', 'verifier'), 'AI should stay to verify for total incapacity');
       assert(!hasResult(results, 'Assurance invalidité', 'confirme'), 'AI must never use confirmed status');
+    }
+  },
+  {
+    name: 'Proche aidant avec enfants propose AMINH sans certitude abusive',
+    run() {
+      const results = compute({
+        enfants: 'oui',
+        procheAidant: 'oui',
+        revenu: '3500-5000',
+        fortune: 'moins4000'
+      });
+      assert(hasResult(results, 'Enfant en situation de handicap', 'verifier'), 'Child + caregiver profile should suggest AMINH as a cautious path');
+      assert(!hasResult(results, 'Enfant en situation de handicap', 'probable'), 'AMINH should not be probable without a direct child disability question');
     }
   },
   {
