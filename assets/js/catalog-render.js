@@ -89,7 +89,7 @@
     });
     var guide = getCatalogRenderGuide(item);
     if (guide && guide.href && !catalogRenderHasGuideLink(item)) {
-      parts.push(renderCatalogRenderLink({ label: guide.label || 'Guide détaillé', url: guide.href }));
+      parts.push(renderCatalogRenderLink({ label: guide.label || 'Lire le guide', url: guide.href }));
     }
     if (item.documentationTarget) {
       var docLink = renderCatalogRenderDocLink(item.documentationTarget);
@@ -127,7 +127,7 @@
     if (!item) return '';
     var guide = getCatalogRenderGuide(item);
     var guideLink = guide && guide.href
-      ? '<a href="' + escapeCatalogRenderHtml(guide.href) + '">' + escapeCatalogRenderHtml(guide.label || 'Guide détaillé') + ' <span aria-hidden="true">→</span></a>'
+      ? '<a href="' + escapeCatalogRenderHtml(guide.href) + '">' + escapeCatalogRenderHtml(guide.label || 'Lire le guide') + ' <span aria-hidden="true">→</span></a>'
       : '';
     return '<div class="catalog-next-step" onclick="event.stopPropagation()">'
       + '<div><strong>Tu veux continuer avec cette piste ?</strong><span>Ouvre le guide pour les étapes, ou relance le simulateur si tu n’es pas sûr·e.</span></div>'

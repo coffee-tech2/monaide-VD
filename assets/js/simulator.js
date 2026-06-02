@@ -680,8 +680,8 @@
       return;
     }
 
-    container.innerHTML = '<div class="results-profile-top"><div><div class="results-profile-title">Récapitulatif</div>'
-      + '<div class="results-profile-text">Tes réponses prises en compte.</div></div>'
+    container.innerHTML = '<div class="results-profile-top"><div><div class="results-profile-title">Tes réponses</div>'
+      + '<div class="results-profile-text">Ce résumé explique pourquoi certaines pistes ressortent.</div></div>'
       + '<button type="button" class="results-profile-edit" onclick="editSimulationAnswers()">Modifier mes réponses</button></div>'
       + '<div class="results-profile-grid">'
       + items.map(function(item) {

@@ -263,7 +263,7 @@
   };
 
   window.MONAIDE_RESULTS_UI_CONFIG = {
-    defaultPurpose: 'Cette piste donne une première porte à vérifier selon les réponses indiquées.',
+    defaultPurpose: 'Cette piste peut valoir la peine selon tes réponses.',
     badgeOrder: {
       probable: 0,
       verifier: 1
@@ -273,7 +273,7 @@
       why: 'Pourquoi cette piste apparaît',
       action: 'Plan d’action',
       docs: 'Documents à préparer',
-      links: 'Liens utiles'
+      links: 'Où aller ensuite'
     },
     detailClasses: {
       purpose: 'is-purpose',
@@ -294,19 +294,19 @@
       firstContact: 'Qui contacter d’abord',
       docs: 'Documents utiles à rassembler',
       region: 'Dans ta région',
-      more: 'Tu veux aller plus loin ?'
+      more: 'Besoin de regarder plus large ?'
     },
-    moreDetailsLabel: 'Ouvrir le détail de cette piste',
+    moreDetailsLabel: 'Voir le détail',
     lessDetailsLabel: 'Refermer le détail',
-    moreDetailsHint: 'Pourquoi, étapes, documents et liens',
+    moreDetailsHint: 'Pourquoi, étapes et contacts',
     detailHint: 'ouvrir',
     moreCatalogLabel: 'En savoir plus',
-    openCatalogLabel: 'Explorer le répertoire →',
-    noCoverageText: 'Le simulateur ne couvre pas tout. Le répertoire permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.',
+    openCatalogLabel: 'Voir le répertoire →',
+    noCoverageText: 'Tu peux aussi chercher directement dans le répertoire : budget, logement, santé, famille, formation ou séjour.',
     purposeRules: [
       { patterns: ['subside lamal'], text: 'Cette aide sert à réduire le montant de la prime d’assurance maladie quand les conditions sont remplies.' },
       { patterns: ['revenu d insertion'], text: 'Cette aide sert à couvrir le minimum pour vivre quand les revenus ne suffisent plus, sous réserve d’un examen complet du dossier.' },
-      { patterns: ['centre social regional', 'aas'], text: 'Ce service sert à faire un premier point, expliquer les démarches possibles et orienter vers la bonne porte d’entrée.' },
+      { patterns: ['centre social regional', 'aas'], text: 'Ce service peut aider à faire un premier point, expliquer les démarches possibles et trouver le bon contact.' },
       { patterns: ['prestations complementaires'], text: 'Cette aide sert à compléter une rente AVS ou AI quand elle ne suffit pas à couvrir le budget de base.' },
       { patterns: ['frais de maladie', 'invalidite pc avs ai'], text: 'Cette piste sert à faire vérifier si certains frais de maladie ou de handicap peuvent être remboursés en plus des PC.' },
       { patterns: ['pc familles'], text: 'Cette aide sert à compléter le budget d’un ménage avec enfants quand une activité lucrative existe déjà mais que les ressources restent insuffisantes.' },
@@ -372,17 +372,17 @@
       { patterns: ['carteculture', 'passculture', 'pro infirmis', 'pro senectute', 'vaud pour vous'], priority: 40 }
     ],
     firstContactRules: [
-      { patterns: ['revenu d insertion', 'centre social regional'], title: 'Qui contacter d’abord', text: 'Le CSR est souvent la première porte si tu n’as plus assez pour vivre ou si tu ne sais pas par où commencer.', actionLabel: 'Trouver ton CSR', actionKey: 'CSR_FINDER' },
+      { patterns: ['revenu d insertion', 'centre social regional'], title: 'Qui contacter d’abord', text: 'Le CSR est souvent le bon contact si tu n’as plus assez pour vivre ou si tu ne sais pas par où commencer.', actionLabel: 'Trouver ton CSR', actionKey: 'CSR_FINDER' },
       { patterns: ['subside lamal'], title: 'Qui contacter d’abord', text: 'Commence par le calcul officiel. Si tu bloques, une agence AAS peut aussi t’aider à faire la demande.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
       { patterns: ['assurance invalidite'], title: 'Qui contacter d’abord', text: 'AI Vaud est la bonne porte d’entrée. Un médecin, psychiatre ou psychologue peut aussi t’aider à préparer la demande.', actionLabel: 'Infos AI Vaud', actionKey: 'AI_HOME' },
-      { patterns: ['prestations complementaires'], title: 'Qui contacter d’abord', text: 'Le plus simple est souvent de commencer par une agence AAS, qui peut faire un premier tri avant la demande officielle.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
+      { patterns: ['prestations complementaires'], title: 'Qui contacter d’abord', text: 'Le plus simple est souvent de commencer par une agence AAS, qui peut vérifier si une demande de PC vaut la peine.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
       { patterns: ['frais de maladie'], title: 'Qui contacter d’abord', text: 'Si tu touches déjà les PC, commence par une agence AAS ou la Caisse AVS Vaud pour savoir quels frais peuvent être annoncés.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
       { patterns: ['enfant en situation de handicap', 'aminh'], title: 'Qui contacter d’abord', text: 'Commence par faire décrire le besoin concret à domicile : aide, relève, soins, surveillance ou adaptation du quotidien.', actionLabel: 'Infos proches aidant·es', actionKey: 'ESPACE_PROCHES_INFO' },
       { patterns: ['pc familles'], title: 'Qui contacter d’abord', text: 'Commence par l’estimation officielle des PC Familles. Si la piste semble plausible, le CRD PC Familles de ta région pourra ensuite examiner le dossier.', actionLabel: 'Estimer les PC Familles', actionKey: 'PC_FAMILLES_SIMULATEUR' },
       { patterns: ['bourses', 'ocbe'], title: 'Qui contacter d’abord', text: 'Commence par le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage), puis dépose une demande si la piste semble correspondre. Si le dossier te paraît compliqué, Jet Service peut aussi aider à le remplir.', actionLabel: 'Faire le test d’éligibilité de l’OCBE', actionKey: 'OCBE_ELIGIBILITY' },
       { patterns: ['carteculture'], title: 'Qui contacter d’abord', text: 'Si tu as déjà une aide sociale ou un revenu modeste, la piste CarteCulture peut valoir la peine d’être activée après les démarches prioritaires.', actionLabel: 'Demander la CarteCulture', actionKey: 'CARTECULTURE_APPLY' },
-      { patterns: ['evam'], title: 'Qui contacter d’abord', text: 'Quand le séjour ou le cadre asile est central, le relais EVAM reste souvent la première porte à utiliser.', actionLabel: 'EVAM Vaud', actionKey: 'EVAM_HOME' },
-      { patterns: ['lavi'], title: 'Qui contacter d’abord', text: 'En cas de violence, d’agression ou d’infraction, le centre LAVI est une bonne première porte, même sans plainte.', actionLabel: 'Centre LAVI Vaud', actionKey: 'LAVI_LAUSANNE' }
+      { patterns: ['evam'], title: 'Qui contacter d’abord', text: 'Quand le séjour ou le cadre asile est central, EVAM reste souvent le bon relais à contacter.', actionLabel: 'EVAM Vaud', actionKey: 'EVAM_HOME' },
+      { patterns: ['lavi'], title: 'Qui contacter d’abord', text: 'En cas de violence, d’agression ou d’infraction, le centre LAVI peut aider, même sans plainte.', actionLabel: 'Centre LAVI Vaud', actionKey: 'LAVI_LAUSANNE' }
     ],
     regions: [
       { label: 'Lausanne', communes: ['lausanne', 'renens', 'prilly', 'ecublens', 'crissier'] },

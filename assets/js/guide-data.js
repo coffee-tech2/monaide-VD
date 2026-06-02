@@ -254,7 +254,7 @@ window.MONAIDE_GUIDE_DATA = {
       id: guide.id,
       href: guide.href,
       title: guide.title,
-      label: 'Guide détaillé'
+      label: 'Lire le guide'
     };
   };
 })();

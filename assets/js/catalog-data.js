@@ -40,7 +40,7 @@
       links: [
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST },
         { kind: 'info', label: 'Infos aides sociales Vaud', url: 'https://www.vd.ch/aides-financieres-et-soutien-social' },
-        { kind: 'info', label: 'Guide détaillé', url: '/agence-assurances-sociales/' }
+        { kind: 'info', label: 'Lire le guide', url: '/agence-assurances-sociales/' }
       ],
       documentationTarget: null
     },
@@ -97,7 +97,7 @@
         { kind: 'action', label: 'Évaluer et demander le subside', url: window.MONAIDE_LINKS.SUBSIDE_HOME },
         { kind: 'info', label: 'OVAM — infos officielles', url: 'https://www.vd.ch/themes/sante/assurances/assurance-maladie-obligatoire' },
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST },
-        { kind: 'info', label: 'Guide détaillé', url: '/subside-lamal/' }
+        { kind: 'info', label: 'Lire le guide', url: '/subside-lamal/' }
       ],
       documentationTarget: { blockId: 'bloc-lamal', accordionId: 'doc-lamal' }
     },
@@ -149,7 +149,7 @@
       links: [
         { kind: 'action', label: 'Demander le RI', url: window.MONAIDE_LINKS.RI_APPLY },
         { kind: 'action', label: 'Trouver ton CSR', url: 'https://www.vd.ch/aides-financieres-et-soutien-social/trouver-un-centre-social-regional-csr' },
-        { kind: 'info', label: 'Guide détaillé', url: '/revenu-insertion/' }
+        { kind: 'info', label: 'Lire le guide', url: '/revenu-insertion/' }
       ],
       documentationTarget: { blockId: 'bloc-ri', accordionId: 'doc-ri' }
     },
@@ -194,7 +194,7 @@
       links: [
         { kind: 'action', label: 'Formulaires AI Vaud', url: window.MONAIDE_LINKS.AI_FORMS },
         { kind: 'info', label: 'Infos AI Vaud', url: window.MONAIDE_LINKS.AI_HOME },
-        { kind: 'info', label: 'Guide détaillé', url: '/assurance-invalidite/' }
+        { kind: 'info', label: 'Lire le guide', url: '/assurance-invalidite/' }
       ],
       documentationTarget: { blockId: 'bloc-ai', accordionId: 'doc-ai' }
     },
@@ -256,7 +256,7 @@
         { kind: 'info', label: 'Infos bourses OCBE', url: window.MONAIDE_LINKS.OCBE_INFO },
         { kind: 'action', label: 'Faire une demande OCBE', url: window.MONAIDE_LINKS.OCBE_APPLY },
         { kind: 'info', label: 'Fondations privées (PDF)', url: 'https://www.vd.ch/fileadmin/user_upload/organisation/dsas/DGCS/OCBE_Liste_fondations_priv%C3%A9es.pdf' },
-        { kind: 'info', label: 'Guide détaillé', url: '/bourses-ocbe/' }
+        { kind: 'info', label: 'Lire le guide', url: '/bourses-ocbe/' }
       ],
       documentationTarget: { blockId: 'bloc-bourse', accordionId: 'doc-bourse' }
     },
@@ -349,7 +349,7 @@
         { kind: 'info', label: 'PC AVS/AI', url: 'https://www.ahv-iv.ch/fr/Assurances-sociales/Prestations-complementaires-PC/Generalites' },
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST },
         { kind: 'info', label: 'Caisse AVS Vaud', url: window.MONAIDE_LINKS.CAISSE_AVS_HOME },
-        { kind: 'info', label: 'Guide détaillé', url: '/prestations-complementaires/' }
+        { kind: 'info', label: 'Lire le guide', url: '/prestations-complementaires/' }
       ],
       documentationTarget: null
     },
@@ -445,7 +445,7 @@
       links: [
         { kind: 'action', label: 'Trouver ton CSR', url: 'https://www.vd.ch/aides-financieres-et-soutien-social/trouver-un-centre-social-regional-csr' },
         { kind: 'action', label: 'Demander le RI', url: window.MONAIDE_LINKS.RI_APPLY },
-        { kind: 'info', label: 'Guide détaillé', url: '/centre-social-regional/' }
+        { kind: 'info', label: 'Lire le guide', url: '/centre-social-regional/' }
       ],
       documentationTarget: null
     },
@@ -515,7 +515,7 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'Guide détaillé', url: '/dettes-budget/' },
+        { kind: 'info', label: 'Lire le guide', url: '/dettes-budget/' },
         { kind: 'info', label: 'Voir Parlons Cash', url: window.MONAIDE_LINKS.PARLONS_CASH },
         { kind: 'info', label: 'Voir aussi le CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
         { kind: 'info', label: 'Voir aussi Jet Service', url: window.MONAIDE_LINKS.JET_SERVICE }
@@ -611,7 +611,7 @@
       links: [
         { kind: 'action', label: 'Voir la démarche selon ta situation', url: window.MONAIDE_LINKS.ALLOCATIONS_INFO },
         { kind: 'info', label: 'Caisse AVS Vaud', url: window.MONAIDE_LINKS.AVS_FAMILY },
-        { kind: 'info', label: 'Guide détaillé', url: '/allocations-familiales/' }
+        { kind: 'info', label: 'Lire le guide', url: '/allocations-familiales/' }
       ],
       documentationTarget: null
     },
@@ -1287,7 +1287,7 @@
       links: [
         { kind: 'action', label: 'S’inscrire à l’ORP', url: window.MONAIDE_LINKS.ORP_REGISTER },
         { kind: 'info', label: 'Infos chômage (LACI)', url: window.MONAIDE_LINKS.LACI_INFO },
-        { kind: 'info', label: 'Guide détaillé', url: '/chomage-laci/' }
+        { kind: 'info', label: 'Lire le guide', url: '/chomage-laci/' }
       ],
       documentationTarget: null
     },
@@ -1826,7 +1826,7 @@
       links: [
         { kind: 'info', label: 'Infos aide au logement', url: window.MONAIDE_LINKS.AIL_INFO },
         { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES },
-        { kind: 'info', label: 'Guide détaillé', url: '/aides-logement/' }
+        { kind: 'info', label: 'Lire le guide', url: '/aides-logement/' }
       ],
       documentationTarget: null
     },
@@ -1876,7 +1876,7 @@
       links: [
         { kind: 'action', label: 'ASLOCA Vaud', url: window.MONAIDE_LINKS.ASLOCA_VAUD },
         { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
-        { kind: 'info', label: 'Guide détaillé', url: '/aides-logement/' }
+        { kind: 'info', label: 'Lire le guide', url: '/aides-logement/' }
       ],
       documentationTarget: null
     },
@@ -2657,7 +2657,7 @@
       links: [
         { kind: 'info', label: 'Logements subventionnés', url: window.MONAIDE_LINKS.LUP_INFO },
         { kind: 'info', label: 'FVL', url: window.MONAIDE_LINKS.FVL },
-        { kind: 'info', label: 'Guide détaillé', url: '/aides-logement/' }
+        { kind: 'info', label: 'Lire le guide', url: '/aides-logement/' }
       ],
       documentationTarget: null
     },
@@ -2702,7 +2702,7 @@
       links: [
         { kind: 'action', label: 'ASLOCA Vaud', url: window.MONAIDE_LINKS.ASLOCA_VAUD },
         { kind: 'info', label: 'Voir les services', url: window.MONAIDE_LINKS.ASLOCA_SERVICES },
-        { kind: 'info', label: 'Guide détaillé', url: '/aides-logement/' }
+        { kind: 'info', label: 'Lire le guide', url: '/aides-logement/' }
       ],
       documentationTarget: null
     },
