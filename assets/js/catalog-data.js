@@ -354,6 +354,56 @@
       documentationTarget: null
     },
     {
+      id: 'frais-maladie-invalidite',
+      title: 'Frais de maladie et d’invalidité — PC AVS/AI',
+      category: 'sante',
+      summary: 'Déjà aux PC · Dentiste, lunettes, moyens auxiliaires, frais reconnus',
+      audience: 'Personnes qui touchent déjà les PC AVS/AI et qui ont des frais de santé ou d’invalidité difficiles à payer.',
+      purpose: 'Certains frais de maladie et d’invalidité peuvent être remboursés en plus des PC, mais il faut vérifier les conditions et garder les justificatifs.',
+      highlights: [
+        'Concerne surtout les personnes déjà au bénéfice des PC',
+        'Peut aider pour certains frais de santé, de soins ou de handicap',
+        'Les factures et preuves de paiement comptent beaucoup'
+      ],
+      firstSteps: [
+        'Garder les factures, devis, décisions et preuves de paiement',
+        'Contacter l’AAS ou la Caisse AVS Vaud avant de renoncer à une démarche',
+        'Demander quels frais peuvent être reconnus dans ta situation'
+      ],
+      bodyIntro: 'Quand on touche les PC, certains frais de maladie ou d’invalidité peuvent parfois être remboursés séparément. Il faut vérifier avant de jeter une facture ou de renoncer à un soin.',
+      reviewedAt: '2 juin 2026',
+      decisionBy: 'Caisse AVS Vaud ou service PC compétent',
+      sections: [
+        {
+          title: 'À vérifier',
+          items: [
+            'Frais dentaires, moyens auxiliaires, participation aux soins ou autres frais reconnus selon la situation',
+            'Les limites et conditions dépendent du type de frais',
+            'Une facture seule ne suffit pas toujours : un devis ou une autorisation peut être nécessaire'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Garder toutes les pièces : facture, devis, ordonnance, décision, preuve de paiement',
+            'Demander à l’AAS ou à la Caisse AVS Vaud si le frais peut être présenté',
+            'Ne pas attendre trop longtemps : certains délais peuvent s’appliquer'
+          ]
+        }
+      ],
+      callouts: [
+        {
+          kind: 'callout',
+          html: 'Cette fiche ne remplace pas la décision PC. Elle sert surtout à ne pas passer à côté d’un remboursement possible.'
+        }
+      ],
+      links: [
+        { kind: 'info', label: 'Prestations complémentaires — Caisse AVS Vaud', url: window.MONAIDE_LINKS.PC_INFO },
+        { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST }
+      ],
+      documentationTarget: null
+    },
+    {
       id: 'csr',
       title: 'Centre social régional (CSR)',
       category: 'financier',
@@ -2010,6 +2060,96 @@
       documentationTarget: null
     },
     {
+      id: 'aide-financiere-ems',
+      title: 'Aide financière EMS — frais d’hébergement',
+      category: 'sante',
+      summary: 'EMS · Court ou long séjour · Participation aux frais à vérifier',
+      audience: 'Personnes ou proches qui doivent comprendre comment payer un séjour en EMS quand les ressources ne suffisent pas.',
+      purpose: 'Le canton peut intervenir dans certaines situations pour aider à couvrir les frais d’un EMS, selon les revenus, la fortune et le type de séjour.',
+      highlights: [
+        'À vérifier dès qu’un séjour en EMS devient nécessaire',
+        'Concerne des montants importants',
+        'Très utile de demander de l’aide avant de signer ou renoncer'
+      ],
+      firstSteps: [
+        'Garder les documents liés au séjour, aux revenus et à la fortune',
+        'Demander conseil à Pro Senectute, au CMS, à l’AAS ou à l’EMS',
+        'Lire la page officielle avant de conclure que c’est impossible'
+      ],
+      bodyIntro: 'Un séjour en EMS peut vite sembler impossible à payer. Il existe des règles d’aide financière dans le canton : il faut faire vérifier la situation, surtout avant de renoncer ou de rester seul·e avec les factures.',
+      reviewedAt: '2 juin 2026',
+      decisionBy: 'Service cantonal compétent, selon le dossier EMS',
+      sections: [
+        {
+          title: 'À vérifier',
+          items: [
+            'Séjour court ou long séjour en EMS',
+            'Revenus, fortune, PC AVS/AI et participation demandée',
+            'Situation du conjoint ou de la famille selon le dossier'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Demander une estimation ou une explication avant de laisser les factures s’accumuler',
+            'Contacter Pro Senectute ou une AAS si les courriers sont difficiles à comprendre',
+            'Préparer décision AVS/AI, PC, bail éventuel, revenus, fortune et factures de l’EMS'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'info', label: 'Aide financière EMS — Vaud', url: window.MONAIDE_LINKS.EMS_AIDE_FINANCIERE },
+        { kind: 'info', label: 'Pro Senectute Vaud', url: window.MONAIDE_LINKS.PRO_SENECTUTE },
+        { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'logements-adaptes-lada',
+      title: 'Logements adaptés avec accompagnement (LADA)',
+      category: 'logement',
+      summary: 'Vie à domicile · Logement adapté · Accompagnement médico-social',
+      audience: 'Personnes âgées, proches ou personnes en perte d’autonomie qui cherchent une solution entre domicile classique et EMS.',
+      purpose: 'Les LADA peuvent permettre de rester dans un logement adapté, avec un accompagnement, quand le domicile devient trop difficile mais qu’un EMS n’est pas forcément la seule piste.',
+      highlights: [
+        'Pour vivre à domicile avec plus de sécurité',
+        'Utile quand le logement actuel n’est plus adapté',
+        'À discuter avec le CMS, Pro Senectute ou le réseau médico-social'
+      ],
+      firstSteps: [
+        'Parler de la situation au CMS ou à Pro Senectute',
+        'Regarder les informations officielles sur les LADA',
+        'Noter ce qui devient difficile : escaliers, soins, solitude, sécurité, repas'
+      ],
+      bodyIntro: 'Quand le logement actuel devient trop compliqué, il n’y a pas seulement le choix entre “rester comme avant” et “aller en EMS”. Les logements adaptés avec accompagnement peuvent être une piste à vérifier.',
+      reviewedAt: '2 juin 2026',
+      decisionBy: 'Organisme ou structure LADA concernée, avec orientation médico-sociale selon la situation',
+      sections: [
+        {
+          title: 'Quand cette piste est utile',
+          items: [
+            'Perte d’autonomie, isolement ou logement devenu peu sûr',
+            'Besoin d’un cadre plus adapté sans forcément entrer en EMS',
+            'Proche qui s’inquiète pour la sécurité ou le maintien à domicile'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Commencer par demander un conseil au CMS ou à Pro Senectute',
+            'Faire le point sur les besoins réels : aide, soins, sécurité, repas, lien social',
+            'Vérifier les logements disponibles et les conditions auprès des structures concernées'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'info', label: 'LADA — État de Vaud', url: window.MONAIDE_LINKS.LADA_INFO },
+        { kind: 'action', label: 'Contacter AVASAD', url: window.MONAIDE_LINKS.CMS_AVASAD },
+        { kind: 'info', label: 'Pro Senectute Vaud', url: window.MONAIDE_LINKS.PRO_SENECTUTE }
+      ],
+      documentationTarget: null
+    },
+    {
       id: 'espace-proches',
       title: 'Espace Proches — soutien aux proches aidant·es',
       category: 'sante',
@@ -2107,6 +2247,52 @@
         { kind: 'info', label: 'Aides financières et congés', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FINANCES },
         { kind: 'info', label: 'Questions fréquentes proches aidants', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FAQ },
         { kind: 'info', label: 'AVASAD / CMS Vaud', url: window.MONAIDE_LINKS.CMS_AVASAD }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'aminh-enfant-handicap',
+      title: 'Enfant en situation de handicap — aides à domicile (AMINH)',
+      category: 'sante',
+      summary: 'Enfant mineur · Handicap · Aide à domicile et proches aidants',
+      audience: 'Parents ou proches d’un enfant mineur en situation de handicap qui cherchent un soutien concret à domicile.',
+      purpose: 'Certaines aides peuvent soutenir la famille quand un enfant mineur en situation de handicap demande une présence ou une organisation importante à domicile.',
+      highlights: [
+        'À vérifier si la charge à domicile devient lourde',
+        'Peut concerner les proches aidants et l’aide à domicile',
+        'À croiser avec CMS, Pro Infirmis et les infos proches aidants'
+      ],
+      firstSteps: [
+        'Noter ce que l’enfant nécessite au quotidien : soins, surveillance, déplacements, démarches',
+        'Contacter Espace Proches ou le CMS pour faire le tri',
+        'Demander explicitement si une aide type AMINH ou une aide à domicile peut être examinée'
+      ],
+      bodyIntro: 'Quand un enfant en situation de handicap a besoin d’une aide importante à domicile, il peut exister des soutiens spécifiques. Le plus utile est de faire vérifier la situation avec un relais qui connaît ces aides.',
+      reviewedAt: '2 juin 2026',
+      decisionBy: 'Service cantonal ou organisme compétent selon l’aide demandée',
+      sections: [
+        {
+          title: 'Quand cette fiche est utile',
+          items: [
+            'Enfant mineur en situation de handicap',
+            'Besoin d’aide régulière à domicile ou charge familiale très lourde',
+            'Parent ou proche qui réduit son activité, s’épuise ou ne sait plus quoi demander'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Contacter Espace Proches, le CMS ou Pro Infirmis pour faire le premier tri',
+            'Préparer les décisions AI éventuelles, rapports médicaux utiles et description du quotidien',
+            'Demander quelles aides financières, aides à domicile ou congés proches aidants sont possibles'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'info', label: 'Aides financières proches aidants — Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FINANCES },
+        { kind: 'info', label: 'Proches aidants — Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
+        { kind: 'action', label: 'Contacter AVASAD', url: window.MONAIDE_LINKS.CMS_AVASAD },
+        { kind: 'info', label: 'Pro Infirmis Vaud', url: window.MONAIDE_LINKS.PRO_INFIRMIS }
       ],
       documentationTarget: null
     },

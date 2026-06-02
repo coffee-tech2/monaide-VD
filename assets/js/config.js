@@ -3,6 +3,8 @@
     SUBSIDE_HOME: 'https://www.vd.ch/sante-soins-et-handicap/assurance-maladie/subside-a-lassurance-maladie',
     RI_APPLY: 'https://www.vd.ch/prestation/demander-le-revenu-dinsertion',
     PC_INFO: 'https://www.caisseavsvaud.ch/fr/Assurances/PC/Prestations-complementaires/Prestations-complementaires.html',
+    EMS_AIDE_FINANCIERE: 'https://www.vd.ch/aides-financieres-et-soutien-social/aides-financieres-et-comment-les-demander/aide-financiere-aux-personnes-en-ems',
+    LADA_INFO: 'https://www.vd.ch/sante-soins-et-handicap/vivre-a-domicile/lada-logements-adaptes-avec-accompagnement',
     CAISSE_AVS_HOME: 'https://www.caisseavsvaud.ch',
     CSP_MIGRATION: 'https://csp.ch/vaud/services/questions-de-migration/',
     CSP_MIGRATION_HOURS: 'https://csp.ch/vaud/permanences-info-conseil-migration/',
