@@ -69,6 +69,14 @@
       if (matchesResultPatterns(name, ['parlons cash', 'dettes'])) return 3;
       if (matchesResultPatterns(name, ['subside lamal'])) return 8;
     }
+    var dettesActives = !!(context && context.dettesActives);
+    if (dettesActives) {
+      if (matchesResultPatterns(name, ['parlons cash', 'dettes'])) return 0;
+      if (matchesResultPatterns(name, ['centre social regional', 'revenu d insertion'])) return 1;
+      if (matchesResultPatterns(name, ['aide alimentaire'])) return 2.5;
+      if (matchesResultPatterns(name, ['prestations communales'])) return 3;
+      if (matchesResultPatterns(name, ['subside lamal'])) return 6;
+    }
     var separationEnCours = !!(context && context.separationEnCours);
     if (separationEnCours) {
       if (matchesResultPatterns(name, ['separation', 'divorce'])) return 0.5;

@@ -410,7 +410,6 @@
         docs: ['Courriers du bailleur ou de l’office des poursuites', 'Enveloppe avec la date de réception si tu l’as', 'Contrat de bail', 'Preuves de paiement ou retards'],
         liensDettes: true
       }));
-      return;
     }
 
     res.push(buildResult({
@@ -939,6 +938,7 @@
     var enEmploi = flags.enEmploi;
     var sansRevenuEtSansEmploi = flags.sitPro.indexOf('Sans emploi') !== -1 && (flags.revenu === 'aucun' || flags.revenu === 'moins1000');
     var urgenceLogement = flags.dettes === 'loyer' || flags.logement.includes('Sans logement fixe');
+    var dettesActives = flags.dettes !== 'non';
     var separationEnCours = flags.separationEnCours === 'oui';
     var incapaciteDurable = flags.incapacite === 'oui_durable';
     var procheAidant = flags.procheAidant === 'oui';
@@ -957,6 +957,7 @@
         sansRevenuEtSansEmploi: sansRevenuEtSansEmploi,
         chomageNonIndem: flags.chomageNonIndem,
         urgenceLogement: urgenceLogement,
+        dettesActives: dettesActives,
         separationEnCours: separationEnCours,
         incapaciteDurable: incapaciteDurable,
         procheAidant: procheAidant

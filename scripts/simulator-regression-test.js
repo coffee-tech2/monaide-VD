@@ -173,14 +173,40 @@ const scenarios = [
       const expulsionIndex = indexOfResult(results, 'Menace d\'expulsion');
       const csrIndex = indexOfResult(results, 'Centre social régional');
       const aidesLogementIndex = indexOfResult(results, 'Aides logement');
+      const parlonsCashIndex = indexOfResult(results, 'Parlons Cash');
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       assert(expulsionIndex !== -1, 'Expulsion support should appear for rent debt');
       assert(csrIndex !== -1, 'CSR should appear as immediate social entry point');
       assert(aidesLogementIndex !== -1, 'Housing aid should remain visible');
+      assert(parlonsCashIndex !== -1, 'Parlons Cash should remain visible when rent debt is declared');
       assert(lamalIndex !== -1, 'LAMal should remain visible but lower priority');
       assert(expulsionIndex < csrIndex, 'Expulsion support should be before CSR in housing emergency');
       assert(csrIndex < aidesLogementIndex, 'CSR should be before broader housing aid');
+      assert(aidesLogementIndex < parlonsCashIndex, 'Housing tracks should remain before general debt support when the debt is rent-related');
       assert(aidesLogementIndex < lamalIndex, 'Housing tracks should be before LAMal in housing emergency');
+    }
+  },
+  {
+    name: 'Dettes générales priorisent Parlons Cash',
+    run() {
+      ['dettes', 'surendette'].forEach((dettes) => {
+        const results = runProfile({
+          famille: 'Célibataire sans enfants',
+          sitPro: 'En emploi',
+          revenu: '2000-3500',
+          fortune: 'moins4000',
+          primeLamal: '100-250',
+          logement: 'Locataire (appartement ou maison)',
+          loyer: '700-1200',
+          dettes
+        });
+        const parlonsCashIndex = indexOfResult(results, 'Parlons Cash');
+        const lamalIndex = indexOfResult(results, 'Subside LAMal');
+        const prestationsIndex = indexOfResult(results, 'Prestations communales');
+        assert(parlonsCashIndex === 0, 'Parlons Cash should be first when general debt or overindebtedness is declared');
+        assert(prestationsIndex !== -1, 'Local supports should stay visible when debts are declared');
+        assert(lamalIndex === -1 || parlonsCashIndex < lamalIndex, 'Debt support should stay before LAMal when the declared problem is debt');
+      });
     }
   },
   {
@@ -287,6 +313,7 @@ const scenarios = [
     name: 'Parcours plus assez pour vivre garde RI avant LAMal',
     run() {
       const results = runProfile({
+        famille: 'Célibataire sans enfants',
         sitPro: 'Sans emploi - sans revenu',
         revenu: 'aucun',
         fortune: 'moins4000',
@@ -297,10 +324,32 @@ const scenarios = [
       const riIndex = indexOfResult(results, 'Revenu d\'insertion');
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       const foodIndex = indexOfResult(results, 'Aide alimentaire');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
       assert(riIndex === 0, 'RI should be first when the profile says no job and no income');
       assert(laciIndex !== -1 && laciIndex > riIndex, 'LACI should remain visible after RI to avoid missing unemployment rights');
       assert(lamalIndex !== -1 && riIndex < lamalIndex, 'RI should be before LAMal when there is no income');
       assert(foodIndex !== -1 && foodIndex <= 3, 'Food support should stay highly visible in a no-income scenario');
+      assert(allocationsIndex === -1, 'No-children no-income profile should not receive family allowances');
+    }
+  },
+  {
+    name: 'RI déjà perçu garde les suites utiles sans reproposer RI',
+    run() {
+      const results = runProfile({
+        famille: 'Célibataire sans enfants',
+        sitPro: 'Bénéficiaire du RI',
+        revenu: '1000-2000',
+        fortune: 'moins4000',
+        primeLamal: '250-400',
+        aidesListe: ['RI']
+      });
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const carteIndex = indexOfResult(results, 'CarteCulture');
+      assert(riIndex === -1, 'Existing RI should not be suggested again');
+      assert(lamalIndex === 0, 'LAMal should be the first useful follow-up when RI is already open');
+      assert(carteIndex !== -1, 'CarteCulture should remain visible as a useful follow-up when RI is already open');
+      assert(lamalIndex < carteIndex, 'LAMal should stay before CarteCulture in the existing RI follow-up path');
     }
   },
   {
