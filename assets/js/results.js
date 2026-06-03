@@ -83,6 +83,16 @@
       if (matchesResultPatterns(name, ['pc familles'])) return 2.5;
       if (matchesResultPatterns(name, ['subside lamal'])) return 8;
     }
+    var aEnfants = !!(context && context.aEnfants);
+    if (aEnfants && !urgenceLogement && !dettesActives) {
+      if (matchesResultPatterns(name, ['pc familles'])) return 0;
+      if (matchesResultPatterns(name, ['allocations familiales'])) return 1;
+      if (matchesResultPatterns(name, ['prestations communales'])) return 2;
+      if (context.loyerEleve && matchesResultPatterns(name, ['aides logement'])) return 2.5;
+      if (matchesResultPatterns(name, ['garde d enfants malades'])) return 4;
+      if (matchesResultPatterns(name, ['subside lamal'])) return 6;
+      if (matchesResultPatterns(name, ['carteculture'])) return 8;
+    }
     var incapaciteDurable = !!(context && context.incapaciteDurable);
     if (incapaciteDurable) {
       if (matchesResultPatterns(name, ['assurance invalidite'])) return 1.5;
@@ -167,7 +177,8 @@
     var primeElevee = profile.primeLamal === '250-400' || profile.primeLamal === 'plus400';
     var enFormation = profile.formation === 'oui_apres_obligatoire';
     var jeuneEnFormation = profile.age === '18-25' && enFormation;
-    var aEnfants = profile.enfants && profile.enfants !== 'non';
+    var famille = String(profile.famille || '');
+    var aEnfants = (profile.enfants && profile.enfants !== 'non') || /avec enfants/i.test(famille) || /parent seul/i.test(famille);
     var chomage = profile.sitPro === 'Au chômage' || String(profile.sitPro || '').indexOf('Sans emploi') !== -1;
     var logementFragile = String(profile.logement || '').indexOf('Locataire') !== -1 && (profile.loyer === '1200-1800' || profile.loyer === 'plus1800');
     var logementInstable = String(profile.logement || '').indexOf('Sans logement fixe') !== -1 || String(profile.logement || '').indexOf('structure d’accueil') !== -1;

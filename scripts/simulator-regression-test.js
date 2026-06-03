@@ -373,6 +373,29 @@ const scenarios = [
     }
   },
   {
+    name: 'Séparation parent solo ne repropose pas les allocations déjà touchées',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'En emploi',
+        enfants: 'non',
+        revenu: '2000-3500',
+        fortune: '4000-8000',
+        loyer: '1200-1800',
+        aidesListe: ['alloc_fam'],
+        separationEnCours: 'oui'
+      });
+      const separationIndex = indexOfResult(results, 'Séparation');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      const aidesLogementIndex = indexOfResult(results, 'Aides logement');
+      assert(separationIndex === 0, 'Separation should stay first when a parent solo is separating');
+      assert(allocationsIndex === -1, 'Already received family allowances should not appear during a separation profile');
+      assert(pcFamillesIndex !== -1, 'PC Familles should remain visible during a parent solo separation profile');
+      assert(aidesLogementIndex !== -1, 'Housing support should remain visible when rent is heavy during separation');
+    }
+  },
+  {
     name: 'Situation familiale avec enfants déclenche les pistes famille',
     run() {
       const results = runProfile({
@@ -388,13 +411,15 @@ const scenarios = [
       const pcFamillesIndex = indexOfResult(results, 'PC Familles');
       const prestationsCommunalesIndex = indexOfResult(results, 'Prestations communales');
       const gardeMaladeIndex = indexOfResult(results, 'Garde d’enfants malades');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
       const carteCultureIndex = indexOfResult(results, 'CarteCulture');
       assert(allocationsIndex !== -1, 'Family status with children should trigger family allowances even if the child detail question is missing');
       assert(pcFamillesIndex !== -1, 'Family status with children should keep PC Familles visible for a working low/moderate-income parent');
       assert(prestationsCommunalesIndex !== -1, 'Family status with children should keep local family supports visible');
       assert(gardeMaladeIndex !== -1, 'Family status with children should keep child-care emergency support visible');
-      assert(pcFamillesIndex <= 2, 'PC Familles should stay visibly near the top for a working parent solo profile');
-      assert(allocationsIndex <= 3, 'Family allowances should stay visibly near the top for a parent solo profile');
+      assert(pcFamillesIndex === 0, 'PC Familles should be the first family budget track for a working parent solo profile');
+      assert(allocationsIndex === 1, 'Family allowances should stay directly after PC Familles for a parent solo profile');
+      assert(lamalIndex === -1 || allocationsIndex < lamalIndex, 'Family tracks should appear before LAMal for a parent solo profile');
       assert(carteCultureIndex === -1 || pcFamillesIndex < carteCultureIndex, 'Family budget supports should stay before CarteCulture in this profile');
     }
   },
@@ -413,6 +438,134 @@ const scenarios = [
       const pcFamillesIndex = indexOfResult(results, 'PC Familles');
       assert(allocationsIndex === -1, 'Already received family allowances should not be suggested again');
       assert(pcFamillesIndex !== -1, 'Already receiving family allowances should not hide other useful family budget tracks');
+    }
+  },
+  {
+    name: 'Parent solo sans revenu garde RI et pistes enfants utiles',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'Sans emploi - sans revenu',
+        enfants: 'non',
+        revenu: 'aucun',
+        fortune: 'moins4000',
+        primeLamal: '100-250'
+      });
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const aideAlimentaireIndex = indexOfResult(results, 'Aide alimentaire');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      assert(riIndex === 0, 'RI should be first for a parent solo without income');
+      assert(allocationsIndex !== -1, 'Family allowances should remain visible for a parent solo without income');
+      assert(aideAlimentaireIndex !== -1, 'Food support should remain visible when there is no income');
+      assert(lamalIndex === -1 || riIndex < lamalIndex, 'RI should stay before LAMal when there is no income');
+    }
+  },
+  {
+    name: 'Parent solo sans revenu ne repropose pas les allocations déjà touchées',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'Sans emploi - sans revenu',
+        enfants: 'non',
+        revenu: 'aucun',
+        fortune: 'moins4000',
+        aidesListe: ['alloc_fam']
+      });
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const aideAlimentaireIndex = indexOfResult(results, 'Aide alimentaire');
+      assert(riIndex === 0, 'RI should remain first even when family allowances are already received');
+      assert(allocationsIndex === -1, 'Already received family allowances should not appear for a no-income parent solo profile');
+      assert(aideAlimentaireIndex !== -1, 'Food support should remain visible when family allowances are already received');
+    }
+  },
+  {
+    name: 'Parent solo avec loyer lourd remonte la piste logement',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'En emploi',
+        enfants: 'non',
+        revenu: '2000-3500',
+        fortune: '4000-8000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: 'plus1800',
+        primeLamal: '100-250'
+      });
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      const aidesLogementIndex = indexOfResult(results, 'Aides logement');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      assert(pcFamillesIndex === 0, 'PC Familles should remain first for a working parent solo profile');
+      assert(aidesLogementIndex !== -1, 'Housing support should appear when a parent solo has a heavy rent');
+      assert(lamalIndex === -1 || aidesLogementIndex < lamalIndex, 'Housing support should appear before LAMal when rent is heavy');
+    }
+  },
+  {
+    name: 'Parent solo avec loyer lourd et LAMal déjà touchée garde le logement avant CarteCulture',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'En emploi',
+        enfants: 'non',
+        revenu: '2000-3500',
+        fortune: '4000-8000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: 'plus1800',
+        aidesListe: ['lamal']
+      });
+      const aidesLogementIndex = indexOfResult(results, 'Aides logement');
+      const carteCultureIndex = indexOfResult(results, 'CarteCulture');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      assert(lamalIndex === -1, 'Already received LAMal should not be suggested again');
+      assert(aidesLogementIndex !== -1, 'Housing support should remain visible when LAMal is already received');
+      assert(carteCultureIndex === -1 || aidesLogementIndex < carteCultureIndex, 'Housing support should appear before CarteCulture when rent is heavy');
+    }
+  },
+  {
+    name: 'Parent solo avec retard de loyer priorise urgence logement',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'En emploi',
+        enfants: 'non',
+        revenu: '2000-3500',
+        fortune: '4000-8000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '1200-1800',
+        dettes: 'loyer'
+      });
+      const expulsionIndex = indexOfResult(results, 'Menace d\'expulsion');
+      const csrIndex = indexOfResult(results, 'Centre social régional');
+      const aidesLogementIndex = indexOfResult(results, 'Aides logement');
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      const parlonsCashIndex = indexOfResult(results, 'Parlons Cash');
+      assert(expulsionIndex === 0, 'Eviction warning should be first when rent debt is active');
+      assert(csrIndex !== -1 && csrIndex < pcFamillesIndex, 'CSR should appear before family budget tracks when rent debt is active');
+      assert(aidesLogementIndex !== -1 && aidesLogementIndex < pcFamillesIndex, 'Housing support should appear before family budget tracks when rent debt is active');
+      assert(parlonsCashIndex !== -1, 'Debt support should remain visible when rent debt is active');
+    }
+  },
+  {
+    name: 'Parent solo avec dettes générales priorise Parlons Cash',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'En emploi',
+        enfants: 'non',
+        revenu: '2000-3500',
+        fortune: '4000-8000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '1200-1800',
+        dettes: 'surendette'
+      });
+      const parlonsCashIndex = indexOfResult(results, 'Parlons Cash');
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      assert(parlonsCashIndex === 0, 'Parlons Cash should be first when general debt is active');
+      assert(pcFamillesIndex !== -1, 'PC Familles should remain visible for a parent solo with debt');
+      assert(allocationsIndex !== -1, 'Family allowances should remain visible for a parent solo with debt');
+      assert(parlonsCashIndex < pcFamillesIndex, 'Debt support should appear before family tracks when general debt is active');
     }
   },
   {

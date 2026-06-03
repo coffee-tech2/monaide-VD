@@ -956,11 +956,13 @@
         retraite: retraite,
         sansRevenuEtSansEmploi: sansRevenuEtSansEmploi,
         chomageNonIndem: flags.chomageNonIndem,
+        aEnfants: flags.aEnfants,
         urgenceLogement: urgenceLogement,
         dettesActives: dettesActives,
         separationEnCours: separationEnCours,
         incapaciteDurable: incapaciteDurable,
-        procheAidant: procheAidant
+        procheAidant: procheAidant,
+        loyerEleve: flags.loyerEleve
       }
     };
   };
