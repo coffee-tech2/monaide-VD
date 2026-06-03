@@ -115,6 +115,28 @@ const scenarios = [
     }
   },
   {
+    name: 'Chômage déjà ouvert garde les compléments sans reproposer LACI',
+    run() {
+      const results = runProfile({
+        famille: 'Célibataire sans enfants',
+        sitPro: 'Au chômage',
+        revenu: '1000-2000',
+        fortune: 'moins4000',
+        primeLamal: 'plus400',
+        aidesListe: ['chomage']
+      });
+      const laciIndex = indexOfResult(results, 'Assurance chômage');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      assert(laciIndex === -1, 'Already opened unemployment benefits should not be suggested again');
+      assert(lamalIndex !== -1, 'LAMal should remain visible when health insurance premium is heavy');
+      assert(riIndex !== -1, 'RI should remain visible if unemployment income may not cover basic needs');
+      assert(lamalIndex < riIndex, 'LAMal should stay before RI when the strongest declared signal is a heavy health insurance premium');
+      assert(allocationsIndex === -1, 'No-children unemployment profile should not receive family allowances');
+    }
+  },
+  {
     name: 'Sans emploi sans revenu garde LACI et RI avant LAMal',
     run() {
       const results = runProfile({
@@ -243,6 +265,7 @@ const scenarios = [
     name: 'Parcours primes maladie trop lourdes priorise LAMal',
     run() {
       const results = runProfile({
+        famille: 'En couple (conjoint·e de fait) / mariée sans enfants',
         sitPro: 'En emploi',
         revenu: '2000-3500',
         fortune: 'moins4000',
@@ -252,8 +275,12 @@ const scenarios = [
       });
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
       assert(lamalIndex === 0, 'LAMal should be the first track when the main signal is a heavy health insurance premium');
       assert(riIndex === -1, 'RI should not appear without a base-needs signal in the heavy premium scenario');
+      assert(pcFamillesIndex === -1, 'PC Familles should not appear in a no-children heavy premium scenario');
+      assert(allocationsIndex === -1, 'Family allowances should not appear in a no-children heavy premium scenario');
     }
   },
   {
