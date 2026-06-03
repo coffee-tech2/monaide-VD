@@ -241,9 +241,9 @@
   .choice-card::before { content:''; position:absolute; inset:0 auto 0 0; width:4px; background:transparent; transition:background 0.18s ease, width 0.22s ease; }
   .choice-card:hover { border-color: rgba(var(--vaud-rgb),0.34); background: #FFFDF8; box-shadow:none; transform:none; }
   .choice-card:active { transform:translateY(0) scale(0.99); box-shadow:none; }
-  .choice-input:checked + .choice-card { border-color: rgba(var(--vaud-rgb),0.82); background:#EEF6EF; box-shadow:none; }
+  .choice-input:checked + .choice-card { border-color: var(--vaud); background:#E6F3ED; box-shadow:inset 0 0 0 1px rgba(var(--vaud-rgb),0.12); }
   .choice-card.just-selected { animation: choiceConfirm 0.34s cubic-bezier(0.22, 1, 0.36, 1); }
-  .choice-input:checked + .choice-card::before { background:var(--vaud); width:5px; }
+  .choice-input:checked + .choice-card::before { background:var(--vaud); width:6px; }
   .choice-input:focus + .choice-card { outline: 2px solid rgba(var(--vaud-rgb),0.22); outline-offset: 2px; }
   .choice-icon { display: none !important; }
   .choice-text { flex: 1; min-width: 0; display: block; padding-right:0.15rem; }
@@ -251,8 +251,8 @@
   .choice-desc { display: none !important; }
   .choice-check { width: 1rem; height: 1rem; border-radius: 50%; border: 1.5px solid #d3c8bc; background: rgba(255,255,255,0.78); flex-shrink: 0; position: relative; margin-top:0; transition:transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.18s, border-color 0.18s; }
   .choice-input:checked + .choice-card .choice-title { color: var(--forest); }
-  .choice-input:checked + .choice-card .choice-check { border-color: var(--vaud); background: var(--vaud); transform:scale(1.08); }
-  .choice-input:checked + .choice-card .choice-check::after { content: ''; position: absolute; width: 0.28rem; height: 0.5rem; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); left: 0.34rem; top: 0.16rem; animation: checkPop 0.24s cubic-bezier(0.22, 1, 0.36, 1); }
+  .choice-input:checked + .choice-card .choice-check { border-color: var(--forest); background: var(--vaud); transform:scale(1.14); box-shadow:0 0 0 3px rgba(var(--vaud-rgb),0.14); }
+  .choice-input:checked + .choice-card .choice-check::after { content: none; }
   .form-help { margin-top: 0.4rem; font-size: 0.74rem; color: var(--warm-gray); line-height: 1.55; }
   .form-group-inline { margin-top: 0.8rem; }
   .form-error { margin-top: 0.45rem; font-size: 0.75rem; color: var(--orange-dark); line-height: 1.5; display: none; font-weight: 750; }

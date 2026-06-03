@@ -310,8 +310,33 @@ const scenarios = [
       });
       const allocationsIndex = indexOfResult(results, 'Allocations familiales');
       const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      const prestationsCommunalesIndex = indexOfResult(results, 'Prestations communales');
+      const gardeMaladeIndex = indexOfResult(results, 'Garde d’enfants malades');
+      const carteCultureIndex = indexOfResult(results, 'CarteCulture');
       assert(allocationsIndex !== -1, 'Family status with children should trigger family allowances even if the child detail question is missing');
       assert(pcFamillesIndex !== -1, 'Family status with children should keep PC Familles visible for a working low/moderate-income parent');
+      assert(prestationsCommunalesIndex !== -1, 'Family status with children should keep local family supports visible');
+      assert(gardeMaladeIndex !== -1, 'Family status with children should keep child-care emergency support visible');
+      assert(pcFamillesIndex <= 2, 'PC Familles should stay visibly near the top for a working parent solo profile');
+      assert(allocationsIndex <= 3, 'Family allowances should stay visibly near the top for a parent solo profile');
+      assert(carteCultureIndex === -1 || pcFamillesIndex < carteCultureIndex, 'Family budget supports should stay before CarteCulture in this profile');
+    }
+  },
+  {
+    name: 'Aide familiale déjà perçue ne ressort pas comme résultat',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'En emploi',
+        enfants: 'non',
+        revenu: '2000-3500',
+        fortune: '4000-8000',
+        aidesListe: ['alloc_fam']
+      });
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      assert(allocationsIndex === -1, 'Already received family allowances should not be suggested again');
+      assert(pcFamillesIndex !== -1, 'Already receiving family allowances should not hide other useful family budget tracks');
     }
   },
   {
