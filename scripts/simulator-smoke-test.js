@@ -223,6 +223,21 @@ const tests = [
     }
   },
   {
+    name: 'Sans enfants ne déclenche pas les pistes famille',
+    run() {
+      const results = compute({
+        famille: 'Célibataire sans enfants',
+        sitPro: 'Au chômage',
+        enfants: 'non',
+        revenu: '1000-2000',
+        aidesListe: ['chomage']
+      });
+      assert(!hasResult(results, 'Allocations familiales'), 'Family allowances should not appear for a no-children family status');
+      assert(!hasResult(results, 'PC Familles'), 'PC Familles should not appear for a no-children family status');
+      assert(!hasResult(results, 'Garde d’enfants malades'), 'Child-care emergency support should not appear for a no-children family status');
+    }
+  },
+  {
     name: 'Étudiant en formation ne reçoit pas RI ordinaire',
     run() {
       const results = compute({

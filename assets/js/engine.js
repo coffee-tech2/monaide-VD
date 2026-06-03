@@ -87,7 +87,7 @@
     var permisN = permis.indexOf('Permis N') !== -1;
     var permisF = permis.indexOf('Permis F') !== -1;
     var permisS = permis.indexOf('Permis S') !== -1;
-    var familleIndiqueEnfants = /enfant/i.test(famille) || /parent seul/i.test(famille);
+    var familleIndiqueEnfants = /avec enfants/i.test(famille) || /parent seul/i.test(famille);
 
     return {
       communeNorm: communeNorm,
