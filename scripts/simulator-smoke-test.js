@@ -172,6 +172,44 @@ const tests = [
     }
   },
   {
+    name: 'Bourse déjà perçue ne ressort pas comme résultat',
+    run() {
+      const results = compute({
+        age: '18-25',
+        sitPro: 'Étudiant·e ou en apprentissage',
+        formation: 'oui_apres_obligatoire',
+        revenu: 'moins1000',
+        aidesListe: ['bourse']
+      });
+      assert(!hasResult(results, 'Bourses d\'études'), 'Existing study grant should not be recommended again');
+      assert(hasResult(results, 'Jet Service'), 'Existing study grant should not hide youth/social support if the profile still needs orientation');
+    }
+  },
+  {
+    name: 'CarteCulture déjà perçue ne ressort pas comme résultat',
+    run() {
+      const results = compute({
+        sitPro: 'En emploi',
+        revenu: '1000-2000',
+        aidesListe: ['lamal', 'carteculture']
+      });
+      assert(!hasResult(results, 'CarteCulture'), 'Existing CarteCulture should not be recommended again');
+      assert(!hasResult(results, 'Subside LAMal'), 'Existing LAMal subsidy should still not be recommended again');
+    }
+  },
+  {
+    name: 'Rente AI déjà perçue ne ressort pas comme demande AI',
+    run() {
+      const results = compute({
+        sitPro: 'En incapacité de travail (maladie / accident)',
+        incapacite: 'totale',
+        aidesListe: ['AI']
+      });
+      assert(!hasResult(results, 'Assurance invalidité'), 'Existing AI pension should not be recommended as a new AI request');
+      assert(hasResult(results, 'Prestations complémentaires', 'probable') || hasResult(results, 'Prestations complémentaires', 'verifier'), 'Existing AI should keep PC as a useful follow-up track');
+    }
+  },
+  {
     name: 'Enfants à charge proposent les allocations familiales sans certitude abusive',
     run() {
       const results = compute({
