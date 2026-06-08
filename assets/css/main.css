@@ -568,10 +568,10 @@
   .guide-faq-row[open] .guide-faq-chevron { transform:rotate(90deg); color:var(--orange-dark); }
   .guide-faq-answer { padding:0 0 1.12rem; color:var(--warm-gray); font-size:0.97rem; line-height:1.72; max-width:46rem; }
 
-  .guide-detail-page .guide-shell { max-width:1180px; padding:4.7rem 1.75rem 2.2rem; text-align:left; }
+  .guide-detail-page .guide-shell { max-width:1180px; padding:4.7rem 1.75rem 1.55rem; text-align:left; }
   .guide-detail-page .guide-topline { justify-content:flex-start; margin-bottom:0.75rem; }
   .guide-detail-page .guide-backlink-chip { min-height:36px; padding:0.5rem 0.82rem; font-size:0.76rem; font-weight:600; border-radius:var(--radius-pill); opacity:0.92; box-shadow:0 4px 12px rgba(72,59,49,0.04); }
-  .guide-detail-page .guide-title { max-width:min(100%, 22ch); margin:0 auto 0.7rem; font-family:'Merriweather Sans', serif; font-size:clamp(2.55rem, 4.6vw, 4.05rem); line-height:0.98; letter-spacing:-0.045em; text-wrap:balance; text-align:center; }
+  .guide-detail-page .guide-title { max-width:min(100%, 34ch); margin:0 auto 0.7rem; font-family:'Merriweather Sans', serif; font-size:clamp(2.55rem, 4.6vw, 4.05rem); line-height:0.98; letter-spacing:-0.045em; text-wrap:balance; text-align:center; }
   .guide-detail-page .guide-lead { max-width:58rem; margin:0 auto; font-size:1.02rem; line-height:1.72; text-align:center; }
   .guide-detail-page .guide-actions { justify-content:center; margin-top:1.05rem; }
   .guide-detail-page .guide-section { padding-top:1.75rem; }
@@ -583,7 +583,7 @@
   .guide-detail-page .guide-summary-link::before { content:'•'; display:inline-block; margin-right:0.7rem; color:var(--vaud); font-weight:700; }
   .guide-detail-page .guide-summary-link:hover { background:none; border:none; color:var(--forest); transform:none; box-shadow:none; }
   .guide-detail-page .guide-detail-block { margin-top:4.4rem; scroll-margin-top:7rem; }
-  .guide-detail-page .guide-detail-block:first-child { margin-top:3.2rem; }
+  .guide-detail-page .guide-detail-block:first-child { margin-top:2.55rem; }
   .guide-detail-page .guide-detail-heading { margin:0 0 2.2rem; text-align:center; }
   .guide-detail-page .guide-detail-heading h2 { margin:0 auto 0.35rem; max-width:16ch; font-family:'Merriweather Sans', serif; font-size:clamp(2rem, 4vw, 3rem); line-height:1.02; letter-spacing:-0.04em; color:var(--forest); text-wrap:balance; }
   .guide-detail-page .guide-detail-heading p { margin:0 auto; color:var(--vaud); font-size:1rem; line-height:1.6; max-width:42rem; }
