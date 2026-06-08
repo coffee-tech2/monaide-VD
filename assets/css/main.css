@@ -1656,6 +1656,32 @@
     min-height:0;
   }
 
+  .cat-card,
+  .cat-card.is-essential {
+    background:#FFFFFF;
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    box-shadow:none;
+  }
+
+  .cat-card:hover {
+    background:#FFFFFF;
+    border-color:#AFCBBC;
+    transform:translateY(-1px);
+    box-shadow:none;
+  }
+
+  .cat-card.open {
+    background:#FFFFFF;
+    border-color:#AFCBBC;
+    border-left:3px solid var(--vaud);
+  }
+
+  .cat-card-body {
+    background:#FFFFFF;
+    border-top:1px solid var(--border);
+  }
+
   .community-section.is-quiet-feedback {
     background:var(--cream);
     border-top:1px solid #E8EDE9;
