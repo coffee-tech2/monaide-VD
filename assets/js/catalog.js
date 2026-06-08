@@ -78,6 +78,35 @@
     } catch (e) {}
   }
 
+  function updateCatalogFilterToggleLabel(btn) {
+    var toggle = document.querySelector('.catalog-filter-toggle');
+    var current = document.getElementById('catalog-filter-current');
+    var label = btn ? btn.textContent.trim() : 'Tout';
+    if (current) current.textContent = label;
+    if (toggle) {
+      toggle.setAttribute('aria-label', 'Filtrer les aides, sélection actuelle : ' + label);
+    }
+  }
+
+  function isCatalogMobileFilterMode() {
+    return window.matchMedia && window.matchMedia('(max-width: 600px)').matches;
+  }
+
+  function closeCatalogFiltersOnMobile() {
+    if (!isCatalogMobileFilterMode()) return;
+    var panel = document.querySelector('.catalog-filter-sticky');
+    var toggle = document.querySelector('.catalog-filter-toggle');
+    if (panel) panel.classList.remove('is-open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  window.toggleCatalogFilters = function(btn) {
+    var panel = document.querySelector('.catalog-filter-sticky');
+    if (!panel) return;
+    var isOpen = panel.classList.toggle('is-open');
+    if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  };
+
   function setActiveCatalogFilterButton(btn) {
     document.querySelectorAll('.cat-filter').forEach(function(filterBtn) {
       filterBtn.classList.remove('active');
@@ -86,6 +115,7 @@
     if (!btn) return;
     btn.classList.add('active');
     btn.setAttribute('aria-pressed', 'true');
+    updateCatalogFilterToggleLabel(btn);
     scrollCatalogFilterIntoView(btn);
   }
 
@@ -117,6 +147,7 @@
       noResult.innerHTML = 'Aucun r&#233;sultat pour cette recherche.';
       noResult.style.display = count === 0 ? '' : 'none';
     }
+    closeCatalogFiltersOnMobile();
   };
 
   window.filtrerCatalogue = function() {
@@ -144,6 +175,7 @@
         noResult.style.display = 'none';
       }
     }
+    closeCatalogFiltersOnMobile();
     trackCatalogSearch(rawQuery, count);
   };
 

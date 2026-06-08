@@ -728,7 +728,11 @@
       </div>
     </div>
     <div class="catalog-filter-sticky">
-      <div class="catalog-filter-row">
+      <button type="button" class="catalog-filter-toggle" aria-expanded="false" aria-controls="catalog-filter-row" aria-label="Filtrer les aides, sélection actuelle : Tout" onclick="toggleCatalogFilters(this)">
+        <span>Filtrer les aides</span>
+        <strong id="catalog-filter-current">Tout</strong>
+      </button>
+      <div class="catalog-filter-row" id="catalog-filter-row">
         <button type="button" class="cat-filter active" aria-pressed="true" onclick="setCatFilter('tous',this)">Tout</button>
         <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('urgence',this)">Urgences</button>
         <button type="button" class="cat-filter" aria-pressed="false" onclick="setCatFilter('sante',this)">Sant&eacute;</button>
@@ -846,7 +850,7 @@
 <script src="assets/js/simulator-followups.js?v=20260426-followups"></script>
 <script src="assets/js/results.js?v=20260603-family-priority"></script>
 <script src="assets/js/exports.js"></script>
-<script src="assets/js/catalog.js?v=20260506-measure-1"></script>
+<script src="assets/js/catalog.js?v=20260608-mobile-filters"></script>
 <script src="assets/js/navigation.js?v=20260527-ux-nav-1"></script>
 <script src="assets/js/catalog-enhancements.js"></script>
 </body>
