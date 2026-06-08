@@ -233,7 +233,7 @@ const scenarios = [
       const results = runProfile({
         sitPro: 'Sans emploi - sans revenu',
         revenu: '1000-2000',
-        incapacite: 'oui_durable',
+        incapacite: 'totale',
         aidesListe: []
       });
       const aiIndex = indexOfResult(results, 'Assurance invalidité');

@@ -42,6 +42,7 @@
       commune: commune,
       communeNorm: normalizeCommune(commune),
       age: readFieldValue('age'),
+      famille: getFieldDisplayValue('situation_familiale'),
       permis: readFieldValue('statut_sejour'),
       sitPro: readFieldValue('situation_pro'),
       logement: readFieldValue('logement'),
@@ -65,7 +66,7 @@
     var communeNorm = profile.communeNorm || '';
     var age = profile.age || '';
     var permis = profile.permis || '';
-    var famille = profile.famille || '';
+    var famille = profile.famille || (profile.summary && profile.summary.famille) || '';
     var sitPro = profile.sitPro || '';
     var logement = profile.logement || '';
     var loyer = profile.loyer || '';
@@ -940,7 +941,7 @@
     var urgenceLogement = flags.dettes === 'loyer' || flags.logement.includes('Sans logement fixe');
     var dettesActives = flags.dettes !== 'non';
     var separationEnCours = flags.separationEnCours === 'oui';
-    var incapaciteDurable = flags.incapacite === 'oui_durable';
+    var incapaciteDurable = flags.incapacite !== 'non';
     var procheAidant = flags.procheAidant === 'oui';
     var retraite = !!flags.retraite;
     applySimulationRules(res, flags);
