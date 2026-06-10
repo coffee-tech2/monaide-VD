@@ -6,7 +6,12 @@
   function matchesResultPatterns(name, patterns) {
     var normalizedName = normalizeAidText(name || '');
     return (patterns || []).some(function(pattern) {
-      return normalizedName.indexOf(normalizeAidText(pattern)) !== -1;
+      var normalizedPattern = normalizeAidText(pattern);
+      if (normalizedPattern === 'subside lamal') {
+        return normalizedName.indexOf('subside lamal') !== -1 ||
+          normalizedName.indexOf('subside assurance maladie') !== -1;
+      }
+      return normalizedName.indexOf(normalizedPattern) !== -1;
     });
   }
 
@@ -440,7 +445,7 @@
 
   function buildResultNameHtml(result) {
     var resultNameHtml = escapeHtml(result.nom);
-    if ((result.nom || '').indexOf('Subside LAMal') !== -1) {
+    if ((result.nom || '').indexOf('Subside assurance maladie') !== -1 || (result.nom || '').indexOf('Subside LAMal') !== -1) {
       resultNameHtml += '<span class="inline-info" aria-hidden="true">i<span class="inline-info-bubble">Un subside est une aide financière. Ici, il sert à réduire le montant de la prime d’assurance maladie.</span></span>';
     }
     return resultNameHtml;

@@ -3,11 +3,11 @@
       id: 'aas',
       title: 'Agence d’assurances sociales (AAS)',
       category: 'sante',
-      summary: 'Subside LAMal, AVS, AI, PC · Guichet administratif de proximité',
+      summary: 'Subside assurance maladie, AVS, AI, PC · Guichet administratif de proximité',
       audience: 'Personnes qui doivent comprendre une démarche sociale ou vérifier un droit administratif.',
       purpose: 'L’AAS aide à comprendre les démarches, vérifier le bon formulaire et savoir quoi préparer avant d’envoyer un dossier.',
       highlights: [
-        'Explique le subside LAMal, les PC, l’AVS et d’autres démarches sociales',
+        'Explique le subside assurance maladie, les PC, l’AVS et d’autres démarches sociales',
         'Aide à identifier la bonne porte d’entrée',
         'Peut orienter vers le bon service si la demande ne passe pas par elle'
       ],
@@ -16,7 +16,7 @@
         'Prendre contact, même si tu n’as pas encore tous les documents',
         'Venir avec les courriers ou décisions déjà reçus si tu en as'
       ],
-      bodyIntro: 'L’AAS est souvent la bonne première porte pour le subside LAMal, l’AVS, l’AI ou les PC. Tu peux y aller même si tu n’es pas encore sûr·e de ton droit.',
+      bodyIntro: 'L’AAS est souvent la bonne première porte pour le subside assurance maladie, l’AVS, l’AI ou les PC. Tu peux y aller même si tu n’es pas encore sûr·e de ton droit.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'L’AAS oriente et aide à préparer, mais ne rend pas la décision finale',
       sections: [
@@ -46,11 +46,11 @@
     },
     {
       id: 'subside-lamal',
-      title: 'Subside LAMal — réduction de prime',
+      title: 'Subside assurance maladie (OVAM)',
       category: 'sante',
       summary: 'Prime maladie trop lourde · Revenus modestes · Décision OVAM',
       audience: 'Personnes dont la prime maladie pèse trop lourd dans le budget.',
-      purpose: 'Le subside LAMal réduit le coût de l’assurance maladie de base selon les revenus, la fortune et la composition du ménage.',
+      purpose: 'Le subside assurance maladie réduit le coût de l’assurance maladie de base selon les revenus, la fortune et la composition du ménage. Dans le canton de Vaud, c’est l’OVAM qui rend la décision.',
       highlights: [
         'Peut réduire fortement la prime mensuelle',
         'Passe par les critères cantonaux du canton de Vaud',

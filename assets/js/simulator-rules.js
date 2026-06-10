@@ -71,7 +71,7 @@ window.MONAIDE_SIMULATION_RULES = [
   },
   {
     id: 'lamal',
-    title: 'Subside LAMal',
+    title: 'Subside assurance maladie (OVAM)',
     intent: 'Repérer si la prime maladie peut justifier une vérification OVAM/AAS.',
     when: 'needsLamal',
     handler: 'addLamalResult',

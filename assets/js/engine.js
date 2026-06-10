@@ -201,6 +201,7 @@
       }
 
       if (flags.permisG && (
+        name.indexOf('Subside assurance maladie') !== -1 ||
         name.indexOf('Subside LAMal') !== -1 ||
         name.indexOf('CarteCulture') !== -1 ||
         name.indexOf('Prestations complémentaires') !== -1
@@ -209,6 +210,7 @@
       }
 
       if ((flags.permisS || flags.permisN || flags.sansStatut) && (
+        name.indexOf('Subside assurance maladie') !== -1 ||
         name.indexOf('Subside LAMal') !== -1 ||
         name.indexOf('Revenu d\'insertion') !== -1 ||
         name.indexOf('Prestations complémentaires') !== -1 ||
@@ -518,7 +520,7 @@
     var lamalRetroactiveNote = '\n\nÀ savoir : selon les périodes, la réponse de l’OVAM peut prendre du temps. Si le subside est accordé, il est versé à ton assureur depuis la date reconnue. Si tu as payé trop de primes pendant l’attente, l’assurance corrige en général la situation, par remboursement ou par déduction sur les prochaines primes.';
     if (flags.alreadyRI || flags.alreadyPC) {
       res.push(buildResult({
-        nom: 'Subside LAMal — réduction de prime',
+        nom: 'Subside assurance maladie (OVAM)',
         badge: 'probable',
         strongProbable: true,
         desc: 'Si tu touches déjà le RI ou les PC, le subside LAMal est généralement lié à cette situation. Le plus utile est de vérifier qu’il est bien actif et correctement appliqué.',
@@ -532,7 +534,7 @@
 
     if ((flags.revenuFaible || (flags.revenuModere && flags.primeElevee)) && flags.fortune === 'plus50000') {
       res.push(buildResult({
-        nom: 'Subside LAMal — réduction de prime',
+        nom: 'Subside assurance maladie (OVAM)',
         badge: 'verifier',
         desc: 'Tes revenus peuvent faire penser à un subside, mais une fortune importante peut modifier le calcul du Revenu Déterminant Unifié (RDU). Il faut donc passer par le calcul officiel.',
         action: '1. Utilise le simulateur officiel du canton avec tes revenus et ta fortune.\n2. Prépare ta police LAMal, ta taxation ou les informations de fortune disponibles.\n3. Si le résultat semble positif ou peu clair, demande de l’aide à une agence AAS avant de conclure.' + lamalRetroactiveNote,
@@ -545,7 +547,7 @@
 
     if (flags.revenuFaible || (flags.revenuModere && flags.primeElevee)) {
       res.push(buildResult({
-        nom: 'Subside LAMal — réduction de prime',
+        nom: 'Subside assurance maladie (OVAM)',
         badge: 'probable',
         desc: (flags.permisF || flags.permisL)
           ? 'Le subside reste une piste importante, mais avec ton statut de séjour il vaut mieux faire vérifier le cadre exact par une AAS ou un relais spécialisé en plus du calcul officiel.'
@@ -565,7 +567,7 @@
 
     if (flags.revenuModere || flags.revenu === 'inconnu') {
       res.push(buildResult({
-        nom: 'Subside LAMal — réduction de prime',
+        nom: 'Subside assurance maladie (OVAM)',
         badge: 'verifier',
         desc: 'Un subside partiel est possible selon ta fortune et ta situation exacte. On ne peut pas se prononcer sans le calcul officiel.',
         action: '1. Fais le calcul officiel, même si tu n’es pas sûr·e des montants.\n2. Si tu hésites sur les revenus à indiquer, contacte une agence AAS avant d’envoyer.\n3. Si le calcul semble positif, dépose la demande et garde une copie de la confirmation.' + lamalRetroactiveNote,

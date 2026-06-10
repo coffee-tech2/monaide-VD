@@ -58,7 +58,7 @@
         accordionId: 'doc-lamal',
         menuLabel: 'Subside LAMal',
         accordion: {
-          title: 'Subside LAMal',
+          title: 'Subside assurance maladie (OVAM)',
           subtitle: 'Calcul · Demande · AAS',
           leadHtml: 'Le subside peut réduire la prime d’assurance maladie selon le dossier. La demande se fait en ligne ou avec une <strong class="doc-strong">agence AAS</strong>. C’est l’<strong class="doc-strong">OVAM</strong> qui rend la décision.',
           contact: {
@@ -94,7 +94,7 @@
         },
         shortcut: {
           kicker: 'Formulaire officiel',
-          title: 'Subside LAMal',
+          title: 'Subside assurance maladie (OVAM)',
           text: 'Faire le calcul officiel puis lancer la demande.',
           href: LINKS.SUBSIDE_HOME
         }

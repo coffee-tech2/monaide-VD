@@ -12,7 +12,7 @@
     'plus-assez-pour-vivre': 'Budget trop serré',
     'perdre-son-emploi': 'Perte d’emploi',
     'aide-formation-vaud': 'Aide formation',
-    'subside-lamal': 'Subside LAMal',
+    'subside-lamal': 'Subside assurance maladie',
     'revenu-insertion': 'Revenu d’insertion',
     'bourses-ocbe': 'Bourse OCBE',
     'assurance-invalidite': 'Assurance invalidité',

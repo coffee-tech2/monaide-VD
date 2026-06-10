@@ -59,6 +59,12 @@ function assert(condition, message) {
 }
 
 function indexOfResult(results, namePart) {
+  if (namePart === 'Subside LAMal') {
+    return results.findIndex((item) => item.nom && (
+      item.nom.indexOf('Subside assurance maladie') !== -1 ||
+      item.nom.indexOf('Subside LAMal') !== -1
+    ));
+  }
   return results.findIndex((item) => item.nom && item.nom.indexOf(namePart) !== -1);
 }
 
@@ -90,7 +96,7 @@ const scenarios = [
       const ruptureIndex = indexOfResult(results, 'Rupture d’apprentissage');
       assert(ocbeIndex !== -1, 'OCBE should appear for training profile');
       assert(jetIndex !== -1, 'Jet Service should appear as support for training profile');
-      assert(lamalIndex !== -1, 'LAMal should still appear as a budget/health track');
+      assert(lamalIndex !== -1, 'Subside LAMal should still appear as a budget/health track');
       assert(ocbeIndex < jetIndex, 'OCBE should remain before Jet Service');
       assert(jetIndex < lamalIndex, 'Jet Service should stay before LAMal for a young training profile');
       assert(ruptureIndex === -1, 'Rupture apprenticeship should not appear without a rupture signal');
@@ -109,7 +115,7 @@ const scenarios = [
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       assert(laciIndex !== -1, 'LACI should appear for unemployment profile');
       assert(riIndex !== -1, 'RI should remain visible as fallback');
-      assert(lamalIndex !== -1, 'LAMal should remain visible as a secondary budget track');
+      assert(lamalIndex !== -1, 'Subside LAMal should remain visible as a secondary budget track');
       assert(laciIndex < riIndex, 'LACI should stay before RI in unemployment profile');
       assert(laciIndex < lamalIndex, 'LACI should stay before LAMal in unemployment profile');
     }
@@ -130,9 +136,9 @@ const scenarios = [
       const riIndex = indexOfResult(results, 'Revenu d\'insertion');
       const allocationsIndex = indexOfResult(results, 'Allocations familiales');
       assert(laciIndex === -1, 'Already opened unemployment benefits should not be suggested again');
-      assert(lamalIndex !== -1, 'LAMal should remain visible when health insurance premium is heavy');
+      assert(lamalIndex !== -1, 'Subside LAMal should remain visible when health insurance premium is heavy');
       assert(riIndex !== -1, 'RI should remain visible if unemployment income may not cover basic needs');
-      assert(lamalIndex < riIndex, 'LAMal should stay before RI when the strongest declared signal is a heavy health insurance premium');
+      assert(lamalIndex < riIndex, 'Subside LAMal should stay before RI when the strongest declared signal is a heavy health insurance premium');
       assert(allocationsIndex === -1, 'No-children unemployment profile should not receive family allowances');
     }
   },
@@ -152,7 +158,7 @@ const scenarios = [
       const cashIndex = indexOfResult(results, 'Parlons Cash');
       assert(laciIndex !== -1, 'LACI should appear when employment ended or is unclear');
       assert(riIndex !== -1, 'RI should appear as immediate budget fallback');
-      assert(lamalIndex !== -1, 'LAMal should remain visible but not first');
+      assert(lamalIndex !== -1, 'Subside LAMal should remain visible but not first');
       assert(laciIndex < lamalIndex, 'LACI should be before LAMal');
       assert(riIndex < lamalIndex, 'RI should be before LAMal');
       assert(cashIndex === -1, 'Parlons Cash should not appear without a debt signal');
@@ -179,7 +185,7 @@ const scenarios = [
       assert(csrIndex !== -1, 'CSR should appear as immediate social entry point');
       assert(aidesLogementIndex !== -1, 'Housing aid should remain visible');
       assert(parlonsCashIndex !== -1, 'Parlons Cash should remain visible when rent debt is declared');
-      assert(lamalIndex !== -1, 'LAMal should remain visible but lower priority');
+      assert(lamalIndex !== -1, 'Subside LAMal should remain visible but lower priority');
       assert(expulsionIndex < csrIndex, 'Expulsion support should be before CSR in housing emergency');
       assert(csrIndex < aidesLogementIndex, 'CSR should be before broader housing aid');
       assert(aidesLogementIndex < parlonsCashIndex, 'Housing tracks should remain before general debt support when the debt is rent-related');
@@ -240,7 +246,7 @@ const scenarios = [
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       const proInfirmisIndex = indexOfResult(results, 'Pro Infirmis');
       assert(aiIndex !== -1, 'AI should appear for durable incapacity');
-      assert(lamalIndex !== -1, 'LAMal should remain visible');
+      assert(lamalIndex !== -1, 'Subside LAMal should remain visible');
       assert(proInfirmisIndex !== -1, 'Pro Infirmis should remain visible as support');
       assert(aiIndex < lamalIndex, 'AI should be before LAMal when durable incapacity is declared');
       assert(proInfirmisIndex < lamalIndex, 'Pro Infirmis should be before LAMal when durable incapacity is declared');
@@ -258,7 +264,7 @@ const scenarios = [
       const procheAidantIndex = indexOfResult(results, 'Proches aidant');
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       assert(procheAidantIndex !== -1, 'Proche aidant support should appear when declared');
-      assert(lamalIndex !== -1, 'LAMal should remain visible');
+      assert(lamalIndex !== -1, 'Subside LAMal should remain visible');
       assert(procheAidantIndex < lamalIndex, 'Proche aidant support should be before LAMal when declared');
     }
   },
@@ -272,9 +278,9 @@ const scenarios = [
       });
       const subsideIndex = indexOfResult(results, 'Subside LAMal');
       const carteIndex = indexOfResult(results, 'CarteCulture');
-      assert(subsideIndex !== -1, 'LAMal follow-up should appear');
+      assert(subsideIndex !== -1, 'Subside LAMal follow-up should appear');
       assert(carteIndex !== -1, 'CarteCulture should still exist');
-      assert(subsideIndex < carteIndex, 'LAMal should remain before CarteCulture in this sequence');
+      assert(subsideIndex < carteIndex, 'Subside LAMal should remain before CarteCulture in this sequence');
     }
   },
   {
@@ -303,7 +309,7 @@ const scenarios = [
       const riIndex = indexOfResult(results, 'Revenu d\'insertion');
       const pcFamillesIndex = indexOfResult(results, 'PC Familles');
       const allocationsIndex = indexOfResult(results, 'Allocations familiales');
-      assert(lamalIndex === 0, 'LAMal should be the first track when the main signal is a heavy health insurance premium');
+      assert(lamalIndex === 0, 'Subside LAMal should be the first track when the main signal is a heavy health insurance premium');
       assert(riIndex === -1, 'RI should not appear without a base-needs signal in the heavy premium scenario');
       assert(pcFamillesIndex === -1, 'PC Familles should not appear in a no-children heavy premium scenario');
       assert(allocationsIndex === -1, 'Family allowances should not appear in a no-children heavy premium scenario');
@@ -347,9 +353,9 @@ const scenarios = [
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       const carteIndex = indexOfResult(results, 'CarteCulture');
       assert(riIndex === -1, 'Existing RI should not be suggested again');
-      assert(lamalIndex === 0, 'LAMal should be the first useful follow-up when RI is already open');
+      assert(lamalIndex === 0, 'Subside LAMal should be the first useful follow-up when RI is already open');
       assert(carteIndex !== -1, 'CarteCulture should remain visible as a useful follow-up when RI is already open');
-      assert(lamalIndex < carteIndex, 'LAMal should stay before CarteCulture in the existing RI follow-up path');
+      assert(lamalIndex < carteIndex, 'Subside LAMal should stay before CarteCulture in the existing RI follow-up path');
     }
   },
   {
@@ -481,6 +487,29 @@ const scenarios = [
     }
   },
   {
+    name: 'Parent au RI avec enfants garde les suites famille sans reproposer RI',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'Bénéficiaire du RI',
+        enfants: 'non',
+        revenu: '1000-2000',
+        fortune: 'moins4000',
+        aidesListe: ['RI']
+      });
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const prestationsCommunalesIndex = indexOfResult(results, 'Prestations communales');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      assert(riIndex === -1, 'Existing RI should not be suggested again for a parent profile');
+      assert(pcFamillesIndex === -1, 'PC Familles should not be suggested when RI is already declared');
+      assert(allocationsIndex !== -1, 'A parent with children should keep family allowances visible if they are not already declared');
+      assert(prestationsCommunalesIndex !== -1, 'A parent with children on RI should keep local family supports visible');
+      assert(lamalIndex !== -1, 'Existing RI should keep LAMal as a useful follow-up');
+    }
+  },
+  {
     name: 'Parent solo avec loyer lourd remonte la piste logement',
     run() {
       const results = runProfile({
@@ -502,7 +531,7 @@ const scenarios = [
     }
   },
   {
-    name: 'Parent solo avec loyer lourd et LAMal déjà touchée garde le logement avant CarteCulture',
+    name: 'Parent solo avec loyer lourd et subside LAMal déjà touché garde le logement avant CarteCulture',
     run() {
       const results = runProfile({
         famille: 'Parent seul avec enfants',
@@ -517,7 +546,7 @@ const scenarios = [
       const aidesLogementIndex = indexOfResult(results, 'Aides logement');
       const carteCultureIndex = indexOfResult(results, 'CarteCulture');
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
-      assert(lamalIndex === -1, 'Already received LAMal should not be suggested again');
+      assert(lamalIndex === -1, 'Already received LAMal subsidy should not be suggested again');
       assert(aidesLogementIndex !== -1, 'Housing support should remain visible when LAMal is already received');
       assert(carteCultureIndex === -1 || aidesLogementIndex < carteCultureIndex, 'Housing support should appear before CarteCulture when rent is heavy');
     }
@@ -566,6 +595,152 @@ const scenarios = [
       assert(pcFamillesIndex !== -1, 'PC Familles should remain visible for a parent solo with debt');
       assert(allocationsIndex !== -1, 'Family allowances should remain visible for a parent solo with debt');
       assert(parlonsCashIndex < pcFamillesIndex, 'Debt support should appear before family tracks when general debt is active');
+    }
+  },
+  {
+    name: 'Perte d’emploi parent solo garde chômage avant RI et pistes famille',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'Au chômage',
+        enfants: 'non',
+        revenu: '1000-2000',
+        fortune: 'moins4000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '1200-1800'
+      });
+      const laciIndex = indexOfResult(results, 'Assurance chômage');
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const prestationsCommunalesIndex = indexOfResult(results, 'Prestations communales');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      assert(laciIndex === 0, 'LACI should be first for a parent solo who is unemployed without declared unemployment benefits');
+      assert(riIndex !== -1 && laciIndex < riIndex, 'RI should remain visible after LACI as a fallback');
+      assert(allocationsIndex !== -1, 'Family allowances should remain visible during job loss with children');
+      assert(prestationsCommunalesIndex !== -1, 'Local family supports should remain visible during job loss with children');
+      assert(lamalIndex === -1 || allocationsIndex < lamalIndex, 'Family tracks should stay before LAMal in a parent job-loss path');
+    }
+  },
+  {
+    name: 'Chômage déjà perçu avec enfants ne repropose pas LACI',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'Au chômage',
+        enfants: 'non',
+        revenu: '1000-2000',
+        fortune: 'moins4000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '1200-1800',
+        aidesListe: ['chomage']
+      });
+      const laciIndex = indexOfResult(results, 'Assurance chômage');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const prestationsCommunalesIndex = indexOfResult(results, 'Prestations communales');
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      assert(laciIndex === -1, 'Already declared unemployment benefits should not suggest opening LACI again');
+      assert(allocationsIndex !== -1, 'Family allowances should remain visible when unemployment is already open');
+      assert(prestationsCommunalesIndex !== -1, 'Local family supports should remain visible when unemployment is already open');
+      assert(riIndex !== -1, 'RI should remain visible as a fallback if unemployment income is not enough');
+    }
+  },
+  {
+    name: 'Parent avec subside LAMal et allocations déjà perçus garde autres pistes famille',
+    run() {
+      const results = runProfile({
+        famille: 'Parent seul avec enfants',
+        sitPro: 'En emploi',
+        enfants: 'non',
+        revenu: '2000-3500',
+        fortune: '4000-8000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '1200-1800',
+        aidesListe: ['lamal', 'alloc_fam']
+      });
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      const prestationsCommunalesIndex = indexOfResult(results, 'Prestations communales');
+      const carteCultureIndex = indexOfResult(results, 'CarteCulture');
+      assert(lamalIndex === -1, 'Already received LAMal subsidy should not be suggested again');
+      assert(allocationsIndex === -1, 'Already received family allowances should not be suggested again');
+      assert(pcFamillesIndex === 0, 'PC Familles should stay first when other family/subside aids are already declared');
+      assert(prestationsCommunalesIndex !== -1, 'Local family supports should remain visible');
+      assert(carteCultureIndex !== -1, 'CarteCulture should appear as a follow-up when LAMal is already declared');
+    }
+  },
+  {
+    name: 'Couple avec enfants en emploi garde les pistes famille',
+    run() {
+      const results = runProfile({
+        famille: 'En couple (conjoint·e de fait) / mariée avec enfants',
+        sitPro: 'En emploi',
+        enfants: 'non',
+        revenu: '2000-3500',
+        fortune: '4000-8000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '1200-1800'
+      });
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const prestationsCommunalesIndex = indexOfResult(results, 'Prestations communales');
+      const gardeMaladeIndex = indexOfResult(results, 'Garde d’enfants malades');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      assert(pcFamillesIndex === 0, 'PC Familles should be first for a working couple with children and moderate income');
+      assert(allocationsIndex === 1, 'Family allowances should stay directly after PC Familles for a couple with children');
+      assert(prestationsCommunalesIndex !== -1, 'Local family supports should remain visible for a couple with children');
+      assert(gardeMaladeIndex !== -1, 'Child-care emergency support should remain visible for a working couple with children');
+      assert(lamalIndex === -1 || allocationsIndex < lamalIndex, 'Family tracks should appear before LAMal for a couple with children');
+    }
+  },
+  {
+    name: 'Couple avec enfants sans revenu garde RI et pistes famille',
+    run() {
+      const results = runProfile({
+        famille: 'En couple (conjoint·e de fait) / mariée avec enfants',
+        sitPro: 'Sans emploi - sans revenu',
+        enfants: 'non',
+        revenu: 'aucun',
+        fortune: 'moins4000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '1200-1800'
+      });
+      const riIndex = indexOfResult(results, 'Revenu d\'insertion');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      const aideAlimentaireIndex = indexOfResult(results, 'Aide alimentaire');
+      const laciIndex = indexOfResult(results, 'Assurance chômage');
+      const lamalIndex = indexOfResult(results, 'Subside LAMal');
+      assert(riIndex === 0, 'RI should be first for a couple with children and no income');
+      assert(allocationsIndex !== -1, 'Family allowances should remain visible for a couple with children and no income');
+      assert(aideAlimentaireIndex !== -1, 'Food support should remain visible when there is no income');
+      assert(laciIndex !== -1, 'LACI should remain visible when employment history may matter');
+      assert(lamalIndex === -1 || riIndex < lamalIndex, 'RI should stay before LAMal when there is no income');
+    }
+  },
+  {
+    name: 'Couple avec enfants et retard de loyer priorise urgence logement',
+    run() {
+      const results = runProfile({
+        famille: 'En couple (conjoint·e de fait) / mariée avec enfants',
+        sitPro: 'En emploi',
+        enfants: 'non',
+        revenu: '2000-3500',
+        fortune: '4000-8000',
+        logement: 'Locataire (appartement ou maison)',
+        loyer: '1200-1800',
+        dettes: 'loyer'
+      });
+      const expulsionIndex = indexOfResult(results, 'Menace d\'expulsion');
+      const csrIndex = indexOfResult(results, 'Centre social régional');
+      const aidesLogementIndex = indexOfResult(results, 'Aides logement');
+      const parlonsCashIndex = indexOfResult(results, 'Parlons Cash');
+      const pcFamillesIndex = indexOfResult(results, 'PC Familles');
+      const allocationsIndex = indexOfResult(results, 'Allocations familiales');
+      assert(expulsionIndex === 0, 'Eviction warning should be first for a couple with children and rent debt');
+      assert(csrIndex !== -1 && csrIndex < pcFamillesIndex, 'CSR should appear before family tracks when rent debt is active');
+      assert(aidesLogementIndex !== -1 && aidesLogementIndex < pcFamillesIndex, 'Housing support should appear before family tracks when rent debt is active');
+      assert(parlonsCashIndex !== -1 && parlonsCashIndex < pcFamillesIndex, 'Debt support should appear before PC Familles when rent debt is active');
+      assert(allocationsIndex !== -1, 'Family allowances should still remain visible after urgent housing tracks');
     }
   },
   {

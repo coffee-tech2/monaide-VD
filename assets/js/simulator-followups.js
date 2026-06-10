@@ -1,7 +1,7 @@
 window.MONAIDE_SIMULATOR_FOLLOWUPS = [
   {
     id: 'fortune',
-    patterns: ['Subside LAMal', 'Revenu d\'insertion', 'CarteCulture', 'Prestations communales'],
+    patterns: ['Subside assurance maladie', 'Subside LAMal', 'Revenu d\'insertion', 'CarteCulture', 'Prestations communales'],
     title: 'Fortune et épargne',
     text: 'Le niveau d’épargne ou de fortune peut changer le résultat pour certaines aides. Si tu hésites, vérifie ce point avant de conclure.',
     when: function(profile) {
@@ -20,7 +20,7 @@ window.MONAIDE_SIMULATOR_FOLLOWUPS = [
   },
   {
     id: 'statut-sejour',
-    patterns: ['Revenu d\'insertion', 'Subside LAMal', 'Prestations complémentaires', 'questions de migration'],
+    patterns: ['Revenu d\'insertion', 'Subside assurance maladie', 'Subside LAMal', 'Prestations complémentaires', 'questions de migration'],
     title: 'Statut de séjour précis',
     text: 'Le type de permis ou de statut de séjour peut changer la porte d’entrée ou les conditions. Si ce point est flou, fais-le vérifier rapidement.',
     when: function(profile) {

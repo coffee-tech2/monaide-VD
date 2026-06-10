@@ -45,6 +45,15 @@ function compute(profile) {
 }
 
 function hasResult(results, namePart, badge) {
+  if (namePart === 'Subside LAMal') {
+    return results.some((item) => {
+      const nameOk = item.nom && (
+        item.nom.indexOf('Subside assurance maladie') !== -1 ||
+        item.nom.indexOf('Subside LAMal') !== -1
+      );
+      return badge ? nameOk && item.badge === badge : nameOk;
+    });
+  }
   return results.some((item) => {
     const nameOk = item.nom && item.nom.indexOf(namePart) !== -1;
     return badge ? nameOk && item.badge === badge : nameOk;
