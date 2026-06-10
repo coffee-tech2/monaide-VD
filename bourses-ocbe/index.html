@@ -141,6 +141,100 @@
 })(window,document,'script','dataLayer','GTM-NFQRW574');
 </script>
 <!-- End Google Tag Manager -->
+
+<style>
+/* ── Signatures visuelles MonAide-VD — test bourses-ocbe ── */
+
+/* Base : label avec micro-trait gauche coloré */
+.guide-card-label {
+  position: relative;
+  padding-left: 0.75rem;
+}
+.guide-card-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0.85em;
+  border-radius: 2px;
+  background: var(--warm-gray);
+  opacity: 0.4;
+}
+
+/* Action principale → vert */
+.guide-label-action::before {
+  background: var(--vaud);
+  opacity: 0.9;
+}
+
+/* Documents → amber */
+.guide-label-doc::before {
+  background: var(--accent);
+  opacity: 0.85;
+}
+
+/* Alerte / délais → terre cuite */
+.guide-label-alert {
+  color: #8B3A2A;
+}
+.guide-label-alert::before {
+  background: #C4622A;
+  opacity: 1;
+}
+
+/* Info / pistes → neutre bleu-gris */
+.guide-label-info {
+  color: var(--warm-gray);
+}
+.guide-label-info::before {
+  background: #7A92A0;
+  opacity: 0.7;
+}
+
+/* FAQ : numérotation sobre */
+.guide-label-faq {
+  padding-left: 0;
+  border-bottom: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+.guide-label-faq::before { display: none; }
+.faq-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1.5px solid #C8D8D0;
+  color: var(--sage-dark);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+/* Carte délais : fond très légèrement chaud */
+.guide-card:has(.guide-label-alert) {
+  background: #FDF8F5;
+  border-color: rgba(196, 98, 42, 0.2);
+}
+
+/* Flèche animée sur les boutons hero */
+.guide-actions .btn-primary .btn-arrow,
+.guide-actions .btn-secondary .btn-arrow {
+  display: inline-block;
+  transition: transform 0.18s ease;
+}
+.guide-actions .btn-primary:hover .btn-arrow,
+.guide-actions .btn-secondary:hover .btn-arrow {
+  transform: translateX(4px);
+}
+</style>
 </head>
 <body class="guide-page guide-detail-page" id="top">
 <!-- Google Tag Manager (noscript): production only -->
@@ -152,18 +246,18 @@
 <main id="contenu">
 <section class="hero guide-hero"><div class="hero-bg"></div><div class="hero-blob"></div><div class="guide-shell"><div class="guide-topline"><a class="guide-backlink-chip" href="/#catalogue">Retour au répertoire</a><div class="guide-stamp">Guide du répertoire MonAide-VD</div></div><h1 class="guide-title">Bourse d'études du canton de Vaud</h1><p class="guide-lead">Si la formation coûte trop cher, une bourse ou un prêt peut parfois aider. La porte officielle est l’OCBE, <strong>l’Office cantonal des bourses d’études et d’apprentissage</strong>.</p><div class="guide-actions"><a href="https://www.vd.ch/formation/aides-financieres-aux-etudes-et-a-la-formation-professionnelle-bourses-ou-prets/informations-principales" class="btn-primary" target="_blank" rel="noopener noreferrer">Faire le test d’éligibilité OCBE <span class="btn-arrow">→</span></a><a href="https://www.vd.ch/prestation/demander-une-bourse-ou-un-pret-detudes-ou-dapprentissage" class="btn-secondary" target="_blank" rel="noopener noreferrer">Déposer la demande OCBE <span class="btn-arrow">→</span></a></div></div></section>
 <section class="section section-plain guide-section guide-detail-block"><div class="container guide-grid">
-<article class="guide-card guide-card-primary"><div class="guide-card-label">Par où commencer</div><h2 class="guide-card-title">Regarde si une demande vaut la peine</h2><p>Le test de l’OCBE donne une première indication pour une bourse d’études Vaud ou un prêt. Il ne remplace pas la décision officielle, mais il permet de savoir si ça vaut la peine de préparer un dossier.</p><div class="guide-inline-actions"><a href="https://www.vd.ch/formation/aides-financieres-aux-etudes-et-a-la-formation-professionnelle-bourses-ou-prets/informations-principales" target="_blank" rel="noopener noreferrer">Faire le test OCBE</a><a href="https://www.vd.ch/prestation/demander-une-bourse-ou-un-pret-detudes-ou-dapprentissage" target="_blank" rel="noopener noreferrer">Déposer la demande</a></div></article>
-<article class="guide-card guide-card-primary"><div class="guide-card-label">Qui contacter</div><h2 class="guide-card-title">OCBE décide, Jet Service aide</h2><p>L’OCBE examine et décide. Jet Service peut aider à remplir la demande, répondre aux questions en permanence bourse, comprendre une décision ou aider à préparer un recours si la bourse est refusée. Jet Service organise aussi parfois des permanences bourses : contacte-les ou regarde leur site pour connaître les prochaines dates.</p><div class="guide-inline-actions"><a href="https://csp.ch/vaud/services/questions-de-jeunes/" target="_blank" rel="noopener noreferrer">Contacter Jet Service</a><a href="https://csp.ch/vaud/un-aide-memoire-sur-les-bourses-detudes-et-dapprentissage/" target="_blank" rel="noopener noreferrer">Aide-mémoire bourses</a></div></article>
-<article class="guide-card guide-doc-card"><div class="guide-card-label">Documents à préparer</div><h2 class="guide-card-title">Ce qu’on pourrait te demander</h2><ul class="guide-list"><li>Pièce d’identité ou permis de séjour.</li><li>Attestation d’inscription ou confirmation de formation.</li><li>Documents fiscaux et revenus de l’étudiant·e et, selon la situation, des parents.</li><li>Bail si tu vis hors du domicile familial.</li><li>Preuves d’activité lucrative si tu demandes à être considéré·e comme indépendant·e.</li></ul></article>
-<article class="guide-card"><div class="guide-card-label">Délais</div><h2 class="guide-card-title">Dépose la demande tôt</h2><p>Pour que l’année de formation soit prise en compte, il faut respecter les délais de l’OCBE : en principe 31 août pour gymnase, apprentissage ou SEMO, et 30 septembre pour université, EPFL ou haute école.</p><p style="margin-top:1rem;">Si la demande arrive tard, l’aide peut commencer seulement plus tard. En cas de refus, regarde vite le délai indiqué sur la décision : un recours se prépare en général dans les 30 jours.</p></article>
-<article class="guide-card"><div class="guide-card-label">Pistes</div><h2 class="guide-card-title">Autres pistes proches</h2><p>Si la situation touche plus largement au budget ou à la formation, ces pages peuvent aider à trier. Il existe aussi un répertoire vaudois de fondations privées, utile si la bourse ne couvre pas tout ou si tu cherches une aide complémentaire.</p><div class="guide-inline-actions"><a href="/aide-formation-vaud/">Guide aide formation</a><a href="https://www.vd.ch/fileadmin/user_upload/organisation/dsas/DGCS/OCBE_Liste_fondations_priv%C3%A9es.pdf" target="_blank" rel="noopener noreferrer">Fondations privées</a></div></article>
+<article class="guide-card guide-card-primary"><div class="guide-card-label guide-label-action">Par où commencer</div><h2 class="guide-card-title">Regarde si une demande vaut la peine</h2><p>Le test de l’OCBE donne une première indication pour une bourse d’études Vaud ou un prêt. Il ne remplace pas la décision officielle, mais il permet de savoir si ça vaut la peine de préparer un dossier.</p><div class="guide-inline-actions"><a href="https://www.vd.ch/formation/aides-financieres-aux-etudes-et-a-la-formation-professionnelle-bourses-ou-prets/informations-principales" target="_blank" rel="noopener noreferrer">Faire le test OCBE</a><a href="https://www.vd.ch/prestation/demander-une-bourse-ou-un-pret-detudes-ou-dapprentissage" target="_blank" rel="noopener noreferrer">Déposer la demande</a></div></article>
+<article class="guide-card guide-card-primary"><div class="guide-card-label guide-label-action">Qui contacter</div><h2 class="guide-card-title">OCBE décide, Jet Service aide</h2><p>L’OCBE examine et décide. Jet Service peut aider à remplir la demande, répondre aux questions en permanence bourse, comprendre une décision ou aider à préparer un recours si la bourse est refusée. Jet Service organise aussi parfois des permanences bourses : contacte-les ou regarde leur site pour connaître les prochaines dates.</p><div class="guide-inline-actions"><a href="https://csp.ch/vaud/services/questions-de-jeunes/" target="_blank" rel="noopener noreferrer">Contacter Jet Service</a><a href="https://csp.ch/vaud/un-aide-memoire-sur-les-bourses-detudes-et-dapprentissage/" target="_blank" rel="noopener noreferrer">Aide-mémoire bourses</a></div></article>
+<article class="guide-card guide-doc-card"><div class="guide-card-label guide-label-doc">Documents à préparer</div><h2 class="guide-card-title">Ce qu’on pourrait te demander</h2><ul class="guide-list"><li>Pièce d’identité ou permis de séjour.</li><li>Attestation d’inscription ou confirmation de formation.</li><li>Documents fiscaux et revenus de l’étudiant·e et, selon la situation, des parents.</li><li>Bail si tu vis hors du domicile familial.</li><li>Preuves d’activité lucrative si tu demandes à être considéré·e comme indépendant·e.</li></ul></article>
+<article class="guide-card"><div class="guide-card-label guide-label-alert">Délais</div><h2 class="guide-card-title">Dépose la demande tôt</h2><p>Pour que l’année de formation soit prise en compte, il faut respecter les délais de l’OCBE : en principe 31 août pour gymnase, apprentissage ou SEMO, et 30 septembre pour université, EPFL ou haute école.</p><p style="margin-top:1rem;">Si la demande arrive tard, l’aide peut commencer seulement plus tard. En cas de refus, regarde vite le délai indiqué sur la décision : un recours se prépare en général dans les 30 jours.</p></article>
+<article class="guide-card"><div class="guide-card-label guide-label-info">Pistes</div><h2 class="guide-card-title">Autres pistes proches</h2><p>Si la situation touche plus largement au budget ou à la formation, ces pages peuvent aider à trier. Il existe aussi un répertoire vaudois de fondations privées, utile si la bourse ne couvre pas tout ou si tu cherches une aide complémentaire.</p><div class="guide-inline-actions"><a href="/aide-formation-vaud/">Guide aide formation</a><a href="https://www.vd.ch/fileadmin/user_upload/organisation/dsas/DGCS/OCBE_Liste_fondations_priv%C3%A9es.pdf" target="_blank" rel="noopener noreferrer">Fondations privées</a></div></article>
 </div></section>
 <section class="section section-soft guide-section guide-faq-section"><div class="container guide-faq-heading"><h2 class="section-title">FAQ</h2></div><div class="container guide-grid">
-<article class="guide-card guide-faq-card"><div class="guide-card-label">FAQ</div><h2 class="guide-card-title">Existe-t-il un test pour une bourse d’études Vaud ?</h2><p>L’OCBE propose un test ou questionnaire d’éligibilité. Il donne un premier repère, mais il ne remplace pas la demande officielle.</p></article>
-<article class="guide-card guide-faq-card"><div class="guide-card-label">FAQ</div><h2 class="guide-card-title">Quelles conditions vérifier avant une demande de bourse Vaud ?</h2><p>Il faut notamment regarder la formation suivie, le domicile, la situation financière, les revenus pris en compte et parfois la situation des parents.</p></article>
-<article class="guide-card guide-faq-card"><div class="guide-card-label">FAQ</div><h2 class="guide-card-title">Le test OCBE suffit-il ?</h2><p>Non. Il donne un premier préavis. Seule la demande officielle permet d’obtenir une décision. Si le test répond négativement mais que ta situation reste proche des critères, prépare quand même une demande ou demande à Jet Service de vérifier avant de renoncer.</p></article>
-<article class="guide-card guide-faq-card"><div class="guide-card-label">FAQ</div><h2 class="guide-card-title">Et si je dépose tard ?</h2><p>L’aide peut commencer seulement à partir du mois qui suit le dépôt, ou ne pas être accordée pour l’année si la demande arrive trop près de la fin de formation.</p></article>
-<article class="guide-card guide-faq-card"><div class="guide-card-label">FAQ</div><h2 class="guide-card-title">Jet Service peut-il aider ?</h2><p>Oui. Jet Service peut aider à comprendre le formulaire, compléter une demande de bourse et regarder quoi faire en cas de refus. Il organise aussi parfois des permanences bourses : contacte-les ou regarde leur site pour connaître les prochaines dates.</p></article>
+<article class="guide-card guide-faq-card"><div class="guide-card-label guide-label-faq"><span class="faq-num">1</span></div><h2 class="guide-card-title">Existe-t-il un test pour une bourse d’études Vaud ?</h2><p>L’OCBE propose un test ou questionnaire d’éligibilité. Il donne un premier repère, mais il ne remplace pas la demande officielle.</p></article>
+<article class="guide-card guide-faq-card"><div class="guide-card-label guide-label-faq"><span class="faq-num">2</span></div><h2 class="guide-card-title">Quelles conditions vérifier avant une demande de bourse Vaud ?</h2><p>Il faut notamment regarder la formation suivie, le domicile, la situation financière, les revenus pris en compte et parfois la situation des parents.</p></article>
+<article class="guide-card guide-faq-card"><div class="guide-card-label guide-label-faq"><span class="faq-num">3</span></div><h2 class="guide-card-title">Le test OCBE suffit-il ?</h2><p>Non. Il donne un premier préavis. Seule la demande officielle permet d’obtenir une décision. Si le test répond négativement mais que ta situation reste proche des critères, prépare quand même une demande ou demande à Jet Service de vérifier avant de renoncer.</p></article>
+<article class="guide-card guide-faq-card"><div class="guide-card-label guide-label-faq"><span class="faq-num">4</span></div><h2 class="guide-card-title">Et si je dépose tard ?</h2><p>L’aide peut commencer seulement à partir du mois qui suit le dépôt, ou ne pas être accordée pour l’année si la demande arrive trop près de la fin de formation.</p></article>
+<article class="guide-card guide-faq-card"><div class="guide-card-label guide-label-faq"><span class="faq-num">5</span></div><h2 class="guide-card-title">Jet Service peut-il aider ?</h2><p>Oui. Jet Service peut aider à comprendre le formulaire, compléter une demande de bourse et regarder quoi faire en cas de refus. Il organise aussi parfois des permanences bourses : contacte-les ou regarde leur site pour connaître les prochaines dates.</p></article>
 </div></section>
 </main>
 <footer class="site-footer">
