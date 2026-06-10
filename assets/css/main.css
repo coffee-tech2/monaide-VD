@@ -1319,7 +1319,7 @@
     .choice-card { min-height:50px; padding:0.76rem 0.82rem; border-radius:var(--radius-md); }
     .choice-title { font-size:0.8rem; line-height:1.22; }
     .step-question-set .form-group { padding:0.82rem 0.85rem 0.9rem; border-radius:var(--radius-md); box-shadow:none; }
-    .step-actions { display:grid; grid-template-columns:1fr; position:sticky; bottom:0; margin:1rem -0.95rem -1.15rem; padding:0.9rem 0.95rem calc(0.95rem + env(safe-area-inset-bottom, 0px)); background:rgba(255,255,255,0.96); backdrop-filter:blur(10px); border-top:1px solid var(--border); }
+    .step-actions { display:grid; grid-template-columns:1fr; position:sticky; bottom:0; margin:1rem -0.95rem -1.15rem; padding:0.9rem 0.95rem calc(0.95rem + env(safe-area-inset-bottom, 0px)); background:#FFFFFF; backdrop-filter:none; -webkit-backdrop-filter:none; border-top:1px solid var(--border); }
     .step-actions > span:empty { display:none; }
     .step-actions .btn-nav { flex:1 1 0; min-height:48px; justify-content:center; border-radius:var(--radius-md); }
     .results-header h2 { font-size:2.1rem; line-height:0.98; }
