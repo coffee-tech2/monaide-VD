@@ -45,11 +45,11 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'aide-formation-vaud',
       label: 'Formation',
       title: 'J’ai besoin d’aide pour ma formation',
-      summary: 'Bourse OCBE, prêt d’études et premières pistes si les études ou l’apprentissage coûtent trop cher.',
+      summary: 'Études, apprentissage, reprise de formation, budget et premières portes à vérifier si le parcours coûte trop cher.',
       href: '/aide-formation-vaud/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['formation'],
-      keywords: ['aide formation Vaud', 'bourse OCBE', 'apprentissage']
+      keywords: ['aide formation Vaud', 'apprentissage', 'études', 'orientation']
     },
     {
       id: 'parent-solo-vaud',
