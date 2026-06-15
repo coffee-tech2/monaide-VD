@@ -954,7 +954,8 @@
       decisionBy: 'BRAPA',
       links: [
         { kind: 'action', label: 'Demander une avance BRAPA', url: window.MONAIDE_LINKS.BRAPA_APPLY },
-        { kind: 'action', label: 'Contacter le BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT }
+        { kind: 'action', label: 'Contacter le BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT },
+        { kind: 'info', label: 'Guide détaillé', url: '/brapa-vaud/' }
       ],
       documentationTarget: null
     },

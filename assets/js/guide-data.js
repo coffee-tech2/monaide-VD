@@ -72,6 +72,16 @@ window.MONAIDE_GUIDE_DATA = {
       keywords: ['séparation', 'pension alimentaire', 'BRAPA']
     },
     {
+      id: 'brapa-vaud',
+      label: 'Famille',
+      title: 'BRAPA Vaud',
+      summary: 'Pension alimentaire non versée : avances BRAPA, documents à préparer et premier contact utile.',
+      href: '/brapa-vaud/',
+      ctaLabel: 'Ouvrir le guide',
+      audience: ['famille', 'budget'],
+      keywords: ['BRAPA Vaud', 'pension alimentaire non versée', 'avance pension alimentaire']
+    },
+    {
       id: 'permis-sejour-vaud',
       label: 'Migration',
       title: 'Permis de séjour',
@@ -205,7 +215,7 @@ window.MONAIDE_GUIDE_DATA = {
     asloca: 'aides-logement',
     bcma: 'dettes-budget',
     bourse: 'bourses-ocbe',
-    brapa: 'separation-vaud',
+    brapa: 'brapa-vaud',
     'caritas-migration': 'permis-sejour-vaud',
     'csp-vaud': 'dettes-budget',
     csr: 'centre-social-regional',
