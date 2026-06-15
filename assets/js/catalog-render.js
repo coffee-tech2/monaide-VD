@@ -115,6 +115,16 @@
     }).join('');
   }
 
+  function renderCatalogFirstSteps(item) {
+    if (!item.firstSteps || !item.firstSteps.length) return '';
+    return '<div class="catalog-first-step">'
+      + '<div class="catalog-first-step-label">Premier geste</div>'
+      + '<ul>' + item.firstSteps.map(function(step) {
+        return '<li>' + escapeCatalogRenderHtml(step) + '</li>';
+      }).join('') + '</ul>'
+      + '</div>';
+  }
+
   function renderCatalogRenderTrust(item) {
     if (!item) return '';
     var note = item.reviewNote || 'Contenu relu avec une logique d’orientation sociale, mais ne remplace pas une décision officielle.';
@@ -129,8 +139,11 @@
     var guideLink = guide && guide.href
       ? '<a href="' + escapeCatalogRenderHtml(guide.href) + '">' + escapeCatalogRenderHtml(guide.label || 'Guide détaillé') + ' <span aria-hidden="true">→</span></a>'
       : '';
+    var nextStepText = guideLink
+      ? 'Commence par le premier geste ci-dessus. Ouvre le guide si tu veux les étapes détaillées, ou relance le simulateur si tu hésites.'
+      : 'Commence par le premier geste ci-dessus. Si tu hésites, ouvre un lien utile ou relance le simulateur.';
     return '<div class="catalog-next-step" onclick="event.stopPropagation()">'
-      + '<div><strong>Tu veux continuer avec cette piste ?</strong><span>Ouvre le guide pour les étapes, ou relance le simulateur si tu n’es pas sûr·e.</span></div>'
+      + '<div><strong>Tu veux continuer avec cette piste ?</strong><span>' + nextStepText + '</span></div>'
       + '<div class="catalog-next-step-actions">' + guideLink + '<a href="#simulateur">Faire le simulateur <span aria-hidden="true">→</span></a></div>'
       + '</div>';
   }
@@ -138,6 +151,7 @@
   function renderCatalogRenderBody(item) {
     return '<div class="cat-card-body" style="display:none;">'
       + renderCatalogRenderTrust(item)
+      + renderCatalogFirstSteps(item)
       + '<p>' + (item.bodyIntro || '') + '</p>'
       + renderCatalogRenderSections(item)
       + renderCatalogRenderCallouts(item)
@@ -166,18 +180,23 @@
   }
 
   function renderCatalogGroupMarkup(groupMeta) {
-    var cardsMarkup = CATALOG_LAYOUT.cards
+    var groupCards = CATALOG_LAYOUT.cards
       .filter(function(cardMeta) { return cardMeta.groupId === groupMeta.id; })
-      .sort(function(a, b) { return a.order - b.order; })
+      .sort(function(a, b) { return a.order - b.order; });
+    var cardsMarkup = groupCards
       .map(function(meta) {
         var item = getCatalogRenderItemById(meta.itemId);
         if (!item) return '';
         return renderCatalogCardMarkup(item, meta.dataCat);
       })
       .join('');
+    var countLabel = groupCards.length + ' aide' + (groupCards.length > 1 ? 's' : '');
 
     return '<div class="cat-group" id="' + escapeCatalogRenderHtml(groupMeta.id) + '">'
-      + '<div class="cat-group-header"><div class="cat-group-title">' + escapeCatalogRenderHtml(groupMeta.title || '') + '</div><div class="cat-group-sub">' + escapeCatalogRenderHtml(groupMeta.subtitle || '') + '</div></div>'
+      + '<div class="cat-group-header"><button type="button" class="cat-group-toggle" onclick="toggleCatalogGroupMobile(this)" aria-expanded="false">'
+      + '<span class="cat-group-copy"><span class="cat-group-title">' + escapeCatalogRenderHtml(groupMeta.title || '') + '</span><span class="cat-group-sub">' + escapeCatalogRenderHtml(groupMeta.subtitle || '') + '</span></span>'
+      + '<span class="cat-group-count">' + escapeCatalogRenderHtml(countLabel) + '</span><span class="cat-group-chevron" aria-hidden="true"></span>'
+      + '</button></div>'
       + '<div class="cat-cards-grid">' + cardsMarkup + '</div>'
       + '</div>';
   }

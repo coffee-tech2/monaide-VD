@@ -475,7 +475,6 @@
             'Explications simples sur dettes et surendettement',
             'Repères concrets pour agir sans attendre',
             'Priorités de paiement : loyer, assurance maladie, alimentation, pension alimentaire, garde, impôts et charges courantes',
-            'Repères sur les poursuites : commandement de payer, opposition, saisie et minimum d’existence',
             'Orientation vers les bons services dans le canton',
             'Infos utiles aussi pour les proches'
           ]
@@ -516,9 +515,9 @@
       ],
       links: [
         { kind: 'info', label: 'Guide détaillé', url: '/dettes-budget/' },
-        { kind: 'info', label: 'Voir Parlons Cash', url: window.MONAIDE_LINKS.PARLONS_CASH },
-        { kind: 'info', label: 'Voir aussi le CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
-        { kind: 'info', label: 'Voir aussi Jet Service', url: window.MONAIDE_LINKS.JET_SERVICE }
+        { kind: 'action', label: 'Contacter Parlons Cash', url: window.MONAIDE_LINKS.PARLONS_CASH },
+        { kind: 'action', label: 'Contacter le CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
+        { kind: 'action', label: 'Contacter Jet Service', url: window.MONAIDE_LINKS.JET_SERVICE }
       ],
       documentationTarget: null
     },
@@ -1007,11 +1006,11 @@
       reviewedAt: '13 avril 2026',
       decisionBy: 'Selon la question: justice, BRAPA, médiation ou autre service compétent',
       links: [
-        { kind: 'info', label: 'Se séparer, vivre un deuil — Vaud', url: window.MONAIDE_LINKS.FAMILY_CRISIS },
-        { kind: 'info', label: 'Médiation familiale — financement BRAPA possible', url: window.MONAIDE_LINKS.BRAPA_MEDIATION },
-        { kind: 'info', label: 'Médiations et ombudsmans — Vaud', url: window.MONAIDE_LINKS.MEDIATIONS_OMBUDSMANS },
-        { kind: 'info', label: 'BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT },
-        { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
+        { kind: 'info', label: 'Comprendre les aides en cas de séparation', url: window.MONAIDE_LINKS.FAMILY_CRISIS },
+        { kind: 'action', label: 'Demander une médiation BRAPA', url: window.MONAIDE_LINKS.BRAPA_MEDIATION },
+        { kind: 'info', label: 'Trouver une médiation ou un ombudsman', url: window.MONAIDE_LINKS.MEDIATIONS_OMBUDSMANS },
+        { kind: 'action', label: 'Contacter le BRAPA', url: window.MONAIDE_LINKS.BRAPA_CONTACT },
+        { kind: 'info', label: 'Voir les aides aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
       ],
       documentationTarget: null
     },
@@ -1875,8 +1874,8 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'ASLOCA Vaud', url: window.MONAIDE_LINKS.ASLOCA_VAUD },
-        { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
+        { kind: 'action', label: 'Contacter l’ASLOCA Vaud', url: window.MONAIDE_LINKS.ASLOCA_VAUD },
+        { kind: 'action', label: 'Contacter le CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME },
         { kind: 'info', label: 'Guide détaillé', url: '/aides-logement/' }
       ],
       documentationTarget: null
@@ -2189,8 +2188,8 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'Proches aidants — Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
-        { kind: 'info', label: 'Questions fréquentes', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FAQ }
+        { kind: 'action', label: 'Demander un premier conseil proche aidant', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
+        { kind: 'info', label: 'Lire les questions fréquentes', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FAQ }
       ],
       documentationTarget: null
     },
@@ -2244,10 +2243,10 @@
       reviewedAt: '13 avril 2026',
       decisionBy: 'Espace Proches, CMS/AVASAD, DGCS ou organismes de relève selon la prestation',
       links: [
-        { kind: 'info', label: 'Informations, conseils et répit — Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
-        { kind: 'info', label: 'Aides financières et congés', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FINANCES },
-        { kind: 'info', label: 'Questions fréquentes proches aidants', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FAQ },
-        { kind: 'info', label: 'AVASAD / CMS Vaud', url: window.MONAIDE_LINKS.CMS_AVASAD }
+        { kind: 'action', label: 'Appeler ou contacter Espace Proches', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
+        { kind: 'info', label: 'Vérifier les aides financières et congés', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FINANCES },
+        { kind: 'info', label: 'Lire les questions fréquentes proches aidants', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FAQ },
+        { kind: 'action', label: 'Contacter le CMS / AVASAD', url: window.MONAIDE_LINKS.CMS_AVASAD }
       ],
       documentationTarget: null
     },
@@ -2344,9 +2343,9 @@
       reviewedAt: '13 avril 2026',
       decisionBy: 'Orientation et soins selon la situation, pas une autorité unique',
       links: [
-        { kind: 'info', label: 'Cultiver sa santé mentale — Vaud', url: window.MONAIDE_LINKS.MENTAL_HEALTH_SUPPORT },
-        { kind: 'info', label: 'Urgences — État de Vaud', url: window.MONAIDE_LINKS.URGENCES_VAUD },
-        { kind: 'info', label: 'Unisanté', url: window.MONAIDE_LINKS.UNISANTE }
+        { kind: 'info', label: 'Trouver un relais santé mentale', url: window.MONAIDE_LINKS.MENTAL_HEALTH_SUPPORT },
+        { kind: 'action', label: 'Voir les numéros d’urgence', url: window.MONAIDE_LINKS.URGENCES_VAUD },
+        { kind: 'action', label: 'Contacter Unisanté', url: window.MONAIDE_LINKS.UNISANTE }
       ],
       documentationTarget: null
     },
@@ -2973,9 +2972,9 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'Liste complète Vaud', url: window.MONAIDE_LINKS.GUIDE_SOCIAL_FOOD },
-        { kind: 'info', label: 'Cartons du Cœur', url: window.MONAIDE_LINKS.CARTONS_COEUR },
-        { kind: 'info', label: 'Épiceries Caritas Vaud', url: window.MONAIDE_LINKS.CARITAS_EPICERIES }
+        { kind: 'action', label: 'Trouver une distribution alimentaire', url: window.MONAIDE_LINKS.GUIDE_SOCIAL_FOOD },
+        { kind: 'action', label: 'Contacter les Cartons du Cœur', url: window.MONAIDE_LINKS.CARTONS_COEUR },
+        { kind: 'info', label: 'Voir les épiceries Caritas Vaud', url: window.MONAIDE_LINKS.CARITAS_EPICERIES }
       ],
       documentationTarget: null
     },
