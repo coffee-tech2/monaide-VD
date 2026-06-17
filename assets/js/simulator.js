@@ -7,7 +7,7 @@
   var simulatorLastCompletedBlock = 0;
   var SIMULATOR_BLOCK_HINTS = {
     1: [
-      'Deux repères suffisent pour commencer. Si tu hésites, choisis l’option la plus proche.',
+      'Si tu hésites, choisis l’option la plus proche.',
       'Ces réponses aident à éviter de proposer une démarche qui ne te concerne pas.'
     ],
     2: [

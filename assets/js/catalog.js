@@ -240,7 +240,7 @@
     var noResult = document.getElementById('cat-no-result');
     if (noResult) {
       if (count === 0 && q) {
-        noResult.innerHTML = '<strong>Aucun r&#233;sultat exact.</strong> Essaie plut&#244;t : caisse maladie, permis, loyer, emploi ou habits pas chers.';
+        noResult.innerHTML = '<strong>Aucun r&#233;sultat exact.</strong> Essaie plut&#244;t : plus assez pour vivre, prime maladie, loyer, parent solo, permis ou dettes.';
         noResult.style.display = '';
       } else {
         noResult.style.display = 'none';
