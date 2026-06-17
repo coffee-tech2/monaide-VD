@@ -165,14 +165,14 @@
   }
 
   function renderCatalogRenderHeader(item) {
-    return '<div class="cat-card-header"><div style="flex:1;min-width:0;"><div class="cat-card-title">' + escapeCatalogRenderHtml(item.title) + '</div><div class="cat-card-desc">' + escapeCatalogRenderHtml(item.summary || '') + '</div></div><span class="cat-card-arrow" aria-hidden="true"></span></div>';
+    return '<div class="cat-card-header" onclick="toggleCatCard(this.closest(\'.cat-card\'))"><div style="flex:1;min-width:0;"><div class="cat-card-title">' + escapeCatalogRenderHtml(item.title) + '</div><div class="cat-card-desc">' + escapeCatalogRenderHtml(item.summary || '') + '</div></div><span class="cat-card-arrow" aria-hidden="true"></span></div>';
   }
 
   function renderCatalogCardMarkup(item, dataCat) {
     var meta = CATALOG_LAYOUT.byNormalizedTitle[normalizeAidText(item.title || '')] || {};
     var tier = meta.tier || 'known';
     var extraClass = tier === 'essential' ? ' is-essential' : '';
-    return '<div class="cat-card' + extraClass + '" data-tier="' + escapeCatalogRenderHtml(tier) + '" data-cat="' + escapeCatalogRenderHtml(dataCat || item.category || '') + '" data-aid-id="' + escapeCatalogRenderHtml(item.id) + '" data-render-source="catalog-data" onclick="toggleCatCard(this)">'
+    return '<div class="cat-card' + extraClass + '" data-tier="' + escapeCatalogRenderHtml(tier) + '" data-cat="' + escapeCatalogRenderHtml(dataCat || item.category || '') + '" data-aid-id="' + escapeCatalogRenderHtml(item.id) + '" data-render-source="catalog-data">'
       + renderCatalogRenderHeader(item)
       + renderCatalogRenderQuicklinks(item)
       + renderCatalogRenderBody(item)

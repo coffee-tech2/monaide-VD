@@ -1773,6 +1773,148 @@
     transform:none;
   }
 
+  @media (max-width: 600px) {
+    .choice-card {
+      min-height:50px;
+      padding:0.74rem 0.82rem;
+      border-color:#D6DDD7;
+    }
+
+    .choice-input:checked + .choice-card {
+      border-color:var(--vaud);
+      background:#EAF5EF;
+      box-shadow:inset 0 0 0 1px rgba(var(--vaud-rgb),0.12);
+    }
+
+    .choice-input:checked + .choice-card::before {
+      width:5px;
+    }
+
+    .choice-input:checked + .choice-card .choice-check {
+      border-color:var(--vaud);
+      background:radial-gradient(circle at center, #FFFFFF 0 0.18rem, transparent 0.2rem), var(--vaud);
+      box-shadow:0 0 0 3px rgba(var(--vaud-rgb),0.12);
+      transform:none;
+    }
+
+    .step-question-set .form-group.invalid {
+      border-color:rgba(183,125,34,0.58);
+      background:#FFF9EF;
+      box-shadow:inset 0 0 0 1px rgba(183,125,34,0.14);
+    }
+
+    .cat-group {
+      background:#F8F9F5;
+      border-color:#DDE6E0;
+    }
+
+    .cat-group-toggle {
+      min-height:58px;
+      padding:0.78rem 0.82rem;
+    }
+
+    .cat-group-title {
+      font-size:0.94rem;
+    }
+
+    .cat-group-sub {
+      display:-webkit-box;
+      -webkit-line-clamp:2;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+
+    .cat-group-count {
+      min-width:4.35rem;
+      background:#EEF4F0;
+      font-size:0.64rem;
+    }
+
+    .cat-card,
+    .cat-card.is-essential {
+      border-color:#DCE2DB;
+      background:#FEFDF9;
+    }
+
+    .cat-card-header {
+      min-height:0;
+      padding:0.78rem 0.82rem;
+      gap:0.7rem;
+    }
+
+    .cat-card-title {
+      font-size:0.94rem;
+      line-height:1.2;
+    }
+
+    .cat-card-desc {
+      margin-top:0.24rem;
+      font-size:0.74rem;
+      line-height:1.42;
+      -webkit-line-clamp:1;
+    }
+
+    .cat-card-arrow {
+      margin-left:0.45rem;
+      opacity:0.58;
+    }
+
+    .cat-card.open {
+      background:#FFFFFF;
+      border-left-width:3px;
+    }
+
+    .cat-card-body {
+      padding:0.82rem;
+    }
+
+    .catalog-detail-box,
+    .catalog-first-step,
+    .catalog-trust,
+    .catalog-next-step {
+      border-radius:var(--radius-sm);
+    }
+
+    .expand-links a,
+    .catalog-next-step a,
+    .guide-inline-actions a,
+    .guide-page main .guide-card a:not(.btn-primary):not(.btn-secondary),
+    .doc-action-link {
+      min-height:46px;
+      border-color:#CFC5B4;
+    }
+
+    .guide-detail-page .guide-detail-block {
+      margin-top:2.7rem;
+    }
+
+    .guide-detail-page .guide-detail-block:first-child {
+      margin-top:1.9rem;
+    }
+
+    .guide-detail-page .guide-detail-heading {
+      margin-bottom:1.35rem;
+    }
+
+    .guide-detail-page .guide-detail-heading h2 {
+      font-size:clamp(1.72rem, 8.4vw, 2.28rem);
+      line-height:1.06;
+    }
+
+    .guide-detail-page .guide-card {
+      padding:1rem 0.92rem 0.92rem;
+    }
+
+    .guide-detail-page .guide-card-primary {
+      padding:1.08rem 0.98rem 0.98rem;
+    }
+
+    .guide-detail-page .guide-faq-section {
+      margin-top:2.4rem;
+      padding-top:2.35rem;
+    }
+  }
+
   @media (min-width: 601px) {
     .nav-mobile-actions { display:none; }
     .hamburger { display: none; }
