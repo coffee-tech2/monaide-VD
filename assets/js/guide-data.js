@@ -74,7 +74,7 @@ window.MONAIDE_GUIDE_DATA = {
     {
       id: 'brapa-vaud',
       label: 'Famille',
-      title: 'BRAPA Vaud',
+      title: 'Pension alimentaire non versée (BRAPA)',
       summary: 'Pension alimentaire non versée : avances BRAPA, documents à préparer et premier contact utile.',
       href: '/brapa-vaud/',
       ctaLabel: 'Ouvrir le guide',
@@ -114,7 +114,7 @@ window.MONAIDE_GUIDE_DATA = {
     {
       id: 'prestations-complementaires',
       label: 'AVS / AI',
-      title: 'Prestations complémentaires',
+      title: 'Prestations complémentaires (PC AVS/AI)',
       summary: 'Faire le point sur les PC AVS/AI et la bonne porte pour la demande.',
       href: '/prestations-complementaires/',
       ctaLabel: 'Ouvrir le guide',
@@ -134,7 +134,7 @@ window.MONAIDE_GUIDE_DATA = {
     {
       id: 'bourses-ocbe',
       label: 'Formation',
-      title: 'Bourse d’études Vaud (OCBE)',
+      title: 'Bourse d’études du canton de Vaud (OCBE)',
       summary: 'Bourse ou prêt d’études OCBE : test d’éligibilité, délais, demande officielle et documents à préparer.',
       href: '/bourses-ocbe/',
       ctaLabel: 'Ouvrir le guide',
@@ -144,7 +144,7 @@ window.MONAIDE_GUIDE_DATA = {
     {
       id: 'assurance-invalidite',
       label: 'Santé',
-      title: 'Assurance invalidité',
+      title: 'Assurance invalidité (AI)',
       summary: 'Les premiers repères autour de l’AI et la logique de la demande.',
       href: '/assurance-invalidite/',
       ctaLabel: 'Ouvrir le guide',
@@ -154,7 +154,7 @@ window.MONAIDE_GUIDE_DATA = {
     {
       id: 'agence-assurances-sociales',
       label: 'Orientation',
-      title: 'Agence d’assurances sociales',
+      title: 'Agence d’assurances sociales (AAS)',
       summary: 'Quand une AAS est la bonne première porte pour clarifier une démarche.',
       href: '/agence-assurances-sociales/',
       ctaLabel: 'Ouvrir le guide',
@@ -164,7 +164,7 @@ window.MONAIDE_GUIDE_DATA = {
     {
       id: 'centre-social-regional',
       label: 'Orientation',
-      title: 'Centre social régional',
+      title: 'Centre social régional (CSR)',
       summary: 'Comprendre quand contacter un centre social régional dans le canton de Vaud pour le RI, une évaluation sociale ou une première orientation.',
       href: '/centre-social-regional/',
       ctaLabel: 'Ouvrir le guide',
@@ -174,7 +174,7 @@ window.MONAIDE_GUIDE_DATA = {
     {
       id: 'chomage-laci',
       label: 'Emploi',
-      title: 'Inscription ORP Vaud',
+      title: 'Inscription chômage',
       summary: 'Inscription ORP Vaud, Job-Room, caisse de chômage, preuves de recherche d’emploi et papiers utiles après une perte d’emploi.',
       href: '/chomage-laci/',
       ctaLabel: 'Ouvrir le guide',

@@ -31,12 +31,16 @@ loadBrowserScript('assets/js/guide-data.js', context);
 const guides = (context.window.MONAIDE_GUIDE_DATA || {}).items || [];
 const warnings = [];
 const errors = [];
+const acceptedTitleAliases = {
+  'bourses-ocbe': ["Bourse d'études du canton de Vaud"]
+};
 
 guides.forEach((guide) => {
   const html = readGuideHtml(guide.href);
   const normalizedHtml = normalize(html);
 
-  if (!normalizedHtml.includes(normalize(guide.title))) {
+  const acceptedTitles = [guide.title].concat(acceptedTitleAliases[guide.id] || []);
+  if (!acceptedTitles.some((title) => normalizedHtml.includes(normalize(title)))) {
     warnings.push(`${guide.id}: le titre structuré n'apparaît pas clairement dans la page`);
   }
 
