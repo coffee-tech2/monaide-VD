@@ -11,6 +11,7 @@
   }
 
   var catalogSearchTimer = null;
+  var catalogViewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
 
   function trackCatalogEvent(name, props) {
     if (window.trackMonaideEvent) {
@@ -506,6 +507,9 @@
     enhanceStaticPhoneLinks();
     collapseCatalogGroupsOnMobile();
     window.addEventListener('resize', function() {
+      var nextWidth = window.innerWidth || document.documentElement.clientWidth || 0;
+      if (nextWidth === catalogViewportWidth) return;
+      catalogViewportWidth = nextWidth;
       syncCatalogGroupsForCurrentMobileState();
     });
 
