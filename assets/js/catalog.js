@@ -11,7 +11,8 @@
   }
 
   var catalogSearchTimer = null;
-  var catalogViewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
+  var catalogWasMobileThemeMode = false;
+  var catalogLastTouchMoveAt = 0;
 
   function trackCatalogEvent(name, props) {
     if (window.trackMonaideEvent) {
@@ -97,6 +98,8 @@
     return window.matchMedia && window.matchMedia('(max-width: 600px)').matches;
   }
 
+  catalogWasMobileThemeMode = isCatalogMobileThemeMode();
+
   function setCatalogGroupExpanded(group, expanded) {
     if (!group) return;
     group.classList.toggle('is-open', !!expanded);
@@ -149,8 +152,10 @@
     else collapseCatalogGroupsOnMobile();
   }
 
-  window.toggleCatalogGroupMobile = function(btn) {
+  window.toggleCatalogGroupMobile = function(eventOrBtn, maybeBtn) {
     if (!isCatalogMobileThemeMode()) return;
+    if (Date.now() - catalogLastTouchMoveAt < 450) return;
+    var btn = maybeBtn || eventOrBtn;
     var group = btn && btn.closest ? btn.closest('.cat-group') : null;
     if (!group) return;
     var shouldOpen = !group.classList.contains('is-open');
@@ -507,11 +512,14 @@
     enhanceStaticPhoneLinks();
     collapseCatalogGroupsOnMobile();
     window.addEventListener('resize', function() {
-      var nextWidth = window.innerWidth || document.documentElement.clientWidth || 0;
-      if (nextWidth === catalogViewportWidth) return;
-      catalogViewportWidth = nextWidth;
+      var nextIsMobileThemeMode = isCatalogMobileThemeMode();
+      if (nextIsMobileThemeMode === catalogWasMobileThemeMode) return;
+      catalogWasMobileThemeMode = nextIsMobileThemeMode;
       syncCatalogGroupsForCurrentMobileState();
     });
+    window.addEventListener('touchmove', function() {
+      catalogLastTouchMoveAt = Date.now();
+    }, { passive: true });
 
     var catalogue = document.getElementById('catalogue');
     if (catalogue && !catalogue.dataset.trackingBound) {
