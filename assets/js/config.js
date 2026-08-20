@@ -122,6 +122,7 @@
       'liensAminh',
       'liensDettes',
       'liensParlonsCash',
+      'liensUnafin',
       'liensCommunes',
       'liensGardeEnfants',
       'liensAideAlimentaire',
@@ -230,6 +231,10 @@
       liensParlonsCash: [
         { type: 'link', label: 'Parlons Cash', linkKey: 'PARLONS_CASH' },
         { type: 'link', label: 'CSP Vaud', linkKey: 'CSP_HOME' }
+      ],
+      liensUnafin: [
+        { type: 'link', label: 'Unafin — Service social de Lausanne', linkKey: 'UNAFIN_INFO' },
+        { type: 'link', label: 'Parlons Cash', linkKey: 'PARLONS_CASH' }
       ],
       liensCommunes: [
         { type: 'link', label: 'Liste des communes vaudoises', linkKey: 'COMMUNES_LIST' },

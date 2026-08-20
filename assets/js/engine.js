@@ -140,6 +140,7 @@
       primeElevee: primeLamal === '250-400' || primeLamal === 'plus400',
       urgenceActive: dettes === 'loyer' || logement.includes('Sans logement fixe'),
       grandeCommune: ['lausanne', 'renens', 'vevey', 'nyon', 'yverdon', 'montreux', 'morges'].some(function(v) { return communeNorm.includes(v); }),
+      isLausanne: communeNorm.indexOf('lausanne') !== -1,
       statutStableOrdinaire: permis.includes('suisse') || permisB || permisC,
       statutAvecNuance: permisF || permisL || permisS,
       besoinAlimentaireProbable: revenu === 'aucun' || revenu === 'moins1000' || dettes === 'surendette',
@@ -401,7 +402,7 @@
     }));
   }
 
-  function addDettesResult(res, dettes) {
+  function addDettesResult(res, dettes, isLausanne) {
     if (dettes === 'loyer') {
       res.push(buildResult({
         nom: 'Menace d\'expulsion — agis maintenant',
@@ -424,6 +425,18 @@
       docs: ['Liste des dettes ou poursuites', 'Factures impayées', 'Commandements de payer ou rappels', 'Budget mensuel si tu l’as'],
       liensParlonsCash: true
     }));
+
+    if (isLausanne) {
+      res.push(buildResult({
+        nom: 'Unafin — assainissement financier (Lausanne)',
+        badge: 'verifier',
+        desc: 'Tu habites ou travailles à Lausanne : Unafin va plus loin qu’un conseil ponctuel, avec un accompagnement complet pour construire un budget et sortir durablement du surendettement.',
+        action: '1. Contacte l’Info sociale du Service social de Lausanne (SSL) au 021 315 77 54, ou écris à unafin@lausanne.ch.\n2. Compte un délai d’une à quatre semaines avant le premier rendez-vous.\n3. Rassemble tes factures, rappels et commandements de payer déjà reçus.\n4. Présente-toi au rendez-vous avec ces documents, Place Chauderon 9 à Lausanne.',
+        today: 'Réservé aux personnes qui habitent ou travaillent pour la Ville de Lausanne.',
+        docs: ['Factures et rappels', 'Commandements de payer si tu en as', 'Budget mensuel si tu l’as'],
+        liensUnafin: true
+      }));
+    }
   }
 
   function addAidesLogementResult(res, grandeCommune, dettes, loyerEleve) {
@@ -912,7 +925,7 @@
       addAminhResult: function() { addAminhResult(res); },
       addPrestationsCommunalesResult: function() { addPrestationsCommunalesResult(res, flags); },
       addGardeEnfantsMaladesResult: function() { addGardeEnfantsMaladesResult(res, flags); },
-      addDettesResult: function() { addDettesResult(res, flags.dettes); },
+      addDettesResult: function() { addDettesResult(res, flags.dettes, flags.isLausanne); },
       addAideAlimentaireRegionResult: function() { addAideAlimentaireRegionResult(res, flags); },
       addAidesLogementResult: function() { addAidesLogementResult(res, flags.grandeCommune, flags.dettes, flags.loyerEleve); },
       addFallbackResult: function() { addFallbackResult(res); }
