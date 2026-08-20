@@ -1971,5 +1971,6 @@
   .cookie-consent-accept:hover { background:#8F4C1B; transform:translateY(-1px); }
   @media (max-width: 600px) {
     .cookie-consent-banner { padding:0.9rem 1rem calc(0.9rem + env(safe-area-inset-bottom, 0px)); flex-direction:column; align-items:stretch; text-align:left; }
+    .cookie-consent-copy { flex:none; max-width:none; }
     .cookie-consent-actions { display:grid; grid-template-columns:1fr 1fr; }
   }
