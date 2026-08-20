@@ -558,3 +558,85 @@
   window.addEventListener('resize', function() {
     fitGuideCardTitles();
   });
+
+  (function initMonaideCookieConsent() {
+    var CONSENT_KEY = 'monaide-analytics-consent';
+    var host = window.location && window.location.hostname;
+    var isProd = host === 'monaide-vaud.ch' || host === 'www.monaide-vaud.ch';
+
+    function loadGTM() {
+      if (!isProd || !window.MONAIDE_GTM_ID || window.__monaideGtmLoaded) return;
+      window.__monaideGtmLoaded = true;
+      var d = document, s = 'script', l = 'dataLayer', i = window.MONAIDE_GTM_ID;
+      window[l] = window[l] || [];
+      window[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0];
+      var j = d.createElement(s);
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i;
+      f.parentNode.insertBefore(j, f);
+    }
+
+    function getConsent() {
+      try {
+        return window.localStorage ? localStorage.getItem(CONSENT_KEY) : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function setConsent(value) {
+      try {
+        if (window.localStorage) localStorage.setItem(CONSENT_KEY, value);
+      } catch (e) {}
+    }
+
+    function showConsentBanner() {
+      if (document.getElementById('cookie-consent-banner')) return;
+      var banner = document.createElement('div');
+      banner.id = 'cookie-consent-banner';
+      banner.className = 'cookie-consent-banner';
+      banner.setAttribute('role', 'region');
+      banner.setAttribute('aria-label', 'Consentement mesure d’audience');
+      banner.innerHTML =
+        '<div class="cookie-consent-copy">Ce site utilise un outil de mesure d’audience anonymisée pour comprendre son usage et l’améliorer. Tes réponses au simulateur ne sont jamais transmises. <a href="/confidentialite/">En savoir plus</a></div>' +
+        '<div class="cookie-consent-actions">' +
+        '<button type="button" class="cookie-consent-decline">Refuser</button>' +
+        '<button type="button" class="cookie-consent-accept">Accepter</button>' +
+        '</div>';
+      document.body.appendChild(banner);
+
+      banner.querySelector('.cookie-consent-accept').addEventListener('click', function() {
+        setConsent('accepted');
+        banner.remove();
+        loadGTM();
+      });
+      banner.querySelector('.cookie-consent-decline').addEventListener('click', function() {
+        setConsent('declined');
+        banner.remove();
+      });
+    }
+
+    function init() {
+      if (!isProd) return;
+      var consent = getConsent();
+      if (consent === 'accepted') {
+        loadGTM();
+      } else if (consent !== 'declined') {
+        showConsentBanner();
+      }
+    }
+
+    window.monaideGetCookieConsent = getConsent;
+    window.monaideOpenCookieChoice = function() {
+      var existing = document.getElementById('cookie-consent-banner');
+      if (existing) existing.remove();
+      showConsentBanner();
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();

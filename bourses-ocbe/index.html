@@ -129,23 +129,14 @@
 }
 </script>
 
-<!-- Google Tag Manager: production only -->
+<!-- Google Tag Manager: charge apres consentement (voir navigation.js), production only -->
 <script>
-(function(w,d,s,l,i){
-  var host = w.location && w.location.hostname;
-  if (host !== 'monaide-vaud.ch' && host !== 'www.monaide-vaud.ch') return;
-  w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-  var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-  j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-  f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NFQRW574');
+window.dataLayer = window.dataLayer || [];
+window.MONAIDE_GTM_ID = 'GTM-NFQRW574';
 </script>
 <!-- End Google Tag Manager -->
 </head>
 <body class="guide-page guide-detail-page" id="top">
-<!-- Google Tag Manager (noscript): production only -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFQRW574" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <a href="#contenu" class="skip-link">Aller au contenu</a>
 <nav><div class="nav-inner"><a href="/" class="nav-logo"><span class="nav-logo-main">MonAide</span><span class="nav-logo-sep">-</span><span class="nav-logo-vd">VD</span><span class="nav-beta-badge">b&#234;ta</span></a><div class="nav-mobile-actions"><a class="nav-search-toggle guide-home-btn" href="/#catalogue" aria-label="Retour au répertoire"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></a><button type="button" class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span><span></span></button></div><ul class="nav-links" id="nav-links"><li><a href="/#simulateur">Simulateur</a></li><li><a href="/#catalogue">Répertoire des aides</a></li><li><a href="/guides/">Guides</a></li><li><a href="/a-propos/">À propos</a></li></ul></div></nav>
@@ -182,6 +173,7 @@
       <a href="/#catalogue">Répertoire des aides</a>
       <a href="/guides/">Guides</a>
             <a href="/a-propos/">&#192; propos</a>
+      <a href="/confidentialite/">Confidentialit&#233;</a>
     </div>
   </div>
   <div class="site-footer-bottom">

@@ -55,15 +55,28 @@ const htmlFiles = collectFiles(root, (file) => file.endsWith('.html'));
 const jsFiles = collectFiles(path.join(root, 'assets', 'js'), (file) => file.endsWith('.js'));
 const errors = [];
 
+const navigationJs = read(path.join(root, 'assets', 'js', 'navigation.js'));
+
+[
+  [navigationJs.includes('window.MONAIDE_GTM_ID'), 'navigation.js: reference a MONAIDE_GTM_ID absente'],
+  [navigationJs.includes("host === 'monaide-vaud.ch'"), 'navigation.js: garde-fou production absent'],
+  [navigationJs.includes('monaide-analytics-consent'), 'navigation.js: cle de consentement absente'],
+  [navigationJs.includes('cookie-consent-banner'), 'navigation.js: banniere de consentement absente']
+].forEach(([ok, message]) => {
+  if (!ok) errors.push(message);
+});
+
 htmlFiles.forEach((file) => {
   const html = read(file);
   const rel = path.relative(root, file);
 
+  if (rel === '404.html') return;
+
   [
     [html.includes(gtmId), 'GTM ID absent'],
-    [html.includes('Google Tag Manager: production only'), 'snippet GTM head absent'],
-    [html.includes("host !== 'monaide-vaud.ch'"), 'garde-fou production absent'],
-    [html.includes('Google Tag Manager (noscript): production only'), 'snippet GTM noscript absent']
+    [html.includes('window.dataLayer = window.dataLayer || []'), 'initialisation dataLayer absente'],
+    [html.includes("window.MONAIDE_GTM_ID = 'GTM-NFQRW574'"), 'MONAIDE_GTM_ID absent'],
+    [html.includes('/confidentialite/'), 'lien vers /confidentialite/ absent du footer']
   ].forEach(([ok, message]) => {
     if (!ok) errors.push(`${rel}: ${message}`);
   });

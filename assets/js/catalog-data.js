@@ -1535,7 +1535,8 @@
         {
           title: 'Comment faire',
           items: [
-            'Vérifier si tu peux obtenir une carte d’achat',
+            'Vérifier si tu es éligible à la CarteCulture ou à une carte d’achat Caritas',
+            'Si tu es éligible, commander ta CarteCulture — elle donne aussi accès aux prix réduits de l’épicerie',
             'Prendre ta carte avec toi en magasin',
             'À Lausanne : avenue de Morges 26',
             'Si tu hésites, demande à Caritas ou à un service social'
@@ -1544,7 +1545,8 @@
       ],
       links: [
         { kind: 'info', label: 'Épicerie Caritas', url: 'https://caritas-regio.ch/fr/prestations/petits-budgets/epicerie-caritas' },
-        { kind: 'info', label: 'Infos Lausanne', url: 'https://caritas-regio.ch/fr/a-propos-de-caritas/vaud/news/lepicerie-caritas-de-lausanne-ouvre-ses-portes-a-lavenue-de-morges-26' }
+        { kind: 'info', label: 'Infos Lausanne', url: 'https://caritas-regio.ch/fr/a-propos-de-caritas/vaud/news/lepicerie-caritas-de-lausanne-ouvre-ses-portes-a-lavenue-de-morges-26' },
+        { kind: 'action', label: 'Demander la CarteCulture', url: window.MONAIDE_LINKS.CARTECULTURE_APPLY }
       ],
       documentationTarget: null
     },
