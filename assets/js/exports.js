@@ -109,12 +109,24 @@
       + '</div></body></html>';
   }
 
+  function showExportNote(message) {
+    var note = document.getElementById('results-export-note');
+    if (!note) return;
+    note.textContent = message;
+    note.hidden = false;
+  }
+
   function openPdfWindow(mode, autoPrint) {
     if (!latestSimulation) return;
     var html = buildPdfDocument(latestSimulation, mode);
     if (!html) return;
     var win = window.open('', '_blank');
-    if (!win) return;
+    if (!win) {
+      showExportNote('Le navigateur a bloqué l’ouverture de la fenêtre. Autorise les pop-up pour ce site (ou ouvre la page dans Safari/Chrome si tu es dans une appli comme Instagram ou Facebook), puis réessaie.');
+      return;
+    }
+    var note = document.getElementById('results-export-note');
+    if (note) note.hidden = true;
     win.document.open();
     win.document.write(html);
     win.document.close();
