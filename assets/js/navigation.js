@@ -415,7 +415,7 @@
     window.__monaideMotionRevealInit = true;
 
     var selectors = [
-      '.section > .container',
+      '.section > .section-inner',
       '.cat-group',
       '.guide-story-section',
       '.guide-card',
