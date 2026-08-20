@@ -134,21 +134,21 @@
   .hero-kicker { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.36rem 0.9rem; border: 1px solid rgba(212,114,42,0.30); border-radius:var(--radius-sm); background:#FFFFFF; color: var(--vaud); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.035em; text-transform: none; margin-bottom: 1.25rem; animation: fadeUp 0.6s ease both; }
   .hero-kicker::before { content:''; width:0.42rem; height:0.42rem; border-radius:var(--radius-pill); background:var(--vaud); box-shadow:none; flex-shrink:0; }
   .hero-kicker strong { font-size: 0.9rem; line-height: 1; color: var(--vaud); }
-  .hero h1 { font-family: 'Manrope', sans-serif; font-size: clamp(2.75rem, 5.7vw, 4.65rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.058em; margin: 0 auto 1.1rem; animation: fadeUp 0.44s ease 0.08s both; max-width: 19.8ch; text-wrap: balance; color:var(--forest); }
-  .hero-line { display:block; opacity:0; transform:translateY(18px); animation: heroLineReveal 0.64s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .hero h1 { font-family: 'Manrope', sans-serif; font-size: clamp(2.75rem, 5.7vw, 4.65rem); font-weight: 650; line-height: 1.08; letter-spacing: -0.058em; margin: 0 auto 1.1rem; animation: fadeUp 0.44s ease 0.08s both; max-width: 19.8ch; text-wrap: balance; color:var(--forest); }
+  .hero-line { display:block; opacity:0; font-weight:650; transform:translateY(18px); animation: heroLineReveal 0.64s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
   .hero-line-aides { white-space: nowrap; color: var(--vaud) !important; }
   .hero-line-knowledge { white-space: nowrap; }
   .hero-line + .hero-line { animation-delay: 0.14s; }
   .hero-accent { display:inline; white-space:normal; font-style: normal; font-weight: 800; color: inherit; padding:0; background:none; animation: heroAccentReveal 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes heroLineReveal {
-    from { opacity: 0; transform: translateY(14px); }
+    from { opacity: 0; transform: translateY(14px); font-weight: 320; }
     70% { opacity: 1; transform: translateY(-1px); }
-    to { opacity: 1; transform: translateY(0); }
+    to { opacity: 1; transform: translateY(0); font-weight: 650; }
   }
   @keyframes heroAccentReveal {
-    from { opacity: 0.88; transform: translateY(6px); background-size: 0% 100%; }
-    to { opacity: 1; transform: translateY(0); background-size: 100% 100%; }
+    from { opacity: 0.88; transform: translateY(6px); background-size: 0% 100%; font-weight: 500; }
+    to { opacity: 1; transform: translateY(0); background-size: 100% 100%; font-weight: 800; }
   }
   .btn-primary { background: var(--accent); color: white; min-height:46px; padding: 13px 26px; border-radius:var(--radius-md); text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow:none; }
   .btn-primary:hover { background: #B25A20; transform: translateY(-2px); }
