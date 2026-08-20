@@ -1373,6 +1373,7 @@
     .form-input,
     .form-select { min-height:48px; border-radius:var(--radius-md); font-size:0.9rem; }
     .choice-grid { grid-template-columns: 1fr; gap:0.62rem; }
+    .choice-grid-pills { grid-template-columns: repeat(2, minmax(0, 1fr)); gap:0.5rem; }
     .choice-card { min-height:54px; padding:0.82rem 0.88rem; border-radius:var(--radius-md); }
     .choice-title { font-size:0.8rem; line-height:1.22; }
     .choice-check { width:1.08rem; height:1.08rem; }
