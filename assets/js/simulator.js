@@ -1037,3 +1037,23 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
+
+  (function initBtnNextPulse() {
+    function bind() {
+      document.querySelectorAll('.btn-next').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          btn.classList.remove('is-pulsing');
+          void btn.offsetWidth;
+          btn.classList.add('is-pulsing');
+        });
+        btn.addEventListener('animationend', function() {
+          btn.classList.remove('is-pulsing');
+        });
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', bind);
+    } else {
+      bind();
+    }
+  })();

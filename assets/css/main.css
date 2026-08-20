@@ -1246,6 +1246,10 @@
   @keyframes sectionTitleSettle { from { font-weight: 380; } to { font-weight: 700; } }
   @keyframes panelReveal { from { opacity: 0; transform: translateY(-6px) scaleY(0.98); } to { opacity: 1; transform: translateY(0) scaleY(1); } }
   @keyframes choiceConfirm { 0% { transform:translateY(0) scale(0.985); } 55% { transform:translateY(-3px) scale(1.012); } 100% { transform:translateY(0) scale(1); } }
+  @keyframes btnNextPulse { 0% { transform:scale(1); } 40% { transform:scale(0.95); } 100% { transform:scale(1); } }
+  @media (prefers-reduced-motion: no-preference) {
+    .btn-next.is-pulsing { animation:btnNextPulse 0.26s cubic-bezier(0.22, 1, 0.36, 1); }
+  }
   @keyframes checkPop { from { opacity:0; transform:rotate(45deg) scale(0.55); } to { opacity:1; transform:rotate(45deg) scale(1); } }
   @keyframes stepQuestionReveal { from { opacity:0; transform:translateY(10px); filter:blur(2px); } to { opacity:1; transform:translateY(0); filter:blur(0); } }
   @keyframes guidedErrorPulse { 0% { transform:translateY(0); } 42% { transform:translateY(-2px); } 100% { transform:translateY(0); } }
