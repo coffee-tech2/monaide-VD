@@ -17,6 +17,7 @@
           { id: 'accueil-jour-enfants', dataCat: 'financier', tier: 'known' },
           { id: 'garde-enfants-malades', dataCat: 'financier', tier: 'known' },
           { id: 'parlons-cash', dataCat: 'financier', tier: 'complement' },
+          { id: 'unafin-lausanne', dataCat: 'financier', tier: 'complement' },
           { id: 'bcma', dataCat: 'financier', tier: 'complement' },
           { id: 'csp-vaud', dataCat: 'financier', tier: 'complement' },
           { id: 'croix-rouge-vaudoise', dataCat: 'financier', tier: 'complement' }
@@ -31,6 +32,7 @@
           { id: 'bourse', dataCat: 'formation', tier: 'essential' },
           { id: 'jet-service', dataCat: 'formation emploi', tier: 'essential' },
           { id: 'guichet-t1', dataCat: 'formation emploi', tier: 'known' },
+          { id: 'mon-apprentissage', dataCat: 'formation', tier: 'known' },
           { id: 'rupture-apprentissage', dataCat: 'formation emploi', tier: 'known' },
           { id: 'rente-pont', dataCat: 'emploi', tier: 'complement' }
         ]

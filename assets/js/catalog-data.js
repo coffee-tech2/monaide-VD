@@ -3189,6 +3189,97 @@
         { kind: 'action', label: 'Vaud pour vous', url: window.MONAIDE_LINKS.VAUD_POUR_VOUS }
       ],
       documentationTarget: null
+    },
+    {
+      id: 'unafin-lausanne',
+      title: 'Unafin — assainissement financier (Lausanne)',
+      category: 'financier',
+      summary: 'Dettes et surendettement · Budget sur 3 ans · Réservé à Lausanne',
+      audience: 'Personnes qui habitent ou travaillent pour la Ville de Lausanne et veulent sortir durablement du surendettement.',
+      purpose: 'Unafin aide à faire l’inventaire complet des dettes, construire un budget réaliste sur plusieurs années et choisir la bonne suite, jusqu’au désendettement ou à la faillite personnelle si besoin.',
+      highlights: [
+        'Accompagnement gratuit et confidentiel',
+        'Inventaire complet des dettes et des poursuites',
+        'Budget construit sur trois ans avec un·e professionnel·le',
+        'Réservé aux personnes qui habitent ou travaillent pour la Ville de Lausanne'
+      ],
+      firstSteps: [
+        'Contacter l’Info sociale du Service social de Lausanne (SSL) au 021 315 77 54',
+        'Compter un délai d’une à quatre semaines avant le premier rendez-vous',
+        'Rassembler les factures, rappels et commandements de payer déjà reçus'
+      ],
+      bodyIntro: 'Si tes dettes s’accumulent depuis longtemps et que tu habites ou travailles à Lausanne, Unafin va plus loin qu’un simple conseil ponctuel : c’est un accompagnement complet pour comprendre d’où viennent les dettes, construire un vrai budget et sortir du surendettement pas à pas.',
+      reviewedAt: '20 août 2026',
+      decisionBy: 'Unafin (Ville de Lausanne), après le premier entretien',
+      sections: [
+        {
+          title: 'Ce que ça permet',
+          items: [
+            'Inventaire complet de l’endettement',
+            'Budget réaliste construit sur trois ans',
+            'Orientation vers désendettement ou faillite personnelle si nécessaire',
+            'Conseils sur les poursuites et la gestion du budget'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Appeler l’Info sociale du SSL au 021 315 77 54 ou écrire à unafin@lausanne.ch',
+            'Décrire brièvement la situation de dettes',
+            'Se présenter avec les documents utiles au premier rendez-vous, Place Chauderon 9 à Lausanne'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'action', label: 'Service social de Lausanne — dettes et surendettement', url: window.MONAIDE_LINKS.UNAFIN_INFO },
+        { kind: 'info', label: 'Parlons Cash (canton, si hors Lausanne)', url: window.MONAIDE_LINKS.PARLONS_CASH }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'mon-apprentissage',
+      title: 'Mon Apprentissage — trouver sa voie professionnelle (Vaud)',
+      category: 'formation',
+      summary: 'Choisir un métier · Trouver une place d’apprentissage · Service cantonal gratuit',
+      audience: 'Jeunes en fin de scolarité ou en recherche d’orientation qui cherchent une place d’apprentissage dans le canton de Vaud.',
+      purpose: 'Mon Apprentissage aide à explorer les métiers possibles, repérer des pistes selon ses intérêts et accéder directement aux démarches pour trouver une place d’apprentissage.',
+      highlights: [
+        'Plus de 170 métiers présentés de façon concrète',
+        'Quiz pour identifier des métiers qui correspondent à ses intérêts',
+        'Liens directs vers la recherche de place d’apprentissage',
+        'Gratuit, porté par le canton de Vaud'
+      ],
+      firstSteps: [
+        'Faire le quiz ou explorer les métiers sur le site',
+        'Repérer 2 à 3 métiers qui donnent envie d’en savoir plus',
+        'Utiliser les liens du site pour chercher une place d’apprentissage correspondante'
+      ],
+      bodyIntro: 'Si tu ne sais pas encore quel métier choisir, ou si tu cherches une place d’apprentissage dans le canton de Vaud, Mon Apprentissage propose une exploration concrète des métiers avant d’aller vers les démarches.',
+      reviewedAt: '20 août 2026',
+      decisionBy: 'Entreprises formatrices, après candidature',
+      sections: [
+        {
+          title: 'Ce que ça permet',
+          items: [
+            'Explorer plus de 170 métiers en apprentissage',
+            'Un quiz pour trouver des pistes selon ses intérêts',
+            'Accès direct à la recherche de place d’apprentissage'
+          ]
+        },
+        {
+          title: 'Démarche',
+          items: [
+            'Explorer les métiers ou faire le quiz sur monapprentissage.ch',
+            'Suivre les liens vers les places d’apprentissage disponibles',
+            'Voir aussi le guichet T1 pour un accompagnement à l’orientation'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'action', label: 'Mon Apprentissage — explorer les métiers', url: window.MONAIDE_LINKS.MON_APPRENTISSAGE },
+        { kind: 'info', label: 'Guichets régionaux T1', url: window.MONAIDE_LINKS.T1_GUICHETS }
+      ],
+      documentationTarget: null
     }
   ];
 
