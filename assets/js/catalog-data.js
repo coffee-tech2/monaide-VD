@@ -95,7 +95,7 @@
       ],
       links: [
         { kind: 'action', label: 'Évaluer et demander le subside', url: window.MONAIDE_LINKS.SUBSIDE_HOME },
-        { kind: 'info', label: 'OVAM — infos officielles', url: 'https://www.vd.ch/themes/sante/assurances/assurance-maladie-obligatoire' },
+        { kind: 'info', label: 'OVAM — infos officielles', url: 'https://www.vd.ch/sante-soins-et-handicap/assurance-maladie' },
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST },
         { kind: 'info', label: 'Guide détaillé', url: '/subside-lamal/' }
       ],
@@ -2656,7 +2656,6 @@
       ],
       links: [
         { kind: 'info', label: 'Logements subventionnés', url: window.MONAIDE_LINKS.LUP_INFO },
-        { kind: 'info', label: 'FVL', url: window.MONAIDE_LINKS.FVL },
         { kind: 'info', label: 'Guide détaillé', url: '/aides-logement/' }
       ],
       documentationTarget: null
