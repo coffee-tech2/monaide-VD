@@ -561,7 +561,6 @@
     if (!prompts.length) return '';
 
     var html = '<div style="font-size:0.78rem;color:var(--warm-gray);line-height:1.6;">';
-    html += '<p style="margin:0 0 0.7rem;"><strong style="color:var(--dark);">Pour affiner ensuite si besoin :</strong> ces points peuvent changer la porte d’entrée ou le niveau de prudence.</p>';
     html += '<ul style="margin:0;padding-left:1rem;">';
     prompts.slice(0, 4).forEach(function(prompt) {
       html += '<li style="margin:0 0 0.5rem;"><strong style="color:var(--dark);">' + escapeHtml(prompt.title) + ' :</strong> ' + escapeHtml(prompt.text) + '</li>';

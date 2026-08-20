@@ -297,8 +297,8 @@
   .btn-prev:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(72,59,49,0.08); }
   .btn-quick-review { background:#F7F3EA; color:var(--forest); border:1.5px solid rgba(212,114,42,0.26) !important; font-weight:600; }
   .btn-quick-review:hover { background:#F6EFE4; transform:translateY(-1px); box-shadow:0 8px 18px rgba(89,65,23,0.08); }
-  .btn-analyze { background: var(--orange); color: white; }
-  .btn-analyze:hover { background: var(--forest); transform: translateY(-1px); box-shadow: 0 12px 26px rgba(23,41,60,0.20); }
+  .btn-analyze { background: var(--accent-strong); color: white; }
+  .btn-analyze:hover { background: #8F4C1B; transform: translateY(-1px); box-shadow: 0 12px 26px rgba(143,76,27,0.24); }
   .btn-nav:active { transform: translateY(0); box-shadow: none; }
 
   .results-header { max-width:70ch; margin-bottom:0.8rem; }
