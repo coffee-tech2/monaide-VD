@@ -236,7 +236,7 @@ const tests = [
     run() {
       [
         'Célibataire sans enfants',
-        'En couple (conjoint·e de fait) / mariée sans enfants'
+        'En couple / mariée sans enfants'
       ].forEach((famille) => {
         const results = compute({
           famille,

@@ -297,7 +297,7 @@ const scenarios = [
     name: 'Parcours primes maladie trop lourdes priorise LAMal',
     run() {
       const results = runProfile({
-        famille: 'En couple (conjoint·e de fait) / mariée sans enfants',
+        famille: 'En couple / mariée sans enfants',
         sitPro: 'En emploi',
         revenu: '2000-3500',
         fortune: 'moins4000',
@@ -673,7 +673,7 @@ const scenarios = [
     name: 'Couple avec enfants en emploi garde les pistes famille',
     run() {
       const results = runProfile({
-        famille: 'En couple (conjoint·e de fait) / mariée avec enfants',
+        famille: 'En couple / mariée avec enfants',
         sitPro: 'En emploi',
         enfants: 'non',
         revenu: '2000-3500',
@@ -697,7 +697,7 @@ const scenarios = [
     name: 'Couple avec enfants sans revenu garde RI et pistes famille',
     run() {
       const results = runProfile({
-        famille: 'En couple (conjoint·e de fait) / mariée avec enfants',
+        famille: 'En couple / mariée avec enfants',
         sitPro: 'Sans emploi - sans revenu',
         enfants: 'non',
         revenu: 'aucun',
@@ -721,7 +721,7 @@ const scenarios = [
     name: 'Couple avec enfants et retard de loyer priorise urgence logement',
     run() {
       const results = runProfile({
-        famille: 'En couple (conjoint·e de fait) / mariée avec enfants',
+        famille: 'En couple / mariée avec enfants',
         sitPro: 'En emploi',
         enfants: 'non',
         revenu: '2000-3500',
