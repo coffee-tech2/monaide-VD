@@ -1,6 +1,7 @@
   @font-face {
     font-family: 'Manrope';
-    src: url('../fonts/manrope-variable.ttf') format('truetype');
+    src: url('../fonts/manrope-variable.woff2') format('woff2'),
+         url('../fonts/manrope-variable.ttf') format('truetype');
     font-weight: 200 800;
     font-style: normal;
     font-display: swap;
@@ -8,7 +9,8 @@
 
   @font-face {
     font-family: 'Merriweather Sans';
-    src: url('../fonts/merriweather-sans-variable.ttf') format('truetype');
+    src: url('../fonts/merriweather-sans-variable.woff2') format('woff2'),
+         url('../fonts/merriweather-sans-variable.ttf') format('truetype');
     font-weight: 300 800;
     font-style: normal;
     font-display: swap;
