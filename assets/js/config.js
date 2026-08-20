@@ -632,13 +632,13 @@
     requiredFieldsForCurrentStep: {
       1: ['age', 'situation_familiale', 'statut_sejour'],
       2: ['situation_pro', 'logement'],
-      3: ['revenu', 'fortune', 'prime_lamal'],
+      3: ['revenu'],
       4: []
     },
     requiredFieldsBeforeStep: {
       2: ['age', 'situation_familiale', 'statut_sejour'],
       3: ['situation_pro', 'logement'],
-      4: ['revenu', 'fortune', 'prime_lamal']
+      4: ['revenu']
     },
-    allRequiredFieldIds: ['age', 'situation_familiale', 'statut_sejour', 'situation_pro', 'logement', 'revenu', 'fortune', 'prime_lamal']
+    allRequiredFieldIds: ['age', 'situation_familiale', 'statut_sejour', 'situation_pro', 'logement', 'revenu']
   };
