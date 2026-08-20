@@ -1535,8 +1535,8 @@
         {
           title: 'Comment faire',
           items: [
-            'Vérifier si tu es éligible à la CarteCulture ou à une carte d’achat Caritas',
-            'Si tu es éligible, commander ta CarteCulture — elle donne aussi accès aux prix réduits de l’épicerie',
+            'Vérifier ton éligibilité à la CarteCulture — si tu y as droit, elle donne aussi accès aux prix réduits de l’épicerie, en plus de ses autres avantages',
+            'Sinon, voir si une carte d’achat Caritas est possible',
             'Prendre ta carte avec toi en magasin',
             'À Lausanne : avenue de Morges 26',
             'Si tu hésites, demande à Caritas ou à un service social'
