@@ -20,7 +20,8 @@
           { id: 'unafin-lausanne', dataCat: 'financier', tier: 'complement' },
           { id: 'bcma', dataCat: 'financier', tier: 'complement' },
           { id: 'csp-vaud', dataCat: 'financier', tier: 'complement' },
-          { id: 'croix-rouge-vaudoise', dataCat: 'financier', tier: 'complement' }
+          { id: 'croix-rouge-vaudoise', dataCat: 'financier', tier: 'complement' },
+          { id: 'assistance-judiciaire', dataCat: 'financier', tier: 'complement' }
         ]
       },
       {
@@ -34,7 +35,8 @@
           { id: 'guichet-t1', dataCat: 'formation emploi', tier: 'known' },
           { id: 'mon-apprentissage', dataCat: 'formation', tier: 'known' },
           { id: 'rupture-apprentissage', dataCat: 'formation emploi', tier: 'known' },
-          { id: 'rente-pont', dataCat: 'emploi', tier: 'complement' }
+          { id: 'rente-pont', dataCat: 'emploi', tier: 'complement' },
+          { id: 'salaire-non-paye', dataCat: 'emploi', tier: 'complement' }
         ]
       },
       {
@@ -58,7 +60,8 @@
           { id: 'point-deau', dataCat: 'sante', tier: 'complement' },
           { id: 'sante-sexuelle-profa', dataCat: 'sante', tier: 'complement' },
           { id: 'l-check', dataCat: 'sante', tier: 'complement' },
-          { id: 'voqueer', dataCat: 'sante', tier: 'complement' }
+          { id: 'voqueer', dataCat: 'sante', tier: 'complement' },
+          { id: 'aide-dentaire', dataCat: 'sante', tier: 'complement' }
         ]
       },
       {

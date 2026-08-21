@@ -3281,6 +3281,120 @@
         { kind: 'info', label: 'Guichets régionaux T1', url: window.MONAIDE_LINKS.T1_GUICHETS }
       ],
       documentationTarget: null
+    },
+    {
+      id: 'salaire-non-paye',
+      title: 'Salaire non payé — que faire',
+      category: 'emploi',
+      summary: 'Salaire impayé · Prud’hommes · Insolvabilité employeur',
+      audience: 'Personnes dont l’employeur ne verse pas le salaire, ou en cas de faillite.',
+      purpose: 'Si ton employeur ne paie pas ton salaire, des recours existent — y compris si l’entreprise est en faillite.',
+      highlights: [
+        'Mise en demeure écrite comme première étape',
+        'Tribunal des prud’hommes pour les litiges salariaux',
+        'Assurance insolvabilité LACI en cas de faillite'
+      ],
+      firstSteps: [
+        'Mettre l’employeur en demeure par écrit',
+        'Contacter le Tribunal des prud’hommes de ta région',
+        'En cas de faillite : déposer une demande d’insolvabilité auprès de la caisse de chômage'
+      ],
+      bodyIntro: 'Si ton employeur ne verse pas ton salaire, il faut agir rapidement. Une mise en demeure écrite est le premier pas. En cas de faillite de l’employeur, l’assurance insolvabilité (LACI) peut couvrir jusqu’à 4 mois de salaires impayés.',
+      sections: [
+        {
+          title: 'Recours possibles',
+          items: [
+            'Mise en demeure écrite à l’employeur — garder une copie',
+            'Dépôt d’une plainte auprès du Tribunal des prud’hommes',
+            'En cas de faillite : demande d’insolvabilité auprès de la caisse de chômage dans les 60 jours',
+            'Le CSP Vaud peut orienter et aider à rédiger la mise en demeure'
+          ]
+        },
+        {
+          title: 'Ce que couvre l’assurance insolvabilité',
+          items: [
+            'Jusqu’à 4 mois de salaires impayés',
+            'Valable uniquement en cas de faillite de l’employeur',
+            'Délai de 60 jours pour déposer la demande dès l’ouverture de la faillite'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'action', label: 'Tribunal des prud’hommes Vaud', url: 'https://www.vd.ch/ojv/tribunaux-de-prudhommes' },
+        { kind: 'info', label: 'Insolvabilité — LACI', url: window.MONAIDE_LINKS.LACI_INFO },
+        { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'aide-dentaire',
+      title: 'Soins dentaires à petit prix ou gratuits',
+      category: 'sante',
+      summary: 'Soins dentaires · Budget limité · Lausanne et Vaud',
+      audience: 'Personnes sans moyens suffisants pour payer des soins dentaires.',
+      purpose: 'Les soins dentaires ne sont pas couverts par l’assurance maladie de base. Des solutions existent selon la situation.',
+      highlights: [
+        'Le Point d’Eau propose des soins d’urgence gratuits à Lausanne',
+        'CSP Vaud peut orienter selon la situation',
+        'Caritas Vaud peut parfois compléter avec une aide ponctuelle'
+      ],
+      firstSteps: [
+        'Contacter Le Point d’Eau si besoin urgent à Lausanne',
+        'Contacter le CSP Vaud pour une orientation personnalisée'
+      ],
+      bodyIntro: 'Les soins dentaires ne sont pas couverts par l’assurance de base. Plusieurs ressources existent pour les personnes sans moyens suffisants dans le canton de Vaud.',
+      sections: [
+        {
+          title: 'Options disponibles',
+          items: [
+            'Le Point d’Eau (Lausanne) — soins d’urgence gratuits pour personnes en grande précarité',
+            'CSP Vaud — ne prend pas en charge les soins directement mais peut orienter et aider à constituer un dossier',
+            'Caritas Vaud — aide financière ponctuelle possible selon situation',
+            'AI — si l’état dentaire est lié à un handicap reconnu, certains soins peuvent être pris en charge'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'action', label: 'Le Point d’Eau — Lausanne', url: window.MONAIDE_LINKS.POINT_DEAU },
+        { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME }
+      ],
+      documentationTarget: null
+    },
+    {
+      id: 'assistance-judiciaire',
+      title: 'Assistance judiciaire et aide juridique',
+      category: 'financier',
+      summary: 'Aide juridique gratuite · Avocat · Procédure · Vaud',
+      audience: 'Personnes sans moyens suffisants pour payer un avocat ou engager une procédure.',
+      purpose: 'Si tu n’as pas les moyens de te défendre en justice, des aides existent pour couvrir les frais d’avocat et de procédure.',
+      highlights: [
+        'Assistance judiciaire officielle accordée par le tribunal',
+        'OAV : trouver un·e avocat·e et un premier avis juridique',
+        'CSP Vaud pour une première orientation juridique et sociale'
+      ],
+      firstSteps: [
+        'Contacter le CSP Vaud pour une première orientation',
+        'Demander l’assistance judiciaire auprès du tribunal concerné'
+      ],
+      bodyIntro: 'Si tu n’as pas les moyens de payer un avocat, plusieurs ressources existent dans le canton de Vaud selon le type de problème.',
+      sections: [
+        {
+          title: 'Solutions disponibles',
+          items: [
+            'Assistance judiciaire officielle — accordée par le tribunal pour les procédures civiles, pénales ou administratives. Demande à faire avant ou pendant la procédure',
+            'OAV (Ordre des avocates et des avocats vaudois) — annuaire d’avocat·es et consultations juridiques pour un premier avis',
+            'CSP Vaud — consultation juridique et sociale, aide à comprendre les droits et préparer une démarche',
+            'ASLOCA — si le problème est locatif',
+            'MalleyPrairie — si la situation implique une séparation ou des violences conjugales'
+          ]
+        }
+      ],
+      links: [
+        { kind: 'action', label: 'Demander l’assistance judiciaire', url: 'https://www.vd.ch/prestation/demander-lassistance-judiciaire' },
+        { kind: 'info', label: 'OAV — Ordre des avocats vaudois', url: 'https://www.oav.ch' },
+        { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME }
+      ],
+      documentationTarget: null
     }
   ];
 

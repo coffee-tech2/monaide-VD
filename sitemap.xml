@@ -103,6 +103,30 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://monaide-vaud.ch/handicap-invalidite-vaud/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://monaide-vaud.ch/retraite-vaud/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://monaide-vaud.ch/addiction-sante-mentale-vaud/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://monaide-vaud.ch/droits-locataires-vaud/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://monaide-vaud.ch/agence-assurances-sociales/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>

@@ -12,6 +12,46 @@ window.MONAIDE_GUIDE_DATA = {
       keywords: ['aides sociales', 'Vaud', 'orientation']
     },
     {
+      id: 'retraite-vaud',
+      label: 'Retraite',
+      title: 'Retraite et fin de carrière',
+      summary: 'AVS, prestations complémentaires et rente-pont cantonale dans le canton de Vaud. Par où commencer avant 65 ans.',
+      href: '/retraite-vaud/',
+      ctaLabel: 'Ouvrir le guide',
+      audience: ['retraite', 'budget'],
+      keywords: ['retraite', 'AVS', 'prestations complémentaires', 'rente-pont', 'Vaud']
+    },
+    {
+      id: 'handicap-invalidite-vaud',
+      label: 'Handicap',
+      title: 'Vivre avec un handicap',
+      summary: 'Pro Infirmis, prestations complémentaires AI et moyens auxiliaires : les aides pour vivre avec un handicap dans le canton de Vaud.',
+      href: '/handicap-invalidite-vaud/',
+      ctaLabel: 'Ouvrir le guide',
+      audience: ['handicap', 'budget'],
+      keywords: ['handicap', 'invalidité', 'Pro Infirmis', 'Vaud']
+    },
+    {
+      id: 'addiction-sante-mentale-vaud',
+      label: 'Santé',
+      title: 'Addiction et santé mentale',
+      summary: 'Trouver de l’aide pour une addiction ou une difficulté psychologique dans le canton de Vaud, sans jugement.',
+      href: '/addiction-sante-mentale-vaud/',
+      ctaLabel: 'Ouvrir le guide',
+      audience: ['sante'],
+      keywords: ['addiction', 'santé mentale', 'Addiction Vaud', 'Rel’Aids', 'Vaud']
+    },
+    {
+      id: 'droits-locataires-vaud',
+      label: 'Logement',
+      title: 'Droits des locataires',
+      summary: 'Congé, augmentation de loyer, réparations refusées ou dépôt non restitué : vos droits de locataire dans le canton de Vaud.',
+      href: '/droits-locataires-vaud/',
+      ctaLabel: 'Ouvrir le guide',
+      audience: ['logement'],
+      keywords: ['locataire', 'ASLOCA', 'bail', 'congé', 'loyer', 'Vaud']
+    },
+    {
       id: 'primes-maladie-vaud',
       label: 'Santé',
       title: 'Je n’arrive plus à payer mes primes maladie',
