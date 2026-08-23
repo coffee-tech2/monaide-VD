@@ -131,11 +131,13 @@ const scenarios = [
         primeLamal: 'plus400',
         aidesListe: ['chomage']
       });
-      const laciIndex = indexOfResult(results, 'Assurance chômage');
+      const laciIndex = indexOfResult(results, 'Assurance chômage (LACI)');
+      const chomageActifIndex = indexOfResult(results, 'droits déjà ouverts');
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       const riIndex = indexOfResult(results, 'Revenu d\'insertion');
       const allocationsIndex = indexOfResult(results, 'Allocations familiales');
       assert(laciIndex === -1, 'Already opened unemployment benefits should not be suggested again');
+      assert(chomageActifIndex !== -1, 'Already-open unemployment profile should get the dedicated "droits déjà ouverts" card');
       assert(lamalIndex !== -1, 'Subside LAMal should remain visible when health insurance premium is heavy');
       assert(riIndex !== -1, 'RI should remain visible if unemployment income may not cover basic needs');
       assert(lamalIndex < riIndex, 'Subside LAMal should stay before RI when the strongest declared signal is a heavy health insurance premium');
@@ -634,11 +636,13 @@ const scenarios = [
         loyer: '1200-1800',
         aidesListe: ['chomage']
       });
-      const laciIndex = indexOfResult(results, 'Assurance chômage');
+      const laciIndex = indexOfResult(results, 'Assurance chômage (LACI)');
+      const chomageActifIndex = indexOfResult(results, 'droits déjà ouverts');
       const allocationsIndex = indexOfResult(results, 'Allocations familiales');
       const prestationsCommunalesIndex = indexOfResult(results, 'Prestations communales');
       const riIndex = indexOfResult(results, 'Revenu d\'insertion');
       assert(laciIndex === -1, 'Already declared unemployment benefits should not suggest opening LACI again');
+      assert(chomageActifIndex !== -1, 'Already-open unemployment profile should get the dedicated "droits déjà ouverts" card');
       assert(allocationsIndex !== -1, 'Family allowances should remain visible when unemployment is already open');
       assert(prestationsCommunalesIndex !== -1, 'Local family supports should remain visible when unemployment is already open');
       assert(riIndex !== -1, 'RI should remain visible as a fallback if unemployment income is not enough');

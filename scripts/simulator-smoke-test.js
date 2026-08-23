@@ -288,13 +288,14 @@ const tests = [
     }
   },
   {
-    name: 'Chômage déjà perçu ne ressort pas comme résultat',
+    name: 'Chômage déjà perçu ne ressort pas comme résultat LACI',
     run() {
       const results = compute({
         sitPro: 'Au chômage',
         aidesListe: ['chomage']
       });
-      assert(!hasResult(results, 'Assurance chômage'), 'Existing unemployment benefits should not be recommended again');
+      assert(!hasResult(results, 'Assurance chômage (LACI)'), 'Existing unemployment benefits should not be recommended again as LACI');
+      assert(hasResult(results, 'droits déjà ouverts'), 'Existing unemployment benefits should get the dedicated already-open card instead');
     }
   },
   {
