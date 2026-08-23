@@ -251,7 +251,6 @@
   .choice-card:hover { border-color: rgba(var(--vaud-rgb),0.34); background: #FFFFFF; box-shadow:none; transform:none; }
   .choice-card:active { transform:translateY(0) scale(0.99); box-shadow:none; }
   .choice-input:checked + .choice-card { border-color: var(--accent-strong); background:var(--accent-light); box-shadow:inset 0 0 0 1px rgba(173,93,34,0.18); }
-  .choice-card.just-selected { animation: choiceConfirm 0.34s cubic-bezier(0.22, 1, 0.36, 1); }
   .choice-input:checked + .choice-card::before { background:var(--accent-strong); width:6px; }
   .choice-input:focus + .choice-card { outline: 2px solid rgba(var(--vaud-rgb),0.22); outline-offset: 2px; }
   .choice-icon { display: none !important; }
@@ -1249,20 +1248,9 @@
   @keyframes motionReveal { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes sectionTitleSettle { from { font-weight: 380; } to { font-weight: 700; } }
   @keyframes panelReveal { from { opacity: 0; transform: translateY(-6px) scaleY(0.98); } to { opacity: 1; transform: translateY(0) scaleY(1); } }
-  @keyframes choiceConfirm { 0% { transform:translateY(0) scale(0.985); } 55% { transform:translateY(-3px) scale(1.012); } 100% { transform:translateY(0) scale(1); } }
-  @keyframes btnNextPulse { 0% { transform:scale(1); } 40% { transform:scale(0.95); } 100% { transform:scale(1); } }
-  @media (prefers-reduced-motion: no-preference) {
-    .btn-next.is-pulsing { animation:btnNextPulse 0.26s cubic-bezier(0.22, 1, 0.36, 1); }
-  }
-  @keyframes checkPop { from { opacity:0; transform:rotate(45deg) scale(0.55); } to { opacity:1; transform:rotate(45deg) scale(1); } }
-  @keyframes stepQuestionReveal { from { opacity:0; transform:translateY(10px); filter:blur(2px); } to { opacity:1; transform:translateY(0); filter:blur(0); } }
+  @keyframes stepQuestionReveal { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
   @keyframes guidedErrorPulse { 0% { transform:translateY(0); } 42% { transform:translateY(-2px); } 100% { transform:translateY(0); } }
   @keyframes catalogNoteReveal { from { opacity: 0; transform: translateY(14px) scale(0.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
-  @keyframes catalogNoteGlow { 0% { box-shadow:0 0 0 rgba(122,158,126,0); } 45% { box-shadow:0 16px 34px rgba(122,158,126,0.12); } 100% { box-shadow:0 10px 28px rgba(72,59,49,0.04); } }
-  @keyframes catalogNoteIconPop { from { opacity: 0; transform: scale(0.78) rotate(-8deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
-  @keyframes catalogNoteTitleReveal { from { opacity: 0; transform: translateY(12px) scale(0.985); letter-spacing: -0.015em; } 65% { opacity: 1; transform: translateY(-1px) scale(1.003); } to { opacity: 1; transform: translateY(0) scale(1); letter-spacing: 0; } }
-  @keyframes catalogNoteTextReveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes catalogNoteCloseReveal { from { opacity: 0; transform: translateY(-6px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
   @media (prefers-reduced-motion: reduce) {
     .catalog-note,
     .catalog-note.is-awaiting-reveal,
