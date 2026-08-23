@@ -195,7 +195,7 @@
     (results || []).forEach(function(result) {
       var name = result.nom || '';
 
-      if (flags.fortune === 'plus50000') {
+      if (flags.fortune === 'plus15000') {
         if (name.indexOf('Prestations complémentaires') !== -1 || name.indexOf('PC Familles') !== -1) {
           downgradeResult(result, 'Comme tu indiques une fortune importante, cette piste doit être vérifiée avec le calcul officiel avant de la considérer comme probable.');
         }
@@ -545,7 +545,7 @@
       return;
     }
 
-    if ((flags.revenuFaible || (flags.revenuModere && flags.primeElevee)) && flags.fortune === 'plus50000') {
+    if ((flags.revenuFaible || (flags.revenuModere && flags.primeElevee)) && flags.fortune === 'plus15000') {
       res.push(buildResult({
         nom: 'Subside assurance maladie (OVAM)',
         badge: 'verifier',
@@ -628,7 +628,7 @@
       return;
     }
 
-    if (!flags.retraite && flags.revenuFaible && flags.fortune !== 'plus50000') {
+    if (!flags.retraite && flags.revenuFaible && flags.fortune !== 'plus15000') {
       res.push(buildResult({
         nom: 'Revenu d\'insertion (RI)',
         badge: 'verifier',
@@ -707,7 +707,7 @@
       res.push(buildResult({
         nom: 'CarteCulture — Caritas',
         badge: 'verifier',
-        desc: flags.fortune === 'plus50000'
+        desc: flags.fortune === 'plus15000'
           ? 'La CarteCulture peut rester une piste, mais un revenu bas ne suffit pas toujours. Avec une fortune importante, il faut vraiment vérifier les critères exacts.'
           : 'La CarteCulture peut parfois être ouverte avec un revenu modeste, mais il faut vérifier quel justificatif est accepté dans ta situation.',
         action: '1. Regarde les critères officiels de la CarteCulture.\n2. Vérifie surtout quel justificatif est demandé dans ton cas.\n3. Si ce n’est pas clair, contacte Caritas Vaud avant de faire la demande.',

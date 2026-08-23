@@ -83,7 +83,7 @@ const tests = [
       const results = compute({
         sitPro: 'En emploi',
         revenu: '1000-2000',
-        fortune: 'plus50000',
+        fortune: 'plus15000',
         primeLamal: '250-400'
       });
       assert(hasResult(results, 'Subside LAMal', 'verifier'), 'High fortune should make LAMal subsidy a verification, not a probable result');
@@ -96,7 +96,7 @@ const tests = [
       const results = compute({
         sitPro: 'En emploi',
         revenu: '1000-2000',
-        fortune: 'plus50000'
+        fortune: 'plus15000'
       });
       assert(hasResult(results, 'CarteCulture', 'verifier'), 'CarteCulture should stay to verify when low income is paired with high fortune');
       assert(!hasResult(results, 'CarteCulture', 'probable'), 'CarteCulture should not be probable on income alone when high fortune is declared');
@@ -109,7 +109,7 @@ const tests = [
         age: '65plus',
         sitPro: 'Retraité·e (bénéficiaire AVS)',
         revenu: '1000-2000',
-        fortune: 'plus50000',
+        fortune: 'plus15000',
         aidesListe: []
       });
       assert(hasResult(results, 'Prestations complémentaires', 'verifier'), 'High fortune should make PC AVS/AI a verification, not a probable result');
@@ -123,7 +123,7 @@ const tests = [
         sitPro: 'En emploi',
         enfants: 'oui',
         revenu: '1000-2000',
-        fortune: 'plus50000'
+        fortune: 'plus15000'
       });
       assert(hasResult(results, 'PC Familles', 'verifier'), 'High fortune should make PC Familles a verification, not a probable result');
       assert(!hasResult(results, 'PC Familles', 'probable'), 'PC Familles should not be probable when high fortune may affect the official calculation');
@@ -225,7 +225,7 @@ const tests = [
         sitPro: 'En emploi',
         enfants: 'oui',
         revenu: '3500-5000',
-        fortune: 'plus50000'
+        fortune: 'plus15000'
       });
       assert(hasResult(results, 'Allocations familiales', 'probable'), 'Children at charge should suggest family allowances as probable');
       assert(!hasResult(results, 'Allocations familiales', 'confirme'), 'Family allowances should not use confirmed status');
