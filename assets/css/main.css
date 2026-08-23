@@ -146,13 +146,12 @@
   .hero-accent { display:inline; white-space:normal; font-style: normal; font-weight: 800; color: inherit; padding:0; background:none; animation: heroAccentReveal 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes heroLineReveal {
-    from { opacity: 0; transform: translateY(14px); font-weight: 320; }
-    70% { opacity: 1; transform: translateY(-1px); }
-    to { opacity: 1; transform: translateY(0); font-weight: 650; }
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   @keyframes heroAccentReveal {
-    from { opacity: 0.88; transform: translateY(6px); background-size: 0% 100%; font-weight: 500; }
-    to { opacity: 1; transform: translateY(0); background-size: 100% 100%; font-weight: 800; }
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   .btn-primary { background: var(--accent-strong); color: white; min-height:46px; padding: 13px 26px; border-radius:var(--radius-md); text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow:none; }
   .btn-primary:hover { background: #8F4C1B; transform: translateY(-2px); }
