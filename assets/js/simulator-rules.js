@@ -200,16 +200,6 @@ window.MONAIDE_SIMULATION_RULES = [
     sourceType: 'relais associatif'
   },
   {
-    id: 'rupture-apprentissage',
-    title: 'Rupture de formation',
-    intent: 'Ajouter un relais si la formation d’un·e jeune semble se bloquer.',
-    when: 'needsRuptureApprentissage',
-    handler: 'addRuptureApprentissageResult',
-    confidence: 'à vérifier',
-    guardrails: ['Seulement jeune + formation ou situation étudiante.', 'Oriente vers conseil/transition plutôt qu’aide financière directe.'],
-    sourceType: 'orientation formation'
-  },
-  {
     id: 'separation',
     title: 'Séparation',
     intent: 'Trier budget, enfants, logement et pensions quand une séparation est en cours.',

@@ -38,7 +38,6 @@ const allowedWhen = new Set([
   'needsOcbe',
   'needsAi',
   'needsJetService',
-  'needsRuptureApprentissage',
   'needsSeparationSupport',
   'needsProchesAidants',
   'needsProInfirmis',

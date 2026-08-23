@@ -843,20 +843,6 @@
     }));
   }
 
-  function addRuptureApprentissageResult(res, flags) {
-    if (flags.age !== '18-25' || flags.enEmploi || (!flags.enFormation && !flags.etudiant)) return;
-
-    res.push(buildResult({
-      nom: 'Rupture d’apprentissage — premiers relais',
-      badge: 'verifier',
-      desc: 'Si ta formation se bloque, si un apprentissage s’arrête ou si tu n’as plus de solution claire, cette piste peut aider à rebondir plus vite.',
-      action: '1. Demande rapidement un conseil en orientation ou regarde les guichets T1.\n2. Prépare ton contrat d’apprentissage, les courriers de rupture ou les messages importants.\n3. Si la rupture crée un problème de revenu, de dette ou de logement, contacte aussi Jet Service ou le CSR.\n4. Demande quelle option est réaliste : reprise, nouvelle place, semestre de motivation, autre formation.',
-      today: 'Garde cette piste si la suite de ta formation devient floue ou se casse.',
-      docs: ['Contrat d’apprentissage ou documents de formation si tu en as', 'Courriers reçus', 'Questions notées à l’avance'],
-      liensRuptureApprentissage: true
-    }));
-  }
-
   function buildSimulationRuleState(flags, res) {
     return {
       always: true,
@@ -877,7 +863,6 @@
       needsOcbe: (flags.enFormation || flags.etudiant) && !flags.alreadyBourse,
       needsAi: flags.incapacite !== 'non' && !flags.alreadyAI,
       needsJetService: flags.age === '18-25' || flags.enFormation || flags.etudiant,
-      needsRuptureApprentissage: false,
       needsSeparationSupport: flags.separationEnCours === 'oui',
       needsProchesAidants: flags.procheAidant === 'oui',
       needsProInfirmis: flags.invalidite && !flags.retraite,
@@ -915,7 +900,6 @@
       addOcbeResult: function() { addOcbeResult(res, flags); },
       addAiResult: function() { addAiResult(res, flags); },
       addJetServiceResult: function() { addJetServiceResult(res, flags); },
-      addRuptureApprentissageResult: function() { addRuptureApprentissageResult(res, flags); },
       addSeparationResult: function() { addSeparationResult(res, flags); },
       addProchesAidantsResult: function() { addProchesAidantsResult(res); },
       addProInfirmisResult: function() { addProInfirmisResult(res); },

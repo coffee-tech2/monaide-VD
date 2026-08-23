@@ -197,11 +197,6 @@
       liensJetService: [
         { type: 'link', label: 'Voir Jet Service', linkKey: 'JET_SERVICE' },
       ],
-      liensRuptureApprentissage: [
-        { type: 'link', label: 'Guichets régionaux T1', linkKey: 'T1_GUICHETS' },
-        { type: 'link', label: 'Demander un conseil en orientation', linkKey: 'T1_CONTACT' },
-        { type: 'link', label: 'Voir Jet Service', linkKey: 'JET_SERVICE' },
-      ],
       liensProInfirmis: [
         { type: 'link', label: 'Pro Infirmis Vaud', linkKey: 'PRO_INFIRMIS' }
       ],
