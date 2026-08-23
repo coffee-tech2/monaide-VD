@@ -1,3 +1,8 @@
+  var MOBILE_BREAKPOINT = 600;
+  function isMobileViewport() {
+    return window.innerWidth <= MOBILE_BREAKPOINT;
+  }
+
   function setNavSearchState(open) {
     var panel = document.getElementById('nav-search-panel');
     if (panel) panel.classList.toggle('open', open);
@@ -11,7 +16,7 @@
   }
 
   function syncMobileBodyState(isOpen) {
-    document.body.classList.toggle('nav-open', !!isOpen && window.innerWidth <= 600);
+    document.body.classList.toggle('nav-open', !!isOpen && isMobileViewport());
   }
 
   function setMobileNavState(open) {
@@ -29,7 +34,7 @@
   window.toggleAidSearch = function() {
     var panel = document.getElementById('nav-search-panel');
     if (!panel) return;
-    if (window.innerWidth <= 600) {
+    if (isMobileViewport()) {
       setMobileNavState(true);
       setNavSearchState(true);
       setTimeout(function() {
@@ -67,7 +72,7 @@
     if (panel) {
       closeNavSearchPanel();
     }
-    if (window.innerWidth <= 600) {
+    if (isMobileViewport()) {
       setMobileNavState(false);
     }
   };
@@ -269,11 +274,12 @@
   function fitGuideCardTitles() {
     if (!document.body || !document.body.classList.contains('guide-detail-page')) return;
     document.querySelectorAll('.guide-card-title').forEach(function(title) {
+      if (title.closest('.guide-faq-card')) return;
       title.style.fontSize = '';
       title.style.whiteSpace = 'nowrap';
       var computed = window.getComputedStyle(title);
       var size = parseFloat(computed.fontSize) || 18;
-      var minSize = window.innerWidth <= 600 ? 8.5 : 11;
+      var minSize = isMobileViewport() ? 8.5 : 11;
       var guard = 0;
       while (title.scrollWidth > title.clientWidth && size > minSize && guard < 28) {
         size -= 0.75;
@@ -473,7 +479,7 @@
       a.addEventListener('click', function(e) {
         var menu = this.nextElementSibling;
         if (!menu) return;
-        if (window.innerWidth <= 600) {
+        if (isMobileViewport()) {
           e.preventDefault();
           e.stopPropagation();
           var willOpen = !menu.classList.contains('open');
@@ -495,7 +501,7 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeMobileNavDropdowns();
     });
-    if (window.innerWidth <= 600) {
+    if (isMobileViewport()) {
     }
 
     document.querySelectorAll('.nav-links a[href]').forEach(function(a) {
@@ -528,7 +534,7 @@
     });
 
     window.addEventListener('resize', function() {
-      if (window.innerWidth > 600) {
+      if (!isMobileViewport()) {
         closeMobileNavDropdowns();
         syncMobileBodyState(false);
         var nav = document.getElementById('nav-links');
