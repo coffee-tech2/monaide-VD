@@ -32,7 +32,7 @@ window.MONAIDE_SIMULATOR_FOLLOWUPS = [
         'Permis N',
         'Permis G',
         'Autre / sans statut régulier'
-      ].indexOf(profile.permis) !== -1;
+      ].some(function(marker) { return profile.permis.indexOf(marker) !== -1; });
     }
   },
   {
