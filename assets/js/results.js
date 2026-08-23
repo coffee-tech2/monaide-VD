@@ -458,17 +458,14 @@
     var purposeText = getAidPurpose(result.nom);
     var links = buildResultLinksHtml(result);
     var whyHtml = shouldShowWhy(result) ? buildResultDetail(detailTitles.why || 'Pourquoi cette piste apparaît', getWhySummary(result, meta.profile), detailClasses.why || 'is-why', false) : '';
-    var actionHtml = result.action ? buildResultDetail(detailTitles.action || 'Ce que tu peux faire maintenant', '<div style="white-space:pre-line;">' + linkifyPhoneNumbersInHtml(result.action) + '</div>', detailClasses.action || 'is-action', false) : '';
+    var actionHtml = result.action ? buildResultDetail(detailTitles.action || 'Ce que tu peux faire maintenant', '<div style="white-space:pre-line;">' + linkifyPhoneNumbersInHtml(result.action) + '</div>', detailClasses.action || 'is-action', true) : '';
     var docsHtml = result.docs && result.docs.length
       ? buildResultDetail(detailTitles.docs || 'Documents utiles à préparer', '<ul>' + result.docs.map(function(doc) { return '<li>' + doc + '</li>'; }).join('') + '</ul>', detailClasses.docs || 'is-docs', false)
       : '';
     var linksHtml = links
       ? buildResultDetail('Liens utiles', '<div class="result-link-row is-grouped">' + links + '</div>', 'is-links', false)
       : '';
-    var startSummary = getActionSummary(result.action || result.today || '');
-    var startHtml = startSummary
-      ? '<div class="result-start"><span class="result-start-label">' + escapeHtml((RESULTS_UI_CONFIG.summaryTitles || {}).start || 'Par quoi commencer') + '</span><div class="result-start-text">' + escapeHtml(startSummary) + '</div></div>'
-      : '';
+    var startHtml = '';
     var kindHtml = '<div class="result-kind">' + getResultKind(result.nom) + '</div>';
     var followUpHtml = whyHtml + actionHtml + docsHtml + linksHtml;
     var badgeMeta = getResultBadgeMeta(result);
