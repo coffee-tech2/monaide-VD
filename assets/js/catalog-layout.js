@@ -61,7 +61,10 @@
           { id: 'sante-sexuelle-profa', dataCat: 'sante', tier: 'complement' },
           { id: 'l-check', dataCat: 'sante', tier: 'complement' },
           { id: 'voqueer', dataCat: 'sante', tier: 'complement' },
-          { id: 'aide-dentaire', dataCat: 'sante', tier: 'complement' }
+          { id: 'aide-dentaire', dataCat: 'sante', tier: 'complement' },
+          { id: 'frais-maladie-invalidite', dataCat: 'sante', tier: 'complement' },
+          { id: 'aide-financiere-ems', dataCat: 'sante', tier: 'complement' },
+          { id: 'aminh-enfant-handicap', dataCat: 'sante', tier: 'complement' }
         ]
       },
       {
@@ -72,7 +75,8 @@
           { id: 'menace-expulsion', dataCat: 'logement', tier: 'essential' },
           { id: 'asloca', dataCat: 'logement', tier: 'essential' },
           { id: 'aide-logement-familles', dataCat: 'logement', tier: 'known' },
-          { id: 'lup', dataCat: 'logement', tier: 'complement' }
+          { id: 'lup', dataCat: 'logement', tier: 'complement' },
+          { id: 'logements-adaptes-lada', dataCat: 'logement', tier: 'complement' }
         ]
       },
       {
