@@ -560,7 +560,9 @@
   .guide-doc-card { grid-column:1 / -1; align-self:start; }
   .guide-doc-card .guide-card-title { max-width:34ch; }
   .guide-doc-card .guide-list { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; max-width:none; padding-left:0; list-style:none; }
-  .guide-doc-card .guide-list li { break-inside:avoid; margin:0; padding:1rem 1rem 1.02rem; background:var(--accent-soft); border:1px solid var(--accent-border); border-radius:var(--radius-md); line-height:1.62; box-shadow:none; }
+  .guide-doc-card .guide-list li { break-inside:avoid; margin:0; padding:0.85rem 0 0.85rem 1.15rem; position:relative; border-bottom:1px solid var(--border); line-height:1.62; }
+  .guide-doc-card .guide-list li::before { content:''; position:absolute; left:0; top:1.3rem; width:6px; height:6px; border-radius:50%; background:var(--accent); }
+  .guide-doc-card .guide-list li:last-child { border-bottom:0; }
   .guide-doc-card .guide-list li::marker { content:''; }
   .guide-card-label { display:inline-flex; align-items:center; justify-content:center; align-self:flex-start; width:auto; max-width:100%; min-height:0; padding:0 0 0.32rem; border-radius:0; background:transparent; border:0; border-bottom:1px solid rgba(217,122,40,0.5); color:#6B3508; font-size:0.7rem; font-weight:800; letter-spacing:0.095em; text-transform:uppercase; margin-bottom:0.95rem; line-height:1.1; box-shadow:none; }
   .guide-card-label.is-human,
@@ -682,7 +684,9 @@
   .guide-detail-page .guide-support-card .guide-card-title { max-width:100%; font-size:1.16rem; }
   .guide-detail-page .guide-doc-card { padding:1.45rem 1.4rem 1.2rem; }
   .guide-detail-page .guide-doc-card .guide-list { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0.8rem; margin-top:0.9rem; }
-  .guide-detail-page .guide-doc-card .guide-list li { padding:1rem 1rem 0.96rem; background:#FFFFFF; border:1px solid var(--accent-border); border-left:3px solid var(--accent); border-radius:var(--radius-md); font-size:0.95rem; box-shadow:none; }
+  .guide-detail-page .guide-doc-card .guide-list li { padding:0.85rem 0 0.85rem 1.15rem; position:relative; border-bottom:1px solid var(--border); font-size:0.95rem; }
+  .guide-detail-page .guide-doc-card .guide-list li::before { content:''; position:absolute; left:0; top:1.3rem; width:6px; height:6px; border-radius:50%; background:var(--accent); }
+  .guide-detail-page .guide-doc-card .guide-list li:last-child { border-bottom:0; }
   .guide-detail-page .guide-faq-section { margin-top:2.4rem; padding-top:2.65rem; border-top:1px solid rgba(218,204,188,0.78); }
   .guide-faq-heading { margin-bottom:1.25rem; }
   .guide-faq-heading .section-title { margin-bottom:0; color:var(--forest); }
@@ -719,12 +723,6 @@
   }
   .guide-detail-page .guide-card-title {
     color:var(--forest);
-  }
-  .guide-detail-page .guide-doc-card .guide-list li {
-    border-radius:var(--radius-md);
-    background:#FFFFFF;
-    border-color:var(--accent-border);
-    box-shadow:none;
   }
   .guide-detail-page .guide-faq-section {
     border-top-color:var(--accent-border);
@@ -788,11 +786,6 @@
     box-shadow:none;
     background:var(--accent-light);
     border-color:#D4722A;
-  }
-  .guide-detail-page .guide-doc-card .guide-list li {
-    border-radius:var(--radius-sm);
-    border-left:1px solid #d7c7ae;
-    background:#FFFFFF;
   }
   .guide-detail-page .guide-practical-section .section-tag {
     border-radius:0;
