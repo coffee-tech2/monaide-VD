@@ -50,7 +50,6 @@
       if (matchesResultPatterns(name, ['bourses', 'ocbe'])) return 0;
       if (matchesResultPatterns(name, ['jet service'])) return 1;
       if (matchesResultPatterns(name, ['subside lamal'])) return 6;
-      if (matchesResultPatterns(name, ['rupture d apprentissage', 'guichet t1'])) return 35;
     }
     var sansRevenuEtSansEmploi = !!(context && context.sansRevenuEtSansEmploi);
     if (sansRevenuEtSansEmploi) {
@@ -195,14 +194,9 @@
       reasons.push('Car tu es en formation et entre 18 et 25 ans : une bourse OCBE peut parfois aider à couvrir une partie des frais de formation.');
     } else if (jeuneEnFormation && matchesResultPatterns(name, ['jet service'])) {
       reasons.push('Car Jet Service aide les jeunes en formation à faire le point sur les bourses, le budget, le travail ou les démarches qui deviennent floues.');
-    } else if (profile.age === '18-25' && matchesResultPatterns(name, ['rupture d apprentissage'])) {
-      reasons.push('Car tu as entre 18 et 25 ans.');
     }
     if (profile.age === '65plus' && matchesResultPatterns(name, ['prestations complementaires', 'pro senectute', 'aas'])) {
       reasons.push('Car tu indiques être à l’âge AVS.');
-    }
-    if (enFormation && matchesResultPatterns(name, ['rupture d apprentissage'])) {
-      reasons.push('Car tu indiques être en formation.');
     }
     if (jeuneEnFormation && matchesResultPatterns(name, ['subside lamal'])) {
       reasons.push('Car en formation, la prime maladie peut vite peser lourd dans le budget : le subside LAMal sert à vérifier si elle peut être réduite.');

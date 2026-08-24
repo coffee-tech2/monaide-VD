@@ -326,14 +326,13 @@
       { patterns: ['assurance chomage'], text: 'Cette aide sert à couvrir une perte d’emploi si les conditions de chômage sont remplies après examen du dossier.' },
       { patterns: ['bourses', 'ocbe'], text: 'Cette aide sert à soutenir une formation quand les ressources du ménage ne suffisent pas, après examen du dossier.' },
       { patterns: ['jet service'], text: 'Ce service sert à aider à comprendre ou remplir certaines démarches de formation ou de budget.' },
-      { patterns: ['rupture d apprentissage', 'guichet t1'], text: 'Ce service sert à retrouver une solution de formation ou d’orientation quand le parcours se bloque.' },
       { patterns: ['carteculture', 'passculture'], text: 'Cette aide sert à rendre la culture, les loisirs ou certaines sorties plus accessibles.' },
       { patterns: ['parlons cash', 'brapa'], text: 'Cette piste sert à débloquer une situation financière ou des démarches liées à des dettes ou à des pensions.' },
       { patterns: ['evam', 'fraternite', 'appartenances', 'aide d urgence'], text: 'Cette orientation sert à clarifier les droits de base, le séjour, l’asile ou les bons relais selon la situation.' },
       { patterns: ['lavi', 'malleyprairie', 'lignes d ecoute', 'le passage', 'violences conjugales'], text: 'Cette orientation sert à apporter un soutien rapide, humain ou sécurisant dans une situation difficile ou urgente.' }
     ],
     kindRules: [
-      { patterns: ['centre social regional', 'aas', 'vaud pour vous', 'jet service', 'rupture d apprentissage', 'guichet t1'], value: 'Service d’orientation' },
+      { patterns: ['centre social regional', 'aas', 'vaud pour vous', 'jet service'], value: 'Service d’orientation' },
       { patterns: ['parlons cash', 'pro infirmis', 'pro senectute', 'appartenances', 'fraternite', 'csp vaud'], value: 'Ressource complémentaire' },
       { patterns: ['prestations communales', 'aide alimentaire par region', 'garde d enfants malades'], value: 'Ressource complémentaire' },
       { patterns: ['pc familles'], value: 'Aide ou piste possible' },
@@ -358,7 +357,6 @@
       { patterns: ['allocations familiales'], priority: 10 },
       { patterns: ['bourses', 'ocbe'], priority: 12 },
       { patterns: ['jet service'], priority: 16 },
-      { patterns: ['rupture d apprentissage', 'guichet t1'], priority: 17 },
       { patterns: ['separation', 'divorce'], priority: 13 },
       { patterns: ['prestations communales'], priority: 18 },
       { patterns: ['garde d enfants malades'], priority: 19 },
