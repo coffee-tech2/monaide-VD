@@ -240,6 +240,16 @@ window.MONAIDE_GUIDE_DATA = {
       ctaLabel: 'Ouvrir le guide',
       audience: ['logement'],
       keywords: ['aide logement Vaud', 'simulation logement', 'loyer trop lourd', 'résiliation bail', 'ASLOCA']
+    },
+    {
+      id: 'carteculture',
+      label: 'Culture',
+      title: 'CarteCulture dans le canton de Vaud',
+      summary: 'Comprendre à quoi sert la CarteCulture, quand elle peut être utile et quels justificatifs peuvent être demandés.',
+      href: '/carteculture/',
+      ctaLabel: 'Ouvrir le guide',
+      audience: ['budget'],
+      keywords: ['CarteCulture', 'réductions', 'culture', 'loisirs', 'Vaud']
     }
   ]
 };
@@ -283,7 +293,8 @@ window.MONAIDE_GUIDE_DATA = {
     'repit-proches-aidants': 'assurance-invalidite',
     'rupture-apprentissage': 'aide-formation-vaud',
     'separation-divorce': 'separation-vaud',
-    'subside-lamal': 'subside-lamal'
+    'subside-lamal': 'subside-lamal',
+    carte: 'carteculture'
   };
 
   function getGuideById(id) {
