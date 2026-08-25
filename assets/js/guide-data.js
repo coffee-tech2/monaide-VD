@@ -294,7 +294,10 @@ window.MONAIDE_GUIDE_DATA = {
     'rupture-apprentissage': 'aide-formation-vaud',
     'separation-divorce': 'separation-vaud',
     'subside-lamal': 'subside-lamal',
-    carte: 'carteculture'
+    carte: 'carteculture',
+    'rente-pont': 'retraite-vaud',
+    'addiction-vaud': 'addiction-sante-mentale-vaud',
+    'sante-mentale-relais': 'addiction-sante-mentale-vaud'
   };
 
   function getGuideById(id) {
