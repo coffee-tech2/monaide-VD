@@ -290,7 +290,6 @@ window.MONAIDE_GUIDE_DATA = {
     'prestations-complementaires': 'prestations-complementaires',
     'pro-infirmis': 'assurance-invalidite',
     'pro-senectute': 'prestations-complementaires',
-    'repit-proches-aidants': 'assurance-invalidite',
     'rupture-apprentissage': 'aide-formation-vaud',
     'separation-divorce': 'separation-vaud',
     'subside-lamal': 'subside-lamal',
