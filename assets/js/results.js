@@ -562,13 +562,14 @@
   }
 
   function buildLatestSimulation(profile, results, topActions, docList) {
+    var summary = profile.summary || {};
     return {
       profile: {
         commune: profile.commune,
-        age: profile.age,
-        situation: profile.sitPro,
-        logement: profile.logement,
-        revenu: profile.revenu
+        age: summary.age || profile.age,
+        situation: summary.travail || profile.sitPro,
+        logement: summary.logement || profile.logement,
+        revenu: summary.revenu || profile.revenu
       },
       results: results.map(function(item) {
         return {
