@@ -492,7 +492,7 @@
       badge: flags.revenu === 'aucun' ? 'probable' : 'verifier',
       desc: 'Si le budget ne suffit plus pour manger correctement, il existe des distributions, épiceries sociales ou relais alimentaires à chercher près de chez toi.',
       action: '1. Cherche d’abord une distribution ou épicerie sociale proche de ta commune.\n2. Vérifie les horaires, les conditions d’accès et s’il faut une attestation.\n3. Si tu n’as plus assez pour manger régulièrement, contacte aussi le CSR ou une permanence sociale.\n4. Garde cette piste comme aide immédiate, mais traite en parallèle la cause du manque de revenu.',
-      docs: ['Pièce d’identité si demandée', 'Attestation sociale si disponible', 'Sac/cabas et horaires du lieu choisi'],
+      docs: ['Pièce d’identité', 'Attestation sociale si disponible', 'Sac/cabas et horaires du lieu choisi'],
       today: 'Utilise cette piste surtout si la nourriture devient une difficulté immédiate.',
       liensAideAlimentaire: true
     }));
@@ -646,7 +646,7 @@
           ? '1. Contacte le CSR pour un entretien d’évaluation.\n2. Demande clairement si ton statut de séjour change la marche à suivre.\n3. Ajoute une permanence migration si le CSR te le conseille ou si tu reçois des informations contradictoires.'
           : '1. Contacte le CSR de ta commune pour demander un entretien d’évaluation.\n2. Prépare tes relevés de compte, ton bail et tes justificatifs de revenus.\n3. Si tu ne sais pas quoi préparer, demande simplement une liste de documents avant le rendez-vous.',
         today: 'Demande un entretien d’évaluation et annonce clairement tes revenus, ton loyer et ta situation familiale.',
-        docs: ['Relevés de compte', 'Taxation ou attestations de fortune', 'Bail ou charges du ménage'],
+        docs: ['Relevés de compte', 'Taxation ou attestations de fortune', 'Bail et charges du ménage'],
         lienRI: true,
         liensCadreSejour: flags.permisF
       }));
