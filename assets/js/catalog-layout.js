@@ -1,13 +1,10 @@
   window.MONAIDE_CATALOG_LAYOUT_DATA = {
     groups: [
       {
-        id: 'groupe-revenus',
-        title: 'Familles, revenus & aides financières',
-        subtitle: 'RI, aides familles, pensions, dettes et budget',
+        id: 'groupe-famille',
+        title: 'Famille & enfants',
+        subtitle: 'Allocations, garde, séparation et pension alimentaire',
         items: [
-          { id: 'csr', dataCat: 'financier', tier: 'essential' },
-          { id: 'ri', dataCat: 'financier', tier: 'essential' },
-          { id: 'prestations-communales', dataCat: 'financier', tier: 'essential' },
           { id: 'allocations-familiales', dataCat: 'financier', tier: 'essential' },
           { id: 'apg', dataCat: 'financier', tier: 'known' },
           { id: 'pc-familles', dataCat: 'financier', tier: 'known' },
@@ -15,7 +12,17 @@
           { id: 'brapa', dataCat: 'financier', tier: 'known' },
           { id: 'separation-divorce', dataCat: 'financier', tier: 'known' },
           { id: 'accueil-jour-enfants', dataCat: 'financier', tier: 'known' },
-          { id: 'garde-enfants-malades', dataCat: 'financier', tier: 'known' },
+          { id: 'garde-enfants-malades', dataCat: 'financier', tier: 'known' }
+        ]
+      },
+      {
+        id: 'groupe-revenus',
+        title: 'Revenu, budget & aide sociale',
+        subtitle: 'RI, dettes, budget et permanences sociales',
+        items: [
+          { id: 'csr', dataCat: 'financier', tier: 'essential' },
+          { id: 'ri', dataCat: 'financier', tier: 'essential' },
+          { id: 'prestations-communales', dataCat: 'financier', tier: 'essential' },
           { id: 'parlons-cash', dataCat: 'financier', tier: 'complement' },
           { id: 'unafin-lausanne', dataCat: 'financier', tier: 'complement' },
           { id: 'bcma', dataCat: 'financier', tier: 'complement' },
