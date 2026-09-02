@@ -241,6 +241,27 @@
     return reasons;
   }
 
+  function combineReasons(reasons) {
+    if (!reasons || !reasons.length) return '';
+    var simple = [];
+    var complex = [];
+    reasons.forEach(function(reason) {
+      if (reason.indexOf(':') !== -1) {
+        complex.push(reason);
+      } else {
+        simple.push(reason.replace(/^Car\s+/, '').replace(/\.\s*$/, ''));
+      }
+    });
+    var parts = [];
+    if (simple.length === 1) {
+      parts.push('Car ' + simple[0] + '.');
+    } else if (simple.length > 1) {
+      var last = simple.pop();
+      parts.push('Car ' + simple.join(', ') + ' et ' + last + '.');
+    }
+    return parts.concat(complex).join(' ');
+  }
+
   function getWhySummary(result, profile) {
     if (!result) return '';
     var raw = String(result.why || result.desc || '')
@@ -254,7 +275,7 @@
     if (reasons.length && matchesResultPatterns(result.nom || '', ['jet service'])) {
       sentence = sentence.replace(/^Comme tu as entre 18 et 25 ans(?: et que tu es en formation)?,\s*/i, '');
     }
-    return reasons.concat(sentence).filter(Boolean).join(' ');
+    return [combineReasons(reasons), sentence].filter(Boolean).join(' ');
   }
 
   function getResultLinkClass(label) {
