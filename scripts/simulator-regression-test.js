@@ -765,6 +765,32 @@ const scenarios = [
       assert(proSenectuteIndex !== -1 && proSenectuteIndex < lamalIndex, 'Pro Senectute should come before LAMal for retired profiles');
       assert(riIndex === -1, 'RI should not be proposed as a simulator result for retired profiles');
     }
+  },
+  {
+    name: 'Rente-pont reste probable pour une fortune réellement basse',
+    run() {
+      const results = runProfile({
+        age: '65plus',
+        sitPro: 'Au chômage',
+        fortune: '8000-15000'
+      });
+      const rentePontIndex = indexOfResult(results, 'Rente-pont');
+      assert(rentePontIndex !== -1, 'Rente-pont should be proposed for an unemployed 65+ profile');
+      assert(results[rentePontIndex].badge === 'probable', 'Rente-pont should stay "probable" when fortune is genuinely low (8000-15000 CHF)');
+    }
+  },
+  {
+    name: 'Rente-pont rétrogradée en "à vérifier" quand la fortune dépasse 15\'000 CHF',
+    run() {
+      const results = runProfile({
+        age: '65plus',
+        sitPro: 'Au chômage',
+        fortune: 'plus15000'
+      });
+      const rentePontIndex = indexOfResult(results, 'Rente-pont');
+      assert(rentePontIndex !== -1, 'Rente-pont should still be proposed (as a track to double-check) for an unemployed 65+ profile with a high fortune bracket');
+      assert(results[rentePontIndex].badge === 'verifier', 'Rente-pont must be downgraded to "verifier" when fortune is "plus15000" — that bracket is open-ended and may well exceed the real ceiling');
+    }
   }
 ];
 

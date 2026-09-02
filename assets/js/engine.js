@@ -135,7 +135,11 @@
       alreadyChomage: aidesListe.includes('chomage'),
       age60plus: age === '60-64' || age === '65plus',
       fortFaible: fortune === 'moins4000',
-      fortSous50000: ['4000-8000', '8000-15000', '15000-30000', '30000-50000', 'plus15000'].indexOf(fortune) !== -1,
+      // Le formulaire ne propose que 4 tranches (moins4000, 4000-8000, 8000-15000, plus15000).
+      // 'plus15000' est une tranche ouverte (peut être 16'000 comme 300'000 CHF) : elle ne doit
+      // jamais être traitée comme "fortune sous 50'000" — c'est applySimulationGuardrails qui
+      // gère ce cas en rétrogradant les pistes à plafond de fortune (PC, PC Familles, rente-pont).
+      fortSous50000: ['4000-8000', '8000-15000'].indexOf(fortune) !== -1,
       loyerEleve: loyer === '1200-1800' || loyer === 'plus1800',
       primeElevee: primeLamal === '250-400' || primeLamal === 'plus400',
       urgenceActive: dettes === 'loyer' || logement.includes('Sans logement fixe'),
@@ -198,6 +202,9 @@
       if (flags.fortune === 'plus15000') {
         if (name.indexOf('Prestations complémentaires') !== -1 || name.indexOf('PC Familles') !== -1) {
           downgradeResult(result, 'Comme tu indiques une fortune importante, cette piste doit être vérifiée avec le calcul officiel avant de la considérer comme probable.');
+        }
+        if (name.indexOf('Rente-pont') !== -1) {
+          downgradeResult(result, 'La rente-pont a un plafond de fortune strict : avec une fortune importante, cette piste doit être vérifiée avec le calcul officiel avant de la considérer comme probable.');
         }
       }
 
@@ -749,7 +756,10 @@
   }
 
   function addRentePontResult(res, flags) {
-    if (flags.age60plus && flags.chomage && (flags.fortFaible || flags.fortSous50000)) {
+    // Pas de filtre sur la fortune ici : la rente-pont a un vrai plafond de fortune, mais
+    // c'est applySimulationGuardrails qui rétrograde la piste en "à vérifier" si la fortune
+    // dépasse 15'000 CHF (même logique que pour les PC / PC Familles plus bas dans ce fichier).
+    if (flags.age60plus && flags.chomage) {
       res.push(buildResult({
         nom: 'Rente-pont AVS — l\'aide la plus méconnue',
         badge: 'probable',
