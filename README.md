@@ -19,6 +19,12 @@ node scripts/run-quality-suite.js
 
 Ce script vérifie les points sensibles du site: catalogue, guides, métadonnées SEO, sitemap, simulateur, tracking analytics et erreurs de diff.
 
+Vérification séparée des liens externes (pas dans la suite ci-dessus car elle fait de vraies requêtes réseau — lent et dépendant de sites tiers). À lancer périodiquement, pas à chaque commit:
+
+```bash
+node scripts/check-external-links.js
+```
+
 ## Suivi du trafic
 
 Le site utilise Google Tag Manager avec le conteneur `GTM-NFQRW574`.
