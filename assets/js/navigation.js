@@ -469,10 +469,6 @@
       });
     }
 
-    document.querySelectorAll('a[href="https://www.vd.ch/prestation/contacter-un-centre-social-regional-csr"]').forEach(function(link) {
-      link.setAttribute('href', CSR_FINDER_URL);
-    });
-
     document.querySelectorAll('.nav-dropdown > a').forEach(function(a) {
       a.setAttribute('aria-haspopup', 'true');
       a.setAttribute('aria-expanded', 'false');
