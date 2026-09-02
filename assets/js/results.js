@@ -525,21 +525,6 @@
     return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).start || 'Par quoi commencer', bodyHtml, Math.min(resultCount, 8), 'margin-top:0.25rem;');
   }
 
-  function buildResultsNextStepBanner(primaryResult) {
-    if (!primaryResult || !primaryResult.nom) return '';
-    var guideLink = getGuideLinkForResult(primaryResult);
-    var guideHtml = guideLink && guideLink.href
-      ? '<a href="' + escapeHtml(guideLink.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(primaryResult.nom || '') + '">Guide détaillé →</a>'
-      : '';
-    return '<div class="results-next-step result-reveal">'
-      + '<div><div class="results-next-step-title">Suite logique</div>'
-      + '<p class="results-next-step-text">Commence par la première piste, puis ouvre sa fiche du répertoire. Si tu veux creuser, passe ensuite au guide détaillé.</p></div>'
-      + '<div class="results-next-step-actions">'
-      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(primaryResult.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_next_step\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche du répertoire →</button>'
-      + guideHtml
-      + '</div></div>';
-  }
-
   function buildDocsBanner(docList, resultCount) {
     return '';
   }
@@ -619,11 +604,8 @@
       return !isSecondaryResult(item.nom || '');
     });
     var primaryFocusAssigned = false;
-    var primaryResult = res.find(function(item) {
-      return item && !isSecondaryResult(item.nom || '');
-    }) || res[0];
 
-    list.innerHTML = '<div class="results-count-label">' + res.length + ' piste' + (res.length > 1 ? 's' : '') + ' identifiée' + (res.length > 1 ? 's' : '') + '</div>' + buildResultsNextStepBanner(primaryResult);
+    list.innerHTML = '<div class="results-count-label">' + res.length + ' piste' + (res.length > 1 ? 's' : '') + ' identifiée' + (res.length > 1 ? 's' : '') + '</div>';
 
     res.forEach(function(r, index) {
       var secondary = isSecondaryResult(r.nom || '');
