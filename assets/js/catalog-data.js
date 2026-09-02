@@ -1257,7 +1257,7 @@
         'Préparer les pièces de fin de contrat',
         'Vérifier ensuite les indemnités avec la caisse chômage'
       ],
-      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois durant les 2 dernières années, ou si tu es libéré·e des conditions de cotisation dans certains cas (par exemple études, maladie ou autre motif reconnu), puis si les autres conditions sont remplies. L’inscription à l’ORP doit se faire rapidement.',
+      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois sur les 2 dernières années — ou si tu es libéré·e de cette condition (études, maladie, autre motif reconnu). L’inscription à l’ORP doit se faire rapidement.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'ORP pour le suivi, caisse de chômage pour les indemnités',
       sections: [
@@ -2212,7 +2212,7 @@
         'Contacter le CMS si la personne aidée vit à domicile ou a besoin d’une carte d’urgence',
         'Regarder les aides financières et congés si tu as réduit ton travail ou si la charge impacte ton revenu'
       ],
-      bodyIntro: 'Quand on aide régulièrement un proche, le plus dur est souvent de tenir dans la durée. Dans le canton de Vaud, il existe des relais très concrets : conseil gratuit, carte d’urgence, relève à domicile, consultation psychologique, congés et certaines aides financières.',
+      bodyIntro: 'Quand on aide régulièrement un proche, le plus dur est souvent de tenir dans la durée. Dans le canton de Vaud, plusieurs relais concrets existent pour souffler un peu.',
       sections: [
         {
           title: 'Quand cette piste est utile',
@@ -3209,7 +3209,7 @@
         'Compter un délai d’une à quatre semaines avant le premier rendez-vous',
         'Rassembler les factures, rappels et commandements de payer déjà reçus'
       ],
-      bodyIntro: 'Si tes dettes s’accumulent depuis longtemps et que tu habites ou travailles à Lausanne, Unafin va plus loin qu’un simple conseil ponctuel : c’est un accompagnement complet pour comprendre d’où viennent les dettes, construire un vrai budget et sortir du surendettement pas à pas.',
+      bodyIntro: 'Si tu habites ou travailles à Lausanne et que tes dettes s’accumulent depuis longtemps, Unafin propose un accompagnement complet — comprendre d’où viennent les dettes, construire un budget réaliste, et sortir du surendettement pas à pas.',
       reviewedAt: '20 août 2026',
       decisionBy: 'Unafin (Ville de Lausanne), après le premier entretien',
       sections: [
