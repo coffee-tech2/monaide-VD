@@ -581,9 +581,9 @@
       'bourses d etudes ocbe'
     ],
     contactPromptPhoneMap: {
-      'Parlons Cash — dettes et surendettement': '021 560 60 60',
+      'Parlons Cash — dettes et surendettement': '0840 43 21 00',
       'BRAPA — avances sur pensions alimentaires': '021 316 52 21',
-      'Distributions alimentaires — canton de Vaud': '0800 30 30 38'
+      'Distributions alimentaires — Canton de Vaud': '0800 30 30 38'
     },
     normalizedLabelRules: [
       { hrefLinkKeys: ['AAS_LIST'], hrefIncludesList: ['/trouver-une-agence-dassurance-sociale-aas/'], label: 'Trouver une agence AAS' },

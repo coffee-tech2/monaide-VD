@@ -686,7 +686,7 @@
         {
           title: 'Démarche',
           items: [
-            'Appeler le 021 321 02 00',
+            'Appeler le 058 775 34 34',
             'Lausanne, Nyon, Yverdon et Vevey',
             'Urgences possibles sans rendez-vous selon les situations'
           ]
@@ -1450,7 +1450,7 @@
           items: [
             'Lausanne, Renens, Vevey, Nyon, Yverdon, Payerne, Orbe',
             'Sans rendez-vous — format collectif',
-            '021 560 60 60 pour plus d’infos',
+            '021 560 60 98 pour plus d’infos',
             'Gratuit et confidentiel'
           ]
         }
@@ -2050,7 +2050,7 @@
         {
           title: 'Démarche',
           items: [
-            'Appeler le 021 646 17 21',
+            'Appeler le 021 323 04 23',
             'Permanences dans tout le canton',
             'Accueil de jour dans plusieurs communes'
           ]

@@ -354,7 +354,7 @@
       nom: 'Pro Infirmis Vaud — accompagnement gratuit',
       badge: 'verifier',
       desc: 'Tu as un handicap ou une maladie chronique ? Pro Infirmis peut t\'accompagner gratuitement dans toutes tes démarches : AI, logement, emploi, droits.',
-      action: '1. Contacte Pro Infirmis Vaud : ☏ 021 321 02 00.\n2. Explique en une phrase ce qui bloque : AI, logement, travail, budget, mobilité ou démarches administratives.\n3. Prépare les courriers AI/médicaux si tu en as déjà.\n4. Si la situation est urgente, demande une permanence ou le lieu le plus proche.',
+      action: '1. Contacte Pro Infirmis Vaud : ☏ 058 775 34 34.\n2. Explique en une phrase ce qui bloque : AI, logement, travail, budget, mobilité ou démarches administratives.\n3. Prépare les courriers AI/médicaux si tu en as déjà.\n4. Si la situation est urgente, demande une permanence ou le lieu le plus proche.',
       docs: ['Courriers AI ou médicaux si disponibles', 'Pièce d’identité', 'Questions principales notées à l’avance'],
       today: 'Très utile si tu te sens perdu·e dans les démarches AI, logement ou emploi.',
       liensProInfirmis: true
@@ -366,7 +366,7 @@
       nom: 'Pro Senectute Vaud — conseil gratuit pour les 60+',
       badge: 'verifier',
       desc: 'Aide administrative, déclaration d\'impôts, questions AVS ou PC, accompagnement social : une bonne porte si les démarches deviennent lourdes.',
-      action: '1. Contacte Pro Senectute Vaud : ☏ 021 646 17 21.\n2. Demande un conseil social si les démarches AVS, PC, impôts ou budget deviennent difficiles.\n3. Prépare les décisions AVS/PC, bail, primes maladie et courriers récents.\n4. Si tu aides un proche âgé, demande aussi les possibilités de soutien et de relève.',
+      action: '1. Contacte Pro Senectute Vaud (service social) : ☏ 021 323 04 23.\n2. Demande un conseil social si les démarches AVS, PC, impôts ou budget deviennent difficiles.\n3. Prépare les décisions AVS/PC, bail, primes maladie et courriers récents.\n4. Si tu aides un proche âgé, demande aussi les possibilités de soutien et de relève.',
       docs: ['Décision AVS ou PC', 'Bail et primes maladie', 'Courriers administratifs récents'],
       today: 'Appelle si tu as 60+ et que les démarches AVS/PC deviennent difficiles à gérer seul·e.',
       liensSenectute: true
@@ -378,7 +378,7 @@
       nom: 'CMS — Soins et aide à domicile',
       badge: 'verifier',
       desc: 'Les CMS peuvent aider pour les soins, le maintien à domicile ou certaines aides du quotidien. Le financement dépend ensuite de la prestation et de la couverture.',
-      action: '1. Si le besoin est médical, parle d’abord à ton médecin pour une prescription.\n2. Tu peux aussi contacter l’AVASAD / réseau CMS Vaud : 0800 820 830.\n3. Explique ce qui devient difficile à domicile : soins, toilette, repas, ménage, sécurité, mobilité.\n4. Demande quelles prestations sont évaluées et comment elles sont financées.',
+      action: '1. Si le besoin est médical, parle d’abord à ton médecin pour une prescription.\n2. Tu peux aussi contacter l’AVASAD / réseau CMS Vaud : 0848 822 822.\n3. Explique ce qui devient difficile à domicile : soins, toilette, repas, ménage, sécurité, mobilité.\n4. Demande quelles prestations sont évaluées et comment elles sont financées.',
       docs: ['Ordonnance ou certificat médical si disponible', 'Carte d’assurance maladie', 'Liste des besoins à domicile'],
       today: 'À prioriser si le maintien à domicile devient compliqué.',
       liensCMS: true
