@@ -607,7 +607,18 @@
     });
     var primaryFocusAssigned = false;
 
-    list.innerHTML = '<div class="results-count-label">' + res.length + ' piste' + (res.length > 1 ? 's' : '') + ' identifiée' + (res.length > 1 ? 's' : '') + '</div>';
+    var probableCount = res.filter(function(item) { return item.badge === 'probable'; }).length;
+    var verifierCount = res.length - probableCount;
+    var summaryParts = [];
+    if (probableCount) summaryParts.push(probableCount + ' probable' + (probableCount > 1 ? 's' : ''));
+    if (verifierCount) summaryParts.push(verifierCount + ' à vérifier');
+    var countLabel = res.length + ' piste' + (res.length > 1 ? 's' : '') + ' identifiée' + (res.length > 1 ? 's' : '');
+    list.innerHTML = '<div class="results-count-label">' + countLabel + '</div>'
+      + (summaryParts.length ? '<div class="results-summary-line">' + summaryParts.join(' · ') + '</div>' : '');
+
+    var FOLD_AFTER = 2;
+    var visibleCardsHtml = '';
+    var foldedCardsHtml = '';
 
     res.forEach(function(r, index) {
       var secondary = isSecondaryResult(r.nom || '');
@@ -621,13 +632,25 @@
           docsMap[doc] = true;
         });
       }
-      list.innerHTML += renderResultCard(r, index, {
+      var cardHtml = renderResultCard(r, index, {
         isPrimaryFocus: primaryFocus,
         isSecondary: secondary,
         rankLabel: '',
         profile: profile
       });
+      if (index < FOLD_AFTER) {
+        visibleCardsHtml += cardHtml;
+      } else {
+        foldedCardsHtml += cardHtml;
+      }
     });
+
+    list.innerHTML += visibleCardsHtml;
+    if (foldedCardsHtml) {
+      var foldedCount = res.length - FOLD_AFTER;
+      list.innerHTML += '<button type="button" class="results-fold-toggle" id="results-fold-toggle" data-count="' + foldedCount + '" aria-expanded="false" aria-controls="results-folded" onclick="toggleFoldedResults()">Voir les ' + foldedCount + ' autre' + (foldedCount > 1 ? 's' : '') + ' piste' + (foldedCount > 1 ? 's' : '') + ' →</button>'
+        + '<div id="results-folded" hidden>' + foldedCardsHtml + '</div>';
+    }
 
     var docList = Object.keys(docsMap).slice(0, 8);
     if (docList.length) {
@@ -658,6 +681,22 @@
       if (el) el.style.display = 'none';
     }
     revealResultsPane();
+  }
+
+  window.toggleFoldedResults = function() {
+    var folded = document.getElementById('results-folded');
+    var toggle = document.getElementById('results-fold-toggle');
+    if (!folded || !toggle) return;
+    var willOpen = !!folded.hidden;
+    folded.hidden = !willOpen;
+    toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    var n = parseInt(toggle.getAttribute('data-count'), 10) || 0;
+    toggle.textContent = willOpen
+      ? 'Voir moins ↑'
+      : 'Voir les ' + n + ' autre' + (n > 1 ? 's' : '') + ' piste' + (n > 1 ? 's' : '') + ' →';
+    if (willOpen && window.trackMonaideEvent) {
+      trackMonaideEvent('results_fold_expand', { count: n });
+    }
   }
 
   // ─── Simulateur : cerveau ────────────────────────────────────────────────
