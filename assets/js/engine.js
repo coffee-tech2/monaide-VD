@@ -836,9 +836,9 @@
       nom: 'CSP Jet Service — service social jeunes',
       badge: 'probable',
       desc: jeune && formation
-        ? 'Comme tu as entre 18 et 25 ans et que tu es en formation, Jet Service est une très bonne porte d’entrée pour faire le point sur les bourses, le budget, le travail ou d’autres démarches sociales.'
+        ? 'Jet Service (16-25 ans) est une très bonne porte d’entrée pour faire le point sur les bourses, le budget, le travail ou d’autres démarches sociales.'
         : jeune
-        ? 'Comme tu as entre 18 et 25 ans, Jet Service peut être une porte d’entrée très utile pour faire le point sur tes droits, ton budget, le travail ou des démarches compliquées.'
+        ? 'Jet Service s’adresse aux 16-25 ans et peut être une porte d’entrée très utile pour faire le point sur tes droits, ton budget, le travail ou des démarches compliquées.'
         : 'Comme tu es en formation, Jet Service peut t’aider à faire le point sur les bourses, le budget, le travail ou d’autres démarches sociales liées à ta situation.'
       ,
       action: jeune && formation
