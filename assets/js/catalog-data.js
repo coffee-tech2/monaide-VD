@@ -1406,7 +1406,7 @@
         {
           title: 'Démarche',
           items: [
-            'Appeler le 021 341 12 40',
+            'Appeler le 021 341 12 50',
             'Lausanne et antennes dans le canton',
             'Urgences possibles selon les situations'
           ]
@@ -1773,7 +1773,7 @@
           title: 'Pratique',
           items: [
             'Rue Beau-Séjour 9-13, 1003 Lausanne',
-            '021 340 00 99',
+            '021 340 00 70',
             'Présence dans tout le canton',
             'Biens de première nécessité possibles selon les situations'
           ]
