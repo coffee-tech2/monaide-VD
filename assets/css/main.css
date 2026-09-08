@@ -357,9 +357,9 @@
   .result-desc { font-size: 0.84rem; color: var(--warm-gray); line-height: 1.62; text-align: left; }
   .result-card-accordion { border-top:1px solid #F0EDE6; }
   .result-detail { margin:0; border:0; border-bottom:1px solid #E7E9ED; border-radius:0; background:#FFFFFF; overflow:hidden; box-shadow:none; }
-  .result-detail.is-action[open] summary { background:#F0EDE6; }
   .result-detail summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:1rem; cursor:pointer; padding:0.92rem 1.35rem; user-select:none; -webkit-user-select:none; position:relative; background:#FFFFFF; transition:background 0.18s ease; }
-  .result-detail summary:hover { background:#F7F8F4; }
+  .result-detail summary:hover { background:#F3F4F6; }
+  .result-detail[open] summary { background:#F3F4F6; }
   .result-detail summary::-webkit-details-marker { display: none; }
   .result-detail summary::marker { content: ''; }
   .result-detail summary::after { content: none; display: none; }
