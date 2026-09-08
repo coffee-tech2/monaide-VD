@@ -15,6 +15,7 @@ const checks = [
   { label: 'Liens internes', cmd: ['node', path.join(root, 'scripts/internal-links-check.js')] },
   { label: 'Analytics', cmd: ['node', path.join(root, 'scripts/analytics-check.js')] },
   { label: 'Structure simulateur', cmd: ['node', path.join(root, 'scripts/simulator-structure-check.js')] },
+  { label: 'Lien résultat → répertoire', cmd: ['node', path.join(root, 'scripts/result-catalog-link-check.js')] },
   { label: 'Smoke simulateur', cmd: ['node', path.join(root, 'scripts/simulator-smoke-test.js')] },
   { label: 'Régression simulateur', cmd: ['node', path.join(root, 'scripts/simulator-regression-test.js')] },
   { label: 'git diff --check', cmd: ['git', '-C', root, 'diff', '--check'] }

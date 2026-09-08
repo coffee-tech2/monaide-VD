@@ -423,8 +423,10 @@
     var guideHtml = guideLink && guideLink.href
       ? '<a href="' + escapeHtml(guideLink.href) + '" class="result-link-btn" data-result-guide-link="true" data-aid-name="' + escapeHtml(result.nom || '') + '">' + escapeHtml(guideLink.label || 'Guide détaillé') + ' →</a>'
       : '';
+    var repertoireHtml = result.hideRepertoireLink ? '' :
+      '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.catalogAidId || result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche du répertoire →</button>';
     return '<div class="result-card-footer">'
-      + '<button type="button" class="result-link-btn is-primary" data-aid-query="' + escapeHtml(result.nom) + '" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'result_card\', aid: this.getAttribute(\'data-aid-query\') || \'\' });} openCatalogForAid(this.getAttribute(\'data-aid-query\'))">Fiche du répertoire →</button>'
+      + repertoireHtml
       + guideHtml
       + '</div>';
   }

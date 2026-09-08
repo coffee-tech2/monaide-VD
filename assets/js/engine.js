@@ -364,6 +364,7 @@
   function addProSenectuteResult(res) {
     res.push(buildResult({
       nom: 'Pro Senectute Vaud — conseil gratuit pour les 60+',
+      catalogAidId: 'pro-senectute',
       badge: 'verifier',
       desc: 'Aide administrative, déclaration d\'impôts, questions AVS ou PC, accompagnement social : une bonne porte si les démarches deviennent lourdes.',
       action: '1. Contacte Pro Senectute Vaud (service social) : ☏ 021 323 04 23.\n2. Demande un conseil social si les démarches AVS, PC, impôts ou budget deviennent difficiles.\n3. Prépare les décisions AVS/PC, bail, primes maladie et courriers récents.\n4. Si tu aides un proche âgé, demande aussi les possibilités de soutien et de relève.',
@@ -413,6 +414,7 @@
     if (dettes === 'loyer') {
       res.push(buildResult({
         nom: 'Menace d\'expulsion — agis maintenant',
+        catalogAidId: 'menace-expulsion',
         badge: 'probable',
         strongProbable: true,
         desc: 'C\'est une urgence. Tu as des droits et des délais légaux — mais ils sont courts.',
@@ -449,6 +451,7 @@
   function addAidesLogementResult(res, grandeCommune, dettes, loyerEleve) {
     res.push(buildResult({
       nom: 'Aides logement communales ou parapubliques',
+      catalogAidId: 'aide-logement-familles',
       badge: 'verifier',
       desc: grandeCommune
         ? 'Dans certaines communes vaudoises, il existe des soutiens liés au loyer, notamment l’aide individuelle au logement pour certaines familles. Cela dépend de la commune et des conditions.'
@@ -489,6 +492,7 @@
   function addAideAlimentaireRegionResult(res, flags) {
     res.push(buildResult({
       nom: 'Aide alimentaire par région',
+      catalogAidId: 'distributions-alimentaires',
       badge: flags.revenu === 'aucun' ? 'probable' : 'verifier',
       desc: 'Si le budget ne suffit plus pour manger correctement, il existe des distributions, épiceries sociales ou relais alimentaires à chercher près de chez toi.',
       action: '1. Cherche d’abord une distribution ou épicerie sociale proche de ta commune.\n2. Vérifie les horaires, les conditions d’accès et s’il faut une attestation.\n3. Si tu n’as plus assez pour manger régulièrement, contacte aussi le CSR ou une permanence sociale.\n4. Garde cette piste comme aide immédiate, mais traite en parallèle la cause du manque de revenu.',
@@ -530,6 +534,7 @@
   function addFallbackResult(res) {
     res.push(buildResult({
       nom: 'Aucune aide identifiée automatiquement',
+      hideRepertoireLink: true,
       badge: 'verifier',
       desc: 'Ta situation ne correspond pas aux critères détectés automatiquement. Cela ne veut pas dire qu\'il n\'existe pas d\'aide pour toi.',
       action: '1. Ouvre le répertoire et cherche par besoin : santé, logement, revenu, formation, migration ou urgence.\n2. Si tu hésites entre plusieurs portes, commence par le CSR ou Vaud pour vous.\n3. Note ta situation en trois lignes avant d’appeler : problème principal, revenu/logement, documents reçus.\n4. Reviens ensuite au simulateur si ta situation change.'
@@ -745,6 +750,7 @@
   function addChomageActifResult(res) {
     res.push(buildResult({
       nom: 'Assurance chômage — droits déjà ouverts',
+      catalogAidId: 'laci',
       badge: 'probable',
       strongProbable: true,
       desc: 'Tu indiques recevoir déjà le chômage. L’enjeu principal est donc de garder le suivi ORP et caisse clair, et d’anticiper la suite si tes indemnités arrivent bientôt à la fin.',
