@@ -1574,7 +1574,7 @@
           title: 'Boutiques Caritas — Lausanne',
           items: [
             'Vêtements femme, homme et enfant, chaussures et accessoires',
-            'Une boutique au Tunnel, une autre avenue de Morges 26',
+            'Une boutique au Tunnel, une autre avenue de Morges 33',
             'Rabais supplémentaires avec certaines cartes Caritas',
             'Ouvert à tout le monde'
           ]
@@ -1729,9 +1729,9 @@
         {
           title: 'Pratique',
           items: [
-            'Avenue du Temple 20, 1012 Lausanne',
-            'Ma–ve : 10h–12h et 14h–18h30',
-            'Sa : 10h–17h',
+            'Rue de la Borde 24, 1018 Lausanne',
+            'Lu–ve : 9h–18h30',
+            'Sa : 9h–17h',
             'Ramassage à domicile gratuit pour objets en bon état'
           ]
         }
