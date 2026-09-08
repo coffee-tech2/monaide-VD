@@ -1,0 +1,26 @@
+name: Suite qualité
+
+# Relance automatiquement node scripts/run-quality-suite.js à chaque envoi sur main
+# et sur chaque pull request visant main. Affiche une croix rouge sur le commit/la
+# PR si un contrôle échoue (catalogue, guides, SEO, liens internes, simulateur...).
+#
+# Ce workflow ne bloque PAS la mise en ligne : GitHub Pages sert directement la
+# branche main dès qu'elle reçoit un push, indépendamment de ce contrôle. Il sert
+# d'alerte visible (email/notification GitHub en cas d'échec), pas de garde-fou
+# absolu — la discipline "je lance la suite avant de pousser" reste utile.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality-suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/run-quality-suite.js
