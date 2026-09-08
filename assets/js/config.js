@@ -39,6 +39,7 @@
     VAUD_QUEER_RESOURCES: 'https://www.vd.ch/formation/sante-a-lecole/prestations/diversite/diversite-dorientation-affective-et-sexuelle-identite-de-genre',
     BRAPA_APPLY: 'https://www.vd.ch/prestation/demander-des-avances-sur-pensions-alimentaires',
     BRAPA_CONTACT: 'https://www.vd.ch/dsas/dgcs/contacter-le-brapa',
+    ASSISTANCE_JUDICIAIRE: 'https://www.vd.ch/prestation/demander-lassistance-judiciaire',
     PC_FAMILLES_INFO: 'https://www.vd.ch/aides-financieres-et-soutien-social/aides-financieres-et-comment-les-demander/pc-familles',
     PC_FAMILLES_SIMULATEUR: 'https://www.vd.ch/prestation/estimer-son-droit-aux-prestations-complementaires-pour-familles-pc-familles',
     COMIPP_APPLY: 'https://www.vd.ch/prestation/demander-une-prestation-ponctuelle-pour-familles-comipp',
@@ -246,6 +247,7 @@
         { type: 'link', label: 'Repères séparation / famille', linkKey: 'FAMILY_CRISIS' },
         { type: 'link', label: 'Demander une avance BRAPA', linkKey: 'BRAPA_APPLY' },
         { type: 'link', label: 'Contacter le BRAPA', linkKey: 'BRAPA_CONTACT' },
+        { type: 'link', label: 'Assistance judiciaire (aide juridique gratuite)', linkKey: 'ASSISTANCE_JUDICIAIRE' },
       ],
       liensViolence: [
         { type: 'link', label: 'Trouver de l’aide', linkKey: 'VIOLENCE_HELP' },
