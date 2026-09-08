@@ -2472,8 +2472,8 @@
         {
           title: 'Pratique',
           items: [
-            'Permanence du Flon : 7j/7, 8h à 20h',
-            'Rue du Bugnon 44, 1011 Lausanne',
+            'Permanence du Flon : 7j/7 · lu–ve 8h–20h, we et jours fériés 9h–19h',
+            'Voie du Chariot 4, 1003 Lausanne',
             '021 314 60 60',
             'LAMal souvent requise, avec possibilités d’orientation'
           ]
@@ -3183,7 +3183,7 @@
       callouts: [
         {
           kind: 'callout',
-          html: 'Centrale des solidarités : 0800 30 30 38 — gratuit, lu–ve 9h–17h30.'
+          html: 'Centrale des solidarités : 0800 30 30 38 — gratuit, lu–ve 9h–12h30 et 13h30–17h30.'
         }
       ],
       links: [
