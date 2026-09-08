@@ -407,7 +407,7 @@
   .results-export-btn.primary:hover { background:#8F4C1B; border-color:#8F4C1B; color:white; transform: translateY(-1px); box-shadow: 0 12px 24px rgba(143,76,27,0.22); }
   .results-export-note { margin:0.7rem 0 0; padding:0.65rem 0.8rem; border-radius:var(--radius-md); background:var(--accent-light); border:1px solid var(--accent-border); color:var(--accent-text); font-size:0.79rem; line-height:1.5; }
   .results-export-note[hidden] { display:none; }
-  .results-footer-banner { max-width:70ch; margin-top:1rem; background:#FFFDF8; border:1px solid #DED8CD; border-left:3px solid #C8C4BB; border-radius:var(--radius-md); padding:1rem 1.15rem; color:var(--forest); display:block; box-shadow:0 8px 20px rgba(23,41,60,0.04); }
+  .results-footer-banner { max-width:70ch; margin-top:1rem; background:#FFFFFF; border:1px solid var(--border); border-left:3px solid #C8C4BB; border-radius:var(--radius-md); padding:1rem 1.15rem; color:var(--forest); display:block; box-shadow:0 8px 20px rgba(23,41,60,0.04); }
   .results-footer-banner-title { font-family:'Manrope', sans-serif; font-size:0.98rem; line-height:1.18; font-weight:800; letter-spacing:-0.035em; color:var(--forest); margin:0 0 0.45rem; }
   .results-footer-banner-body { color:#4A6080; font-size:0.84rem; line-height:1.6; }
   .results-footer-banner-body p { margin:0 0 0.6rem; }
