@@ -253,9 +253,9 @@
       nom: 'EVAM — Permis N, F et S',
       badge: 'probable',
       strongProbable: true,
-      desc: 'Avec un permis N, le premier relais passe généralement par l’EVAM et le dispositif asile.',
+      desc: 'Avec un permis N, le premier contact passe généralement par l’EVAM et le dispositif asile.',
       action: '1. Commence par le relais EVAM qui suit déjà ton dossier.\n2. Rassemble ton permis N, les courriers SEM/SPOP et les documents du foyer ou du service EVAM.\n3. Si tu ne comprends pas une décision ou une procédure, ajoute une permanence du CSP Fraternité.\n4. Note tes questions avant le rendez-vous pour ne rien oublier.',
-      today: 'Repère d’abord le service EVAM qui suit ton dossier.',
+      today: 'Identifie d’abord le service EVAM qui suit ton dossier.',
       docs: ['Permis N', 'Décisions SEM/SPOP ou courriers récents', 'Coordonnées du foyer ou du service EVAM'],
       liensEVAM: true
     }));
@@ -285,7 +285,7 @@
       nom: 'La Fraternité CSP Vaud — questions de migration',
       badge: 'verifier',
       desc: 'Utile pour les questions sur le séjour, le renouvellement ou le travail.',
-      action: '1. Contacte le CSP Fraternité si tu ne sais pas quelle porte utiliser.\n2. Prépare ton permis, les courriers récents et une liste courte de questions.\n3. Demande surtout quelle démarche est prioritaire selon ton statut.',
+      action: '1. Contacte le CSP Fraternité si tu ne sais pas quel service contacter.\n2. Prépare ton permis, les courriers récents et une liste courte de questions.\n3. Demande surtout quelle démarche est prioritaire selon ton statut.',
       liensFraternite: true
     }));
   }
@@ -366,7 +366,7 @@
       nom: 'Pro Senectute Vaud — conseil gratuit pour les 60+',
       catalogAidId: 'pro-senectute',
       badge: 'verifier',
-      desc: 'Aide administrative, déclaration d\'impôts, questions AVS ou PC, accompagnement social : une bonne porte si les démarches deviennent lourdes.',
+      desc: 'Aide administrative, déclaration d\'impôts, questions AVS ou PC, accompagnement social : un bon contact si les démarches deviennent lourdes.',
       action: '1. Contacte Pro Senectute Vaud (service social) : ☏ 021 323 04 23.\n2. Demande un conseil social si les démarches AVS, PC, impôts ou budget deviennent difficiles.\n3. Prépare les décisions AVS/PC, bail, primes maladie et courriers récents.\n4. Si tu aides un proche âgé, demande aussi les possibilités de soutien et de relève.',
       docs: ['Décision AVS ou PC', 'Bail et primes maladie', 'Courriers administratifs récents'],
       today: 'Appelle si tu as 60+ et que les démarches AVS/PC deviennent difficiles à gérer seul·e.',
@@ -504,11 +504,11 @@
 
   function addSeparationResult(res, flags) {
     res.push(buildResult({
-      nom: 'Séparation, divorce et premiers repères',
+      nom: 'Séparation et divorce : premières informations',
       badge: flags.aEnfants ? 'probable' : 'verifier',
       desc: flags.aEnfants
         ? 'Quand une séparation commence avec des enfants, il faut souvent clarifier rapidement pension, garde, budget et premières démarches.'
-        : 'Quand une séparation ou un divorce commence, il est utile de clarifier rapidement les premiers repères administratifs et financiers.',
+        : 'Quand une séparation ou un divorce commence, il est utile de clarifier rapidement les premiers points administratifs et financiers.',
       action: flags.aEnfants
         ? '1. Fais une liste courte des sujets urgents : sécurité, enfants, logement, pension, budget, assurances.\n2. Si une décision fixe déjà une pension et qu’elle n’est pas payée, appelle le BRAPA au 021 316 52 21.\n3. Prépare jugement, ordonnance, convention, preuves de non-paiement, revenus et frais des enfants.\n4. Si la séparation crée une urgence financière ou de logement, contacte aussi le CSR. S’il y a violence ou peur, passe d’abord par les ressources de protection.'
         : '1. Clarifie d’abord ce qui change concrètement : logement, budget, assurances, dettes, courrier.\n2. Rassemble les documents importants avant les rendez-vous : bail, revenus, comptes, décisions ou courriers reçus.\n3. Si tu ne sais pas par quoi commencer, demande une permanence sociale ou juridique pour trier les priorités.\n4. S’il y a violence, menace ou emprise, ne commence pas par une médiation : cherche d’abord un relais de protection.',
@@ -537,7 +537,7 @@
       hideRepertoireLink: true,
       badge: 'verifier',
       desc: 'Ta situation ne correspond pas aux critères détectés automatiquement. Cela ne veut pas dire qu\'il n\'existe pas d\'aide pour toi.',
-      action: '1. Ouvre le répertoire et cherche par besoin : santé, logement, revenu, formation, migration ou urgence.\n2. Si tu hésites entre plusieurs portes, commence par le CSR ou Vaud pour vous.\n3. Note ta situation en trois lignes avant d’appeler : problème principal, revenu/logement, documents reçus.\n4. Reviens ensuite au simulateur si ta situation change.'
+      action: '1. Ouvre le répertoire et cherche par besoin : santé, logement, revenu, formation, migration ou urgence.\n2. Si tu hésites entre plusieurs services, commence par le CSR ou Vaud pour vous.\n3. Note ta situation en trois lignes avant d’appeler : problème principal, revenu/logement, documents reçus.\n4. Reviens ensuite au simulateur si ta situation change.'
     }));
   }
 
@@ -692,9 +692,9 @@
       badge: casSimple ? 'probable' : 'verifier',
       desc: casSimple
         ? 'Tu as des enfants à charge et ta situation ressemble à un cas assez simple. Cette piste paraît très solide, mais il faut quand même passer par la bonne caisse et vérifier qu’aucun autre parent ne touche déjà cette aide.'
-        : 'Les allocations familiales peuvent être possibles, mais la bonne porte change selon la situation : emploi, chômage, séparation ou absence d’activité lucrative. Il vaut mieux vérifier avant de conclure.',
+        : 'Les allocations familiales peuvent être possibles, mais l’interlocuteur change selon la situation : emploi, chômage, séparation ou absence d’activité lucrative. Il vaut mieux vérifier avant de conclure.',
       action: '1. Si tu travailles, demande d’abord à ton employeur ou à sa caisse.\n2. Si tu es au chômage, demande à ta caisse de chômage si un supplément peut être versé.\n3. Si tu ne travailles pas, vérifie avec une agence AAS ou la Caisse AVS Vaud si les conditions sont remplies.\n4. Prépare les actes de naissance et, si besoin, l’attestation de formation des enfants.\n5. Signale toujours si l’autre parent touche déjà quelque chose.',
-      today: 'Repère d’abord la bonne caisse : c’est la première vraie étape.',
+      today: 'Identifie d’abord la bonne caisse : c’est la première vraie étape.',
       docs: ['Pièces d’identité des parents', 'Actes de naissance des enfants', 'Attestation de formation si 16–25 ans'],
       liensAF: true
     }));
@@ -825,7 +825,7 @@
         : 'L’AI peut être une piste si la situation de santé dure et touche le travail, la formation ou l’autonomie. Il faut ensuite une vraie évaluation du dossier.',
       action: (flags.permisF || flags.permisL || flags.permisS)
         ? '1. Si la situation de santé dure, demande un premier avis à AI Vaud.\n2. Fais vérifier en parallèle si ton cadre d’assurance ou de séjour change la suite.\n3. Garde les certificats médicaux et les courriers déjà reçus.'
-        : '1. Si la situation dure, prends un premier contact avec AI Vaud.\n2. Garde les certificats médicaux déjà disponibles, même si le dossier n’est pas encore parfait.\n3. Note les dates importantes : début des arrêts, hospitalisations, changements de travail ou de formation.\n4. Si tu ne sais pas si l’AI est la bonne porte, demande-le clairement dès le premier contact.',
+        : '1. Si la situation dure, prends un premier contact avec AI Vaud.\n2. Garde les certificats médicaux déjà disponibles, même si le dossier n’est pas encore parfait.\n3. Note les dates importantes : début des arrêts, hospitalisations, changements de travail ou de formation.\n4. Si tu ne sais pas si l’AI est le bon service, demande-le clairement dès le premier contact.',
       today: 'Si la situation dure, commence par un premier contact plutôt que d’attendre trop longtemps.',
       docs: ['Certificats médicaux', 'Pièce d’identité', 'Historique professionnel récent'],
       liensAI: true,
@@ -842,9 +842,9 @@
       nom: 'CSP Jet Service — service social jeunes',
       badge: 'probable',
       desc: jeune && formation
-        ? 'Jet Service (16-25 ans) est une très bonne porte d’entrée pour faire le point sur les bourses, le budget, le travail ou d’autres démarches sociales.'
+        ? 'Jet Service (16-25 ans) est un très bon point de départ pour faire le point sur les bourses, le budget, le travail ou d’autres démarches sociales.'
         : jeune
-        ? 'Jet Service s’adresse aux 16-25 ans et peut être une porte d’entrée très utile pour faire le point sur tes droits, ton budget, le travail ou des démarches compliquées.'
+        ? 'Jet Service s’adresse aux 16-25 ans et peut être un point de départ très utile pour faire le point sur tes droits, ton budget, le travail ou des démarches compliquées.'
         : 'Comme tu es en formation, Jet Service peut t’aider à faire le point sur les bourses, le budget, le travail ou d’autres démarches sociales liées à ta situation.'
       ,
       action: jeune && formation
@@ -853,7 +853,7 @@
         ? '1. Contacte Jet Service pour faire un premier tri de ta situation.\n2. Prépare le courrier, contrat, facture ou document qui te pose problème.\n3. Explique si le problème concerne le budget, le travail, la formation ou une démarche sociale.\n4. Demande quelle action faire en premier.'
         : '1. Contacte Jet Service si la question touche à ta formation, ton budget ou un dossier social.\n2. Prépare l’attestation de formation, les documents financiers et les courriers importants.\n3. Demande un appui pour remplir ou relire le dossier avant envoi.'
       ,
-      today: 'Garde cette porte d’entrée si tu sens que les démarches sont floues ou trop lourdes à faire seul·e.',
+      today: 'Garde ce point de départ si tu sens que les démarches sont floues ou trop lourdes à faire seul·e.',
       docs: ['Courriers reçus si tu en as', 'Pièce d’identité', 'Documents liés à la formation ou au budget selon ta question'],
       liensJetService: true
     }));

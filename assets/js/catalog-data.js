@@ -8,7 +8,7 @@
       purpose: 'L’AAS aide à comprendre les démarches, vérifier le bon formulaire et savoir quoi préparer avant d’envoyer un dossier.',
       highlights: [
         'Explique le subside assurance maladie, les PC, l’AVS et d’autres démarches sociales',
-        'Aide à identifier la bonne porte d’entrée',
+        'Aide à identifier le bon interlocuteur',
         'Peut orienter vers le bon service si la demande ne passe pas par elle'
       ],
       firstSteps: [
@@ -16,7 +16,7 @@
         'Prendre contact, même si tu n’as pas encore tous les documents',
         'Venir avec les courriers ou décisions déjà reçus si tu en as'
       ],
-      bodyIntro: 'L’AAS est souvent la bonne première porte pour le subside assurance maladie, l’AVS, l’AI ou les PC. Tu peux y aller même si tu n’es pas encore sûr·e de ton droit.',
+      bodyIntro: 'L’AAS est souvent le bon premier contact pour le subside assurance maladie, l’AVS, l’AI ou les PC. Tu peux y aller même si tu n’es pas encore sûr·e de ton droit.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'L’AAS oriente et aide à préparer, mais ne rend pas la décision finale',
       sections: [
@@ -407,7 +407,7 @@
       id: 'csr',
       title: 'Centre social régional (CSR)',
       category: 'financier',
-      summary: 'Premier contact social · Porte d’entrée pour le RI · Orientation locale',
+      summary: 'Premier contact social · Point de départ pour le RI · Orientation locale',
       audience: 'Personnes qui ne savent pas par où commencer ou qui n’ont plus assez pour vivre.',
       purpose: 'Le CSR traite le RI, peut examiner certaines situations sociales et orienter vers d’autres services si nécessaire.',
       highlights: [
@@ -453,9 +453,9 @@
       id: 'parlons-cash',
       title: 'Parlons Cash — dettes et surendettement',
       category: 'financier',
-      summary: 'Budget, poursuites, dettes · Repères clairs et orientation',
+      summary: 'Budget, poursuites, dettes · Infos claires et orientation',
       audience: 'Personnes dont le budget ne tient plus, avec dettes, rappels ou poursuites.',
-      purpose: 'Parlons Cash aide à comprendre la situation, trouver un premier repère et agir avant que les dettes s’aggravent.',
+      purpose: 'Parlons Cash aide à comprendre la situation, faire le point et agir avant que les dettes s’aggravent.',
       highlights: [
         'Ligne gratuite : 0840 43 21 00',
         'Conseil confidentiel',
@@ -467,13 +467,13 @@
         'Faire une liste simple des factures, rappels et poursuites',
         'Demander quoi payer en priorité avant de promettre des arrangements'
       ],
-      bodyIntro: 'Si tu as des dettes, des poursuites ou que ton budget ne tient plus, Parlons Cash peut t’aider gratuitement et confidentiellement. C’est une bonne première porte pour comprendre quoi faire avant que les dettes s’aggravent.',
+      bodyIntro: 'Si tu as des dettes, des poursuites ou que ton budget ne tient plus, Parlons Cash peut t’aider gratuitement et confidentiellement. C’est un bon début pour comprendre quoi faire avant que les dettes s’aggravent.',
       sections: [
         {
           title: 'Ce que tu y trouves',
           items: [
             'Explications simples sur dettes et surendettement',
-            'Repères concrets pour agir sans attendre',
+            'Conseils concrets pour agir sans attendre',
             'Priorités de paiement : loyer, assurance maladie, alimentation, pension alimentaire, garde, impôts et charges courantes',
             'Orientation vers les bons services dans le canton',
             'Infos utiles aussi pour les proches'
@@ -486,7 +486,7 @@
             'Poursuites, rappels ou commandement de payer',
             'Budget devenu trop serré',
             'Besoin de comprendre quoi payer en priorité',
-            'Besoin d’un premier repère avant de négocier avec des créanciers'
+            'Besoin d’y voir plus clair avant de négocier avec des créanciers'
           ]
         },
         {
@@ -499,7 +499,7 @@
           ]
         },
         {
-          title: 'Autre porte utile',
+          title: 'Autre contact utile',
           items: [
             'Jet Service si tu as entre 16 et 25 ans',
             'Ou si tu es en formation',
@@ -560,7 +560,7 @@
       callouts: [
         {
           kind: 'callout',
-          html: 'Le BCMA aide pour les rapports avec des <strong>autorités cantonales</strong>. Si le problème concerne une commune, un service privé ou une autorité fédérale, il faudra parfois une autre porte d’entrée.'
+          html: 'Le BCMA aide pour les rapports avec des <strong>autorités cantonales</strong>. Si le problème concerne une commune, un service privé ou une autorité fédérale, il faudra parfois un autre interlocuteur.'
         }
       ],
       links: [
@@ -574,11 +574,11 @@
       title: 'Allocations familiales',
       category: 'financier',
       summary: 'Parents avec enfants à charge · Dès le 1er enfant',
-      audience: 'Parents avec un enfant à charge qui doivent vérifier par quelle porte passe leur demande.',
+      audience: 'Parents avec un enfant à charge qui doivent vérifier par quel service passe leur demande.',
       purpose: 'Les allocations familiales soutiennent les parents, mais la demande dépend de la situation professionnelle et ne se fait pas toujours au même endroit.',
       highlights: [
         'Droit possible comme salarié·e, indépendant·e ou sans activité selon les cas',
-        'La bonne porte dépend de ta situation',
+        'Le bon interlocuteur dépend de ta situation',
         'Ce n’est pas automatique'
       ],
       firstSteps: [
@@ -586,7 +586,7 @@
         'Préparer les pièces des enfants',
         'Lancer la démarche sans attendre'
       ],
-      bodyIntro: 'Si tu as un enfant à charge, des allocations familiales peuvent exister. Mais elles ne sont pas versées automatiquement : il faut les demander par la bonne porte selon ta situation.',
+      bodyIntro: 'Si tu as un enfant à charge, des allocations familiales peuvent exister. Mais elles ne sont pas versées automatiquement : il faut les demander auprès du bon service selon ta situation.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'Employeur, caisse de chômage ou AAS selon la situation',
       sections: [
@@ -707,14 +707,14 @@
       highlights: [
         'Consultations en santé sexuelle',
         'Centres dans plusieurs villes du canton',
-        'Bon premier relais si tu ne sais pas encore par où commencer'
+        'Bon point de départ si tu ne sais pas encore par où commencer'
       ],
       firstSteps: [
         'Chercher le centre PROFA le plus proche',
         'Prendre contact rapidement si la question est urgente',
         'Venir avec tes questions, même si tu ne sais pas exactement quoi demander'
       ],
-      bodyIntro: 'PROFA est une porte d’entrée simple pour la contraception, le dépistage, la grossesse imprévue et les questions intimes.',
+      bodyIntro: 'PROFA est un point de départ simple pour la contraception, le dépistage, la grossesse imprévue et les questions intimes.',
       sections: [
         {
           title: 'Pour quoi',
@@ -802,19 +802,19 @@
       title: 'Voqueer — soutien LGBTQIA+',
       category: 'sante',
       summary: 'Soutien, groupes et ressources LGBTQIA+',
-      audience: 'Personnes LGBTQIA+ ou proches qui cherchent soutien, repères ou ressources dans le canton.',
-      purpose: 'Voqueer peut être une bonne première porte si tu cherches du soutien communautaire, des groupes ou des ressources LGBTQIA+ vaudoises.',
+      audience: 'Personnes LGBTQIA+ ou proches qui cherchent soutien ou ressources dans le canton.',
+      purpose: 'Voqueer peut être un bon point de départ si tu cherches du soutien communautaire, des groupes ou des ressources LGBTQIA+ vaudoises.',
       highlights: [
         'Association communautaire vaudoise',
         'Utile en complément d’un suivi médical ou social',
-        'Repères et ressources pour toi ou tes proches'
+        'Ressources pour toi ou tes proches'
       ],
       firstSteps: [
         'Voir Voqueer',
         'Regarder les groupes et ressources proposés',
         'Utiliser aussi PROFA ou L-Check si tu as besoin d’un suivi santé'
       ],
-      bodyIntro: 'Voqueer peut être une bonne porte d’entrée si tu cherches du soutien, des groupes ou des ressources LGBTQIA+ dans le canton.',
+      bodyIntro: 'Voqueer peut t’aider si tu cherches du soutien, des groupes ou des ressources LGBTQIA+ dans le canton.',
       sections: [
         {
           title: 'Tu peux y trouver',
@@ -822,7 +822,7 @@
             'Infos et orientation',
             'Groupes, activités et espaces communautaires',
             'Soutien pour les proches et les familles',
-            'Repères vers des ressources plus spécifiques si besoin'
+            'Orientation vers des ressources plus spécifiques si besoin'
           ]
         },
         {
@@ -960,7 +960,7 @@
     },
     {
       id: 'separation-divorce',
-      title: 'Séparation, divorce et premiers repères',
+      title: 'Séparation et divorce : premières informations',
       category: 'financier',
       summary: 'Séparation ou divorce · Enfants, budget, démarches à clarifier',
       audience: 'Personnes en séparation ou divorce qui ne savent pas encore par où commencer pour les aspects familiaux et pratiques.',
@@ -968,7 +968,7 @@
       highlights: [
         'Utile dès le début, même si tout n’est pas encore décidé',
         'Pour ne pas mélanger pensions, garde et démarches pratiques',
-        'Bon premier repère avant d’aller plus loin'
+        'Bon point de départ avant d’aller plus loin'
       ],
       firstSteps: [
         'Faire le point sur ce qui bloque le plus vite',
@@ -983,7 +983,7 @@
             'Début de séparation ou divorce en cours',
             'Questions sur les enfants, le budget ou l’organisation',
             'Questions sur pension alimentaire, autorité parentale, prise en charge ou entretien de l’enfant',
-            'Besoin d’un premier repère avant des démarches plus ciblées'
+            'Besoin d’y voir plus clair avant des démarches plus ciblées'
           ]
         },
         {
@@ -1000,7 +1000,7 @@
       callouts: [
         {
           kind: 'warning',
-          html: 'La médiation n’est pas la bonne porte si la situation implique violence, menace ou emprise. Dans ce cas, priorité aux ressources de protection.'
+          html: 'La médiation n’est pas la bonne piste si la situation implique violence, menace ou emprise. Dans ce cas, priorité aux ressources de protection.'
         }
       ],
       reviewedAt: '13 avril 2026',
@@ -1339,9 +1339,9 @@
       category: 'migration',
       summary: 'Procédure d’asile, admission provisoire, protection temporaire',
       audience: 'Personnes en procédure d’asile ou relevant déjà du dispositif EVAM.',
-      purpose: 'L’EVAM est souvent la première porte pour l’hébergement, l’accompagnement social et le soutien de base dans le cadre asile.',
+      purpose: 'L’EVAM est souvent le premier contact pour l’hébergement, l’accompagnement social et le soutien de base dans le cadre asile.',
       highlights: [
-        'Premier relais pour permis N, F et S dans beaucoup de situations',
+        'Premier contact pour permis N, F et S dans beaucoup de situations',
         'Le cadre EVAM ne fonctionne pas comme les aides ordinaires',
         'Utile aussi pour comprendre à qui appartient déjà ton suivi'
       ],
@@ -1350,7 +1350,7 @@
         'Contacter l’EVAM si tu es dans ce cadre',
         'Passer au CSP Fraternité pour les questions de permis ou de courrier'
       ],
-      bodyIntro: 'Tu es en procédure d’asile (permis N), admis·e provisoirement (permis F) ou protégé·e temporairement (permis S) ? L’EVAM est souvent le premier relais pour l’accompagnement social, l’hébergement et le soutien de base, selon le cadre exact de ta situation.',
+      bodyIntro: 'Tu es en procédure d’asile (permis N), admis·e provisoirement (permis F) ou protégé·e temporairement (permis S) ? L’EVAM est souvent le premier contact pour l’accompagnement social, l’hébergement et le soutien de base, selon le cadre exact de ta situation.',
       sections: [
         {
           title: 'Pour qui',
@@ -1427,7 +1427,7 @@
       highlights: [
         'Permanences collectives sans rendez-vous',
         'Utile pour permis, régularisation, regroupement familial ou asile',
-        'Très bonne première porte si tu ne comprends pas un courrier'
+        'Très bon premier contact si tu ne comprends pas un courrier'
       ],
       firstSteps: [
         'Lire les thèmes traités',
@@ -1515,7 +1515,7 @@
       highlights: [
         'Produits alimentaires et du quotidien à prix réduit',
         'Très utile si chaque course devient un stress',
-        'Bon repère si tu as déjà une aide, un subside ou une carte adaptée'
+        'Utile si tu as déjà une aide, un subside ou une carte adaptée'
       ],
       firstSteps: [
         'Vérifier si tu peux obtenir une carte d’achat ou un accès',
@@ -1633,7 +1633,7 @@
           ]
         },
         {
-          title: 'Repères',
+          title: 'Infos pratiques',
           items: [
             'Mont-sur-Lausanne, Morges, Montreux, Payerne, Renens',
             'Le plus grand site est au Mont-sur-Lausanne',
@@ -1852,7 +1852,7 @@
       bodyIntro: 'Tu as reçu une lettre de résiliation ? Ne panique pas, mais agis vite. Tu as des droits et des délais. Ne quitte pas ton logement sans décision de justice.',
       sections: [
         {
-          title: 'Repères',
+          title: 'À savoir',
           items: [
             'Tout locataire en Suisse a des droits et des délais',
             'Délai légal de contestation souvent de 30 jours',
@@ -1939,7 +1939,7 @@
       purpose: 'Le dispositif T1 aide à retrouver une piste de formation ou d’insertion quand le parcours s’est bloqué.',
       highlights: [
         'Utile après une rupture d’apprentissage',
-        'Bon relais si aucune solution n’est trouvée à la rentrée',
+        'Bon contact si aucune solution n’est trouvée à la rentrée',
         'Peut réorienter vers le bon guichet régional'
       ],
       firstSteps: [
@@ -1984,7 +1984,7 @@
       purpose: 'Cette fiche aide à reprendre pied rapidement après une rupture d’apprentissage ou un parcours de formation bloqué.',
       highlights: [
         'À ne pas laisser traîner',
-        'Bon relais pour éviter de rester seul·e après une rupture',
+        'Bon contact pour éviter de rester seul·e après une rupture',
         'Souvent utile avec Jet Service ou T1'
       ],
       firstSteps: [
@@ -2161,7 +2161,7 @@
       highlights: [
         'Utile avant l’épuisement, pas seulement quand ça craque',
         'Informations concrètes sur le répit et les aides',
-        'Bon repère si tu aides un parent, un conjoint ou un enfant'
+        'Utile si tu aides un parent, un conjoint ou un enfant'
       ],
       firstSteps: [
         'Lire les infos proches aidants du canton',
@@ -2356,8 +2356,8 @@
       title: 'Addiction Vaud — informations & orientation',
       category: 'sante',
       summary: 'Addictions et proches · Gratuit · Confidentiel',
-      audience: 'Personnes concernées par une addiction ou proches qui cherchent un premier repère.',
-      purpose: 'Addiction Vaud aide à faire le point, à se situer et à trouver le bon relais dans le canton.',
+      audience: 'Personnes concernées par une addiction ou proches qui cherchent par où commencer.',
+      purpose: 'Addiction Vaud aide à faire le point, à se situer et à trouver le bon service dans le canton.',
       highlights: [
         'Infos claires',
         'Tests d’auto-évaluation disponibles',
@@ -2365,7 +2365,7 @@
       ],
       firstSteps: [
         'Consulter Addiction Vaud',
-        'Faire un test si tu veux un premier repère',
+        'Faire un test si tu veux y voir plus clair',
         'Appeler si tu veux parler à quelqu’un sans t’engager'
       ],
       bodyIntro: 'Addiction Vaud aide à faire le point sur une consommation, un comportement addictif ou la situation d’un proche.',
@@ -2445,8 +2445,8 @@
       title: 'Unisanté — soins médicaux accessibles',
       category: 'sante',
       summary: 'Consultations et urgences · Lausanne',
-      audience: 'Personnes qui ont besoin de soins ou d’une porte médicale accessible, y compris en situation précaire.',
-      purpose: 'Unisanté est une vraie porte d’entrée santé à Lausanne pour des soins de base, des urgences et des situations complexes.',
+      audience: 'Personnes qui ont besoin de soins ou d’un accès médical facile, y compris en situation précaire.',
+      purpose: 'Unisanté est un vrai point de départ santé à Lausanne pour des soins de base, des urgences et des situations complexes.',
       highlights: [
         'Référence en médecine générale à Lausanne',
         'Permanence du Flon sans rendez-vous',
@@ -2457,7 +2457,7 @@
         'Regarder le site Unisanté',
         'Ne pas attendre si la situation médicale se dégrade'
       ],
-      bodyIntro: 'Unisanté peut être un bon premier relais pour une consultation, une urgence simple ou une orientation santé à Lausanne.',
+      bodyIntro: 'Unisanté peut être un bon premier contact pour une consultation, une urgence simple ou une orientation santé à Lausanne.',
       sections: [
         {
           title: 'Prestations',
@@ -2465,7 +2465,7 @@
             'Médecine générale et urgences',
             'Consultations sans rendez-vous (Permanence du Flon)',
             'Soins accessibles aux personnes vulnérables',
-            'Repères vers les urgences psy ou autres relais'
+            'Orientation vers les urgences psy ou d’autres services'
           ]
         },
         {
@@ -2633,7 +2633,7 @@
       ],
       firstSteps: [
         'Voir les logements subventionnés',
-        'Vérifier si la commune ou la FVL est la bonne porte',
+        'Vérifier si la commune ou la FVL est le bon contact',
         'Préparer un dossier et le mettre à jour régulièrement'
       ],
       bodyIntro: 'Il existe des logements à loyer réduit réservés aux personnes à revenus modestes. Les listes d’attente peuvent être longues, donc il faut souvent s’inscrire tôt.',
@@ -2678,7 +2678,7 @@
         'Regarder la permanence la plus proche',
         'Garder tous les courriers et pièces du bail'
       ],
-      bodyIntro: 'L’ASLOCA défend les droits des locataires dans tout le canton. Si tu as un problème avec ton bailleur, une hausse de loyer ou une résiliation, c’est souvent la bonne porte.',
+      bodyIntro: 'L’ASLOCA défend les droits des locataires dans tout le canton. Si tu as un problème avec ton bailleur, une hausse de loyer ou une résiliation, c’est souvent le bon contact.',
       sections: [
         {
           title: 'Ce qu’ils font',
@@ -2758,7 +2758,7 @@
       purpose: 'Caritas Vaud accompagne certaines personnes migrantes dans des démarches d’intégration, de logement, de formation ou de soutien concret.',
       highlights: [
         'Soutien d’intégration',
-        'Repères utiles sur plusieurs villes du canton',
+        'Adresses utiles dans plusieurs villes du canton',
         'Complémentaire d’autres services migration'
       ],
       firstSteps: [
@@ -2774,7 +2774,7 @@
             'Accompagnement à l’intégration',
             'Cours de langue et formation',
             'Soutien dans certaines démarches administratives',
-            'Repères vers d’autres aides de Caritas'
+            'Liens vers d’autres aides de Caritas'
           ]
         },
         {
@@ -2810,7 +2810,7 @@
         'Expliquer les besoins spécifiques de protection ou de vulnérabilité',
         'Ne pas se déplacer sans orientation préalable'
       ],
-      bodyIntro: 'L’EVAM a mis en place un hébergement spécifiquement pensé pour certaines femmes migrantes en situation de vulnérabilité, avec ou sans enfants. La porte d’entrée reste l’EVAM ou les services cantonaux.',
+      bodyIntro: 'L’EVAM a mis en place un hébergement spécifiquement pensé pour certaines femmes migrantes en situation de vulnérabilité, avec ou sans enfants. Le point de contact reste l’EVAM ou les services cantonaux.',
       sections: [
         {
           title: 'Pour qui',
@@ -2888,7 +2888,7 @@
       title: 'Crise psychique / urgence psychiatrique',
       category: 'urgence',
       summary: 'Crise, angoisse aiguë, idées suicidaires · Urgence psychique',
-      audience: 'Personnes en crise psychique ou proches qui ont besoin d’un repère immédiat.',
+      audience: 'Personnes en crise psychique ou proches qui ont besoin d’un appui immédiat.',
       purpose: 'Cette fiche aide à réagir vite quand la situation psychique devient aiguë et nécessite un relais urgent.',
       highlights: [
         'À utiliser quand la situation devient critique',
@@ -2985,7 +2985,7 @@
       category: 'urgence',
       summary: 'Violence dans le couple ou la famille · Conseil · Mise à l’abri · 24h/24',
       audience: 'Personnes victimes de violences conjugales ou familiales qui ont besoin d’un soutien ou d’une mise à l’abri.',
-      purpose: 'MalleyPrairie est une porte d’entrée très concrète pour la violence conjugale et familiale, avec ligne téléphonique, consultations et hébergement selon la situation.',
+      purpose: 'MalleyPrairie est un point de départ très concret pour la violence conjugale et familiale, avec ligne téléphonique, consultations et hébergement selon la situation.',
       highlights: [
         '24h/24, 7j/7',
         'Consultations pour les personnes victimes ou concernées',
@@ -3042,7 +3042,7 @@
       title: 'Violences conjugales / besoin de protection',
       category: 'urgence',
       summary: 'Violence au foyer · Protection, hébergement, premiers relais',
-      audience: 'Personnes qui vivent une violence dans le couple ou le foyer, ou proches qui cherchent une première porte sûre.',
+      audience: 'Personnes qui vivent une violence dans le couple ou le foyer, ou proches qui cherchent un premier contact sûr.',
       purpose: 'Cette fiche aide à trouver rapidement une porte de protection, d’écoute et d’hébergement quand la violence est là.',
       highlights: [
         'Pour agir vite sans rester seul·e',
@@ -3054,7 +3054,7 @@
         'Se mettre dans un endroit sûr si possible',
         'Contacter MalleyPrairie ou la LAVI pour organiser la suite'
       ],
-      bodyIntro: 'Quand il y a de la violence dans le couple ou dans le foyer, le plus important est la sécurité. Tu n’as pas besoin d’avoir tout décidé pour demander un premier relais.',
+      bodyIntro: 'Quand il y a de la violence dans le couple ou dans le foyer, le plus important est la sécurité. Tu n’as pas besoin d’avoir tout décidé pour demander un premier soutien.',
       sections: [
         {
           title: 'Quand cette fiche est utile',
@@ -3105,7 +3105,7 @@
       category: 'urgence',
       summary: 'Grande précarité · Gratuit · Sans rendez-vous · 7j/7',
       audience: 'Personnes qui ont besoin d’un lieu où aller dans la journée pour souffler, manger, se soigner ou être orientées.',
-      purpose: 'Le Passage offre un accueil de jour très accessible pour retrouver un repère concret dans une situation de grande précarité.',
+      purpose: 'Le Passage offre un accueil de jour très accessible pour retrouver un point d’appui concret dans une situation de grande précarité.',
       highlights: [
         'Sans inscription',
         'Repas, écoute, soins et orientation',
@@ -3114,7 +3114,7 @@
       firstSteps: [
         'Te rendre sur place',
         'Demander ce dont tu as besoin',
-        'Utiliser ce lieu comme premier repère si tu n’as nulle part où aller'
+        'Utiliser ce lieu comme premier point d’appui si tu n’as nulle part où aller'
       ],
       bodyIntro: 'Le Passage est un accueil de jour très accessible si tu as besoin d’un repas, d’écoute, de soins ou simplement d’un lieu où aller.',
       sections: [
@@ -3148,18 +3148,18 @@
       category: 'urgence',
       summary: 'Accompagnement gratuit · Démarches administratives',
       audience: 'Personnes qui ne savent pas à quelles aides elles ont droit ou qui n’arrivent plus à faire les démarches seules.',
-      purpose: 'Vaud pour vous aide à trouver la bonne porte et à avancer dans les démarches administratives avec un accompagnement humain.',
+      purpose: 'Vaud pour vous aide à trouver le bon contact et à avancer dans les démarches administratives avec un accompagnement humain.',
       highlights: [
         'Pour toute la population vaudoise',
         'Pas réservé au RI',
-        'Très bonne première porte quand tout paraît flou'
+        'Très bon premier contact quand tout paraît flou'
       ],
       firstSteps: [
         'Contacter le programme',
         'Expliquer ce qui bloque dans les démarches',
         'Demander une orientation ou un accompagnement'
       ],
-      bodyIntro: 'Vaud pour vous aide à trouver la bonne porte quand tout paraît flou ou que les démarches n’avancent plus.',
+      bodyIntro: 'Vaud pour vous aide à savoir où s’adresser quand tout paraît flou ou que les démarches n’avancent plus.',
       sections: [
         {
           title: 'Pour qui',

@@ -19,7 +19,7 @@
     var rule = (RESULTS_UI_CONFIG.purposeRules || []).find(function(item) {
       return matchesResultPatterns(name, item.patterns);
     });
-    return rule ? rule.text : (RESULTS_UI_CONFIG.defaultPurpose || 'Cette piste donne une première porte à vérifier selon les réponses indiquées.');
+    return rule ? rule.text : (RESULTS_UI_CONFIG.defaultPurpose || 'Cette piste donne une première direction à vérifier selon les réponses indiquées.');
   }
 
   function getResultKind(name) {
@@ -236,7 +236,7 @@
       reasons.push('Car tu indiques aider régulièrement un proche.');
     }
     if (dejaAideSociale && matchesResultPatterns(name, ['carteculture', 'subside lamal'])) {
-      reasons.push('Car tu indiques déjà une aide qui peut servir de repère ou de justificatif.');
+      reasons.push('Car tu indiques déjà une aide qui peut servir de justificatif.');
     }
     return reasons;
   }

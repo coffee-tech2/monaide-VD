@@ -239,12 +239,12 @@
         { type: 'link', label: 'Parents-Rescousse — Croix-Rouge vaudoise', linkKey: 'PARENTS_RESCOUSSE' },
       ],
       liensAideAlimentaire: [
-        { type: 'link', label: 'Repères aide alimentaire — Guide Social', linkKey: 'GUIDE_SOCIAL_FOOD' },
+        { type: 'link', label: 'Aide alimentaire — Guide Social', linkKey: 'GUIDE_SOCIAL_FOOD' },
         { type: 'link', label: 'Cartons du Coeur', linkKey: 'CARTONS_COEUR' },
         { type: 'link', label: 'Épiceries Caritas', linkKey: 'CARITAS_EPICERIES' },
       ],
       liensSeparation: [
-        { type: 'link', label: 'Repères séparation / famille', linkKey: 'FAMILY_CRISIS' },
+        { type: 'link', label: 'Séparation / famille', linkKey: 'FAMILY_CRISIS' },
         { type: 'link', label: 'Demander une avance BRAPA', linkKey: 'BRAPA_APPLY' },
         { type: 'link', label: 'Contacter le BRAPA', linkKey: 'BRAPA_CONTACT' },
         { type: 'link', label: 'Assistance judiciaire (aide juridique gratuite)', linkKey: 'ASSISTANCE_JUDICIAIRE' },
@@ -266,7 +266,7 @@
   };
 
   window.MONAIDE_RESULTS_UI_CONFIG = {
-    defaultPurpose: 'Cette piste donne une première porte à vérifier selon les réponses indiquées.',
+    defaultPurpose: 'Cette piste donne une première direction à vérifier selon les réponses indiquées.',
     badgeOrder: {
       probable: 0,
       verifier: 1
@@ -309,7 +309,7 @@
     purposeRules: [
       { patterns: ['subside lamal'], text: 'Cette aide sert à réduire le montant de la prime d’assurance maladie quand les conditions sont remplies.' },
       { patterns: ['revenu d insertion'], text: 'Cette aide sert à couvrir le minimum pour vivre quand les revenus ne suffisent plus, sous réserve d’un examen complet du dossier.' },
-      { patterns: ['centre social regional', 'aas'], text: 'Ce service sert à faire un premier point, expliquer les démarches possibles et orienter vers la bonne porte d’entrée.' },
+      { patterns: ['centre social regional', 'aas'], text: 'Ce service sert à faire un premier point, expliquer les démarches possibles et orienter vers le bon interlocuteur.' },
       { patterns: ['prestations complementaires'], text: 'Cette aide sert à compléter une rente AVS ou AI quand elle ne suffit pas à couvrir le budget de base.' },
       { patterns: ['frais de maladie', 'invalidite pc avs ai'], text: 'Cette piste sert à faire vérifier si certains frais de maladie ou de handicap peuvent être remboursés en plus des PC.' },
       { patterns: ['pc familles'], text: 'Cette aide sert à compléter le budget d’un ménage avec enfants quand une activité lucrative existe déjà mais que les ressources restent insuffisantes.' },
@@ -324,7 +324,7 @@
       { patterns: ['aide alimentaire par region'], text: 'Cette piste sert à repérer rapidement des distributions, épiceries sociales ou relais alimentaires près de chez toi.' },
       { patterns: ['separation', 'divorce'], text: 'Cette piste sert à clarifier les premières démarches, les questions de pension, de garde et les impacts concrets sur le budget.' },
       { patterns: ['proches aidant'], text: 'Cette piste sert à repérer des solutions de répit, de relève et de soutien quand tu aides régulièrement un proche.' },
-      { patterns: ['sante mentale'], text: 'Cette piste sert à trouver un premier relais humain quand la santé mentale devient difficile à gérer.' },
+      { patterns: ['sante mentale'], text: 'Cette piste sert à trouver un premier contact humain quand la santé mentale devient difficile à gérer.' },
       { patterns: ['assurance chomage'], text: 'Cette aide sert à couvrir une perte d’emploi si les conditions de chômage sont remplies après examen du dossier.' },
       { patterns: ['rente pont'], text: 'Cette piste sert à faire le pont financier avant l’âge AVS quand le chômage touche à sa fin — une aide souvent méconnue.' },
       { patterns: ['bourses', 'ocbe'], text: 'Cette aide sert à soutenir une formation quand les ressources du ménage ne suffisent pas, après examen du dossier.' },
@@ -343,7 +343,7 @@
       { patterns: ['separation', 'divorce', 'proches aidant'], value: 'Ressource complémentaire' },
       { patterns: ['sante mentale'], value: 'Service d’orientation' },
       { patterns: ['carteculture', 'passculture'], value: 'Ressource complémentaire' },
-      { patterns: ['lavi', 'malleyprairie', 'lignes d ecoute', 'aide d urgence', 'violences conjugales'], value: 'Repère urgent' }
+      { patterns: ['lavi', 'malleyprairie', 'lignes d ecoute', 'aide d urgence', 'violences conjugales'], value: 'Aide en urgence' }
     ],
     secondaryRules: [
       ['carteculture', 'passculture', 'pro senectute', 'pro infirmis', 'parlons cash', 'vaud pour vous', 'lignes d ecoute']
@@ -375,17 +375,17 @@
       { patterns: ['carteculture', 'passculture', 'pro infirmis', 'pro senectute', 'vaud pour vous'], priority: 40 }
     ],
     firstContactRules: [
-      { patterns: ['revenu d insertion', 'centre social regional'], title: 'Qui contacter d’abord', text: 'Le CSR est souvent la première porte si tu n’as plus assez pour vivre ou si tu ne sais pas par où commencer.', actionLabel: 'Trouver ton CSR', actionKey: 'CSR_FINDER' },
+      { patterns: ['revenu d insertion', 'centre social regional'], title: 'Qui contacter d’abord', text: 'Le CSR est souvent le premier contact si tu n’as plus assez pour vivre ou si tu ne sais pas par où commencer.', actionLabel: 'Trouver ton CSR', actionKey: 'CSR_FINDER' },
       { patterns: ['subside lamal'], title: 'Qui contacter d’abord', text: 'Commence par le calcul officiel. Si tu bloques, une agence AAS peut aussi t’aider à faire la demande.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
-      { patterns: ['assurance invalidite'], title: 'Qui contacter d’abord', text: 'AI Vaud est la bonne porte d’entrée. Un médecin, psychiatre ou psychologue peut aussi t’aider à préparer la demande.', actionLabel: 'Infos AI Vaud', actionKey: 'AI_HOME' },
+      { patterns: ['assurance invalidite'], title: 'Qui contacter d’abord', text: 'AI Vaud est le bon interlocuteur. Un médecin, psychiatre ou psychologue peut aussi t’aider à préparer la demande.', actionLabel: 'Infos AI Vaud', actionKey: 'AI_HOME' },
       { patterns: ['prestations complementaires'], title: 'Qui contacter d’abord', text: 'Le plus simple est souvent de commencer par une agence AAS, qui peut faire un premier tri avant la demande officielle.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
       { patterns: ['frais de maladie'], title: 'Qui contacter d’abord', text: 'Si tu touches déjà les PC, commence par une agence AAS ou la Caisse AVS Vaud pour savoir quels frais peuvent être annoncés.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
       { patterns: ['enfant en situation de handicap', 'aminh'], title: 'Qui contacter d’abord', text: 'Commence par faire décrire le besoin concret à domicile : aide, relève, soins, surveillance ou adaptation du quotidien.', actionLabel: 'Infos proches aidant·es', actionKey: 'ESPACE_PROCHES_INFO' },
       { patterns: ['pc familles'], title: 'Qui contacter d’abord', text: 'Commence par l’estimation officielle des PC Familles. Si la piste semble plausible, le CRD PC Familles de ta région pourra ensuite examiner le dossier.', actionLabel: 'Estimer les PC Familles', actionKey: 'PC_FAMILLES_SIMULATEUR' },
       { patterns: ['bourses', 'ocbe'], title: 'Qui contacter d’abord', text: 'Commence par le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage), puis dépose une demande si la piste semble correspondre. Si le dossier te paraît compliqué, Jet Service peut aussi aider à le remplir.', actionLabel: 'Faire le test d’éligibilité de l’OCBE', actionKey: 'OCBE_ELIGIBILITY' },
       { patterns: ['carteculture'], title: 'Qui contacter d’abord', text: 'Si tu as déjà une aide sociale ou un revenu modeste, la piste CarteCulture peut valoir la peine d’être activée après les démarches prioritaires.', actionLabel: 'Demander la CarteCulture', actionKey: 'CARTECULTURE_APPLY' },
-      { patterns: ['evam'], title: 'Qui contacter d’abord', text: 'Quand le séjour ou le cadre asile est central, le relais EVAM reste souvent la première porte à utiliser.', actionLabel: 'EVAM Vaud', actionKey: 'EVAM_HOME' },
-      { patterns: ['lavi'], title: 'Qui contacter d’abord', text: 'En cas de violence, d’agression ou d’infraction, le centre LAVI est une bonne première porte, même sans plainte.', actionLabel: 'Centre LAVI Vaud', actionKey: 'LAVI_LAUSANNE' }
+      { patterns: ['evam'], title: 'Qui contacter d’abord', text: 'Quand le séjour ou le cadre asile est central, l’EVAM reste souvent le premier contact à utiliser.', actionLabel: 'EVAM Vaud', actionKey: 'EVAM_HOME' },
+      { patterns: ['lavi'], title: 'Qui contacter d’abord', text: 'En cas de violence, d’agression ou d’infraction, le centre LAVI est un bon premier contact, même sans plainte.', actionLabel: 'Centre LAVI Vaud', actionKey: 'LAVI_LAUSANNE' }
     ],
     regions: [
       { label: 'Lausanne', communes: ['lausanne', 'renens', 'prilly', 'ecublens', 'crissier'] },
@@ -484,11 +484,11 @@
       'enfant handicap': ['enfant en situation de handicap aides a domicile aminh'],
       'aminh': ['enfant en situation de handicap aides a domicile aminh'],
       'sante mentale': ['sante mentale premiers relais', 'lignes d ecoute d urgence', 'crise psychique urgence psychiatrique'],
-      'parent solo': ['brapa avances sur pensions alimentaires', 'allocations familiales', 'pc familles soutien pour parents qui travaillent', 'separation divorce parents quelles portes'],
-      'parent seul': ['brapa avances sur pensions alimentaires', 'allocations familiales', 'pc familles soutien pour parents qui travaillent', 'separation divorce parents quelles portes'],
-      'pension alimentaire': ['brapa avances sur pensions alimentaires', 'separation divorce parents quelles portes'],
-      'separation': ['separation divorce parents quelles portes', 'brapa avances sur pensions alimentaires'],
-      'divorce': ['separation divorce parents quelles portes', 'brapa avances sur pensions alimentaires'],
+      'parent solo': ['brapa avances sur pensions alimentaires', 'allocations familiales', 'pc familles soutien pour parents qui travaillent', 'separation et divorce premieres informations'],
+      'parent seul': ['brapa avances sur pensions alimentaires', 'allocations familiales', 'pc familles soutien pour parents qui travaillent', 'separation et divorce premieres informations'],
+      'pension alimentaire': ['brapa avances sur pensions alimentaires', 'separation et divorce premieres informations'],
+      'separation': ['separation et divorce premieres informations', 'brapa avances sur pensions alimentaires'],
+      'divorce': ['separation et divorce premieres informations', 'brapa avances sur pensions alimentaires'],
       'enfant': ['allocations familiales', 'pc familles soutien pour parents qui travaillent', 'brapa avances sur pensions alimentaires'],
       'garde enfant': ['accueil de jour reduction des frais de garde', 'pc familles soutien pour parents qui travaillent'],
       'creche': ['accueil de jour reduction des frais de garde', 'pc familles soutien pour parents qui travaillent'],

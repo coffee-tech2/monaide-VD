@@ -20,7 +20,7 @@
       'Dernier point: dis seulement si une aide est déjà ouverte, pour éviter les doublons.'
     ],
     4: [
-      'Derniers points utiles: santé, dettes ou situation familiale sensible peuvent changer la bonne porte.',
+      'Derniers points utiles: santé, dettes ou situation familiale sensible peuvent changer l’interlocuteur.',
       'Encore une petite étape, puis tu verras les pistes et les prochaines actions.'
     ]
   };

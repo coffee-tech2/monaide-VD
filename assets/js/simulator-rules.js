@@ -2,7 +2,7 @@ window.MONAIDE_SIMULATION_RULES = [
   {
     id: 'urgence-orientation',
     title: 'Urgence budget ou logement',
-    intent: 'Prioriser un premier relais humain quand le logement ou le budget devient critique.',
+    intent: 'Prioriser un premier contact humain quand le logement ou le budget devient critique.',
     when: 'urgenceActive',
     handler: 'addUrgenceOrientationResults',
     confidence: 'orientation',
@@ -66,7 +66,7 @@ window.MONAIDE_SIMULATION_RULES = [
     when: 'sansStatut',
     handler: 'addSansStatutResults',
     confidence: 'orientation prioritaire',
-    guardrails: ['Ne propose pas une démarche ordinaire comme première porte.', 'Évite toute promesse de droit.'],
+    guardrails: ['Ne propose pas une démarche ordinaire comme première étape.', 'Évite toute promesse de droit.'],
     sourceType: 'situation sensible'
   },
   {
@@ -82,7 +82,7 @@ window.MONAIDE_SIMULATION_RULES = [
   {
     id: 'ri',
     title: 'Revenu d’insertion',
-    intent: 'Repérer le CSR comme porte d’entrée quand les besoins de base ne passent plus.',
+    intent: 'Repérer le CSR comme premier contact quand les besoins de base ne passent plus.',
     when: 'needsRi',
     handler: 'addRiResult',
     confidence: 'probable ou à vérifier selon revenu, fortune, statut et formation',
@@ -316,7 +316,7 @@ window.MONAIDE_SIMULATION_RULES = [
     when: 'needsFallback',
     handler: 'addFallbackResult',
     confidence: 'orientation générale',
-    guardrails: ['Ne prétend pas qu’il n’existe aucune aide.', 'Renvoie vers répertoire et premier relais humain.'],
+    guardrails: ['Ne prétend pas qu’il n’existe aucune aide.', 'Renvoie vers répertoire et premier contact humain.'],
     sourceType: 'sécurité UX'
   }
 ];
