@@ -95,7 +95,7 @@
       ],
       links: [
         { kind: 'action', label: 'Évaluer et demander le subside', url: window.MONAIDE_LINKS.SUBSIDE_HOME },
-        { kind: 'info', label: 'OVAM — infos officielles', url: 'https://www.vd.ch/sante-soins-et-handicap/assurance-maladie' },
+        { kind: 'info', label: 'OVAM : infos officielles', url: 'https://www.vd.ch/sante-soins-et-handicap/assurance-maladie' },
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST },
         { kind: 'info', label: 'Guide détaillé', url: '/subside-lamal/' }
       ],
@@ -200,7 +200,7 @@
     },
     {
       id: 'bourse',
-      title: 'Bourses d’études — OCBE',
+      title: 'Bourses d’études : OCBE',
       category: 'formation',
       summary: 'Formation post-obligatoire · Ressources du ménage insuffisantes',
       audience: 'Personnes en formation post-obligatoire qui ont besoin d’un soutien pour financer leurs études.',
@@ -262,7 +262,7 @@
     },
     {
       id: 'carte',
-      title: 'CarteCulture — Caritas',
+      title: 'CarteCulture, Caritas',
       category: 'culture',
       summary: 'Bénéficiaires RI, PC, subside LAMal ou bourse · Gratuit',
       audience: 'Personnes avec petit budget qui veulent accéder à des offres culturelles et de loisirs à prix réduit.',
@@ -355,7 +355,7 @@
     },
     {
       id: 'frais-maladie-invalidite',
-      title: 'Frais de maladie et d’invalidité — PC AVS/AI',
+      title: 'Frais de maladie et d’invalidité : PC AVS/AI',
       category: 'sante',
       summary: 'Déjà aux PC · Dentiste, lunettes, moyens auxiliaires, frais reconnus',
       audience: 'Personnes qui touchent déjà les PC AVS/AI et qui ont des frais de santé ou d’invalidité difficiles à payer.',
@@ -398,7 +398,7 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'Prestations complémentaires — Caisse AVS Vaud', url: window.MONAIDE_LINKS.PC_INFO },
+        { kind: 'info', label: 'Prestations complémentaires, Caisse AVS Vaud', url: window.MONAIDE_LINKS.PC_INFO },
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST }
       ],
       documentationTarget: null
@@ -451,7 +451,7 @@
     },
     {
       id: 'parlons-cash',
-      title: 'Parlons Cash — dettes et surendettement',
+      title: 'Parlons Cash : dettes et surendettement',
       category: 'financier',
       summary: 'Budget, poursuites, dettes · Infos claires et orientation',
       audience: 'Personnes dont le budget ne tient plus, avec dettes, rappels ou poursuites.',
@@ -616,7 +616,7 @@
     },
     {
       id: 'cms',
-      title: 'CMS — Soins et aide à domicile',
+      title: 'CMS : soins et aide à domicile',
       category: 'sante',
       summary: 'Personnes malades ou âgées · Maintien à domicile',
       audience: 'Personnes qui ont besoin d’aide au quotidien pour rester chez elles.',
@@ -652,7 +652,7 @@
       ],
       links: [
         { kind: 'action', label: 'Contacter AVASAD', url: window.MONAIDE_LINKS.CMS_AVASAD },
-        { kind: 'info', label: 'Maintien à domicile — État de Vaud', url: window.MONAIDE_LINKS.CMS_VD_INFO }
+        { kind: 'info', label: 'Maintien à domicile, État de Vaud', url: window.MONAIDE_LINKS.CMS_VD_INFO }
       ],
       documentationTarget: null
     },
@@ -699,7 +699,7 @@
     },
     {
       id: 'sante-sexuelle-profa',
-      title: 'Santé sexuelle — PROFA',
+      title: 'Santé sexuelle : PROFA',
       category: 'sante',
       summary: 'Contraception, dépistage, grossesse imprévue',
       audience: 'Personnes qui ont besoin d’un lieu sûr pour parler de santé sexuelle, de contraception, de dépistage ou de grossesse.',
@@ -744,13 +744,13 @@
       links: [
         { kind: 'action', label: 'Consulter PROFA', url: window.MONAIDE_LINKS.PROFA_HOME },
         { kind: 'action', label: 'Trouver un centre PROFA', url: window.MONAIDE_LINKS.PROFA_CENTRES },
-        { kind: 'info', label: 'Infos Vaud — grossesse imprévue / IG', url: window.MONAIDE_LINKS.VAUD_GROSSESSE_INFO }
+        { kind: 'info', label: 'Infos Vaud : grossesse imprévue / IG', url: window.MONAIDE_LINKS.VAUD_GROSSESSE_INFO }
       ],
       documentationTarget: null
     },
     {
       id: 'l-check',
-      title: 'L-Check — santé sexuelle inclusive',
+      title: 'L-Check : santé sexuelle inclusive',
       category: 'sante',
       summary: 'Consultation inclusive · Renens',
       audience: 'Personnes qui cherchent un lieu plus ciblé et plus rassurant pour parler de santé sexuelle, de genre ou d’orientation.',
@@ -799,7 +799,7 @@
     },
     {
       id: 'voqueer',
-      title: 'Voqueer — soutien LGBTQIA+',
+      title: 'Voqueer : soutien LGBTQIA+',
       category: 'sante',
       summary: 'Soutien, groupes et ressources LGBTQIA+',
       audience: 'Personnes LGBTQIA+ ou proches qui cherchent soutien ou ressources dans le canton.',
@@ -848,7 +848,7 @@
     },
     {
       id: 'lavi',
-      title: 'LAVI — Aide aux victimes',
+      title: 'LAVI : aide aux victimes',
       category: 'urgence',
       summary: 'Violence conjugale, agression, abus · Gratuit · Confidentiel',
       audience: 'Personnes qui ont subi une violence, une agression, des abus ou une autre infraction pénale.',
@@ -899,13 +899,13 @@
       links: [
         { kind: 'action', label: 'LAVI Vaud', url: window.MONAIDE_LINKS.LAVI_INFO },
         { kind: 'action', label: 'Centre LAVI Lausanne', url: window.MONAIDE_LINKS.LAVI_LAUSANNE },
-        { kind: 'info', label: '142 — aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 }
+        { kind: 'info', label: '142 : aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 }
       ],
       documentationTarget: null
     },
     {
       id: 'brapa',
-      title: 'BRAPA — avances sur pensions alimentaires',
+      title: 'BRAPA : avances sur pensions alimentaires',
       category: 'financier',
       summary: 'Parent séparé·e · Pension non versée · Tout le canton',
       audience: 'Parents séparé·es qui ne reçoivent pas la pension alimentaire fixée par décision.',
@@ -1017,7 +1017,7 @@
 
     {
       id: 'pc-familles',
-      title: 'PC Familles — soutien pour parents qui travaillent',
+      title: 'PC Familles : soutien pour parents qui travaillent',
       category: 'financier',
       summary: 'Parents avec enfant de moins de 16 ans · Activité lucrative · Budget insuffisant',
       audience: 'Parents qui travaillent mais n’arrivent pas à couvrir le minimum pour vivre malgré leur activité.',
@@ -1063,7 +1063,7 @@
     },
     {
       id: 'comipp',
-      title: 'ComiPP — prestation ponctuelle pour familles',
+      title: 'ComiPP : prestation ponctuelle pour familles',
       category: 'financier',
       summary: 'Parents avec enfant · Coup dur ponctuel · Aide financière ciblée',
       audience: 'Familles qui traversent un coup dur ponctuel et ont besoin d’une aide ciblée plutôt que d’un soutien durable.',
@@ -1144,8 +1144,8 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'Accueil de jour des enfants — Vaud', url: window.MONAIDE_LINKS.ACCUEIL_JOUR_INFO },
-        { kind: 'info', label: 'Garde d’enfants malades — Croix-Rouge', url: window.MONAIDE_LINKS.CROIX_ROUGE_GARDE_MALADE },
+        { kind: 'info', label: 'Accueil de jour des enfants, Vaud', url: window.MONAIDE_LINKS.ACCUEIL_JOUR_INFO },
+        { kind: 'info', label: 'Garde d’enfants malades, Croix-Rouge', url: window.MONAIDE_LINKS.CROIX_ROUGE_GARDE_MALADE },
         { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
       ],
       documentationTarget: null
@@ -1190,14 +1190,14 @@
       decisionBy: 'Commune de domicile concernée',
       links: [
         { kind: 'info', label: 'Liste officielle des communes vaudoises', url: window.MONAIDE_LINKS.COMMUNES_LIST },
-        { kind: 'info', label: 'Gérer le quotidien — familles', url: window.MONAIDE_LINKS.GERER_QUOTIDIEN_FAMILLES },
+        { kind: 'info', label: 'Gérer le quotidien : familles', url: window.MONAIDE_LINKS.GERER_QUOTIDIEN_FAMILLES },
         { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
       ],
       documentationTarget: null
     },
     {
       id: 'garde-enfants-malades',
-      title: 'Garde d’enfants malades — soutien ponctuel aux parents',
+      title: 'Garde d’enfants malades : soutien ponctuel aux parents',
       category: 'financier',
       summary: 'Enfant malade · Parent sans solution immédiate · Relais ponctuel',
       audience: 'Parents qui n’ont pas de solution quand un enfant tombe malade et qu’il faut organiser le quotidien rapidement.',
@@ -1234,9 +1234,9 @@
       reviewedAt: '13 avril 2026',
       decisionBy: 'Service de soutien concerné, selon disponibilité',
       links: [
-        { kind: 'action', label: 'Garde d’enfants malades — Croix-Rouge vaudoise', url: window.MONAIDE_LINKS.CROIX_ROUGE_GARDE_MALADE },
-        { kind: 'info', label: 'Parents-Rescousse — Croix-Rouge vaudoise', url: window.MONAIDE_LINKS.PARENTS_RESCOUSSE },
-        { kind: 'info', label: 'Accueil de jour des enfants — Vaud', url: window.MONAIDE_LINKS.ACCUEIL_JOUR_INFO }
+        { kind: 'action', label: 'Garde d’enfants malades, Croix-Rouge vaudoise', url: window.MONAIDE_LINKS.CROIX_ROUGE_GARDE_MALADE },
+        { kind: 'info', label: 'Parents-Rescousse, Croix-Rouge vaudoise', url: window.MONAIDE_LINKS.PARENTS_RESCOUSSE },
+        { kind: 'info', label: 'Accueil de jour des enfants, Vaud', url: window.MONAIDE_LINKS.ACCUEIL_JOUR_INFO }
       ],
       documentationTarget: null
     },
@@ -1293,7 +1293,7 @@
     },
     {
       id: 'rente-pont',
-      title: 'Rente-pont AVS — l’aide la plus méconnue',
+      title: 'Rente-pont AVS : l’aide la plus méconnue',
       category: 'emploi',
       summary: '60 ans et plus · Chômage en fin de droits · Très peu demandée',
       audience: 'Personnes de 60 ans ou plus qui arrivent en fin de droits au chômage.',
@@ -1335,7 +1335,7 @@
     },
     {
       id: 'evam',
-      title: 'EVAM — Permis N, F et S',
+      title: 'EVAM : permis N, F et S',
       category: 'migration',
       summary: 'Procédure d’asile, admission provisoire, protection temporaire',
       audience: 'Personnes en procédure d’asile ou relevant déjà du dispositif EVAM.',
@@ -1372,13 +1372,13 @@
       ],
       links: [
         { kind: 'action', label: 'EVAM Vaud', url: window.MONAIDE_LINKS.EVAM_HOME },
-        { kind: 'info', label: 'Aide aux migrants — État de Vaud', url: window.MONAIDE_LINKS.EVAM_VD_INFO }
+        { kind: 'info', label: 'Aide aux migrants, État de Vaud', url: window.MONAIDE_LINKS.EVAM_VD_INFO }
       ],
       documentationTarget: null
     },
     {
       id: 'appartenances',
-      title: 'Appartenances — soutien aux personnes migrantes',
+      title: 'Appartenances : soutien aux personnes migrantes',
       category: 'migration',
       summary: 'Toutes nationalités et statuts · Conseil gratuit',
       audience: 'Personnes migrantes qui ont besoin d’un accompagnement social, psy ou administratif.',
@@ -1419,7 +1419,7 @@
     },
     {
       id: 'fraternite',
-      title: 'La Fraternité CSP Vaud — questions de migration',
+      title: 'La Fraternité CSP Vaud : questions de migration',
       category: 'migration',
       summary: 'Toute personne étrangère ou suisse · Gratuit · Sans rendez-vous',
       audience: 'Personnes qui se posent des questions sur le permis, le séjour, l’asile, le regroupement familial ou les droits des sans-papiers.',
@@ -1456,7 +1456,7 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'La Fraternité — CSP Vaud', url: window.MONAIDE_LINKS.CSP_MIGRATION },
+        { kind: 'action', label: 'La Fraternité, CSP Vaud', url: window.MONAIDE_LINKS.CSP_MIGRATION },
         { kind: 'action', label: 'Permanences régionales', url: window.MONAIDE_LINKS.CSP_MIGRATION_HOURS }
       ],
       documentationTarget: null
@@ -1507,7 +1507,7 @@
     },
     {
       id: 'epicerie-caritas',
-      title: 'Épicerie Caritas — Lausanne',
+      title: 'Épicerie Caritas, Lausanne',
       category: 'petitbudget',
       summary: 'Courses du quotidien · Petits budgets · Lausanne',
       audience: 'Personnes et familles dont le budget courses devient trop lourd.',
@@ -1553,7 +1553,7 @@
 
     {
       id: 'habits-petit-prix',
-      title: 'S’habiller à petit prix — Lausanne et canton',
+      title: 'S’habiller à petit prix, Lausanne et canton',
       category: 'petitbudget',
       summary: 'Seconde main · Boutiques solidaires · Lausanne et canton',
       audience: 'Personnes qui ont besoin de vêtements corrects sans dépenser trop.',
@@ -1571,7 +1571,7 @@
       bodyIntro: 'Plusieurs adresses à Lausanne permettent de s’habiller à petit prix : boutiques Caritas, CSP Palud et Galetas CSP. Chacune a ses spécificités.',
       sections: [
         {
-          title: 'Boutiques Caritas — Lausanne',
+          title: 'Boutiques Caritas, Lausanne',
           items: [
             'Vêtements femme, homme et enfant, chaussures et accessoires',
             'Une boutique au Tunnel, une autre avenue de Morges 33',
@@ -1580,7 +1580,7 @@
           ]
         },
         {
-          title: 'Boutique CSP — Escaliers-du-Marché',
+          title: 'Boutique CSP, Escaliers-du-Marché',
           items: [
             '9, Escaliers-du-Marché, 1003 Lausanne (près de la Palud)',
             'Vêtements d’occasion et livres',
@@ -1588,7 +1588,7 @@
           ]
         },
         {
-          title: 'Galetas CSP — meubles, habits et objets',
+          title: 'Galetas CSP : meubles, habits et objets',
           items: [
             'Mont-sur-Lausanne, Morges, Montreux, Payerne, Renens',
             'Meubles, électroménager, vêtements et objets du quotidien',
@@ -1606,7 +1606,7 @@
     },
     {
       id: 'galetas-csp',
-      title: 'Galetas du CSP Vaud — meubles & objets à petits prix',
+      title: 'Galetas du CSP Vaud : meubles & objets à petits prix',
       category: 'petitbudget',
       summary: 'Meubles, vêtements, électroménager · Prix solidaires · 6 sites dans le canton',
       audience: 'Personnes qui doivent meubler un logement ou se rééquiper avec très peu de budget.',
@@ -1656,7 +1656,7 @@
     },
     {
       id: 'emmaus',
-      title: 'Emmaüs Étagnières — brocante solidaire',
+      title: 'Emmaüs Étagnières : brocante solidaire',
       category: 'petitbudget',
       summary: 'Meubles, objets, vêtements · Brocante solidaire · Étagnières',
       audience: 'Personnes qui cherchent beaucoup d’équipement d’un coup à petit prix.',
@@ -1700,7 +1700,7 @@
     },
     {
       id: 'brocki-lausanne',
-      title: 'Armée du Salut — Brocki Lausanne',
+      title: 'Armée du Salut, Brocki Lausanne',
       category: 'petitbudget',
       summary: 'Meubles, vêtements, objets · Prix modestes',
       audience: 'Personnes qui cherchent une option simple d’occasion à Lausanne.',
@@ -1743,7 +1743,7 @@
     },
     {
       id: 'croix-rouge-vaudoise',
-      title: 'Croix-Rouge vaudoise — aide et accompagnement',
+      title: 'Croix-Rouge vaudoise : aide et accompagnement',
       category: 'financier',
       summary: 'Aîné·es, familles, précarité · Aide concrète et orientation',
       audience: 'Personnes fragilisées qui ont besoin d’un appui concret dans le quotidien.',
@@ -1786,7 +1786,7 @@
     },
     {
       id: 'aide-logement-familles',
-      title: 'Aide individuelle au logement (AIL) — familles',
+      title: 'Aide individuelle au logement (AIL) : familles',
       category: 'logement',
       summary: 'Familles à revenu modeste · Certaines communes seulement · Soutien sur le loyer',
       audience: 'Familles qui paient un loyer trop lourd dans une commune où l’AIL existe.',
@@ -1834,7 +1834,7 @@
     },
     {
       id: 'menace-expulsion',
-      title: 'Menace d’expulsion — que faire ?',
+      title: 'Menace d’expulsion : que faire ?',
       category: 'logement',
       summary: 'Locataires en difficulté · Urgence — agir immédiatement',
       audience: 'Locataires qui ont reçu une résiliation ou craignent de perdre leur logement.',
@@ -1884,7 +1884,7 @@
     },
     {
       id: 'jet-service',
-      title: 'CSP Jet Service — service social jeunes',
+      title: 'CSP Jet Service : service social jeunes',
       category: 'formation',
       summary: '16–25 ans & toute personne en formation · Gratuit · Confidentiel',
       audience: 'Jeunes ou personnes en formation qui ont besoin d’un appui sur leurs droits, leur budget, leur travail ou leur formation.',
@@ -1926,13 +1926,13 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'Jet Service — CSP Vaud', url: window.MONAIDE_LINKS.JET_SERVICE }
+        { kind: 'action', label: 'Jet Service, CSP Vaud', url: window.MONAIDE_LINKS.JET_SERVICE }
       ],
       documentationTarget: null
     },
     {
       id: 'guichet-t1',
-      title: 'Guichet T1 — solution de formation après l’école obligatoire',
+      title: 'Guichet T1 : solution de formation après l’école obligatoire',
       category: 'emploi',
       summary: 'Jeunes 15–25 ans · Rupture d’apprentissage ou pas de solution · Orientation',
       audience: 'Jeunes qui n’ont pas de solution de formation, ont arrêté un apprentissage ou ne savent plus vers qui se tourner.',
@@ -1969,7 +1969,7 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'Transition 1 — Vaud', url: window.MONAIDE_LINKS.T1_INFO },
+        { kind: 'info', label: 'Transition 1, Vaud', url: window.MONAIDE_LINKS.T1_INFO },
         { kind: 'action', label: 'Guichets régionaux T1', url: window.MONAIDE_LINKS.T1_GUICHETS },
         { kind: 'action', label: 'Demander un conseil en orientation', url: window.MONAIDE_LINKS.T1_CONTACT }
       ],
@@ -1977,7 +1977,7 @@
     },
     {
       id: 'rupture-apprentissage',
-      title: 'Rupture d’apprentissage — premiers relais',
+      title: 'Rupture d’apprentissage : premiers relais',
       category: 'emploi',
       summary: 'Jeunes en formation · Parcours bloqué · Rebond rapide',
       audience: 'Jeunes qui ont arrêté un apprentissage, risquent de le quitter ou n’ont plus de solution de formation.',
@@ -2016,13 +2016,13 @@
       links: [
         { kind: 'action', label: 'Guichets régionaux T1', url: window.MONAIDE_LINKS.T1_GUICHETS },
         { kind: 'action', label: 'Demander un conseil en orientation', url: window.MONAIDE_LINKS.T1_CONTACT },
-        { kind: 'info', label: 'Jet Service — CSP Vaud', url: window.MONAIDE_LINKS.JET_SERVICE }
+        { kind: 'info', label: 'Jet Service, CSP Vaud', url: window.MONAIDE_LINKS.JET_SERVICE }
       ],
       documentationTarget: null
     },
     {
       id: 'pro-senectute',
-      title: 'Pro Senectute Vaud — services pour les 60+',
+      title: 'Pro Senectute Vaud : services pour les 60+',
       category: 'sante',
       summary: '60 ans et plus · Conseil administratif et social gratuit',
       audience: 'Personnes de 60 ans et plus qui ont besoin d’aide dans leurs démarches ou leur quotidien.',
@@ -2063,7 +2063,7 @@
     },
     {
       id: 'aide-financiere-ems',
-      title: 'Aide financière EMS — frais d’hébergement',
+      title: 'Aide financière EMS : frais d’hébergement',
       category: 'sante',
       summary: 'EMS · Court ou long séjour · Participation aux frais à vérifier',
       audience: 'Personnes ou proches qui doivent comprendre comment payer un séjour en EMS quand les ressources ne suffisent pas.',
@@ -2100,7 +2100,7 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'Aide financière EMS — Vaud', url: window.MONAIDE_LINKS.EMS_AIDE_FINANCIERE },
+        { kind: 'info', label: 'Aide financière EMS, Vaud', url: window.MONAIDE_LINKS.EMS_AIDE_FINANCIERE },
         { kind: 'info', label: 'Pro Senectute Vaud', url: window.MONAIDE_LINKS.PRO_SENECTUTE },
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST }
       ],
@@ -2145,7 +2145,7 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'LADA — État de Vaud', url: window.MONAIDE_LINKS.LADA_INFO },
+        { kind: 'info', label: 'LADA, État de Vaud', url: window.MONAIDE_LINKS.LADA_INFO },
         { kind: 'action', label: 'Contacter AVASAD', url: window.MONAIDE_LINKS.CMS_AVASAD },
         { kind: 'info', label: 'Pro Senectute Vaud', url: window.MONAIDE_LINKS.PRO_SENECTUTE }
       ],
@@ -2153,7 +2153,7 @@
     },
     {
       id: 'espace-proches',
-      title: 'Espace Proches — soutien aux proches aidant·es',
+      title: 'Espace Proches : soutien aux proches aidant·es',
       category: 'sante',
       summary: 'Personnes qui aident un proche malade, âgé ou dépendant · Infos, conseils, répit',
       audience: 'Personnes qui soutiennent régulièrement un proche et commencent à s’épuiser ou à se perdre dans les démarches.',
@@ -2197,7 +2197,7 @@
     },
     {
       id: 'repit-proches-aidants',
-      title: 'Proches aidant·es — répit et aides concrètes',
+      title: 'Proches aidant·es : répit et aides concrètes',
       category: 'sante',
       summary: 'Hotline 0800 660 660 · Relève · Carte d’urgence · Aides possibles',
       audience: 'Personnes qui aident déjà un proche et ont besoin d’un vrai relais, pas seulement d’information.',
@@ -2254,7 +2254,7 @@
     },
     {
       id: 'aminh-enfant-handicap',
-      title: 'Enfant en situation de handicap — aides à domicile (AMINH)',
+      title: 'Enfant en situation de handicap : aides à domicile (AMINH)',
       category: 'sante',
       summary: 'Enfant mineur · Handicap · Aide à domicile et proches aidants',
       audience: 'Parents ou proches d’un enfant mineur en situation de handicap qui cherchent un soutien concret à domicile.',
@@ -2291,8 +2291,8 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'Aides financières proches aidants — Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FINANCES },
-        { kind: 'info', label: 'Proches aidants — Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
+        { kind: 'info', label: 'Aides financières proches aidants, Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_FINANCES },
+        { kind: 'info', label: 'Proches aidants, Vaud', url: window.MONAIDE_LINKS.ESPACE_PROCHES_INFO },
         { kind: 'action', label: 'Contacter AVASAD', url: window.MONAIDE_LINKS.CMS_AVASAD },
         { kind: 'info', label: 'Pro Infirmis Vaud', url: window.MONAIDE_LINKS.PRO_INFIRMIS }
       ],
@@ -2300,7 +2300,7 @@
     },
     {
       id: 'sante-mentale-relais',
-      title: 'Santé mentale — premiers relais',
+      title: 'Santé mentale : premiers relais',
       category: 'sante',
       summary: 'Mal-être, anxiété, épuisement · Premiers relais',
       audience: 'Personnes qui sentent que ça ne va plus très bien et ne savent pas encore vers qui se tourner.',
@@ -2353,7 +2353,7 @@
     },
     {
       id: 'addiction-vaud',
-      title: 'Addiction Vaud — informations & orientation',
+      title: 'Addiction Vaud : informations & orientation',
       category: 'sante',
       summary: 'Addictions et proches · Gratuit · Confidentiel',
       audience: 'Personnes concernées par une addiction ou proches qui cherchent par où commencer.',
@@ -2401,7 +2401,7 @@
     },
     {
       id: 'relaids',
-      title: 'Rel’Aids — réduction des risques',
+      title: 'Rel’Aids : réduction des risques',
       category: 'sante',
       summary: 'Réduction des risques · Équipe mobile · Sans inscription',
       audience: 'Personnes marginalisées par leur consommation de drogues ou proches qui cherchent un contact humain.',
@@ -2436,13 +2436,13 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'Rel’Aids — Fondation Le Relais', url: window.MONAIDE_LINKS.RELAIDS }
+        { kind: 'action', label: 'Rel’Aids, Fondation Le Relais', url: window.MONAIDE_LINKS.RELAIDS }
       ],
       documentationTarget: null
     },
     {
       id: 'unisante',
-      title: 'Unisanté — soins médicaux accessibles',
+      title: 'Unisanté : soins médicaux accessibles',
       category: 'sante',
       summary: 'Consultations et urgences · Lausanne',
       audience: 'Personnes qui ont besoin de soins ou d’un accès médical facile, y compris en situation précaire.',
@@ -2486,7 +2486,7 @@
     },
     {
       id: 'point-deau',
-      title: 'Le Point d’Eau — accueil & hygiène',
+      title: 'Le Point d’Eau : accueil & hygiène',
       category: 'sante',
       summary: 'Douche, soins, lessive · Accueil bas seuil à Lausanne',
       audience: 'Personnes qui ont besoin d’un lieu d’accueil bas seuil avec hygiène, soins et orientation.',
@@ -2529,7 +2529,7 @@
     },
     {
       id: 'apg',
-      title: 'Allocations perte de gain — maternité & paternité (APG)',
+      title: 'Allocations perte de gain : maternité & paternité (APG)',
       category: 'financier',
       summary: 'Maternité (98j) · Paternité (14j) · Adoption',
       audience: 'Parents qui doivent faire valoir un droit APG après une naissance ou une adoption.',
@@ -2564,13 +2564,13 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'APG maternité/paternité — AVS/AI', url: window.MONAIDE_LINKS.APG_INFO }
+        { kind: 'info', label: 'APG maternité/paternité, AVS/AI', url: window.MONAIDE_LINKS.APG_INFO }
       ],
       documentationTarget: null
     },
     {
       id: 'csp-vaud',
-      title: 'CSP Vaud — soutien social & permanence juridique',
+      title: 'CSP Vaud : soutien social & permanence juridique',
       category: 'financier',
       summary: 'Permanences sociales, juridiques et budget',
       audience: 'Personnes qui ont besoin d’un soutien social ou juridique de premier recours.',
@@ -2663,7 +2663,7 @@
     },
     {
       id: 'asloca',
-      title: 'ASLOCA Vaud — défense des locataires',
+      title: 'ASLOCA Vaud : défense des locataires',
       category: 'logement',
       summary: 'Locataires vaudois · Permanences régionales · Cotisation requise',
       audience: 'Locataires qui ont un problème avec le bailleur, le loyer, la résiliation ou le dépôt de garantie.',
@@ -2708,7 +2708,7 @@
     },
     {
       id: 'aide-urgence-sejour',
-      title: 'Aide d’urgence — décision de renvoi ou sans droit de séjour',
+      title: 'Aide d’urgence : décision de renvoi ou sans droit de séjour',
       category: 'migration',
       summary: 'Sans ressources, décision de renvoi, besoin immédiat de base',
       audience: 'Personnes sans ressources dont la situation ne relève plus des aides ordinaires.',
@@ -2744,14 +2744,14 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'Aide d’urgence — Vaud', url: window.MONAIDE_LINKS.URGENCE_SEJOUR },
-        { kind: 'action', label: 'La Fraternité — CSP Vaud', url: window.MONAIDE_LINKS.CSP_MIGRATION }
+        { kind: 'action', label: 'Aide d’urgence, Vaud', url: window.MONAIDE_LINKS.URGENCE_SEJOUR },
+        { kind: 'action', label: 'La Fraternité, CSP Vaud', url: window.MONAIDE_LINKS.CSP_MIGRATION }
       ],
       documentationTarget: null
     },
     {
       id: 'caritas-migration',
-      title: 'Caritas Vaud — aide aux personnes migrantes',
+      title: 'Caritas Vaud : aide aux personnes migrantes',
       category: 'migration',
       summary: 'Personnes réfugiées et migrantes · Intégration · Soutien',
       audience: 'Personnes migrantes qui ont besoin d’un accompagnement d’intégration ou de soutien concret.',
@@ -2789,13 +2789,13 @@
       ],
       links: [
         { kind: 'action', label: 'Caritas Vaud migration', url: window.MONAIDE_LINKS.CARITAS_MIGRATION },
-        { kind: 'info', label: 'Trouver de l’aide — Caritas Vaud', url: window.MONAIDE_LINKS.CARITAS_VAUD_HELP }
+        { kind: 'info', label: 'Trouver de l’aide, Caritas Vaud', url: window.MONAIDE_LINKS.CARITAS_VAUD_HELP }
       ],
       documentationTarget: null
     },
     {
       id: 'foyer-evam-femmes',
-      title: 'Foyer EVAM — hébergement pour femmes migrantes',
+      title: 'Foyer EVAM : hébergement pour femmes migrantes',
       category: 'migration',
       summary: 'Femmes en situation de vulnérabilité · Avec ou sans enfants · Lausanne',
       audience: 'Femmes migrantes en situation de vulnérabilité orientées vers un hébergement adapté.',
@@ -2877,8 +2877,8 @@
         }
       ],
       links: [
-        { kind: 'action', label: '143 — Main Tendue', url: window.MONAIDE_LINKS.MAIN_TENDUE },
-        { kind: 'action', label: '147 — Pro Juventute', url: window.MONAIDE_LINKS.PRO_JUVENTUTE_147 },
+        { kind: 'action', label: '143, Main Tendue', url: window.MONAIDE_LINKS.MAIN_TENDUE },
+        { kind: 'action', label: '147, Pro Juventute', url: window.MONAIDE_LINKS.PRO_JUVENTUTE_147 },
         { kind: 'info', label: 'Stop Suicide', url: window.MONAIDE_LINKS.STOP_SUICIDE }
       ],
       documentationTarget: null
@@ -2929,15 +2929,15 @@
       reviewedAt: '13 avril 2026',
       decisionBy: 'Urgences et équipe psychiatrique compétente',
       links: [
-        { kind: 'action', label: 'Urgences — État de Vaud', url: window.MONAIDE_LINKS.URGENCES_VAUD },
-        { kind: 'action', label: 'Urgences psychiatriques — CHUV', url: window.MONAIDE_LINKS.URGENCES_PSY_CHUV },
+        { kind: 'action', label: 'Urgences, État de Vaud', url: window.MONAIDE_LINKS.URGENCES_VAUD },
+        { kind: 'action', label: 'Urgences psychiatriques, CHUV', url: window.MONAIDE_LINKS.URGENCES_PSY_CHUV },
         { kind: 'info', label: 'La Main Tendue 143', url: window.MONAIDE_LINKS.MAIN_TENDUE }
       ],
       documentationTarget: null
     },
     {
       id: 'distributions-alimentaires',
-      title: 'Distributions alimentaires — Canton de Vaud',
+      title: 'Distributions alimentaires, canton de Vaud',
       category: 'urgence',
       summary: 'Précarité alimentaire · Conditions variables selon les lieux',
       audience: 'Personnes ou familles qui ont besoin d’un accès rapide à de la nourriture.',
@@ -2981,7 +2981,7 @@
 
     {
       id: 'malleyprairie',
-      title: 'MalleyPrairie — violence conjugale & familiale',
+      title: 'MalleyPrairie : violence conjugale & familiale',
       category: 'urgence',
       summary: 'Violence dans le couple ou la famille · Conseil · Mise à l’abri · 24h/24',
       audience: 'Personnes victimes de violences conjugales ou familiales qui ont besoin d’un soutien ou d’une mise à l’abri.',
@@ -3033,7 +3033,7 @@
       links: [
         { kind: 'action', label: 'MalleyPrairie', url: window.MONAIDE_LINKS.MALLEY_PRAIRIE },
         { kind: 'info', label: 'Violence Que Faire', url: window.MONAIDE_LINKS.VIOLENCE_QUE_FAIRE },
-        { kind: 'info', label: '142 — aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 }
+        { kind: 'info', label: '142 : aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 }
       ],
       documentationTarget: null
     },
@@ -3091,17 +3091,17 @@
       reviewedAt: '13 avril 2026',
       decisionBy: 'Services de protection et d’accompagnement compétents',
       links: [
-        { kind: 'action', label: 'Violence domestique — où trouver de l’aide', url: window.MONAIDE_LINKS.VIOLENCE_HELP },
+        { kind: 'action', label: 'Violence domestique : où trouver de l’aide', url: window.MONAIDE_LINKS.VIOLENCE_HELP },
         { kind: 'action', label: 'MalleyPrairie', url: window.MONAIDE_LINKS.MALLEY_PRAIRIE },
         { kind: 'info', label: 'Violence que faire', url: window.MONAIDE_LINKS.VIOLENCE_QUE_FAIRE },
-        { kind: 'info', label: '142 — aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 },
+        { kind: 'info', label: '142 : aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 },
         { kind: 'info', label: 'LAVI Vaud', url: window.MONAIDE_LINKS.LAVI_INFO }
       ],
       documentationTarget: null
     },
     {
       id: 'le-passage',
-      title: 'Le Passage — accueil de jour bas seuil',
+      title: 'Le Passage : accueil de jour bas seuil',
       category: 'urgence',
       summary: 'Grande précarité · Gratuit · Sans rendez-vous · 7j/7',
       audience: 'Personnes qui ont besoin d’un lieu où aller dans la journée pour souffler, manger, se soigner ou être orientées.',
@@ -3138,7 +3138,7 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'Le Passage — Fondation ABS', url: window.MONAIDE_LINKS.LE_PASSAGE }
+        { kind: 'action', label: 'Le Passage, Fondation ABS', url: window.MONAIDE_LINKS.LE_PASSAGE }
       ],
       documentationTarget: null
     },
@@ -3192,7 +3192,7 @@
     },
     {
       id: 'unafin-lausanne',
-      title: 'Unafin — assainissement financier (Lausanne)',
+      title: 'Unafin : assainissement financier (Lausanne)',
       category: 'financier',
       summary: 'Dettes et surendettement · Budget sur 3 ans · Réservé à Lausanne',
       audience: 'Personnes qui habitent ou travaillent pour la Ville de Lausanne et veulent sortir durablement du surendettement.',
@@ -3231,14 +3231,14 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'Service social de Lausanne — dettes et surendettement', url: window.MONAIDE_LINKS.UNAFIN_INFO },
+        { kind: 'action', label: 'Service social de Lausanne : dettes et surendettement', url: window.MONAIDE_LINKS.UNAFIN_INFO },
         { kind: 'info', label: 'Parlons Cash (canton, si hors Lausanne)', url: window.MONAIDE_LINKS.PARLONS_CASH }
       ],
       documentationTarget: null
     },
     {
       id: 'mon-apprentissage',
-      title: 'Mon Apprentissage — trouver sa voie professionnelle (Vaud)',
+      title: 'Mon Apprentissage : trouver sa voie professionnelle (Vaud)',
       category: 'formation',
       summary: 'Choisir un métier · Trouver une place d’apprentissage · Service cantonal gratuit',
       audience: 'Jeunes en fin de scolarité ou en recherche d’orientation qui cherchent une place d’apprentissage dans le canton de Vaud.',
@@ -3276,14 +3276,14 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'Mon Apprentissage — explorer les métiers', url: window.MONAIDE_LINKS.MON_APPRENTISSAGE },
+        { kind: 'action', label: 'Mon Apprentissage : explorer les métiers', url: window.MONAIDE_LINKS.MON_APPRENTISSAGE },
         { kind: 'info', label: 'Guichets régionaux T1', url: window.MONAIDE_LINKS.T1_GUICHETS }
       ],
       documentationTarget: null
     },
     {
       id: 'salaire-non-paye',
-      title: 'Salaire non payé — que faire',
+      title: 'Salaire non payé : que faire',
       category: 'emploi',
       summary: 'Salaire impayé · Prud’hommes · Insolvabilité employeur',
       audience: 'Personnes dont l’employeur ne verse pas le salaire, ou en cas de faillite.',
@@ -3320,7 +3320,7 @@
       ],
       links: [
         { kind: 'action', label: 'Tribunal des prud’hommes Vaud', url: 'https://www.vd.ch/ojv/tribunaux-de-prudhommes' },
-        { kind: 'info', label: 'Insolvabilité — LACI', url: window.MONAIDE_LINKS.LACI_INFO },
+        { kind: 'info', label: 'Insolvabilité, LACI', url: window.MONAIDE_LINKS.LACI_INFO },
         { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME }
       ],
       documentationTarget: null
@@ -3354,7 +3354,7 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'Le Point d’Eau — Lausanne', url: window.MONAIDE_LINKS.POINT_DEAU },
+        { kind: 'action', label: 'Le Point d’Eau, Lausanne', url: window.MONAIDE_LINKS.POINT_DEAU },
         { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME }
       ],
       documentationTarget: null
@@ -3390,7 +3390,7 @@
       ],
       links: [
         { kind: 'action', label: 'Demander l’assistance judiciaire', url: 'https://www.vd.ch/prestation/demander-lassistance-judiciaire' },
-        { kind: 'info', label: 'OAV — Ordre des avocats vaudois', url: 'https://www.oav.ch' },
+        { kind: 'info', label: 'OAV : Ordre des avocats vaudois', url: 'https://www.oav.ch' },
         { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME }
       ],
       documentationTarget: null

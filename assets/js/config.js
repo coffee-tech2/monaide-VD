@@ -154,7 +154,7 @@
         { type: 'link', label: 'Faire le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage)', linkKey: 'OCBE_ELIGIBILITY' },
         { type: 'link', label: 'Infos bourses OCBE', linkKey: 'OCBE_INFO' },
         { type: 'link', label: 'Faire une demande OCBE', linkKey: 'OCBE_APPLY' },
-        { type: 'link', label: 'Jet Service — appui jeunes & formation', linkKey: 'JET_SERVICE' },
+        { type: 'link', label: 'Jet Service : appui jeunes & formation', linkKey: 'JET_SERVICE' },
       ],
       liensAF: [
         { type: 'link', label: 'Voir la démarche', linkKey: 'ALLOCATIONS_INFO' },
@@ -166,19 +166,19 @@
       ],
       liensEVAM: [
         { type: 'link', label: 'EVAM Vaud', linkKey: 'EVAM_HOME' },
-        { type: 'link', label: 'Aide aux migrants — État de Vaud', linkKey: 'EVAM_VD_INFO' }
+        { type: 'link', label: 'Aide aux migrants, État de Vaud', linkKey: 'EVAM_VD_INFO' }
       ],
       liensFraternite: [
-        { type: 'link', label: 'La Fraternité — CSP Vaud', linkKey: 'CSP_MIGRATION' },
+        { type: 'link', label: 'La Fraternité, CSP Vaud', linkKey: 'CSP_MIGRATION' },
         { type: 'link', label: 'Permanences migration', linkKey: 'CSP_MIGRATION_HOURS' }
       ],
       liensUrgenceSejour: [
-        { type: 'link', label: 'Aide d’urgence — Vaud', linkKey: 'URGENCE_SEJOUR' },
-        { type: 'link', label: 'La Fraternité — CSP Vaud', linkKey: 'CSP_MIGRATION' }
+        { type: 'link', label: 'Aide d’urgence, Vaud', linkKey: 'URGENCE_SEJOUR' },
+        { type: 'link', label: 'La Fraternité, CSP Vaud', linkKey: 'CSP_MIGRATION' }
       ],
       liensCadreSejour: [
         { type: 'link', label: 'Trouver une agence AAS', linkKey: 'AAS_LIST' },
-        { type: 'link', label: 'La Fraternité — CSP Vaud', linkKey: 'CSP_MIGRATION' }
+        { type: 'link', label: 'La Fraternité, CSP Vaud', linkKey: 'CSP_MIGRATION' }
       ],
       liensFrontalier: [
         { type: 'link', label: 'Infos chômage / ORP', linkKey: 'ORP_REGISTER' },
@@ -205,7 +205,7 @@
         { type: 'link', label: 'Pro Senectute Vaud', linkKey: 'PRO_SENECTUTE' }
       ],
       liensCMS: [
-        { type: 'link', label: 'AVASAD — CMS Vaud', linkKey: 'CMS_AVASAD' }
+        { type: 'link', label: 'AVASAD, CMS Vaud', linkKey: 'CMS_AVASAD' }
       ],
       liensFraisMaladieInvalidite: [
         { type: 'link', label: 'Infos PC AVS/AI', linkKey: 'PC_INFO' },
@@ -215,7 +215,7 @@
       liensAminh: [
         { type: 'link', label: 'Aides financières proches aidant·es', linkKey: 'ESPACE_PROCHES_FINANCES' },
         { type: 'link', label: 'Infos proches aidant·es', linkKey: 'ESPACE_PROCHES_INFO' },
-        { type: 'link', label: 'AVASAD — CMS Vaud', linkKey: 'CMS_AVASAD' },
+        { type: 'link', label: 'AVASAD, CMS Vaud', linkKey: 'CMS_AVASAD' },
         { type: 'link', label: 'Pro Infirmis Vaud', linkKey: 'PRO_INFIRMIS' }
       ],
       liensDettes: [
@@ -228,18 +228,18 @@
         { type: 'link', label: 'CSP Vaud', linkKey: 'CSP_HOME' }
       ],
       liensUnafin: [
-        { type: 'link', label: 'Unafin — Service social de Lausanne', linkKey: 'UNAFIN_INFO' },
+        { type: 'link', label: 'Unafin, Service social de Lausanne', linkKey: 'UNAFIN_INFO' },
         { type: 'link', label: 'Parlons Cash', linkKey: 'PARLONS_CASH' }
       ],
       liensCommunes: [
         { type: 'link', label: 'Liste des communes vaudoises', linkKey: 'COMMUNES_LIST' },
       ],
       liensGardeEnfants: [
-        { type: 'link', label: 'Garde d’enfants malades — Croix-Rouge vaudoise', linkKey: 'CROIX_ROUGE_GARDE_MALADE' },
-        { type: 'link', label: 'Parents-Rescousse — Croix-Rouge vaudoise', linkKey: 'PARENTS_RESCOUSSE' },
+        { type: 'link', label: 'Garde d’enfants malades, Croix-Rouge vaudoise', linkKey: 'CROIX_ROUGE_GARDE_MALADE' },
+        { type: 'link', label: 'Parents-Rescousse, Croix-Rouge vaudoise', linkKey: 'PARENTS_RESCOUSSE' },
       ],
       liensAideAlimentaire: [
-        { type: 'link', label: 'Aide alimentaire — Guide Social', linkKey: 'GUIDE_SOCIAL_FOOD' },
+        { type: 'link', label: 'Aide alimentaire, Guide Social', linkKey: 'GUIDE_SOCIAL_FOOD' },
         { type: 'link', label: 'Cartons du Coeur', linkKey: 'CARTONS_COEUR' },
         { type: 'link', label: 'Épiceries Caritas', linkKey: 'CARITAS_EPICERIES' },
       ],
