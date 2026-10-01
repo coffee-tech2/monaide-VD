@@ -455,7 +455,7 @@
       category: 'financier',
       summary: 'Budget, poursuites, dettes · Infos claires et orientation',
       audience: 'Personnes dont le budget ne tient plus, avec dettes, rappels ou poursuites.',
-      purpose: 'Parlons Cash aide à comprendre la situation, faire le point et agir avant que les dettes s’aggravent.',
+      purpose: 'Parlons Cash aide à comprendre la situation et à agir avant que les dettes s’aggravent.',
       highlights: [
         'Ligne gratuite : 0840 43 21 00',
         'Conseil confidentiel',
@@ -2446,7 +2446,7 @@
       category: 'sante',
       summary: 'Consultations et urgences · Lausanne',
       audience: 'Personnes qui ont besoin de soins ou d’un accès médical facile, y compris en situation précaire.',
-      purpose: 'Unisanté est un vrai point de départ santé à Lausanne pour des soins de base, des urgences et des situations complexes.',
+      purpose: 'Unisanté est un vrai point de départ pour la santé à Lausanne pour des soins de base, des urgences et des situations complexes.',
       highlights: [
         'Référence en médecine générale à Lausanne',
         'Permanence du Flon sans rendez-vous',
