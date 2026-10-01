@@ -35,7 +35,7 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'addiction-sante-mentale-vaud',
       label: 'Santé',
       title: 'Addiction et santé mentale',
-      summary: 'Trouver de l’aide pour une addiction ou une difficulté psychologique dans le canton de Vaud, sans jugement.',
+      summary: 'Trouver de l’aide pour une addiction ou une difficulté psychologique dans le canton de Vaud.',
       href: '/addiction-sante-mentale-vaud/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['sante'],

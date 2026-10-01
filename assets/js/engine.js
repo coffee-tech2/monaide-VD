@@ -428,7 +428,7 @@
     res.push(buildResult({
       nom: 'Parlons Cash — dettes et surendettement',
       badge: 'verifier',
-      desc: 'Si les dettes, les poursuites ou les factures te dépassent, Parlons Cash propose une ligne gratuite, confidentielle et sans jugement.',
+      desc: 'Si les dettes, les poursuites ou les factures te dépassent, Parlons Cash propose une ligne gratuite et confidentielle.',
       action: '1. Appelle Parlons Cash au 0840 43 21 00.\n2. Avant l’appel, fais une liste simple : qui réclame quoi, montant, délai, poursuite ou rappel.\n3. Demande quoi payer en priorité : loyer, assurance maladie, alimentation, impôts, crédits ou autres factures.\n4. Si la situation est complexe, demande vers quel service prendre rendez-vous ensuite, par exemple CSP Vaud ou accompagnement spécialisé.',
       today: 'Commence par lister les dettes, puis appelle Parlons Cash avant de promettre des arrangements impossibles.',
       docs: ['Liste des dettes ou poursuites', 'Factures impayées', 'Commandements de payer ou rappels', 'Budget mensuel si tu l’as'],

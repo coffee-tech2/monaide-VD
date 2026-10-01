@@ -458,7 +458,7 @@
       purpose: 'Parlons Cash aide à comprendre la situation, trouver un premier repère et agir avant que les dettes s’aggravent.',
       highlights: [
         'Ligne gratuite : 0840 43 21 00',
-        'Conseil confidentiel et sans jugement',
+        'Conseil confidentiel',
         'Entretiens ou accompagnement possible selon la situation',
         'Jet Service peut aussi aider sur le budget pour les jeunes et les personnes en formation'
       ],
@@ -467,7 +467,7 @@
         'Faire une liste simple des factures, rappels et poursuites',
         'Demander quoi payer en priorité avant de promettre des arrangements'
       ],
-      bodyIntro: 'Si tu as des dettes, des poursuites ou que ton budget ne tient plus, Parlons Cash peut t’aider gratuitement, confidentiellement et sans jugement. C’est une bonne première porte pour comprendre quoi faire avant que les dettes s’aggravent.',
+      bodyIntro: 'Si tu as des dettes, des poursuites ou que ton budget ne tient plus, Parlons Cash peut t’aider gratuitement et confidentiellement. C’est une bonne première porte pour comprendre quoi faire avant que les dettes s’aggravent.',
       sections: [
         {
           title: 'Ce que tu y trouves',
@@ -705,7 +705,7 @@
       audience: 'Personnes qui ont besoin d’un lieu sûr pour parler de santé sexuelle, de contraception, de dépistage ou de grossesse.',
       purpose: 'PROFA permet de poser des questions intimes, faire un dépistage, parler de contraception ou être accompagné·e dans une grossesse imprévue.',
       highlights: [
-        'Consultations sans jugement',
+        'Consultations en santé sexuelle',
         'Centres dans plusieurs villes du canton',
         'Bon premier relais si tu ne sais pas encore par où commencer'
       ],
@@ -2028,7 +2028,7 @@
       audience: 'Personnes de 60 ans et plus qui ont besoin d’aide dans leurs démarches ou leur quotidien.',
       purpose: 'Pro Senectute aide à faire le point sur les droits, les démarches et certaines difficultés du quotidien après 60 ans.',
       highlights: [
-        'Gratuit et sans jugement',
+        'Gratuit',
         'Très utile pour AVS, PC, impôts et démarches administratives',
         'Permanences dans tout le canton'
       ],
@@ -2037,7 +2037,7 @@
         'Expliquer ce qui te pose problème',
         'Préparer les courriers ou décisions utiles si tu en as'
       ],
-      bodyIntro: 'Tu as 60 ans ou plus ? Pro Senectute t’aide avec tes démarches administratives, tes impôts, tes droits AVS et PC. Gratuit, sans jugement.',
+      bodyIntro: 'Tu as 60 ans ou plus ? Pro Senectute t’aide avec tes démarches administratives, tes impôts, tes droits AVS et PC. Gratuit.',
       sections: [
         {
           title: 'Pour qui',
@@ -2359,7 +2359,7 @@
       audience: 'Personnes concernées par une addiction ou proches qui cherchent un premier repère.',
       purpose: 'Addiction Vaud aide à faire le point, à se situer et à trouver le bon relais dans le canton.',
       highlights: [
-        'Infos claires et sans jugement',
+        'Infos claires',
         'Tests d’auto-évaluation disponibles',
         'Utile aussi pour les proches'
       ],
@@ -2408,15 +2408,14 @@
       purpose: 'Rel’Aids va au-devant des personnes concernées pour réduire les risques et créer un lien vers des soins ou un soutien.',
       highlights: [
         'Pas d’inscription',
-        'Équipe mobile sur le canton',
-        'Approche sans jugement'
+        'Équipe mobile sur le canton'
       ],
       firstSteps: [
         'Voir la structure Rel’Aids',
         'Prendre contact si toi ou un proche en avez besoin',
         'Utiliser ce relais même sans projet de soin clair'
       ],
-      bodyIntro: 'Rel’Aids va au-devant des personnes concernées par la consommation de drogues, sans jugement ni inscription.',
+      bodyIntro: 'Rel’Aids va au-devant des personnes concernées par la consommation de drogues, sans inscription.',
       sections: [
         {
           title: 'Ce qu’ils font',
@@ -2491,7 +2490,7 @@
       category: 'sante',
       summary: 'Douche, soins, lessive · Accueil bas seuil à Lausanne',
       audience: 'Personnes qui ont besoin d’un lieu d’accueil bas seuil avec hygiène, soins et orientation.',
-      purpose: 'Le Point d’Eau permet de retrouver des services de base très concrets sans inscription ni jugement.',
+      purpose: 'Le Point d’Eau permet de retrouver des services de base très concrets sans inscription.',
       highlights: [
         'Accueil bas seuil',
         'Douches, lessive, vêtements, orientation',
@@ -2841,7 +2840,7 @@
       category: 'urgence',
       summary: 'Toute personne en détresse · Gratuit · Anonyme · 24h/24',
       audience: 'Personnes en détresse ou proches qui ont besoin de parler immédiatement.',
-      purpose: 'Ces lignes permettent de parler tout de suite à quelqu’un, sans jugement, de façon anonyme et gratuite.',
+      purpose: 'Ces lignes permettent de parler tout de suite à quelqu’un, de façon anonyme et gratuite.',
       highlights: [
         'Disponibles maintenant',
         'Anonymes et gratuites',
@@ -2852,7 +2851,7 @@
         'Parler maintenant plutôt que rester seul·e',
         'Si le danger est immédiat, appeler les urgences'
       ],
-      bodyIntro: 'Si tu traverses une période difficile ou que tu as besoin de parler, ces lignes sont là maintenant. Gratuites, anonymes et sans jugement.',
+      bodyIntro: 'Si tu traverses une période difficile ou que tu as besoin de parler, ces lignes sont là maintenant. Gratuites et anonymes.',
       sections: [
         {
           title: 'Écoute généraliste',
@@ -3061,7 +3060,7 @@
           title: 'Quand cette fiche est utile',
           items: [
             'Violence physique, psychologique, sexuelle ou économique',
-            'Besoin de parler sans être jugé·e',
+            'Besoin de parler à quelqu’un',
             'Besoin d’un lieu sûr ou d’un accompagnement rapide'
           ]
         },
