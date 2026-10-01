@@ -52,9 +52,9 @@
     --radius-md: 10px;
     --radius-sm: 6px;
     --radius-xl: 22px;
-    --shadow-sm: 0 4px 14px rgba(23,41,60,0.05);
-    --shadow-md: 0 14px 32px rgba(23,41,60,0.08);
-    --shadow-lg: 0 24px 56px rgba(23,41,60,0.14);
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
   }
   *,
   *::before,
@@ -80,7 +80,7 @@
   body > nav { position: fixed; top: 0; left: 0; right: 0; background: #F7F8F4; border-bottom: 1px solid var(--border); z-index: 100; height: 68px; }
   .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
   .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.43rem; font-weight: 800; letter-spacing:-0.045em; color: var(--sage-dark); text-decoration: none; display:inline-flex; align-items:center; gap:0.62rem; }
-  .nav-logo::before { content:''; width:2rem; height:2rem; border-radius:0.62rem; background:var(--vaud); box-shadow:0 4px 12px rgba(23,41,60,0.18); flex-shrink:0; }
+  .nav-logo::before { content:''; width:2rem; height:2rem; border-radius:0.62rem; background:var(--vaud); flex-shrink:0; }
   .nav-logo-main { color: var(--orange); }
   .nav-logo-sep { color: var(--orange); }
   .nav-logo-vd { color: var(--sage-dark); }
