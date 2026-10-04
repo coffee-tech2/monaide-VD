@@ -197,6 +197,7 @@
   window.setCatFilter = function(cat, btn) {
     setActiveCatalogFilterButton(btn);
     document.getElementById('cat-search').value = '';
+    restoreCatalogOrder();
     document.querySelectorAll('.cat-card.open').forEach(function(cc) {
       cc.classList.remove('open');
       var b = cc.querySelector('.cat-card-body');
@@ -227,11 +228,72 @@
     closeCatalogFiltersOnMobile();
   };
 
+  function catalogOrderOf(el) { return parseInt(el.dataset.origIdx, 10) || 0; }
+
+  function rememberCatalogOrder() {
+    var root = document.getElementById('catalog-groups-root');
+    if (!root || root.dataset.orderSaved) return;
+    root.dataset.orderSaved = '1';
+    Array.from(root.querySelectorAll('.cat-group')).forEach(function(group, gi) {
+      group.dataset.origIdx = gi;
+      Array.from(group.querySelectorAll('.cat-card')).forEach(function(card, ci) { card.dataset.origIdx = ci; });
+    });
+  }
+
+  function restoreCatalogOrder() {
+    var root = document.getElementById('catalog-groups-root');
+    if (!root || !root.dataset.orderSaved) return;
+    var groups = Array.from(root.querySelectorAll('.cat-group'));
+    groups.sort(function(a, b) { return catalogOrderOf(a) - catalogOrderOf(b); }).forEach(function(group) {
+      root.appendChild(group);
+      var grid = group.querySelector('.cat-cards-grid');
+      if (!grid) return;
+      Array.from(grid.querySelectorAll('.cat-card')).sort(function(a, b) { return catalogOrderOf(a) - catalogOrderOf(b); }).forEach(function(card) { grid.appendChild(card); });
+    });
+  }
+
+  function scoreCatalogCard(card, q, expandedQueries) {
+    var title = normalizeAidText((card.querySelector('.cat-card-title') || {}).textContent || '');
+    var desc = normalizeAidText((card.querySelector('.cat-card-desc') || {}).textContent || '');
+    var text = normalizeAidText(card.innerText);
+    var score = 0;
+    if (title.indexOf(q) !== -1) score = 100;
+    else if (desc.indexOf(q) !== -1) score = 60;
+    else if (text.indexOf(q) !== -1) score = 10;
+    expandedQueries.forEach(function(candidate, rank) {
+      if (candidate === q || text.indexOf(candidate) === -1) return;
+      var curated = (title.indexOf(candidate) !== -1 ? 95 : 70) - Math.min(rank, 8) * 3;
+      if (curated > score) score = curated;
+    });
+    return score;
+  }
+
+  function rankCatalogResults(q, expandedQueries) {
+    var root = document.getElementById('catalog-groups-root');
+    if (!root) return;
+    var best = [];
+    Array.from(root.querySelectorAll('.cat-group')).forEach(function(group) {
+      var grid = group.querySelector('.cat-cards-grid');
+      var cards = grid ? Array.from(grid.querySelectorAll('.cat-card')) : [];
+      var top = -1;
+      cards.forEach(function(card) {
+        card.dataset.score = card.style.display === 'none' ? -1 : scoreCatalogCard(card, q, expandedQueries);
+        if (+card.dataset.score > top) top = +card.dataset.score;
+      });
+      cards.sort(function(a, b) { return (+b.dataset.score - +a.dataset.score) || (catalogOrderOf(a) - catalogOrderOf(b)); }).forEach(function(card) { grid.appendChild(card); });
+      group.dataset.score = top;
+    });
+    Array.from(root.querySelectorAll('.cat-group')).sort(function(a, b) {
+      return (+b.dataset.score - +a.dataset.score) || (catalogOrderOf(a) - catalogOrderOf(b));
+    }).forEach(function(group) { root.appendChild(group); });
+  }
+
   window.filtrerCatalogue = function() {
     var rawQuery = document.getElementById('cat-search').value || '';
     var q = normalizeAidText(rawQuery);
     var expandedQueries = expandSearchQueries(rawQuery);
     setActiveCatalogFilterButton(document.querySelector('.cat-filter'));
+    rememberCatalogOrder();
     var count = 0;
     document.querySelectorAll('.cat-card').forEach(function(item) {
       var text = normalizeAidText(item.innerText);
@@ -243,6 +305,8 @@
       var hasVisible = Array.from(group.querySelectorAll('.cat-card')).some(function(cc) { return cc.style.display !== 'none'; });
       group.style.display = hasVisible ? '' : 'none';
     });
+    if (q) rankCatalogResults(q, expandedQueries);
+    else restoreCatalogOrder();
     var noResult = document.getElementById('cat-no-result');
     if (noResult) {
       if (count === 0 && q) {
