@@ -73,7 +73,7 @@
             'Prime LAMal obligatoire concernée, pas les assurances complémentaires',
             'Droit calculé avec le revenu déterminant unifié (RDU), selon revenu, fortune, ménage et région de primes',
             'Dernière taxation fiscale définitive souvent utilisée, sauf changement important de situation financière',
-            'Bénéficiaires RI ou PC AVS/AI : traitement spécifique du subside'
+            'Bénéficiaires RI ou PC AVS/AI : traitement spécifique du subside'
           ]
         },
         {
@@ -95,7 +95,7 @@
       ],
       links: [
         { kind: 'action', label: 'Évaluer et demander le subside', url: window.MONAIDE_LINKS.SUBSIDE_HOME },
-        { kind: 'info', label: 'OVAM : infos officielles', url: 'https://www.vd.ch/sante-soins-et-handicap/assurance-maladie' },
+        { kind: 'info', label: 'OVAM : infos officielles', url: 'https://www.vd.ch/sante-soins-et-handicap/assurance-maladie' },
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST },
         { kind: 'info', label: 'Guide détaillé', url: '/subside-lamal/' }
       ],
@@ -129,8 +129,8 @@
             'Vivre dans le canton de Vaud',
             'Être suisse ou avoir un permis de séjour / une autorisation de renseigner',
             'Avoir des ressources mensuelles inférieures au barème cantonal du RI',
-            'Fortune maximale : 4’000 CHF seul·e, 8’000 CHF en couple, +2’000 CHF par enfant, 10’000 CHF maximum par famille',
-            'Pour les personnes de plus de 57 ans : limite de fortune de 10’000 CHF, quelle que soit la situation familiale',
+            'Fortune maximale : 4’000 CHF seul·e, 8’000 CHF en couple, +2’000 CHF par enfant, 10’000 CHF maximum par famille',
+            'Pour les personnes de plus de 57 ans : limite de fortune de 10’000 CHF, quelle que soit la situation familiale',
             'Le RI intervient en dernier recours, après les revenus, assurances sociales, aide familiale possible et autres prestations'
           ]
         },
@@ -200,7 +200,7 @@
     },
     {
       id: 'bourse',
-      title: 'Bourses d’études : OCBE',
+      title: 'Bourses d’études : OCBE',
       category: 'formation',
       summary: 'Formation post-obligatoire · Ressources du ménage insuffisantes',
       audience: 'Personnes en formation post-obligatoire qui ont besoin d’un soutien pour financer leurs études.',
@@ -222,13 +222,13 @@
         {
           title: 'Conditions',
           items: [
-            'Formation reconnue en Suisse après l’école obligatoire : transition cantonale, formation préparatoire, passerelle, secondaire II ou tertiaire reconnu',
-            'Établissement reconnu en Suisse ; les écoles privées non reconnues/subventionnées ne donnent en principe pas droit à cette aide',
+            'Formation reconnue en Suisse après l’école obligatoire : transition cantonale, formation préparatoire, passerelle, secondaire II ou tertiaire reconnu',
+            'Établissement reconnu en Suisse ; les écoles privées non reconnues/subventionnées ne donnent en principe pas droit à cette aide',
             'Ressources de l’étudiant·e et de ses parents examinées, sauf situation d’indépendance reconnue',
-            'Personne dépendante : conditions liées au domicile des parents dans le canton de Vaud et au statut de séjour',
-            'Permis B hors UE/AELE : en principe 5 ans de séjour en Suisse + parents domiciliés dans le canton de Vaud',
-            'Permis F : possible seulement dans certains cas, notamment sans dépendre de l’EVAM',
-            'Personne indépendante : plus de 18 ans, première formation ou 4 ans d’activité lucrative, puis 2 ans d’activité dans le canton de Vaud avec revenu suffisant avant la formation',
+            'Personne dépendante : conditions liées au domicile des parents dans le canton de Vaud et au statut de séjour',
+            'Permis B hors UE/AELE : en principe 5 ans de séjour en Suisse + parents domiciliés dans le canton de Vaud',
+            'Permis F : possible seulement dans certains cas, notamment sans dépendre de l’EVAM',
+            'Personne indépendante : plus de 18 ans, première formation ou 4 ans d’activité lucrative, puis 2 ans d’activité dans le canton de Vaud avec revenu suffisant avant la formation',
             'Certaines formations équivalentes ou inférieures à un titre déjà obtenu peuvent être limitées'
           ]
         },
@@ -237,11 +237,11 @@
           items: [
             'Tester son éligibilité avec le questionnaire OCBE',
             'Déposer la demande le plus tôt possible. Pour que toute l’année de formation soit prise en compte, le délai est en principe le 31 août pour gymnase, apprentissage, école supérieure ou SEMO, et le 30 septembre pour université, EPFL ou haute école',
-            'Si la demande est déposée après ces délais, l’aide commence en principe le premier jour du mois suivant le dépôt ; moins de 3 mois avant la fin de la formation, aucune aide n’est accordée pour l’année en cours',
+            'Si la demande est déposée après ces délais, l’aide commence en principe le premier jour du mois suivant le dépôt ; moins de 3 mois avant la fin de la formation, aucune aide n’est accordée pour l’année en cours',
             'Préparer attestation d’inscription, documents fiscaux, domicile et éventuels revenus',
             'Si la formation dure plusieurs années, refaire une demande chaque année',
             'Si une pièce manque, commencer quand même la demande et compléter ensuite selon les indications OCBE',
-            'En cas de refus : délai de 30 jours pour déposer une réclamation, idéalement avec l’aide de Jet Service'
+            'En cas de refus : délai de 30 jours pour déposer une réclamation, idéalement avec l’aide de Jet Service'
           ]
         }
       ],
@@ -277,7 +277,7 @@
         'Faire la demande en ligne',
         'Contacter l’équipe CarteCulture si tu bloques'
       ],
-      bodyIntro: 'Tu bénéficies déjà du RI, d’un subside LAMal ou d’une bourse ? La CarteCulture peut souvent être une piste utile avec le bon justificatif. Elle donne accès à des réductions dans plus de 270 offres du canton.',
+      bodyIntro: 'Tu bénéficies déjà du RI, d’un subside LAMal ou d’une bourse ? La CarteCulture peut souvent être une piste utile avec le bon justificatif. Elle donne accès à des réductions dans plus de 270 offres du canton.',
       sections: [
         {
           title: 'Conditions',
@@ -319,7 +319,7 @@
         'Préparer revenus, charges et fortune',
         'Déposer ensuite la demande officielle'
       ],
-      bodyIntro: 'Tu as une rente AVS ou AI mais elle ne suffit pas ? Les PC peuvent compléter le budget de base après examen des revenus, charges et fortune. Dans le canton, le plus simple est souvent de commencer par une agence AAS.',
+      bodyIntro: 'Tu as une rente AVS ou AI mais elle ne suffit pas ? Les PC peuvent compléter le budget de base après examen des revenus, charges et fortune. Dans le canton, le plus simple est souvent de commencer par une agence AAS.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'Caisse AVS Vaud, souvent après un premier passage par l’AAS',
       sections: [
@@ -328,8 +328,8 @@
           items: [
             'Avoir droit à une rente AVS ou AI, à une allocation pour impotent AI, ou à des indemnités journalières AI pendant au moins 6 mois',
             'Avoir son domicile et sa résidence habituelle en Suisse',
-            'Pour les personnes hors UE/AELE : délai de séjour à vérifier, souvent 10 ans, ou 5 ans pour réfugiés/apatrides',
-            'Fortune maximale : 100’000 CHF seul·e, 200’000 CHF en couple, 50’000 CHF par enfant',
+            'Pour les personnes hors UE/AELE : délai de séjour à vérifier, souvent 10 ans, ou 5 ans pour réfugiés/apatrides',
+            'Fortune maximale : 100’000 CHF seul·e, 200’000 CHF en couple, 50’000 CHF par enfant',
             'Les dépenses reconnues doivent dépasser les revenus déterminants',
             'Les PC sont un droit légal si les conditions sont remplies, pas une aide sociale de type RI'
           ]
@@ -341,7 +341,7 @@
             'Préparer décision AVS/AI, bail, primes maladie, revenus, fortune et charges importantes',
             'Déposer ensuite la demande officielle auprès de l’agence AVS/AAS ou de la caisse compétente',
             'La Caisse AVS Vaud examine le dossier et rend la décision',
-            'Le droit n’est pas automatique : il faut déposer une demande'
+            'Le droit n’est pas automatique : il faut déposer une demande'
           ]
         }
       ],
@@ -355,7 +355,7 @@
     },
     {
       id: 'frais-maladie-invalidite',
-      title: 'Frais de maladie et d’invalidité : PC AVS/AI',
+      title: 'Frais de maladie et d’invalidité : PC AVS/AI',
       category: 'sante',
       summary: 'Déjà aux PC · Dentiste, lunettes, moyens auxiliaires, frais reconnus',
       audience: 'Personnes qui touchent déjà les PC AVS/AI et qui ont des frais de santé ou d’invalidité difficiles à payer.',
@@ -379,15 +379,15 @@
           items: [
             'Frais dentaires, moyens auxiliaires, participation aux soins ou autres frais reconnus selon la situation',
             'Les limites et conditions dépendent du type de frais',
-            'Une facture seule ne suffit pas toujours : un devis ou une autorisation peut être nécessaire'
+            'Une facture seule ne suffit pas toujours : un devis ou une autorisation peut être nécessaire'
           ]
         },
         {
           title: 'Démarche',
           items: [
-            'Garder toutes les pièces : facture, devis, ordonnance, décision, preuve de paiement',
+            'Garder toutes les pièces : facture, devis, ordonnance, décision, preuve de paiement',
             'Demander à l’AAS ou à la Caisse AVS Vaud si le frais peut être présenté',
-            'Ne pas attendre trop longtemps : certains délais peuvent s’appliquer'
+            'Ne pas attendre trop longtemps : certains délais peuvent s’appliquer'
           ]
         }
       ],
@@ -451,13 +451,13 @@
     },
     {
       id: 'parlons-cash',
-      title: 'Parlons Cash : dettes et surendettement',
+      title: 'Parlons Cash : dettes et surendettement',
       category: 'financier',
       summary: 'Budget, poursuites, dettes · Infos claires et orientation',
       audience: 'Personnes dont le budget ne tient plus, avec dettes, rappels ou poursuites.',
       purpose: 'Parlons Cash aide à comprendre la situation et à agir avant que les dettes s’aggravent.',
       highlights: [
-        'Ligne gratuite : 0840 43 21 00',
+        'Ligne gratuite : 0840 43 21 00',
         'Conseil confidentiel',
         'Entretiens ou accompagnement possible selon la situation',
         'Jet Service peut aussi aider sur le budget pour les jeunes et les personnes en formation'
@@ -474,7 +474,7 @@
           items: [
             'Explications simples sur dettes et surendettement',
             'Conseils concrets pour agir sans attendre',
-            'Priorités de paiement : loyer, assurance maladie, alimentation, pension alimentaire, garde, impôts et charges courantes',
+            'Priorités de paiement : loyer, assurance maladie, alimentation, pension alimentaire, garde, impôts et charges courantes',
             'Orientation vers les bons services dans le canton',
             'Infos utiles aussi pour les proches'
           ]
@@ -493,7 +493,7 @@
           title: 'Démarche',
           items: [
             'Appeler le 0840 43 21 00',
-            'Dire simplement ce qui bloque : factures, poursuites, loyer, impôts, crédits ou primes maladie',
+            'Dire simplement ce qui bloque : factures, poursuites, loyer, impôts, crédits ou primes maladie',
             'Demander un conseil sur les priorités de paiement',
             'Préparer ensuite un budget ou un rendez-vous si un suivi est proposé'
           ]
@@ -510,7 +510,7 @@
       callouts: [
         {
           kind: 'tip',
-          html: 'Un commandement de payer a des délais courts : l’opposition se fait en principe dans les 10 jours. Si tu ne sais pas quoi faire, appelle rapidement avant de laisser passer le délai.'
+          html: 'Un commandement de payer a des délais courts : l’opposition se fait en principe dans les 10 jours. Si tu ne sais pas quoi faire, appelle rapidement avant de laisser passer le délai.'
         }
       ],
       links: [
@@ -565,7 +565,7 @@
       ],
       links: [
         { kind: 'action', label: 'Contacter le BCMA', url: window.MONAIDE_LINKS.BCMA_HOME },
-        { kind: 'info', label: 'Médiation administrative : infos', url: window.MONAIDE_LINKS.BCMA_INFO }
+        { kind: 'info', label: 'Médiation administrative : infos', url: window.MONAIDE_LINKS.BCMA_INFO }
       ],
       documentationTarget: null
     },
@@ -586,7 +586,7 @@
         'Préparer les pièces des enfants',
         'Lancer la démarche sans attendre'
       ],
-      bodyIntro: 'Si tu as un enfant à charge, des allocations familiales peuvent exister. Mais elles ne sont pas versées automatiquement : il faut les demander auprès du bon service selon ta situation.',
+      bodyIntro: 'Si tu as un enfant à charge, des allocations familiales peuvent exister. Mais elles ne sont pas versées automatiquement : il faut les demander auprès du bon service selon ta situation.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'Employeur, caisse de chômage ou AAS selon la situation',
       sections: [
@@ -601,9 +601,9 @@
         {
           title: 'Démarche',
           items: [
-            'Salarié·e : demande via ton employeur ou sa caisse',
-            'Au chômage : s’adresser à la caisse de chômage',
-            'Sans activité : demande via une agence AAS'
+            'Salarié·e : demande via ton employeur ou sa caisse',
+            'Au chômage : s’adresser à la caisse de chômage',
+            'Sans activité : demande via une agence AAS'
           ]
         }
       ],
@@ -616,7 +616,7 @@
     },
     {
       id: 'cms',
-      title: 'CMS : soins et aide à domicile',
+      title: 'CMS : soins et aide à domicile',
       category: 'sante',
       summary: 'Personnes malades ou âgées · Maintien à domicile',
       audience: 'Personnes qui ont besoin d’aide au quotidien pour rester chez elles.',
@@ -631,7 +631,7 @@
         'Demander à ton médecin une prescription si besoin',
         'Expliquer concrètement ce qui devient difficile au quotidien'
       ],
-      bodyIntro: 'Tu veux rester chez toi mais tu as besoin d’aide au quotidien ? Les CMS peuvent envoyer des professionnel·le·s pour les soins, l’aide à la toilette, les repas ou d’autres soutiens utiles à domicile.',
+      bodyIntro: 'Tu veux rester chez toi mais tu as besoin d’aide au quotidien ? Les CMS peuvent envoyer des professionnel·le·s pour les soins, l’aide à la toilette, les repas ou d’autres soutiens utiles à domicile.',
       sections: [
         {
           title: 'Pour quoi',
@@ -673,7 +673,7 @@
         'Expliquer simplement ce qui bloque pour toi',
         'Demander un premier rendez-vous ou une orientation'
       ],
-      bodyIntro: 'Tu as un handicap ou une maladie chronique ? Pro Infirmis peut t’aider gratuitement dans tes démarches liées à l’AI, au logement, à l’emploi ou aux droits sociaux. Tu n’as pas à gérer ça seul·e.',
+      bodyIntro: 'Tu as un handicap ou une maladie chronique ? Pro Infirmis peut t’aider gratuitement dans tes démarches liées à l’AI, au logement, à l’emploi ou aux droits sociaux. Tu n’as pas à gérer ça seul·e.',
       sections: [
         {
           title: 'Pour quoi',
@@ -699,7 +699,7 @@
     },
     {
       id: 'sante-sexuelle-profa',
-      title: 'Santé sexuelle : PROFA',
+      title: 'Santé sexuelle : PROFA',
       category: 'sante',
       summary: 'Contraception, dépistage, grossesse imprévue',
       audience: 'Personnes qui ont besoin d’un lieu sûr pour parler de santé sexuelle, de contraception, de dépistage ou de grossesse.',
@@ -744,13 +744,13 @@
       links: [
         { kind: 'action', label: 'Consulter PROFA', url: window.MONAIDE_LINKS.PROFA_HOME },
         { kind: 'action', label: 'Trouver un centre PROFA', url: window.MONAIDE_LINKS.PROFA_CENTRES },
-        { kind: 'info', label: 'Infos Vaud : grossesse imprévue / IG', url: window.MONAIDE_LINKS.VAUD_GROSSESSE_INFO }
+        { kind: 'info', label: 'Infos Vaud : grossesse imprévue / IG', url: window.MONAIDE_LINKS.VAUD_GROSSESSE_INFO }
       ],
       documentationTarget: null
     },
     {
       id: 'l-check',
-      title: 'L-Check : santé sexuelle inclusive',
+      title: 'L-Check : santé sexuelle inclusive',
       category: 'sante',
       summary: 'Consultation inclusive · Renens',
       audience: 'Personnes qui cherchent un lieu plus ciblé et plus rassurant pour parler de santé sexuelle, de genre ou d’orientation.',
@@ -799,7 +799,7 @@
     },
     {
       id: 'voqueer',
-      title: 'Voqueer : soutien LGBTQIA+',
+      title: 'Voqueer : soutien LGBTQIA+',
       category: 'sante',
       summary: 'Soutien, groupes et ressources LGBTQIA+',
       audience: 'Personnes LGBTQIA+ ou proches qui cherchent soutien ou ressources dans le canton.',
@@ -848,7 +848,7 @@
     },
     {
       id: 'lavi',
-      title: 'LAVI : aide aux victimes',
+      title: 'LAVI : aide aux victimes',
       category: 'urgence',
       summary: 'Violence conjugale, agression, abus · Gratuit · Confidentiel',
       audience: 'Personnes qui ont subi une violence, une agression, des abus ou une autre infraction pénale.',
@@ -863,7 +863,7 @@
         'Sinon, contacter le centre LAVI Vaud pour un rendez-vous confidentiel',
         'Expliquer simplement ce qui s’est passé, même si tout n’est pas clair'
       ],
-      bodyIntro: 'Tu as vécu une violence physique, sexuelle ou psychologique, ou une autre infraction qui t’a atteint·e directement ? La LAVI peut t’aider gratuitement et confidentiellement. Tu peux demander conseil même sans plainte déposée.',
+      bodyIntro: 'Tu as vécu une violence physique, sexuelle ou psychologique, ou une autre infraction qui t’a atteint·e directement ? La LAVI peut t’aider gratuitement et confidentiellement. Tu peux demander conseil même sans plainte déposée.',
       sections: [
         {
           title: 'Pour qui',
@@ -886,7 +886,7 @@
           items: [
             'Contacter directement un centre LAVI vaudois',
             'Demander un rendez-vous confidentiel',
-            'Apporter les documents existants seulement si tu les as déjà : constat, messages, certificat médical, courriers'
+            'Apporter les documents existants seulement si tu les as déjà : constat, messages, certificat médical, courriers'
           ]
         }
       ],
@@ -899,13 +899,13 @@
       links: [
         { kind: 'action', label: 'LAVI Vaud', url: window.MONAIDE_LINKS.LAVI_INFO },
         { kind: 'action', label: 'Centre LAVI Lausanne', url: window.MONAIDE_LINKS.LAVI_LAUSANNE },
-        { kind: 'info', label: '142 : aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 }
+        { kind: 'info', label: '142 : aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 }
       ],
       documentationTarget: null
     },
     {
       id: 'brapa',
-      title: 'BRAPA : avances sur pensions alimentaires',
+      title: 'BRAPA : avances sur pensions alimentaires',
       category: 'financier',
       summary: 'Parent séparé·e · Pension non versée · Tout le canton',
       audience: 'Parents séparé·es qui ne reçoivent pas la pension alimentaire fixée par décision.',
@@ -920,14 +920,14 @@
         'Préparer la décision qui fixe la pension',
         'Rassembler les preuves de non-paiement et les justificatifs financiers'
       ],
-      bodyIntro: 'L’autre parent ne paie pas, ou seulement en partie, une pension alimentaire fixée par une décision valable ? Le BRAPA peut aider au recouvrement et, selon les revenus et la fortune, verser des avances. L’avance est liée au recouvrement auprès du débiteur.',
+      bodyIntro: 'L’autre parent ne paie pas, ou seulement en partie, une pension alimentaire fixée par une décision valable ? Le BRAPA peut aider au recouvrement et, selon les revenus et la fortune, verser des avances. L’avance est liée au recouvrement auprès du débiteur.',
       sections: [
         {
           title: 'Conditions',
           items: [
-            'Disposer d’une décision judiciaire formelle valable : jugement, ordonnance, convention ou titre équivalent',
+            'Disposer d’une décision judiciaire formelle valable : jugement, ordonnance, convention ou titre équivalent',
             'La pension alimentaire fixée n’est pas versée ou seulement partiellement versée',
-            'Pour les avances : analyse des revenus, de la fortune et des barèmes BRAPA',
+            'Pour les avances : analyse des revenus, de la fortune et des barèmes BRAPA',
             'La pension doit être cédée à l’État si le dossier est pris en charge pour les avances',
             'Le BRAPA peut aussi aider pour le versement direct d’allocations familiales non reversées'
           ]
@@ -937,7 +937,7 @@
           items: [
             'Appeler le 021 316 52 21 pendant les heures d’ouverture',
             'Remplir le questionnaire envoyé après l’entretien téléphonique',
-            'Préparer le titre d’entretien : jugement de divorce, ordonnance, mesures protectrices ou convention alimentaire',
+            'Préparer le titre d’entretien : jugement de divorce, ordonnance, mesures protectrices ou convention alimentaire',
             'Ajouter l’attestation de formation pour les enfants qui ne sont plus en scolarité obligatoire',
             'Préparer preuves des ressources financières et autres documents demandés par le BRAPA'
           ]
@@ -946,7 +946,7 @@
       callouts: [
         {
           kind: 'callout',
-          html: 'À ne pas confondre : une séparation sans décision fixant une pension ne suffit pas pour une avance BRAPA. Il faut d’abord un titre valable.'
+          html: 'À ne pas confondre : une séparation sans décision fixant une pension ne suffit pas pour une avance BRAPA. Il faut d’abord un titre valable.'
         }
       ],
       reviewedAt: '12 avril 2026',
@@ -960,7 +960,7 @@
     },
     {
       id: 'separation-divorce',
-      title: 'Séparation et divorce : premières informations',
+      title: 'Séparation et divorce : premières informations',
       category: 'financier',
       summary: 'Séparation ou divorce · Enfants, budget, démarches à clarifier',
       audience: 'Personnes en séparation ou divorce qui ne savent pas encore par où commencer pour les aspects familiaux et pratiques.',
@@ -989,11 +989,11 @@
         {
           title: 'Démarche',
           items: [
-            'Séparer les questions urgentes : sécurité, logement, enfants, argent, papiers',
-            'S’il y a violence ou peur : passer d’abord par les ressources de protection, pas par une médiation',
-            'S’il existe déjà une décision et que la pension n’est pas payée : contacter le BRAPA',
-            'S’il y a une décision, une pension impayée et une possibilité d’arrangement : demander au BRAPA la piste médiation familiale',
-            'Si la séparation crée une urgence financière ou de logement : contacter aussi le CSR'
+            'Séparer les questions urgentes : sécurité, logement, enfants, argent, papiers',
+            'S’il y a violence ou peur : passer d’abord par les ressources de protection, pas par une médiation',
+            'S’il existe déjà une décision et que la pension n’est pas payée : contacter le BRAPA',
+            'S’il y a une décision, une pension impayée et une possibilité d’arrangement : demander au BRAPA la piste médiation familiale',
+            'Si la séparation crée une urgence financière ou de logement : contacter aussi le CSR'
           ]
         }
       ],
@@ -1017,7 +1017,7 @@
 
     {
       id: 'pc-familles',
-      title: 'PC Familles : soutien pour parents qui travaillent',
+      title: 'PC Familles : soutien pour parents qui travaillent',
       category: 'financier',
       summary: 'Parents avec enfant de moins de 16 ans · Activité lucrative · Budget insuffisant',
       audience: 'Parents qui travaillent mais n’arrivent pas à couvrir le minimum pour vivre malgré leur activité.',
@@ -1032,7 +1032,7 @@
         'Préparer revenus, loyer, frais de garde et assurance maladie',
         'Déposer ensuite la demande si la piste semble sérieuse'
       ],
-      bodyIntro: 'Tu travailles mais le budget familial ne suffit toujours pas ? Les PC Familles peuvent parfois compléter le revenu du ménage, selon les revenus, la fortune, les enfants et certains frais reconnus.',
+      bodyIntro: 'Tu travailles mais le budget familial ne suffit toujours pas ? Les PC Familles peuvent parfois compléter le revenu du ménage, selon les revenus, la fortune, les enfants et certains frais reconnus.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'CRD PC Familles de la région',
       sections: [
@@ -1063,7 +1063,7 @@
     },
     {
       id: 'comipp',
-      title: 'ComiPP : prestation ponctuelle pour familles',
+      title: 'ComiPP : prestation ponctuelle pour familles',
       category: 'financier',
       summary: 'Parents avec enfant · Coup dur ponctuel · Aide financière ciblée',
       audience: 'Familles qui traversent un coup dur ponctuel et ont besoin d’une aide ciblée plutôt que d’un soutien durable.',
@@ -1122,7 +1122,7 @@
         'Demander le barème ou le calcul du tarif',
         'Préparer revenu, composition du ménage et besoin de garde'
       ],
-      bodyIntro: 'Crèche, UAPE, accueil familial ou parascolaire : le bon tarif ne tombe pas toujours tout seul. Selon la commune ou le réseau, une réduction peut parfois exister si les revenus du ménage sont modestes.',
+      bodyIntro: 'Crèche, UAPE, accueil familial ou parascolaire : le bon tarif ne tombe pas toujours tout seul. Selon la commune ou le réseau, une réduction peut parfois exister si les revenus du ménage sont modestes.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'Commune ou réseau d’accueil de jour concerné',
       sections: [
@@ -1156,7 +1156,7 @@
       category: 'financier',
       summary: 'Commune de domicile · Aides locales du quotidien souvent oubliées',
       audience: 'Personnes ou familles qui veulent savoir si leur commune propose des aides concrètes en plus des aides cantonales.',
-      purpose: 'Cette fiche aide à penser aux aides communales souvent oubliées : frais de garde, sacs taxés, couches, sport, vélo, repas ou soutien ponctuel.',
+      purpose: 'Cette fiche aide à penser aux aides communales souvent oubliées : frais de garde, sacs taxés, couches, sport, vélo, repas ou soutien ponctuel.',
       highlights: [
         'Très variable d’une commune à l’autre',
         'Souvent utile avant ou en complément d’une aide cantonale',
@@ -1190,14 +1190,14 @@
       decisionBy: 'Commune de domicile concernée',
       links: [
         { kind: 'info', label: 'Liste officielle des communes vaudoises', url: window.MONAIDE_LINKS.COMMUNES_LIST },
-        { kind: 'info', label: 'Gérer le quotidien : familles', url: window.MONAIDE_LINKS.GERER_QUOTIDIEN_FAMILLES },
+        { kind: 'info', label: 'Gérer le quotidien : familles', url: window.MONAIDE_LINKS.GERER_QUOTIDIEN_FAMILLES },
         { kind: 'info', label: 'Aide aux familles', url: window.MONAIDE_LINKS.AIDE_FAMILLES }
       ],
       documentationTarget: null
     },
     {
       id: 'garde-enfants-malades',
-      title: 'Garde d’enfants malades : soutien ponctuel aux parents',
+      title: 'Garde d’enfants malades : soutien ponctuel aux parents',
       category: 'financier',
       summary: 'Enfant malade · Parent sans solution immédiate · Garde ponctuelle',
       audience: 'Parents qui n’ont pas de solution quand un enfant tombe malade et qu’il faut organiser le quotidien rapidement.',
@@ -1257,14 +1257,14 @@
         'Préparer les pièces de fin de contrat',
         'Vérifier ensuite les indemnités avec la caisse chômage'
       ],
-      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois sur les 2 dernières années — ou si tu es libéré·e de cette condition (études, maladie, autre motif reconnu). L’inscription à l’ORP doit se faire rapidement.',
+      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois sur les 2 dernières années — ou si tu es libéré·e de cette condition (études, maladie, autre motif reconnu). L’inscription à l’ORP doit se faire rapidement.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'ORP pour le suivi, caisse de chômage pour les indemnités',
       sections: [
         {
           title: 'Conditions',
           items: [
-            'En principe : 12 mois de cotisation durant les 2 dernières années',
+            'En principe : 12 mois de cotisation durant les 2 dernières années',
             'Ou libération possible des conditions de cotisation dans certains cas reconnus',
             'Domicile en Suisse',
             'Avoir terminé la scolarité obligatoire et ne pas avoir atteint l’âge AVS',
@@ -1293,7 +1293,7 @@
     },
     {
       id: 'rente-pont',
-      title: 'Rente-pont AVS : l’aide la plus méconnue',
+      title: 'Rente-pont AVS : l’aide la plus méconnue',
       category: 'emploi',
       summary: '60 ans et plus · Chômage en fin de droits · Très peu demandée',
       audience: 'Personnes de 60 ans ou plus qui arrivent en fin de droits au chômage.',
@@ -1308,7 +1308,7 @@
         'Préparer les informations chômage et AVS',
         'Contacter la caisse AVS si cette piste semble pertinente'
       ],
-      bodyIntro: 'Tu as 60 ans ou plus et tu arrives en fin de droits chômage ? Cette aide reste méconnue, mais elle peut parfois faire le lien jusqu’à la retraite AVS si les conditions sont remplies.',
+      bodyIntro: 'Tu as 60 ans ou plus et tu arrives en fin de droits chômage ? Cette aide reste méconnue, mais elle peut parfois faire le lien jusqu’à la retraite AVS si les conditions sont remplies.',
       sections: [
         {
           title: 'Conditions',
@@ -1335,7 +1335,7 @@
     },
     {
       id: 'evam',
-      title: 'EVAM : permis N, F et S',
+      title: 'EVAM : permis N, F et S',
       category: 'migration',
       summary: 'Procédure d’asile, admission provisoire, protection temporaire',
       audience: 'Personnes en procédure d’asile ou relevant déjà du dispositif EVAM.',
@@ -1350,14 +1350,14 @@
         'Contacter l’EVAM si tu es dans ce cadre',
         'Passer au CSP Fraternité pour les questions de permis ou de courrier'
       ],
-      bodyIntro: 'Tu es en procédure d’asile (permis N), admis·e provisoirement (permis F) ou protégé·e temporairement (permis S) ? L’EVAM est souvent le premier contact pour l’accompagnement social, l’hébergement et le soutien de base, selon le cadre exact de ta situation.',
+      bodyIntro: 'Tu es en procédure d’asile (permis N), admis·e provisoirement (permis F) ou protégé·e temporairement (permis S) ? L’EVAM est souvent le premier contact pour l’accompagnement social, l’hébergement et le soutien de base, selon le cadre exact de ta situation.',
       sections: [
         {
           title: 'Pour qui',
           items: [
-            'Permis N : procédure d’asile',
-            'Permis F : admission provisoire',
-            'Permis S : protection temporaire',
+            'Permis N : procédure d’asile',
+            'Permis F : admission provisoire',
+            'Permis S : protection temporaire',
             'Accompagnement variable selon la situation'
           ]
         },
@@ -1378,7 +1378,7 @@
     },
     {
       id: 'appartenances',
-      title: 'Appartenances : soutien aux personnes migrantes',
+      title: 'Appartenances : soutien aux personnes migrantes',
       category: 'migration',
       summary: 'Toutes nationalités et statuts · Conseil gratuit',
       audience: 'Personnes migrantes qui ont besoin d’un accompagnement social, psy ou administratif.',
@@ -1393,7 +1393,7 @@
         'Expliquer ce qui bloque concrètement',
         'Demander un premier rendez-vous ou une orientation'
       ],
-      bodyIntro: 'Tu te débrouilles seul·e avec des démarches que tu ne comprends pas forcément ? Appartenances propose un accompagnement gratuit — juridique, social, psy — pour les personnes migrantes et leurs proches.',
+      bodyIntro: 'Tu te débrouilles seul·e avec des démarches que tu ne comprends pas forcément ? Appartenances propose un accompagnement gratuit — juridique, social, psy — pour les personnes migrantes et leurs proches.',
       sections: [
         {
           title: 'Pour qui',
@@ -1419,7 +1419,7 @@
     },
     {
       id: 'fraternite',
-      title: 'La Fraternité CSP Vaud : questions de migration',
+      title: 'La Fraternité CSP Vaud : questions de migration',
       category: 'migration',
       summary: 'Toute personne étrangère ou suisse · Gratuit · Sans rendez-vous',
       audience: 'Personnes qui se posent des questions sur le permis, le séjour, l’asile, le regroupement familial ou les droits des sans-papiers.',
@@ -1434,7 +1434,7 @@
         'Aller à une permanence régionale',
         'Prendre avec toi les courriers ou décisions déjà reçus'
       ],
-      bodyIntro: 'La Fraternité du CSP Vaud répond à toutes les questions liées à la migration : permis de séjour, regroupement familial, asile, droits des sans-papiers. Les permanences sont gratuites, collectives et sans rendez-vous dans plusieurs régions.',
+      bodyIntro: 'La Fraternité du CSP Vaud répond à toutes les questions liées à la migration : permis de séjour, regroupement familial, asile, droits des sans-papiers. Les permanences sont gratuites, collectives et sans rendez-vous dans plusieurs régions.',
       sections: [
         {
           title: 'Thèmes traités',
@@ -1538,7 +1538,7 @@
             'Vérifier ton éligibilité à la CarteCulture — si tu y as droit, elle donne aussi accès aux prix réduits de l’épicerie, en plus de ses autres avantages',
             'Sinon, voir si une carte d’achat Caritas est possible',
             'Prendre ta carte avec toi en magasin',
-            'À Lausanne : avenue de Morges 26',
+            'À Lausanne : avenue de Morges 26',
             'Si tu hésites, demande à Caritas ou à un service social'
           ]
         }
@@ -1559,16 +1559,16 @@
       audience: 'Personnes qui ont besoin de vêtements corrects sans dépenser trop.',
       purpose: 'Plusieurs boutiques solidaires permettent de trouver des habits, des chaussures et des accessoires à petit prix à Lausanne et dans le canton.',
       highlights: [
-        'Caritas : boutiques avenue de Morges et au Tunnel',
-        'CSP Palud : très central à Lausanne',
-        'Galetas CSP : meubles, habits et objets dans tout le canton'
+        'Caritas : boutiques avenue de Morges et au Tunnel',
+        'CSP Palud : très central à Lausanne',
+        'Galetas CSP : meubles, habits et objets dans tout le canton'
       ],
       firstSteps: [
         'Choisir le lieu selon ce dont tu as besoin et où tu es',
         'Regarder les horaires avant de te déplacer',
         'Passer directement sans inscription'
       ],
-      bodyIntro: 'Plusieurs adresses à Lausanne permettent de s’habiller à petit prix : boutiques Caritas, CSP Palud et Galetas CSP. Chacune a ses spécificités.',
+      bodyIntro: 'Plusieurs adresses à Lausanne permettent de s’habiller à petit prix : boutiques Caritas, CSP Palud et Galetas CSP. Chacune a ses spécificités.',
       sections: [
         {
           title: 'Boutiques Caritas, Lausanne',
@@ -1584,11 +1584,11 @@
           items: [
             '9, Escaliers-du-Marché, 1003 Lausanne (près de la Palud)',
             'Vêtements d’occasion et livres',
-            'Mar–ven : 10h–18h30 · Sam : 10h–15h'
+            'Mar–ven : 10h–18h30 · Sam : 10h–15h'
           ]
         },
         {
-          title: 'Galetas CSP : meubles, habits et objets',
+          title: 'Galetas CSP : meubles, habits et objets',
           items: [
             'Mont-sur-Lausanne, Morges, Montreux, Payerne, Renens',
             'Meubles, électroménager, vêtements et objets du quotidien',
@@ -1606,7 +1606,7 @@
     },
     {
       id: 'galetas-csp',
-      title: 'Galetas du CSP Vaud : meubles & objets à petits prix',
+      title: 'Galetas du CSP Vaud : meubles & objets à petits prix',
       category: 'petitbudget',
       summary: 'Meubles, vêtements, électroménager · Prix solidaires · 6 sites dans le canton',
       audience: 'Personnes qui doivent meubler un logement ou se rééquiper avec très peu de budget.',
@@ -1621,7 +1621,7 @@
         'Regarder le site le plus proche',
         'Prévoir le transport si tu cherches des meubles'
       ],
-      bodyIntro: 'Tu dois meubler un logement sans budget ? Les Galetas du CSP Vaud vendent meubles, électroménager, habits et objets du quotidien à prix très bas. C’est une piste très utile quand on s’installe ou qu’on recommence.',
+      bodyIntro: 'Tu dois meubler un logement sans budget ? Les Galetas du CSP Vaud vendent meubles, électroménager, habits et objets du quotidien à prix très bas. C’est une piste très utile quand on s’installe ou qu’on recommence.',
       sections: [
         {
           title: 'Ce qu’on y trouve',
@@ -1645,7 +1645,7 @@
       callouts: [
         {
           kind: 'callout',
-          html: '6 sites dans le canton : regarde d’abord l’adresse et les horaires avant de te déplacer.'
+          html: '6 sites dans le canton : regarde d’abord l’adresse et les horaires avant de te déplacer.'
         }
       ],
       links: [
@@ -1656,7 +1656,7 @@
     },
     {
       id: 'emmaus',
-      title: 'Emmaüs Étagnières : brocante solidaire',
+      title: 'Emmaüs Étagnières : brocante solidaire',
       category: 'petitbudget',
       summary: 'Meubles, objets, vêtements · Brocante solidaire · Étagnières',
       audience: 'Personnes qui cherchent beaucoup d’équipement d’un coup à petit prix.',
@@ -1743,7 +1743,7 @@
     },
     {
       id: 'croix-rouge-vaudoise',
-      title: 'Croix-Rouge vaudoise : aide et accompagnement',
+      title: 'Croix-Rouge vaudoise : aide et accompagnement',
       category: 'financier',
       summary: 'Aîné·es, familles, précarité · Aide concrète et orientation',
       audience: 'Personnes fragilisées qui ont besoin d’un appui concret dans le quotidien.',
@@ -1786,7 +1786,7 @@
     },
     {
       id: 'aide-logement-familles',
-      title: 'Aide individuelle au logement (AIL) : familles',
+      title: 'Aide individuelle au logement (AIL) : familles',
       category: 'logement',
       summary: 'Familles à revenu modeste · Certaines communes seulement · Soutien sur le loyer',
       audience: 'Familles qui paient un loyer trop lourd dans une commune où l’AIL existe.',
@@ -1801,7 +1801,7 @@
         'Préparer bail, revenus et composition du ménage',
         'Déposer ensuite la demande si la commune indique que c’est possible'
       ],
-      bodyIntro: 'Certaines communes peuvent accorder une aide individuelle au logement pour les familles quand le loyer devient trop lourd. Ce n’est pas une aide générale : il faut d’abord vérifier si ta commune est concernée.',
+      bodyIntro: 'Certaines communes peuvent accorder une aide individuelle au logement pour les familles quand le loyer devient trop lourd. Ce n’est pas une aide générale : il faut d’abord vérifier si ta commune est concernée.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'Commune de domicile concernée',
       sections: [
@@ -1834,7 +1834,7 @@
     },
     {
       id: 'menace-expulsion',
-      title: 'Menace d’expulsion : que faire ?',
+      title: 'Menace d’expulsion : que faire ?',
       category: 'logement',
       summary: 'Locataires en difficulté · Urgence — agir immédiatement',
       audience: 'Locataires qui ont reçu une résiliation ou craignent de perdre leur logement.',
@@ -1849,7 +1849,7 @@
         'Contacter l’ASLOCA Vaud immédiatement',
         'Contacter le CSR si le retard de loyer vient d’un manque de revenu'
       ],
-      bodyIntro: 'Tu as reçu une lettre de résiliation ? Ne panique pas, mais agis vite. Tu as des droits et des délais. Ne quitte pas ton logement sans décision de justice.',
+      bodyIntro: 'Tu as reçu une lettre de résiliation ? Ne panique pas, mais agis vite. Tu as des droits et des délais. Ne quitte pas ton logement sans décision de justice.',
       sections: [
         {
           title: 'À savoir',
@@ -1872,7 +1872,7 @@
       callouts: [
         {
           kind: 'warning',
-          html: 'Une résiliation ou une menace d’expulsion se traite vite. Les délais peuvent être courts : ne laisse pas le courrier dans un tiroir.'
+          html: 'Une résiliation ou une menace d’expulsion se traite vite. Les délais peuvent être courts : ne laisse pas le courrier dans un tiroir.'
         }
       ],
       links: [
@@ -1884,7 +1884,7 @@
     },
     {
       id: 'jet-service',
-      title: 'CSP Jet Service : service social jeunes',
+      title: 'CSP Jet Service : service social jeunes',
       category: 'formation',
       summary: '16–25 ans & toute personne en formation · Gratuit · Confidentiel',
       audience: 'Jeunes ou personnes en formation qui ont besoin d’un appui sur leurs droits, leur budget, leur travail ou leur formation.',
@@ -1899,7 +1899,7 @@
         'Regarder le lieu de permanence le plus proche',
         'Venir avec tes questions et tes papiers utiles'
       ],
-      bodyIntro: 'Tu es jeune ou en formation et tu as des questions sur tes droits, tes bourses, un problème avec un employeur ou des dettes ? Jet Service offre des consultations sociales et juridiques gratuites dans plusieurs lieux du canton.',
+      bodyIntro: 'Tu es jeune ou en formation et tu as des questions sur tes droits, tes bourses, un problème avec un employeur ou des dettes ? Jet Service offre des consultations sociales et juridiques gratuites dans plusieurs lieux du canton.',
       sections: [
         {
           title: 'Pour qui',
@@ -1922,7 +1922,7 @@
       callouts: [
         {
           kind: 'callout',
-          html: 'Lausanne, Vevey, Yverdon, Payerne, Aigle : avec ou sans rendez-vous selon les sites.'
+          html: 'Lausanne, Vevey, Yverdon, Payerne, Aigle : avec ou sans rendez-vous selon les sites.'
         }
       ],
       links: [
@@ -1932,7 +1932,7 @@
     },
     {
       id: 'guichet-t1',
-      title: 'Guichet T1 : solution de formation après l’école obligatoire',
+      title: 'Guichet T1 : solution de formation après l’école obligatoire',
       category: 'emploi',
       summary: 'Jeunes 15–25 ans · Rupture d’apprentissage ou pas de solution · Orientation',
       audience: 'Jeunes qui n’ont pas de solution de formation, ont arrêté un apprentissage ou ne savent plus vers qui se tourner.',
@@ -1947,7 +1947,7 @@
         'Contacter le guichet régional ou l’orientation',
         'Expliquer simplement où le parcours s’est bloqué'
       ],
-      bodyIntro: 'Tu n’as plus de place de formation, tu as arrêté un apprentissage ou tu ne sais plus quelle piste suivre ? Le dispositif T1 peut aider à retrouver une solution plus vite et à éviter de rester seul·e dans l’attente.',
+      bodyIntro: 'Tu n’as plus de place de formation, tu as arrêté un apprentissage ou tu ne sais plus quelle piste suivre ? Le dispositif T1 peut aider à retrouver une solution plus vite et à éviter de rester seul·e dans l’attente.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'Guichet régional T1 ou service d’orientation compétent',
       sections: [
@@ -1977,7 +1977,7 @@
     },
     {
       id: 'rupture-apprentissage',
-      title: 'Rupture d’apprentissage : premiers contacts',
+      title: 'Rupture d’apprentissage : premiers contacts',
       category: 'emploi',
       summary: 'Jeunes en formation · Parcours bloqué · Rebond rapide',
       audience: 'Jeunes qui ont arrêté un apprentissage, risquent de le quitter ou n’ont plus de solution de formation.',
@@ -2022,7 +2022,7 @@
     },
     {
       id: 'pro-senectute',
-      title: 'Pro Senectute Vaud : services pour les 60+',
+      title: 'Pro Senectute Vaud : services pour les 60+',
       category: 'sante',
       summary: '60 ans et plus · Conseil administratif et social gratuit',
       audience: 'Personnes de 60 ans et plus qui ont besoin d’aide dans leurs démarches ou leur quotidien.',
@@ -2037,7 +2037,7 @@
         'Expliquer ce qui te pose problème',
         'Préparer les courriers ou décisions utiles si tu en as'
       ],
-      bodyIntro: 'Tu as 60 ans ou plus ? Pro Senectute t’aide avec tes démarches administratives, tes impôts, tes droits AVS et PC. Gratuit.',
+      bodyIntro: 'Tu as 60 ans ou plus ? Pro Senectute t’aide avec tes démarches administratives, tes impôts, tes droits AVS et PC. Gratuit.',
       sections: [
         {
           title: 'Pour qui',
@@ -2063,7 +2063,7 @@
     },
     {
       id: 'aide-financiere-ems',
-      title: 'Aide financière EMS : frais d’hébergement',
+      title: 'Aide financière EMS : frais d’hébergement',
       category: 'sante',
       summary: 'EMS · Court ou long séjour · Participation aux frais à vérifier',
       audience: 'Personnes ou proches qui doivent comprendre comment payer un séjour en EMS quand les ressources ne suffisent pas.',
@@ -2078,7 +2078,7 @@
         'Demander conseil à Pro Senectute, au CMS, à l’AAS ou à l’EMS',
         'Lire la page officielle avant de conclure que c’est impossible'
       ],
-      bodyIntro: 'Un séjour en EMS peut vite sembler impossible à payer. Il existe des règles d’aide financière dans le canton : il faut faire vérifier la situation, surtout avant de renoncer ou de rester seul·e avec les factures.',
+      bodyIntro: 'Un séjour en EMS peut vite sembler impossible à payer. Il existe des règles d’aide financière dans le canton : il faut faire vérifier la situation, surtout avant de renoncer ou de rester seul·e avec les factures.',
       reviewedAt: '2 juin 2026',
       decisionBy: 'Service cantonal compétent, selon le dossier EMS',
       sections: [
@@ -2121,7 +2121,7 @@
       firstSteps: [
         'Parler de la situation au CMS ou à Pro Senectute',
         'Regarder les informations officielles sur les LADA',
-        'Noter ce qui devient difficile : escaliers, soins, solitude, sécurité, repas'
+        'Noter ce qui devient difficile : escaliers, soins, solitude, sécurité, repas'
       ],
       bodyIntro: 'Quand le logement actuel devient trop compliqué, il n’y a pas seulement le choix entre “rester comme avant” et “aller en EMS”. Les logements adaptés avec accompagnement peuvent être une piste à vérifier.',
       reviewedAt: '2 juin 2026',
@@ -2139,7 +2139,7 @@
           title: 'Démarche',
           items: [
             'Commencer par demander un conseil au CMS ou à Pro Senectute',
-            'Faire le point sur les besoins réels : aide, soins, sécurité, repas, lien social',
+            'Faire le point sur les besoins réels : aide, soins, sécurité, repas, lien social',
             'Vérifier les logements disponibles et les conditions auprès des structures concernées'
           ]
         }
@@ -2153,7 +2153,7 @@
     },
     {
       id: 'espace-proches',
-      title: 'Espace Proches : soutien aux proches aidant·es',
+      title: 'Espace Proches : soutien aux proches aidant·es',
       category: 'sante',
       summary: 'Personnes qui aident un proche malade, âgé ou dépendant · Infos, conseils, répit',
       audience: 'Personnes qui soutiennent régulièrement un proche et commencent à s’épuiser ou à se perdre dans les démarches.',
@@ -2168,7 +2168,7 @@
         'Regarder les réponses aux questions fréquentes',
         'Demander un premier conseil si tu ne sais plus comment tenir'
       ],
-      bodyIntro: 'Tu aides souvent un proche malade, âgé, en situation de handicap ou avec des troubles psychiques ? Espace Proches peut t’aider à faire le point sur le répit, les soutiens utiles et les démarches à connaître.',
+      bodyIntro: 'Tu aides souvent un proche malade, âgé, en situation de handicap ou avec des troubles psychiques ? Espace Proches peut t’aider à faire le point sur le répit, les soutiens utiles et les démarches à connaître.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'Service d’information et d’orientation, pas une autorité de décision',
       sections: [
@@ -2197,13 +2197,13 @@
     },
     {
       id: 'repit-proches-aidants',
-      title: 'Proches aidant·es : répit et aides concrètes',
+      title: 'Proches aidant·es : répit et aides concrètes',
       category: 'sante',
       summary: 'Hotline 0800 660 660 · Relève · Carte d’urgence · Aides possibles',
       audience: 'Personnes qui aident déjà un proche et ont besoin d’un vrai soutien, pas seulement d’information.',
-      purpose: 'Cette fiche aide à repérer les soutiens concrets pour proches aidant·es : information, relève, carte d’urgence, CMS, congés et aides financières possibles.',
+      purpose: 'Cette fiche aide à repérer les soutiens concrets pour proches aidant·es : information, relève, carte d’urgence, CMS, congés et aides financières possibles.',
       highlights: [
-        'Hotline cantonale gratuite : 0800 660 660',
+        'Hotline cantonale gratuite : 0800 660 660',
         'Carte d’urgence proche aidant via le CMS',
         'Congés et aides financières possibles selon la situation'
       ],
@@ -2225,10 +2225,10 @@
         {
           title: 'Aides et soutiens à vérifier',
           items: [
-            'Espace Proches : écoute, informations, orientation et entretiens individuels gratuits',
-            'CMS / AVASAD : carte d’urgence proche aidant et organisation de l’aide à domicile',
-            'Relève à domicile : Pro Infirmis, Alzheimer Vaud, Pro-XY ou Croix-Rouge selon la situation',
-            'Aides financières possibles : aide à l’entourage, aides à domicile, AMINH pour enfant mineur handicapé, congés proches aidants'
+            'Espace Proches : écoute, informations, orientation et entretiens individuels gratuits',
+            'CMS / AVASAD : carte d’urgence proche aidant et organisation de l’aide à domicile',
+            'Relève à domicile : Pro Infirmis, Alzheimer Vaud, Pro-XY ou Croix-Rouge selon la situation',
+            'Aides financières possibles : aide à l’entourage, aides à domicile, AMINH pour enfant mineur handicapé, congés proches aidants'
           ]
         },
         {
@@ -2236,7 +2236,7 @@
           items: [
             'Appeler le 0800 660 660 et expliquer qui tu aides, à quelle fréquence et ce qui devient difficile',
             'Demander si une carte d’urgence proche aidant est utile',
-            'Si tu as diminué ou arrêté ton activité pour aider : demander explicitement les pistes d’aides financières et congés',
+            'Si tu as diminué ou arrêté ton activité pour aider : demander explicitement les pistes d’aides financières et congés',
             'Préparer les coordonnées du proche aidé, les suivis CMS/médicaux existants et une courte liste de ce que tu fais au quotidien'
           ]
         }
@@ -2254,7 +2254,7 @@
     },
     {
       id: 'aminh-enfant-handicap',
-      title: 'Enfant en situation de handicap : aides à domicile (AMINH)',
+      title: 'Enfant en situation de handicap : aides à domicile (AMINH)',
       category: 'sante',
       summary: 'Enfant mineur · Handicap · Aide à domicile et proches aidants',
       audience: 'Parents ou proches d’un enfant mineur en situation de handicap qui cherchent un soutien concret à domicile.',
@@ -2265,7 +2265,7 @@
         'À croiser avec CMS, Pro Infirmis et les infos proches aidants'
       ],
       firstSteps: [
-        'Noter ce que l’enfant nécessite au quotidien : soins, surveillance, déplacements, démarches',
+        'Noter ce que l’enfant nécessite au quotidien : soins, surveillance, déplacements, démarches',
         'Contacter Espace Proches ou le CMS pour faire le tri',
         'Demander explicitement si une aide type AMINH ou une aide à domicile peut être examinée'
       ],
@@ -2300,7 +2300,7 @@
     },
     {
       id: 'sante-mentale-relais',
-      title: 'Santé mentale : premiers contacts',
+      title: 'Santé mentale : premiers contacts',
       category: 'sante',
       summary: 'Mal-être, anxiété, épuisement · Premiers contacts',
       audience: 'Personnes qui sentent que ça ne va plus très bien et ne savent pas encore vers qui se tourner.',
@@ -2313,7 +2313,7 @@
       firstSteps: [
         'Si la sécurité est en jeu, appeler tout de suite le 144 ou le 117',
         'Si c’est une détresse psychologique urgente mais non vitale, appeler le 0848 133 133',
-        'Sinon, commencer par un contact humain : médecin, 143 pour toute personne qui a besoin de parler, 147 pour les jeunes, ou Unisanté'
+        'Sinon, commencer par un contact humain : médecin, 143 pour toute personne qui a besoin de parler, 147 pour les jeunes, ou Unisanté'
       ],
       bodyIntro: 'Quand on dort mal, qu’on s’épuise, qu’on angoisse ou qu’on se sent perdu·e, le plus difficile est souvent de savoir où commencer. Cette fiche aide à choisir entre écoute, premier rendez-vous et urgence.',
       sections: [
@@ -2329,17 +2329,17 @@
         {
           title: 'Démarche',
           items: [
-            'Pour parler tout de suite : 143 pour toute personne qui a besoin d’une écoute, 147 pour les jeunes et jeunes adultes',
-            'Pour une détresse psychologique urgente dans le canton : 0848 133 133',
-            'Pour un suivi : contacter son médecin, Unisanté ou un service de santé mentale',
-            'Si la personne risque de se faire du mal ou de faire du mal à quelqu’un : 144 ou 117'
+            'Pour parler tout de suite : 143 pour toute personne qui a besoin d’une écoute, 147 pour les jeunes et jeunes adultes',
+            'Pour une détresse psychologique urgente dans le canton : 0848 133 133',
+            'Pour un suivi : contacter son médecin, Unisanté ou un service de santé mentale',
+            'Si la personne risque de se faire du mal ou de faire du mal à quelqu’un : 144 ou 117'
           ]
         }
       ],
       callouts: [
         {
           kind: 'warning',
-          html: 'Cette fiche n’est pas faite pour “tenir bon” seul·e. En danger immédiat : 144 ou 117. Pour une urgence psychiatrique vaudoise non vitale : 0848 133 133.'
+          html: 'Cette fiche n’est pas faite pour “tenir bon” seul·e. En danger immédiat : 144 ou 117. Pour une urgence psychiatrique vaudoise non vitale : 0848 133 133.'
         }
       ],
       reviewedAt: '13 avril 2026',
@@ -2353,7 +2353,7 @@
     },
     {
       id: 'addiction-vaud',
-      title: 'Addiction Vaud : informations & orientation',
+      title: 'Addiction Vaud : informations & orientation',
       category: 'sante',
       summary: 'Addictions et proches · Gratuit · Confidentiel',
       audience: 'Personnes concernées par une addiction ou proches qui cherchent par où commencer.',
@@ -2401,7 +2401,7 @@
     },
     {
       id: 'relaids',
-      title: 'Rel’Aids : réduction des risques',
+      title: 'Rel’Aids : réduction des risques',
       category: 'sante',
       summary: 'Réduction des risques · Équipe mobile · Sans inscription',
       audience: 'Personnes marginalisées par leur consommation de drogues ou proches qui cherchent un contact humain.',
@@ -2442,7 +2442,7 @@
     },
     {
       id: 'unisante',
-      title: 'Unisanté : soins médicaux accessibles',
+      title: 'Unisanté : soins médicaux accessibles',
       category: 'sante',
       summary: 'Consultations et urgences · Lausanne',
       audience: 'Personnes qui ont besoin de soins ou d’un accès médical facile, y compris en situation précaire.',
@@ -2471,7 +2471,7 @@
         {
           title: 'Pratique',
           items: [
-            'Permanence du Flon : 7j/7 · lu–ve 8h–20h, we et jours fériés 9h–19h',
+            'Permanence du Flon : 7j/7 · lu–ve 8h–20h, we et jours fériés 9h–19h',
             'Voie du Chariot 4, 1003 Lausanne',
             '021 314 60 60',
             'LAMal souvent requise, avec possibilités d’orientation'
@@ -2486,7 +2486,7 @@
     },
     {
       id: 'point-deau',
-      title: 'Le Point d’Eau : accueil & hygiène',
+      title: 'Le Point d’Eau : accueil & hygiène',
       category: 'sante',
       summary: 'Douche, soins, lessive · Accueil bas seuil à Lausanne',
       audience: 'Personnes qui ont besoin d’un lieu d’accueil bas seuil avec hygiène, soins et orientation.',
@@ -2501,7 +2501,7 @@
         'Regarder les horaires',
         'T’y rendre directement si tu as besoin de ces services'
       ],
-      bodyIntro: 'Le Point d’Eau propose des prestations très concrètes de base : douches, soins, lessive et orientation, sans rendez-vous.',
+      bodyIntro: 'Le Point d’Eau propose des prestations très concrètes de base : douches, soins, lessive et orientation, sans rendez-vous.',
       sections: [
         {
           title: 'Ce qu’on y trouve',
@@ -2529,7 +2529,7 @@
     },
     {
       id: 'apg',
-      title: 'Allocations perte de gain : maternité & paternité (APG)',
+      title: 'Allocations perte de gain : maternité & paternité (APG)',
       category: 'financier',
       summary: 'Maternité (98j) · Paternité (14j) · Adoption',
       audience: 'Parents qui doivent faire valoir un droit APG après une naissance ou une adoption.',
@@ -2570,7 +2570,7 @@
     },
     {
       id: 'csp-vaud',
-      title: 'CSP Vaud : soutien social & permanence juridique',
+      title: 'CSP Vaud : soutien social & permanence juridique',
       category: 'financier',
       summary: 'Permanences sociales, juridiques et budget',
       audience: 'Personnes qui ont besoin d’un soutien social ou juridique de premier recours.',
@@ -2663,7 +2663,7 @@
     },
     {
       id: 'asloca',
-      title: 'ASLOCA Vaud : défense des locataires',
+      title: 'ASLOCA Vaud : défense des locataires',
       category: 'logement',
       summary: 'Locataires vaudois · Permanences régionales · Cotisation requise',
       audience: 'Locataires qui ont un problème avec le bailleur, le loyer, la résiliation ou le dépôt de garantie.',
@@ -2708,7 +2708,7 @@
     },
     {
       id: 'aide-urgence-sejour',
-      title: 'Aide d’urgence : décision de renvoi ou sans droit de séjour',
+      title: 'Aide d’urgence : décision de renvoi ou sans droit de séjour',
       category: 'migration',
       summary: 'Sans ressources, décision de renvoi, besoin immédiat de base',
       audience: 'Personnes sans ressources dont la situation ne relève plus des aides ordinaires.',
@@ -2751,7 +2751,7 @@
     },
     {
       id: 'caritas-migration',
-      title: 'Caritas Vaud : aide aux personnes migrantes',
+      title: 'Caritas Vaud : aide aux personnes migrantes',
       category: 'migration',
       summary: 'Personnes réfugiées et migrantes · Intégration · Soutien',
       audience: 'Personnes migrantes qui ont besoin d’un accompagnement d’intégration ou de soutien concret.',
@@ -2766,7 +2766,7 @@
         'Contacter Caritas Vaud si besoin',
         'Vérifier si la prestation correspond à ta situation'
       ],
-      bodyIntro: 'Caritas Vaud accompagne des personnes en fuite et des personnes migrantes dans leurs démarches d’intégration : logement, emploi, formation ou soutien concret selon les situations.',
+      bodyIntro: 'Caritas Vaud accompagne des personnes en fuite et des personnes migrantes dans leurs démarches d’intégration : logement, emploi, formation ou soutien concret selon les situations.',
       sections: [
         {
           title: 'Prestations',
@@ -2795,7 +2795,7 @@
     },
     {
       id: 'foyer-evam-femmes',
-      title: 'Foyer EVAM : hébergement pour femmes migrantes',
+      title: 'Foyer EVAM : hébergement pour femmes migrantes',
       category: 'migration',
       summary: 'Femmes en situation de vulnérabilité · Avec ou sans enfants · Lausanne',
       audience: 'Femmes migrantes en situation de vulnérabilité orientées vers un hébergement adapté.',
@@ -2856,7 +2856,7 @@
         {
           title: 'Écoute généraliste',
           items: [
-            '143 — La Main Tendue : écoute 24h/24, anonyme et confidentielle, pour toute personne qui a besoin de parler',
+            '143 — La Main Tendue : écoute 24h/24, anonyme et confidentielle, pour toute personne qui a besoin de parler',
             '0848 133 133 — détresse psychologique / urgences psychiatriques Vaud',
             'STOP SUICIDE — prévention et ressources, surtout pour les jeunes, mais pas une helpline d’urgence'
           ]
@@ -2864,7 +2864,7 @@
         {
           title: 'Écoute jeunesse',
           items: [
-            '147 — Pro Juventute : soutien gratuit et confidentiel 24h/24',
+            '147 — Pro Juventute : soutien gratuit et confidentiel 24h/24',
             'Accessible par téléphone, WhatsApp, e-mail ou chat selon les options du site',
             'Pour les enfants, jeunes, jeunes adultes et leurs proches selon les ressources proposées'
           ]
@@ -2873,7 +2873,7 @@
       callouts: [
         {
           kind: 'warning',
-          html: 'Si quelqu’un risque de se blesser maintenant, ne reste pas uniquement sur une ligne d’écoute : appelle le 144 ou le 117.'
+          html: 'Si quelqu’un risque de se blesser maintenant, ne reste pas uniquement sur une ligne d’écoute : appelle le 144 ou le 117.'
         }
       ],
       links: [
@@ -2896,9 +2896,9 @@
         'Ne pas rester seul·e face à une crise'
       ],
       firstSteps: [
-        'Danger vital ou passage à l’acte imminent : appeler le 144 ou le 117',
-        'Détresse psychologique urgente dans le canton : appeler le 0848 133 133',
-        'Expliquer simplement ce qui se passe maintenant : risque, lieu, personne concernée'
+        'Danger vital ou passage à l’acte imminent : appeler le 144 ou le 117',
+        'Détresse psychologique urgente dans le canton : appeler le 0848 133 133',
+        'Expliquer simplement ce qui se passe maintenant : risque, lieu, personne concernée'
       ],
       bodyIntro: 'Quand la situation bascule en crise psychique, il faut agir vite et chercher un contact humain immédiat. Si la personne est en danger, il faut passer en mode urgence.',
       sections: [
@@ -2981,7 +2981,7 @@
 
     {
       id: 'malleyprairie',
-      title: 'MalleyPrairie : violence conjugale & familiale',
+      title: 'MalleyPrairie : violence conjugale & familiale',
       category: 'urgence',
       summary: 'Violence dans le couple ou la famille · Conseil · Mise à l’abri · 24h/24',
       audience: 'Personnes victimes de violences conjugales ou familiales qui ont besoin d’un soutien ou d’une mise à l’abri.',
@@ -2997,7 +2997,7 @@
         'Dire si le danger est immédiat',
         'Demander une mise à l’abri ou un conseil urgent'
       ],
-      bodyIntro: 'Tu subis des violences dans ton couple ou ta famille ? MalleyPrairie répond 24h/24 et 7j/7. La ligne permet de demander conseil, d’évaluer l’urgence et de voir s’il faut une mise à l’abri.',
+      bodyIntro: 'Tu subis des violences dans ton couple ou ta famille ? MalleyPrairie répond 24h/24 et 7j/7. La ligne permet de demander conseil, d’évaluer l’urgence et de voir s’il faut une mise à l’abri.',
       sections: [
         {
           title: 'Pour qui',
@@ -3027,13 +3027,13 @@
       callouts: [
         {
           kind: 'warning',
-          html: 'Danger immédiat : 117. Si tu peux parler en sécurité, MalleyPrairie répond au 021 620 76 76, 24h/24 et 7j/7.'
+          html: 'Danger immédiat : 117. Si tu peux parler en sécurité, MalleyPrairie répond au 021 620 76 76, 24h/24 et 7j/7.'
         }
       ],
       links: [
         { kind: 'action', label: 'MalleyPrairie', url: window.MONAIDE_LINKS.MALLEY_PRAIRIE },
         { kind: 'info', label: 'Violence Que Faire', url: window.MONAIDE_LINKS.VIOLENCE_QUE_FAIRE },
-        { kind: 'info', label: '142 : aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 }
+        { kind: 'info', label: '142 : aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 }
       ],
       documentationTarget: null
     },
@@ -3067,8 +3067,8 @@
         {
           title: 'Démarche',
           items: [
-            'Danger immédiat : appeler la police au 117 ou les urgences médicales au 144',
-            'Si tu peux parler en sécurité : appeler MalleyPrairie pour conseil ou mise à l’abri',
+            'Danger immédiat : appeler la police au 117 ou les urgences médicales au 144',
+            'Si tu peux parler en sécurité : appeler MalleyPrairie pour conseil ou mise à l’abri',
             'Contacter ensuite la LAVI pour les droits, l’accompagnement et les aides possibles',
             'Garder les messages, constats ou certificats seulement si c’est sans danger'
           ]
@@ -3085,23 +3085,23 @@
       callouts: [
         {
           kind: 'warning',
-          html: 'Priorité absolue : ta sécurité. Si rester sur place est dangereux, appelle le 117 ou cherche un lieu sûr avant de penser aux démarches administratives.'
+          html: 'Priorité absolue : ta sécurité. Si rester sur place est dangereux, appelle le 117 ou cherche un lieu sûr avant de penser aux démarches administratives.'
         }
       ],
       reviewedAt: '13 avril 2026',
       decisionBy: 'Services de protection et d’accompagnement compétents',
       links: [
-        { kind: 'action', label: 'Violence domestique : où trouver de l’aide', url: window.MONAIDE_LINKS.VIOLENCE_HELP },
+        { kind: 'action', label: 'Violence domestique : où trouver de l’aide', url: window.MONAIDE_LINKS.VIOLENCE_HELP },
         { kind: 'action', label: 'MalleyPrairie', url: window.MONAIDE_LINKS.MALLEY_PRAIRIE },
         { kind: 'info', label: 'Violence que faire', url: window.MONAIDE_LINKS.VIOLENCE_QUE_FAIRE },
-        { kind: 'info', label: '142 : aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 },
+        { kind: 'info', label: '142 : aide aux victimes', url: window.MONAIDE_LINKS.LAVI_142 },
         { kind: 'info', label: 'LAVI Vaud', url: window.MONAIDE_LINKS.LAVI_INFO }
       ],
       documentationTarget: null
     },
     {
       id: 'le-passage',
-      title: 'Le Passage : accueil de jour bas seuil',
+      title: 'Le Passage : accueil de jour bas seuil',
       category: 'urgence',
       summary: 'Grande précarité · Gratuit · Sans rendez-vous · 7j/7',
       audience: 'Personnes qui ont besoin d’un lieu où aller dans la journée pour souffler, manger, se soigner ou être orientées.',
@@ -3182,7 +3182,7 @@
       callouts: [
         {
           kind: 'callout',
-          html: 'Centrale des solidarités : 0800 30 30 38 — gratuit, lu–ve 9h–12h30 et 13h30–17h30.'
+          html: 'Centrale des solidarités : 0800 30 30 38 — gratuit, lu–ve 9h–12h30 et 13h30–17h30.'
         }
       ],
       links: [
@@ -3192,7 +3192,7 @@
     },
     {
       id: 'unafin-lausanne',
-      title: 'Unafin : assainissement financier (Lausanne)',
+      title: 'Unafin : assainissement financier (Lausanne)',
       category: 'financier',
       summary: 'Dettes et surendettement · Budget sur 3 ans · Réservé à Lausanne',
       audience: 'Personnes qui habitent ou travaillent pour la Ville de Lausanne et veulent sortir durablement du surendettement.',
@@ -3231,14 +3231,14 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'Service social de Lausanne : dettes et surendettement', url: window.MONAIDE_LINKS.UNAFIN_INFO },
+        { kind: 'action', label: 'Service social de Lausanne : dettes et surendettement', url: window.MONAIDE_LINKS.UNAFIN_INFO },
         { kind: 'info', label: 'Parlons Cash (canton, si hors Lausanne)', url: window.MONAIDE_LINKS.PARLONS_CASH }
       ],
       documentationTarget: null
     },
     {
       id: 'mon-apprentissage',
-      title: 'Mon Apprentissage : trouver sa voie professionnelle (Vaud)',
+      title: 'Mon Apprentissage : trouver sa voie professionnelle (Vaud)',
       category: 'formation',
       summary: 'Choisir un métier · Trouver une place d’apprentissage · Service cantonal gratuit',
       audience: 'Jeunes en fin de scolarité ou en recherche d’orientation qui cherchent une place d’apprentissage dans le canton de Vaud.',
@@ -3276,14 +3276,14 @@
         }
       ],
       links: [
-        { kind: 'action', label: 'Mon Apprentissage : explorer les métiers', url: window.MONAIDE_LINKS.MON_APPRENTISSAGE },
+        { kind: 'action', label: 'Mon Apprentissage : explorer les métiers', url: window.MONAIDE_LINKS.MON_APPRENTISSAGE },
         { kind: 'info', label: 'Guichets régionaux T1', url: window.MONAIDE_LINKS.T1_GUICHETS }
       ],
       documentationTarget: null
     },
     {
       id: 'salaire-non-paye',
-      title: 'Salaire non payé : que faire',
+      title: 'Salaire non payé : que faire',
       category: 'emploi',
       summary: 'Salaire impayé · Prud’hommes · Insolvabilité employeur',
       audience: 'Personnes dont l’employeur ne verse pas le salaire, ou en cas de faillite.',
@@ -3296,7 +3296,7 @@
       firstSteps: [
         'Mettre l’employeur en demeure par écrit',
         'Contacter le Tribunal des prud’hommes de ta région',
-        'En cas de faillite : déposer une demande d’insolvabilité auprès de la caisse de chômage'
+        'En cas de faillite : déposer une demande d’insolvabilité auprès de la caisse de chômage'
       ],
       bodyIntro: 'Si ton employeur ne verse pas ton salaire, il faut agir rapidement. Une mise en demeure écrite est le premier pas. En cas de faillite de l’employeur, l’assurance insolvabilité (LACI) peut couvrir jusqu’à 4 mois de salaires impayés.',
       sections: [
@@ -3305,7 +3305,7 @@
           items: [
             'Mise en demeure écrite à l’employeur — garder une copie',
             'Dépôt d’une plainte auprès du Tribunal des prud’hommes',
-            'En cas de faillite : demande d’insolvabilité auprès de la caisse de chômage dans les 60 jours',
+            'En cas de faillite : demande d’insolvabilité auprès de la caisse de chômage dans les 60 jours',
             'Le CSP Vaud peut orienter et aider à rédiger la mise en demeure'
           ]
         },
@@ -3368,7 +3368,7 @@
       purpose: 'Si tu n’as pas les moyens de te défendre en justice, des aides existent pour couvrir les frais d’avocat et de procédure.',
       highlights: [
         'Assistance judiciaire officielle accordée par le tribunal',
-        'OAV : trouver un·e avocat·e et un premier avis juridique',
+        'OAV : trouver un·e avocat·e et un premier avis juridique',
         'CSP Vaud pour une première orientation juridique et sociale'
       ],
       firstSteps: [
@@ -3390,7 +3390,7 @@
       ],
       links: [
         { kind: 'action', label: 'Demander l’assistance judiciaire', url: 'https://www.vd.ch/prestation/demander-lassistance-judiciaire' },
-        { kind: 'info', label: 'OAV : Ordre des avocats vaudois', url: 'https://www.oav.ch' },
+        { kind: 'info', label: 'OAV : Ordre des avocats vaudois', url: 'https://www.oav.ch' },
         { kind: 'info', label: 'CSP Vaud', url: window.MONAIDE_LINKS.CSP_HOME }
       ],
       documentationTarget: null

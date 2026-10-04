@@ -191,7 +191,7 @@
     var dejaAideSociale = aidesListe.indexOf('RI') !== -1 || aidesListe.indexOf('PC') !== -1 || aidesListe.indexOf('lamal') !== -1 || aidesListe.indexOf('bourse') !== -1;
 
     if (jeuneEnFormation && matchesResultPatterns(name, ['bourses', 'ocbe'])) {
-      reasons.push('Car tu es en formation et entre 18 et 25 ans : une bourse OCBE peut parfois aider à couvrir une partie des frais de formation.');
+      reasons.push('Car tu es en formation et entre 18 et 25 ans : une bourse OCBE peut parfois aider à couvrir une partie des frais de formation.');
     } else if (jeuneEnFormation && matchesResultPatterns(name, ['jet service'])) {
       reasons.push('Car Jet Service aide les jeunes en formation à faire le point sur les bourses, le budget, le travail ou les démarches qui deviennent floues.');
     }
@@ -199,7 +199,7 @@
       reasons.push('tu as l’âge de l’AVS');
     }
     if (jeuneEnFormation && matchesResultPatterns(name, ['subside lamal'])) {
-      reasons.push('Car en formation, la prime maladie peut vite peser lourd dans le budget : le subside LAMal sert à vérifier si elle peut être réduite.');
+      reasons.push('Car en formation, la prime maladie peut vite peser lourd dans le budget : le subside LAMal sert à vérifier si elle peut être réduite.');
     } else if (revenuFaible && matchesResultPatterns(name, ['revenu d insertion', 'centre social regional', 'subside lamal', 'aide alimentaire', 'carteculture'])) {
       reasons.push('tes revenus sont bas');
     }
@@ -541,9 +541,9 @@
   }
 
   function buildMoreCatalogBanner(resultCount) {
-    var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le répertoire permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.') + '</div></div>'
+    var bodyHtml = '<div><div style="font-size:0.88rem;color:rgba(235,245,239,.72);line-height:1.55;">' + escapeHtml(RESULTS_UI_CONFIG.noCoverageText || 'Le simulateur ne couvre pas tout. Le répertoire permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.') + '</div></div>'
       + '<a href="#catalogue" class="results-footer-banner-btn" onclick="if(window.trackMonaideEvent){trackMonaideEvent(\'result_catalog_open\', { source: \'results_footer\', aid: \'catalogue_des_aides\' });}">' + escapeHtml(RESULTS_UI_CONFIG.openCatalogLabel || 'Répertoire des aides →') + '</a>';
-    return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Tu veux aller plus loin ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;', 'is-cta');
+    return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Tu veux aller plus loin ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;', 'is-cta');
   }
 
   function buildFollowUpBanner(profile, results, resultCount) {

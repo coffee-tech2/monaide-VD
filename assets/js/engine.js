@@ -204,7 +204,7 @@
           downgradeResult(result, 'Comme tu indiques une fortune importante, cette piste doit être vérifiée avec le calcul officiel avant de la considérer comme probable.');
         }
         if (name.indexOf('Rente-pont') !== -1) {
-          downgradeResult(result, 'La rente-pont a un plafond de fortune strict : avec une fortune importante, cette piste doit être vérifiée avec le calcul officiel avant de la considérer comme probable.');
+          downgradeResult(result, 'La rente-pont a un plafond de fortune strict : avec une fortune importante, cette piste doit être vérifiée avec le calcul officiel avant de la considérer comme probable.');
         }
       }
 
@@ -214,7 +214,7 @@
         name.indexOf('CarteCulture') !== -1 ||
         name.indexOf('Prestations complémentaires') !== -1
       )) {
-        downgradeResult(result, 'Avec un permis G, le domicile et le cadre transfrontalier peuvent changer la démarche : il faut vérifier l’autorité compétente avant de conclure.');
+        downgradeResult(result, 'Avec un permis G, le domicile et le cadre transfrontalier peuvent changer la démarche : il faut vérifier l’autorité compétente avant de conclure.');
       }
 
       if ((flags.permisS || flags.permisN || flags.sansStatut) && (
@@ -224,7 +224,7 @@
         name.indexOf('Prestations complémentaires') !== -1 ||
         name.indexOf('Assurance chômage') !== -1
       )) {
-        downgradeResult(result, 'Ton statut de séjour rend cette piste sensible : commence par le service spécialisé indiqué avant une démarche ordinaire.');
+        downgradeResult(result, 'Ton statut de séjour rend cette piste sensible : commence par le service spécialisé indiqué avant une démarche ordinaire.');
       }
 
       if (flags.etudiant && name.indexOf('Revenu d\'insertion') !== -1) {
@@ -242,7 +242,7 @@
       badge: 'probable',
       strongProbable: true,
       desc: 'Quand le logement ou le budget devient critique, le CSR peut faire un premier point rapidement et t’orienter vers les bons services.',
-      action: '1. Contacte le CSR de ta commune et dis clairement que la situation devient urgente.\n2. Prépare les courriers récents, le bail ou les factures concernées.\n3. Si un bail ou une expulsion est en jeu, contacte aussi l’ASLOCA Vaud : ☏ 021 617 16 17.\n4. Ne quitte pas ton logement ou une procédure sans avoir fait vérifier tes options.',
+      action: '1. Contacte le CSR de ta commune et dis clairement que la situation devient urgente.\n2. Prépare les courriers récents, le bail ou les factures concernées.\n3. Si un bail ou une expulsion est en jeu, contacte aussi l’ASLOCA Vaud : ☏ 021 617 16 17.\n4. Ne quitte pas ton logement ou une procédure sans avoir fait vérifier tes options.',
       today: 'Fais ce premier contact sans attendre un dossier complet.',
       docs: ['Pièce d’identité', 'Courriers reçus récemment', 'Contrat de bail ou factures concernées'],
       liensCSR: true
@@ -252,7 +252,7 @@
   // Règle « permis-n » (simulator-rules.js) : LAsi (RS 142.31) ; LARA (RSV 142.21).
   function addPermisNResults(res) {
     res.push(buildResult({
-      nom: 'EVAM : permis N, F et S',
+      nom: 'EVAM : permis N, F et S',
       badge: 'probable',
       strongProbable: true,
       desc: 'Avec un permis N, le premier contact passe généralement par l’EVAM et le dispositif asile.',
@@ -262,10 +262,10 @@
       liensEVAM: true
     }));
     res.push(buildResult({
-      nom: 'La Fraternité CSP Vaud : questions de migration',
+      nom: 'La Fraternité CSP Vaud : questions de migration',
       badge: 'probable',
       desc: 'Utile si tu ne comprends pas un courrier, une procédure ou ce qui est possible avec ton permis.',
-      action: '1. Va à une permanence migration avec tes papiers et tes courriers.\n2. Apporte les décisions officielles, même si tu ne les comprends pas encore.\n3. Explique ce que tu veux clarifier : permis, travail, logement, aide sociale ou courrier reçu.\n4. Demande quelle démarche faire en premier, pas tout en même temps.',
+      action: '1. Va à une permanence migration avec tes papiers et tes courriers.\n2. Apporte les décisions officielles, même si tu ne les comprends pas encore.\n3. Explique ce que tu veux clarifier : permis, travail, logement, aide sociale ou courrier reçu.\n4. Demande quelle démarche faire en premier, pas tout en même temps.',
       today: 'Rassemble d’abord les courriers liés au séjour.',
       docs: ['Courriers officiels', 'Permis N', 'Questions notées à l’avance'],
       liensFraternite: true
@@ -275,7 +275,7 @@
   // Règle « permis-s » (simulator-rules.js) : LAsi, statut de protection provisoire (RS 142.31) ; LARA (RSV 142.21).
   function addPermisSResults(res) {
     res.push(buildResult({
-      nom: 'EVAM : permis N, F et S',
+      nom: 'EVAM : permis N, F et S',
       badge: 'probable',
       strongProbable: true,
       desc: 'Avec un permis S, il vaut mieux faire vérifier le cadre exact avant de lancer des démarches ordinaires.',
@@ -285,7 +285,7 @@
       liensEVAM: true
     }));
     res.push(buildResult({
-      nom: 'La Fraternité CSP Vaud : questions de migration',
+      nom: 'La Fraternité CSP Vaud : questions de migration',
       badge: 'verifier',
       desc: 'Utile pour les questions sur le séjour, le renouvellement ou le travail.',
       action: '1. Contacte le CSP Fraternité si tu ne sais pas quel service contacter.\n2. Prépare ton permis, les courriers récents et une liste courte de questions.\n3. Demande surtout quelle démarche est prioritaire selon ton statut.',
@@ -296,7 +296,7 @@
   // Règle « permis-f » (simulator-rules.js) : LEI, admission provisoire (RS 142.20) ; LARA (RSV 142.21).
   function addPermisFResults(res) {
     res.push(buildResult({
-      nom: 'EVAM : permis N, F et S',
+      nom: 'EVAM : permis N, F et S',
       badge: 'verifier',
       desc: 'Avec un permis F, certaines aides peuvent exister, mais il faut souvent vérifier le bon cadre social et administratif.',
       action: '1. Si ta situation est suivie par l’EVAM, commence par là.\n2. Demande si la question concerne l’aide sociale, le séjour ou les deux.\n3. Si le permis ou une décision officielle est au centre du problème, complète avec le CSP Fraternité.\n4. Garde une copie des courriers et note les dates importantes.',
@@ -308,7 +308,7 @@
   // Règle « permis-l » (simulator-rules.js) : LEI (RS 142.20).
   function addPermisLResults(res) {
     res.push(buildResult({
-      nom: 'Permis L : séjour de courte durée',
+      nom: 'Permis L : séjour de courte durée',
       badge: 'verifier',
       desc: 'Avec un permis L, la durée du séjour et le domicile réel comptent beaucoup dans l’examen d’une demande.',
       action: '1. Avant une demande importante, vérifie d’abord ton cadre de séjour.\n2. Prépare ton permis L, ton contrat de travail et une attestation de domicile si tu en as une.\n3. Demande explicitement si la durée du séjour change l’accès à l’aide demandée.\n4. Si plusieurs services se renvoient la balle, demande une orientation écrite ou un contact précis.',
@@ -321,7 +321,7 @@
   // Règle « permis-g » (simulator-rules.js) : LEI (RS 142.20).
   function addPermisGResults(res) {
     res.push(buildResult({
-      nom: 'Permis G : frontalier·ère',
+      nom: 'Permis G : frontalier·ère',
       badge: 'probable',
       strongProbable: true,
       desc: 'Avec un permis G, les questions d’emploi, de chômage et de cadre transfrontalier passent avant les aides sociales vaudoises ordinaires.',
@@ -335,17 +335,17 @@
   // Règle « sans-statut » (simulator-rules.js) : Art. 12 Cst. (RS 101) ; LARA, aide d’urgence (RSV 142.21).
   function addSansStatutResults(res) {
     res.push(buildResult({
-      nom: 'La Fraternité CSP Vaud : questions de migration',
+      nom: 'La Fraternité CSP Vaud : questions de migration',
       badge: 'probable',
       strongProbable: true,
       desc: 'Sans statut régulier, il faut d’abord clarifier les droits de base et les bons services.',
-      action: '1. Va à une permanence du CSP Fraternité avant de lancer plusieurs démarches seul·e.\n2. Apporte passeport/pièce d’identité si tu en as, courriers officiels et preuves de présence ou de situation.\n3. Dis clairement s’il y a urgence : logement, santé, revenu, sécurité.\n4. Demande quelle aide de base est possible sans te mettre en difficulté.',
+      action: '1. Va à une permanence du CSP Fraternité avant de lancer plusieurs démarches seul·e.\n2. Apporte passeport/pièce d’identité si tu en as, courriers officiels et preuves de présence ou de situation.\n3. Dis clairement s’il y a urgence : logement, santé, revenu, sécurité.\n4. Demande quelle aide de base est possible sans te mettre en difficulté.',
       today: 'Commence par cette permanence avant d’autres demandes.',
       docs: ['Courriers officiels si tu en as', 'Passeport ou pièce d’identité', 'Toute preuve de présence ou de situation'],
       liensFraternite: true
     }));
     res.push(buildResult({
-      nom: 'Aide d’urgence : décision de renvoi ou sans droit de séjour',
+      nom: 'Aide d’urgence : décision de renvoi ou sans droit de séjour',
       badge: 'probable',
       strongProbable: true,
       desc: 'En cas de renvoi, de séjour sans droit ou d’absence totale de ressources, la piste pertinente est souvent l’aide d’urgence.',
@@ -359,10 +359,10 @@
   // Règle « pro-infirmis » (simulator-rules.js) : Pas de base légale : fondation privée.
   function addProInfirmisResult(res) {
     res.push(buildResult({
-      nom: 'Pro Infirmis Vaud : accompagnement gratuit',
+      nom: 'Pro Infirmis Vaud : accompagnement gratuit',
       badge: 'verifier',
-      desc: 'Tu as un handicap ou une maladie chronique ? Pro Infirmis peut t\'accompagner gratuitement dans toutes tes démarches : AI, logement, emploi, droits.',
-      action: '1. Contacte Pro Infirmis Vaud : ☏ 058 775 34 34.\n2. Explique en une phrase ce qui bloque : AI, logement, travail, budget, mobilité ou démarches administratives.\n3. Prépare les courriers AI/médicaux si tu en as déjà.\n4. Si la situation est urgente, demande une permanence ou le lieu le plus proche.',
+      desc: 'Tu as un handicap ou une maladie chronique ? Pro Infirmis peut t\'accompagner gratuitement dans toutes tes démarches : AI, logement, emploi, droits.',
+      action: '1. Contacte Pro Infirmis Vaud : ☏ 058 775 34 34.\n2. Explique en une phrase ce qui bloque : AI, logement, travail, budget, mobilité ou démarches administratives.\n3. Prépare les courriers AI/médicaux si tu en as déjà.\n4. Si la situation est urgente, demande une permanence ou le lieu le plus proche.',
       docs: ['Courriers AI ou médicaux si disponibles', 'Pièce d’identité', 'Questions principales notées à l’avance'],
       today: 'Très utile si tu te sens perdu·e dans les démarches AI, logement ou emploi.',
       liensProInfirmis: true
@@ -372,11 +372,11 @@
   // Règle « pro-senectute » (simulator-rules.js) : Pas de base légale : fondation privée.
   function addProSenectuteResult(res) {
     res.push(buildResult({
-      nom: 'Pro Senectute Vaud : conseil gratuit pour les 60+',
+      nom: 'Pro Senectute Vaud : conseil gratuit pour les 60+',
       catalogAidId: 'pro-senectute',
       badge: 'verifier',
-      desc: 'Aide administrative, déclaration d\'impôts, questions AVS ou PC, accompagnement social : un bon contact si les démarches deviennent lourdes.',
-      action: '1. Contacte Pro Senectute Vaud (service social) : ☏ 021 323 04 23.\n2. Demande un conseil social si les démarches AVS, PC, impôts ou budget deviennent difficiles.\n3. Prépare les décisions AVS/PC, bail, primes maladie et courriers récents.\n4. Si tu aides un proche âgé, demande aussi les possibilités de soutien et de relève.',
+      desc: 'Aide administrative, déclaration d\'impôts, questions AVS ou PC, accompagnement social : un bon contact si les démarches deviennent lourdes.',
+      action: '1. Contacte Pro Senectute Vaud (service social) : ☏ 021 323 04 23.\n2. Demande un conseil social si les démarches AVS, PC, impôts ou budget deviennent difficiles.\n3. Prépare les décisions AVS/PC, bail, primes maladie et courriers récents.\n4. Si tu aides un proche âgé, demande aussi les possibilités de soutien et de relève.',
       docs: ['Décision AVS ou PC', 'Bail et primes maladie', 'Courriers administratifs récents'],
       today: 'Appelle si tu as 60+ et que les démarches AVS/PC deviennent difficiles à gérer seul·e.',
       liensSenectute: true
@@ -386,10 +386,10 @@
   // Règle « cms » (simulator-rules.js) : Maintien à domicile : LORSDom (loi du 28 janvier 2021).
   function addCmsResult(res) {
     res.push(buildResult({
-      nom: 'CMS : soins et aide à domicile',
+      nom: 'CMS : soins et aide à domicile',
       badge: 'verifier',
       desc: 'Les CMS peuvent aider pour les soins, le maintien à domicile ou certaines aides du quotidien. Le financement dépend ensuite de la prestation et de la couverture.',
-      action: '1. Si le besoin est médical, parle d’abord à ton médecin pour une prescription.\n2. Tu peux aussi contacter l’AVASAD / réseau CMS Vaud : 0848 822 822.\n3. Explique ce qui devient difficile à domicile : soins, toilette, repas, ménage, sécurité, mobilité.\n4. Demande quelles prestations sont évaluées et comment elles sont financées.',
+      action: '1. Si le besoin est médical, parle d’abord à ton médecin pour une prescription.\n2. Tu peux aussi contacter l’AVASAD / réseau CMS Vaud : 0848 822 822.\n3. Explique ce qui devient difficile à domicile : soins, toilette, repas, ménage, sécurité, mobilité.\n4. Demande quelles prestations sont évaluées et comment elles sont financées.',
       docs: ['Ordonnance ou certificat médical si disponible', 'Carte d’assurance maladie', 'Liste des besoins à domicile'],
       today: 'À prioriser si le maintien à domicile devient compliqué.',
       liensCMS: true
@@ -399,7 +399,7 @@
   // Règle « frais-maladie-invalidite » (simulator-rules.js) : LPC, remboursement des frais de maladie et d’invalidité (RS 831.30).
   function addFraisMaladieInvaliditeResult(res) {
     res.push(buildResult({
-      nom: 'Frais de maladie et d’invalidité : PC AVS/AI',
+      nom: 'Frais de maladie et d’invalidité : PC AVS/AI',
       badge: 'verifier',
       desc: 'Si tu touches déjà les PC, certains frais liés à la santé, au handicap ou à l’aide à domicile peuvent parfois être annoncés en plus. Il faut faire vérifier les factures avant de conclure.',
       action: '1. Mets de côté les factures de santé, de soins, de transport médical, de moyens auxiliaires ou d’aide à domicile.\n2. Contacte une agence AAS ou la Caisse AVS Vaud et demande quels frais peuvent être annoncés.\n3. Garde les décisions PC, les factures originales et les preuves de paiement.\n4. Si tu aides un proche, demande aussi si un soutien de proche aidant·e ou une évaluation CMS est utile.',
@@ -412,10 +412,10 @@
   // Règle « aminh » (simulator-rules.js) : Art. 29 LVLAFam (RSV 836.01).
   function addAminhResult(res) {
     res.push(buildResult({
-      nom: 'Enfant en situation de handicap : aides à domicile (AMINH)',
+      nom: 'Enfant en situation de handicap : aides à domicile (AMINH)',
       badge: 'verifier',
       desc: 'Si tu aides un enfant en situation de handicap ou avec un besoin important à domicile, il peut exister des soutiens pour la relève, l’aide concrète ou l’organisation du quotidien.',
-      action: '1. Note ce qui demande de l’aide à domicile : soins, surveillance, déplacements, repas, nuit, démarches ou relève.\n2. Contacte Espace Proches ou le CMS pour faire un premier tri.\n3. Si l’enfant a déjà un suivi médical ou AI, garde les courriers et décisions utiles.\n4. Demande clairement quelles aides financières, services ou évaluations à domicile peuvent être envisagés.',
+      action: '1. Note ce qui demande de l’aide à domicile : soins, surveillance, déplacements, repas, nuit, démarches ou relève.\n2. Contacte Espace Proches ou le CMS pour faire un premier tri.\n3. Si l’enfant a déjà un suivi médical ou AI, garde les courriers et décisions utiles.\n4. Demande clairement quelles aides financières, services ou évaluations à domicile peuvent être envisagés.',
       today: 'Commence par décrire le besoin concret à domicile, puis demande à quel service l’annoncer.',
       docs: ['Courriers médicaux ou AI si disponibles', 'Liste des besoins à domicile', 'Coordonnées du suivi médical ou social'],
       liensAminh: true
@@ -431,18 +431,18 @@
         badge: 'probable',
         strongProbable: true,
         desc: 'C\'est une urgence. Tu as des droits et des délais légaux — mais ils sont courts.',
-        action: '1. Garde la lettre, l’enveloppe et note la date de réception.\n2. Contacte l’ASLOCA Vaud aujourd’hui : ☏ 021 617 16 17, pour vérifier les délais et tes options.\n3. Contacte immédiatement le CSR de ta commune si le retard vient d’un manque de revenu.\n4. Ne quitte pas ton logement de toi-même sans avoir fait vérifier la situation et sans décision judiciaire.',
-        today: 'C’est une démarche du jour même : ASLOCA puis CSR si le problème est financier.',
+        action: '1. Garde la lettre, l’enveloppe et note la date de réception.\n2. Contacte l’ASLOCA Vaud aujourd’hui : ☏ 021 617 16 17, pour vérifier les délais et tes options.\n3. Contacte immédiatement le CSR de ta commune si le retard vient d’un manque de revenu.\n4. Ne quitte pas ton logement de toi-même sans avoir fait vérifier la situation et sans décision judiciaire.',
+        today: 'C’est une démarche du jour même : ASLOCA puis CSR si le problème est financier.',
         docs: ['Courriers du bailleur ou de l’office des poursuites', 'Enveloppe avec la date de réception si tu l’as', 'Contrat de bail', 'Preuves de paiement ou retards'],
         liensDettes: true
       }));
     }
 
     res.push(buildResult({
-      nom: 'Parlons Cash : dettes et surendettement',
+      nom: 'Parlons Cash : dettes et surendettement',
       badge: 'verifier',
       desc: 'Si les dettes, les poursuites ou les factures te dépassent, Parlons Cash propose une ligne gratuite et confidentielle.',
-      action: '1. Appelle Parlons Cash au 0840 43 21 00.\n2. Avant l’appel, fais une liste simple : qui réclame quoi, montant, délai, poursuite ou rappel.\n3. Demande quoi payer en priorité : loyer, assurance maladie, alimentation, impôts, crédits ou autres factures.\n4. Si la situation est complexe, demande vers quel service prendre rendez-vous ensuite, par exemple CSP Vaud ou accompagnement spécialisé.',
+      action: '1. Appelle Parlons Cash au 0840 43 21 00.\n2. Avant l’appel, fais une liste simple : qui réclame quoi, montant, délai, poursuite ou rappel.\n3. Demande quoi payer en priorité : loyer, assurance maladie, alimentation, impôts, crédits ou autres factures.\n4. Si la situation est complexe, demande vers quel service prendre rendez-vous ensuite, par exemple CSP Vaud ou accompagnement spécialisé.',
       today: 'Commence par lister les dettes, puis appelle Parlons Cash avant de promettre des arrangements impossibles.',
       docs: ['Liste des dettes ou poursuites', 'Factures impayées', 'Commandements de payer ou rappels', 'Budget mensuel si tu l’as'],
       liensParlonsCash: true
@@ -450,9 +450,9 @@
 
     if (isLausanne) {
       res.push(buildResult({
-        nom: 'Unafin : assainissement financier (Lausanne)',
+        nom: 'Unafin : assainissement financier (Lausanne)',
         badge: 'verifier',
-        desc: 'Tu habites ou travailles à Lausanne : Unafin va plus loin qu’un conseil ponctuel, avec un accompagnement complet pour construire un budget et sortir durablement du surendettement.',
+        desc: 'Tu habites ou travailles à Lausanne : Unafin va plus loin qu’un conseil ponctuel, avec un accompagnement complet pour construire un budget et sortir durablement du surendettement.',
         action: '1. Contacte l’Info sociale du Service social de Lausanne (SSL) au 021 315 77 54, ou écris à unafin@lausanne.ch.\n2. Compte un délai d’une à quatre semaines avant le premier rendez-vous.\n3. Rassemble tes factures, rappels et commandements de payer déjà reçus.\n4. Présente-toi au rendez-vous avec ces documents, Place Chauderon 9 à Lausanne.',
         today: 'Réservé aux personnes qui habitent ou travaillent pour la Ville de Lausanne.',
         docs: ['Factures et rappels', 'Commandements de payer si tu en as', 'Budget mensuel si tu l’as'],
@@ -470,7 +470,7 @@
       desc: grandeCommune
         ? 'Dans certaines communes vaudoises, il existe des soutiens liés au loyer, notamment l’aide individuelle au logement pour certaines familles. Cela dépend de la commune et des conditions.'
         : 'Certaines communes ou fondations proposent des soutiens liés au loyer ou au maintien dans le logement. Cela dépend fortement du lieu et de la situation.',
-      action: '1. Regarde si ta commune propose une aide logement, notamment l’AIL si tu es une famille.\n2. Attention : l’AIL existe seulement dans certaines communes et ne concerne pas les personnes au RI ou aux PC AVS/AI.\n3. Prépare ton bail, ton dernier loyer, tes revenus et la composition du ménage.\n4. Si tu as reçu un rappel ou une menace d’expulsion, traite cela comme une urgence : ASLOCA et CSR.',
+      action: '1. Regarde si ta commune propose une aide logement, notamment l’AIL si tu es une famille.\n2. Attention : l’AIL existe seulement dans certaines communes et ne concerne pas les personnes au RI ou aux PC AVS/AI.\n3. Prépare ton bail, ton dernier loyer, tes revenus et la composition du ménage.\n4. Si tu as reçu un rappel ou une menace d’expulsion, traite cela comme une urgence : ASLOCA et CSR.',
       docs: ['Contrat de bail', 'Dernier avis de loyer', 'Revenus actuels ou budget mensuel'],
       today: 'Garde cette piste si ton loyer pèse trop lourd ou si tu crains de ne plus réussir à le tenir.',
       liensDettes: false
@@ -483,9 +483,9 @@
       nom: 'Prestations communales et aides locales',
       badge: flags.aEnfants ? 'probable' : 'verifier',
       desc: flags.aEnfants
-        ? 'Selon la commune, il existe parfois des aides concrètes pour les familles : garde, loisirs, couches, repas ou frais du quotidien.'
+        ? 'Selon la commune, il existe parfois des aides concrètes pour les familles : garde, loisirs, couches, repas ou frais du quotidien.'
         : 'Certaines communes proposent des aides ponctuelles ou locales que le simulateur ne peut pas trancher automatiquement.',
-      action: '1. Va sur le site de ta commune et cherche “aide sociale”, “prestations”, “familles”, “subsides” ou “fonds”.\n2. Note les aides concrètes possibles : déchets, couches, garde, sport, mobilité, repas, vélo, activités.\n3. Si le site n’est pas clair, appelle le greffe communal ou le CSR et demande où poser la question.\n4. Garde les factures ou justificatifs liés aux frais concernés.',
+      action: '1. Va sur le site de ta commune et cherche “aide sociale”, “prestations”, “familles”, “subsides” ou “fonds”.\n2. Note les aides concrètes possibles : déchets, couches, garde, sport, mobilité, repas, vélo, activités.\n3. Si le site n’est pas clair, appelle le greffe communal ou le CSR et demande où poser la question.\n4. Garde les factures ou justificatifs liés aux frais concernés.',
       docs: ['Factures ou justificatifs du frais concerné', 'Budget ou preuve de revenu si demandé', 'Composition du ménage'],
       today: 'Garde cette piste surtout si tu as des enfants, des frais du quotidien lourds ou si tu vis dans une grande commune.',
       liensCommunes: true
@@ -495,7 +495,7 @@
   // Règle « garde-enfants-malades » (simulator-rules.js) : Pas de base légale : service associatif (Croix-Rouge vaudoise).
   function addGardeEnfantsMaladesResult(res, flags) {
     res.push(buildResult({
-      nom: 'Garde d’enfants malades : soutien ponctuel aux parents',
+      nom: 'Garde d’enfants malades : soutien ponctuel aux parents',
       badge: 'verifier',
       desc: 'Quand un enfant tombe malade et qu’aucun parent ne peut rester à domicile, il existe parfois des solutions de garde ponctuelles à demander selon les conditions du service.',
       action: '1. Vérifie les conditions de la Croix-Rouge vaudoise ou d’un service de garde ponctuelle de ta région.\n2. Prépare l’âge de l’enfant, le motif de garde et la durée probable du besoin.\n3. Demande le tarif, les délais et les conditions avant de compter dessus.\n4. Si le problème revient souvent, demande aussi une orientation plus globale via le CSR ou la commune.',
@@ -522,14 +522,14 @@
   // Règle « separation » (simulator-rules.js) : Code civil (RS 210) ; assistance judiciaire : CPC art. 117 ss (RS 272).
   function addSeparationResult(res, flags) {
     res.push(buildResult({
-      nom: 'Séparation et divorce : premières informations',
+      nom: 'Séparation et divorce : premières informations',
       badge: flags.aEnfants ? 'probable' : 'verifier',
       desc: flags.aEnfants
         ? 'Quand une séparation commence avec des enfants, il faut souvent clarifier rapidement pension, garde, budget et premières démarches.'
         : 'Quand une séparation ou un divorce commence, il est utile de clarifier rapidement les premiers points administratifs et financiers.',
       action: flags.aEnfants
-        ? '1. Fais une liste courte des sujets urgents : sécurité, enfants, logement, pension, budget, assurances.\n2. Si une décision fixe déjà une pension et qu’elle n’est pas payée, appelle le BRAPA au 021 316 52 21.\n3. Prépare jugement, ordonnance, convention, preuves de non-paiement, revenus et frais des enfants.\n4. Si la séparation crée une urgence financière ou de logement, contacte aussi le CSR. S’il y a violence ou peur, passe d’abord par les ressources de protection.'
-        : '1. Clarifie d’abord ce qui change concrètement : logement, budget, assurances, dettes, courrier.\n2. Rassemble les documents importants avant les rendez-vous : bail, revenus, comptes, décisions ou courriers reçus.\n3. Si tu ne sais pas par quoi commencer, demande une permanence sociale ou juridique pour trier les priorités.\n4. S’il y a violence, menace ou emprise, ne commence pas par une médiation : cherche d’abord un service de protection.',
+        ? '1. Fais une liste courte des sujets urgents : sécurité, enfants, logement, pension, budget, assurances.\n2. Si une décision fixe déjà une pension et qu’elle n’est pas payée, appelle le BRAPA au 021 316 52 21.\n3. Prépare jugement, ordonnance, convention, preuves de non-paiement, revenus et frais des enfants.\n4. Si la séparation crée une urgence financière ou de logement, contacte aussi le CSR. S’il y a violence ou peur, passe d’abord par les ressources de protection.'
+        : '1. Clarifie d’abord ce qui change concrètement : logement, budget, assurances, dettes, courrier.\n2. Rassemble les documents importants avant les rendez-vous : bail, revenus, comptes, décisions ou courriers reçus.\n3. Si tu ne sais pas par quoi commencer, demande une permanence sociale ou juridique pour trier les priorités.\n4. S’il y a violence, menace ou emprise, ne commence pas par une médiation : cherche d’abord un service de protection.',
       docs: flags.aEnfants
         ? ['Jugement, ordonnance ou convention si existant', 'Preuves de pension payée ou non payée', 'Revenus et justificatifs financiers', 'Frais et documents des enfants']
         : ['Bail ou documents logement', 'Revenus actuels', 'Courriers administratifs liés à la séparation'],
@@ -540,11 +540,11 @@
   // Règle « proches-aidants » (simulator-rules.js) : LAPRAMS (loi du 24 janvier 2006) ; LORSDom (loi du 28 janvier 2021).
   function addProchesAidantsResult(res) {
     res.push(buildResult({
-      nom: 'Proches aidant·es : répit et aides concrètes',
+      nom: 'Proches aidant·es : répit et aides concrètes',
       badge: 'verifier',
-      desc: 'Si tu aides régulièrement un proche, il existe dans le canton des soutiens concrets : Espace Proches, CMS, carte d’urgence, relève, congés et parfois aides financières.',
-      action: '1. Note concrètement ce que tu fais pour le proche : soins, repas, administratif, présence, déplacements, surveillance.\n2. Appelle Espace Proches au 0800 660 660 pour faire le tri gratuitement.\n3. Si la personne aidée vit à domicile, contacte aussi le CMS pour demander une évaluation, une carte d’urgence proche aidant ou une relève.\n4. Si tu as réduit ou arrêté ton activité pour aider, demande explicitement si une aide financière ou un congé proche aidant est possible.',
-      today: 'Commence par Espace Proches : l’appel permet de trier répit, CMS, carte d’urgence et aides possibles.',
+      desc: 'Si tu aides régulièrement un proche, il existe dans le canton des soutiens concrets : Espace Proches, CMS, carte d’urgence, relève, congés et parfois aides financières.',
+      action: '1. Note concrètement ce que tu fais pour le proche : soins, repas, administratif, présence, déplacements, surveillance.\n2. Appelle Espace Proches au 0800 660 660 pour faire le tri gratuitement.\n3. Si la personne aidée vit à domicile, contacte aussi le CMS pour demander une évaluation, une carte d’urgence proche aidant ou une relève.\n4. Si tu as réduit ou arrêté ton activité pour aider, demande explicitement si une aide financière ou un congé proche aidant est possible.',
+      today: 'Commence par Espace Proches : l’appel permet de trier répit, CMS, carte d’urgence et aides possibles.',
       docs: ['Coordonnées du proche aidé', 'Courriers médicaux ou CMS si disponibles', 'Liste des tâches d’aide au quotidien', 'Preuve de réduction d’activité ou perte de revenu si concerné·e'],
       liensProchesAidants: true
     }));
@@ -557,20 +557,20 @@
       hideRepertoireLink: true,
       badge: 'verifier',
       desc: 'Ta situation ne correspond pas aux critères détectés automatiquement. Cela ne veut pas dire qu\'il n\'existe pas d\'aide pour toi.',
-      action: '1. Ouvre le répertoire et cherche par besoin : santé, logement, revenu, formation, migration ou urgence.\n2. Si tu hésites entre plusieurs services, commence par le CSR ou Vaud pour vous.\n3. Note ta situation en trois lignes avant d’appeler : problème principal, revenu/logement, documents reçus.\n4. Reviens ensuite au simulateur si ta situation change.'
+      action: '1. Ouvre le répertoire et cherche par besoin : santé, logement, revenu, formation, migration ou urgence.\n2. Si tu hésites entre plusieurs services, commence par le CSR ou Vaud pour vous.\n3. Note ta situation en trois lignes avant d’appeler : problème principal, revenu/logement, documents reçus.\n4. Reviens ensuite au simulateur si ta situation change.'
     }));
   }
 
   // Règle « lamal » (simulator-rules.js) : LAMal (RS 832.10) ; LVLAMal (RSV 832.01).
   function addLamalResult(res, flags) {
-    var lamalRetroactiveNote = '\n\nÀ savoir : selon les périodes, la réponse de l’OVAM peut prendre du temps. Si le subside est accordé, il est versé à ton assureur depuis la date reconnue. Si tu as payé trop de primes pendant l’attente, l’assurance corrige en général la situation, par remboursement ou par déduction sur les prochaines primes.';
+    var lamalRetroactiveNote = '\n\nÀ savoir : selon les périodes, la réponse de l’OVAM peut prendre du temps. Si le subside est accordé, il est versé à ton assureur depuis la date reconnue. Si tu as payé trop de primes pendant l’attente, l’assurance corrige en général la situation, par remboursement ou par déduction sur les prochaines primes.';
     if (flags.alreadyRI || flags.alreadyPC) {
       res.push(buildResult({
         nom: 'Subside assurance maladie (OVAM)',
         badge: 'probable',
         strongProbable: true,
         desc: 'Si tu touches déjà le RI ou les PC, le subside LAMal est généralement lié à cette situation. Le plus utile est de vérifier qu’il est bien actif et correctement appliqué.',
-        action: '1. Vérifie que le subside apparaît bien sur ta prime ou dans ta décision.\n2. Si ce n’est pas clair, contacte ton agence AAS ou l’OVAM avec ta décision RI/PC et ta police LAMal.\n3. Garde la décision : elle peut servir de justificatif pour d’autres démarches, notamment la CarteCulture.' + lamalRetroactiveNote,
+        action: '1. Vérifie que le subside apparaît bien sur ta prime ou dans ta décision.\n2. Si ce n’est pas clair, contacte ton agence AAS ou l’OVAM avec ta décision RI/PC et ta police LAMal.\n3. Garde la décision : elle peut servir de justificatif pour d’autres démarches, notamment la CarteCulture.' + lamalRetroactiveNote,
         today: 'Regarde ta dernière décision ou appelle ton agence AAS pour vérifier que la réduction est bien active.',
         docs: ['Attestation RI ou PC', 'Police LAMal actuelle'],
         liens: true
@@ -602,7 +602,7 @@
           : 'Avec ton niveau de revenus, un subside est probablement envisageable. Le montant exact dépend ensuite du Revenu Déterminant Unifié (RDU), qui tient compte des revenus et de la fortune.',
         action: (flags.permisF || flags.permisL)
           ? '1. Fais d’abord le calcul officiel du subside.\n2. Si le résultat semble positif, prépare ta police LAMal, tes revenus et ton permis.\n3. Dépose la demande avec une agence d’assurances sociales (AAS) pour éviter une erreur de dossier.\n4. Si la question touche aussi au séjour, demande en parallèle un avis au CSP Fraternité.' + lamalRetroactiveNote
-          : '1. Utilise le simulateur officiel du canton pour estimer ton droit.\n2. Prépare ta police LAMal, ta dernière taxation ou une estimation de tes revenus.\n3. Si la piste paraît positive, dépose la demande en ligne ou avec une agence AAS.\n4. Garde la décision reçue : elle pourra aussi servir de justificatif pour d’autres aides.' + lamalRetroactiveNote,
+          : '1. Utilise le simulateur officiel du canton pour estimer ton droit.\n2. Prépare ta police LAMal, ta dernière taxation ou une estimation de tes revenus.\n3. Si la piste paraît positive, dépose la demande en ligne ou avec une agence AAS.\n4. Garde la décision reçue : elle pourra aussi servir de justificatif pour d’autres aides.' + lamalRetroactiveNote,
         today: 'Commence par le calcul officiel. Si tu bloques, passe par une AAS. En cas de doute sur le suivi du dossier, contacte l’OVAM.',
         docs: ['Dernière taxation si disponible', 'Police LAMal', 'Relevés de revenus'],
         liens: true,
@@ -650,8 +650,8 @@
           ? 'Tes revenus, ton épargne et ton contexte de vie font ressortir le RI comme une piste forte. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e.'
           : 'Tes revenus et ton épargne font ressortir le RI comme une piste sérieuse. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',
         action: flags.permisF
-          ? '1. Contacte le CSR pour demander un entretien d’évaluation.\n2. Précise ton statut de séjour dès le premier contact : ça évite d’être orienté·e vers le mauvais service.\n3. Prépare tes relevés de compte, ton bail et tes justificatifs de revenus.\n4. Si la question du permis devient centrale, complète avec le CSP Fraternité.'
-          : '1. Trouve le CSR de ta commune et demande un entretien d’évaluation.\n2. Explique simplement : revenus actuels, loyer, personnes dans le ménage, dettes urgentes s’il y en a.\n3. Prépare : pièce d’identité, relevés de compte des 3 derniers mois, bail, dernière prime maladie, bulletins de salaire ou preuve d’absence de revenu.\n4. Tu peux prendre contact même si ton dossier n’est pas parfait : le CSR t’indiquera les pièces manquantes.',
+          ? '1. Contacte le CSR pour demander un entretien d’évaluation.\n2. Précise ton statut de séjour dès le premier contact : ça évite d’être orienté·e vers le mauvais service.\n3. Prépare tes relevés de compte, ton bail et tes justificatifs de revenus.\n4. Si la question du permis devient centrale, complète avec le CSP Fraternité.'
+          : '1. Trouve le CSR de ta commune et demande un entretien d’évaluation.\n2. Explique simplement : revenus actuels, loyer, personnes dans le ménage, dettes urgentes s’il y en a.\n3. Prépare : pièce d’identité, relevés de compte des 3 derniers mois, bail, dernière prime maladie, bulletins de salaire ou preuve d’absence de revenu.\n4. Tu peux prendre contact même si ton dossier n’est pas parfait : le CSR t’indiquera les pièces manquantes.',
         today: flags.grandeCommune
           ? 'Tu peux commencer par contacter le CSR de ta région, même sans dossier complet.'
           : 'Prépare tes relevés de compte et prends le premier contact avec le CSR.',
@@ -697,7 +697,7 @@
   // Règle « pc-familles » (simulator-rules.js) : LPCFam (RSV 850.053).
   function addPcFamillesResult(res, flags) {
     res.push(buildResult({
-      nom: 'PC Familles : soutien pour parents qui travaillent',
+      nom: 'PC Familles : soutien pour parents qui travaillent',
       badge: flags.revenuFaible ? 'probable' : 'verifier',
       desc: flags.revenuFaible
         ? 'Tu as des enfants, tu travailles, et le budget semble rester trop serré malgré l’activité. Les PC Familles peuvent être une piste à examiner si les autres conditions sont remplies, notamment l’âge des enfants et les revenus pris en compte.'
@@ -717,9 +717,9 @@
       badge: casSimple ? 'probable' : 'verifier',
       desc: casSimple
         ? 'Tu as des enfants à charge et ta situation ressemble à un cas assez simple. Cette piste paraît très solide, mais il faut quand même passer par la bonne caisse et vérifier qu’aucun autre parent ne touche déjà cette aide.'
-        : 'Les allocations familiales peuvent être possibles, mais l’interlocuteur change selon la situation : emploi, chômage, séparation ou absence d’activité lucrative. Il vaut mieux vérifier avant de conclure.',
+        : 'Les allocations familiales peuvent être possibles, mais l’interlocuteur change selon la situation : emploi, chômage, séparation ou absence d’activité lucrative. Il vaut mieux vérifier avant de conclure.',
       action: '1. Si tu travailles, demande d’abord à ton employeur ou à sa caisse.\n2. Si tu es au chômage, demande à ta caisse de chômage si un supplément peut être versé.\n3. Si tu ne travailles pas, vérifie avec une agence AAS ou la Caisse AVS Vaud si les conditions sont remplies.\n4. Prépare les actes de naissance et, si besoin, l’attestation de formation des enfants.\n5. Signale toujours si l’autre parent touche déjà quelque chose.',
-      today: 'Identifie d’abord la bonne caisse : c’est la première vraie étape.',
+      today: 'Identifie d’abord la bonne caisse : c’est la première vraie étape.',
       docs: ['Pièces d’identité des parents', 'Actes de naissance des enfants', 'Attestation de formation si 16–25 ans'],
       liensAF: true
     }));
@@ -733,7 +733,7 @@
         badge: 'probable',
         strongProbable: true,
         desc: 'Si tu touches déjà le RI, les PC, un subside LAMal ou une bourse, la CarteCulture est souvent accessible avec le bon justificatif. Elle donne accès à de nombreuses offres culturelles, sportives et de loisirs à prix réduit.',
-        action: '1. Demande ta carte sur carteculture.ch ou auprès de Caritas Vaud.\n2. Prépare le justificatif correspondant à ta situation : attestation RI, PC, décision de subside, bourse, etc.\n3. Ajoute une photo d’identité si elle est demandée.\n4. La carte est gratuite : garde-la ensuite avec tes justificatifs sociaux.',
+        action: '1. Demande ta carte sur carteculture.ch ou auprès de Caritas Vaud.\n2. Prépare le justificatif correspondant à ta situation : attestation RI, PC, décision de subside, bourse, etc.\n3. Ajoute une photo d’identité si elle est demandée.\n4. La carte est gratuite : garde-la ensuite avec tes justificatifs sociaux.',
         today: 'Tu peux garder cette piste juste après tes démarches prioritaires.',
         docs: ['Justificatif d’aide actuelle', 'Photo d’identité'],
         liensCarte: true
@@ -765,7 +765,7 @@
         : 'Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois durant les 2 dernières années ou si tu es libéré·e des conditions de cotisation dans certains cas, puis si les autres conditions sont remplies.',
       action: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
         ? '1. Inscris-toi ou fais vérifier ta situation auprès de l’ORP.\n2. Choisis ensuite une caisse de chômage et demande un contrôle de ton droit.\n3. Fais préciser les règles liées à ton permis, ton domicile et ton dernier emploi avant de conclure que tu n’as pas droit.'
-        : '1. Inscris-toi à l’ORP dès que possible si ce n’est pas encore fait.\n2. Choisis une caisse de chômage : c’est elle qui vérifie le droit financier.\n3. Fais vérifier les conditions principales : en général 12 mois de cotisation dans les 2 dernières années, ou une possible libération des conditions de cotisation selon la situation.\n4. Prépare : certificat de travail, attestation de l’employeur, pièce d’identité ou permis, derniers contrats et courriers de fin d’emploi.',
+        : '1. Inscris-toi à l’ORP dès que possible si ce n’est pas encore fait.\n2. Choisis une caisse de chômage : c’est elle qui vérifie le droit financier.\n3. Fais vérifier les conditions principales : en général 12 mois de cotisation dans les 2 dernières années, ou une possible libération des conditions de cotisation selon la situation.\n4. Prépare : certificat de travail, attestation de l’employeur, pièce d’identité ou permis, derniers contrats et courriers de fin d’emploi.',
       today: 'Si ton contrat est terminé ou va se terminer, l’inscription ORP est une priorité à ne pas repousser.',
       docs: ['Certificat de travail', 'Attestation de l’employeur', 'Pièce d’identité ou permis'],
       liensLACI: true,
@@ -777,13 +777,13 @@
   // Règle « chomage-ouvert » (simulator-rules.js) : LACI (RS 837.0).
   function addChomageActifResult(res) {
     res.push(buildResult({
-      nom: 'Assurance chômage : droits déjà ouverts',
+      nom: 'Assurance chômage : droits déjà ouverts',
       catalogAidId: 'laci',
       badge: 'probable',
       strongProbable: true,
       desc: 'Tu indiques recevoir déjà le chômage. L’enjeu principal est donc de garder le suivi ORP et caisse clair, et d’anticiper la suite si tes indemnités arrivent bientôt à la fin.',
       action: '1. Regarde ton dernier décompte de chômage pour savoir combien d’indemnités il reste.\n2. Si la fin de droit approche, demande rapidement à ton ORP ou à ta caisse quelles démarches anticiper.\n3. Si tu n’arrives plus à couvrir les besoins de base, prépare aussi un contact avec le CSR.\n4. Si tu as 60 ans ou plus, vérifie en plus la piste rente-pont.',
-      today: 'Commence par ton dernier décompte : il te donne la durée restante et aide à savoir quoi anticiper.',
+      today: 'Commence par ton dernier décompte : il te donne la durée restante et aide à savoir quoi anticiper.',
       docs: ['Dernier décompte chômage', 'Courriers ORP ou caisse de chômage', 'Contrats ou certificats de travail récents'],
       liensLACI: true
     }));
@@ -796,10 +796,10 @@
     // dépasse 15'000 CHF (même logique que pour les PC / PC Familles plus bas dans ce fichier).
     if (flags.age60plus && flags.chomage) {
       res.push(buildResult({
-        nom: 'Rente-pont AVS : l\'aide la plus méconnue',
+        nom: 'Rente-pont AVS : l\'aide la plus méconnue',
         badge: 'probable',
         desc: 'Si tu as 60 ans ou plus et que tes droits au chômage s’épuisent, la rente-pont peut devenir une piste importante. Le montant dépend ensuite d’un calcul sur ta situation.',
-        action: '1. Vérifie les conditions principales : indemnités chômage épuisées, durée de cotisation AVS, années après 50 ans, fortune sous le seuil prévu.\n2. Demande à ta caisse de chômage ou à ton ORP combien d’indemnités restent.\n3. Prépare les décisions chômage, un extrait AVS si possible et les justificatifs de fortune.\n4. Fais la demande auprès de la caisse AVS dès que la fin de droit est proche ou atteinte.',
+        action: '1. Vérifie les conditions principales : indemnités chômage épuisées, durée de cotisation AVS, années après 50 ans, fortune sous le seuil prévu.\n2. Demande à ta caisse de chômage ou à ton ORP combien d’indemnités restent.\n3. Prépare les décisions chômage, un extrait AVS si possible et les justificatifs de fortune.\n4. Fais la demande auprès de la caisse AVS dès que la fin de droit est proche ou atteinte.',
         today: 'Ne laisse pas passer cette piste si tu approches de la fin du chômage.',
         docs: ['Décisions chômage', 'Extrait AVS si possible', 'Relevés de fortune'],
         liensRentePont: true
@@ -809,7 +809,7 @@
 
     if (flags.age === '50-59' && flags.chomage) {
       res.push(buildResult({
-        nom: 'Rente-pont AVS : à anticiper',
+        nom: 'Rente-pont AVS : à anticiper',
         badge: 'verifier',
         desc: 'La rente-pont n\'est pas encore accessible à ton âge, mais pense à cotiser à l\'AVS maintenant pour y avoir droit à 60 ans si besoin.',
         action: '1. Garde cette piste en tête si le chômage dure.\n2. Demande à ta caisse ou à l’ORP comment suivre tes indemnités restantes.\n3. Si tu approches de 60 ans, renseigne-toi avant la fin de droit.',
@@ -828,15 +828,15 @@
         : 'Tu sembles être en formation ou en apprentissage. Les bourses OCBE sont possibles si ta formation est post-obligatoire et reconnue en Suisse. Il vaut la peine de vérifier les conditions avant de conclure.';
     } else {
       desc = statutNuance
-        ? 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais l’OCBE doit vérifier plusieurs points : formation reconnue, statut de séjour, domicile des parents ou statut d’indépendance, et situation financière.'
-        : 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais il faut vérifier plusieurs conditions avant de conclure : formation reconnue, domicile des parents ou indépendance, revenus du ménage et documents OCBE.';
+        ? 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais l’OCBE doit vérifier plusieurs points : formation reconnue, statut de séjour, domicile des parents ou statut d’indépendance, et situation financière.'
+        : 'Tu es en formation post-obligatoire. Une bourse peut être possible, mais il faut vérifier plusieurs conditions avant de conclure : formation reconnue, domicile des parents ou indépendance, revenus du ménage et documents OCBE.';
     }
 
     res.push(buildResult({
       nom: 'Bourses d\'études — OCBE',
       badge: 'verifier',
       desc: desc,
-      action: '1. Commence par le questionnaire d’éligibilité OCBE.\n2. Vérifie que ta formation est reconnue en Suisse et qu’elle se déroule après l’école obligatoire.\n3. Prépare l’attestation de formation, les documents fiscaux et les informations sur tes parents, sauf si tu penses remplir les conditions d’indépendance.\n4. Dépose la demande même si certaines pièces doivent encore être complétées : le droit débute en principe le mois suivant le dépôt.\n5. Si tu reçois un refus ou si le montant semble insuffisant, demande rapidement de l’aide à Jet Service : le délai de réclamation est de 30 jours.',
+      action: '1. Commence par le questionnaire d’éligibilité OCBE.\n2. Vérifie que ta formation est reconnue en Suisse et qu’elle se déroule après l’école obligatoire.\n3. Prépare l’attestation de formation, les documents fiscaux et les informations sur tes parents, sauf si tu penses remplir les conditions d’indépendance.\n4. Dépose la demande même si certaines pièces doivent encore être complétées : le droit débute en principe le mois suivant le dépôt.\n5. Si tu reçois un refus ou si le montant semble insuffisant, demande rapidement de l’aide à Jet Service : le délai de réclamation est de 30 jours.',
       today: 'Commence par l’OCBE sans attendre le dossier parfait, puis fais-toi aider par Jet Service si le statut, les parents ou les documents compliquent la demande.',
       docs: ['Attestation de formation', 'Documents fiscaux du ménage ou des parents', 'Permis ou pièce d’identité', 'Bail si tu vis seul·e', 'Preuves d’activité si tu demandes le statut d’indépendant·e'],
       liensBourse: true,
@@ -852,11 +852,11 @@
       desc: (flags.permisF || flags.permisL || flags.permisS)
         ? 'L’AI peut être une piste si la situation de santé est durable, mais avec ton statut il faut souvent vérifier plus finement les conditions d’assurance et de séjour.'
         : flags.incapacite === 'totale'
-        ? 'L’AI peut être une piste si la situation de santé dure et touche vraiment le travail, la formation ou l’autonomie. L’AI ne sert pas seulement pour une rente : elle peut aussi ouvrir des mesures de soutien ou de réadaptation.'
+        ? 'L’AI peut être une piste si la situation de santé dure et touche vraiment le travail, la formation ou l’autonomie. L’AI ne sert pas seulement pour une rente : elle peut aussi ouvrir des mesures de soutien ou de réadaptation.'
         : 'L’AI peut être une piste si la situation de santé dure et touche le travail, la formation ou l’autonomie. Il faut ensuite une vraie évaluation du dossier.',
       action: (flags.permisF || flags.permisL || flags.permisS)
         ? '1. Si la situation de santé dure, demande un premier avis à AI Vaud.\n2. Fais vérifier en parallèle si ton cadre d’assurance ou de séjour change la suite.\n3. Garde les certificats médicaux et les courriers déjà reçus.'
-        : '1. Si la situation dure, prends un premier contact avec AI Vaud.\n2. Garde les certificats médicaux déjà disponibles, même si le dossier n’est pas encore parfait.\n3. Note les dates importantes : début des arrêts, hospitalisations, changements de travail ou de formation.\n4. Si tu ne sais pas si l’AI est le bon service, demande-le clairement dès le premier contact.',
+        : '1. Si la situation dure, prends un premier contact avec AI Vaud.\n2. Garde les certificats médicaux déjà disponibles, même si le dossier n’est pas encore parfait.\n3. Note les dates importantes : début des arrêts, hospitalisations, changements de travail ou de formation.\n4. Si tu ne sais pas si l’AI est le bon service, demande-le clairement dès le premier contact.',
       today: 'Si la situation dure, commence par un premier contact plutôt que d’attendre trop longtemps.',
       docs: ['Certificats médicaux', 'Pièce d’identité', 'Historique professionnel récent'],
       liensAI: true,
@@ -871,7 +871,7 @@
     if (!jeune && !formation) return;
 
     res.push(buildResult({
-      nom: 'CSP Jet Service : service social jeunes',
+      nom: 'CSP Jet Service : service social jeunes',
       badge: 'probable',
       desc: jeune && formation
         ? 'Jet Service (16-25 ans) est un très bon point de départ pour faire le point sur les bourses, le budget, le travail ou d’autres démarches sociales.'
@@ -880,7 +880,7 @@
         : 'Comme tu es en formation, Jet Service peut t’aider à faire le point sur les bourses, le budget, le travail ou d’autres démarches sociales liées à ta situation.'
       ,
       action: jeune && formation
-        ? '1. Contacte Jet Service pour demander un appui social lié à ta formation.\n2. Explique le besoin principal : bourse, budget, contrat, job, courrier ou orientation.\n3. Prépare ton attestation de formation, tes revenus et les courriers reçus.\n4. Demande clairement si Jet Service peut t’aider directement ou te rediriger vers le bon service.'
+        ? '1. Contacte Jet Service pour demander un appui social lié à ta formation.\n2. Explique le besoin principal : bourse, budget, contrat, job, courrier ou orientation.\n3. Prépare ton attestation de formation, tes revenus et les courriers reçus.\n4. Demande clairement si Jet Service peut t’aider directement ou te rediriger vers le bon service.'
         : jeune
         ? '1. Contacte Jet Service pour faire un premier tri de ta situation.\n2. Prépare le courrier, contrat, facture ou document qui te pose problème.\n3. Explique si le problème concerne le budget, le travail, la formation ou une démarche sociale.\n4. Demande quelle action faire en premier.'
         : '1. Contacte Jet Service si la question touche à ta formation, ton budget ou un dossier social.\n2. Prépare l’attestation de formation, les documents financiers et les courriers importants.\n3. Demande un appui pour remplir ou relire le dossier avant envoi.'

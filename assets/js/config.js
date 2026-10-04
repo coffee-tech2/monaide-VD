@@ -134,7 +134,7 @@
     sets: {
       liens: [
         { type: 'link', label: 'Évaluer et demander', linkKey: 'SUBSIDE_HOME' },
-        { type: 'link', label: 'OVAM : infos officielles', linkKey: 'SUBSIDE_HOME' },
+        { type: 'link', label: 'OVAM : infos officielles', linkKey: 'SUBSIDE_HOME' },
         { type: 'link', label: 'Trouver une agence AAS', linkKey: 'AAS_LIST' },
       ],
       lienRI: [
@@ -154,7 +154,7 @@
         { type: 'link', label: 'Faire le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage)', linkKey: 'OCBE_ELIGIBILITY' },
         { type: 'link', label: 'Infos bourses OCBE', linkKey: 'OCBE_INFO' },
         { type: 'link', label: 'Faire une demande OCBE', linkKey: 'OCBE_APPLY' },
-        { type: 'link', label: 'Jet Service : appui jeunes & formation', linkKey: 'JET_SERVICE' },
+        { type: 'link', label: 'Jet Service : appui jeunes & formation', linkKey: 'JET_SERVICE' },
       ],
       liensAF: [
         { type: 'link', label: 'Voir la démarche', linkKey: 'ALLOCATIONS_INFO' },
@@ -297,7 +297,7 @@
       firstContact: 'Qui contacter d’abord',
       docs: 'Documents utiles à rassembler',
       region: 'Dans ta région',
-      more: 'Tu veux aller plus loin ?'
+      more: 'Tu veux aller plus loin ?'
     },
     moreDetailsLabel: 'Ouvrir le détail de cette piste',
     lessDetailsLabel: 'Refermer le détail',
@@ -305,7 +305,7 @@
     detailHint: 'ouvrir',
     moreCatalogLabel: 'En savoir plus',
     openCatalogLabel: 'Explorer le répertoire →',
-    noCoverageText: 'Le simulateur ne couvre pas tout. Le répertoire permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.',
+    noCoverageText: 'Le simulateur ne couvre pas tout. Le répertoire permet aussi de chercher par besoin : budget, logement, santé, famille, formation ou séjour.',
     purposeRules: [
       { patterns: ['subside lamal'], text: 'Cette aide sert à réduire le montant de la prime d’assurance maladie quand les conditions sont remplies.' },
       { patterns: ['revenu d insertion'], text: 'Cette aide sert à couvrir le minimum pour vivre quand les revenus ne suffisent plus, sous réserve d’un examen complet du dossier.' },
@@ -380,7 +380,7 @@
       { patterns: ['assurance invalidite'], title: 'Qui contacter d’abord', text: 'AI Vaud est le bon interlocuteur. Un médecin, psychiatre ou psychologue peut aussi t’aider à préparer la demande.', actionLabel: 'Infos AI Vaud', actionKey: 'AI_HOME' },
       { patterns: ['prestations complementaires'], title: 'Qui contacter d’abord', text: 'Le plus simple est souvent de commencer par une agence AAS, qui peut faire un premier tri avant la demande officielle.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
       { patterns: ['frais de maladie'], title: 'Qui contacter d’abord', text: 'Si tu touches déjà les PC, commence par une agence AAS ou la Caisse AVS Vaud pour savoir quels frais peuvent être annoncés.', actionLabel: 'Trouver une agence AAS', actionKey: 'AAS_LIST' },
-      { patterns: ['enfant en situation de handicap', 'aminh'], title: 'Qui contacter d’abord', text: 'Commence par faire décrire le besoin concret à domicile : aide, relève, soins, surveillance ou adaptation du quotidien.', actionLabel: 'Infos proches aidant·es', actionKey: 'ESPACE_PROCHES_INFO' },
+      { patterns: ['enfant en situation de handicap', 'aminh'], title: 'Qui contacter d’abord', text: 'Commence par faire décrire le besoin concret à domicile : aide, relève, soins, surveillance ou adaptation du quotidien.', actionLabel: 'Infos proches aidant·es', actionKey: 'ESPACE_PROCHES_INFO' },
       { patterns: ['pc familles'], title: 'Qui contacter d’abord', text: 'Commence par l’estimation officielle des PC Familles. Si la piste semble plausible, le CRD PC Familles de ta région pourra ensuite examiner le dossier.', actionLabel: 'Estimer les PC Familles', actionKey: 'PC_FAMILLES_SIMULATEUR' },
       { patterns: ['bourses', 'ocbe'], title: 'Qui contacter d’abord', text: 'Commence par le test d’éligibilité de l’OCBE (Office cantonal des bourses d’études et d’apprentissage), puis dépose une demande si la piste semble correspondre. Si le dossier te paraît compliqué, Jet Service peut aussi aider à le remplir.', actionLabel: 'Faire le test d’éligibilité de l’OCBE', actionKey: 'OCBE_ELIGIBILITY' },
       { patterns: ['carteculture'], title: 'Qui contacter d’abord', text: 'Si tu as déjà une aide sociale ou un revenu modeste, la piste CarteCulture peut valoir la peine d’être activée après les démarches prioritaires.', actionLabel: 'Demander la CarteCulture', actionKey: 'CARTECULTURE_APPLY' },
@@ -631,7 +631,7 @@
       { hrefLinkKeys: ['AAS_LIST'], hrefIncludesList: ['/trouver-une-agence-dassurance-sociale-aas/'], label: 'Trouver une agence AAS' },
       { hrefIncludesList: ['/trouver-un-centre-social-regional-csr'], label: 'Trouver ton CSR' },
       { hrefIncludesList: ['/prestation/demander-le-revenu-dinsertion'], label: 'Demander le RI' },
-      { hrefLinkKeys: ['SUBSIDE_HOME'], hrefIncludesList: ['/subside-a-lassurance-maladie'], labelIncludesAny: ['ovam', 'infos'], label: 'OVAM : infos officielles' },
+      { hrefLinkKeys: ['SUBSIDE_HOME'], hrefIncludesList: ['/subside-a-lassurance-maladie'], labelIncludesAny: ['ovam', 'infos'], label: 'OVAM : infos officielles' },
       { hrefLinkKeys: ['SUBSIDE_HOME'], hrefIncludesList: ['/subside-a-lassurance-maladie'], label: 'Évaluer et demander le subside' },
       { hrefExactList: ['https://www.vd.ch/aides-financieres-et-soutien-social'], label: 'Infos aides sociales Vaud' },
       { hrefLinkKeys: ['AVS_FAMILY'], hrefIncludesList: ['caisseavsvaud.ch/fr/Assurances/AF/Allocations-familiales/'], label: 'Caisse AVS Vaud' },
