@@ -1945,3 +1945,11 @@
     .cookie-consent-copy { flex:none; max-width:none; }
     .cookie-consent-actions { display:grid; grid-template-columns:1fr 1fr; }
   }
+
+  @media (pointer:coarse), (max-width:768px) {
+    .entry-strip-link { display:inline-block; padding-block:0.75rem; }
+    .search-suggestion-chip { position:relative; }
+    .search-suggestion-chip::after { content:''; position:absolute; inset:-14px -3px; }
+    .site-footer-card a { display:inline-block; padding-block:0.8rem; }
+    .results-profile-edit, .community-inner-quiet .feedback-link { min-height:44px; }
+  }
