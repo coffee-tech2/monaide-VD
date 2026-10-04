@@ -525,7 +525,7 @@
       nom: 'Séparation et divorce : premières informations',
       badge: flags.aEnfants ? 'probable' : 'verifier',
       desc: flags.aEnfants
-        ? 'Quand une séparation commence avec des enfants, il faut souvent clarifier rapidement pension, garde, budget et premières démarches.'
+        ? 'Quand une séparation commence avec des enfants, clarifier tôt pension, garde, budget et premières démarches aide souvent.'
         : 'Quand une séparation ou un divorce commence, il est utile de clarifier rapidement les premiers points administratifs et financiers.',
       action: flags.aEnfants
         ? '1. Fais une liste courte des sujets urgents : sécurité, enfants, logement, pension, budget, assurances.\n2. Si une décision fixe déjà une pension et qu’elle n’est pas payée, appelle le BRAPA au 021 316 52 21.\n3. Prépare jugement, ordonnance, convention, preuves de non-paiement, revenus et frais des enfants.\n4. Si la séparation crée une urgence financière ou de logement, contacte aussi le CSR. S’il y a violence ou peur, passe d’abord par les ressources de protection.'
@@ -746,7 +746,7 @@
         nom: 'CarteCulture, Caritas',
         badge: 'verifier',
         desc: flags.fortune === 'plus15000'
-          ? 'La CarteCulture peut rester une piste, mais un revenu bas ne suffit pas toujours. Avec une fortune importante, il faut vraiment vérifier les critères exacts.'
+          ? 'La CarteCulture peut rester une piste, mais un revenu bas ne suffit pas toujours. Avec une fortune importante, les critères exacts sont à vérifier auprès de l’organisme.'
           : 'La CarteCulture peut parfois être ouverte avec un revenu modeste, mais il faut vérifier quel justificatif est accepté dans ta situation.',
         action: '1. Regarde les critères officiels de la CarteCulture.\n2. Vérifie surtout quel justificatif est demandé dans ton cas.\n3. Si ce n’est pas clair, contacte Caritas Vaud avant de faire la demande.',
         today: 'Garde cette piste pour juste après les aides financières prioritaires.',

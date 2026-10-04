@@ -2078,7 +2078,7 @@
         'Demander conseil à Pro Senectute, au CMS, à l’AAS ou à l’EMS',
         'Lire la page officielle avant de conclure que c’est impossible'
       ],
-      bodyIntro: 'Un séjour en EMS peut vite sembler impossible à payer. Il existe des règles d’aide financière dans le canton : il faut faire vérifier la situation, surtout avant de renoncer ou de rester seul·e avec les factures.',
+      bodyIntro: 'Un séjour en EMS peut vite sembler impossible à payer. Il existe des règles d’aide financière dans le canton : tu peux faire vérifier ta situation avant de renoncer ou de rester seul·e avec les factures.',
       reviewedAt: '2 juin 2026',
       decisionBy: 'Service cantonal compétent, selon le dossier EMS',
       sections: [
@@ -2636,7 +2636,7 @@
         'Vérifier si la commune ou la FVL est le bon contact',
         'Préparer un dossier et le mettre à jour régulièrement'
       ],
-      bodyIntro: 'Il existe des logements à loyer réduit réservés aux personnes à revenus modestes. Les listes d’attente peuvent être longues, donc il faut souvent s’inscrire tôt.',
+      bodyIntro: 'Il existe des logements à loyer réduit réservés aux personnes à revenus modestes. Les listes d’attente peuvent être longues, donc s’inscrire tôt aide souvent.',
       sections: [
         {
           title: 'Conditions',
@@ -2900,7 +2900,7 @@
         'Détresse psychologique urgente dans le canton : appeler le 0848 133 133',
         'Expliquer simplement ce qui se passe maintenant : risque, lieu, personne concernée'
       ],
-      bodyIntro: 'Quand la situation bascule en crise psychique, il faut agir vite et chercher un contact humain immédiat. Si la personne est en danger, il faut passer en mode urgence.',
+      bodyIntro: 'Quand la situation bascule en crise psychique, tu peux appeler tout de suite : parler à quelqu’un aide. Si la personne est en danger, appelle les urgences sans attendre.',
       sections: [
         {
           title: 'Signes qui demandent de réagir vite',
@@ -3298,7 +3298,7 @@
         'Contacter le Tribunal des prud’hommes de ta région',
         'En cas de faillite : déposer une demande d’insolvabilité auprès de la caisse de chômage'
       ],
-      bodyIntro: 'Si ton employeur ne verse pas ton salaire, il faut agir rapidement. Une mise en demeure écrite est le premier pas. En cas de faillite de l’employeur, l’assurance insolvabilité (LACI) peut couvrir jusqu’à 4 mois de salaires impayés.',
+      bodyIntro: 'Si ton employeur ne verse pas ton salaire, tu peux demander conseil dès maintenant. Une mise en demeure écrite est le premier pas. En cas de faillite de l’employeur, l’assurance insolvabilité (LACI) peut couvrir jusqu’à 4 mois de salaires impayés.',
       sections: [
         {
           title: 'Recours possibles',
