@@ -272,6 +272,23 @@
     if (subtitle) subtitle.textContent = SIMULATOR_BLOCK_HINTS[1][0];
   }
 
+  // Amène doucement la prochaine question sans réponse dans l'écran, sans jamais remonter la page.
+  function scrollToNextQuestion() {
+    var stepEl = document.getElementById('step' + currentStep);
+    if (!stepEl) return;
+    var next = Array.prototype.find.call(stepEl.querySelectorAll('.form-group'), function(group) {
+      return group.offsetParent !== null && !group.querySelector('input.choice-input:checked');
+    });
+    if (!next) return;
+    var rect = next.getBoundingClientRect();
+    var margin = 96;
+    if (rect.top > margin && rect.top < window.innerHeight * 0.6) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.setTimeout(function() {
+      window.scrollTo({ top: window.pageYOffset + next.getBoundingClientRect().top - margin, behavior: reduce ? 'auto' : 'smooth' });
+    }, 120);
+  }
+
   // ─── Navigation ──────────────────────────────────────────────────────────
   window.navVers = function(id) {
     var el = document.getElementById(id);
@@ -980,6 +997,7 @@
         setFieldValidity('aides_actuelles', true);
         updateConditionalQuestions();
         renderStepQuestionMode(currentStep);
+        scrollToNextQuestion();
       });
     });
     document.querySelectorAll('input.choice-input[type="checkbox"][name="aides_actuelles_multi"]').forEach(function(input) {
