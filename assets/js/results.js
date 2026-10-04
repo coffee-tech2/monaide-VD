@@ -543,6 +543,34 @@
     return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).more || 'Tu veux aller plus loin ?', bodyHtml, Math.min(resultCount + 6, 12), 'margin-top:1.6rem;', 'is-cta');
   }
 
+  function buildFeedbackBanner(resultCount) {
+    var bodyHtml = '<div class="results-feedback-actions" role="group" aria-label="Ce résultat t’a-t-il aidé·e ?" data-count="' + resultCount + '">'
+      + '<button type="button" class="result-link-btn" data-answer="oui" aria-pressed="false" onclick="sendResultsFeedback(this)">Oui, c’est utile</button>'
+      + '<button type="button" class="result-link-btn" data-answer="partiel" aria-pressed="false" onclick="sendResultsFeedback(this)">En partie</button>'
+      + '<button type="button" class="result-link-btn" data-answer="non" aria-pressed="false" onclick="sendResultsFeedback(this)">Pas vraiment</button>'
+      + '</div><p class="results-feedback-thanks" role="status" aria-live="polite" hidden></p>';
+    return renderResultsFooterBanner('Ce résultat t’a-t-il aidé·e ?', bodyHtml, Math.min(resultCount + 5, 11));
+  }
+
+  window.sendResultsFeedback = function(btn) {
+    var group = btn && btn.closest('.results-feedback-actions');
+    if (!group || group.getAttribute('data-sent') === '1') return;
+    group.setAttribute('data-sent', '1');
+    var answer = btn.getAttribute('data-answer') || '';
+    Array.prototype.forEach.call(group.querySelectorAll('button'), function(item) {
+      item.setAttribute('aria-pressed', item === btn ? 'true' : 'false');
+    });
+    if (window.trackMonaideEvent) {
+      window.trackMonaideEvent('result_feedback', { answer: answer, count: group.getAttribute('data-count') || '' });
+    }
+    var thanks = group.parentNode.querySelector('.results-feedback-thanks');
+    if (!thanks) return;
+    thanks.innerHTML = answer === 'oui'
+      ? 'Merci, ça fait plaisir à savoir.'
+      : 'Merci pour ton retour. Si tu veux nous dire ce qui manquait, tu peux nous écrire à <a href="mailto:info@monaide-vaud.ch?subject=Retour%20MonAide-VD">info@monaide-vaud.ch</a>.';
+    thanks.hidden = false;
+  };
+
   function buildFollowUpBanner(profile, results, resultCount) {
     var rules = window.MONAIDE_SIMULATOR_FOLLOWUPS || [];
     if (!rules.length || !results || !results.length) return '';
@@ -673,6 +701,7 @@
       });
     }
 
+    list.innerHTML += buildFeedbackBanner(res.length);
     list.innerHTML += buildMoreCatalogBanner(res.length);
     bindResultDetailTracking(list);
 

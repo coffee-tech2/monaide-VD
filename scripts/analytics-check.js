@@ -20,6 +20,8 @@ const expectedEvents = [
   'result_detail_open',
   'result_catalog_open',
   'result_guide_open',
+  'results_fold_expand',
+  'result_feedback',
   'catalog_search',
   'catalog_filter',
   'catalog_card_open',
