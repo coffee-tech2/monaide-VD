@@ -920,9 +920,9 @@
     text-align: center;
   }
   .guide-page.about-page .about-hero-title {
-    max-width: 15.5ch;
+    max-width: 24ch;
     font-family: 'Manrope', sans-serif;
-    font-size: clamp(3.05rem, 5.4vw, 5.15rem);
+    font-size: clamp(3.05rem, 5.4vw, 4.4rem);
     font-weight: 700;
     line-height: 0.98;
     letter-spacing: -0.045em;
