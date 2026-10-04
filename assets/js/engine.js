@@ -235,6 +235,7 @@
     return results;
   }
 
+  // Règle « urgence-orientation » (simulator-rules.js) : Pas de droit déterminé : orientation vers le CSR (LASV, RSV 850.051).
   function addUrgenceOrientationResults(res) {
     res.push(buildResult({
       nom: 'Centre social régional (CSR)',
@@ -248,6 +249,7 @@
     }));
   }
 
+  // Règle « permis-n » (simulator-rules.js) : LAsi (RS 142.31) ; LARA (RSV 142.21).
   function addPermisNResults(res) {
     res.push(buildResult({
       nom: 'EVAM : permis N, F et S',
@@ -270,6 +272,7 @@
     }));
   }
 
+  // Règle « permis-s » (simulator-rules.js) : LAsi, statut de protection provisoire (RS 142.31) ; LARA (RSV 142.21).
   function addPermisSResults(res) {
     res.push(buildResult({
       nom: 'EVAM : permis N, F et S',
@@ -290,6 +293,7 @@
     }));
   }
 
+  // Règle « permis-f » (simulator-rules.js) : LEI, admission provisoire (RS 142.20) ; LARA (RSV 142.21).
   function addPermisFResults(res) {
     res.push(buildResult({
       nom: 'EVAM : permis N, F et S',
@@ -301,6 +305,7 @@
     }));
   }
 
+  // Règle « permis-l » (simulator-rules.js) : LEI (RS 142.20).
   function addPermisLResults(res) {
     res.push(buildResult({
       nom: 'Permis L : séjour de courte durée',
@@ -313,6 +318,7 @@
     }));
   }
 
+  // Règle « permis-g » (simulator-rules.js) : LEI (RS 142.20).
   function addPermisGResults(res) {
     res.push(buildResult({
       nom: 'Permis G : frontalier·ère',
@@ -326,6 +332,7 @@
     }));
   }
 
+  // Règle « sans-statut » (simulator-rules.js) : Art. 12 Cst. (RS 101) ; LARA, aide d’urgence (RSV 142.21).
   function addSansStatutResults(res) {
     res.push(buildResult({
       nom: 'La Fraternité CSP Vaud : questions de migration',
@@ -349,6 +356,7 @@
     }));
   }
 
+  // Règle « pro-infirmis » (simulator-rules.js) : Pas de base légale : fondation privée.
   function addProInfirmisResult(res) {
     res.push(buildResult({
       nom: 'Pro Infirmis Vaud : accompagnement gratuit',
@@ -361,6 +369,7 @@
     }));
   }
 
+  // Règle « pro-senectute » (simulator-rules.js) : Pas de base légale : fondation privée.
   function addProSenectuteResult(res) {
     res.push(buildResult({
       nom: 'Pro Senectute Vaud : conseil gratuit pour les 60+',
@@ -374,6 +383,7 @@
     }));
   }
 
+  // Règle « cms » (simulator-rules.js) : Maintien à domicile : LORSDom (loi du 28 janvier 2021).
   function addCmsResult(res) {
     res.push(buildResult({
       nom: 'CMS : soins et aide à domicile',
@@ -386,6 +396,7 @@
     }));
   }
 
+  // Règle « frais-maladie-invalidite » (simulator-rules.js) : LPC, remboursement des frais de maladie et d’invalidité (RS 831.30).
   function addFraisMaladieInvaliditeResult(res) {
     res.push(buildResult({
       nom: 'Frais de maladie et d’invalidité : PC AVS/AI',
@@ -398,6 +409,7 @@
     }));
   }
 
+  // Règle « aminh » (simulator-rules.js) : Art. 29 LVLAFam (RSV 836.01).
   function addAminhResult(res) {
     res.push(buildResult({
       nom: 'Enfant en situation de handicap : aides à domicile (AMINH)',
@@ -410,6 +422,7 @@
     }));
   }
 
+  // Règle « dettes » (simulator-rules.js) : LP (RS 281.1) ; programme cantonal Parlons Cash.
   function addDettesResult(res, dettes, isLausanne) {
     if (dettes === 'loyer') {
       res.push(buildResult({
@@ -448,6 +461,7 @@
     }
   }
 
+  // Règle « aides-logement » (simulator-rules.js) : LL (RSV 840.11) ; RAIL (RSV 840.11.3).
   function addAidesLogementResult(res, grandeCommune, dettes, loyerEleve) {
     res.push(buildResult({
       nom: 'Aides logement communales ou parapubliques',
@@ -463,6 +477,7 @@
     }));
   }
 
+  // Règle « prestations-communales » (simulator-rules.js) : Pas de base cantonale unique : prestations propres à chaque commune.
   function addPrestationsCommunalesResult(res, flags) {
     res.push(buildResult({
       nom: 'Prestations communales et aides locales',
@@ -477,6 +492,7 @@
     }));
   }
 
+  // Règle « garde-enfants-malades » (simulator-rules.js) : Pas de base légale : service associatif (Croix-Rouge vaudoise).
   function addGardeEnfantsMaladesResult(res, flags) {
     res.push(buildResult({
       nom: 'Garde d’enfants malades : soutien ponctuel aux parents',
@@ -489,6 +505,7 @@
     }));
   }
 
+  // Règle « aide-alimentaire » (simulator-rules.js) : Pas de base légale : aide associative.
   function addAideAlimentaireRegionResult(res, flags) {
     res.push(buildResult({
       nom: 'Aide alimentaire par région',
@@ -502,6 +519,7 @@
     }));
   }
 
+  // Règle « separation » (simulator-rules.js) : Code civil (RS 210) ; assistance judiciaire : CPC art. 117 ss (RS 272).
   function addSeparationResult(res, flags) {
     res.push(buildResult({
       nom: 'Séparation et divorce : premières informations',
@@ -519,6 +537,7 @@
     }));
   }
 
+  // Règle « proches-aidants » (simulator-rules.js) : LAPRAMS (loi du 24 janvier 2006) ; LORSDom (loi du 28 janvier 2021).
   function addProchesAidantsResult(res) {
     res.push(buildResult({
       nom: 'Proches aidant·es : répit et aides concrètes',
@@ -531,6 +550,7 @@
     }));
   }
 
+  // Règle « fallback » (simulator-rules.js) : Sans objet : aucune piste automatique.
   function addFallbackResult(res) {
     res.push(buildResult({
       nom: 'Aucune aide identifiée automatiquement',
@@ -541,6 +561,7 @@
     }));
   }
 
+  // Règle « lamal » (simulator-rules.js) : LAMal (RS 832.10) ; LVLAMal (RSV 832.01).
   function addLamalResult(res, flags) {
     var lamalRetroactiveNote = '\n\nÀ savoir : selon les périodes, la réponse de l’OVAM peut prendre du temps. Si le subside est accordé, il est versé à ton assureur depuis la date reconnue. Si tu as payé trop de primes pendant l’attente, l’assurance corrige en général la situation, par remboursement ou par déduction sur les prochaines primes.';
     if (flags.alreadyRI || flags.alreadyPC) {
@@ -603,6 +624,7 @@
     }
   }
 
+  // Règle « ri » (simulator-rules.js) : LASV (RSV 850.051) ; RLASV (RSV 850.051.1).
   function addRiResult(res, flags) {
     if (flags.retraite && flags.revenuFaible && flags.fortFaible) {
       res.push(buildResult({
@@ -658,6 +680,7 @@
     }
   }
 
+  // Règle « pc » (simulator-rules.js) : LPC (RS 831.30).
   function addPcResult(res, flags) {
     res.push(buildResult({
       nom: 'Prestations complémentaires AVS/AI (PC)',
@@ -671,6 +694,7 @@
     }));
   }
 
+  // Règle « pc-familles » (simulator-rules.js) : LPCFam (RSV 850.053).
   function addPcFamillesResult(res, flags) {
     res.push(buildResult({
       nom: 'PC Familles : soutien pour parents qui travaillent',
@@ -685,6 +709,7 @@
     }));
   }
 
+  // Règle « allocations-familiales » (simulator-rules.js) : LAFam (RS 836.2) ; LVLAFam (RSV 836.01).
   function addAllocationsFamilialesResult(res, flags) {
     var casSimple = flags.aEnfants && flags.enEmploi && !flags.chomage && flags.separationEnCours !== 'oui';
     res.push(buildResult({
@@ -700,6 +725,7 @@
     }));
   }
 
+  // Règle « carteculture » (simulator-rules.js) : Pas de base légale : dispositif associatif (Caritas).
   function addCarteCultureResult(res, flags) {
     if (flags.carteConfirmee && !flags.alreadyCarteCulture) {
       res.push(buildResult({
@@ -729,6 +755,7 @@
     }
   }
 
+  // Règle « laci » (simulator-rules.js) : LACI (RS 837.0).
   function addLaciResult(res, flags) {
     res.push(buildResult({
       nom: 'Assurance chômage (LACI)',
@@ -747,6 +774,7 @@
     }));
   }
 
+  // Règle « chomage-ouvert » (simulator-rules.js) : LACI (RS 837.0).
   function addChomageActifResult(res) {
     res.push(buildResult({
       nom: 'Assurance chômage : droits déjà ouverts',
@@ -761,6 +789,7 @@
     }));
   }
 
+  // Règle « rente-pont » (simulator-rules.js) : LPCFam, prestations cantonales de la rente-pont (RSV 850.053).
   function addRentePontResult(res, flags) {
     // Pas de filtre sur la fortune ici : la rente-pont a un vrai plafond de fortune, mais
     // c'est applySimulationGuardrails qui rétrograde la piste en "à vérifier" si la fortune
@@ -789,6 +818,7 @@
     }
   }
 
+  // Règle « ocbe » (simulator-rules.js) : LAEF (RSV 416.11).
   function addOcbeResult(res, flags) {
     var statutNuance = flags.permisL || flags.permisS || flags.permisF || flags.permisB || flags.permisG;
     var desc;
@@ -814,6 +844,7 @@
     }));
   }
 
+  // Règle « ai » (simulator-rules.js) : LAI (RS 831.20).
   function addAiResult(res, flags) {
     res.push(buildResult({
       nom: 'Assurance invalidité (AI)',
@@ -833,6 +864,7 @@
     }));
   }
 
+  // Règle « jet-service » (simulator-rules.js) : Pas de base légale : service associatif (CSP Vaud).
   function addJetServiceResult(res, flags) {
     var jeune = flags.age === '18-25';
     var formation = flags.enFormation;
