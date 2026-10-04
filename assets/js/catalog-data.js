@@ -2678,7 +2678,7 @@
         'Regarder la permanence la plus proche',
         'Garder tous les courriers et pièces du bail'
       ],
-      bodyIntro: 'L’ASLOCA défend les droits des locataires dans tout le canton. Si tu as un problème avec ton bailleur, une hausse de loyer ou une résiliation, c’est souvent le bon contact.',
+      bodyIntro: 'L’ASLOCA défend les droits des locataires dans tout le canton. Si tu as un problème avec ton bailleur, une hausse de loyer ou une résiliation, c’est souvent le bon contact. Son conseil juridique est réservé aux membres : l’adhésion est nécessaire pour en bénéficier.',
       sections: [
         {
           title: 'Ce qu’ils font',

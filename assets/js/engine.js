@@ -242,7 +242,7 @@
       badge: 'probable',
       strongProbable: true,
       desc: 'Quand le logement ou le budget devient critique, le CSR peut faire un premier point rapidement et t’orienter vers les bons services.',
-      action: '1. Contacte le CSR de ta commune et dis clairement que la situation devient urgente.\n2. Prépare les courriers récents, le bail ou les factures concernées.\n3. Si un bail ou une expulsion est en jeu, contacte aussi l’ASLOCA Vaud : ☏ 021 617 16 17.\n4. Ne quitte pas ton logement ou une procédure sans avoir fait vérifier tes options.',
+      action: '1. Contacte le CSR de ta commune et dis clairement que la situation devient urgente.\n2. Prépare les courriers récents, le bail ou les factures concernées.\n3. Si un bail ou une expulsion est en jeu, contacte aussi l’ASLOCA Vaud : ☏ 021 617 16 17 (son conseil juridique est réservé aux membres).\n4. Ne quitte pas ton logement ou une procédure sans avoir fait vérifier tes options.',
       today: 'Fais ce premier contact sans attendre un dossier complet.',
       docs: ['Pièce d’identité', 'Courriers reçus récemment', 'Contrat de bail ou factures concernées'],
       liensCSR: true
@@ -362,7 +362,7 @@
       nom: 'Pro Infirmis Vaud : accompagnement gratuit',
       badge: 'verifier',
       desc: 'Tu as un handicap ou une maladie chronique ? Pro Infirmis peut t\'accompagner gratuitement dans toutes tes démarches : AI, logement, emploi, droits.',
-      action: '1. Contacte Pro Infirmis Vaud : ☏ 058 775 34 34.\n2. Explique en une phrase ce qui bloque : AI, logement, travail, budget, mobilité ou démarches administratives.\n3. Prépare les courriers AI/médicaux si tu en as déjà.\n4. Si la situation est urgente, demande une permanence ou le lieu le plus proche.',
+      action: '1. Contacte Pro Infirmis Vaud : ☏ 058 775 34 34.\n2. Dis simplement ce qui te pose problème : AI, logement, travail, budget, mobilité ou démarches administratives.\n3. Prépare les courriers AI/médicaux si tu en as déjà.\n4. Si la situation est urgente, demande une permanence ou le lieu le plus proche.',
       docs: ['Courriers AI ou médicaux si disponibles', 'Pièce d’identité', 'Questions principales notées à l’avance'],
       today: 'Très utile si tu te sens perdu·e dans les démarches AI, logement ou emploi.',
       liensProInfirmis: true
@@ -431,7 +431,7 @@
         badge: 'probable',
         strongProbable: true,
         desc: 'C\'est une urgence. Tu as des droits et des délais légaux — mais ils sont courts.',
-        action: '1. Garde la lettre, l’enveloppe et note la date de réception.\n2. Contacte l’ASLOCA Vaud aujourd’hui : ☏ 021 617 16 17, pour vérifier les délais et tes options.\n3. Contacte immédiatement le CSR de ta commune si le retard vient d’un manque de revenu.\n4. Ne quitte pas ton logement de toi-même sans avoir fait vérifier la situation et sans décision judiciaire.',
+        action: '1. Garde la lettre, l’enveloppe et note la date de réception.\n2. Contacte l’ASLOCA Vaud aujourd’hui : ☏ 021 617 16 17, pour vérifier les délais et tes options (son conseil juridique est réservé aux membres, l’adhésion est donc nécessaire).\n3. Contacte immédiatement le CSR de ta commune si le retard vient d’un manque de revenu.\n4. Ne quitte pas ton logement de toi-même sans avoir fait vérifier la situation et sans décision judiciaire.',
         today: 'C’est une démarche du jour même : ASLOCA puis CSR si le problème est financier.',
         docs: ['Courriers du bailleur ou de l’office des poursuites', 'Enveloppe avec la date de réception si tu l’as', 'Contrat de bail', 'Preuves de paiement ou retards'],
         liensDettes: true
