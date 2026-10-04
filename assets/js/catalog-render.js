@@ -127,7 +127,7 @@
 
   function renderCatalogRenderTrust(item) {
     if (!item) return '';
-    var note = item.reviewNote || 'Contenu relu avec une logique d’orientation sociale, mais ne remplace pas une décision officielle.';
+    var note = item.reviewNote || 'Contenu écrit dans une logique d’orientation sociale, mais ne remplace pas une décision officielle.';
     var decision = item.decisionBy || 'À confirmer auprès du service indiqué dans la fiche';
     var meta = '<div class="catalog-trust-meta"><strong>Qui traite ou décide</strong><span>' + escapeCatalogRenderHtml(decision) + '</span></div>';
     return '<div class="catalog-trust"><div class="catalog-trust-note">' + escapeCatalogRenderHtml(note) + '</div>' + meta + '</div>';
