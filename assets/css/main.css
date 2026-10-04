@@ -1951,3 +1951,11 @@
     html { scroll-behavior: auto; }
     *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
   }
+
+  /* Bandeau bêta sur ordinateur : une seule ligne, croix à côté du texte. */
+  @media (min-width: 769px) {
+    .beta-banner { display:flex; align-items:center; justify-content:center; gap:0.4rem; padding:0.2rem 1rem; line-height:1.4; }
+    .beta-banner-copy { max-width:none; margin:0; }
+    .beta-banner-close { position:static; transform:none; width:32px; height:32px; border-color:transparent; background:transparent; flex-shrink:0; }
+    .beta-banner-close:hover { transform:none; }
+  }
