@@ -601,7 +601,7 @@
       banner.setAttribute('role', 'region');
       banner.setAttribute('aria-label', 'Consentement mesure d’audience');
       banner.innerHTML =
-        '<div class="cookie-consent-copy">Ce site utilise un outil de mesure d’audience anonymisée pour comprendre son usage et l’améliorer. Tes réponses au simulateur ne sont jamais transmises. <a href="/confidentialite/">En savoir plus</a></div>' +
+        '<div class="cookie-consent-copy">Mesure d’audience anonyme pour améliorer le site. Tes réponses au simulateur ne sont jamais transmises. <a href="/confidentialite/">En savoir plus</a></div>' +
         '<div class="cookie-consent-actions">' +
         '<button type="button" class="cookie-consent-decline">Refuser</button>' +
         '<button type="button" class="cookie-consent-accept">Accepter</button>' +
@@ -625,8 +625,24 @@
       if (consent === 'accepted') {
         loadGTM();
       } else if (consent !== 'declined') {
+        showConsentBannerLater();
+      }
+    }
+
+    function showConsentBannerLater() {
+      var done = false;
+      function show() {
+        if (done) return;
+        done = true;
+        ['scroll', 'pointerdown', 'keydown'].forEach(function(name) { window.removeEventListener(name, onFirstAction, true); });
         showConsentBanner();
       }
+      function onFirstAction(event) {
+        if (event.type === 'scroll' && window.scrollY < 150) return;
+        show();
+      }
+      ['scroll', 'pointerdown', 'keydown'].forEach(function(name) { window.addEventListener(name, onFirstAction, { capture: true, passive: true }); });
+      setTimeout(show, 8000);
     }
 
     window.monaideGetCookieConsent = getConsent;
