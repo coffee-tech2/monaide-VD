@@ -286,7 +286,7 @@ const scenarios = [
     }
   },
   {
-    name: 'Migration sensible garde EVAM avant autres relais',
+    name: 'Migration sensible garde EVAM avant autres services',
     run() {
       const results = runProfile({
         permis: 'Permis N',

@@ -12,7 +12,7 @@ window.MONAIDE_SIMULATION_RULES = [
   {
     id: 'permis-n',
     title: 'Permis N',
-    intent: 'Orienter d’abord vers le dispositif asile et les relais migration.',
+    intent: 'Orienter d’abord vers le dispositif asile et les services migration.',
     when: 'permisN',
     handler: 'addPermisNResults',
     confidence: 'orientation prioritaire',
@@ -62,7 +62,7 @@ window.MONAIDE_SIMULATION_RULES = [
   {
     id: 'sans-statut',
     title: 'Sans statut régulier',
-    intent: 'Protéger la personne en priorisant les relais migration et l’aide d’urgence.',
+    intent: 'Protéger la personne en priorisant les services migration et l’aide d’urgence.',
     when: 'sansStatut',
     handler: 'addSansStatutResults',
     confidence: 'orientation prioritaire',
@@ -192,12 +192,12 @@ window.MONAIDE_SIMULATION_RULES = [
   {
     id: 'jet-service',
     title: 'Jet Service',
-    intent: 'Proposer un relais social jeunes/formation quand les démarches deviennent floues.',
+    intent: 'Proposer un service social jeunes/formation quand les démarches deviennent floues.',
     when: 'needsJetService',
     handler: 'addJetServiceResult',
     confidence: 'orientation utile',
     guardrails: ['Soutien, pas autorité de décision.', 'Ne doit pas remplacer OCBE quand la formation est centrale.'],
-    sourceType: 'relais associatif'
+    sourceType: 'réseau associatif'
   },
   {
     id: 'separation',
@@ -232,22 +232,22 @@ window.MONAIDE_SIMULATION_RULES = [
   {
     id: 'pro-infirmis',
     title: 'Pro Infirmis',
-    intent: 'Ajouter un relais handicap/maladie durable pour les personnes non retraitées.',
+    intent: 'Ajouter un service handicap/maladie durable pour les personnes non retraitées.',
     when: 'needsProInfirmis',
     handler: 'addProInfirmisResult',
     confidence: 'orientation utile',
     guardrails: ['Complète AI/CMS, ne remplace pas une décision.'],
-    sourceType: 'relais associatif'
+    sourceType: 'réseau associatif'
   },
   {
     id: 'pro-senectute',
     title: 'Pro Senectute',
-    intent: 'Ajouter un relais administratif/social pour les 60+.',
+    intent: 'Ajouter un service administratif/social pour les 60+.',
     when: 'needsProSenectute',
     handler: 'addProSenectuteResult',
     confidence: 'orientation utile',
     guardrails: ['Complète PC/AAS, ne remplace pas la caisse.'],
-    sourceType: 'relais associatif'
+    sourceType: 'réseau associatif'
   },
   {
     id: 'cms',
@@ -277,7 +277,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addGardeEnfantsMaladesResult',
     confidence: 'à vérifier',
     guardrails: ['Service ponctuel, conditions et tarifs à vérifier.'],
-    sourceType: 'relais pratique'
+    sourceType: 'service pratique'
   },
   {
     id: 'dettes',

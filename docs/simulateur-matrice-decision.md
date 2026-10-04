@@ -27,7 +27,7 @@ Le simulateur ne décide pas à la place des services officiels. Son rôle est d
 | Signal | Effet attendu |
 | --- | --- |
 | Permis N ou S | EVAM / cadre migration avant les aides ordinaires |
-| Sans statut clair | Relais migration avant prestations ordinaires |
+| Sans statut clair | Service spécialisé migration avant prestations ordinaires |
 | Âge AVS / retraité·e | PC AVS/AI + Pro Senectute avant LAMal ; pas RI dans le simulateur |
 | En formation post-obligatoire | OCBE + Jet Service avant RI |
 | Sans emploi et sans revenu | RI d’abord ; aide alimentaire/dettes ensuite ; LACI à vérifier |

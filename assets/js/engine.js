@@ -224,7 +224,7 @@
         name.indexOf('Prestations complémentaires') !== -1 ||
         name.indexOf('Assurance chômage') !== -1
       )) {
-        downgradeResult(result, 'Ton statut de séjour rend cette piste sensible : commence par le relais spécialisé indiqué avant une démarche ordinaire.');
+        downgradeResult(result, 'Ton statut de séjour rend cette piste sensible : commence par le service spécialisé indiqué avant une démarche ordinaire.');
       }
 
       if (flags.etudiant && name.indexOf('Revenu d\'insertion') !== -1) {
@@ -240,7 +240,7 @@
       nom: 'Centre social régional (CSR)',
       badge: 'probable',
       strongProbable: true,
-      desc: 'Quand le logement ou le budget devient critique, le CSR peut faire un premier point rapidement et t’orienter vers les bons relais.',
+      desc: 'Quand le logement ou le budget devient critique, le CSR peut faire un premier point rapidement et t’orienter vers les bons services.',
       action: '1. Contacte le CSR de ta commune et dis clairement que la situation devient urgente.\n2. Prépare les courriers récents, le bail ou les factures concernées.\n3. Si un bail ou une expulsion est en jeu, contacte aussi l’ASLOCA Vaud : ☏ 021 617 16 17.\n4. Ne quitte pas ton logement ou une procédure sans avoir fait vérifier tes options.',
       today: 'Fais ce premier contact sans attendre un dossier complet.',
       docs: ['Pièce d’identité', 'Courriers reçus récemment', 'Contrat de bail ou factures concernées'],
@@ -254,7 +254,7 @@
       badge: 'probable',
       strongProbable: true,
       desc: 'Avec un permis N, le premier contact passe généralement par l’EVAM et le dispositif asile.',
-      action: '1. Commence par le relais EVAM qui suit déjà ton dossier.\n2. Rassemble ton permis N, les courriers SEM/SPOP et les documents du foyer ou du service EVAM.\n3. Si tu ne comprends pas une décision ou une procédure, ajoute une permanence du CSP Fraternité.\n4. Note tes questions avant le rendez-vous pour ne rien oublier.',
+      action: '1. Commence par l’EVAM, qui suit déjà ton dossier.\n2. Rassemble ton permis N, les courriers SEM/SPOP et les documents du foyer ou du service EVAM.\n3. Si tu ne comprends pas une décision ou une procédure, ajoute une permanence du CSP Fraternité.\n4. Note tes questions avant le rendez-vous pour ne rien oublier.',
       today: 'Identifie d’abord le service EVAM qui suit ton dossier.',
       docs: ['Permis N', 'Décisions SEM/SPOP ou courriers récents', 'Coordonnées du foyer ou du service EVAM'],
       liensEVAM: true
@@ -276,7 +276,7 @@
       badge: 'probable',
       strongProbable: true,
       desc: 'Avec un permis S, il vaut mieux faire vérifier le cadre exact avant de lancer des démarches ordinaires.',
-      action: '1. Passe d’abord par le relais EVAM ou le service qui suit ta situation.\n2. Demande quelles aides passent par le cadre permis S et lesquelles passent par les services ordinaires.\n3. Garde tes courriers et justificatifs de logement/revenus ensemble.\n4. Si tu reçois des informations contradictoires, fais relire la situation par le CSP Fraternité.',
+      action: '1. Passe d’abord par l’EVAM ou le service qui suit ta situation.\n2. Demande quelles aides passent par le cadre permis S et lesquelles passent par les services ordinaires.\n3. Garde tes courriers et justificatifs de logement/revenus ensemble.\n4. Si tu reçois des informations contradictoires, fais relire la situation par le CSP Fraternité.',
       today: 'Fais vérifier d’abord le cadre de prise en charge.',
       docs: ['Permis S', 'Courriers récents', 'Pièce d’identité', 'Justificatifs de logement si tu en as'],
       liensEVAM: true
@@ -296,7 +296,7 @@
       badge: 'verifier',
       desc: 'Avec un permis F, certaines aides peuvent exister, mais il faut souvent vérifier le bon cadre social et administratif.',
       action: '1. Si ta situation est suivie par l’EVAM, commence par là.\n2. Demande si la question concerne l’aide sociale, le séjour ou les deux.\n3. Si le permis ou une décision officielle est au centre du problème, complète avec le CSP Fraternité.\n4. Garde une copie des courriers et note les dates importantes.',
-      today: 'Utilise ce relais si tu hésites entre aide sociale et questions de séjour.',
+      today: 'Utilise ce contact si tu hésites entre aide sociale et questions de séjour.',
       liensEVAM: true
     }));
   }
@@ -331,7 +331,7 @@
       nom: 'La Fraternité CSP Vaud : questions de migration',
       badge: 'probable',
       strongProbable: true,
-      desc: 'Sans statut régulier, il faut d’abord clarifier les droits de base et les bons relais.',
+      desc: 'Sans statut régulier, il faut d’abord clarifier les droits de base et les bons services.',
       action: '1. Va à une permanence du CSP Fraternité avant de lancer plusieurs démarches seul·e.\n2. Apporte passeport/pièce d’identité si tu en as, courriers officiels et preuves de présence ou de situation.\n3. Dis clairement s’il y a urgence : logement, santé, revenu, sécurité.\n4. Demande quelle aide de base est possible sans te mettre en difficulté.',
       today: 'Commence par cette permanence avant d’autres demandes.',
       docs: ['Courriers officiels si tu en as', 'Passeport ou pièce d’identité', 'Toute preuve de présence ou de situation'],
@@ -403,7 +403,7 @@
       nom: 'Enfant en situation de handicap : aides à domicile (AMINH)',
       badge: 'verifier',
       desc: 'Si tu aides un enfant en situation de handicap ou avec un besoin important à domicile, il peut exister des soutiens pour la relève, l’aide concrète ou l’organisation du quotidien.',
-      action: '1. Note ce qui demande de l’aide à domicile : soins, surveillance, déplacements, repas, nuit, démarches ou relève.\n2. Contacte Espace Proches ou le CMS pour faire un premier tri.\n3. Si l’enfant a déjà un suivi médical ou AI, garde les courriers et décisions utiles.\n4. Demande clairement quelles aides financières, relais ou évaluations à domicile peuvent être envisagés.',
+      action: '1. Note ce qui demande de l’aide à domicile : soins, surveillance, déplacements, repas, nuit, démarches ou relève.\n2. Contacte Espace Proches ou le CMS pour faire un premier tri.\n3. Si l’enfant a déjà un suivi médical ou AI, garde les courriers et décisions utiles.\n4. Demande clairement quelles aides financières, services ou évaluations à domicile peuvent être envisagés.',
       today: 'Commence par décrire le besoin concret à domicile, puis demande à quel service l’annoncer.',
       docs: ['Courriers médicaux ou AI si disponibles', 'Liste des besoins à domicile', 'Coordonnées du suivi médical ou social'],
       liensAminh: true
@@ -481,8 +481,8 @@
     res.push(buildResult({
       nom: 'Garde d’enfants malades : soutien ponctuel aux parents',
       badge: 'verifier',
-      desc: 'Quand un enfant tombe malade et qu’aucun parent ne peut rester à domicile, il existe parfois des relais ponctuels à demander selon les conditions du service.',
-      action: '1. Vérifie les conditions de la Croix-Rouge vaudoise ou d’un relais parental de ta région.\n2. Prépare l’âge de l’enfant, le motif de garde et la durée probable du besoin.\n3. Demande le tarif, les délais et les conditions avant de compter dessus.\n4. Si le problème revient souvent, demande aussi une orientation plus globale via le CSR ou la commune.',
+      desc: 'Quand un enfant tombe malade et qu’aucun parent ne peut rester à domicile, il existe parfois des solutions de garde ponctuelles à demander selon les conditions du service.',
+      action: '1. Vérifie les conditions de la Croix-Rouge vaudoise ou d’un service de garde ponctuelle de ta région.\n2. Prépare l’âge de l’enfant, le motif de garde et la durée probable du besoin.\n3. Demande le tarif, les délais et les conditions avant de compter dessus.\n4. Si le problème revient souvent, demande aussi une orientation plus globale via le CSR ou la commune.',
       docs: ['Âge de l’enfant', 'Attestation ou information médicale si disponible', 'Horaires de travail ou formation concernés'],
       today: 'Garde cette piste comme solution pratique si un enfant malade bloque le travail, la formation ou l’organisation familiale.',
       liensGardeEnfants: true
@@ -494,7 +494,7 @@
       nom: 'Aide alimentaire par région',
       catalogAidId: 'distributions-alimentaires',
       badge: flags.revenu === 'aucun' ? 'probable' : 'verifier',
-      desc: 'Si le budget ne suffit plus pour manger correctement, il existe des distributions, épiceries sociales ou relais alimentaires à chercher près de chez toi.',
+      desc: 'Si le budget ne suffit plus pour manger correctement, il existe des distributions, épiceries sociales ou autres services alimentaires à chercher près de chez toi.',
       action: '1. Cherche d’abord une distribution ou épicerie sociale proche de ta commune.\n2. Vérifie les horaires, les conditions d’accès et s’il faut une attestation.\n3. Si tu n’as plus assez pour manger régulièrement, contacte aussi le CSR ou une permanence sociale.\n4. Garde cette piste comme aide immédiate, mais traite en parallèle la cause du manque de revenu.',
       docs: ['Pièce d’identité', 'Attestation sociale si disponible', 'Sac/cabas et horaires du lieu choisi'],
       today: 'Utilise cette piste surtout si la nourriture devient une difficulté immédiate.',
@@ -511,7 +511,7 @@
         : 'Quand une séparation ou un divorce commence, il est utile de clarifier rapidement les premiers points administratifs et financiers.',
       action: flags.aEnfants
         ? '1. Fais une liste courte des sujets urgents : sécurité, enfants, logement, pension, budget, assurances.\n2. Si une décision fixe déjà une pension et qu’elle n’est pas payée, appelle le BRAPA au 021 316 52 21.\n3. Prépare jugement, ordonnance, convention, preuves de non-paiement, revenus et frais des enfants.\n4. Si la séparation crée une urgence financière ou de logement, contacte aussi le CSR. S’il y a violence ou peur, passe d’abord par les ressources de protection.'
-        : '1. Clarifie d’abord ce qui change concrètement : logement, budget, assurances, dettes, courrier.\n2. Rassemble les documents importants avant les rendez-vous : bail, revenus, comptes, décisions ou courriers reçus.\n3. Si tu ne sais pas par quoi commencer, demande une permanence sociale ou juridique pour trier les priorités.\n4. S’il y a violence, menace ou emprise, ne commence pas par une médiation : cherche d’abord un relais de protection.',
+        : '1. Clarifie d’abord ce qui change concrètement : logement, budget, assurances, dettes, courrier.\n2. Rassemble les documents importants avant les rendez-vous : bail, revenus, comptes, décisions ou courriers reçus.\n3. Si tu ne sais pas par quoi commencer, demande une permanence sociale ou juridique pour trier les priorités.\n4. S’il y a violence, menace ou emprise, ne commence pas par une médiation : cherche d’abord un service de protection.',
       docs: flags.aEnfants
         ? ['Jugement, ordonnance ou convention si existant', 'Preuves de pension payée ou non payée', 'Revenus et justificatifs financiers', 'Frais et documents des enfants']
         : ['Bail ou documents logement', 'Revenus actuels', 'Courriers administratifs liés à la séparation'],
@@ -575,7 +575,7 @@
         nom: 'Subside assurance maladie (OVAM)',
         badge: 'probable',
         desc: (flags.permisF || flags.permisL)
-          ? 'Le subside reste une piste importante, mais avec ton statut de séjour il vaut mieux faire vérifier le cadre exact par une AAS ou un relais spécialisé en plus du calcul officiel.'
+          ? 'Le subside reste une piste importante, mais avec ton statut de séjour il vaut mieux faire vérifier le cadre exact par une AAS ou un service spécialisé en plus du calcul officiel.'
           : flags.primeElevee
           ? 'Tes revenus semblent compatibles avec un subside et ta prime maladie pèse lourd dans le budget. C’est une piste importante à vérifier.'
           : 'Avec ton niveau de revenus, un subside est probablement envisageable. Le montant exact dépend ensuite du Revenu Déterminant Unifié (RDU), qui tient compte des revenus et de la fortune.',
@@ -623,7 +623,7 @@
         badge: flags.permisF ? 'verifier' : 'probable',
         strongProbable: !flags.permisF,
         desc: flags.permisF
-          ? 'Tes revenus et ton épargne font ressortir le RI comme piste à examiner, mais avec un permis F il vaut mieux faire vérifier le bon cadre par le CSR et, si besoin, par un relais migration.'
+          ? 'Tes revenus et ton épargne font ressortir le RI comme piste à examiner, mais avec un permis F il vaut mieux faire vérifier le bon cadre par le CSR et, si besoin, par un service spécialisé en migration.'
           : (flags.loyerEleve || flags.grandeCommune)
           ? 'Tes revenus, ton épargne et ton contexte de vie font ressortir le RI comme une piste forte. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e.'
           : 'Tes revenus et ton épargne font ressortir le RI comme une piste sérieuse. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',

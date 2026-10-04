@@ -130,8 +130,8 @@
     if (normalized.indexOf('suite logique') !== -1) return 'Démarche';
     if (normalized.indexOf('a preparer') !== -1) return 'Documents';
     if (normalized.indexOf('documents') !== -1) return 'Documents';
-    if (normalized.indexOf('relais') !== -1) return 'Relais utile';
-    if (normalized.indexOf('guides proches') !== -1) return 'Relais utile';
+    if (normalized.indexOf('services utiles') !== -1 || normalized.indexOf('services possibles') !== -1) return 'Services utiles';
+    if (normalized.indexOf('guides proches') !== -1) return 'Services utiles';
     if (normalized.indexOf('faq') !== -1) return 'FAQ';
     return String(label || '').trim();
   }
@@ -143,7 +143,7 @@
     var shortLabel = simplifyGuideLabel(label ? label.textContent : '');
     if (shortLabel === 'À retenir') return 'retain';
     if (shortLabel === 'Source officielle' || shortLabel === 'Conditions') return 'conditions';
-    if (shortLabel === 'Démarche' || shortLabel === 'Relais utile') return 'action';
+    if (shortLabel === 'Démarche' || shortLabel === 'Services utiles') return 'action';
     if (shortLabel === 'Documents') return 'documents';
     if (shortLabel === 'FAQ') return 'faq';
     return '';
@@ -266,7 +266,7 @@
       else if (normalized.indexOf('conditions') !== -1) label.classList.add('is-conditions');
       else if (normalized.indexOf('demande') !== -1 || normalized.indexOf('par ou commencer') !== -1 || normalized.indexOf('pour commencer') !== -1 || normalized.indexOf('a noter') !== -1 || normalized.indexOf('point sensible') !== -1 || normalized.indexOf('suite logique') !== -1) label.classList.add('is-action');
       else if (normalized.indexOf('a preparer') !== -1 || normalized.indexOf('documents') !== -1) label.classList.add('is-docs');
-      else if (normalized.indexOf('relais') !== -1 || normalized.indexOf('guides proches') !== -1) label.classList.add('is-relay');
+      else if (normalized.indexOf('services utiles') !== -1 || normalized.indexOf('services possibles') !== -1 || normalized.indexOf('guides proches') !== -1) label.classList.add('is-relay');
       else if (normalized.indexOf('faq') !== -1) label.classList.add('is-faq');
     });
   }

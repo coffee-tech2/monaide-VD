@@ -125,7 +125,7 @@ window.MONAIDE_GUIDE_DATA = {
       id: 'permis-sejour-vaud',
       label: 'Migration',
       title: 'Permis de séjour',
-      summary: 'Permis B, F, N, L ou situation floue : les premiers relais quand le séjour change les démarches possibles.',
+      summary: 'Permis B, F, N, L ou situation floue : les premiers contacts quand le séjour change les démarches possibles.',
       href: '/permis-sejour-vaud/',
       ctaLabel: 'Ouvrir le guide',
       audience: ['migration'],

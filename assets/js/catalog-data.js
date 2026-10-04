@@ -975,7 +975,7 @@
         'Regarder les ressources familiales du canton',
         'Voir ensuite si un service spécifique comme le BRAPA ou une médiation est utile'
       ],
-      bodyIntro: 'Une séparation mélange souvent enfants, logement, argent et démarches. Le plus utile est de distinguer vite ce qui relève du quotidien, des enfants et d’un relais spécialisé.',
+      bodyIntro: 'Une séparation mélange souvent enfants, logement, argent et démarches. Le plus utile est de distinguer vite ce qui relève du quotidien, des enfants et d’un service spécialisé.',
       sections: [
         {
           title: 'Quand cette fiche est utile',
@@ -1199,9 +1199,9 @@
       id: 'garde-enfants-malades',
       title: 'Garde d’enfants malades : soutien ponctuel aux parents',
       category: 'financier',
-      summary: 'Enfant malade · Parent sans solution immédiate · Relais ponctuel',
+      summary: 'Enfant malade · Parent sans solution immédiate · Garde ponctuelle',
       audience: 'Parents qui n’ont pas de solution quand un enfant tombe malade et qu’il faut organiser le quotidien rapidement.',
-      purpose: 'Cette fiche aide à repérer les relais utiles quand un enfant malade ne peut pas aller à l’école, à la crèche ou chez la maman de jour.',
+      purpose: 'Cette fiche aide à repérer les services utiles quand un enfant malade ne peut pas aller à l’école, à la crèche ou chez la maman de jour.',
       highlights: [
         'Utile en cas d’imprévu très concret',
         'Peut éviter une absence non gérable au travail',
@@ -1212,14 +1212,14 @@
         'Vérifier ensuite si une solution de dépannage existe dans ton réseau',
         'Contacter rapidement le service si tu es déjà bloqué·e'
       ],
-      bodyIntro: 'Quand un enfant tombe malade, le plus dur est souvent de trouver vite une solution. Un service de garde à domicile ou un relais ponctuel peut parfois aider à tenir.',
+      bodyIntro: 'Quand un enfant tombe malade, le plus dur est souvent de trouver vite une solution. Un service de garde à domicile ou une garde ponctuelle peut parfois aider à tenir.',
       sections: [
         {
           title: 'Quand cette piste est utile',
           items: [
             'Enfant malade à la maison',
             'Parent sans solution immédiate',
-            'Besoin de relais rapide pour tenir quelques heures ou quelques jours'
+            'Besoin d’une solution rapide pour tenir quelques heures ou quelques jours'
           ]
         },
         {
@@ -1227,7 +1227,7 @@
           items: [
             'Contacter d’abord le service concerné',
             'Expliquer l’âge de l’enfant et le besoin concret',
-            'Demander aussi s’il existe un autre relais pour les jours suivants'
+            'Demander aussi s’il existe une autre solution pour les jours suivants'
           ]
         }
       ],
@@ -1956,7 +1956,7 @@
           items: [
             'Pas de solution de formation après l’école obligatoire',
             'Rupture d’apprentissage ou d’année',
-            'Besoin d’un relais rapide vers la bonne mesure'
+            'Besoin d’être orienté·e rapidement vers la bonne mesure'
           ]
         },
         {
@@ -1977,7 +1977,7 @@
     },
     {
       id: 'rupture-apprentissage',
-      title: 'Rupture d’apprentissage : premiers relais',
+      title: 'Rupture d’apprentissage : premiers contacts',
       category: 'emploi',
       summary: 'Jeunes en formation · Parcours bloqué · Rebond rapide',
       audience: 'Jeunes qui ont arrêté un apprentissage, risquent de le quitter ou n’ont plus de solution de formation.',
@@ -2168,7 +2168,7 @@
         'Regarder les réponses aux questions fréquentes',
         'Demander un premier conseil si tu ne sais plus comment tenir'
       ],
-      bodyIntro: 'Tu aides souvent un proche malade, âgé, en situation de handicap ou avec des troubles psychiques ? Espace Proches peut t’aider à faire le point sur le répit, les relais utiles et les démarches à connaître.',
+      bodyIntro: 'Tu aides souvent un proche malade, âgé, en situation de handicap ou avec des troubles psychiques ? Espace Proches peut t’aider à faire le point sur le répit, les soutiens utiles et les démarches à connaître.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'Service d’information et d’orientation, pas une autorité de décision',
       sections: [
@@ -2176,7 +2176,7 @@
           title: 'Quand cette piste est utile',
           items: [
             'Fatigue ou charge qui devient trop lourde',
-            'Besoin de relais, de répit ou d’informations',
+            'Besoin d’un soutien, de répit ou d’informations',
             'Questions sur les aides possibles pour le proche ou pour toi'
           ]
         },
@@ -2200,7 +2200,7 @@
       title: 'Proches aidant·es : répit et aides concrètes',
       category: 'sante',
       summary: 'Hotline 0800 660 660 · Relève · Carte d’urgence · Aides possibles',
-      audience: 'Personnes qui aident déjà un proche et ont besoin d’un vrai relais, pas seulement d’information.',
+      audience: 'Personnes qui aident déjà un proche et ont besoin d’un vrai soutien, pas seulement d’information.',
       purpose: 'Cette fiche aide à repérer les soutiens concrets pour proches aidant·es : information, relève, carte d’urgence, CMS, congés et aides financières possibles.',
       highlights: [
         'Hotline cantonale gratuite : 0800 660 660',
@@ -2212,7 +2212,7 @@
         'Contacter le CMS si la personne aidée vit à domicile ou a besoin d’une carte d’urgence',
         'Regarder les aides financières et congés si tu as réduit ton travail ou si la charge impacte ton revenu'
       ],
-      bodyIntro: 'Quand on aide régulièrement un proche, le plus dur est souvent de tenir dans la durée. Dans le canton de Vaud, plusieurs relais concrets existent pour souffler un peu.',
+      bodyIntro: 'Quand on aide régulièrement un proche, le plus dur est souvent de tenir dans la durée. Dans le canton de Vaud, plusieurs soutiens concrets existent pour souffler un peu.',
       sections: [
         {
           title: 'Quand cette piste est utile',
@@ -2223,7 +2223,7 @@
           ]
         },
         {
-          title: 'Aides et relais à vérifier',
+          title: 'Aides et soutiens à vérifier',
           items: [
             'Espace Proches : écoute, informations, orientation et entretiens individuels gratuits',
             'CMS / AVASAD : carte d’urgence proche aidant et organisation de l’aide à domicile',
@@ -2269,7 +2269,7 @@
         'Contacter Espace Proches ou le CMS pour faire le tri',
         'Demander explicitement si une aide type AMINH ou une aide à domicile peut être examinée'
       ],
-      bodyIntro: 'Quand un enfant en situation de handicap a besoin d’une aide importante à domicile, il peut exister des soutiens spécifiques. Le plus utile est de faire vérifier la situation avec un relais qui connaît ces aides.',
+      bodyIntro: 'Quand un enfant en situation de handicap a besoin d’une aide importante à domicile, il peut exister des soutiens spécifiques. Le plus utile est de faire vérifier la situation avec un service qui connaît ces aides.',
       reviewedAt: '2 juin 2026',
       decisionBy: 'Service cantonal ou organisme compétent selon l’aide demandée',
       sections: [
@@ -2300,11 +2300,11 @@
     },
     {
       id: 'sante-mentale-relais',
-      title: 'Santé mentale : premiers relais',
+      title: 'Santé mentale : premiers contacts',
       category: 'sante',
-      summary: 'Mal-être, anxiété, épuisement · Premiers relais',
+      summary: 'Mal-être, anxiété, épuisement · Premiers contacts',
       audience: 'Personnes qui sentent que ça ne va plus très bien et ne savent pas encore vers qui se tourner.',
-      purpose: 'Cette fiche aide à repérer des premiers relais quand on a besoin de soutien psychique, de conseil ou d’orientation.',
+      purpose: 'Cette fiche aide à repérer des premiers contacts quand on a besoin de soutien psychique, de conseil ou d’orientation.',
       highlights: [
         'Utile avant la crise',
         'Pour soi ou pour un proche',
@@ -2313,7 +2313,7 @@
       firstSteps: [
         'Si la sécurité est en jeu, appeler tout de suite le 144 ou le 117',
         'Si c’est une détresse psychologique urgente mais non vitale, appeler le 0848 133 133',
-        'Sinon, commencer par un relais humain : médecin, 143 pour toute personne qui a besoin de parler, 147 pour les jeunes, ou Unisanté'
+        'Sinon, commencer par un contact humain : médecin, 143 pour toute personne qui a besoin de parler, 147 pour les jeunes, ou Unisanté'
       ],
       bodyIntro: 'Quand on dort mal, qu’on s’épuise, qu’on angoisse ou qu’on se sent perdu·e, le plus difficile est souvent de savoir où commencer. Cette fiche aide à choisir entre écoute, premier rendez-vous et urgence.',
       sections: [
@@ -2345,7 +2345,7 @@
       reviewedAt: '13 avril 2026',
       decisionBy: 'Orientation et soins selon la situation, pas une autorité unique',
       links: [
-        { kind: 'info', label: 'Trouver un relais santé mentale', url: window.MONAIDE_LINKS.MENTAL_HEALTH_SUPPORT },
+        { kind: 'info', label: 'Trouver un soutien en santé mentale', url: window.MONAIDE_LINKS.MENTAL_HEALTH_SUPPORT },
         { kind: 'action', label: 'Voir les numéros d’urgence', url: window.MONAIDE_LINKS.URGENCES_VAUD },
         { kind: 'action', label: 'Contacter Unisanté', url: window.MONAIDE_LINKS.UNISANTE }
       ],
@@ -2413,7 +2413,7 @@
       firstSteps: [
         'Voir la structure Rel’Aids',
         'Prendre contact si toi ou un proche en avez besoin',
-        'Utiliser ce relais même sans projet de soin clair'
+        'Utiliser ce service même sans projet de soin clair'
       ],
       bodyIntro: 'Rel’Aids va au-devant des personnes concernées par la consommation de drogues, sans inscription.',
       sections: [
@@ -2889,7 +2889,7 @@
       category: 'urgence',
       summary: 'Crise, angoisse aiguë, idées suicidaires · Urgence psychique',
       audience: 'Personnes en crise psychique ou proches qui ont besoin d’un appui immédiat.',
-      purpose: 'Cette fiche aide à réagir vite quand la situation psychique devient aiguë et nécessite un relais urgent.',
+      purpose: 'Cette fiche aide à réagir vite quand la situation psychique devient aiguë et nécessite une aide urgente.',
       highlights: [
         'À utiliser quand la situation devient critique',
         'Pour soi ou pour un proche',
@@ -2900,7 +2900,7 @@
         'Détresse psychologique urgente dans le canton : appeler le 0848 133 133',
         'Expliquer simplement ce qui se passe maintenant : risque, lieu, personne concernée'
       ],
-      bodyIntro: 'Quand la situation bascule en crise psychique, il faut agir vite et chercher un relais humain immédiat. Si la personne est en danger, il faut passer en mode urgence.',
+      bodyIntro: 'Quand la situation bascule en crise psychique, il faut agir vite et chercher un contact humain immédiat. Si la personne est en danger, il faut passer en mode urgence.',
       sections: [
         {
           title: 'Signes qui demandent de réagir vite',
@@ -2923,7 +2923,7 @@
       callouts: [
         {
           kind: 'warning',
-          html: 'En crise psychique aiguë, l’objectif n’est pas de trouver “la bonne administration”, mais de sécuriser la personne et obtenir un relais médical ou d’urgence.'
+          html: 'En crise psychique aiguë, l’objectif n’est pas de trouver “la bonne administration”, mais de sécuriser la personne et obtenir une aide médicale ou d’urgence.'
         }
       ],
       reviewedAt: '13 avril 2026',
@@ -3041,7 +3041,7 @@
       id: 'violences-conjugales',
       title: 'Violences conjugales / besoin de protection',
       category: 'urgence',
-      summary: 'Violence au foyer · Protection, hébergement, premiers relais',
+      summary: 'Violence au foyer · Protection, hébergement, premiers contacts',
       audience: 'Personnes qui vivent une violence dans le couple ou le foyer, ou proches qui cherchent un premier contact sûr.',
       purpose: 'Cette fiche aide à trouver rapidement une porte de protection, d’écoute et d’hébergement quand la violence est là.',
       highlights: [
