@@ -169,3 +169,41 @@ Transformer cette matrice en structure testable :
 3. Remplacer progressivement les règles dispersées par une table de décision lisible.
 4. Garder les textes de résultats séparés de la logique de scoring.
 
+## Base légale de chaque règle
+
+Chaque règle de `simulator-rules.js` porte un champ `legalRef`, exigé par `scripts/simulator-structure-check.js`.
+
+| Règle | Base légale ou nature du dispositif |
+| --- | --- |
+| Urgence budget ou logement | Pas de droit déterminé : orientation vers le CSR (LASV, RSV 850.051) |
+| Permis N | LAsi (RS 142.31) ; LARA (RSV 142.21) |
+| Permis S | LAsi, statut de protection provisoire (RS 142.31) ; LARA (RSV 142.21) |
+| Permis F | LEI, admission provisoire (RS 142.20) ; LARA (RSV 142.21) |
+| Permis L | LEI (RS 142.20) |
+| Permis G | LEI (RS 142.20) |
+| Sans statut régulier | Art. 12 Cst. (RS 101) ; LARA, aide d’urgence (RSV 142.21) |
+| Subside assurance maladie (OVAM) | LAMal (RS 832.10) ; LVLAMal (RSV 832.01) |
+| Revenu d’insertion | LASV (RSV 850.051) ; RLASV (RSV 850.051.1) |
+| Prestations complémentaires AVS/AI | LPC (RS 831.30) |
+| Frais maladie et invalidité liés aux PC | LPC, remboursement des frais de maladie et d’invalidité (RS 831.30) |
+| PC Familles | LPCFam (RSV 850.053) |
+| Allocations familiales | LAFam (RS 836.2) ; LVLAFam (RSV 836.01) |
+| CarteCulture | Pas de base légale : dispositif associatif (Caritas) |
+| Chômage déjà ouvert | LACI (RS 837.0) |
+| Assurance chômage LACI | LACI (RS 837.0) |
+| Rente-pont AVS | LPCFam, prestations cantonales de la rente-pont (RSV 850.053) |
+| Bourses OCBE | LAEF (RSV 416.11) |
+| Assurance invalidité | LAI (RS 831.20) |
+| Jet Service | Pas de base légale : service associatif (CSP Vaud) |
+| Séparation | Code civil (RS 210) ; assistance judiciaire : CPC art. 117 ss (RS 272) |
+| Proches aidant·es | LAPRAMS (loi du 24 janvier 2006) ; LORSDom (loi du 28 janvier 2021) |
+| AMINH enfant en situation de handicap | Art. 29 LVLAFam (RSV 836.01) |
+| Pro Infirmis | Pas de base légale : fondation privée |
+| Pro Senectute | Pas de base légale : fondation privée |
+| CMS | Maintien à domicile : LORSDom (loi du 28 janvier 2021) |
+| Aides communales | Pas de base cantonale unique : prestations propres à chaque commune |
+| Garde d’enfants malades | Pas de base légale : service associatif (Croix-Rouge vaudoise) |
+| Dettes | LP (RS 281.1) ; programme cantonal Parlons Cash |
+| Aide alimentaire | Pas de base légale : aide associative |
+| Aides logement | LL (RSV 840.11) ; RAIL (RSV 840.11.3) |
+| Aucune piste automatique | Sans objet : aucune piste automatique |

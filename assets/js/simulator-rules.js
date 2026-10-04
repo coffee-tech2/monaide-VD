@@ -7,6 +7,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addUrgenceOrientationResults',
     confidence: 'orientation',
     guardrails: ['Ne remplace pas une procédure juridique ou une décision officielle.', 'Renvoie vers CSR et ASLOCA si le logement est en jeu.'],
+    legalRef: 'Pas de droit déterminé : orientation vers le CSR (LASV, RSV 850.051)',
     sourceType: 'réseau social vaudois'
   },
   {
@@ -17,6 +18,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addPermisNResults',
     confidence: 'orientation prioritaire',
     guardrails: ['Évite les aides ordinaires comme première réponse.', 'Invite à faire relire les courriers officiels.'],
+    legalRef: 'LAsi (RS 142.31) ; LARA (RSV 142.21)',
     sourceType: 'statut de séjour'
   },
   {
@@ -27,6 +29,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addPermisSResults',
     confidence: 'orientation prioritaire',
     guardrails: ['Ne conclut pas sur les droits ordinaires.', 'Renvoie vers EVAM ou CSP Fraternité si le cadre est flou.'],
+    legalRef: 'LAsi, statut de protection provisoire (RS 142.31) ; LARA (RSV 142.21)',
     sourceType: 'statut de séjour'
   },
   {
@@ -37,6 +40,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addPermisFResults',
     confidence: 'à vérifier',
     guardrails: ['Ajoute une nuance migration aux résultats ordinaires.', 'Ne transforme pas une piste en droit probable sans vérification.'],
+    legalRef: 'LEI, admission provisoire (RS 142.20) ; LARA (RSV 142.21)',
     sourceType: 'statut de séjour'
   },
   {
@@ -47,6 +51,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addPermisLResults',
     confidence: 'à vérifier',
     guardrails: ['Domicile et durée de séjour peuvent changer la démarche.', 'Privilégie une vérification avant demande.'],
+    legalRef: 'LEI (RS 142.20)',
     sourceType: 'statut de séjour'
   },
   {
@@ -57,6 +62,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addPermisGResults',
     confidence: 'orientation prioritaire',
     guardrails: ['Domicile à l’étranger possible.', 'Les aides ordinaires vaudoises doivent rester à vérifier.'],
+    legalRef: 'LEI (RS 142.20)',
     sourceType: 'statut de séjour'
   },
   {
@@ -67,6 +73,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addSansStatutResults',
     confidence: 'orientation prioritaire',
     guardrails: ['Ne propose pas une démarche ordinaire comme première étape.', 'Évite toute promesse de droit.'],
+    legalRef: 'Art. 12 Cst. (RS 101) ; LARA, aide d’urgence (RSV 142.21)',
     sourceType: 'situation sensible'
   },
   {
@@ -77,6 +84,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addLamalResult',
     confidence: 'probable ou à vérifier selon revenu, prime, fortune et aides actuelles',
     guardrails: ['Fortune élevée rétrograde la piste.', 'RI ou PC actuels servent surtout à vérifier que le subside est actif.'],
+    legalRef: 'LAMal (RS 832.10) ; LVLAMal (RSV 832.01)',
     sourceType: 'prestation cantonale'
   },
   {
@@ -87,6 +95,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addRiResult',
     confidence: 'probable ou à vérifier selon revenu, fortune, statut et formation',
     guardrails: ['Ne sort pas pour étudiant·e en formation comme piste ordinaire.', 'Ne valide jamais le droit au RI.', 'Le CSR reste seul à évaluer.'],
+    legalRef: 'LASV (RSV 850.051) ; RLASV (RSV 850.051.1)',
     sourceType: 'aide sociale cantonale'
   },
   {
@@ -97,6 +106,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addPcResult',
     confidence: 'probable ou à vérifier',
     guardrails: ['Fortune élevée impose une vérification officielle.', 'La caisse/AAS reste seule à trancher le droit.'],
+    legalRef: 'LPC (RS 831.30)',
     sourceType: 'prestation sociale'
   },
   {
@@ -107,6 +117,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addFraisMaladieInvaliditeResult',
     confidence: 'à vérifier',
     guardrails: ['Seulement si les PC sont déjà indiquées.', 'Les factures doivent être vérifiées par AAS ou Caisse AVS.'],
+    legalRef: 'LPC, remboursement des frais de maladie et d’invalidité (RS 831.30)',
     sourceType: 'prestation sociale'
   },
   {
@@ -117,6 +128,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addPcFamillesResult',
     confidence: 'probable ou à vérifier',
     guardrails: ['Vérifier activité lucrative, âge des enfants, revenus et fortune.', 'Ne pas proposer si RI ou PC déjà indiqués.'],
+    legalRef: 'LPCFam (RSV 850.053)',
     sourceType: 'prestation cantonale'
   },
   {
@@ -127,6 +139,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addAllocationsFamilialesResult',
     confidence: 'probable ou à vérifier selon situation professionnelle',
     guardrails: ['Bonne caisse variable selon emploi, chômage ou absence d’activité.', 'Attention à l’autre parent.'],
+    legalRef: 'LAFam (RS 836.2) ; LVLAFam (RSV 836.01)',
     sourceType: 'prestation familiale'
   },
   {
@@ -137,6 +150,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addCarteCultureResult',
     confidence: 'probable si justificatif social existant, sinon à vérifier',
     guardrails: ['Ne doit pas passer avant les aides financières prioritaires.', 'Fortune élevée et absence de justificatif gardent la piste prudente.'],
+    legalRef: 'Pas de base légale : dispositif associatif (Caritas)',
     sourceType: 'aide associative'
   },
   {
@@ -147,6 +161,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addChomageActifResult',
     confidence: 'probable',
     guardrails: ['Ne réexamine pas le droit comme si rien n’était ouvert.', 'Oriente vers le décompte et la fin de droit.'],
+    legalRef: 'LACI (RS 837.0)',
     sourceType: 'assurance sociale'
   },
   {
@@ -157,6 +172,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addLaciResult',
     confidence: 'à vérifier',
     guardrails: ['Reste à vérifier sans conditions de cotisation détaillées.', 'Passe avant le RI en sortie d’emploi.'],
+    legalRef: 'LACI (RS 837.0)',
     sourceType: 'assurance sociale'
   },
   {
@@ -167,6 +183,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addRentePontResult',
     confidence: 'probable ou à anticiper',
     guardrails: ['Seulement liée à âge, chômage et fortune.', 'Ne remplace pas le calcul officiel.'],
+    legalRef: 'LPCFam, prestations cantonales de la rente-pont (RSV 850.053)',
     sourceType: 'prestation cantonale'
   },
   {
@@ -177,6 +194,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addOcbeResult',
     confidence: 'à vérifier',
     guardrails: ['Bourse avant RI pour étudiant·e.', 'Statut, parents, indépendance et formation reconnue doivent être vérifiés.'],
+    legalRef: 'LAEF (RSV 416.11)',
     sourceType: 'prestation cantonale'
   },
   {
@@ -187,6 +205,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addAiResult',
     confidence: 'à vérifier',
     guardrails: ['Ne promet jamais rente ou mesure.', 'Le statut de séjour peut nuancer la démarche.'],
+    legalRef: 'LAI (RS 831.20)',
     sourceType: 'assurance sociale'
   },
   {
@@ -197,6 +216,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addJetServiceResult',
     confidence: 'orientation utile',
     guardrails: ['Soutien, pas autorité de décision.', 'Ne doit pas remplacer OCBE quand la formation est centrale.'],
+    legalRef: 'Pas de base légale : service associatif (CSP Vaud)',
     sourceType: 'réseau associatif'
   },
   {
@@ -207,6 +227,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addSeparationResult',
     confidence: 'orientation utile',
     guardrails: ['Si violence, la règle protection passe avant.', 'Ne remplace pas un conseil juridique.'],
+    legalRef: 'Code civil (RS 210) ; assistance judiciaire : CPC art. 117 ss (RS 272)',
     sourceType: 'situation familiale'
   },
   {
@@ -217,6 +238,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addProchesAidantsResult',
     confidence: 'orientation utile',
     guardrails: ['Distinguer aide au proche et droits propres de la personne aidante.'],
+    legalRef: 'LAPRAMS (loi du 24 janvier 2006) ; LORSDom (loi du 28 janvier 2021)',
     sourceType: 'soutien social'
   },
   {
@@ -227,6 +249,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addAminhResult',
     confidence: 'à vérifier',
     guardrails: ['Ne suppose pas automatiquement le handicap de l’enfant.', 'Présenter comme piste à faire vérifier, pas comme droit acquis.'],
+    legalRef: 'Art. 29 LVLAFam (RSV 836.01)',
     sourceType: 'soutien social'
   },
   {
@@ -237,6 +260,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addProInfirmisResult',
     confidence: 'orientation utile',
     guardrails: ['Complète AI/CMS, ne remplace pas une décision.'],
+    legalRef: 'Pas de base légale : fondation privée',
     sourceType: 'réseau associatif'
   },
   {
@@ -247,6 +271,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addProSenectuteResult',
     confidence: 'orientation utile',
     guardrails: ['Complète PC/AAS, ne remplace pas la caisse.'],
+    legalRef: 'Pas de base légale : fondation privée',
     sourceType: 'réseau associatif'
   },
   {
@@ -257,6 +282,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addCmsResult',
     confidence: 'à vérifier',
     guardrails: ['Financement et prescription à vérifier.', 'Prioriser médecin/CMS selon besoin.'],
+    legalRef: 'Maintien à domicile : LORSDom (loi du 28 janvier 2021)',
     sourceType: 'réseau santé-social'
   },
   {
@@ -267,6 +293,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addPrestationsCommunalesResult',
     confidence: 'à vérifier',
     guardrails: ['Très variable selon commune.', 'À explorer après les aides principales.'],
+    legalRef: 'Pas de base cantonale unique : prestations propres à chaque commune',
     sourceType: 'aide locale'
   },
   {
@@ -277,6 +304,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addGardeEnfantsMaladesResult',
     confidence: 'à vérifier',
     guardrails: ['Service ponctuel, conditions et tarifs à vérifier.'],
+    legalRef: 'Pas de base légale : service associatif (Croix-Rouge vaudoise)',
     sourceType: 'service pratique'
   },
   {
@@ -287,6 +315,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addDettesResult',
     confidence: 'orientation prioritaire selon urgence',
     guardrails: ['Loyer menacé passe en urgence.', 'Ne conseille pas d’arrangement irréaliste.'],
+    legalRef: 'LP (RS 281.1) ; programme cantonal Parlons Cash',
     sourceType: 'urgence budget'
   },
   {
@@ -297,6 +326,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addAideAlimentaireRegionResult',
     confidence: 'probable ou à vérifier',
     guardrails: ['Aide immédiate, pas solution structurelle.', 'À traiter avec RI/CSR si besoin de base durable.'],
+    legalRef: 'Pas de base légale : aide associative',
     sourceType: 'aide de proximité'
   },
   {
@@ -307,6 +337,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addAidesLogementResult',
     confidence: 'à vérifier',
     guardrails: ['Ne sort pas si RI déjà indiqué comme aide actuelle.', 'Variable selon commune et statut.'],
+    legalRef: 'LL (RSV 840.11) ; RAIL (RSV 840.11.3)',
     sourceType: 'aide locale/logement'
   },
   {
@@ -317,6 +348,7 @@ window.MONAIDE_SIMULATION_RULES = [
     handler: 'addFallbackResult',
     confidence: 'orientation générale',
     guardrails: ['Ne prétend pas qu’il n’existe aucune aide.', 'Renvoie vers répertoire et premier contact humain.'],
+    legalRef: 'Sans objet : aucune piste automatique',
     sourceType: 'sécurité UX'
   }
 ];

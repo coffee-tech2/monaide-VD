@@ -62,8 +62,8 @@ rules.forEach((rule, index) => {
   if (!rule.id || !rule.handler || !rule.when) {
     errors.push(`${label}: id, handler ou when manquant`);
   }
-  if (!rule.title || !rule.intent || !rule.confidence || !rule.sourceType) {
-    errors.push(`${label}: documentation incomplète (title, intent, confidence, sourceType requis)`);
+  if (!rule.title || !rule.intent || !rule.confidence || !rule.sourceType || !rule.legalRef) {
+    errors.push(`${label}: documentation incomplète (title, intent, confidence, sourceType, legalRef requis)`);
   }
   if (!Array.isArray(rule.guardrails) || !rule.guardrails.length) {
     errors.push(`${label}: garde-fous non documentés`);
