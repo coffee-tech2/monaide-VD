@@ -46,6 +46,7 @@
     --shadow-sm: none;
     --shadow-md: none;
     --shadow-lg: none;
+    --logo-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%2317293C'/%3E%3Cpath d='M32.4 14A13 13 0 1 0 37 24' stroke='%23fff' stroke-width='4.8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='35.8' cy='18.2' r='4.7' fill='%23D4722A'/%3E%3C/svg%3E");
   }
   *,
   *::before,
@@ -71,7 +72,7 @@
   body > nav { position: fixed; top: 0; left: 0; right: 0; background: #F7F8F4; border-bottom: 1px solid var(--border); z-index: 100; height: 68px; }
   .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
   .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.43rem; font-weight: 800; letter-spacing:-0.045em; color: var(--sage-dark); text-decoration: none; display:inline-flex; align-items:center; gap:0.62rem; }
-  .nav-logo::before { content:''; width:2rem; height:2rem; border-radius:0.62rem; background:var(--vaud); flex-shrink:0; }
+  .nav-logo::before { content:''; width:2rem; height:2rem; background:var(--logo-mark) center/contain no-repeat; flex-shrink:0; }
   .nav-logo-main { color: var(--orange); }
   .nav-logo-sep { color: var(--orange); }
   .nav-logo-vd { color: var(--sage-dark); }
@@ -1194,7 +1195,7 @@
   .site-footer { background:#181B19; color:rgba(245,243,238,0.68); padding:2.2rem 2rem 1.5rem; }
   .site-footer-card { max-width:1080px; margin:0 auto; padding:3.1rem 3.4rem 3rem; border-radius:var(--radius-md); background:var(--forest); display:grid; grid-template-columns:1.15fr 1fr; gap:4rem; box-shadow:none; }
   .site-footer-brand { display:inline-flex; align-items:center; gap:0.72rem; color:#F5F3EE; text-decoration:none; font-size:1.45rem; font-weight:800; letter-spacing:-0.045em; margin-bottom:1.25rem; }
-  .site-footer-mark { width:2rem; height:2rem; border-radius:var(--radius-sm); background:radial-gradient(circle at center, #D6DFEA 0 0.22rem, transparent 0.24rem), var(--vaud); box-shadow:none; flex-shrink:0; }
+  .site-footer-mark { width:2rem; height:2rem; background:var(--logo-mark) center/contain no-repeat; flex-shrink:0; }
   .site-footer-main p { max-width:31ch; margin:0 0 1.05rem; color:rgba(245,243,238,0.66); font-size:1rem; font-weight:650; line-height:1.58; }
   .site-footer-mail { display:flex; width:fit-content; max-width:100%; padding:0.78rem 1rem; border-radius:var(--radius-sm); border:1px solid rgba(245,243,238,0.16); background:rgba(245,243,238,0.08); color:#F5F3EE; text-decoration:none; font-size:1rem; font-weight:800; letter-spacing:-0.03em; transition:background 0.18s, border-color 0.18s, transform 0.18s; }
   .site-footer-mail:hover { background:rgba(245,243,238,0.14); border-color:rgba(245,243,238,0.28); }
