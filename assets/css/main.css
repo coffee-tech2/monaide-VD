@@ -396,10 +396,6 @@
   .results-footer-banner-title { font-family:'Manrope', sans-serif; font-size:0.98rem; line-height:1.18; font-weight:800; letter-spacing:-0.035em; color:var(--forest); margin:0 0 0.45rem; }
   .results-footer-banner-body { color:#4A6080; font-size:0.84rem; line-height:1.6; }
   .results-footer-banner-body p { margin:0 0 0.6rem; }
-  .results-feedback-actions { display:flex; flex-wrap:wrap; gap:0.55rem; }
-  .results-feedback-actions .result-link-btn[aria-pressed="true"] { border-color:var(--forest); background:rgba(var(--vaud-rgb),0.09); color:var(--forest); }
-  .results-feedback-thanks { margin:0.8rem 0 0; font-size:0.84rem; line-height:1.55; color:var(--warm-gray); }
-  .results-feedback-thanks a { color:var(--forest); font-weight:700; text-decoration:underline; white-space:nowrap; text-underline-offset:3px; }
   .results-footer-banner-body ul { margin:0; padding-left:1.05rem; }
   .results-footer-banner-body li { margin:0 0 0.38rem; }
   .results-footer-banner.is-cta { margin-top:1.6rem; background:var(--forest); border:0; border-radius:var(--radius-xl); padding:1.45rem 1.65rem; color:#EDF2F7; display:flex; align-items:center; justify-content:space-between; gap:1rem; box-shadow:var(--shadow-lg); }
