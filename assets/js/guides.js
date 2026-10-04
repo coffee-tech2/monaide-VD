@@ -20,15 +20,6 @@
     'chomage-laci': 'Chômage et LACI'
   };
 
-  function escapeHtml(value) {
-    return String(value || '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
-
   function priorityRank(item) {
     return GUIDE_PRIORITY_ORDER[item.id] || 99;
   }

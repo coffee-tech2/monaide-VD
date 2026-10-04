@@ -1945,3 +1945,9 @@
     .site-footer-card a { display:inline-block; padding-block:0.8rem; }
     .results-profile-edit, .community-inner-quiet .feedback-link { min-height:44px; }
   }
+
+  /* Mouvement réduit : pas de défilement animé ni de transitions pour qui l'a demandé dans son système. */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  }

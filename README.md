@@ -25,6 +25,10 @@ Vérification séparée des liens externes (pas dans la suite ci-dessus car elle
 node scripts/check-external-links.js
 ```
 
+## Simulateur : questions révélées une à une
+
+Les questions sont regroupées par étape et par bloc dans `questionSetsByStep` (`assets/js/config.js`). Dans un bloc, `simulator.js` n'affiche une question que lorsque la précédente a une réponse (`renderStepQuestionMode`), puis fait défiler la page vers la suivante (`scrollToNextQuestion`). Certaines questions sont masquées selon les réponses (`updateConditionalQuestions`: enfants, formation, loyer). Les `<select>` cachés servent de valeurs de repli; les vrais choix sont les boutons radio `.choice-input`. Pour ajouter une question: la déclarer dans `questionSetsByStep`, ajouter son champ dans `requiredFieldsForCurrentStep` si elle est obligatoire, puis compléter `engine.js` et `simulator-rules.js`.
+
 ## Suivi du trafic
 
 Le site utilise Google Tag Manager avec le conteneur `GTM-NFQRW574`.
