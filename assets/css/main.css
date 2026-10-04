@@ -7,15 +7,6 @@
     font-display: swap;
   }
 
-  @font-face {
-    font-family: 'Merriweather Sans';
-    src: url('../fonts/merriweather-sans-variable.woff2') format('woff2'),
-         url('../fonts/merriweather-sans-variable.ttf') format('truetype');
-    font-weight: 300 800;
-    font-style: normal;
-    font-display: swap;
-  }
-
   :root {
     --forest: #17293C;
     --vaud: #2C4460;
