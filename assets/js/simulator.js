@@ -272,7 +272,8 @@
     if (subtitle) subtitle.textContent = SIMULATOR_BLOCK_HINTS[1][0];
   }
 
-  // Amène doucement la prochaine question sans réponse dans l'écran, sans jamais remonter la page.
+  // Fait glisser la page du minimum nécessaire pour que la prochaine question soit entièrement visible.
+  // Rien ne bouge si elle l'est déjà, et la page ne remonte jamais.
   function scrollToNextQuestion() {
     var stepEl = document.getElementById('step' + currentStep);
     if (!stepEl) return;
@@ -280,13 +281,28 @@
       return group.offsetParent !== null && !group.querySelector('input.choice-input:checked');
     });
     if (!next) return;
-    var rect = next.getBoundingClientRect();
-    var margin = 96;
-    if (rect.top > margin && rect.top < window.innerHeight * 0.6) return;
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.setTimeout(function() {
-      window.scrollTo({ top: window.pageYOffset + next.getBoundingClientRect().top - margin, behavior: reduce ? 'auto' : 'smooth' });
-    }, 120);
+      var rect = next.getBoundingClientRect();
+      var topLimit = 96;
+      var bottomGap = 24;
+      var overflow = rect.bottom - (window.innerHeight - bottomGap);
+      if (overflow <= 0) return;
+      var distance = Math.min(overflow, rect.top - topLimit);
+      if (distance <= 0) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var startY = window.pageYOffset;
+      if (reduce) { window.scrollTo({ top: startY + distance, behavior: 'instant' }); return; }
+      var duration = Math.min(900, 450 + distance * 1.2);
+      var startTime = null;
+      function step(now) {
+        if (startTime === null) startTime = now;
+        var t = Math.min(1, (now - startTime) / duration);
+        var eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        window.scrollTo({ top: startY + distance * eased, behavior: 'instant' });
+        if (t < 1) window.requestAnimationFrame(step);
+      }
+      window.requestAnimationFrame(step);
+    }, 350);
   }
 
   // ─── Navigation ──────────────────────────────────────────────────────────
