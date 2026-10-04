@@ -929,11 +929,6 @@
     color: var(--forest);
     margin: 0 auto 1.1rem;
   }
-  .guide-page.about-page .about-hero-title span {
-    display: block;
-    font-style: italic;
-    color: var(--vaud);
-  }
   .guide-page.about-page .about-hero-lead {
     max-width: 50rem;
     margin: 0 auto;
