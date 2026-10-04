@@ -158,6 +158,7 @@
   .btn-primary .btn-arrow,
   .btn-secondary .btn-arrow,
   .feedback-link .btn-arrow { display:inline-flex; transition:transform 0.18s ease; }
+  .guide-page .btn-primary .btn-arrow, .guide-page .btn-secondary .btn-arrow { color:inherit; }
   .btn-primary:hover .btn-arrow,
   .btn-secondary:hover .btn-arrow,
   .feedback-link:hover .btn-arrow { transform:translateX(2px); }
@@ -594,7 +595,7 @@
   .guide-detail-page .guide-section { padding-top:1.75rem; }
   .guide-detail-page .guide-section .container { max-width:1180px; }
   .guide-detail-page .guide-summary { max-width:54rem; margin:1.15rem auto 0; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none; }
-  .guide-detail-page .guide-summary-kicker { margin-bottom:0.9rem; color:#7a7b73; font-size:0.72rem; font-weight:700; letter-spacing:0.08em; }
+  .guide-detail-page .guide-summary-kicker { margin-bottom:0.9rem; color:var(--warm-gray); font-size:0.72rem; font-weight:700; letter-spacing:0.08em; }
   .guide-detail-page .guide-summary-links { display:flex; flex-direction:column; gap:0.7rem; }
   .guide-detail-page .guide-summary-link { display:flex; align-items:flex-start; justify-content:flex-start; min-height:0; padding:0; border:none; border-radius:0; background:none; box-shadow:none; color:var(--vaud); font-size:0.93rem; font-weight:500; line-height:1.45; }
   .guide-detail-page .guide-summary-link::before { content:'•'; display:inline-block; margin-right:0.7rem; color:var(--vaud); font-weight:700; }
@@ -1192,10 +1193,10 @@
   .site-footer-mail { display:flex; width:fit-content; max-width:100%; padding:0.78rem 1rem; border-radius:var(--radius-sm); border:1px solid rgba(245,243,238,0.16); background:rgba(245,243,238,0.08); color:#F5F3EE; text-decoration:none; font-size:1rem; font-weight:800; letter-spacing:-0.03em; transition:background 0.18s, border-color 0.18s, transform 0.18s; }
   .site-footer-mail:hover { background:rgba(245,243,238,0.14); border-color:rgba(245,243,238,0.28); }
   .site-footer-nav { position:static !important; inset:auto !important; height:auto !important; display:flex; flex-direction:column; gap:0.72rem; align-self:start; background:transparent !important; border:0 !important; box-shadow:none !important; padding:0 !important; transform:none !important; }
-  .site-footer-heading { color:rgba(245,243,238,0.46); font-size:0.78rem; font-weight:800; margin-bottom:0.45rem; }
+  .site-footer-heading { color:rgba(245,243,238,0.66); font-size:0.78rem; font-weight:800; margin-bottom:0.45rem; }
   .site-footer-nav a { color:rgba(245,243,238,0.72); text-decoration:none; font-size:1.08rem; font-weight:800; line-height:1.3; transition:color 0.18s, transform 0.18s; }
   .site-footer-nav a:hover { color:#F5F3EE; transform:translateX(2px); }
-  .site-footer-bottom { max-width:1080px; margin:0 auto; padding:1.25rem 3.4rem 0; display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; color:rgba(245,243,238,0.38); font-size:0.78rem; font-weight:700; line-height:1.5; }
+  .site-footer-bottom { max-width:1080px; margin:0 auto; padding:1.25rem 3.4rem 0; display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; color:rgba(245,243,238,0.62); font-size:0.78rem; font-weight:700; line-height:1.5; }
   .btn-primary:focus-visible,
   .btn-secondary:focus-visible,
   .btn-nav:focus-visible,
