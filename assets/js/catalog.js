@@ -94,8 +94,9 @@
     return window.matchMedia && window.matchMedia('(max-width: 600px)').matches;
   }
 
+  // Catégories repliables sur tous les écrans (le nom date de la version mobile seule).
   function isCatalogMobileThemeMode() {
-    return window.matchMedia && window.matchMedia('(max-width: 600px)').matches;
+    return true;
   }
 
   catalogWasMobileThemeMode = isCatalogMobileThemeMode();
