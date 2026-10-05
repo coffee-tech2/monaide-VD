@@ -1982,13 +1982,15 @@
     .cat-group.is-open .cat-group-toggle { border-bottom:1px solid #DCE3EA; }
   }
 
-  /* Pied de page : mention du soutien « À nous de jouer ! » (logo sur pastille claire, car il contient du gris foncé). */
-  .site-footer-support { max-width:1080px; margin:1.4rem auto 0; padding:0 3.4rem; display:flex; align-items:center; gap:1rem; }
+  /* Pied de page : mention du soutien « À nous de jouer ! » en 3ᵉ colonne (logo sur pastille claire, car il contient du gris foncé). */
+  @media (min-width: 901px) {
+    .site-footer-card { grid-template-columns:1.15fr 1fr auto; gap:3rem; }
+  }
+  .site-footer-support { display:flex; flex-direction:column; align-items:flex-start; gap:0.7rem; }
   .site-footer-support-label { color:rgba(245,243,238,0.78); font-size:0.82rem; font-weight:700; }
-  .site-footer-support-logo { display:inline-flex; align-items:center; background:#FFFFFF; border-radius:12px; padding:0.45rem 0.9rem; line-height:0; }
-  .site-footer-support-logo img { height:116px; width:auto; display:block; }
+  .site-footer-support-logo { display:inline-flex; align-items:center; background:#FFFFFF; border-radius:12px; padding:0.4rem 0.7rem; line-height:0; }
+  .site-footer-support-logo img { height:88px; width:auto; display:block; }
   .site-footer-support-logo:focus-visible { outline:2px solid #FFFFFF; outline-offset:3px; }
   @media (max-width: 768px) {
-    .site-footer-support { padding:0 0.45rem; flex-direction:column; align-items:flex-start; gap:0.6rem; }
-    .site-footer-support-logo img { height:96px; }
+    .site-footer-support-logo img { height:76px; }
   }
