@@ -1994,3 +1994,8 @@
   @media (max-width: 768px) {
     .site-footer-support-logo img { height:76px; }
   }
+
+  /* Bouton « Retour au répertoire » des guides : même contour bleu-gris que le reste, plus de beige. */
+  .guide-backlink-chip, .guide-detail-page .guide-backlink-chip { background:#FFFFFF; border-color:var(--border); }
+  .guide-backlink-chip:hover, .guide-detail-page .guide-backlink-chip:hover { background:rgba(var(--vaud-rgb),0.06); border-color:rgba(var(--vaud-rgb),0.55); color:var(--vaud); }
+  .guide-stamp { border-color:var(--border); }
