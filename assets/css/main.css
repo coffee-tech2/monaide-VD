@@ -2005,3 +2005,6 @@
   .guide-backlink-chip, .guide-detail-page .guide-backlink-chip { background:#FFFFFF; border-color:var(--border); }
   .guide-backlink-chip:hover, .guide-detail-page .guide-backlink-chip:hover { background:rgba(var(--vaud-rgb),0.06); border-color:rgba(var(--vaud-rgb),0.55); color:var(--vaud); }
   .guide-stamp { border-color:var(--border); }
+
+  /* Répertoire : cartes de catégories un peu moins arrondies, sans compteur. */
+  .cat-group { border-radius:6px; }

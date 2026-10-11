@@ -190,12 +190,11 @@
         return renderCatalogCardMarkup(item, meta.dataCat);
       })
       .join('');
-    var countLabel = groupCards.length + ' aide' + (groupCards.length > 1 ? 's' : '');
 
     return '<div class="cat-group" id="' + escapeCatalogRenderHtml(groupMeta.id) + '">'
       + '<div class="cat-group-header"><button type="button" class="cat-group-toggle" onclick="toggleCatalogGroupMobile(event, this)" aria-expanded="false">'
       + '<span class="cat-group-copy"><span class="cat-group-title">' + escapeCatalogRenderHtml(groupMeta.title || '') + '</span><span class="cat-group-sub">' + escapeCatalogRenderHtml(groupMeta.subtitle || '') + '</span></span>'
-      + '<span class="cat-group-count">' + escapeCatalogRenderHtml(countLabel) + '</span><span class="cat-group-chevron" aria-hidden="true"></span>'
+      + '<span class="cat-group-chevron" aria-hidden="true"></span>'
       + '</button></div>'
       + '<div class="cat-cards-grid">' + cardsMarkup + '</div>'
       + '</div>';
