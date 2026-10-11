@@ -1982,17 +1982,23 @@
     .cat-group.is-open .cat-group-toggle { border-bottom:1px solid #DCE3EA; }
   }
 
-  /* Pied de page : mention du soutien « À nous de jouer ! » en 3ᵉ colonne (logo sur pastille claire, car il contient du gris foncé). */
-  @media (min-width: 901px) {
-    .site-footer-card { grid-template-columns:1.15fr 1fr auto; gap:3rem; }
-  }
-  .site-footer-support { display:flex; flex-direction:column; align-items:flex-start; gap:0.7rem; }
+  /* Pied de page : une seule bande bleu nuit, deux colonnes, puis une ligne du bas avec le soutien « À nous de jouer ! » (logo sur pastille claire, car il contient du gris foncé). */
+  .site-footer { background:var(--forest); padding:2.4rem 2rem 1.3rem; }
+  .site-footer-card { background:transparent; padding:0; border-radius:0; grid-template-columns:1.3fr 1fr; gap:3rem; }
+  .site-footer-bottom { align-items:center; margin-top:1.6rem; padding:1.1rem 0 0; border-top:1px solid rgba(245,243,238,0.14); }
+  .site-footer-support { display:flex; align-items:center; gap:0.8rem; }
   .site-footer-support-label { color:rgba(245,243,238,0.78); font-size:0.82rem; font-weight:700; }
-  .site-footer-support-logo { display:inline-flex; align-items:center; background:#FFFFFF; border-radius:12px; padding:0.4rem 0.7rem; line-height:0; }
-  .site-footer-support-logo img { height:88px; width:auto; display:block; }
+  .site-footer-support-logo { display:inline-flex; align-items:center; background:#FFFFFF; border-radius:10px; padding:0.3rem 0.5rem; line-height:0; }
+  .site-footer-support-logo img { height:56px; width:auto; display:block; }
   .site-footer-support-logo:focus-visible { outline:2px solid #FFFFFF; outline-offset:3px; }
+  .site-footer-legal { max-width:46ch; text-align:right; }
   @media (max-width: 768px) {
-    .site-footer-support-logo img { height:76px; }
+    .site-footer { padding:1.6rem 1.1rem calc(1.15rem + env(safe-area-inset-bottom, 0px)); }
+    .site-footer-card { grid-template-columns:1fr; gap:1.45rem; }
+    .site-footer-bottom { flex-direction:column; align-items:flex-start; padding:1rem 0 0; }
+    .site-footer-support-logo img { height:52px; }
+    .site-footer-legal { text-align:left; max-width:none; }
+    .site-footer-card a.site-footer-brand { display:inline-flex; padding-block:0; }
   }
 
   /* Bouton « Retour au répertoire » des guides : même contour bleu-gris que le reste, plus de beige. */
