@@ -336,7 +336,7 @@ window.MONAIDE_SIMULATION_RULES = [
     when: 'needsAidesLogement',
     handler: 'addAidesLogementResult',
     confidence: 'à vérifier',
-    guardrails: ['Ne sort pas si RI déjà indiqué comme aide actuelle.', 'Variable selon commune et statut.'],
+    guardrails: ['Ne sort pas si RI déjà indiqué comme aide actuelle.', 'Ne sort pas pour un loyer élevé seul si le revenu dépasse 5000 CHF par mois (un retard de loyer la garde).', 'Variable selon commune et statut.'],
     legalRef: 'LL (RSV 840.11) ; RAIL (RSV 840.11.3)',
     sourceType: 'aide locale/logement'
   },

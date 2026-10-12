@@ -922,7 +922,7 @@
       needsGardeMalade: flags.aEnfants && (flags.enEmploi || flags.enFormation),
       needsDettes: flags.dettes !== 'non',
       needsAideAlimentaire: (flags.besoinAlimentaireProbable || flags.dettes === 'dettes' || flags.dettes === 'surendette') && !flags.sansStatut,
-      needsAidesLogement: flags.logement.includes('Locataire') && !flags.alreadyRI && (flags.loyerEleve || flags.dettes === 'loyer'),
+      needsAidesLogement: flags.logement.includes('Locataire') && !flags.alreadyRI && ((flags.loyerEleve && flags.revenu !== 'plus5000') || flags.dettes === 'loyer'),
       needsFallback: !res.length
     };
   }

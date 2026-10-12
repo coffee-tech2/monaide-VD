@@ -767,6 +767,20 @@ const scenarios = [
     }
   },
   {
+    name: 'Loyer élevé avec un revenu de plus de 5000 CHF ne propose pas les aides logement',
+    run() {
+      const results = runProfile({ loyer: 'plus1800', revenu: 'plus5000', fortune: 'plus15000' });
+      assert(indexOfResult(results, 'Aides logement') === -1, 'Aides logement should not be proposed for a high income with a high rent alone');
+    }
+  },
+  {
+    name: 'Retard de loyer garde les aides logement même avec un revenu élevé',
+    run() {
+      const results = runProfile({ loyer: 'plus1800', revenu: 'plus5000', dettes: 'loyer' });
+      assert(indexOfResult(results, 'Aides logement') !== -1, 'Aides logement should stay proposed when there is a rent arrear, whatever the income');
+    }
+  },
+  {
     name: 'Rente-pont reste probable pour une fortune réellement basse',
     run() {
       const results = runProfile({
