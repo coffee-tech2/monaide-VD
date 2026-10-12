@@ -18,6 +18,7 @@ const checks = [
   { label: 'Lien résultat → répertoire', cmd: ['node', path.join(root, 'scripts/result-catalog-link-check.js')] },
   { label: 'Smoke simulateur', cmd: ['node', path.join(root, 'scripts/simulator-smoke-test.js')] },
   { label: 'Régression simulateur', cmd: ['node', path.join(root, 'scripts/simulator-regression-test.js')] },
+  { label: 'Contrastes', cmd: ['node', path.join(root, 'scripts/contrast-check.js')] },
   { label: 'git diff --check', cmd: ['git', '-C', root, 'diff', '--check'] }
 ];
 
