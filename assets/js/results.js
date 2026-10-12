@@ -148,24 +148,6 @@
     return sentence;
   }
 
-  function getResultsFirstContactMeta(results) {
-    if (!results || !results.length) return null;
-    var primary = results.find(function(item) {
-      return item && !isSecondaryResult(item.nom || '');
-    }) || results[0];
-    if (!primary || !primary.nom) return null;
-    var rule = (RESULTS_UI_CONFIG.firstContactRules || []).find(function(item) {
-      return matchesResultPatterns(primary.nom || '', item.patterns);
-    });
-    if (!rule) return null;
-    return {
-      title: rule.title,
-      text: rule.text,
-      actionLabel: rule.actionLabel,
-      actionUrl: rule.actionKey === 'CSR_FINDER' ? CSR_FINDER_URL : LINKS[rule.actionKey]
-    };
-  }
-
   function shouldShowWhy(result) {
     if (!result) return false;
     return !!(result.why || result.desc);
@@ -521,19 +503,6 @@
     return '<div class="results-footer-banner ' + (extraClass || '') + ' result-reveal" style="' + (extraStyle || '') + '"><div class="results-footer-banner-title">' + escapeHtml(title) + '</div><div class="results-footer-banner-body">' + bodyHtml + '</div></div>';
   }
 
-  function buildTopActionsBanner(topActions, resultCount) {
-    if (!topActions.length) return '';
-    var bodyHtml = '';
-    topActions.forEach(function(item, index) {
-      bodyHtml += '<div style="font-size:0.79rem;color:var(--dark);line-height:1.6;margin-bottom:' + (index === topActions.length - 1 ? '0' : '0.4rem') + ';"><strong style="color:var(--orange-dark);">' + (index + 1) + '.</strong> <strong>' + item.nom + ' :</strong> ' + item.action + '</div>';
-    });
-    return renderResultsFooterBanner((RESULTS_UI_CONFIG.summaryTitles || {}).start || 'Par quoi commencer', bodyHtml, Math.min(resultCount, 8), 'margin-top:0.25rem;');
-  }
-
-  function buildDocsBanner(docList, resultCount) {
-    return '';
-  }
-
   function buildRegionalBanner(regionalOrientation, resultCount) {
     if (!regionalOrientation) return '';
     var bodyHtml = '<div style="font-size:0.79rem;color:var(--dark);line-height:1.65;margin-bottom:0.6rem;">Pour <strong>' + escapeHtml(regionalOrientation.commune) + '</strong>, le rep&#232;re territorial le plus probable est <strong>' + escapeHtml(regionalOrientation.label) + '</strong>. Pour les aides financi&#232;res et les prestations sociales, v&#233;rifie ensuite le CSR et l\'agence AAS de ta r&#233;gion.</div><div class="result-link-row"><a href="' + regionalOrientation.csrUrl + '" target="_blank" rel="noopener noreferrer" class="result-link-btn">Voir le CSR</a><a href="' + regionalOrientation.aasUrl + '" target="_blank" rel="noopener noreferrer" class="result-link-btn">Voir l&#8217;agence AAS</a></div>';
@@ -656,9 +625,6 @@
     }
 
     var docList = Object.keys(docsMap).slice(0, 8);
-    if (docList.length) {
-      list.innerHTML += buildDocsBanner(docList, res.length);
-    }
 
     if (regionalOrientation) {
       list.innerHTML += buildRegionalBanner(regionalOrientation, res.length);
