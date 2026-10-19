@@ -168,7 +168,7 @@
       ],
       firstSteps: [
         'Ouvrir les formulaires AI Vaud',
-        'Ne pas attendre pour déposer la demande',
+        'Déposer la demande assez tôt',
         'Se faire aider par son médecin, psychiatre ou psychologue si besoin'
       ],
       bodyIntro: 'Si une maladie ou un accident limite durablement le travail, l’AI peut ouvrir une réadaptation, des aides techniques ou, selon le dossier, une rente.',
@@ -178,16 +178,16 @@
         {
           title: 'Conditions',
           items: [
-            'Incapacité ≥ 40% pendant au moins 1 an',
-            'Durée d’assurance et de cotisation à vérifier selon la situation',
-            'Rente partielle dès 40%, entière dès 70%'
+            'Incapacité de travail d’au moins 40 % en moyenne pendant 1 an, puis invalidité d’au moins 40 %',
+            'Avoir cotisé au moins 3 ans à l’AVS/AI',
+            'Rente proportionnelle au taux d’invalidité dès 40 %, rente entière dès 70 %'
           ]
         },
         {
           title: 'Démarche',
           items: [
-            'Formulaire 001.303 à l’Office AI Vaud',
-            'Déposer la demande sans trop attendre',
+            'Formulaire 001.001 (demande de prestations AI pour adultes) à l’Office AI Vaud',
+            'Déposer la demande assez tôt : la rente ne peut pas être versée avant 6 mois après le dépôt de la demande',
             'Ton médecin, ton psychiatre ou ton psychologue peut t’accompagner'
           ]
         }

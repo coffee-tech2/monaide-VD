@@ -850,10 +850,10 @@
       nom: 'Assurance invalidité (AI)',
       badge: 'verifier',
       desc: (flags.permisF || flags.permisL || flags.permisS)
-        ? 'L’AI peut être une piste si la situation de santé est durable, mais avec ton statut il faut souvent vérifier plus finement les conditions d’assurance et de séjour.'
+        ? 'L’AI peut être une piste si la situation de santé est durable, mais avec ton statut, les conditions d’assurance et de séjour sont à vérifier de plus près.'
         : flags.incapacite === 'totale'
         ? 'L’AI peut être une piste si la situation de santé dure et touche vraiment le travail, la formation ou l’autonomie. L’AI ne sert pas seulement pour une rente : elle peut aussi ouvrir des mesures de soutien ou de réadaptation.'
-        : 'L’AI peut être une piste si la situation de santé dure et touche le travail, la formation ou l’autonomie. Il faut ensuite une vraie évaluation du dossier.',
+        : 'L’AI peut être une piste si la situation de santé dure et touche le travail, la formation ou l’autonomie. L’office AI évalue ensuite ton dossier.',
       action: (flags.permisF || flags.permisL || flags.permisS)
         ? '1. Si la situation de santé dure, demande un premier avis à AI Vaud.\n2. Fais vérifier en parallèle si ton cadre d’assurance ou de séjour change la suite.\n3. Garde les certificats médicaux et les courriers déjà reçus.'
         : '1. Si la situation dure, prends un premier contact avec AI Vaud.\n2. Garde les certificats médicaux déjà disponibles, même si le dossier n’est pas encore parfait.\n3. Note les dates importantes : début des arrêts, hospitalisations, changements de travail ou de formation.\n4. Si tu ne sais pas si l’AI est le bon service, demande-le clairement dès le premier contact.',
