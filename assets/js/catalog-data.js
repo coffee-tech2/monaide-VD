@@ -71,7 +71,7 @@
             'Domicile dans le canton de Vaud',
             'Cadre de séjour compatible à vérifier selon la situation',
             'Prime LAMal obligatoire concernée, pas les assurances complémentaires',
-            'Droit calculé avec le revenu déterminant unifié (RDU), selon revenu, fortune, ménage et région de primes',
+            'Droit calculé selon le revenu de ta dernière taxation, ta fortune et la composition de ton ménage',
             'Dernière taxation fiscale définitive souvent utilisée, sauf changement important de situation financière',
             'Bénéficiaires RI ou PC AVS/AI : traitement spécifique du subside'
           ]

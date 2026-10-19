@@ -582,7 +582,7 @@
       res.push(buildResult({
         nom: 'Subside assurance maladie (OVAM)',
         badge: 'verifier',
-        desc: 'Tes revenus peuvent faire penser à un subside, mais une fortune importante peut modifier le calcul du Revenu Déterminant Unifié (RDU). Il faut donc passer par le calcul officiel.',
+        desc: 'Tes revenus peuvent faire penser à un subside, mais une fortune importante peut modifier le calcul. Le calcul officiel est donc la meilleure première étape.',
         action: '1. Utilise le simulateur officiel du canton avec tes revenus et ta fortune.\n2. Prépare ta police LAMal, ta taxation ou les informations de fortune disponibles.\n3. Si le résultat semble positif ou peu clair, demande de l’aide à une agence AAS avant de conclure.' + lamalRetroactiveNote,
         today: 'Commence par le calcul officiel, car la fortune peut changer le résultat.',
         docs: ['Police LAMal', 'Revenus du ménage', 'Taxation ou estimation de fortune'],
@@ -599,7 +599,7 @@
           ? 'Le subside reste une piste importante, mais avec ton statut de séjour il vaut mieux faire vérifier le cadre exact par une AAS ou un service spécialisé en plus du calcul officiel.'
           : flags.primeElevee
           ? 'Tes revenus semblent compatibles avec un subside et ta prime maladie pèse lourd dans le budget. C’est une piste importante à vérifier.'
-          : 'Avec ton niveau de revenus, un subside est probablement envisageable. Le montant exact dépend ensuite du Revenu Déterminant Unifié (RDU), qui tient compte des revenus et de la fortune.',
+          : 'Avec ton niveau de revenus, un subside est probablement envisageable. Le montant exact dépend ensuite de ton revenu et de ta fortune, selon le calcul officiel de l’OVAM.',
         action: (flags.permisF || flags.permisL)
           ? '1. Fais d’abord le calcul officiel du subside.\n2. Si le résultat semble positif, prépare ta police LAMal, tes revenus et ton permis.\n3. Dépose la demande avec une agence d’assurances sociales (AAS) pour éviter une erreur de dossier.\n4. Si la question touche aussi au séjour, demande en parallèle un avis au CSP Fraternité.' + lamalRetroactiveNote
           : '1. Utilise le simulateur officiel du canton pour estimer ton droit.\n2. Prépare ta police LAMal, ta dernière taxation ou une estimation de tes revenus.\n3. Si la piste paraît positive, dépose la demande en ligne ou avec une agence AAS.\n4. Garde la décision reçue : elle pourra aussi servir de justificatif pour d’autres aides.' + lamalRetroactiveNote,
