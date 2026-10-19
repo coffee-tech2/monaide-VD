@@ -630,7 +630,7 @@
       res.push(buildResult({
         nom: 'Revenu d\'insertion (RI)',
         badge: 'verifier',
-        desc: 'Même à la retraite, le CSR peut évaluer si un soutien social ou un RI subsidiaire doit être examiné, surtout si les PC ne suffisent pas encore ou si la situation est urgente.',
+        desc: 'Le RI est un dernier recours, après la rente AVS et les PC. Si les PC ne suffisent pas ou si la situation est urgente, tu peux demander au CSR ce qui est possible.',
         action: '1. Commence par la piste PC AVS/AI.\n2. En parallèle, contacte le CSR si tu n’arrives plus à couvrir les besoins de base ou si tu attends encore une décision.\n3. Le CSR pourra voir avec toi si un appui social ou un RI subsidiaire doit être examiné.',
         today: 'Garde le CSR comme filet de sécurité si les charges courantes ne passent plus.',
         docs: ['Décision AVS ou AI', 'Montant de la rente', 'Bail, primes maladie, relevés bancaires'],
@@ -645,10 +645,10 @@
         badge: flags.permisF ? 'verifier' : 'probable',
         strongProbable: !flags.permisF,
         desc: flags.permisF
-          ? 'Tes revenus et ton épargne font ressortir le RI comme piste à examiner, mais avec un permis F il vaut mieux faire vérifier le bon cadre par le CSR et, si besoin, par un service spécialisé en migration.'
+          ? 'D\'après tes réponses, le RI est une piste à examiner, mais avec un permis F il vaut mieux faire vérifier le bon cadre par le CSR et, si besoin, par un service spécialisé en migration.'
           : (flags.loyerEleve || flags.grandeCommune)
-          ? 'Tes revenus, ton épargne et ton contexte de vie font ressortir le RI comme une piste forte. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e.'
-          : 'Tes revenus et ton épargne font ressortir le RI comme une piste sérieuse. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',
+          ? 'D\'après tes réponses, le RI paraît être une piste à examiner en priorité. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e.'
+          : 'D\'après tes réponses, le RI pourrait être une piste sérieuse. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',
         action: flags.permisF
           ? '1. Contacte le CSR pour demander un entretien d’évaluation.\n2. Précise ton statut de séjour dès le premier contact : ça évite d’être orienté·e vers le mauvais service.\n3. Prépare tes relevés de compte, ton bail et tes justificatifs de revenus.\n4. Si la question du permis devient centrale, complète avec le CSP Fraternité.'
           : '1. Trouve le CSR de ta commune et demande un entretien d’évaluation.\n2. Explique simplement : revenus actuels, loyer, personnes dans le ménage, dettes urgentes s’il y en a.\n3. Prépare : pièce d’identité, relevés de compte des 3 derniers mois, bail, dernière prime maladie, bulletins de salaire ou preuve d’absence de revenu.\n4. Tu peux prendre contact même si ton dossier n’est pas parfait : le CSR t’indiquera les pièces manquantes.',
@@ -668,7 +668,7 @@
         badge: 'verifier',
         desc: flags.permisF
           ? 'Tes revenus sont faibles, mais avec ton statut de séjour et ta fortune, seul un examen individualisé permet de savoir si le RI est envisageable.'
-          : 'Tes revenus sont faibles mais ta fortune pourrait impacter l\'éligibilité. Seul un·e assistant·e social·e peut se prononcer.',
+          : 'Tes revenus sont faibles, mais ton épargne peut jouer sur ton droit au RI. Seul un·e assistant·e social·e peut se prononcer.',
         action: flags.permisF
           ? '1. Contacte le CSR pour un entretien d’évaluation.\n2. Demande clairement si ton statut de séjour change la marche à suivre.\n3. Ajoute une permanence migration si le CSR te le conseille ou si tu reçois des informations contradictoires.'
           : '1. Contacte le CSR de ta commune pour demander un entretien d’évaluation.\n2. Prépare tes relevés de compte, ton bail et tes justificatifs de revenus.\n3. Si tu ne sais pas quoi préparer, demande simplement une liste de documents avant le rendez-vous.',

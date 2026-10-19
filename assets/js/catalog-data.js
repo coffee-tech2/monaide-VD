@@ -118,7 +118,7 @@
         'Prendre un premier rendez-vous, même sans dossier parfait',
         'Préparer identité, revenus, bail et relevés si possible'
       ],
-      bodyIntro: 'Le RI est l’aide financière de dernier recours dans le canton de Vaud. Si tu n’as plus assez pour vivre, la piste passe par le CSR, qui examine ensuite le dossier.',
+      bodyIntro: 'Le RI est l’aide financière de dernier recours dans le canton de Vaud. Si tu n’as plus assez pour vivre, la demande se fait auprès du CSR, qui examine ensuite ton dossier.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'CSR de la région',
       sections: [
@@ -130,8 +130,9 @@
             'Être suisse ou avoir un permis de séjour / une autorisation de renseigner',
             'Avoir des ressources mensuelles inférieures au barème cantonal du RI',
             'Fortune maximale : 4’000 CHF seul·e, 8’000 CHF en couple, +2’000 CHF par enfant, 10’000 CHF maximum par famille',
-            'Pour les personnes de plus de 57 ans : limite de fortune de 10’000 CHF, quelle que soit la situation familiale',
-            'Le RI intervient en dernier recours, après les revenus, assurances sociales, aide familiale possible et autres prestations'
+            'Dès 57 ans, la limite de fortune est de 10’000 CHF, quelle que soit la situation familiale. Pour un couple, il suffit que l’un des deux ait 57 ans',
+            'Le RI intervient en dernier recours, après les revenus, les assurances sociales, l’aide de la famille et les autres prestations',
+            'En attendant la décision d’une autre prestation (chômage, AI, bourse, pension alimentaire, PC Familles), le CSR peut avancer le RI. Cette avance est ensuite remboursée avec la prestation reçue'
           ]
         },
         {
