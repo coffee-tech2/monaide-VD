@@ -2022,27 +2022,27 @@
     },
     {
       id: 'pro-senectute',
-      title: 'Pro Senectute Vaud : services pour les 60+',
+      title: 'Pro Senectute Vaud : services pour les seniors',
       category: 'sante',
-      summary: '60 ans et plus · Conseil administratif et social gratuit',
-      audience: 'Personnes de 60 ans et plus qui ont besoin d’aide dans leurs démarches ou leur quotidien.',
-      purpose: 'Pro Senectute aide à faire le point sur les droits, les démarches et certaines difficultés du quotidien après 60 ans.',
+      summary: 'En âge AVS ou proche de la retraite · Conseil social gratuit',
+      audience: 'Personnes en âge AVS ou proches de la retraite qui ont besoin d’aide dans leurs démarches ou leur quotidien.',
+      purpose: 'Pro Senectute aide à faire le point sur les droits, les démarches et certaines difficultés du quotidien à l’approche de la retraite et après.',
       highlights: [
         'Gratuit',
-        'Très utile pour AVS, PC, impôts et démarches administratives',
-        'Permanences dans tout le canton'
+        'Très utile pour les démarches administratives, l’AVS, les PC et les aides financières',
+        'Consultations sur rendez-vous, dans plusieurs lieux du canton'
       ],
       firstSteps: [
         'Contacter Pro Senectute Vaud',
         'Expliquer ce qui te pose problème',
         'Préparer les courriers ou décisions utiles si tu en as'
       ],
-      bodyIntro: 'Tu as 60 ans ou plus ? Pro Senectute t’aide avec tes démarches administratives, tes impôts, tes droits AVS et PC. Gratuit.',
+      bodyIntro: 'Si tu es en âge AVS ou proche de la retraite, tu peux demander un conseil social gratuit à Pro Senectute : démarches, droits AVS et PC, budget.',
       sections: [
         {
           title: 'Pour qui',
           items: [
-            '60 ans et plus',
+            'En âge AVS ou proche de la retraite',
             'Domicile dans le canton',
             'Quel que soit ton statut'
           ]
@@ -2050,9 +2050,8 @@
         {
           title: 'Démarche',
           items: [
-            'Appeler le 021 323 04 23',
-            'Permanences dans tout le canton',
-            'Accueil de jour dans plusieurs communes'
+            'Appeler le 021 646 17 21 (général) ou le 021 323 04 23 (service social)',
+            'Consultations sur rendez-vous, dans plusieurs lieux du canton'
           ]
         }
       ],

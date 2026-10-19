@@ -372,13 +372,13 @@
   // Règle « pro-senectute » (simulator-rules.js) : Pas de base légale : fondation privée.
   function addProSenectuteResult(res) {
     res.push(buildResult({
-      nom: 'Pro Senectute Vaud : conseil gratuit pour les 60+',
+      nom: 'Pro Senectute Vaud : conseil gratuit pour les seniors',
       catalogAidId: 'pro-senectute',
       badge: 'verifier',
-      desc: 'Aide administrative, déclaration d\'impôts, questions AVS ou PC, accompagnement social : un bon contact si les démarches deviennent lourdes.',
-      action: '1. Contacte Pro Senectute Vaud (service social) : ☏ 021 323 04 23.\n2. Demande un conseil social si les démarches AVS, PC, impôts ou budget deviennent difficiles.\n3. Prépare les décisions AVS/PC, bail, primes maladie et courriers récents.\n4. Si tu aides un proche âgé, demande aussi les possibilités de soutien et de relève.',
+      desc: 'Conseil social gratuit pour les démarches administratives, les questions AVS ou PC et les aides financières : utile si les démarches deviennent lourdes.',
+      action: '1. Contacte Pro Senectute Vaud : ☏ 021 646 17 21 (général) ou ☏ 021 323 04 23 (service social). Les consultations se font sur rendez-vous.\n2. Demande un conseil social si les démarches AVS, PC ou ton budget deviennent difficiles.\n3. Prépare les décisions AVS/PC, bail, primes maladie et courriers récents.\n4. Si tu aides un proche âgé, demande aussi les possibilités de soutien et de relève.',
       docs: ['Décision AVS ou PC', 'Bail et primes maladie', 'Courriers administratifs récents'],
-      today: 'Appelle si tu as 60+ et que les démarches AVS/PC deviennent difficiles à gérer seul·e.',
+      today: 'Si les démarches AVS ou PC deviennent difficiles, tu peux prendre contact avec Pro Senectute.',
       liensSenectute: true
     }));
   }

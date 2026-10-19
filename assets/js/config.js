@@ -557,7 +557,7 @@
       'aminh': ['enfant en situation de handicap aides a domicile aminh'],
       'cms': ['cms soins et aide a domicile'],
       'pro infirmis vaud accompagnement gratuit': ['pro infirmis vaud'],
-      'pro senectute vaud conseil gratuit pour les 60+': ['pro senectute vaud services pour les 60+'],
+      'pro senectute vaud conseil gratuit pour les seniors': ['pro senectute vaud services pour les seniors'],
       'revenu d insertion ri': ['revenu d insertion ri'],
       'allocations familiales': ['allocations familiales'],
       'brapa': ['brapa avances sur pensions alimentaires'],
