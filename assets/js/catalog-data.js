@@ -347,7 +347,6 @@
         }
       ],
       links: [
-        { kind: 'info', label: 'PC AVS/AI', url: 'https://www.ahv-iv.ch/fr/Assurances-sociales/Prestations-complementaires-PC/Generalites' },
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST },
         { kind: 'info', label: 'PC sur le site de la Caisse AVS Vaud', url: window.MONAIDE_LINKS.PC_INFO },
         { kind: 'info', label: 'Guide détaillé', url: '/prestations-complementaires/' }
