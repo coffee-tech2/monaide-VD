@@ -320,7 +320,7 @@
         'Préparer revenus, charges et fortune',
         'Déposer ensuite la demande officielle'
       ],
-      bodyIntro: 'Tu as une rente AVS ou AI mais elle ne suffit pas ? Les PC peuvent compléter le budget de base après examen des revenus, charges et fortune. Dans le canton, le plus simple est souvent de commencer par une agence AAS.',
+      bodyIntro: 'Tu as une rente AVS ou AI mais elle ne suffit pas ? Les PC peuvent compléter le budget de base après examen des revenus, charges et fortune. Dans le canton de Vaud, la demande se dépose auprès de l’agence d’assurances sociales (AAS) de ta région.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'Caisse AVS Vaud, souvent après un premier passage par l’AAS',
       sections: [
@@ -329,8 +329,8 @@
           items: [
             'Avoir droit à une rente AVS ou AI, à une allocation pour impotent AI, ou à des indemnités journalières AI pendant au moins 6 mois',
             'Avoir son domicile et sa résidence habituelle en Suisse',
-            'Pour les personnes hors UE/AELE : délai de séjour à vérifier, souvent 10 ans, ou 5 ans pour réfugiés/apatrides',
-            'Fortune maximale : 100’000 CHF seul·e, 200’000 CHF en couple, 50’000 CHF par enfant',
+            'Hors UE/AELE, il faut en principe avoir vécu 10 ans en Suisse (5 ans pour les personnes réfugiées et apatrides). Pas de délai pour l’UE/AELE',
+            'Fortune maximale : 100’000 CHF seul·e, 200’000 CHF en couple, et 50’000 CHF pour un enfant qui a droit à une rente d’orphelin ou à une rente pour enfant',
             'Les dépenses reconnues doivent dépasser les revenus déterminants',
             'Les PC sont un droit légal si les conditions sont remplies, pas une aide sociale de type RI'
           ]
@@ -340,16 +340,16 @@
           items: [
             'Faire d’abord estimer la situation avec une AAS',
             'Préparer décision AVS/AI, bail, primes maladie, revenus, fortune et charges importantes',
-            'Déposer ensuite la demande officielle auprès de l’agence AVS/AAS ou de la caisse compétente',
+            { text: 'Déposer la demande officielle auprès de l’agence d’assurances sociales (AAS) de ta région de domicile', url: window.MONAIDE_LINKS.AAS_LIST },
             'La Caisse AVS Vaud examine le dossier et rend la décision',
-            'Le droit n’est pas automatique : il faut déposer une demande'
+            'Le droit n’est pas automatique : une demande est nécessaire'
           ]
         }
       ],
       links: [
         { kind: 'info', label: 'PC AVS/AI', url: 'https://www.ahv-iv.ch/fr/Assurances-sociales/Prestations-complementaires-PC/Generalites' },
         { kind: 'action', label: 'Trouver une agence AAS', url: window.MONAIDE_LINKS.AAS_LIST },
-        { kind: 'info', label: 'Caisse AVS Vaud', url: window.MONAIDE_LINKS.CAISSE_AVS_HOME },
+        { kind: 'info', label: 'PC sur le site de la Caisse AVS Vaud', url: window.MONAIDE_LINKS.PC_INFO },
         { kind: 'info', label: 'Guide détaillé', url: '/prestations-complementaires/' }
       ],
       documentationTarget: null

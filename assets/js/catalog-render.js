@@ -102,6 +102,9 @@
     if (!item.sections || !item.sections.length) return '';
     return '<div class="catalog-detail-grid">' + item.sections.map(function(section) {
       return '<div class="catalog-detail-box"><div class="expand-subtitle">' + escapeCatalogRenderHtml(section.title) + '</div><ul class="expand-list">' + (section.items || []).map(function(entry) {
+        if (entry && typeof entry === 'object' && entry.url) {
+          return '<li><a class="expand-list-link" href="' + escapeCatalogRenderHtml(entry.url) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">' + escapeCatalogRenderHtml(entry.text) + '</a></li>';
+        }
         return '<li>' + escapeCatalogRenderHtml(entry) + '</li>';
       }).join('') + '</ul></div>';
     }).join('') + '</div>';

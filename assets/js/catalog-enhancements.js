@@ -123,7 +123,7 @@
       }
 
       card.addEventListener('keydown', function(e) {
-        if (e.target && e.target.closest('.cat-quicklinks')) return;
+        if (e.target && e.target.closest('.cat-quicklinks, .expand-list-link')) return;
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           toggleCatCard(card);

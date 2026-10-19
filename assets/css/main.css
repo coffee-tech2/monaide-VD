@@ -2008,3 +2008,7 @@
 
   /* Répertoire : cartes de catégories un peu moins arrondies, sans compteur. */
   .cat-group { border-radius:6px; }
+
+  /* Lien dans une liste de fiche du répertoire (ex. : trouver son agence AAS). */
+  .expand-list-link { color:var(--accent-text); font-weight:700; text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px; }
+  .expand-list-link:hover { color:var(--orange-dark); }
