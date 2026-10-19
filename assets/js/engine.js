@@ -761,12 +761,12 @@
       nom: 'Assurance chômage (LACI)',
       badge: 'verifier',
       desc: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
-        ? 'Le chômage peut rester une piste, mais avec ton statut ou ton cadre de séjour il faut vérifier plus finement les conditions de cotisation, de domicile en Suisse et l’autorité compétente.'
+        ? 'Le chômage peut rester une piste, mais avec ton statut ou ton cadre de séjour, les conditions de cotisation, de domicile en Suisse et l’autorité compétente sont à vérifier de plus près.'
         : 'Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois durant les 2 dernières années ou si tu es libéré·e des conditions de cotisation dans certains cas, puis si les autres conditions sont remplies.',
       action: (flags.permisL || flags.permisG || flags.permisF || flags.permisS)
         ? '1. Inscris-toi ou fais vérifier ta situation auprès de l’ORP.\n2. Choisis ensuite une caisse de chômage et demande un contrôle de ton droit.\n3. Fais préciser les règles liées à ton permis, ton domicile et ton dernier emploi avant de conclure que tu n’as pas droit.'
-        : '1. Inscris-toi à l’ORP dès que possible si ce n’est pas encore fait.\n2. Choisis une caisse de chômage : c’est elle qui vérifie le droit financier.\n3. Fais vérifier les conditions principales : en général 12 mois de cotisation dans les 2 dernières années, ou une possible libération des conditions de cotisation selon la situation.\n4. Prépare : certificat de travail, attestation de l’employeur, pièce d’identité ou permis, derniers contrats et courriers de fin d’emploi.',
-      today: 'Si ton contrat est terminé ou va se terminer, l’inscription ORP est une priorité à ne pas repousser.',
+        : '1. Inscris-toi à l’ORP dès que possible si ce n’est pas encore fait.\n2. Choisis une caisse de chômage : c’est elle qui vérifie le droit financier et verse les indemnités. Tu lui transmets la confirmation d’inscription de l’ORP, la demande d’indemnité signée et l’attestation de l’employeur.\n3. Fais vérifier les conditions principales : en général 12 mois de cotisation dans les 2 dernières années, ou une possible libération des conditions de cotisation selon la situation.\n4. Prépare : certificat de travail, attestation de l’employeur, pièce d’identité ou permis, derniers contrats et courriers de fin d’emploi.',
+      today: 'Si ton contrat est terminé ou va se terminer, tu peux t’inscrire à l’ORP dès maintenant.',
       docs: ['Certificat de travail', 'Attestation de l’employeur', 'Pièce d’identité ou permis'],
       liensLACI: true,
       liensCadreSejour: flags.permisL || flags.permisF || flags.permisS,

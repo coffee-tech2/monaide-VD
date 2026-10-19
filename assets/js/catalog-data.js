@@ -1245,19 +1245,19 @@
       title: 'Assurance chômage (LACI)',
       category: 'emploi',
       summary: 'Personnes ayant perdu leur emploi · 12 mois cotisés ou exceptions possibles',
-      audience: 'Personnes qui ont perdu leur emploi et doivent s’inscrire rapidement au chômage.',
+      audience: 'Personnes qui ont perdu leur emploi ou vont le perdre, et veulent s’inscrire au chômage.',
       purpose: 'La LACI peut remplacer une partie du salaire après une perte d’emploi, si les conditions de cotisation ou de libération sont remplies et si la personne est apte au placement.',
       highlights: [
-        'L’inscription à l’ORP doit se faire vite',
+        'L’ORP t’inscrit rapidement et te donne les documents pour faire valoir ton droit',
         'Le droit dépend des cotisations ou d’une exception reconnue',
-        'Suivi ORP et recherches d’emploi obligatoires'
+        'Suivi par l’ORP et recherches d’emploi à prévoir chaque mois'
       ],
       firstSteps: [
-        'S’inscrire à l’ORP sans attendre',
+        'S’inscrire à l’ORP dès que tu sais que ton emploi se termine',
         'Préparer les pièces de fin de contrat',
         'Vérifier ensuite les indemnités avec la caisse chômage'
       ],
-      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois sur les 2 dernières années — ou si tu es libéré·e de cette condition (études, maladie, autre motif reconnu). L’inscription à l’ORP doit se faire rapidement.',
+      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois sur les 2 dernières années — ou si tu es dispensé·e de cette condition (études, maladie, divorce, retour de l’étranger…). Tu peux t’inscrire à l’ORP dès que tu sais que ton emploi se termine.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'ORP pour le suivi, caisse de chômage pour les indemnités',
       sections: [
@@ -1265,11 +1265,11 @@
           title: 'Conditions',
           items: [
             'En principe : 12 mois de cotisation durant les 2 dernières années',
-            'Ou libération possible des conditions de cotisation dans certains cas reconnus',
+            'Ou dispense de cotisation dans certains cas : études, maladie, détention de plus de 12 mois, divorce, suppression de rente AI, retour de l’étranger (cas particuliers pour les indépendant·e·s et l’éducation d’un enfant)',
             'Domicile en Suisse',
             'Avoir terminé la scolarité obligatoire et ne pas avoir atteint l’âge AVS',
             'Être disponible et apte au placement',
-            'Faire contrôler son chômage et respecter les obligations ORP',
+            'Respecter le contrôle de l’ORP (recherches d’emploi, rendez-vous)',
             'Le droit aux indemnités est examiné par la caisse de chômage, pas seulement par l’ORP'
           ]
         },
@@ -1278,9 +1278,10 @@
           items: [
             'Commencer les recherches d’emploi dès que tu sais que ton poste n’est plus garanti',
             'S’inscrire à l’ORP en ligne via Job-Room ou au guichet de ta région',
-            'Choisir une caisse de chômage et lui transmettre la demande d’indemnité',
-            'Préparer les attestations employeur des 2 dernières années, contrat, lettre de licenciement et certificats de salaire',
-            'Chaque mois, remettre les preuves de recherches d’emploi et documents demandés'
+            'Préparer pour l’inscription : carte AVS (ou carte d’assurance maladie avec le numéro AVS), pièce d’identité ou permis, CV, diplômes et certificats de travail, dernier contrat et lettre de congé',
+            'Choisir une caisse de chômage',
+            'Transmettre rapidement à la caisse de chômage : la confirmation d’inscription de l’ORP, la demande d’indemnité signée et l’attestation de l’employeur (2 dernières années)',
+            'Chaque mois : remettre à l’ORP tes preuves de recherches d’emploi au plus tard le 5 du mois suivant, et tes indications à la caisse de chômage'
           ]
         }
       ],
