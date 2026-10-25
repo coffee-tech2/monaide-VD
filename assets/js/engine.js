@@ -430,7 +430,7 @@
         catalogAidId: 'menace-expulsion',
         badge: 'probable',
         strongProbable: true,
-        desc: 'C\'est une urgence. Tu as des droits et des délais légaux — mais ils sont courts.',
+        desc: 'Tu as des droits, et des délais légaux à respecter : ils sont courts. Mieux vaut contacter quelqu’un dès maintenant.',
         action: '1. Garde la lettre, l’enveloppe et note la date de réception.\n2. Contacte l’ASLOCA Vaud aujourd’hui : ☏ 021 617 16 17, pour vérifier les délais et tes options (son conseil juridique est réservé aux membres, l’adhésion est donc nécessaire).\n3. Contacte immédiatement le CSR de ta commune si le retard vient d’un manque de revenu.\n4. Ne quitte pas ton logement de toi-même sans avoir fait vérifier la situation et sans décision judiciaire.',
         today: 'C’est une démarche du jour même : ASLOCA puis CSR si le problème est financier.',
         docs: ['Courriers du bailleur ou de l’office des poursuites', 'Enveloppe avec la date de réception si tu l’as', 'Contrat de bail', 'Preuves de paiement ou retards'],
