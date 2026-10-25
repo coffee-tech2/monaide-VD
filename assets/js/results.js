@@ -84,8 +84,9 @@
     var separationEnCours = !!(context && context.separationEnCours);
     if (separationEnCours) {
       if (matchesResultPatterns(name, ['separation', 'divorce'])) return 0.5;
+      if (matchesResultPatterns(name, ['subside lamal'])) return 0.6;
+      if (matchesResultPatterns(name, ['brapa'])) return 0.7;
       if (matchesResultPatterns(name, ['pc familles'])) return 2.5;
-      if (matchesResultPatterns(name, ['subside lamal'])) return 8;
     }
     var aEnfants = !!(context && context.aEnfants);
     if (aEnfants && !urgenceLogement && !dettesActives) {

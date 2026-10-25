@@ -242,7 +242,7 @@
       badge: 'probable',
       strongProbable: true,
       desc: 'Quand le logement ou le budget devient critique, le CSR peut faire un premier point rapidement et t’orienter vers les bons services.',
-      action: '1. Contacte le CSR de ta commune et dis clairement que la situation devient urgente.\n2. Prépare les courriers récents, le bail ou les factures concernées.\n3. Si un bail ou une expulsion est en jeu, contacte aussi l’ASLOCA Vaud : ☏ 021 617 16 17 (son conseil juridique est réservé aux membres).\n4. Ne quitte pas ton logement ou une procédure sans avoir fait vérifier tes options.',
+      action: '1. Contacte le CSR de ta commune et dis clairement que ta situation devient difficile.\n2. Prépare les courriers récents, le bail ou les factures concernées.\n3. Si un bail ou une expulsion est en jeu, contacte aussi l’ASLOCA Vaud : ☏ 021 617 16 17 (son conseil juridique est réservé aux membres).\n4. Ne quitte pas ton logement ou une procédure sans avoir fait vérifier tes options.',
       today: 'Fais ce premier contact sans attendre un dossier complet.',
       docs: ['Pièce d’identité', 'Courriers reçus récemment', 'Contrat de bail ou factures concernées'],
       liensCSR: true
@@ -339,7 +339,7 @@
       badge: 'probable',
       strongProbable: true,
       desc: 'Sans statut régulier, il faut d’abord clarifier les droits de base et les bons services.',
-      action: '1. Va à une permanence du CSP Fraternité avant de lancer plusieurs démarches seul·e.\n2. Apporte passeport/pièce d’identité si tu en as, courriers officiels et preuves de présence ou de situation.\n3. Dis clairement s’il y a urgence : logement, santé, revenu, sécurité.\n4. Demande quelle aide de base est possible sans te mettre en difficulté.',
+      action: '1. Va à une permanence du CSP Fraternité avant de lancer plusieurs démarches seul·e.\n2. Apporte passeport/pièce d’identité si tu en as, courriers officiels et preuves de présence ou de situation.\n3. Dis clairement ce qui t’inquiète le plus : logement, santé, revenu, sécurité.\n4. Demande quelle aide de base est possible sans te mettre en difficulté.',
       today: 'Commence par cette permanence avant d’autres demandes.',
       docs: ['Courriers officiels si tu en as', 'Passeport ou pièce d’identité', 'Toute preuve de présence ou de situation'],
       liensFraternite: true
@@ -362,7 +362,7 @@
       nom: 'Pro Infirmis Vaud : accompagnement gratuit',
       badge: 'verifier',
       desc: 'Tu as un handicap ou une maladie chronique ? Pro Infirmis peut t\'accompagner gratuitement dans toutes tes démarches : AI, logement, emploi, droits.',
-      action: '1. Contacte Pro Infirmis Vaud : ☏ 058 775 34 34.\n2. Dis simplement ce qui te pose problème : AI, logement, travail, budget, mobilité ou démarches administratives.\n3. Prépare les courriers AI/médicaux si tu en as déjà.\n4. Si la situation est urgente, demande une permanence ou le lieu le plus proche.',
+      action: '1. Contacte Pro Infirmis Vaud : ☏ 058 775 34 34.\n2. Dis simplement ce qui te pose problème : AI, logement, travail, budget, mobilité ou démarches administratives.\n3. Prépare les courriers AI/médicaux si tu en as déjà.\n4. Si tu as besoin d’une réponse rapide, demande une permanence ou le lieu le plus proche.',
       docs: ['Courriers AI ou médicaux si disponibles', 'Pièce d’identité', 'Questions principales notées à l’avance'],
       today: 'Très utile si tu te sens perdu·e dans les démarches AI, logement ou emploi.',
       liensProInfirmis: true
@@ -470,7 +470,7 @@
       desc: grandeCommune
         ? 'Dans certaines communes vaudoises, il existe des soutiens liés au loyer, notamment l’aide individuelle au logement pour certaines familles. Cela dépend de la commune et des conditions.'
         : 'Certaines communes ou fondations proposent des soutiens liés au loyer ou au maintien dans le logement. Cela dépend fortement du lieu et de la situation.',
-      action: '1. Regarde si ta commune propose une aide logement, notamment l’AIL si tu es une famille.\n2. Attention : l’AIL existe seulement dans certaines communes et ne concerne pas les personnes au RI ou aux PC AVS/AI.\n3. Prépare ton bail, ton dernier loyer, tes revenus et la composition du ménage.\n4. Si tu as reçu un rappel ou une menace d’expulsion, traite cela comme une urgence : ASLOCA et CSR.',
+      action: '1. Regarde si ta commune propose une aide logement, notamment l’AIL si tu es une famille.\n2. Attention : l’AIL existe seulement dans certaines communes et ne concerne pas les personnes au RI ou aux PC AVS/AI.\n3. Prépare ton bail, ton dernier loyer, tes revenus et la composition du ménage.\n4. Si tu as reçu un rappel ou une menace d’expulsion, contacte dès maintenant l’ASLOCA et le CSR.',
       docs: ['Contrat de bail', 'Dernier avis de loyer', 'Revenus actuels ou budget mensuel'],
       today: 'Garde cette piste si ton loyer pèse trop lourd ou si tu crains de ne plus réussir à le tenir.',
       liensDettes: false
@@ -489,19 +489,6 @@
       docs: ['Factures ou justificatifs du frais concerné', 'Budget ou preuve de revenu si demandé', 'Composition du ménage'],
       today: 'Garde cette piste surtout si tu as des enfants, des frais du quotidien lourds ou si tu vis dans une grande commune.',
       liensCommunes: true
-    }));
-  }
-
-  // Règle « garde-enfants-malades » (simulator-rules.js) : Pas de base légale : service associatif (Croix-Rouge vaudoise).
-  function addGardeEnfantsMaladesResult(res, flags) {
-    res.push(buildResult({
-      nom: 'Garde d’enfants malades : soutien ponctuel aux parents',
-      badge: 'verifier',
-      desc: 'Quand un enfant tombe malade et qu’aucun parent ne peut rester à domicile, il existe parfois des solutions de garde ponctuelles à demander selon les conditions du service.',
-      action: '1. Vérifie les conditions de la Croix-Rouge vaudoise ou d’un service de garde ponctuelle de ta région.\n2. Prépare l’âge de l’enfant, le motif de garde et la durée probable du besoin.\n3. Demande le tarif, les délais et les conditions avant de compter dessus.\n4. Si le problème revient souvent, demande aussi une orientation plus globale via le CSR ou la commune.',
-      docs: ['Âge de l’enfant', 'Attestation ou information médicale si disponible', 'Horaires de travail ou formation concernés'],
-      today: 'Garde cette piste comme solution pratique si un enfant malade bloque le travail, la formation ou l’organisation familiale.',
-      liensGardeEnfants: true
     }));
   }
 
@@ -528,12 +515,26 @@
         ? 'Quand une séparation commence avec des enfants, clarifier tôt pension, garde, budget et premières démarches aide souvent.'
         : 'Quand une séparation ou un divorce commence, il est utile de clarifier rapidement les premiers points administratifs et financiers.',
       action: flags.aEnfants
-        ? '1. Fais une liste courte des sujets urgents : sécurité, enfants, logement, pension, budget, assurances.\n2. Si une décision fixe déjà une pension et qu’elle n’est pas payée, appelle le BRAPA au 021 316 52 21.\n3. Prépare jugement, ordonnance, convention, preuves de non-paiement, revenus et frais des enfants.\n4. Si la séparation crée une urgence financière ou de logement, contacte aussi le CSR. S’il y a violence ou peur, passe d’abord par les ressources de protection.'
+        ? '1. Fais une liste courte de ce qui compte le plus : sécurité, enfants, logement, pension, budget, assurances.\n2. Si une décision fixe déjà une pension et qu’elle n’est pas payée, appelle le BRAPA au 021 316 52 21.\n3. Prépare jugement, ordonnance, convention, preuves de non-paiement, revenus et frais des enfants.\n4. Si la séparation met ton budget ou ton logement en difficulté, contacte aussi le CSR. S’il y a violence ou peur, passe d’abord par les ressources de protection.'
         : '1. Clarifie d’abord ce qui change concrètement : logement, budget, assurances, dettes, courrier.\n2. Rassemble les documents importants avant les rendez-vous : bail, revenus, comptes, décisions ou courriers reçus.\n3. Si tu ne sais pas par quoi commencer, demande une permanence sociale ou juridique pour trier les priorités.\n4. S’il y a violence, menace ou emprise, ne commence pas par une médiation : cherche d’abord un service de protection.',
       docs: flags.aEnfants
         ? ['Jugement, ordonnance ou convention si existant', 'Preuves de pension payée ou non payée', 'Revenus et justificatifs financiers', 'Frais et documents des enfants']
         : ['Bail ou documents logement', 'Revenus actuels', 'Courriers administratifs liés à la séparation'],
       liensSeparation: true
+    }));
+  }
+
+  // Règle « brapa » (simulator-rules.js) : LRAPA (loi vaudoise sur le recouvrement et les avances sur pensions alimentaires).
+  function addBrapaResult(res) {
+    res.push(buildResult({
+      nom: 'BRAPA : avances sur pensions alimentaires',
+      catalogAidId: 'brapa',
+      badge: 'verifier',
+      desc: 'Si une pension alimentaire est fixée par une décision (jugement, ordonnance, convention) et que l’autre parent ne la verse pas, ou seulement en partie, le BRAPA peut t’aider à la récupérer et, selon ta situation économique, avancer une partie de la pension.',
+      action: '1. Appelle le BRAPA au 021 316 52 21.\n2. Remplis le questionnaire qu’il t’envoie après l’appel.\n3. Prépare la décision qui fixe la pension et les preuves de non-paiement.\n4. Un rendez-vous est ensuite fixé pour voir si ton dossier peut être pris en charge.',
+      today: 'Si l’autre parent ne verse pas la pension fixée, tu peux appeler le BRAPA.',
+      docs: ['Jugement, ordonnance ou convention qui fixe la pension', 'Preuves de pension non payée ou payée en partie', 'Documents demandés avec le questionnaire'],
+      liensBrapa: true
     }));
   }
 
@@ -630,7 +631,7 @@
       res.push(buildResult({
         nom: 'Revenu d\'insertion (RI)',
         badge: 'verifier',
-        desc: 'Le RI est un dernier recours, après la rente AVS et les PC. Si les PC ne suffisent pas ou si la situation est urgente, tu peux demander au CSR ce qui est possible.',
+        desc: 'Le RI est un dernier recours, après la rente AVS et les PC. Si les PC ne suffisent pas ou si la situation devient difficile, tu peux demander au CSR ce qui est possible.',
         action: '1. Commence par la piste PC AVS/AI.\n2. En parallèle, contacte le CSR si tu n’arrives plus à couvrir les besoins de base ou si tu attends encore une décision.\n3. Le CSR pourra voir avec toi si un appui social ou un RI subsidiaire doit être examiné.',
         today: 'Garde le CSR comme filet de sécurité si les charges courantes ne passent plus.',
         docs: ['Décision AVS ou AI', 'Montant de la rente', 'Bail, primes maladie, relevés bancaires'],
@@ -651,7 +652,7 @@
           : 'D\'après tes réponses, le RI pourrait être une piste sérieuse. L\'éligibilité finale dépend toutefois d\'une évaluation complète par un·e assistant·e social·e (charges, situation familiale, etc.).',
         action: flags.permisF
           ? '1. Contacte le CSR pour demander un entretien d’évaluation.\n2. Précise ton statut de séjour dès le premier contact : ça évite d’être orienté·e vers le mauvais service.\n3. Prépare tes relevés de compte, ton bail et tes justificatifs de revenus.\n4. Si la question du permis devient centrale, complète avec le CSP Fraternité.'
-          : '1. Trouve le CSR de ta commune et demande un entretien d’évaluation.\n2. Explique simplement : revenus actuels, loyer, personnes dans le ménage, dettes urgentes s’il y en a.\n3. Prépare : pièce d’identité, relevés de compte des 3 derniers mois, bail, dernière prime maladie, bulletins de salaire ou preuve d’absence de revenu.\n4. Tu peux prendre contact même si ton dossier n’est pas parfait : le CSR t’indiquera les pièces manquantes.',
+          : '1. Trouve le CSR de ta commune et demande un entretien d’évaluation.\n2. Explique simplement : revenus actuels, loyer, personnes dans le ménage, dettes en retard s’il y en a.\n3. Prépare : pièce d’identité, relevés de compte des 3 derniers mois, bail, dernière prime maladie, bulletins de salaire ou preuve d’absence de revenu.\n4. Tu peux prendre contact même si ton dossier n’est pas parfait : le CSR t’indiquera les pièces manquantes.',
         today: flags.grandeCommune
           ? 'Tu peux commencer par contacter le CSR de ta région, même sans dossier complet.'
           : 'Prépare tes relevés de compte et prends le premier contact avec le CSR.',
@@ -912,6 +913,7 @@
       needsAi: flags.incapacite !== 'non' && !flags.alreadyAI,
       needsJetService: flags.age === '18-25' || flags.enFormation || flags.etudiant,
       needsSeparationSupport: flags.separationEnCours === 'oui',
+      needsBrapa: flags.separationEnCours === 'oui' && flags.aEnfants,
       needsProchesAidants: flags.procheAidant === 'oui',
       needsProInfirmis: flags.invalidite && !flags.retraite,
       needsProSenectute: flags.retraite || flags.age === '65plus',
@@ -919,10 +921,9 @@
       needsFraisMaladieInvalidite: flags.alreadyPC,
       needsAminh: flags.aEnfants && flags.procheAidant === 'oui',
       needsPrestationsCommunales: (flags.besoinLocalConcret || (flags.revenuFaible && flags.grandeCommune)) && !flags.sansStatut,
-      needsGardeMalade: flags.aEnfants && (flags.enEmploi || flags.enFormation),
       needsDettes: flags.dettes !== 'non',
       needsAideAlimentaire: (flags.besoinAlimentaireProbable || flags.dettes === 'dettes' || flags.dettes === 'surendette') && !flags.sansStatut,
-      needsAidesLogement: flags.logement.includes('Locataire') && !flags.alreadyRI && ((flags.loyerEleve && flags.revenu !== 'plus5000') || flags.dettes === 'loyer'),
+      needsAidesLogement: flags.logement.includes('Locataire') && !flags.alreadyRI && (!flags.aEnfants || flags.dettes === 'loyer') && ((flags.loyerEleve && flags.revenu !== 'plus5000') || flags.dettes === 'loyer'),
       needsFallback: !res.length
     };
   }
@@ -948,6 +949,7 @@
       addOcbeResult: function() { addOcbeResult(res, flags); },
       addAiResult: function() { addAiResult(res, flags); },
       addJetServiceResult: function() { addJetServiceResult(res, flags); },
+      addBrapaResult: function() { addBrapaResult(res); },
       addSeparationResult: function() { addSeparationResult(res, flags); },
       addProchesAidantsResult: function() { addProchesAidantsResult(res); },
       addProInfirmisResult: function() { addProInfirmisResult(res); },
@@ -956,7 +958,6 @@
       addFraisMaladieInvaliditeResult: function() { addFraisMaladieInvaliditeResult(res); },
       addAminhResult: function() { addAminhResult(res); },
       addPrestationsCommunalesResult: function() { addPrestationsCommunalesResult(res, flags); },
-      addGardeEnfantsMaladesResult: function() { addGardeEnfantsMaladesResult(res, flags); },
       addDettesResult: function() { addDettesResult(res, flags.dettes, flags.isLausanne); },
       addAideAlimentaireRegionResult: function() { addAideAlimentaireRegionResult(res, flags); },
       addAidesLogementResult: function() { addAidesLogementResult(res, flags.grandeCommune, flags.dettes, flags.loyerEleve); },

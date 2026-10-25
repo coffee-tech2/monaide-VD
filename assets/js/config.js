@@ -127,6 +127,7 @@
       'liensGardeEnfants',
       'liensAideAlimentaire',
       'liensSeparation',
+      'liensBrapa',
       'liensViolence',
       'liensProchesAidants',
       'liensCSR'
@@ -248,6 +249,10 @@
         { type: 'link', label: 'Demander une avance BRAPA', linkKey: 'BRAPA_APPLY' },
         { type: 'link', label: 'Contacter le BRAPA', linkKey: 'BRAPA_CONTACT' },
         { type: 'link', label: 'Assistance judiciaire (aide juridique gratuite)', linkKey: 'ASSISTANCE_JUDICIAIRE' },
+      ],
+      liensBrapa: [
+        { type: 'link', label: 'Demander une avance BRAPA', linkKey: 'BRAPA_APPLY' },
+        { type: 'link', label: 'Contacter le BRAPA', linkKey: 'BRAPA_CONTACT' },
       ],
       liensViolence: [
         { type: 'link', label: 'Trouver de l’aide', linkKey: 'VIOLENCE_HELP' },

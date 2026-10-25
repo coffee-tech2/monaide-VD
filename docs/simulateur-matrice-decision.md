@@ -196,13 +196,13 @@ Chaque règle de `simulator-rules.js` porte un champ `legalRef`, exigé par `scr
 | Assurance invalidité | LAI (RS 831.20) |
 | Jet Service | Pas de base légale : service associatif (CSP Vaud) |
 | Séparation | Code civil (RS 210) ; assistance judiciaire : CPC art. 117 ss (RS 272) |
+| BRAPA | LRAPA (loi vaudoise sur le recouvrement et les avances sur pensions alimentaires) |
 | Proches aidant·es | LAPRAMS (loi du 24 janvier 2006) ; LORSDom (loi du 28 janvier 2021) |
 | AMINH enfant en situation de handicap | Art. 29 LVLAFam (RSV 836.01) |
 | Pro Infirmis | Pas de base légale : fondation privée |
 | Pro Senectute | Pas de base légale : fondation privée |
 | CMS | Maintien à domicile : LORSDom (loi du 28 janvier 2021) |
 | Aides communales | Pas de base cantonale unique : prestations propres à chaque commune |
-| Garde d’enfants malades | Pas de base légale : service associatif (Croix-Rouge vaudoise) |
 | Dettes | LP (RS 281.1) ; programme cantonal Parlons Cash |
 | Aide alimentaire | Pas de base légale : aide associative |
 | Aides logement | LL (RSV 840.11) ; RAIL (RSV 840.11.3) |

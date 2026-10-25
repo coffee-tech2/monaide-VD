@@ -231,6 +231,17 @@ window.MONAIDE_SIMULATION_RULES = [
     sourceType: 'situation familiale'
   },
   {
+    id: 'brapa',
+    title: 'BRAPA : pensions alimentaires',
+    intent: 'Mettre en avant le recouvrement et les avances de pension alimentaire quand une séparation avec enfants est en cours.',
+    when: 'needsBrapa',
+    handler: 'addBrapaResult',
+    confidence: 'à vérifier',
+    guardrails: ['Suppose une décision valable fixant la pension (jugement, ordonnance, convention).', 'Les avances dépendent de la situation économique : le BRAPA décide.'],
+    legalRef: 'LRAPA (loi vaudoise sur le recouvrement et les avances sur pensions alimentaires)',
+    sourceType: 'aide cantonale'
+  },
+  {
     id: 'proches-aidants',
     title: 'Proches aidant·es',
     intent: 'Repérer les besoins de soutien, relève ou carte d’urgence proche aidant.',
@@ -295,17 +306,6 @@ window.MONAIDE_SIMULATION_RULES = [
     guardrails: ['Très variable selon commune.', 'À explorer après les aides principales.'],
     legalRef: 'Pas de base cantonale unique : prestations propres à chaque commune',
     sourceType: 'aide locale'
-  },
-  {
-    id: 'garde-enfants-malades',
-    title: 'Garde d’enfants malades',
-    intent: 'Repérer une solution pratique quand un enfant malade bloque travail ou formation.',
-    when: 'needsGardeMalade',
-    handler: 'addGardeEnfantsMaladesResult',
-    confidence: 'à vérifier',
-    guardrails: ['Service ponctuel, conditions et tarifs à vérifier.'],
-    legalRef: 'Pas de base légale : service associatif (Croix-Rouge vaudoise)',
-    sourceType: 'service pratique'
   },
   {
     id: 'dettes',

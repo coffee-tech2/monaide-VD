@@ -400,7 +400,11 @@ const scenarios = [
       assert(separationIndex === 0, 'Separation should stay first when a parent solo is separating');
       assert(allocationsIndex === -1, 'Already received family allowances should not appear during a separation profile');
       assert(pcFamillesIndex !== -1, 'PC Familles should remain visible during a parent solo separation profile');
-      assert(aidesLogementIndex !== -1, 'Housing support should remain visible when rent is heavy during separation');
+      const subsideIndex = indexOfResult(results, 'Subside');
+      const brapaIndex = indexOfResult(results, 'BRAPA');
+      assert(aidesLogementIndex === -1, 'Generic housing support should not appear for families (decision 2026-10-25)');
+      assert(subsideIndex === 1, 'Health insurance subsidy should come second during a separation with children');
+      assert(brapaIndex === 2, 'BRAPA should come third during a separation with children');
     }
   },
   {
@@ -424,7 +428,7 @@ const scenarios = [
       assert(allocationsIndex !== -1, 'Family status with children should trigger family allowances even if the child detail question is missing');
       assert(pcFamillesIndex !== -1, 'Family status with children should keep PC Familles visible for a working low/moderate-income parent');
       assert(prestationsCommunalesIndex !== -1, 'Family status with children should keep local family supports visible');
-      assert(gardeMaladeIndex !== -1, 'Family status with children should keep child-care emergency support visible');
+      assert(gardeMaladeIndex === -1, 'Sick-child care is no longer a simulator result (decision 2026-10-25)');
       assert(pcFamillesIndex === 0, 'PC Familles should be the first family budget track for a working parent solo profile');
       assert(allocationsIndex === 1, 'Family allowances should stay directly after PC Familles for a parent solo profile');
       assert(lamalIndex === -1 || allocationsIndex < lamalIndex, 'Family tracks should appear before LAMal for a parent solo profile');
@@ -512,7 +516,7 @@ const scenarios = [
     }
   },
   {
-    name: 'Parent solo avec loyer lourd remonte la piste logement',
+    name: 'Parent solo avec loyer lourd (sans retard) ne reçoit pas la piste logement générique',
     run() {
       const results = runProfile({
         famille: 'Parent seul avec enfants',
@@ -528,12 +532,12 @@ const scenarios = [
       const aidesLogementIndex = indexOfResult(results, 'Aides logement');
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       assert(pcFamillesIndex === 0, 'PC Familles should remain first for a working parent solo profile');
-      assert(aidesLogementIndex !== -1, 'Housing support should appear when a parent solo has a heavy rent');
-      assert(lamalIndex === -1 || aidesLogementIndex < lamalIndex, 'Housing support should appear before LAMal when rent is heavy');
+      assert(aidesLogementIndex === -1, 'Generic housing support should not appear for a parent solo without rent arrears (decision 2026-10-25)');
+      assert(lamalIndex === -1 || aidesLogementIndex === -1, 'Housing support should appear before LAMal when rent is heavy');
     }
   },
   {
-    name: 'Parent solo avec loyer lourd et subside LAMal déjà touché garde le logement avant CarteCulture',
+    name: 'Parent solo avec loyer lourd et subside LAMal déjà touché : pas de piste logement générique',
     run() {
       const results = runProfile({
         famille: 'Parent seul avec enfants',
@@ -549,8 +553,7 @@ const scenarios = [
       const carteCultureIndex = indexOfResult(results, 'CarteCulture');
       const lamalIndex = indexOfResult(results, 'Subside LAMal');
       assert(lamalIndex === -1, 'Already received LAMal subsidy should not be suggested again');
-      assert(aidesLogementIndex !== -1, 'Housing support should remain visible when LAMal is already received');
-      assert(carteCultureIndex === -1 || aidesLogementIndex < carteCultureIndex, 'Housing support should appear before CarteCulture when rent is heavy');
+      assert(aidesLogementIndex === -1, 'Generic housing support should not appear for a family without rent arrears (decision 2026-10-25)');
     }
   },
   {
@@ -693,7 +696,7 @@ const scenarios = [
       assert(pcFamillesIndex === 0, 'PC Familles should be first for a working couple with children and moderate income');
       assert(allocationsIndex === 1, 'Family allowances should stay directly after PC Familles for a couple with children');
       assert(prestationsCommunalesIndex !== -1, 'Local family supports should remain visible for a couple with children');
-      assert(gardeMaladeIndex !== -1, 'Child-care emergency support should remain visible for a working couple with children');
+      assert(gardeMaladeIndex === -1, 'Sick-child care is no longer a simulator result (decision 2026-10-25)');
       assert(lamalIndex === -1 || allocationsIndex < lamalIndex, 'Family tracks should appear before LAMal for a couple with children');
     }
   },
