@@ -79,13 +79,14 @@
 .modele-prose .modele-actions { margin: 1.1rem 0 0; max-width: none; }
 
 /* Page d'accueil des modèles */
-.modele-list { list-style: none; padding: 0; margin: 0; max-width: 38rem; }
-.modele-list li { padding: 0; }
-.modele-list a.modele-item { display: block; text-decoration: none; color: inherit; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
-.modele-list a.modele-item:first-child { border-top: 1px solid var(--border); }
-.modele-item strong { display: block; font-family: 'Manrope', sans-serif; font-size: 1.2rem; letter-spacing: -0.02em; color: var(--forest); margin-bottom: 0.3rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; text-decoration-color: rgba(23,41,60,0.3); }
-.modele-item span { color: var(--dark); line-height: 1.65; }
-.modele-item:hover strong { text-decoration-color: var(--accent-strong); }
+.modele-listhead { margin: 3.4rem 0 0.8rem; font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0; color: var(--warm-gray); }
+.modele-list { list-style: none; padding: 0; margin: 0; max-width: 38rem; border-top: 1px solid var(--border); }
+.modele-list li { padding: 0; border-bottom: 1px solid var(--border); }
+.modele-list a.modele-item { display: block; text-decoration: none; color: inherit; padding: 1.1rem 0; }
+.modele-item strong { display: block; font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; color: var(--accent-text); margin-bottom: 0.25rem; }
+.modele-item span { display: block; color: var(--warm-gray); font-size: 0.95rem; line-height: 1.6; }
+.modele-item:hover strong, .modele-item:focus-visible strong { text-decoration: underline; text-underline-offset: 3px; }
+.modele-item:focus-visible { outline: 3px solid rgba(var(--vaud-rgb),0.45); outline-offset: 2px; }
 
 @media (max-width: 760px) {
   .modele-head { padding-top: 6rem; }
