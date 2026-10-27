@@ -81,6 +81,7 @@
   .nav-links { display: flex; gap: 0; list-style: none; align-items: center; }
   .nav-links a { text-decoration: none; color: var(--warm-gray); font-size: 0.88rem; font-weight: 500; padding: 0.45rem 0.9rem; border-radius:var(--radius-sm); transition: all 0.15s; }
   .nav-links a:hover { color: var(--orange-dark); background: var(--orange-light); }
+  @media (min-width: 761px) and (max-width: 1000px) { .nav-links a { padding: 0.45rem 0.5rem; font-size: 0.82rem; white-space: nowrap; } }
   .nav-search-wrap { display:flex; align-items:center; gap:0.55rem; margin-left:0.25rem; }
   .nav-search-toggle { width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:var(--radius-pill); border:1.5px solid var(--border); background:rgba(255,255,255,0.96); color:var(--warm-gray); cursor:pointer; transition:all 0.15s; }
   .nav-search-toggle:hover { color:var(--orange-dark); border-color:#dfc9bb; background:var(--orange-light); }

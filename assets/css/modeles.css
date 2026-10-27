@@ -1,0 +1,109 @@
+/* Pages « Modèles » : une feuille à remplir sur place, du texte simple autour. */
+
+.modeles-page main { padding-bottom: 4rem; }
+.modele-wrap { max-width: 60rem; margin: 0 auto; padding: 0 1.75rem; }
+
+/* En-tête : à gauche, sans bouton ni animation */
+.modele-head { max-width: 60rem; margin: 0 auto; padding: 6.4rem 1.75rem 2.2rem; }
+.modele-crumb { margin: 0 0 1.1rem; font-size: 0.88rem; color: var(--warm-gray); }
+.modele-crumb a { color: var(--warm-gray); text-underline-offset: 3px; }
+.modele-crumb a:hover { color: var(--forest); }
+.modele-head h1 { font-family: 'Manrope', sans-serif; font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; color: var(--vaud); margin: 0 0 1.1rem; }
+.modele-lead { margin: 0 0 0.9rem; max-width: 38rem; font-size: 1.02rem; line-height: 1.7; color: var(--dark); }
+
+/* Le bureau et la feuille */
+.modele-desk { max-width: 60rem; margin: 0 auto; padding: 1rem 1.75rem 1.6rem; }
+.modele-sheet { max-width: 21cm; margin: 0; background: #FFFFFF; padding: 3rem 3.2rem 3.4rem; font-size: 0.95rem; line-height: 1.75; color: #1d2733; border: 1px solid var(--border-strong); }
+.modele-sheet p { margin: 0 0 1rem; }
+.m-sender, .m-recipient { display: flex; flex-direction: column; }
+.m-sender { max-width: 17rem; margin-bottom: 2.2rem; }
+.m-recipient { max-width: 26rem; width: 60%; margin: 0 0 1.8rem auto; }
+.m-reco { font-weight: 700; margin: 0 0 0.6rem !important; letter-spacing: 0.02em; }
+.m-place { text-align: right; margin-bottom: 1.8rem !important; }
+.m-subject { font-weight: 700; margin-bottom: 1.4rem !important; }
+.m-sign { margin-top: 3rem !important; }
+
+/* Les champs ressemblent à des lignes à remplir au stylo */
+.m-in, .m-select { font: inherit; color: var(--forest); background: transparent; border: 0; border-bottom: 1.5px dotted #7d8aa0; border-radius: 0; padding: 0 0.15rem; margin: 0; line-height: inherit; }
+.m-in { min-width: 4ch; }
+.m-sender .m-in, .m-recipient .m-in { width: 100%; }
+.m-in::placeholder { color: #66758b; opacity: 1; }
+.m-in:hover, .m-select:hover { border-bottom-color: var(--accent-strong); }
+.m-in:focus, .m-select:focus { outline: none; border-bottom: 1.5px solid var(--accent-strong); background: rgba(var(--vaud-rgb),0.08); }
+.m-subject .m-in { font-weight: 700; }
+.m-select { appearance: none; -webkit-appearance: none; cursor: pointer; font-weight: 700; padding-right: 1.15rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%232C4460' stroke-width='1.6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.15rem center; }
+
+/* Titre au-dessus de chaque version */
+.modele-label { max-width: 38rem; margin: 0 0 1.2rem; }
+.modele-label h2 { font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: var(--vaud); margin: 0 0 0.5rem; }
+.modele-label p { margin: 0 0 0.5rem; line-height: 1.7; color: var(--dark); max-width: 38rem; }
+.modele-label p:last-child { margin-bottom: 0; }
+
+/* Nom de la caisse : peut passer sur plusieurs lignes ; suggestions */
+.m-grow { display: block; width: 100%; resize: none; overflow: hidden; height: auto; }
+.m-recipient { position: relative; }
+.m-suggest { position: absolute; left: 0; right: 0; top: 100%; z-index: 5; margin: 0; padding: 0; list-style: none; background: #FFFFFF; border: 1px solid var(--border-strong); border-radius: 3px; max-height: 15rem; overflow: auto; }
+.m-suggest[hidden] { display: none; }
+.m-suggest li { padding: 0.5rem 0.75rem; cursor: pointer; font-size: 0.92rem; line-height: 1.4; color: var(--dark); }
+.m-suggest li[aria-selected="true"], .m-suggest li:hover { background: rgba(var(--vaud-rgb),0.09); }
+
+/* Boutons sous la feuille */
+.modele-actions { max-width: 21cm; margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+.modele-btn { font: inherit; font-size: 0.92rem; font-weight: 600; color: var(--forest); background: transparent; border: 1px solid var(--forest); border-radius: 3px; padding: 0.6rem 1.05rem; cursor: pointer; }
+.modele-btn:hover { background: rgba(var(--vaud-rgb),0.07); }
+.modele-btn-main { background: var(--forest); color: #FFFFFF; }
+.modele-btn-main:hover { background: #0F1F30; }
+.modele-btn:focus-visible { outline: 3px solid rgba(var(--vaud-rgb),0.45); outline-offset: 2px; }
+.modele-status { max-width: 21cm; margin: 0.6rem 0 0; min-height: 1.4em; font-size: 0.88rem; font-weight: 700; color: var(--forest); }
+
+/* Texte autour : simple, sans cadres */
+.modele-prose { max-width: 60rem; margin: 0 auto; padding: 2.4rem 1.75rem 0; }
+.modele-prose > * { max-width: 38rem; }
+.modele-prose-top { padding-top: 0.4rem; padding-bottom: 1.6rem; }
+.modele-prose h2 { font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: var(--vaud); margin: 0 0 0.9rem; }
+.modele-prose h2:not(:first-child) { margin-top: 2.4rem; }
+.modele-prose p, .modele-prose li { line-height: 1.75; color: var(--dark); }
+.modele-prose p { margin: 0 0 0.9rem; }
+.modele-prose ul, .modele-prose ol { margin: 0 0 0.9rem; padding-left: 1.2rem; }
+.modele-prose li + li { margin-top: 0.55rem; }
+.modele-prose a { color: var(--accent-text); text-underline-offset: 3px; }
+
+/* Message e-mail */
+.modele-mail { max-width: 38rem; background: #FFFFFF; border: 1px solid var(--border-strong); border-radius: 3px; padding: 1.1rem 1.3rem 1.2rem; margin: 1.1rem 0 0; font-size: 0.93rem; }
+.modele-mail dl { margin: 0 0 0.9rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: 0.35rem 0.8rem; }
+.modele-mail dt { color: var(--warm-gray); font-weight: 700; }
+.modele-mail dd { margin: 0; overflow-wrap: anywhere; }
+.modele-mail .m-in { width: 100%; }
+.m-mailbody { white-space: pre-line; line-height: 1.7; }
+.m-ph { color: #66758b; }
+.modele-prose .modele-actions { margin: 1.1rem 0 0; max-width: none; }
+
+/* Page d'accueil des modèles */
+.modele-list { list-style: none; padding: 0; margin: 0; max-width: 38rem; }
+.modele-list li { padding: 0; }
+.modele-list a.modele-item { display: block; text-decoration: none; color: inherit; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+.modele-list a.modele-item:first-child { border-top: 1px solid var(--border); }
+.modele-item strong { display: block; font-family: 'Manrope', sans-serif; font-size: 1.2rem; letter-spacing: -0.02em; color: var(--forest); margin-bottom: 0.3rem; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; text-decoration-color: rgba(23,41,60,0.3); }
+.modele-item span { color: var(--dark); line-height: 1.65; }
+.modele-item:hover strong { text-decoration-color: var(--accent-strong); }
+
+@media (max-width: 760px) {
+  .modele-head { padding-top: 6rem; }
+  .modele-desk { padding: 0.8rem 1rem 1.4rem; }
+  .modele-sheet { padding: 1.7rem 1.25rem 2rem; }
+  .m-recipient { margin-left: 0; width: 100%; max-width: 100%; }
+  .m-sender { max-width: 100%; }
+}
+
+/* Impression : seule la feuille sort */
+@media print {
+  @page { margin: 22mm 20mm; }
+  body.modeles-printing nav, body.modeles-printing footer, body.modeles-printing .skip-link,
+  body.modeles-printing .modele-head, body.modeles-printing .modele-prose,
+  body.modeles-printing .modele-actions, body.modeles-printing .modele-status, body.modeles-printing .modele-label { display: none !important; }
+  body.modeles-printing .modele-desk { padding: 0; }
+  body.modeles-printing .modele-sheet { border: 0; padding: 0; max-width: none; font-size: 11.5pt; }
+  body.modeles-printing .m-in, body.modeles-printing .m-select { border: 0; background: none; color: #000; background-image: none; padding: 0; }
+  body.modeles-printing .m-in::placeholder { color: #000; opacity: 1; }
+  body.modeles-printing .m-suggest { display: none !important; }
+}
