@@ -2190,3 +2190,19 @@ body.home-page .entry-strip-link, body.home-page .entry-strip-label, body.home-p
 .section-simulateur .results-footer-banner-body a { margin-right: 1.2rem; }
 .section-simulateur .results-footer-banner-title { font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.3 !important; letter-spacing: 0 !important; }
 .section-simulateur .results-fold-toggle { display: inline-block; width: auto; margin-left: 0; margin-right: 0; text-align: left; }
+
+/* Résultats : récapitulatif des réponses en liste simple */
+.section-simulateur .results-profile-summary { background: transparent; border: 0; border-top: 1px solid var(--border-strong); border-radius: 0; box-shadow: none; padding: 1.2rem 0 0; margin: 0 0 1.6rem; max-width: 40rem; }
+.section-simulateur .results-profile-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.section-simulateur .results-profile-title { font-size: 1.15rem; font-weight: 600; color: var(--vaud); }
+.section-simulateur .results-profile-text { font-size: 1rem; color: var(--warm-gray); }
+.section-simulateur .results-profile-edit { background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 0; min-height: 0; font: inherit; font-size: 1rem; font-weight: 600; color: var(--forest); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; cursor: pointer; }
+.section-simulateur .results-profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; margin-top: 0.7rem; }
+.section-simulateur .results-profile-item { display: flex; flex-direction: column; align-items: flex-start; gap: 0.1rem; background: transparent; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; box-shadow: none; padding: 0.6rem 0; text-align: left; cursor: pointer; transform: none; min-height: 0; }
+.section-simulateur .results-profile-item:hover { background: transparent; box-shadow: none; transform: none; }
+.section-simulateur .results-profile-label { font-size: 0.9rem; font-weight: 400; color: var(--warm-gray); }
+.section-simulateur .results-profile-value { font-size: 1rem; font-weight: 600; color: var(--forest); }
+.section-simulateur .results-profile-item:hover .results-profile-value { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+@media (max-width: 600px) { .section-simulateur .results-profile-grid { grid-template-columns: 1fr; } }
+body.home-page .section-subtitle { font-size: 0.94rem; line-height: 1.6; }
+body.home-page .hero-actions .btn-primary, body.home-page .hero-actions .btn-secondary { font-size: 0.97rem; line-height: 1.2; }
