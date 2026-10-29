@@ -1982,3 +1982,62 @@
   /* Lien dans une liste de fiche du répertoire (ex. : trouver son agence AAS). */
   .expand-list-link { color:var(--accent-text); font-weight:700; text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px; }
   .expand-list-link:hover { color:var(--orange-dark); }
+
+/* ───────── Direction sobre : règles communes ─────────
+   Plus d'ombres sur les cartes et les boutons, titres plus légers et à gauche,
+   interlettrage normal, un seul bouton plein (principal) et des liens soulignés. */
+.cat-card, .cat-card.is-essential, .cat-card.open, .cat-card:hover,
+.catalog-first-step, .doc-accordion-shell, .doc-accordion-shell.is-open, .doc-accordion-shell:hover,
+.docs-shortcut-card, .docs-shortcut-card:hover, .faq-item,
+.guide-backlink, .guide-backlink-chip, .guide-detail-page .guide-backlink-chip,
+.guide-next-step-inner, .guide-page.about-page .about-card-dark,
+.guide-card, .guide-card:hover, .guide-page:not(.guide-detail-page) .guide-card,
+.guide-page:not(.guide-detail-page) .guide-story-section, .guide-stamp,
+.guide-summary, .guide-summary-link, .guide-support-card,
+.result-item, .result-item:hover, .results-footer-banner,
+.btn-analyze:hover, .btn-next:hover, .btn-prev:hover, .btn-quick-review:hover,
+.result-link-btn.is-primary:hover, .result-link-btn.is-secondary:hover, .results-export-btn.primary:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+h1, h2, h3,
+.hero h1, .guide-title, .section-title, .step-title, .guide-card-title,
+.guide-detail-heading h2, .cat-card-title, .cat-group-title, .result-name {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.hero h1 { font-size: clamp(2rem, 4.4vw, 3.1rem); line-height: 1.12; max-width: none; }
+.section-title { font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.15; }
+.guide-detail-heading h2 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); line-height: 1.15; }
+
+.btn-primary, .guide-detail-page .btn-primary {
+  background: var(--forest);
+  color: #FFFFFF;
+  border: 1px solid var(--forest);
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: none;
+}
+.btn-primary:hover, .guide-detail-page .btn-primary:hover { background: #0F1D2B; transform: none; box-shadow: none; }
+.btn-secondary, .guide-detail-page .btn-secondary {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  padding: 0;
+  color: var(--forest);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  box-shadow: none;
+}
+.btn-secondary:hover, .guide-detail-page .btn-secondary:hover { background: transparent; color: #0F1D2B; transform: none; box-shadow: none; }
+.guide-title, .guide-detail-page .guide-title, .guide-page:not(.guide-detail-page) .guide-title {
+  font-weight: 600; letter-spacing: -0.01em; font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.12; max-width: 24ch;
+}
+.guide-detail-page .guide-detail-heading h2 {
+  font-weight: 600; letter-spacing: -0.01em; font-size: clamp(1.5rem, 2.4vw, 1.9rem); line-height: 1.15; max-width: 24ch;
+}
+.results-profile-summary, .inline-info { box-shadow: none; }
+#results h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.15; letter-spacing: -0.01em; font-weight: 600; }
