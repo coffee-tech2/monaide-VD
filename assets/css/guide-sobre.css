@@ -1,6 +1,6 @@
 /* Guides en texte simple : titres, paragraphes, listes. Pas de cartes ni d'étiquettes. */
 
-.guide-sobre main { padding-bottom: 4rem; }
+.guide-sobre main, .guides-index main { padding-bottom: 4rem; }
 .gs-head, .gs-prose { max-width: 60rem; margin: 0 auto; padding-left: 1.75rem; padding-right: 1.75rem; }
 .gs-head > *, .gs-prose > * { max-width: 40rem; }
 
@@ -26,6 +26,11 @@
 .gs-prose .gs-links { list-style: none; padding: 0; }
 .gs-prose .gs-links li + li { margin-top: 0.35rem; }
 
+.gs-prose .gs-list { list-style: none; margin: 0 0 0.6rem; padding: 0; border-top: 1px solid var(--border); }
+.gs-prose .gs-list li { margin: 0; padding: 0.95rem 0; border-bottom: 1px solid var(--border); }
+.gs-prose .gs-list li + li { margin-top: 0; }
+.gs-prose .gs-list a { display: inline-block; font-family: 'Manrope', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.2rem; }
+.gs-prose .gs-list span { display: block; color: var(--warm-gray); font-size: 0.95rem; line-height: 1.6; }
 .gs-toc { margin: 0 0 0.6rem; }
 .gs-toc p { margin: 0 0 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--warm-gray); }
 .gs-toc ul { list-style: none; margin: 0; padding: 0; }

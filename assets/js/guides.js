@@ -35,40 +35,74 @@
     return (a.order || 0) - (b.order || 0);
   }
 
-  function renderGuideCard(item) {
-    var classes = ['guide-card'];
-    var displayTitle = guideCardTitle(item);
+  var GUIDE_GROUPS = [
+    { id: 'argent', title: 'Argent et budget', labels: ['Revenus', 'Budget'] },
+    { id: 'sante', title: 'Santé', labels: ['Santé', 'Handicap'] },
+    { id: 'emploi-formation', title: 'Emploi et formation', labels: ['Emploi', 'Formation'] },
+    { id: 'famille', title: 'Famille', labels: ['Famille'] },
+    { id: 'logement', title: 'Logement', labels: ['Logement'] },
+    { id: 'retraite', title: 'Retraite, AVS et AI', labels: ['Retraite', 'AVS / AI'] },
+    { id: 'premiers-contacts', title: 'Premiers contacts', labels: ['Orientation', 'Migration'] },
+    { id: 'culture', title: 'Culture', labels: ['Culture'] }
+  ];
 
+  function groupFor(item) {
+    for (var i = 0; i < GUIDE_GROUPS.length; i++) {
+      if (GUIDE_GROUPS[i].labels.indexOf(item.label) !== -1) return GUIDE_GROUPS[i];
+    }
+    return { id: 'autres', title: 'Autres guides', labels: [] };
+  }
+
+  function renderGuideItem(item, group) {
     return [
-      '<article class="', classes.join(' '), '" data-guide-id="', escapeHtml(item.id), '" data-guide-title="', escapeHtml(item.title), '">',
-      '<div class="guide-card-label">', escapeHtml(item.label), '</div>',
-      '<h2 class="guide-card-title">', escapeHtml(displayTitle), '</h2>',
-      '<p>', escapeHtml(item.summary), '</p>',
-      '<div class="guide-inline-actions">',
-      '<a href="', escapeHtml(item.href), '">', escapeHtml(item.ctaLabel || 'Ouvrir le guide'), '</a>',
-      '</div>',
-      '</article>'
+      '<li data-guide-id="', escapeHtml(item.id), '" data-guide-title="', escapeHtml(item.title), '" data-guide-group="', escapeHtml(group.title), '">',
+      '<a href="', escapeHtml(item.href), '">', escapeHtml(guideCardTitle(item)), '</a>',
+      '<span>', escapeHtml(item.summary), '</span>',
+      '</li>'
     ].join('');
   }
 
   function renderGuideGrid() {
-    var root = document.getElementById('guide-grid-root');
+    var root = document.getElementById('guide-list-root');
     if (!root) return;
 
     var store = window.MONAIDE_GUIDE_STORE || { items: [] };
-    root.innerHTML = (store.items || []).slice().sort(compareGuideCards).map(renderGuideCard).join('');
+    var groups = [];
+    var byId = {};
+    (store.items || []).slice().sort(compareGuideCards).forEach(function(item) {
+      var group = groupFor(item);
+      if (!byId[group.id]) {
+        byId[group.id] = { group: group, items: [] };
+        groups.push(byId[group.id]);
+      }
+      byId[group.id].items.push(item);
+    });
+    var order = GUIDE_GROUPS.map(function(g) { return g.id; });
+    groups.sort(function(a, b) {
+      var ia = order.indexOf(a.group.id); var ib = order.indexOf(b.group.id);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+    });
+
+    var toc = '<nav class="gs-toc" aria-label="Sur cette page"><p>Sur cette page</p><ul>' + groups.map(function(g) {
+      return '<li><a href="#' + g.group.id + '">' + escapeHtml(g.group.title) + '</a></li>';
+    }).join('') + '</ul></nav>';
+
+    root.innerHTML = toc + groups.map(function(g) {
+      return '<h2 id="' + g.group.id + '">' + escapeHtml(g.group.title) + '</h2>' +
+        '<ul class="gs-list">' + g.items.map(function(item) { return renderGuideItem(item, g.group); }).join('') + '</ul>';
+    }).join('');
 
     if (!root.dataset.trackingBound) {
       root.dataset.trackingBound = 'true';
       root.addEventListener('click', function(e) {
-        var link = e.target && e.target.closest ? e.target.closest('a') : null;
+        var link = e.target && e.target.closest ? e.target.closest('li a') : null;
         if (!link || !root.contains(link)) return;
-        var card = link.closest('.guide-card');
-        if (!card || !window.trackMonaideEvent) return;
+        var item = link.closest('li[data-guide-id]');
+        if (!item || !window.trackMonaideEvent) return;
         window.trackMonaideEvent('guide_card_click', {
-          guide: card.getAttribute('data-guide-id') || '',
-          title: card.getAttribute('data-guide-title') || '',
-          label: (card.querySelector('.guide-card-label') || {}).textContent || ''
+          guide: item.getAttribute('data-guide-id') || '',
+          title: item.getAttribute('data-guide-title') || '',
+          label: item.getAttribute('data-guide-group') || ''
         });
       });
     }
