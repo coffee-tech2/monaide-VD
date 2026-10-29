@@ -1257,7 +1257,7 @@
         'Préparer les pièces de fin de contrat',
         'Vérifier ensuite les indemnités avec la caisse chômage'
       ],
-      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois sur les 2 dernières années — ou si tu es dispensé·e de cette condition (études, maladie, divorce, retour de l’étranger…). Tu peux t’inscrire à l’ORP dès que tu sais que ton emploi se termine.',
+      bodyIntro: 'Tu as perdu ton emploi ? Une indemnité chômage peut être possible si tu as cotisé au moins 12 mois sur les 2 dernières années, ou si tu es dispensé·e de cette condition (études, maladie, divorce, retour de l’étranger…). Tu peux t’inscrire à l’ORP dès que tu sais que ton emploi se termine.',
       reviewedAt: '12 avril 2026',
       decisionBy: 'ORP pour le suivi, caisse de chômage pour les indemnités',
       sections: [
@@ -1394,7 +1394,7 @@
         'Expliquer ce qui bloque concrètement',
         'Demander un premier rendez-vous ou une orientation'
       ],
-      bodyIntro: 'Tu te débrouilles seul·e avec des démarches que tu ne comprends pas forcément ? Appartenances propose un accompagnement gratuit — juridique, social, psy — pour les personnes migrantes et leurs proches.',
+      bodyIntro: 'Tu te débrouilles seul·e avec des démarches que tu ne comprends pas forcément ? Appartenances propose un accompagnement gratuit (juridique, social, psy) pour les personnes migrantes et leurs proches.',
       sections: [
         {
           title: 'Pour qui',
@@ -1450,7 +1450,7 @@
           title: 'Permanences',
           items: [
             'Lausanne, Renens, Vevey, Nyon, Yverdon, Payerne, Orbe',
-            'Sans rendez-vous — format collectif',
+            'Sans rendez-vous : format collectif',
             '021 560 60 98 pour plus d’infos',
             'Gratuit et confidentiel'
           ]
@@ -1536,7 +1536,7 @@
         {
           title: 'Comment faire',
           items: [
-            'Vérifier ton éligibilité à la CarteCulture — si tu y as droit, elle donne aussi accès aux prix réduits de l’épicerie, en plus de ses autres avantages',
+            'Vérifier ton éligibilité à la CarteCulture : si tu y as droit, elle donne aussi accès aux prix réduits de l’épicerie, en plus de ses autres avantages',
             'Sinon, voir si une carte d’achat Caritas est possible',
             'Prendre ta carte avec toi en magasin',
             'À Lausanne : avenue de Morges 26',
@@ -1837,7 +1837,7 @@
       id: 'menace-expulsion',
       title: 'Menace d’expulsion : que faire ?',
       category: 'logement',
-      summary: 'Locataires en difficulté · Urgence — agir immédiatement',
+      summary: 'Locataires en difficulté · Urgence : agir immédiatement',
       audience: 'Locataires qui ont reçu une résiliation ou craignent de perdre leur logement.',
       purpose: 'Cette fiche aide à réagir vite et dans le bon ordre quand le logement est menacé.',
       highlights: [
@@ -2383,14 +2383,14 @@
           items: [
             'Site avec tests d’auto-évaluation',
             '021 811 51 74 pour une orientation',
-            'Confidentiel — pas besoin de s’identifier'
+            'Confidentiel : pas besoin de s’identifier'
           ]
         }
       ],
       callouts: [
         {
           kind: 'callout',
-          html: 'Géré par REL’IER (Fondation Le Relais) — soutenu par le canton de Vaud.'
+          html: 'Géré par REL’IER (Fondation Le Relais), soutenu par le canton de Vaud.'
         }
       ],
       links: [
@@ -2856,15 +2856,15 @@
         {
           title: 'Écoute généraliste',
           items: [
-            '143 — La Main Tendue : écoute 24h/24, anonyme et confidentielle, pour toute personne qui a besoin de parler',
-            '0848 133 133 — détresse psychologique / urgences psychiatriques Vaud',
-            'STOP SUICIDE — prévention et ressources, surtout pour les jeunes, mais pas une helpline d’urgence'
+            '143 (La Main Tendue) : écoute 24h/24, anonyme et confidentielle, pour toute personne qui a besoin de parler',
+            '0848 133 133 : détresse psychologique / urgences psychiatriques Vaud',
+            'STOP SUICIDE : prévention et ressources, surtout pour les jeunes, mais pas une helpline d’urgence'
           ]
         },
         {
           title: 'Écoute jeunesse',
           items: [
-            '147 — Pro Juventute : soutien gratuit et confidentiel 24h/24',
+            '147 (Pro Juventute) : soutien gratuit et confidentiel 24h/24',
             'Accessible par téléphone, WhatsApp, e-mail ou chat selon les options du site',
             'Pour les enfants, jeunes, jeunes adultes et leurs proches selon les ressources proposées'
           ]
@@ -3010,7 +3010,7 @@
         {
           title: 'Démarche',
           items: [
-            '021 620 76 76 — 24h/24 et 7j/7',
+            '021 620 76 76 : 24h/24 et 7j/7',
             'Appeler avant de te déplacer',
             'Expliquer rapidement si tu peux rester au domicile ou si une mise à l’abri est nécessaire'
           ]
@@ -3182,7 +3182,7 @@
       callouts: [
         {
           kind: 'callout',
-          html: 'Centrale des solidarités : 0800 30 30 38 — gratuit, lu–ve 9h–12h30 et 13h30–17h30.'
+          html: 'Centrale des solidarités : 0800 30 30 38, gratuit, lu–ve 9h–12h30 et 13h30–17h30.'
         }
       ],
       links: [
@@ -3208,7 +3208,7 @@
         'Compter un délai d’une à quatre semaines avant le premier rendez-vous',
         'Rassembler les factures, rappels et commandements de payer déjà reçus'
       ],
-      bodyIntro: 'Si tu habites ou travailles à Lausanne et que tes dettes s’accumulent depuis longtemps, Unafin propose un accompagnement complet — comprendre d’où viennent les dettes, construire un budget réaliste, et sortir du surendettement pas à pas.',
+      bodyIntro: 'Si tu habites ou travailles à Lausanne et que tes dettes s’accumulent depuis longtemps, Unafin propose un accompagnement complet : comprendre d’où viennent les dettes, construire un budget réaliste, et sortir du surendettement pas à pas.',
       reviewedAt: '20 août 2026',
       decisionBy: 'Unafin (Ville de Lausanne), après le premier entretien',
       sections: [
@@ -3287,7 +3287,7 @@
       category: 'emploi',
       summary: 'Salaire impayé · Prud’hommes · Insolvabilité employeur',
       audience: 'Personnes dont l’employeur ne verse pas le salaire, ou en cas de faillite.',
-      purpose: 'Si ton employeur ne paie pas ton salaire, des recours existent — y compris si l’entreprise est en faillite.',
+      purpose: 'Si ton employeur ne paie pas ton salaire, des recours existent, y compris si l’entreprise est en faillite.',
       highlights: [
         'Mise en demeure écrite comme première étape',
         'Tribunal des prud’hommes pour les litiges salariaux',
@@ -3303,7 +3303,7 @@
         {
           title: 'Recours possibles',
           items: [
-            'Mise en demeure écrite à l’employeur — garder une copie',
+            'Mise en demeure écrite à l’employeur : garder une copie',
             'Dépôt d’une plainte auprès du Tribunal des prud’hommes',
             'En cas de faillite : demande d’insolvabilité auprès de la caisse de chômage dans les 60 jours',
             'Le CSP Vaud peut orienter et aider à rédiger la mise en demeure'
@@ -3346,10 +3346,10 @@
         {
           title: 'Options disponibles',
           items: [
-            'Le Point d’Eau (Lausanne) — soins d’urgence gratuits pour personnes en grande précarité',
-            'CSP Vaud — ne prend pas en charge les soins directement mais peut orienter et aider à constituer un dossier',
-            'Caritas Vaud — aide financière ponctuelle possible selon situation',
-            'AI — si l’état dentaire est lié à un handicap reconnu, certains soins peuvent être pris en charge'
+            'Le Point d’Eau (Lausanne) : soins d’urgence gratuits pour personnes en grande précarité',
+            'CSP Vaud : ne prend pas en charge les soins directement mais peut orienter et aider à constituer un dossier',
+            'Caritas Vaud : aide financière ponctuelle possible selon situation',
+            'AI : si l’état dentaire est lié à un handicap reconnu, certains soins peuvent être pris en charge'
           ]
         }
       ],
@@ -3380,11 +3380,11 @@
         {
           title: 'Solutions disponibles',
           items: [
-            'Assistance judiciaire officielle — accordée par le tribunal pour les procédures civiles, pénales ou administratives. Demande à faire avant ou pendant la procédure',
-            'OAV (Ordre des avocates et des avocats vaudois) — annuaire d’avocat·es et consultations juridiques pour un premier avis',
-            'CSP Vaud — consultation juridique et sociale, aide à comprendre les droits et préparer une démarche',
-            'ASLOCA — si le problème est locatif',
-            'MalleyPrairie — si la situation implique une séparation ou des violences conjugales'
+            'Assistance judiciaire officielle : accordée par le tribunal pour les procédures civiles, pénales ou administratives. Demande à faire avant ou pendant la procédure',
+            'OAV (Ordre des avocates et des avocats vaudois) : annuaire d’avocat·es et consultations juridiques pour un premier avis',
+            'CSP Vaud : consultation juridique et sociale, aide à comprendre les droits et préparer une démarche',
+            'ASLOCA : si le problème est locatif',
+            'MalleyPrairie : si la situation implique une séparation ou des violences conjugales'
           ]
         }
       ],

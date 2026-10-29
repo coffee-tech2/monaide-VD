@@ -426,7 +426,7 @@
   function addDettesResult(res, dettes, isLausanne) {
     if (dettes === 'loyer') {
       res.push(buildResult({
-        nom: 'Menace d\'expulsion — agis maintenant',
+        nom: 'Menace d\'expulsion : agis maintenant',
         catalogAidId: 'menace-expulsion',
         badge: 'probable',
         strongProbable: true,
@@ -834,7 +834,7 @@
     }
 
     res.push(buildResult({
-      nom: 'Bourses d\'études — OCBE',
+      nom: 'Bourses d\'études : OCBE',
       badge: 'verifier',
       desc: desc,
       action: '1. Commence par le questionnaire d’éligibilité OCBE.\n2. Vérifie que ta formation est reconnue en Suisse et qu’elle se déroule après l’école obligatoire.\n3. Prépare l’attestation de formation, les documents fiscaux et les informations sur tes parents, sauf si tu penses remplir les conditions d’indépendance.\n4. Dépose la demande même si certaines pièces doivent encore être complétées : le droit débute en principe le mois suivant le dépôt.\n5. Si tu reçois un refus ou si le montant semble insuffisant, demande rapidement de l’aide à Jet Service : le délai de réclamation est de 30 jours.',

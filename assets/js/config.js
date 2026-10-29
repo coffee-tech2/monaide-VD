@@ -331,7 +331,7 @@
       { patterns: ['proches aidant'], text: 'Cette piste sert à repérer des solutions de répit, de relève et de soutien quand tu aides régulièrement un proche.' },
       { patterns: ['sante mentale'], text: 'Cette piste sert à trouver un premier contact humain quand la santé mentale devient difficile à gérer.' },
       { patterns: ['assurance chomage'], text: 'Cette aide sert à couvrir une perte d’emploi si les conditions de chômage sont remplies après examen du dossier.' },
-      { patterns: ['rente pont'], text: 'Cette piste sert à faire le pont financier avant l’âge AVS quand le chômage touche à sa fin — une aide souvent méconnue.' },
+      { patterns: ['rente pont'], text: 'Cette piste sert à faire le pont financier avant l’âge AVS quand le chômage touche à sa fin. Une aide souvent méconnue.' },
       { patterns: ['bourses', 'ocbe'], text: 'Cette aide sert à soutenir une formation quand les ressources du ménage ne suffisent pas, après examen du dossier.' },
       { patterns: ['jet service'], text: 'Ce service sert à aider à comprendre ou remplir certaines démarches de formation ou de budget.' },
       { patterns: ['carteculture', 'passculture'], text: 'Cette aide sert à rendre la culture, les loisirs ou certaines sorties plus accessibles.' },
