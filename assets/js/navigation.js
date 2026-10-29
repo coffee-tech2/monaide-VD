@@ -392,7 +392,7 @@
   }
 
   function bindGuideDetailTracking() {
-    if (!document.body || !document.body.classList.contains('guide-detail-page') || !window.trackMonaideEvent) return;
+    if (!document.body || !(document.body.classList.contains('guide-detail-page') || document.body.classList.contains('guide-sobre')) || !window.trackMonaideEvent) return;
     var guideSlug = getCurrentGuideSlug();
     window.trackMonaideEvent('guide_detail_view', {
       guide: guideSlug,
