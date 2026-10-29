@@ -2128,3 +2128,64 @@ body.home-page .catalog-note-title { font-size: 0.94rem; }
 body.home-page .cat-filter, body.home-page .search-suggestion-chip { font-size: 0.9rem; }
 body.home-page .beta-banner-copy, body.home-page .beta-banner-copy strong { font-size: 0.875rem; }
 body.home-page .entry-strip-link, body.home-page .entry-strip-label, body.home-page .feedback-link { font-size: 0.94rem; }
+
+/* Résultats : une liste de pistes, sans cartes ni pastilles */
+.section-simulateur .results-note { background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 0; margin: 0 0 1.4rem; max-width: 40rem; font-size: 1rem; line-height: 1.65; color: var(--dark); }
+.section-simulateur .results-note br { display: none; }
+.section-simulateur .results-note strong { display: block; margin-bottom: 0.2rem; }
+.section-simulateur .results-progress-done span { height: 4px; border-radius: 0; }
+.section-simulateur .results-count-label { font-size: 0.95rem; font-weight: 600; color: var(--warm-gray); }
+.section-simulateur .results-summary-line { font-size: 1rem; color: var(--dark); }
+
+.section-simulateur .result-item { background: transparent; border: 0; border-top: 2px solid var(--forest); border-radius: 0; box-shadow: none; padding: 1.3rem 0 0.4rem; margin: 1.8rem 0 0; max-width: 40rem; transform: none; }
+.section-simulateur .result-item.is-secondary-track { border-top-width: 1px; border-top-color: var(--border-strong); }
+.section-simulateur .result-item:hover { box-shadow: none; transform: none; }
+.section-simulateur .result-card-header { display: block; padding: 0; background: transparent; border: 0; }
+.section-simulateur .result-badge { display: block; background: transparent; border: 0; border-radius: 0; padding: 0; margin: 0 0 0.35rem; font-size: 0.9rem; font-weight: 600; letter-spacing: 0; color: var(--warm-gray); }
+.section-simulateur .result-badge.badge-probable { color: var(--forest); }
+.section-simulateur .result-kind { display: none; }
+.section-simulateur .result-name { font-family: 'Manrope', sans-serif; font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: var(--vaud); margin: 0 0 0.5rem; }
+.section-simulateur .result-lead { font-size: 1rem; line-height: 1.65; color: var(--dark); }
+
+.section-simulateur .result-card-accordion { margin-top: 1rem; border-top: 1px solid var(--border); }
+.section-simulateur .result-detail { border: 0; border-bottom: 1px solid var(--border); background: transparent; border-radius: 0; box-shadow: none; }
+.section-simulateur .result-detail > summary { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 0.85rem 0; cursor: pointer; list-style: none; background: transparent; }
+.section-simulateur .result-detail > summary::-webkit-details-marker { display: none; }
+.section-simulateur .result-detail[open] > summary { background: transparent; }
+.section-simulateur .result-detail-title { font-size: 1rem; font-weight: 600; color: var(--vaud); }
+.section-simulateur .result-detail-hint { display: none; }
+.section-simulateur .result-detail-chevron { display: none; }
+.section-simulateur .result-detail > summary::after { content: '+'; display: block !important; font-size: 1.3rem; line-height: 1; font-weight: 400; color: var(--forest); flex: none; }
+.section-simulateur .result-detail[open] > summary::after { content: '–'; display: block !important; }
+.section-simulateur .result-detail-body { padding: 0 0 1rem; font-size: 1rem; line-height: 1.7; color: var(--dark); background: transparent; }
+.section-simulateur .result-detail-body ul { margin: 0; padding-left: 1.2rem; }
+.section-simulateur .result-detail-body li + li { margin-top: 0.4rem; }
+.section-simulateur .result-detail-body a { color: var(--forest); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+
+.section-simulateur .result-link-group { margin: 0 0 0.9rem; }
+.section-simulateur .result-link-group-label { font-size: 0.9rem; font-weight: 600; color: var(--warm-gray); margin-bottom: 0.25rem; }
+.section-simulateur .result-link-group-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+.section-simulateur .result-link-btn, .section-simulateur .result-link-btn.is-primary { display: inline; min-height: 0; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; font: inherit; font-size: 1rem; font-weight: 600; color: var(--forest); text-align: left; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; cursor: pointer; transform: none; }
+.section-simulateur .result-link-btn:hover { background: transparent; text-decoration-color: var(--accent-strong); transform: none; box-shadow: none; }
+.section-simulateur .result-card-footer { display: flex; flex-wrap: wrap; gap: 0.5rem 1.6rem; padding: 1rem 0 0.6rem; border: 0; background: transparent; }
+
+.section-simulateur .results-fold-toggle { background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 0; min-height: 0; margin: 1.6rem 0 0; font: inherit; font-size: 1rem; font-weight: 600; color: var(--forest); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; cursor: pointer; }
+
+.section-simulateur .results-footer-banner, .section-simulateur .results-footer-banner.is-cta { background: transparent; color: var(--dark); border: 0; border-top: 1px solid var(--border-strong); border-radius: 0; box-shadow: none; padding: 1.3rem 0 0; margin: 2.2rem 0 0; max-width: 40rem; }
+.section-simulateur .results-footer-banner-title { font-size: 1.15rem; font-weight: 600; color: var(--vaud); margin-bottom: 0.4rem; }
+.section-simulateur .results-footer-banner-body, .section-simulateur .results-footer-banner-body * { color: var(--dark) !important; font-size: 1rem !important; line-height: 1.65 !important; }
+.section-simulateur .results-footer-banner-btn { display: inline; background: transparent; border: 0; padding: 0; min-height: 0; color: var(--forest) !important; font-weight: 600 !important; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; box-shadow: none; }
+
+.section-simulateur .results-export-card { background: transparent; border: 0; border-top: 1px solid var(--border-strong); border-radius: 0; box-shadow: none; padding: 1.3rem 0 0; margin: 2.2rem 0 0; max-width: 40rem; }
+.section-simulateur .results-export-title { font-size: 1.15rem; font-weight: 600; color: var(--vaud); }
+.section-simulateur .results-export-text, .section-simulateur .results-export-note { font-size: 1rem; line-height: 1.65; color: var(--dark); }
+.section-simulateur .results-export-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 0.8rem 1.6rem; }
+.section-simulateur .results-export-btn { background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 0; min-height: 0; font: inherit; font-size: 1rem; font-weight: 600; color: var(--forest); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; cursor: pointer; transform: none; }
+.section-simulateur .results-export-btn.primary { background: var(--forest); color: #FFFFFF; border: 1px solid var(--forest); border-radius: 6px; padding: 0 20px; min-height: 46px; text-decoration: none; }
+.section-simulateur .results-export-btn.primary:hover { background: #0F1D2B; transform: none; box-shadow: none; }
+.section-simulateur .restart-btn { display: inline-block; margin: 1.4rem 0 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 0; min-height: 0; font: inherit; font-size: 1rem; font-weight: 600; color: var(--forest); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; cursor: pointer; transform: none; }
+.section-simulateur .results-footer-banner.is-cta { display: block; }
+.section-simulateur .results-footer-banner.is-cta > * { display: block; max-width: none; }
+.section-simulateur .results-footer-banner-title, .section-simulateur .results-footer-banner.is-cta .results-footer-banner-title { color: var(--vaud) !important; opacity: 1 !important; }
+.section-simulateur .results-footer-banner-body a { margin-right: 1.2rem; }
+.section-simulateur .results-footer-banner-title { font-size: 1.15rem !important; font-weight: 600 !important; line-height: 1.3 !important; letter-spacing: 0 !important; }
