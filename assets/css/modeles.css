@@ -66,7 +66,7 @@
 .modele-prose p { margin: 0 0 0.9rem; }
 .modele-prose ul, .modele-prose ol { margin: 0 0 0.9rem; padding-left: 1.2rem; }
 .modele-prose li + li { margin-top: 0.55rem; }
-.modele-prose a { color: var(--accent-text); text-underline-offset: 3px; }
+.modele-prose a { color: #1F5C99; text-underline-offset: 3px; }
 
 /* Message e-mail */
 .modele-mail { max-width: 38rem; background: #FFFFFF; border: 1px solid var(--border-strong); border-radius: 3px; padding: 1.1rem 1.3rem 1.2rem; margin: 1.1rem 0 0; font-size: 0.93rem; }
