@@ -2276,3 +2276,38 @@ body.home-page #catalogue .catalog-filter-toggle { background: transparent; bord
   body.home-page #catalogue .section-inner { padding-left: 1rem; padding-right: 1rem; }
 }
 body.home-page #catalogue .search-suggestion-chip::after { content: none; }
+
+/* En-tête et bandeau bêta sobres : texte, soulignements, aucun bouton rond ni ombre */
+body > nav .nav-links a { font-size: 0.94rem; font-weight: 500; color: var(--dark); background: transparent; border-radius: 0; }
+body > nav .nav-links a:hover { color: var(--forest); background: transparent; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 6px; }
+body > nav .nav-search-toggle { width: 40px; height: 40px; border: 0; border-radius: 0; background: transparent; box-shadow: none; color: var(--forest); }
+body > nav .nav-search-toggle:hover { background: transparent; color: var(--accent-strong); }
+body > nav .nav-dropdown-menu { background: #FFFFFF; border: 1px solid var(--border-strong); border-radius: 6px; box-shadow: none; }
+body > nav .nav-dropdown-menu a { border-radius: 0; font-size: 0.94rem; }
+body > nav .nav-dropdown-menu a:hover { background: transparent; color: var(--forest); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+body > nav .nav-search-input { border-radius: 6px; font-size: 0.94rem; }
+body > nav .nav-search-submit { border-radius: 6px; font-size: 0.9rem; }
+@media (max-width: 600px) {
+  body > nav { box-shadow: none; background: #F7F8FA; }
+  body > nav .hamburger, body > nav .nav-mobile-actions .nav-search-toggle { border: 0; background: transparent; box-shadow: none; border-radius: 0; }
+  body > nav .nav-links { background: #F7F8FA; }
+  body > nav .nav-links a { padding: 0.85rem 0.2rem; font-size: 1rem; font-weight: 500; border-bottom: 1px solid var(--border); }
+  body > nav .nav-dropdown-menu { background: transparent; padding: 0 0 0 0.8rem; margin-top: 0; border: 0; }
+  body > nav .nav-dropdown-menu a { padding: 0.8rem 0.2rem; border-bottom: 1px solid var(--border); }
+}
+
+.beta-banner { background: transparent; border: 0; padding: 0.7rem 3.3rem 0.5rem 1.75rem; text-align: left; font-size: 0.875rem; color: var(--warm-gray); }
+.beta-banner-copy { max-width: 900px; margin: 0 auto; }
+.beta-banner strong { color: var(--forest); font-weight: 600; }
+.beta-banner-close { border: 0; background: transparent; border-radius: 0; color: var(--forest); font-size: 1.4rem; right: 0.6rem; }
+.beta-banner-close:hover { background: transparent; border: 0; color: var(--accent-strong); transform: translateY(-50%); }
+@media (max-width: 600px) { .beta-banner { padding: 0.6rem 3.2rem 0.4rem 1rem; } }
+.beta-banner-copy { text-align: left; }
+@media (min-width: 960px) {
+  .beta-banner { padding-left: calc((100% - 900px) / 2); }
+  .beta-banner-copy { margin: 0; max-width: none; }
+}
+.beta-banner { justify-content: flex-start; }
+.beta-banner .beta-banner-close { position: absolute; top: 50%; right: 0.8rem; transform: translateY(-50%); }
+@media (min-width: 960px) { .beta-banner .beta-banner-close { right: calc((100% - 900px) / 2 - 0.5rem); } }
+@media (min-width: 761px) and (max-width: 1000px) { body > nav .nav-links a { font-size: 0.86rem; padding: 0.45rem 0.5rem; white-space: nowrap; } }
