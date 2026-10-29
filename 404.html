@@ -30,70 +30,68 @@
     font-family: 'Manrope', sans-serif;
     background: var(--cream);
     color: var(--dark);
-    display: grid;
-    place-items: center;
     padding: 1.2rem;
   }
   .shell {
-    width: min(100%, 720px);
-    background: #FFFFFF;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2rem 1.4rem;
-    box-shadow: 0 12px 32px rgba(23,41,60,0.08);
-    text-align: center;
+    width: min(100%, 40rem);
+    margin: 0 auto;
+    padding: 4rem 0.6rem 2rem;
+    text-align: left;
   }
   .brand {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    font-size: 1.3rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 2.4rem;
     color: var(--sage-dark);
     text-decoration: none;
   }
   .brand svg { width: 2rem; height: 2rem; flex-shrink: 0; }
-  .brand .vd { color: var(--orange-strong); }
+  .brand .vd { color: var(--sage-dark); }
   h1 {
-    margin: 0 0 0.75rem;
-    font-size: clamp(2rem, 7vw, 3.2rem);
-    line-height: 0.98;
-    letter-spacing: -0.04em;
+    margin: 0 0 1rem;
+    font-size: clamp(1.9rem, 4.4vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--dark);
   }
   p {
-    margin: 0 auto 1.25rem;
-    max-width: 34ch;
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--warm-gray);
+    margin: 0 0 1.5rem;
+    max-width: 38rem;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--dark);
   }
   .actions {
     display: flex;
-    justify-content: center;
-    gap: 0.7rem;
+    align-items: center;
+    gap: 1.4rem;
     flex-wrap: wrap;
   }
   .btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    padding: 0 20px;
-    border-radius: 999px;
     text-decoration: none;
-    font-weight: 700;
-    border: 1px solid var(--border);
+    font-weight: 600;
   }
   .btn-primary {
-    background: var(--orange-strong);
-    color: white;
-    border-color: var(--orange-strong);
+    min-height: 46px;
+    padding: 0 20px;
+    border-radius: 6px;
+    background: var(--sage-dark);
+    color: #FFFFFF;
+    border: 1px solid var(--sage-dark);
   }
+  .btn-primary:hover { background: #0F1D2B; }
   .btn-secondary {
-    background: white;
-    color: var(--dark);
+    color: var(--sage-dark);
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
   }
 </style>
 
