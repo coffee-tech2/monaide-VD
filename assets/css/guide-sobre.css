@@ -31,6 +31,12 @@
 .gs-prose .gs-list li + li { margin-top: 0; }
 .gs-prose .gs-list a { display: inline-block; font-family: 'Manrope', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.2rem; }
 .gs-prose .gs-list span { display: block; color: var(--warm-gray); font-size: 0.95rem; line-height: 1.6; }
+.gs-prose .gs-faq { margin-top: 3.4rem; border-top: 2px solid var(--forest); }
+.gs-prose .gs-faq h2 { margin-top: 1.4rem; margin-bottom: 0.6rem; }
+.gs-prose .gs-faq h3 { margin: 0; padding: 1.05rem 0 0.35rem; border-top: 1px solid var(--border); }
+.gs-prose .gs-faq h2 + h3 { border-top: 0; padding-top: 0.3rem; }
+.gs-prose .gs-faq h3 + p { margin: 0; padding-bottom: 1.05rem; }
+.gs-prose .gs-faq > :last-child { padding-bottom: 0; }
 .gs-toc { margin: 0 0 0.6rem; }
 .gs-toc p { margin: 0 0 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--warm-gray); }
 .gs-toc ul { list-style: none; margin: 0; padding: 0; }
