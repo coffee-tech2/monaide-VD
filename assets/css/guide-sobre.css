@@ -1,6 +1,6 @@
 /* Guides en texte simple : titres, paragraphes, listes. Pas de cartes ni d'étiquettes. */
 
-.guide-sobre main, .guides-index main { padding-bottom: 4rem; }
+.guide-sobre main, .guides-index main, .page-sobre main { padding-bottom: 4rem; }
 .gs-head, .gs-prose { max-width: 60rem; margin: 0 auto; padding-left: 1.75rem; padding-right: 1.75rem; }
 .gs-head > *, .gs-prose > * { max-width: 40rem; }
 
