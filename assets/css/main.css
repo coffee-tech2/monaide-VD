@@ -2074,3 +2074,57 @@ body.home-page .entry-strip { padding: 0.2rem 1rem 1.2rem; }
 body.home-page #simulateur .section-title, body.home-page #simulateur .section-subtitle, body.home-page #catalogue .section-title, body.home-page #catalogue .section-subtitle { padding-left: 1rem; padding-right: 1rem; }
 body.home-page .community-section.is-quiet-feedback { padding-left: 1rem; padding-right: 1rem; }
 }
+
+/* Simulateur : questions en cases rondes (une réponse) ou carrées (plusieurs), sans cartes */
+.section-simulateur .simulator-card { background: transparent; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+.section-simulateur .simulator-header { padding: 0 0 1.1rem; border-bottom: 0; background: transparent; }
+.section-simulateur .simulator-body { padding: 0.4rem 0 1rem; }
+.section-simulateur .progress-dot { height: 4px; border-radius: 0; background: #D5DAE1; transform: none; }
+.section-simulateur .progress-dot.active { background: var(--forest); transform: none; }
+.section-simulateur .progress-dot.done { background: #7A90A8; }
+.section-simulateur .step-label { font-size: 0.85rem; font-weight: 600; color: var(--warm-gray); }
+.section-simulateur .step-question-set, .section-simulateur .step-actions { max-width: 40rem; }
+.section-simulateur .form-label { font-size: 1.02rem; font-weight: 600; color: var(--vaud); margin-bottom: 0.5rem; }
+
+.section-simulateur .choice-grid, .section-simulateur .choice-grid-pills { display: flex; flex-direction: column; gap: 0; }
+.section-simulateur .choice-grid label, .section-simulateur .choice-grid-pills label { display: block; }
+.section-simulateur .choice-grid .choice-card, .section-simulateur .choice-grid-pills .choice-card { display: flex; flex-direction: row-reverse; justify-content: flex-end; align-items: center; gap: 0.8rem; min-height: 44px; padding: 0.3rem 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; transform: none; text-align: left; }
+.section-simulateur .choice-card::before, .section-simulateur .choice-input:checked + .choice-card::before { content: none; }
+.section-simulateur .choice-grid .choice-text { flex: 0 1 auto; padding: 0; }
+.section-simulateur .choice-grid .choice-title, .section-simulateur .choice-grid-pills .choice-title { font-size: 1rem; font-weight: 400; letter-spacing: 0; line-height: 1.4; text-align: left; color: var(--dark); }
+.section-simulateur .choice-grid .choice-check, .section-simulateur .choice-grid-pills .choice-check { display: block; flex: none; position: relative; width: 1.4rem; height: 1.4rem; margin: 0; border: 2px solid var(--forest); border-radius: 50%; background: #FFFFFF; box-shadow: none; transform: none; }
+.section-simulateur .choice-input[type="checkbox"] + .choice-card .choice-check { border-radius: 4px; }
+.section-simulateur .choice-grid .choice-card:hover, .section-simulateur .choice-grid-pills .choice-card:hover { border: 0; background: transparent; box-shadow: none; }
+.section-simulateur .choice-card:hover .choice-check { border-color: var(--accent-strong); }
+.section-simulateur .choice-grid .choice-input:checked + .choice-card, .section-simulateur .choice-grid-pills .choice-input:checked + .choice-card { background: transparent; border: 0; box-shadow: none; }
+.section-simulateur .choice-grid .choice-input:checked + .choice-card .choice-title, .section-simulateur .choice-grid-pills .choice-input:checked + .choice-card .choice-title { color: var(--forest); font-weight: 600; }
+.section-simulateur .choice-grid .choice-input:checked + .choice-card .choice-check, .section-simulateur .choice-grid-pills .choice-input:checked + .choice-card .choice-check { border-color: var(--forest); background: radial-gradient(circle, var(--forest) 0 0.42rem, #FFFFFF 0.46rem); box-shadow: none; transform: none; }
+.section-simulateur .choice-input[type="checkbox"]:checked + .choice-card .choice-check { background: var(--forest); }
+.section-simulateur .choice-input[type="checkbox"]:checked + .choice-card .choice-check::after { content: ''; position: absolute; left: 0.38rem; top: 0.1rem; width: 0.35rem; height: 0.72rem; border: solid #FFFFFF; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.section-simulateur .choice-input:focus-visible + .choice-card { outline: 3px solid rgba(var(--vaud-rgb), 0.45); outline-offset: 2px; }
+.section-simulateur .choice-grid:has(> label:nth-child(2):last-child) { flex-direction: row; flex-wrap: wrap; gap: 0.2rem 2.2rem; }
+
+.section-simulateur .step-actions { border-top: 0; padding-top: 0.6rem; }
+.section-simulateur .btn-nav { border-radius: 6px; min-height: 46px; box-shadow: none; transform: none; }
+.section-simulateur .btn-next { background: var(--forest); color: #FFFFFF; border: 1px solid var(--forest); }
+.section-simulateur .btn-next:hover { background: #0F1D2B; transform: none; box-shadow: none; }
+.section-simulateur .btn-prev { background: transparent; border: 0 !important; padding: 0; min-height: 0; color: var(--forest); font-weight: 600; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.section-simulateur .btn-prev:hover { transform: none; box-shadow: none; }
+.section-simulateur .step-question-set .form-group.invalid { border-left: 0; padding-left: 0; }
+.section-simulateur .form-input, .section-simulateur .form-select { border-radius: 6px; }
+@media (max-width: 600px) {
+  .section-simulateur .choice-grid:has(> label:nth-child(2):last-child) { flex-direction: column; }
+  .section-simulateur .choice-grid .choice-card, .section-simulateur .choice-grid-pills .choice-card { min-height: 48px; }
+  .section-simulateur .simulator-body { padding: 0.4rem 1rem 1rem; }
+  .section-simulateur .simulator-header { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Lisibilité : pas de texte courant sous 14 px sur l'accueil */
+body.home-page .step-subtitle, body.home-page .form-help, body.home-page .form-error, body.home-page .form-error-helper { font-size: 0.94rem; line-height: 1.6; }
+body.home-page .step-label { font-size: 0.9rem; }
+body.home-page .btn-nav { font-size: 0.97rem; }
+body.home-page .cat-group-sub, body.home-page .cat-card-desc, body.home-page .catalog-note-text, body.home-page .catalog-intro-note, body.home-page .feedback-text { font-size: 0.94rem; line-height: 1.6; }
+body.home-page .catalog-note-title { font-size: 0.94rem; }
+body.home-page .cat-filter, body.home-page .search-suggestion-chip { font-size: 0.9rem; }
+body.home-page .beta-banner-copy, body.home-page .beta-banner-copy strong { font-size: 0.875rem; }
+body.home-page .entry-strip-link, body.home-page .entry-strip-label, body.home-page .feedback-link { font-size: 0.94rem; }
