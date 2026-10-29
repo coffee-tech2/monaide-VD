@@ -21,8 +21,8 @@
 .gs-prose ol { padding-left: 1.4rem; }
 .gs-prose ol strong { display: block; color: var(--vaud); }
 .gs-prose li + li { margin-top: 0.55rem; }
-.gs-prose a { color: #1F5C99; text-underline-offset: 3px; }
-.gs-prose a:hover { color: var(--forest); }
+.gs-prose a { color: var(--forest); text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.gs-prose a:hover { text-decoration-color: var(--accent-strong); }
 .gs-prose .gs-links { list-style: none; padding: 0; }
 .gs-prose .gs-links li + li { margin-top: 0.35rem; }
 
