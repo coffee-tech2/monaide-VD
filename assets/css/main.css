@@ -2278,13 +2278,13 @@ body.home-page #catalogue .catalog-filter-toggle { background: transparent; bord
 body.home-page #catalogue .search-suggestion-chip::after { content: none; }
 
 /* En-tête et bandeau bêta sobres : texte, soulignements, aucun bouton rond ni ombre */
-body > nav .nav-links a { font-size: 0.94rem; font-weight: 500; color: var(--dark); background: transparent; border-radius: 0; }
-body > nav .nav-links a:hover { color: var(--forest); background: transparent; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 6px; }
+body > nav .nav-links a { font-size: 0.94rem; font-weight: 500; color: var(--dark); background: transparent; border-radius: 6px; }
+body > nav .nav-links a:hover { color: var(--forest); background: rgba(var(--vaud-rgb), 0.09); text-decoration: none; }
 body > nav .nav-search-toggle { width: 40px; height: 40px; border: 0; border-radius: 0; background: transparent; box-shadow: none; color: var(--forest); }
 body > nav .nav-search-toggle:hover { background: transparent; color: var(--accent-strong); }
 body > nav .nav-dropdown-menu { background: #FFFFFF; border: 1px solid var(--border-strong); border-radius: 6px; box-shadow: none; }
-body > nav .nav-dropdown-menu a { border-radius: 0; font-size: 0.94rem; }
-body > nav .nav-dropdown-menu a:hover { background: transparent; color: var(--forest); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+body > nav .nav-dropdown-menu a { border-radius: 6px; font-size: 0.94rem; }
+body > nav .nav-dropdown-menu a:hover { background: rgba(var(--vaud-rgb), 0.09); color: var(--forest); text-decoration: none; }
 body > nav .nav-search-input { border-radius: 6px; font-size: 0.94rem; }
 body > nav .nav-search-submit { border-radius: 6px; font-size: 0.9rem; }
 @media (max-width: 600px) {
