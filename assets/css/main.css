@@ -66,7 +66,7 @@
     --shadow-sm: none;
     --shadow-md: none;
     --shadow-lg: none;
-    --logo-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%2317293C'/%3E%3Cpath d='M32.4 14A13 13 0 1 0 37 24' stroke='%23fff' stroke-width='4.8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='35.8' cy='18.2' r='4.7' fill='%23D4722A'/%3E%3C/svg%3E");
+    --logo-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%2317293C'/%3E%3Cpath d='M32.4 14A13 13 0 1 0 37 24' stroke='%23fff' stroke-width='4.8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='35.8' cy='18.2' r='4.7' fill='%23FF7A29'/%3E%3C/svg%3E");
   }
   *,
   *::before,
@@ -2437,4 +2437,15 @@ body.home-page #catalogue .catalog-link-group-links a { font-size: 0.95rem; font
 }
 @media (max-width: 760px) {
   body.home-page #catalogue .section-title, body.home-page #catalogue .section-subtitle { padding-left: 0; padding-right: 0; }
+}
+
+/* Répertoire : survol de la ligne, aide ouverte marquée, descriptions complètes sur téléphone */
+@media (hover: hover) and (min-width: 601px) {
+  body.home-page #catalogue .cat-group { overflow: visible; }
+  body.home-page #catalogue .cat-card-header { margin-inline: -0.7rem; padding-inline: 0.7rem; border-radius: 6px; transition: background-color 0.12s; }
+  body.home-page #catalogue .cat-card-header:hover { background: rgba(var(--vaud-rgb), 0.09); }
+}
+body.home-page #catalogue .cat-card.open { border-top: 2px solid var(--forest); }
+@media (max-width: 760px) {
+  body.home-page #catalogue .cat-card-desc { display: block; -webkit-line-clamp: unset; overflow: visible; }
 }
