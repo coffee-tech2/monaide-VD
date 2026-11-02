@@ -1,17 +1,6 @@
 window.MONAIDE_GUIDE_DATA = {
   items: [
     {
-      id: 'aides-sociales-vaud',
-      label: 'Orientation',
-      title: 'Aides sociales dans le canton de Vaud',
-      summary: 'Un bon point de départ si tu cherches surtout des informations générales et à qui t’adresser d’abord.',
-      href: '/aides-sociales-vaud/',
-      ctaLabel: 'Ouvrir le guide',
-      featured: true,
-      audience: ['grand-public'],
-      keywords: ['aides sociales', 'Vaud', 'orientation']
-    },
-    {
       id: 'retraite-vaud',
       label: 'Retraite',
       title: 'Retraite et fin de carrière',
@@ -278,7 +267,6 @@ window.MONAIDE_GUIDE_DATA = {
     ri: 'revenu-insertion',
     'aide-logement-familles': 'aides-logement',
     'aide-urgence-sejour': 'permis-sejour-vaud',
-    'aides-sociales-vaud': 'aides-sociales-vaud',
     'assurance-invalidite': 'assurance-invalidite',
     'centre-social-regional': 'centre-social-regional',
     'dettes-budget': 'dettes-budget',
