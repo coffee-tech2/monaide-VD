@@ -2449,3 +2449,6 @@ body.home-page #catalogue .cat-card.open { border-top: 2px solid var(--forest); 
 @media (max-width: 760px) {
   body.home-page #catalogue .cat-card-desc { display: block; -webkit-line-clamp: unset; overflow: visible; }
 }
+
+/* Accueil : de l'air sous les titres de section, les phrases d'introduction ayant été retirées */
+body.home-page #guides .section-title, body.home-page #catalogue .section-title { margin-bottom: 1.1rem; }

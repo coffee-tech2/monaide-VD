@@ -42,7 +42,8 @@
     { id: 'famille', title: 'Famille', labels: ['Famille'] },
     { id: 'logement', title: 'Logement', labels: ['Logement'] },
     { id: 'retraite', title: 'Retraite, AVS et AI', labels: ['Retraite', 'AVS / AI'] },
-    { id: 'par-ou-commencer', title: 'Par où commencer', labels: ['Orientation', 'Migration'] },
+    { id: 'services-sociaux', title: 'Services sociaux', labels: ['Orientation'] },
+    { id: 'sejour', title: 'Séjour et permis', labels: ['Migration'] },
     { id: 'culture', title: 'Culture', labels: ['Culture'] }
   ];
 
