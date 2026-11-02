@@ -90,15 +90,20 @@ expectedEvents.forEach((eventName) => {
   }
 });
 
-const indexHtml = read(path.join(root, 'index.html'));
-const analyticsPos = indexHtml.indexOf('assets/js/analytics.js');
-['assets/js/simulator.js', 'assets/js/results.js', 'assets/js/catalog.js', 'assets/js/navigation.js'].forEach((scriptPath) => {
-  const pos = indexHtml.indexOf(scriptPath);
-  if (pos === -1) {
-    errors.push(`index.html: script absent: ${scriptPath}`);
-  } else if (analyticsPos === -1 || analyticsPos > pos) {
-    errors.push(`index.html: analytics.js doit etre charge avant ${scriptPath}`);
-  }
+[
+  ['index.html', ['assets/js/catalog.js', 'assets/js/navigation.js']],
+  ['simulateur/index.html', ['assets/js/simulator.js', 'assets/js/results.js', 'assets/js/navigation.js']]
+].forEach(([pagePath, scripts]) => {
+  const pageHtml = read(path.join(root, pagePath));
+  const analyticsPos = pageHtml.indexOf('assets/js/analytics.js');
+  scripts.forEach((scriptPath) => {
+    const pos = pageHtml.indexOf(scriptPath);
+    if (pos === -1) {
+      errors.push(`${pagePath}: script absent: ${scriptPath}`);
+    } else if (analyticsPos === -1 || analyticsPos > pos) {
+      errors.push(`${pagePath}: analytics.js doit etre charge avant ${scriptPath}`);
+    }
+  });
 });
 
 if (errors.length) {

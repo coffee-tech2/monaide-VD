@@ -180,11 +180,6 @@
   .section-soft { background:#EEF2F7; }
   .section-cream { background:var(--cream); }
   .section-simulateur { background:var(--cream); padding-top:5rem; padding-bottom:5rem; }
-  .entry-strip { display:flex; align-items:center; justify-content:center; gap:0.75rem; padding:0.75rem 1.5rem; background:#EEF2F7; border-bottom:1px solid #C4CED8; flex-wrap:wrap; }
-  .entry-strip-label { font-size:0.82rem; color:var(--warm-gray); font-weight:500; }
-  .entry-strip-link { font-size:0.82rem; font-weight:800; color:var(--sage-dark); text-decoration:underline; text-decoration-color:#C4CED8; transition:color 0.15s ease, text-decoration-color 0.15s ease; }
-  .entry-strip-link:hover { color:var(--dark); text-decoration-color:var(--sage-dark); }
-  .entry-strip-sep { color:#C4CED8; font-size:0.82rem; }
   .section-inner.narrow { max-width:760px; }
   .section-inner.catalog-inner { max-width:680px; }
   .section-tag { font-size: 0.72rem; font-weight: 600; color: var(--orange); margin-bottom: 0.5rem; }
@@ -1296,10 +1291,6 @@
     .beta-banner-close { top:0.3rem; right:0.3rem; transform:none; width:44px; height:44px; font-size:1rem; }
     .beta-banner-close:hover { color:var(--accent-text); }
     .section { padding: 2rem 1rem; scroll-margin-top: 104px; }
-    .entry-strip { padding:0.62rem 1rem; gap:0.5rem; justify-content:center; }
-    .entry-strip-label { width:100%; text-align:center; }
-    .entry-strip-sep { display:none; }
-    .entry-strip-link { flex:0 1 auto; }
     #simulateur,
     #catalogue,
     .section-inner { padding: 0; }
@@ -1928,7 +1919,6 @@
   }
 
   @media (pointer:coarse), (max-width:768px) {
-    .entry-strip-link { display:inline-block; padding-block:0.75rem; }
     .search-suggestion-chip { position:relative; }
     .search-suggestion-chip::after { content:''; position:absolute; inset:-14px -3px; }
     .site-footer-card a { display:inline-block; padding-block:0.8rem; }
@@ -2068,8 +2058,6 @@ body.home-page .hero-line, body.home-page .hero-line-aides, body.home-page .hero
 body.home-page .hero-lead { margin: 0 0 1.5rem; max-width: 40rem; font-size: 1.05rem; font-weight: 400; line-height: 1.7; text-align: left; }
 body.home-page .hero-actions { justify-content: flex-start; align-items: center; gap: 1.4rem; }
 body.home-page .hero-actions .btn-secondary { width: auto; min-height: 0; padding: 0; justify-content: flex-start; text-align: left; border-radius: 0; }
-body.home-page .entry-strip { justify-content: flex-start; box-sizing: border-box; max-width: calc(900px + 3.5rem); margin: 0 auto; padding: 0.2rem 1.75rem 1.4rem; background: transparent; border: 0; }
-body.home-page .entry-strip-label { width: auto; text-align: left; }
 body.home-page .section-inner.catalog-inner { max-width: 900px; }
 body.home-page .home-guides { list-style: none; margin: 0 0 1.1rem; padding: 0; border-top: 1px solid var(--border); max-width: 40rem; }
 body.home-page .home-guides li { padding: 0.95rem 0; border-bottom: 1px solid var(--border); }
@@ -2087,7 +2075,6 @@ body.home-page .hero h1 { font-size: clamp(1.9rem, 8vw, 2.3rem); line-height: 1.
 body.home-page .hero-lead { font-size: 1rem; line-height: 1.65; }
 body.home-page .hero-actions { gap: 1.2rem; }
 body.home-page .hero-actions .btn-primary { min-height: 44px; }
-body.home-page .entry-strip { padding: 0.2rem 1rem 1.2rem; }
 body.home-page #simulateur .section-title, body.home-page #simulateur .section-subtitle, body.home-page #catalogue .section-title, body.home-page #catalogue .section-subtitle { padding-left: 1rem; padding-right: 1rem; }
 body.home-page .community-section.is-quiet-feedback { padding-left: 1rem; padding-right: 1rem; }
 }
@@ -2144,7 +2131,6 @@ body.home-page .cat-group-sub, body.home-page .cat-card-desc, body.home-page .ca
 body.home-page .catalog-note-title { font-size: 0.94rem; }
 body.home-page .cat-filter, body.home-page .search-suggestion-chip { font-size: 0.9rem; }
 body.home-page .beta-banner-copy, body.home-page .beta-banner-copy strong { font-size: 0.875rem; }
-body.home-page .entry-strip-link, body.home-page .entry-strip-label, body.home-page .feedback-link { font-size: 0.94rem; }
 
 /* Résultats : une liste de pistes, sans cartes ni pastilles */
 .section-simulateur .results-note { background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 0; margin: 0 0 1.4rem; max-width: 40rem; font-size: 1rem; line-height: 1.65; color: var(--dark); }
@@ -2331,8 +2317,8 @@ body > nav .nav-search-submit { border-radius: 6px; font-size: 0.9rem; }
 
 /* Liens : bleu, trait fin standard dans les phrases ; listes et menus sans trait */
 :root { --link: #2B5083; --link-hover: #1E3A5F; }
-body .gs-prose a, body .modele-prose a, body .btn-secondary, body .hero-actions .btn-secondary, body .entry-strip-link, body .home-guides-all a, body .results-profile-edit, body .section-simulateur .btn-prev, body .section-simulateur .results-fold-toggle, body .section-simulateur .restart-btn, body .section-simulateur .results-export-btn, body .section-simulateur .results-footer-banner-btn, body .section-simulateur .result-link-btn, body #catalogue .catalog-next-step-actions a, body #catalogue .cat-card-body p a, body .section-simulateur .result-detail-body a, body .feedback-link, body .community-inner-quiet .feedback-link { color: var(--link); text-decoration: underline; font-weight: 600; }
-body .gs-prose a:hover, body .modele-prose a:hover, body .btn-secondary:hover, body .entry-strip-link:hover, body .home-guides-all a:hover, body .feedback-link:hover { color: var(--link-hover); }
+body .gs-prose a, body .modele-prose a, body .btn-secondary, body .hero-actions .btn-secondary, body .home-guides-all a, body .results-profile-edit, body .section-simulateur .btn-prev, body .section-simulateur .results-fold-toggle, body .section-simulateur .restart-btn, body .section-simulateur .results-export-btn, body .section-simulateur .results-footer-banner-btn, body .section-simulateur .result-link-btn, body #catalogue .catalog-next-step-actions a, body #catalogue .cat-card-body p a, body .section-simulateur .result-detail-body a, body .feedback-link, body .community-inner-quiet .feedback-link { color: var(--link); text-decoration: underline; font-weight: 600; }
+body .gs-prose a:hover, body .modele-prose a:hover, body .btn-secondary:hover, body .home-guides-all a:hover, body .feedback-link:hover { color: var(--link-hover); }
 body .section-simulateur .results-export-btn.primary { color: #FFFFFF; text-decoration: none; }
 body .gs-prose p a, body .gs-prose li a { font-weight: 400; }
 body .gs-prose .gs-links a, body .gs-prose p a strong { font-weight: 600; }
@@ -2364,3 +2350,29 @@ body.home-page .home-guides-all a, body.home-page #catalogue .catalog-next-step-
 body.home-page .home-guides-all a:hover, body.home-page #catalogue .catalog-next-step-actions a:hover, body.home-page #catalogue .cat-card-body p a:hover { color: var(--link-hover); }
 body .gs-lead a { color: var(--link); text-decoration: underline; font-weight: 400; }
 body .gs-lead a:hover { color: var(--link-hover); }
+
+/* Page du simulateur : un outil seul, avec une barre de progression qui reste visible */
+body.sim-page main { padding-bottom: 4rem; }
+body.sim-page .section-simulateur { padding: 0.5rem 0 0; }
+body.sim-page .section-simulateur .section-inner { max-width: 960px; padding: 0 1.75rem; margin: 0 auto; }
+body.sim-page #simulateur { scroll-margin-top: 4.8rem; }
+body.sim-page .section-simulateur .simulator-header { position: sticky; top: 68px; z-index: 40; display: flex; align-items: center; gap: 1rem; margin: 0 0 1.2rem; padding: 0.7rem 0; background: #F7F8FA; border-bottom: 1px solid var(--border); }
+body.sim-page .progress-label { flex: none; font-size: 0.95rem; font-weight: 600; color: var(--vaud); white-space: nowrap; }
+body.sim-page .section-simulateur .progress-bar-container { flex: 1 1 auto; min-width: 0; }
+body.sim-page .section-simulateur .step-label { display: none; }
+body.sim-page .step-subtitle, body.sim-page .form-help, body.sim-page .form-error, body.sim-page .form-error-helper { font-size: 0.94rem; line-height: 1.6; }
+body.sim-page .btn-nav { font-size: 0.97rem; }
+@media (max-width: 600px) {
+  body.sim-page .section-simulateur .section-inner { padding: 0 1rem; }
+  body.sim-page .section-simulateur .simulator-header { top: 64px; padding: 0.6rem 0; }
+  body.sim-page .section-simulateur .simulator-body { padding-left: 0; padding-right: 0; }
+  body.sim-page .section-simulateur .simulator-header { padding-left: 0; padding-right: 0; }
+}
+body.sim-page { overflow-x: clip; overflow-y: visible; }
+body.sim-page .simulator-card:has(#results[style*="block"]) > .simulator-header { display: none; }
+.section-simulateur .results-profile-top { align-items: baseline; }
+.section-simulateur .results-profile-edit { text-align: left; align-self: flex-start; }
+.section-simulateur .results-note { position: relative; padding-right: 2.2rem; }
+.section-simulateur .results-note-close { position: absolute; top: -0.2rem; right: 0; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; background: transparent; border: 0; border-radius: 0; box-shadow: none; color: var(--forest); font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.section-simulateur .results-note-close:hover { background: transparent; color: var(--accent-strong); }
+body.home-page .cat-card { scroll-margin-top: 7.5rem; }

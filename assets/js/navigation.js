@@ -361,9 +361,9 @@
     if (!document.body || !document.body.classList.contains('guide-detail-page')) return;
     var heroShell = document.querySelector('.guide-shell');
     var guideActions = heroShell && heroShell.querySelector('.guide-actions');
-    if (guideActions && !guideHasActionLink(guideActions, '#simulateur')) {
+    if (guideActions && !guideHasActionLink(guideActions, '/simulateur/')) {
       var simulatorLink = document.createElement('a');
-      simulatorLink.href = '/#simulateur';
+      simulatorLink.href = '/simulateur/';
       simulatorLink.className = 'btn-secondary';
       simulatorLink.innerHTML = 'Faire le simulateur <span class="btn-arrow">→</span>';
       guideActions.appendChild(simulatorLink);
@@ -383,7 +383,7 @@
 
   function getGuideLinkDestination(href) {
     if (!href) return 'unknown';
-    if (href.indexOf('#simulateur') !== -1) return 'simulator';
+    if (href.indexOf('#simulateur') !== -1 || href.indexOf('/simulateur') !== -1) return 'simulator';
     if (href.indexOf('#catalogue') !== -1) return 'catalogue';
     if (/^\/(?!\/)/.test(href)) return 'internal';
     if (/^https?:\/\//.test(href)) return 'external';
@@ -657,4 +657,14 @@
     } else {
       init();
     }
-  })();
+
+  window.addEventListener('load', function() {
+    var aide = new URLSearchParams(window.location.search).get('aide');
+    if (!aide || !window.openCatalogForAid) return;
+    window.openCatalogForAid(aide);
+    setTimeout(function() {
+      var card = document.querySelector('.cat-card.open');
+      if (card) card.scrollIntoView({ block: 'start' });
+    }, 400);
+  });
+})();

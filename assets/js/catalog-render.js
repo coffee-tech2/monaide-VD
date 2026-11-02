@@ -147,7 +147,7 @@
       : 'Commence par le premier geste ci-dessus. Si tu hésites, ouvre un lien utile ou relance le simulateur.';
     return '<div class="catalog-next-step" onclick="event.stopPropagation()">'
       + '<div><strong>Tu veux continuer avec cette piste ?</strong><span>' + nextStepText + '</span></div>'
-      + '<div class="catalog-next-step-actions">' + guideLink + '<a href="#simulateur">Faire le simulateur <span aria-hidden="true">→</span></a></div>'
+      + '<div class="catalog-next-step-actions">' + guideLink + '<a href="/simulateur/">Faire le simulateur <span aria-hidden="true">→</span></a></div>'
       + '</div>';
   }
 

@@ -92,6 +92,7 @@ const guidesIndexPath = path.join(root, 'guides', 'index.html');
 
 checkMetaBasics('accueil', readHtml(homePath), 'https://monaide-vaud.ch/', errors, warnings);
 checkMetaBasics('guides/index', readHtml(guidesIndexPath), 'https://monaide-vaud.ch/guides/', errors, warnings);
+checkMetaBasics('simulateur', readHtml(path.join(root, 'simulateur', 'index.html')), 'https://monaide-vaud.ch/simulateur/', errors, warnings);
 
 guideData.forEach((guide) => {
   const relative = guide.href.replace(/^\/+/, '').replace(/\/+$/, '');
@@ -121,7 +122,7 @@ if (!itemList.length) {
   });
 }
 
-console.log(`Métadonnées: ${guideData.length + 2} pages contrôlées`);
+console.log(`Métadonnées: ${guideData.length + 3} pages contrôlées`);
 
 if (warnings.length) {
   console.log(`Avertissements: ${warnings.length}`);

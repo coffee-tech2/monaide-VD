@@ -34,7 +34,7 @@
 <link rel="alternate" hreflang="x-default" href="https://monaide-vaud.ch/">
 <link rel="preload" href="/assets/fonts/FiraSans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/FiraSans-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/main.css?v=20261102g">
+<link rel="stylesheet" href="assets/css/main.css?v=20261102l">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -103,6 +103,7 @@
 }
 </script>
 <!-- Google Tag Manager: charge apres consentement (voir navigation.js), production only -->
+<script>if(location.hash==="#simulateur"){location.replace("/simulateur/");}</script>
 <script>
 window.dataLayer = window.dataLayer || [];
 window.MONAIDE_GTM_ID = 'GTM-NFQRW574';
@@ -111,7 +112,7 @@ window.MONAIDE_GTM_ID = 'GTM-NFQRW574';
 </head>
 <body class="home-page" id="top">
 
-<a href="#simulateur" class="skip-link">Aller au simulateur</a>
+<a href="#contenu" class="skip-link">Aller au contenu</a>
 
 <nav>
   <div class="nav-inner">
@@ -128,6 +129,7 @@ window.MONAIDE_GTM_ID = 'GTM-NFQRW574';
       </button>
     </div>
     <ul class="nav-links" id="nav-links">
+      <li><a href="/simulateur/">Simulateur</a></li>
       <li class="nav-dropdown">
         <a href="#catalogue">Répertoire des aides</a>
         <div class="nav-dropdown-menu" style="min-width:260px;">
@@ -187,519 +189,11 @@ window.MONAIDE_GTM_ID = 'GTM-NFQRW574';
       </h1>
       <p class="hero-lead">MonAide-VD aide &#224; rep&#233;rer les aides sociales vaudoises qui te concernent, puis &#224; comprendre quoi faire.</p>
       <div class="hero-actions">
-        <a href="#simulateur" class="btn-primary">Faire le simulateur <span class="btn-arrow">&#8594;</span></a>
+        <a href="/simulateur/" class="btn-primary">Faire le simulateur <span class="btn-arrow">&#8594;</span></a>
         <a href="#catalogue" class="btn-secondary">Répertoire des aides <span class="btn-arrow">&#8594;</span></a>
       </div>
     </div>
 
-  </div>
-</section>
-
-<div class="entry-strip">
-  <span class="entry-strip-label">Tu sais d&#233;j&#224; ce que tu cherches&#160;?</span>
-  <a href="#catalogue" class="entry-strip-link">Répertoire des aides</a>
-  <span class="entry-strip-sep" aria-hidden="true">&#183;</span>
-  <a href="/guides/" class="entry-strip-link">Guides pratiques</a>
-</div>
-
-<section class="section section-simulateur" id="simulateur">
-  <div class="section-inner">
-    <h2 class="section-title">Quelles aides pourraient te concerner&#160;?</h2>
-    <p class="section-subtitle">4 étapes courtes pour repérer les pistes les plus plausibles.</p>
-
-    <div class="simulator-card">
-      <div class="simulator-header">
-        <div class="progress-bar-container">
-          <div class="progress-dot active" id="dot1"></div>
-          <div class="progress-dot" id="dot2"></div>
-          <div class="progress-dot" id="dot3"></div>
-          <div class="progress-dot" id="dot4"></div>
-        </div>
-      </div>
-
-      <div class="simulator-body" id="simulator-body">
-        <div class="step" id="step1" style="display:block;">
-          <div class="step-label">&#201;tape 1 sur 4</div>
-          <h3 class="step-title">Quelques questions sur ta situation actuelle</h3>
-          <p class="step-subtitle"></p>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-age">Ton &#226;ge</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-age">
-              <label><input class="choice-input" type="radio" name="age" id="age-moins18" value="moins18"><span class="choice-card"><span class="choice-text"><span class="choice-title">Moins de 18 ans</span><span class="choice-desc">Mineur&#183;e ou adolescent&#183;e</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-18-25" value="18-25"><span class="choice-card"><span class="choice-text"><span class="choice-title">18 &#8211; 25 ans</span><span class="choice-desc">Jeune adulte, &#233;tudes ou premiers emplois</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-26-35" value="26-35"><span class="choice-card"><span class="choice-text"><span class="choice-title">26 &#8211; 35 ans</span><span class="choice-desc">Vie active, formation ou reprise</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-36-49" value="36-49"><span class="choice-card"><span class="choice-text"><span class="choice-title">36 &#8211; 49 ans</span><span class="choice-desc">Situation familiale ou pro stabilis&#233;e</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-50-59" value="50-59"><span class="choice-card"><span class="choice-text"><span class="choice-title">50 &#8211; 59 ans</span><span class="choice-desc">Transition d&#8217;emploi ou fragilit&#233;s possibles</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-60-64" value="60-64"><span class="choice-card"><span class="choice-text"><span class="choice-title">60 &#8211; 64 ans</span><span class="choice-desc">Approche de la retraite ou rente-pont</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="age" id="age-65plus" value="65plus"><span class="choice-card"><span class="choice-text"><span class="choice-title">65 ans et plus</span><span class="choice-desc">Retraite, AVS, PC et aides 60+</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="age" hidden aria-labelledby="qlabel-age">
-              <option value="">Choisir&#8230;</option>
-              <option value="moins18">Moins de 18 ans</option>
-              <option value="18-25">18 &#8211; 25 ans</option>
-              <option value="26-35">26 &#8211; 35 ans</option>
-              <option value="36-49">36 &#8211; 49 ans</option>
-              <option value="50-59">50 &#8211; 59 ans</option>
-              <option value="60-64">60 &#8211; 64 ans</option>
-              <option value="65plus">65 ans et plus</option>
-            </select>
-            <div class="form-error">Choisis une tranche d&#8217;&#226;ge pour continuer.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-situation-familiale">Ta situation familiale</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-situation-familiale">
-              <label><input class="choice-input" type="radio" name="situation_familiale" value="C&#233;libataire sans enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">C&#233;libataire sans enfants</span><span class="choice-desc">Personne seule, sans charge d&#8217;enfant</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_familiale" value="Parent seul avec enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">Parent seul&#183;e</span><span class="choice-desc">Tu g&#232;res seul&#183;e avec enfants</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_familiale" value="En couple / mari&#233;&#183;e sans enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">En couple / mari&#233;&#183;e sans enfants</span><span class="choice-desc">Deux adultes dans le foyer</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_familiale" value="En couple / mari&#233;&#183;e avec enfants"><span class="choice-card"><span class="choice-text"><span class="choice-title">En couple / mari&#233;&#183;e avec enfants</span><span class="choice-desc">Famille avec un ou plusieurs enfants</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_familiale" value="Autre"><span class="choice-card"><span class="choice-text"><span class="choice-title">Autre situation</span><span class="choice-desc">Famille recompos&#233;e ou situation atypique</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="situation_familiale" hidden aria-labelledby="qlabel-situation-familiale">
-              <option value="">Choisir&#8230;</option>
-              <option>C&#233;libataire sans enfants</option>
-              <option>Parent seul avec enfants</option>
-              <option>En couple / mari&#233;&#183;e sans enfants</option>
-              <option>En couple / mari&#233;&#183;e avec enfants</option>
-              <option>Autre</option>
-            </select>
-            <div class="form-error">Choisis la situation familiale la plus proche de la tienne.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-statut-sejour">Ton statut en Suisse</label>
-            <select class="form-select" id="statut_sejour" hidden aria-labelledby="qlabel-statut-sejour">
-              <option value="">Choisir&#8230;</option>
-              <option>Nationalit&#233; suisse</option>
-              <option>Permis C (&#233;tablissement)</option>
-              <option>Permis B (s&#233;jour)</option>
-              <option>Permis L (courte dur&#233;e)</option>
-              <option>Permis G (frontalier&#183;&#232;re)</option>
-              <option>Permis F (admission provisoire)</option>
-              <option>Permis N (requ&#233;rant&#183;e d&#8217;asile)</option>
-              <option>Permis S (protection temporaire)</option>
-              <option>Autre / sans statut r&#233;gulier</option>
-            </select>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-statut-sejour">
-              <label><input class="choice-input" type="radio" name="statut_sejour_base" value="suisse"><span class="choice-card"><span class="choice-text"><span class="choice-title">Nationalit&#233; suisse</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="statut_sejour_base" value="permis"><span class="choice-card"><span class="choice-text"><span class="choice-title">Permis</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="statut_sejour_base" value="autre"><span class="choice-card"><span class="choice-text"><span class="choice-title">Autre situation</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <div class="form-group-inline" id="group-statut-permis" hidden>
-              <label class="form-label" for="statut_permis_detail">Quel permis&#160;?</label>
-              <select class="form-select" id="statut_permis_detail">
-                <option value="">Choisir un permis&#8230;</option>
-                <option value="Permis C (&#233;tablissement)">Permis C</option>
-                <option value="Permis B (s&#233;jour)">Permis B</option>
-                <option value="Permis L (courte dur&#233;e)">Permis L</option>
-                <option value="Permis G (frontalier&#183;&#232;re)">Permis G</option>
-                <option value="Permis F (admission provisoire)">Permis F</option>
-                <option value="Permis N (requ&#233;rant&#183;e d&#8217;asile)">Permis N</option>
-                <option value="Permis S (protection temporaire)">Permis S</option>
-              </select>
-            </div>
-            <div class="form-error">Choisis ton statut en Suisse pour continuer.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="commune">Ta commune</label>
-            <input class="form-input" id="commune" list="communes-list" placeholder="Lausanne, Nyon, Yverdon..." spellcheck="false">
-            <datalist id="communes-list">
-              <option>Lausanne</option>
-              <option>Renens</option>
-              <option>Nyon</option>
-              <option>Yverdon-les-Bains</option>
-              <option>Montreux</option>
-              <option>Vevey</option>
-              <option>Morges</option>
-              <option>Pully</option>
-              <option>Prilly</option>
-              <option>Ecublens</option>
-              <option>Crissier</option>
-              <option>Bussigny</option>
-              <option>Gland</option>
-              <option>Aigle</option>
-              <option>Bex</option>
-              <option>Payerne</option>
-              <option>Rolle</option>
-              <option>Aubonne</option>
-              <option>Gimel</option>
-              <option>Cossonay</option>
-              <option>Echallens</option>
-              <option>Epalinges</option>
-              <option>Cheseaux-sur-Lausanne</option>
-              <option>Le Mont-sur-Lausanne</option>
-              <option>Lutry</option>
-              <option>Belmont-sur-Lausanne</option>
-              <option>Chavannes-près-Renens</option>
-              <option>Paudex</option>
-              <option>Saint-Sulpice</option>
-              <option>Jouxtens-Mézery</option>
-              <option>Blonay - Saint-Légier</option>
-              <option>Corsier-sur-Vevey</option>
-              <option>Corseaux</option>
-              <option>La Tour-de-Peilz</option>
-              <option>Vouvry</option>
-              <option>Villeneuve</option>
-              <option>Ollon</option>
-              <option>Gryon</option>
-              <option>Château-d'Oex</option>
-              <option>Avenches</option>
-              <option>Moudon</option>
-              <option>Orbe</option>
-              <option>Sainte-Croix</option>
-              <option>Grandson</option>
-              <option>Chavornay</option>
-              <option>Vallorbe</option>
-              <option>Penthalaz</option>
-              <option>Daillens</option>
-              <option>Etoy</option>
-              <option>Echandens</option>
-              <option>Echichens</option>
-              <option>Denens</option>
-              <option>Denges</option>
-              <option>Bremblens</option>
-              <option>Saint-Prex</option>
-              <option>Tolochenaz</option>
-              <option>Préverenges</option>
-              <option>Lonay</option>
-              <option>Coppet</option>
-              <option>Founex</option>
-              <option>Crans-près-Céligny</option>
-              <option>Genolier</option>
-              <option>Begnins</option>
-              <option>Bassins</option>
-              <option>Duillier</option>
-              <option>Eysins</option>
-              <option>Gingins</option>
-              <option>Trélex</option>
-              <option>Arzier-Le Muids</option>
-              <option>Saint-Cergue</option>
-              <option>Borex</option>
-              <option>Commugny</option>
-              <option>Bogis-Bossey</option>
-              <option>Chéserex</option>
-              <option>Givrins</option>
-              <option>Allaman</option>
-              <option>Aclens</option>
-              <option>Assens</option>
-              <option>Bercher</option>
-              <option>Bottens</option>
-              <option>Cugy</option>
-              <option>Froideville</option>
-              <option>Etagnières</option>
-              <option>Goumoëns</option>
-              <option>Boulens</option>
-              <option>Bournens</option>
-              <option>Boussens</option>
-              <option>Forel (Lavaux)</option>
-              <option>Chexbres</option>
-              <option>Bourg-en-Lavaux</option>
-              <option>Puidoux</option>
-              <option>Oron</option>
-              <option>Savigny</option>
-              <option>Servion</option>
-              <option>Mézières</option>
-              <option>Montanaire</option>
-              <option>Lucens</option>
-              <option>Cudrefin</option>
-              <option>Faoug</option>
-              <option>Grandcour</option>
-              <option>Yvonand</option>
-              <option>Concise</option>
-              <option>Champagne</option>
-              <option>Baulmes</option>
-              <option>Ballaigues</option>
-              <option>Bullet</option>
-              <option>Arnex-sur-Orbe</option>
-              <option>Belmont-sur-Yverdon</option>
-            </datalist>
-            <div class="form-help">Commence à taper pour voir les suggestions.</div>
-            <div class="form-error">Indique ta commune.</div>
-          </div>
-          <div class="step-actions"><span></span><button type="button" class="btn-nav btn-next" onclick="goToStepValidated(2)">Continuer &#8594;</button></div>
-        </div>
-
-        <div class="step" id="step2" style="display:none;">
-          <div class="step-label">&#201;tape 2 sur 4</div>
-          <h3 class="step-title">Ta situation en ce moment</h3>
-          <p class="step-subtitle">Travail, logement et budget du quotidien.</p>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-situation-pro">Ta situation professionnelle</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-situation-pro">
-              <label><input class="choice-input" type="radio" name="situation_pro" value="En emploi"><span class="choice-card"><span class="choice-text"><span class="choice-title">En emploi</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_pro" value="Au ch&#244;mage"><span class="choice-card"><span class="choice-text"><span class="choice-title">Au ch&#244;mage</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_pro" value="Sans emploi - sans revenu"><span class="choice-card"><span class="choice-text"><span class="choice-title">Sans emploi - sans revenu</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_pro" value="En incapacit&#233; de travail (maladie / accident)"><span class="choice-card"><span class="choice-text"><span class="choice-title">Incapacit&#233; de travail</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_pro" value="En invalidit&#233; (b&#233;n&#233;ficiaire AI)"><span class="choice-card"><span class="choice-text"><span class="choice-title">B&#233;n&#233;ficiaire AI</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_pro" value="B&#233;n&#233;ficiaire du RI"><span class="choice-card"><span class="choice-text"><span class="choice-title">B&#233;n&#233;ficiaire du RI</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_pro" value="Retrait&#233;&#183;e (b&#233;n&#233;ficiaire AVS)"><span class="choice-card"><span class="choice-text"><span class="choice-title">Retrait&#233;&#183;e, AVS</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_pro" value="&#201;tudiant&#183;e ou en apprentissage"><span class="choice-card"><span class="choice-text"><span class="choice-title">&#201;tudiant&#183;e ou apprenti&#183;e</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_pro" value="Aidant&#183;e familial&#183;e"><span class="choice-card"><span class="choice-text"><span class="choice-title">Aidant&#183;e familial&#183;e</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="situation_pro" value="Autre situation"><span class="choice-card"><span class="choice-text"><span class="choice-title">Autre situation</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="situation_pro" hidden aria-labelledby="qlabel-situation-pro">
-              <option value="">Choisir&#8230;</option>
-              <option>En emploi</option>
-              <option>Au ch&#244;mage</option>
-              <option>Sans emploi - sans revenu</option>
-              <option>En incapacit&#233; de travail (maladie / accident)</option>
-              <option>En invalidit&#233; (b&#233;n&#233;ficiaire AI)</option>
-              <option>B&#233;n&#233;ficiaire du RI</option>
-              <option>Retrait&#233;&#183;e (b&#233;n&#233;ficiaire AVS)</option>
-              <option>&#201;tudiant&#183;e ou en apprentissage</option>
-              <option>Aidant&#183;e familial&#183;e</option>
-              <option>Autre situation</option>
-            </select>
-            <div class="form-error">Choisis ta situation professionnelle pour continuer.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-logement">Ton logement</label>
-            <select class="form-select" id="logement" hidden aria-labelledby="qlabel-logement">
-              <option value="">Choisir&#8230;</option>
-              <option>Locataire (appartement ou maison)</option>
-              <option>Propri&#233;taire</option>
-              <option>Chez mes parents (sans loyer)</option>
-              <option>H&#233;berg&#233;&#183;e chez un proche</option>
-              <option>Sans logement fixe / &#224; la rue</option>
-              <option>Foyer / structure d&#8217;accueil</option>
-            </select>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-logement">
-              <label><input class="choice-input" type="radio" name="logement_base" value="avec_cout"><span class="choice-card"><span class="choice-text"><span class="choice-title">Je paie mon logement</span><span class="choice-desc">Loyer ou propri&#233;t&#233;</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="logement_base" value="heberge"><span class="choice-card"><span class="choice-text"><span class="choice-title">Je suis h&#233;berg&#233;&#183;e</span><span class="choice-desc">Chez mes parents ou chez un proche</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="logement_base" value="instable"><span class="choice-card"><span class="choice-text"><span class="choice-title">Situation instable</span><span class="choice-desc">Sans logement fixe ou en foyer</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <div class="form-group-inline" id="group-logement-detail" hidden>
-              <label class="form-label" for="logement_detail">Quel type de logement&#160;?</label>
-              <select class="form-select" id="logement_detail">
-                <option value="">Choisir&#8230;</option>
-                <option value="Locataire (appartement ou maison)">Locataire</option>
-                <option value="Propri&#233;taire">Propri&#233;taire</option>
-                <option value="Chez mes parents (sans loyer)">Chez mes parents</option>
-                <option value="H&#233;berg&#233;&#183;e chez un proche">H&#233;berg&#233;&#183;e chez un proche</option>
-                <option value="Sans logement fixe / &#224; la rue">Sans logement fixe</option>
-                <option value="Foyer / structure d&#8217;accueil">Foyer ou structure</option>
-              </select>
-            </div>
-            <div class="form-error">Choisis ta situation de logement.</div>
-          </div>
-          <div class="form-group conditional-block" id="group-loyer" hidden>
-            <label class="form-label" id="qlabel-loyer">Ton loyer mensuel</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-loyer">
-              <label><input class="choice-input" type="radio" name="loyer" value="moins700"><span class="choice-card"><span class="choice-text"><span class="choice-title">Moins de 700 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="loyer" value="700-1200"><span class="choice-card"><span class="choice-text"><span class="choice-title">700 – 1’200 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="loyer" value="1200-1800"><span class="choice-card"><span class="choice-text"><span class="choice-title">1’200 – 1’800 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="loyer" value="plus1800"><span class="choice-card"><span class="choice-text"><span class="choice-title">Plus de 1’800 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="loyer" value="inconnu"><span class="choice-card"><span class="choice-text"><span class="choice-title">Je ne sais pas</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="loyer" hidden aria-labelledby="qlabel-loyer">
-              <option value="">Choisir&#8230;</option>
-              <option value="moins700">Moins de 700 CHF</option>
-              <option value="700-1200">700 – 1’200 CHF</option>
-              <option value="1200-1800">1’200 – 1’800 CHF</option>
-              <option value="plus1800">Plus de 1’800 CHF</option>
-              <option value="inconnu">Je ne sais pas</option>
-            </select>
-            <div class="form-help">Cette information aide &#224; mieux rep&#233;rer certaines pistes comme le RI ou des aides logement.</div>
-          </div>
-          <div class="form-group" id="group-enfants">
-            <label class="form-label" id="qlabel-enfants">As-tu des enfants &#224; charge&#160;?</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-enfants">
-              <label><input class="choice-input" type="radio" name="enfants" value="non"><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span><span class="choice-desc">Pas d&#8217;enfant &#224; charge actuellement</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="enfants" value="moins16"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui, moins de 16 ans</span><span class="choice-desc">Enfant(s) plus jeunes dans le foyer</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="enfants" value="16-25-formation"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui, 16 &#224; 25 ans en formation</span><span class="choice-desc">&#201;tudes, apprentissage ou formation</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="enfants" value="plusieurs"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui, plusieurs enfants</span><span class="choice-desc">Charges familiales plus importantes</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="enfants" hidden aria-labelledby="qlabel-enfants">
-              <option value="">Choisir&#8230;</option>
-              <option value="non">Non</option>
-              <option value="moins16">Oui, moins de 16 ans</option>
-              <option value="16-25-formation">Oui, 16 &#224; 25 ans en formation</option>
-              <option value="plusieurs">Oui, plusieurs enfants</option>
-            </select>
-          </div>
-          <div class="form-group conditional-block" id="group-formation">
-            <label class="form-label" id="qlabel-en-formation">Es-tu en formation&#160;?</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-en-formation">
-              <label><input class="choice-input" type="radio" name="en_formation" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="en_formation" value="oui_apres_obligatoire"><span class="choice-card"><span class="choice-text"><span class="choice-title">Post-obligatoire</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="en_formation" value="oui_obligatoire"><span class="choice-card"><span class="choice-text"><span class="choice-title">Scolarit&#233; obligatoire</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="en_formation" hidden aria-labelledby="qlabel-en-formation">
-              <option value="non">Non</option>
-              <option value="oui_apres_obligatoire">Post-obligatoire</option>
-              <option value="oui_obligatoire">Scolarit&#233; obligatoire</option>
-            </select>
-          </div>
-          <div class="step-actions"><button type="button" class="btn-nav btn-prev" onclick="goToStep(1)">&#8592; Retour</button><button type="button" class="btn-nav btn-next" onclick="goToStepValidated(3)">Continuer &#8594;</button></div>
-        </div>
-
-        <div class="step" id="step3" style="display:none;">
-          <div class="step-label">&#201;tape 3 sur 4</div>
-          <h3 class="step-title">Tes ressources</h3>
-          <p class="step-subtitle">Revenus, &#233;pargne et aides d&#233;j&#224; per&#231;ues.</p>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-revenu">Tes revenus par mois</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-revenu">
-              <label><input class="choice-input" type="radio" name="revenu" value="aucun"><span class="choice-card"><span class="choice-text"><span class="choice-title">Aucun revenu</span><span class="choice-desc">Aucune entr&#233;e d&#8217;argent actuellement</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="revenu" value="moins1000"><span class="choice-card"><span class="choice-text"><span class="choice-title">Moins de 1’000 CHF</span><span class="choice-desc">Tr&#232;s faible revenu mensuel</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="revenu" value="1000-2000"><span class="choice-card"><span class="choice-text"><span class="choice-title">1’000 &#8211; 2’000 CHF</span><span class="choice-desc">Revenus serr&#233;s</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="revenu" value="2000-3500"><span class="choice-card"><span class="choice-text"><span class="choice-title">2’000 &#8211; 3’500 CHF</span><span class="choice-desc">Budget modeste ou interm&#233;diaire</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="revenu" value="3500-5000"><span class="choice-card"><span class="choice-text"><span class="choice-title">3’500 &#8211; 5’000 CHF</span><span class="choice-desc">Revenu plus stable</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="revenu" value="plus5000"><span class="choice-card"><span class="choice-text"><span class="choice-title">Plus de 5’000 CHF</span><span class="choice-desc">Revenus sup&#233;rieurs</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="revenu" value="inconnu"><span class="choice-card"><span class="choice-text"><span class="choice-title">Je ne sais pas</span><span class="choice-desc">On reste large si tu n&#8217;as pas le chiffre</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="revenu" hidden aria-labelledby="qlabel-revenu">
-              <option value="">Choisir&#8230;</option>
-              <option value="aucun">Aucun revenu</option>
-              <option value="moins1000">Moins de 1’000 CHF / mois</option>
-              <option value="1000-2000">Entre 1’000 et 2’000 CHF / mois</option>
-              <option value="2000-3500">Entre 2’000 et 3’500 CHF / mois</option>
-              <option value="3500-5000">Entre 3’500 et 5’000 CHF / mois</option>
-              <option value="plus5000">Plus de 5’000 CHF / mois</option>
-              <option value="inconnu">Je ne sais pas</option>
-            </select>
-            <div class="form-error">Choisis au moins une fourchette de revenu pour continuer.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-fortune">Ton &#233;pargne disponible</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-fortune">
-              <label><input class="choice-input" type="radio" name="fortune" value="inconnu"><span class="choice-card"><span class="choice-text"><span class="choice-title">Je ne sais pas</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="fortune" value="moins4000"><span class="choice-card"><span class="choice-text"><span class="choice-title">Moins de 4’000 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="fortune" value="4000-8000"><span class="choice-card"><span class="choice-text"><span class="choice-title">4’000 &#8211; 8’000 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="fortune" value="8000-15000"><span class="choice-card"><span class="choice-text"><span class="choice-title">8’000 &#8211; 15’000 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="fortune" value="plus15000"><span class="choice-card"><span class="choice-text"><span class="choice-title">Plus de 15’000 CHF</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="fortune" hidden aria-labelledby="qlabel-fortune">
-              <option value="">Choisir&#8230;</option>
-              <option value="inconnu">Je ne sais pas</option>
-              <option value="moins4000">Moins de 4’000 CHF</option>
-              <option value="4000-8000">Entre 4’000 et 8’000 CHF</option>
-              <option value="8000-15000">Entre 8’000 et 15’000 CHF</option>
-              <option value="plus15000">Plus de 15’000 CHF</option>
-            </select>
-            <div class="form-error">Choisis ton niveau d&#8217;&#233;pargne ou `Je ne sais pas`.</div>
-          </div>
-          <div class="form-group" id="group-prime-lamal">
-            <label class="form-label" id="qlabel-prime-lamal">Ta prime maladie par mois</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-prime-lamal">
-              <label><input class="choice-input" type="radio" name="prime_lamal" value="moins100"><span class="choice-card"><span class="choice-text"><span class="choice-title">Moins de 100 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="prime_lamal" value="100-250"><span class="choice-card"><span class="choice-text"><span class="choice-title">100 – 250 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="prime_lamal" value="250-400"><span class="choice-card"><span class="choice-text"><span class="choice-title">250 – 400 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="prime_lamal" value="plus400"><span class="choice-card"><span class="choice-text"><span class="choice-title">Plus de 400 CHF</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="prime_lamal" value="inconnu"><span class="choice-card"><span class="choice-text"><span class="choice-title">Je ne sais pas</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="prime_lamal" hidden aria-labelledby="qlabel-prime-lamal">
-              <option value="">Choisir&#8230;</option>
-              <option value="moins100">Moins de 100 CHF</option>
-              <option value="100-250">100 – 250 CHF</option>
-              <option value="250-400">250 – 400 CHF</option>
-              <option value="plus400">Plus de 400 CHF</option>
-              <option value="inconnu">Je ne sais pas</option>
-            </select>
-            <div class="form-help">Si tu ne connais pas le montant exact, choisis la fourchette la plus proche. Cela aide &#224; rep&#233;rer un &#233;ventuel subside.</div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-aides-actuelles">Re&#231;ois-tu d&#233;j&#224; une aide&#160;?</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-aides-actuelles">
-              <label><input class="choice-input" type="radio" name="aides_actuelles_base" value="non"><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="aides_actuelles_base" value="oui"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <div class="form-group-inline" id="group-aides-actuelles-detail" hidden>
-              <label class="form-label" id="qlabel-aides-actuelles-detail">Laquelle ou lesquelles&#160;?</label>
-              <div class="choice-grid choice-grid-pills" role="group" aria-labelledby="qlabel-aides-actuelles-detail">
-                <label><input class="choice-input" type="checkbox" name="aides_actuelles_multi" value="RI"><span class="choice-card"><span class="choice-text"><span class="choice-title">RI</span></span><span class="choice-check"></span></span></label>
-                <label><input class="choice-input" type="checkbox" name="aides_actuelles_multi" value="PC"><span class="choice-card"><span class="choice-text"><span class="choice-title">PC AVS/AI</span></span><span class="choice-check"></span></span></label>
-                <label><input class="choice-input" type="checkbox" name="aides_actuelles_multi" value="lamal"><span class="choice-card"><span class="choice-text"><span class="choice-title">Subside assurance maladie (OVAM)</span></span><span class="choice-check"></span></span></label>
-                <label><input class="choice-input" type="checkbox" name="aides_actuelles_multi" value="alloc_fam"><span class="choice-card"><span class="choice-text"><span class="choice-title">Allocations familiales</span></span><span class="choice-check"></span></span></label>
-                <label><input class="choice-input" type="checkbox" name="aides_actuelles_multi" value="chomage"><span class="choice-card"><span class="choice-text"><span class="choice-title">Ch&#244;mage</span></span><span class="choice-check"></span></span></label>
-                <label><input class="choice-input" type="checkbox" name="aides_actuelles_multi" value="AI"><span class="choice-card"><span class="choice-text"><span class="choice-title">Rente AI</span></span><span class="choice-check"></span></span></label>
-                <label><input class="choice-input" type="checkbox" name="aides_actuelles_multi" value="AVS"><span class="choice-card"><span class="choice-text"><span class="choice-title">Rente AVS</span></span><span class="choice-check"></span></span></label>
-                <label><input class="choice-input" type="checkbox" name="aides_actuelles_multi" value="bourse"><span class="choice-card"><span class="choice-text"><span class="choice-title">Bourse d&#8217;&#233;tudes</span></span><span class="choice-check"></span></span></label>
-                <label><input class="choice-input" type="checkbox" name="aides_actuelles_multi" value="carteculture"><span class="choice-card"><span class="choice-text"><span class="choice-title">CarteCulture</span></span><span class="choice-check"></span></span></label>
-                <label><input class="choice-input" type="checkbox" name="aides_actuelles_multi" value="autre"><span class="choice-card"><span class="choice-text"><span class="choice-title">Autre aide</span></span><span class="choice-check"></span></span></label>
-              </div>
-            </div>
-            <input type="hidden" id="aides_actuelles" value="aucune">
-          </div>
-          <div class="step-actions"><button type="button" class="btn-nav btn-prev" onclick="goToStep(2)">&#8592; Retour</button><button type="button" class="btn-nav btn-next" onclick="goToStepValidated(4)">Continuer &#8594;</button></div>
-        </div>
-
-        <div class="step" id="step4" style="display:none;">
-          <div class="step-label">&#201;tape 4 sur 4</div>
-          <h3 class="step-title">Ta sant&#233; et ton budget</h3>
-          <p class="step-subtitle">Quelques derni&#232;res questions utiles pour rep&#233;rer les bonnes pistes selon ta situation.</p>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-incapacite">As-tu une incapacit&#233; de travail ou un handicap&#160;?</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-incapacite">
-              <label><input class="choice-input" type="radio" name="incapacite" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span><span class="choice-desc">Pas d&#8217;incapacit&#233; connue</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="incapacite" value="partielle"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui, partielle</span><span class="choice-desc">Moins de 70% ou capacit&#233; r&#233;duite</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="incapacite" value="totale"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui, totale ou reconnue</span><span class="choice-desc">Invalidit&#233; ou incapacit&#233; forte</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="incapacite" value="en_cours"><span class="choice-card"><span class="choice-text"><span class="choice-title">En cours d&#8217;&#233;valuation</span><span class="choice-desc">Diagnostic ou reconnaissance pas encore termin&#233;e</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="incapacite" hidden aria-labelledby="qlabel-incapacite">
-              <option value="non">Non</option>
-              <option value="partielle">Oui, incapacit&#233; partielle (moins de 70%)</option>
-              <option value="totale">Oui, incapacit&#233; totale ou invalidit&#233; reconnue</option>
-              <option value="en_cours">En cours d&#8217;&#233;valuation / pas encore reconnu</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-dettes">As-tu des dettes ou des difficult&#233;s financi&#232;res&#160;?</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-dettes">
-              <label><input class="choice-input" type="radio" name="dettes" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span><span class="choice-desc">Pas de dette urgente signal&#233;e</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="dettes" value="loyer"><span class="choice-card"><span class="choice-text"><span class="choice-title">Retard de loyer</span><span class="choice-desc">Menace d&#8217;expulsion ou pression du bailleur</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="dettes" value="dettes"><span class="choice-card"><span class="choice-text"><span class="choice-title">Dettes importantes</span><span class="choice-desc">Cr&#233;dits, poursuites, factures accumul&#233;es</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="dettes" value="surendette"><span class="choice-card"><span class="choice-text"><span class="choice-title">Surendettement</span><span class="choice-desc">Situation devenue difficile &#224; ma&#238;triser</span></span><span class="choice-check"></span></span></label>
-            </div>
-            <select class="form-select" id="dettes" hidden aria-labelledby="qlabel-dettes">
-              <option value="non">Non</option>
-              <option value="loyer">Oui, retard de loyer ou menace d&#8217;expulsion</option>
-              <option value="dettes">Oui, dettes importantes (cr&#233;dits, poursuites)</option>
-              <option value="surendette">Oui, situation de surendettement</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-separation">Y a-t-il une s&#233;paration ou un divorce en cours&#160;?</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-separation">
-              <label><input class="choice-input" type="radio" name="separation_en_cours" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span><span class="choice-desc">Pas de s&#233;paration en cours</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="separation_en_cours" value="oui"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui</span><span class="choice-desc">S&#233;paration, divorce ou rupture importante</span></span><span class="choice-check"></span></span></label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="qlabel-proche-aidant">Aides-tu r&#233;guli&#232;rement un proche malade, &#226;g&#233; ou en situation de handicap&#160;?</label>
-            <div class="choice-grid choice-grid-pills" role="radiogroup" aria-labelledby="qlabel-proche-aidant">
-              <label><input class="choice-input" type="radio" name="proche_aidant" value="non" checked><span class="choice-card"><span class="choice-text"><span class="choice-title">Non</span><span class="choice-desc">Pas de r&#244;le d&#8217;aide r&#233;gulier</span></span><span class="choice-check"></span></span></label>
-              <label><input class="choice-input" type="radio" name="proche_aidant" value="oui"><span class="choice-card"><span class="choice-text"><span class="choice-title">Oui</span><span class="choice-desc">Aide r&#233;guli&#232;re &#224; un proche au quotidien</span></span><span class="choice-check"></span></span></label>
-            </div>
-          </div>
-          <div class="step-actions"><button type="button" class="btn-nav btn-prev" onclick="goToStep(3)">&#8592; Retour</button><button type="button" class="btn-nav btn-next btn-analyze" onclick="goToResultsValidated()">Voir mes r&#233;sultats</button></div>
-        </div>
-      </div>
-
-      <div class="simulator-body" id="results" style="display:none;" role="region" aria-label="Résultats du simulateur" tabindex="-1">
-        <div class="results-header">
-          <h2>Tes pistes d’aides</h2>
-          <p>Basé sur tes réponses&#160;: résultats indicatifs, non exhaustifs.</p>
-        </div>
-        <div class="results-progress-done" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
-        </div>
-        <div class="results-note" id="results-note">
-          <button type="button" class="results-note-close" onclick="closeResultsNote()" aria-label="Fermer le bloc À savoir">&times;</button>
-          <strong>À savoir</strong><br>Ces résultats donnent une première idée. Certaines aides dépendent encore d’un calcul officiel ou d’un examen du dossier.
-        </div>
-        <div id="results-profile-summary" class="results-profile-summary" style="display:none;" aria-live="polite"></div>
-        <div id="results-list" class="results-list" aria-live="polite" aria-busy="false"></div>
-        <div class="results-export-card">
-          <div class="results-export-title">Garder mes r&#233;sultats</div>
-          <p class="results-export-text">Tu peux télécharger une checklist courte ou enregistrer un résumé en PDF.</p>
-          <div class="results-export-actions">
-            <button type="button" class="results-export-btn primary" onclick="telechargerChecklist()">T&#233;l&#233;charger ma checklist</button>
-            <button type="button" class="results-export-btn" onclick="imprimerResultats()">Imprimer / PDF</button>
-          </div>
-          <p id="results-export-note" class="results-export-note" role="status" aria-live="polite" hidden></p>
-        </div>
-        <button type="button" class="restart-btn" onclick="restart()">&#8635; Recommencer la simulation</button>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -794,7 +288,7 @@ window.MONAIDE_GTM_ID = 'GTM-NFQRW574';
     </div>
     <div class="site-footer-nav" role="navigation" aria-label="Navigation du site">
       <div class="site-footer-heading">Le site</div>
-      <a href="#simulateur">Simulateur</a>
+      <a href="/simulateur/">Simulateur</a>
       <a href="#catalogue">Répertoire des aides</a>
       <a href="/guides/">Guides</a>
       <a href="/modeles/">Modèles</a>
@@ -818,16 +312,10 @@ window.MONAIDE_GTM_ID = 'GTM-NFQRW574';
 <script src="assets/js/catalog-data.js?v=20261029a"></script>
 <script src="assets/js/catalog-layout.js?v=20260823-split-famille-1"></script>
 <script src="assets/js/guide-data.js?v=20261004z3"></script>
-<script src="assets/js/catalog-render.js?v=20261019d"></script>
+<script src="assets/js/catalog-render.js?v=20261102a"></script>
 <script src="assets/js/content-store.js?v=20260512-layer-bridge-1"></script>
-<script src="assets/js/simulator.js?v=20261005g"></script>
-<script src="assets/js/simulator-rules.js?v=20261025a"></script>
-<script src="assets/js/engine.js?v=20261029a"></script>
-<script src="assets/js/simulator-followups.js?v=20260823-statut-fix-1"></script>
-<script src="assets/js/results.js?v=20261025a"></script>
-<script src="assets/js/exports.js?v=20261102b"></script>
 <script src="assets/js/catalog.js?v=20261005e"></script>
-<script src="assets/js/navigation.js?v=20261029e"></script>
+<script src="assets/js/navigation.js?v=20261102b"></script>
 <script src="assets/js/catalog-enhancements.js?v=20261019d"></script>
 </body>
 </html>

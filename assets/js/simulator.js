@@ -617,6 +617,8 @@
       if (i < step) dot.classList.add('done');
       if (i === step) dot.classList.add('active');
     }
+    var progressLabel = document.getElementById('progress-label');
+    if (progressLabel) progressLabel.textContent = 'Étape ' + step + ' sur ' + TOTAL_STEPS;
     currentStep = step;
     renderStepQuestionMode(step);
     trackSimulatorStep(step, 'step_change');
@@ -963,6 +965,8 @@
       var dot = document.getElementById('dot' + i);
       if (dot) { dot.classList.remove('active','done'); if (i === 1) dot.classList.add('active'); }
     }
+    var progressLabelReset = document.getElementById('progress-label');
+    if (progressLabelReset) progressLabelReset.textContent = 'Étape 1 sur ' + TOTAL_STEPS;
     renderStepQuestionMode(1);
     var simulator = document.getElementById('simulateur');
     if (simulator) simulator.scrollIntoView({ behavior: 'smooth', block: 'start' });
