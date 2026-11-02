@@ -1,4 +1,4 @@
-  var MOBILE_BREAKPOINT = 600;
+  var MOBILE_BREAKPOINT = 860;
   function isMobileViewport() {
     return window.innerWidth <= MOBILE_BREAKPOINT;
   }
