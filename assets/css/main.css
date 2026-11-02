@@ -2421,3 +2421,20 @@ body.home-page #retours { margin-top: 3rem; }
   body > nav .nav-dropdown-menu { background: transparent; padding: 0 0 0 0.8rem; margin-top: 0; border: 0; }
   body > nav .nav-dropdown-menu a { padding: 0.8rem 0.2rem; border-bottom: 1px solid var(--border); }
 }
+
+/* Répertoire : chaque aide forme un bloc net (plus d'espace autour que dedans, liens plus discrets) */
+body.home-page #catalogue .cat-card-header { padding: 1.2rem 0 0.1rem; }
+body.home-page #catalogue .cat-card-title { font-size: 1.1rem; }
+body.home-page #catalogue .cat-card-desc { margin-top: 0.2rem; color: #4A5568; }
+body.home-page #catalogue .cat-quicklinks, body.home-page #catalogue .expand-links { padding: 0.5rem 0 1.2rem; }
+body.home-page #catalogue .catalog-link-group { margin: 0 0 0.15rem; }
+body.home-page #catalogue .catalog-link-group-label { min-width: 0; font-size: 0.82rem; font-weight: 400; color: #4A5568; }
+body.home-page #catalogue .catalog-link-group-links { gap: 0.1rem 1.2rem; }
+body.home-page #catalogue .catalog-link-group-links a { font-size: 0.95rem; font-weight: 500; }
+@media (min-width: 601px) {
+  body.home-page #catalogue .cat-card-desc { max-width: 62ch; }
+  body.home-page #catalogue .catalog-link-group { display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 0 0.5rem; align-items: baseline; }
+}
+@media (max-width: 760px) {
+  body.home-page #catalogue .section-title, body.home-page #catalogue .section-subtitle { padding-left: 0; padding-right: 0; }
+}
