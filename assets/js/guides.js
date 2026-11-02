@@ -42,7 +42,7 @@
     { id: 'famille', title: 'Famille', labels: ['Famille'] },
     { id: 'logement', title: 'Logement', labels: ['Logement'] },
     { id: 'retraite', title: 'Retraite, AVS et AI', labels: ['Retraite', 'AVS / AI'] },
-    { id: 'premiers-contacts', title: 'Premiers contacts', labels: ['Orientation', 'Migration'] },
+    { id: 'par-ou-commencer', title: 'Par où commencer', labels: ['Orientation', 'Migration'] },
     { id: 'culture', title: 'Culture', labels: ['Culture'] }
   ];
 
