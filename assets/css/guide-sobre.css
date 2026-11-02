@@ -6,7 +6,7 @@
 
 .gs-head { padding-top: 6.4rem; padding-bottom: 1.6rem; }
 .gs-crumb { margin: 0 0 1.1rem; font-size: 0.88rem; color: var(--warm-gray); }
-.gs-crumb a { color: var(--warm-gray); text-underline-offset: 3px; }
+.gs-crumb a { color: var(--warm-gray); }
 .gs-crumb a:hover { color: var(--forest); }
 .gs-head h1 { font-family: 'Manrope', sans-serif; font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; color: var(--vaud); margin: 0 0 1.1rem; max-width: none; }
 .gs-lead { margin: 0 0 1.4rem; font-size: 1.05rem; line-height: 1.7; color: var(--dark); }
@@ -21,8 +21,8 @@
 .gs-prose ol { padding-left: 1.4rem; }
 .gs-prose ol strong { display: block; color: var(--vaud); }
 .gs-prose li + li { margin-top: 0.55rem; }
-.gs-prose a { color: var(--forest); text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
-.gs-prose a:hover { text-decoration-color: var(--accent-strong); }
+.gs-prose a { color: var(--forest); }
+.gs-prose a:hover { }
 .gs-prose .gs-links { list-style: none; padding: 0; }
 .gs-prose .gs-links li + li { margin-top: 0.35rem; }
 

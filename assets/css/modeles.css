@@ -6,7 +6,7 @@
 /* En-tête : à gauche, sans bouton ni animation */
 .modele-head { max-width: 60rem; margin: 0 auto; padding: 6.4rem 1.75rem 2.2rem; }
 .modele-crumb { margin: 0 0 1.1rem; font-size: 0.88rem; color: var(--warm-gray); }
-.modele-crumb a { color: var(--warm-gray); text-underline-offset: 3px; }
+.modele-crumb a { color: var(--warm-gray); }
 .modele-crumb a:hover { color: var(--forest); }
 .modele-head h1 { font-family: 'Manrope', sans-serif; font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; color: var(--vaud); margin: 0 0 1.1rem; }
 .modele-lead { margin: 0 0 0.9rem; max-width: 38rem; font-size: 1.02rem; line-height: 1.7; color: var(--dark); }
@@ -66,7 +66,7 @@
 .modele-prose p { margin: 0 0 0.9rem; }
 .modele-prose ul, .modele-prose ol { margin: 0 0 0.9rem; padding-left: 1.2rem; }
 .modele-prose li + li { margin-top: 0.55rem; }
-.modele-prose a { color: var(--forest); text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.modele-prose a { color: var(--forest); }
 
 /* Message e-mail */
 .modele-mail { max-width: 38rem; background: #FFFFFF; border: 1px solid var(--border-strong); border-radius: 3px; padding: 1.1rem 1.3rem 1.2rem; margin: 1.1rem 0 0; font-size: 0.93rem; }
@@ -85,7 +85,7 @@
 .modele-list a.modele-item { display: block; text-decoration: none; color: inherit; padding: 1.1rem 0; }
 .modele-item strong { display: block; font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; color: var(--accent-text); margin-bottom: 0.25rem; }
 .modele-item span { display: block; color: var(--warm-gray); font-size: 0.95rem; line-height: 1.6; }
-.modele-item:hover strong, .modele-item:focus-visible strong { text-decoration: underline; text-underline-offset: 3px; }
+.modele-item:hover strong, .modele-item:focus-visible strong { text-decoration: underline; }
 .modele-item:focus-visible { outline: 3px solid rgba(var(--vaud-rgb),0.45); outline-offset: 2px; }
 
 @media (max-width: 760px) {
