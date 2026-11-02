@@ -8,13 +8,13 @@
 .gs-crumb { margin: 0 0 1.1rem; font-size: 0.88rem; color: var(--warm-gray); }
 .gs-crumb a { color: var(--warm-gray); }
 .gs-crumb a:hover { color: var(--forest); }
-.gs-head h1 { font-family: 'Manrope', sans-serif; font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; color: var(--vaud); margin: 0 0 1.1rem; max-width: none; }
+.gs-head h1 { font-family: 'Fira Sans', sans-serif; font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; color: var(--vaud); margin: 0 0 1.1rem; max-width: none; }
 .gs-lead { margin: 0 0 1.4rem; font-size: 1.05rem; line-height: 1.7; color: var(--dark); }
 .gs-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; }
 
 .gs-prose { padding-top: 1rem; }
-.gs-prose h2 { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; color: var(--vaud); margin: 2.6rem 0 0.8rem; }
-.gs-prose h3 { font-family: 'Manrope', sans-serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0; line-height: 1.3; color: var(--vaud); margin: 1.8rem 0 0.4rem; }
+.gs-prose h2 { font-family: 'Fira Sans', sans-serif; font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; color: var(--vaud); margin: 2.6rem 0 0.8rem; }
+.gs-prose h3 { font-family: 'Fira Sans', sans-serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0; line-height: 1.3; color: var(--vaud); margin: 1.8rem 0 0.4rem; }
 .gs-prose p, .gs-prose li { line-height: 1.65; color: var(--dark); }
 .gs-prose p { margin: 0 0 0.9rem; }
 .gs-prose ul, .gs-prose ol { margin: 0 0 0.9rem; padding-left: 1.2rem; }
@@ -29,7 +29,7 @@
 .gs-prose .gs-list { list-style: none; margin: 0 0 0.6rem; padding: 0; border-top: 1px solid var(--border); }
 .gs-prose .gs-list li { margin: 0; padding: 0.95rem 0; border-bottom: 1px solid var(--border); }
 .gs-prose .gs-list li + li { margin-top: 0; }
-.gs-prose .gs-list a { display: inline-block; font-family: 'Manrope', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.2rem; }
+.gs-prose .gs-list a { display: inline-block; font-family: 'Fira Sans', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.2rem; }
 .gs-prose .gs-list span { display: block; color: var(--warm-gray); font-size: 0.95rem; line-height: 1.6; }
 .gs-prose .gs-faq { margin-top: 3.4rem; border-top: 2px solid var(--forest); }
 .gs-prose .gs-faq h2 { margin-top: 1.4rem; margin-bottom: 0.6rem; }

@@ -8,7 +8,7 @@
 .modele-crumb { margin: 0 0 1.1rem; font-size: 0.88rem; color: var(--warm-gray); }
 .modele-crumb a { color: var(--warm-gray); }
 .modele-crumb a:hover { color: var(--forest); }
-.modele-head h1 { font-family: 'Manrope', sans-serif; font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; color: var(--vaud); margin: 0 0 1.1rem; }
+.modele-head h1 { font-family: 'Fira Sans', sans-serif; font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; color: var(--vaud); margin: 0 0 1.1rem; }
 .modele-lead { margin: 0 0 0.9rem; max-width: 38rem; font-size: 1.02rem; line-height: 1.7; color: var(--dark); }
 
 /* Le bureau et la feuille */
@@ -35,7 +35,7 @@
 
 /* Titre au-dessus de chaque version */
 .modele-label { max-width: 38rem; margin: 0 0 1.2rem; }
-.modele-label h2 { font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: var(--vaud); margin: 0 0 0.5rem; }
+.modele-label h2 { font-family: 'Fira Sans', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: var(--vaud); margin: 0 0 0.5rem; }
 .modele-label p { margin: 0 0 0.5rem; line-height: 1.7; color: var(--dark); max-width: 38rem; }
 .modele-label p:last-child { margin-bottom: 0; }
 
@@ -60,7 +60,7 @@
 .modele-prose { max-width: 60rem; margin: 0 auto; padding: 2.4rem 1.75rem 0; }
 .modele-prose > * { max-width: 38rem; }
 .modele-prose-top { padding-top: 0.4rem; padding-bottom: 1.6rem; }
-.modele-prose h2 { font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: var(--vaud); margin: 0 0 0.9rem; }
+.modele-prose h2 { font-family: 'Fira Sans', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: var(--vaud); margin: 0 0 0.9rem; }
 .modele-prose h2:not(:first-child) { margin-top: 2.4rem; }
 .modele-prose p, .modele-prose li { line-height: 1.75; color: var(--dark); }
 .modele-prose p { margin: 0 0 0.9rem; }
@@ -79,11 +79,11 @@
 .modele-prose .modele-actions { margin: 1.1rem 0 0; max-width: none; }
 
 /* Page d'accueil des modèles */
-.modele-listhead { margin: 3.4rem 0 0.8rem; font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0; color: var(--warm-gray); }
+.modele-listhead { margin: 3.4rem 0 0.8rem; font-family: 'Fira Sans', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0; color: var(--warm-gray); }
 .modele-list { list-style: none; padding: 0; margin: 0; max-width: 38rem; border-top: 1px solid var(--border); }
 .modele-list li { padding: 0; border-bottom: 1px solid var(--border); }
 .modele-list a.modele-item { display: block; text-decoration: none; color: inherit; padding: 1.1rem 0; }
-.modele-item strong { display: block; font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; color: var(--accent-text); margin-bottom: 0.25rem; }
+.modele-item strong { display: block; font-family: 'Fira Sans', sans-serif; font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; color: var(--accent-text); margin-bottom: 0.25rem; }
 .modele-item span { display: block; color: var(--warm-gray); font-size: 0.95rem; line-height: 1.6; }
 .modele-item:hover strong, .modele-item:focus-visible strong { text-decoration: underline; }
 .modele-item:focus-visible { outline: 3px solid rgba(var(--vaud-rgb),0.45); outline-offset: 2px; }
