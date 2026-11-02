@@ -13,7 +13,7 @@
 
 /* Le bureau et la feuille */
 .modele-desk { max-width: 60rem; margin: 0 auto; padding: 1rem 1.75rem 1.6rem; }
-.modele-sheet { max-width: 21cm; margin: 0; background: #FFFFFF; padding: 3rem 3.2rem 3.4rem; font-size: 0.95rem; line-height: 1.75; color: #1d2733; border: 1px solid var(--border-strong); }
+.modele-sheet { max-width: 21cm; margin: 0; background: #FFFFFF; padding: 3rem 3.2rem 3.4rem; font-size: 0.95rem; line-height: 1.75; color: #17293c; border: 1px solid var(--border-strong); }
 .modele-sheet p { margin: 0 0 1rem; }
 .m-sender, .m-recipient { display: flex; flex-direction: column; }
 .m-sender { max-width: 17rem; margin-bottom: 2.2rem; }
@@ -24,10 +24,10 @@
 .m-sign { margin-top: 3rem !important; }
 
 /* Les champs ressemblent à des lignes à remplir au stylo */
-.m-in, .m-select { font: inherit; color: var(--forest); background: transparent; border: 0; border-bottom: 1.5px dotted #7d8aa0; border-radius: 0; padding: 0 0.15rem; margin: 0; line-height: inherit; }
+.m-in, .m-select { font: inherit; color: var(--forest); background: transparent; border: 0; border-bottom: 1.5px dotted #7a90a8; border-radius: 0; padding: 0 0.15rem; margin: 0; line-height: inherit; }
 .m-in { min-width: 4ch; }
 .m-sender .m-in, .m-recipient .m-in { width: 100%; }
-.m-in::placeholder { color: #66758b; opacity: 1; }
+.m-in::placeholder { color: #4a5568; opacity: 1; }
 .m-in:hover, .m-select:hover { border-bottom-color: var(--accent-strong); }
 .m-in:focus, .m-select:focus { outline: none; border-bottom: 1.5px solid var(--accent-strong); background: rgba(var(--vaud-rgb),0.08); }
 .m-subject .m-in { font-weight: 700; }
@@ -52,7 +52,7 @@
 .modele-btn { font: inherit; font-size: 0.92rem; font-weight: 600; color: var(--forest); background: transparent; border: 1px solid var(--forest); border-radius: 3px; padding: 0.6rem 1.05rem; cursor: pointer; }
 .modele-btn:hover { background: rgba(var(--vaud-rgb),0.07); }
 .modele-btn-main { background: var(--forest); color: #FFFFFF; }
-.modele-btn-main:hover { background: #0F1F30; }
+.modele-btn-main:hover { background: #0F1D2B; }
 .modele-btn:focus-visible { outline: 3px solid rgba(var(--vaud-rgb),0.45); outline-offset: 2px; }
 .modele-status { max-width: 21cm; margin: 0.6rem 0 0; min-height: 1.4em; font-size: 0.88rem; font-weight: 700; color: var(--forest); }
 
@@ -75,7 +75,7 @@
 .modele-mail dd { margin: 0; overflow-wrap: anywhere; }
 .modele-mail .m-in { width: 100%; }
 .m-mailbody { white-space: pre-line; line-height: 1.7; }
-.m-ph { color: #66758b; }
+.m-ph { color: #4a5568; }
 .modele-prose .modele-actions { margin: 1.1rem 0 0; max-width: none; }
 
 /* Page d'accueil des modèles */
@@ -108,3 +108,5 @@
   body.modeles-printing .m-in::placeholder { color: #000; opacity: 1; }
   body.modeles-printing .m-suggest { display: none !important; }
 }
+body .modele-item strong { color: var(--link); }
+body .modele-item:hover strong, body .modele-item:focus-visible strong { color: var(--link-hover); }
