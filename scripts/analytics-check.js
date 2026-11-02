@@ -72,6 +72,8 @@ htmlFiles.forEach((file) => {
   const rel = path.relative(root, file);
 
   if (rel === '404.html') return;
+  // Page de redirection (ancienne adresse) : pas de suivi, elle renvoie aussitôt vers /guides/
+  if (/<meta\s+http-equiv=["']refresh["']/i.test(html)) return;
 
   [
     [html.includes(gtmId), 'GTM ID absent'],
