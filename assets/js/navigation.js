@@ -414,6 +414,21 @@
     });
   }
 
+  function bindHomeGuideTracking() {
+    var list = document.querySelector('.home-guides');
+    if (!list || !window.trackMonaideEvent || list.dataset.trackingBound) return;
+    list.dataset.trackingBound = 'true';
+    list.addEventListener('click', function(e) {
+      var link = e.target && e.target.closest ? e.target.closest('li a[href]') : null;
+      if (!link || !list.contains(link)) return;
+      window.trackMonaideEvent('guide_card_click', {
+        guide: (link.getAttribute('href') || '').replace(/^\/|\/$/g, ''),
+        title: (link.textContent || '').trim(),
+        label: 'accueil'
+      });
+    });
+  }
+
   function initMonaideMotionReveal() {
     if (window.__monaideMotionRevealInit) return;
     if (!('IntersectionObserver' in window)) return;
@@ -554,6 +569,7 @@
     addGuideLayerLinks();
     fitGuideCardTitles();
     bindGuideDetailTracking();
+    bindHomeGuideTracking();
     initMonaideMotionReveal();
   });
 
