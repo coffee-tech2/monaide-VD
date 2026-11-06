@@ -2452,3 +2452,12 @@ body.home-page #catalogue .cat-card.open { border-top: 2px solid var(--forest); 
 
 /* Accueil : de l'air sous les titres de section, les phrases d'introduction ayant été retirées */
 body.home-page #guides .section-title, body.home-page #catalogue .section-title { margin-bottom: 1.1rem; }
+
+/* Titres de section de l'accueil : même marine foncé que le grand titre */
+body.home-page .section-title { color: var(--forest); }
+
+/* Répertoire : le titre de catégorie domine les titres d'aides (plus foncé, plus grand) */
+body.home-page #catalogue .cat-group-title { color: var(--forest); font-size: clamp(1.45rem, 3vw, 1.6rem); line-height: 1.2; }
+@media (max-width: 600px) {
+  body.home-page #catalogue .catalog-link-group-links a { justify-content: flex-start; text-align: left; }
+}
