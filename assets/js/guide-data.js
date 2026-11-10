@@ -41,16 +41,6 @@ window.MONAIDE_GUIDE_DATA = {
       keywords: ['locataire', 'ASLOCA', 'bail', 'congé', 'loyer', 'Vaud']
     },
     {
-      id: 'primes-maladie-vaud',
-      label: 'Santé',
-      title: 'Je n’arrive plus à payer mes primes maladie',
-      summary: 'Subside assurance maladie, demande OVAM, AAS gratuite et premières démarches si les primes deviennent trop lourdes.',
-      href: '/primes-maladie-vaud/',
-      ctaLabel: 'Ouvrir le guide',
-      audience: ['sante', 'budget'],
-      keywords: ['primes maladie Vaud', 'subside LAMal', 'OVAM']
-    },
-    {
       id: 'plus-assez-pour-vivre',
       label: 'Revenus',
       title: 'Je n’ai plus assez pour vivre',

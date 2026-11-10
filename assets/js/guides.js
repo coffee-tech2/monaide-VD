@@ -7,7 +7,6 @@
   };
 
   var GUIDE_CARD_TITLES = {
-    'primes-maladie-vaud': 'Primes maladie',
     'plus-assez-pour-vivre': 'Budget trop serré',
     'perdre-son-emploi': 'Perte d’emploi',
     'aide-formation-vaud': 'Aide formation',
